@@ -573,66 +573,65 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__instructor_lesson_schedule_lesson_schedule_component__ = __webpack_require__("../../../../../src/app/instructor/lesson-schedule/lesson-schedule.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__faculty_manage_rubrics_manage_rubrics_component__ = __webpack_require__("../../../../../src/app/faculty/manage-rubrics/manage-rubrics.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__studentlogin_studentlogin_component__ = __webpack_require__("../../../../../src/app/studentlogin/studentlogin.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__guards_role_guard__ = __webpack_require__("../../../../../src/app/guards/role.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__faculty_review_activity_review_activity_component__ = __webpack_require__("../../../../../src/app/faculty/review-activity/review-activity.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__faculty_activity_activity_component__ = __webpack_require__("../../../../../src/app/faculty/activity/activity.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__student_take_activity_take_activity_component__ = __webpack_require__("../../../../../src/app/student/take-activity/take-activity.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__messageinbox_messageinbox_component__ = __webpack_require__("../../../../../src/app/messageinbox/messageinbox.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__sentmessages_sentmessages_component__ = __webpack_require__("../../../../../src/app/sentmessages/sentmessages.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__composemessage_composemessage_component__ = __webpack_require__("../../../../../src/app/composemessage/composemessage.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__sendsms_sendsms_component__ = __webpack_require__("../../../../../src/app/sendsms/sendsms.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__enquirylist_enquirylist_component__ = __webpack_require__("../../../../../src/app/enquirylist/enquirylist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__smssetup_smssetup_component__ = __webpack_require__("../../../../../src/app/smssetup/smssetup.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__admission_form_admission_form_component__ = __webpack_require__("../../../../../src/app/admission-form/admission-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__instructor_account_ledger_ledger_component__ = __webpack_require__("../../../../../src/app/instructor/account/ledger/ledger.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__instructor_account_voucher_voucher_component__ = __webpack_require__("../../../../../src/app/instructor/account/voucher/voucher.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__instructor_account_balancesheet_balancesheet_component__ = __webpack_require__("../../../../../src/app/instructor/account/balancesheet/balancesheet.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__instructor_account_ledgersummary_ledgersummary_component__ = __webpack_require__("../../../../../src/app/instructor/account/ledgersummary/ledgersummary.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__instructor_account_accounting_accounting_component__ = __webpack_require__("../../../../../src/app/instructor/account/accounting/accounting.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__instructor_account_manage_vocher_manage_vocher_component__ = __webpack_require__("../../../../../src/app/instructor/account/manage-vocher/manage-vocher.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__instructor_transport_route_route_component__ = __webpack_require__("../../../../../src/app/instructor/transport/route/route.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__instructor_transport_route_list_route_list_component__ = __webpack_require__("../../../../../src/app/instructor/transport/route-list/route-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__instructor_transport_vehicle_list_vehicle_list_component__ = __webpack_require__("../../../../../src/app/instructor/transport/vehicle-list/vehicle-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__instructor_transport_drivers_list_drivers_list_component__ = __webpack_require__("../../../../../src/app/instructor/transport/drivers-list/drivers-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__instructor_transport_transport_bills_transport_bills_component__ = __webpack_require__("../../../../../src/app/instructor/transport/transport-bills/transport-bills.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__instructor_transport_maintenance_maintenance_component__ = __webpack_require__("../../../../../src/app/instructor/transport/maintenance/maintenance.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__instructor_transport_boardlist_boardlist_component__ = __webpack_require__("../../../../../src/app/instructor/transport/boardlist/boardlist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__instructor_transport_vehicle_board_vehicle_board_component__ = __webpack_require__("../../../../../src/app/instructor/transport/vehicle-board/vehicle-board.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__instructor_transport_driver_vehicle_driver_vehicle_component__ = __webpack_require__("../../../../../src/app/instructor/transport/driver-vehicle/driver-vehicle.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__instructor_transport_driver_report_driver_report_component__ = __webpack_require__("../../../../../src/app/instructor/transport/driver-report/driver-report.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__instructor_transport_vehicle_report_vehicle_report_component__ = __webpack_require__("../../../../../src/app/instructor/transport/vehicle-report/vehicle-report.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__instructor_transport_student_report_student_report_component__ = __webpack_require__("../../../../../src/app/instructor/transport/student-report/student-report.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__instructor_transport_staff_report_staff_report_component__ = __webpack_require__("../../../../../src/app/instructor/transport/staff-report/staff-report.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__hostel_hostel_component__ = __webpack_require__("../../../../../src/app/hostel/hostel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__hostel_room_availability_room_availability_component__ = __webpack_require__("../../../../../src/app/hostel/room-availability/room-availability.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__hostel_room_allocation_room_allocation_component__ = __webpack_require__("../../../../../src/app/hostel/room-allocation/room-allocation.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__hostel_view_hostel_persons_view_hostel_persons_component__ = __webpack_require__("../../../../../src/app/hostel/view-hostel-persons/view-hostel-persons.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__hostel_collect_items_collect_items_component__ = __webpack_require__("../../../../../src/app/hostel/collect-items/collect-items.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__hostel_prepare_bill_prepare_bill_component__ = __webpack_require__("../../../../../src/app/hostel/prepare-bill/prepare-bill.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__hostel_view_details_view_details_component__ = __webpack_require__("../../../../../src/app/hostel/view-details/view-details.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__hostel_issue_items_issue_items_component__ = __webpack_require__("../../../../../src/app/hostel/issue-items/issue-items.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__hostel_health_record_health_record_component__ = __webpack_require__("../../../../../src/app/hostel/health-record/health-record.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__hostel_de_allocate_de_allocate_component__ = __webpack_require__("../../../../../src/app/hostel/de-allocate/de-allocate.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__hostel_report_report_component__ = __webpack_require__("../../../../../src/app/hostel/report/report.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__hostel_add_building_add_building_component__ = __webpack_require__("../../../../../src/app/hostel/add-building/add-building.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__hostel_add_room_add_room_component__ = __webpack_require__("../../../../../src/app/hostel/add-room/add-room.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__master_records_category_category_component__ = __webpack_require__("../../../../../src/app/master-records/category/category.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__master_records_subcategory_subcategory_component__ = __webpack_require__("../../../../../src/app/master-records/subcategory/subcategory.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__master_records_libraryfine_libraryfine_component__ = __webpack_require__("../../../../../src/app/master-records/libraryfine/libraryfine.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__master_records_publisher_publisher_component__ = __webpack_require__("../../../../../src/app/master-records/publisher/publisher.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__master_records_books_books_component__ = __webpack_require__("../../../../../src/app/master-records/books/books.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__transaction_studentreturnbooks_studentreturnbooks_component__ = __webpack_require__("../../../../../src/app/transaction/studentreturnbooks/studentreturnbooks.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__transaction_staffreturnbooks_staffreturnbooks_component__ = __webpack_require__("../../../../../src/app/transaction/staffreturnbooks/staffreturnbooks.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__viewreports_allbooks_allbooks_component__ = __webpack_require__("../../../../../src/app/viewreports/allbooks/allbooks.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__viewreports_booksavailability_booksavailability_component__ = __webpack_require__("../../../../../src/app/viewreports/booksavailability/booksavailability.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__viewreports_studentreport_studentreport_component__ = __webpack_require__("../../../../../src/app/viewreports/studentreport/studentreport.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__viewreports_staffreport_staffreport_component__ = __webpack_require__("../../../../../src/app/viewreports/staffreport/staffreport.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__viewreports_booksissuedstudents_booksissuedstudents_component__ = __webpack_require__("../../../../../src/app/viewreports/booksissuedstudents/booksissuedstudents.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__viewreports_booksissuedstaff_booksissuedstaff_component__ = __webpack_require__("../../../../../src/app/viewreports/booksissuedstaff/booksissuedstaff.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__viewreports_allfines_allfines_component__ = __webpack_require__("../../../../../src/app/viewreports/allfines/allfines.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__viewreports_bookanalysis_bookanalysis_component__ = __webpack_require__("../../../../../src/app/viewreports/bookanalysis/bookanalysis.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_77__opac_opac_component__ = __webpack_require__("../../../../../src/app/opac/opac.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__guards_role_guard__ = __webpack_require__("../../../../../src/app/guards/role.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__faculty_review_activity_review_activity_component__ = __webpack_require__("../../../../../src/app/faculty/review-activity/review-activity.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__faculty_activity_activity_component__ = __webpack_require__("../../../../../src/app/faculty/activity/activity.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__student_take_activity_take_activity_component__ = __webpack_require__("../../../../../src/app/student/take-activity/take-activity.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__messageinbox_messageinbox_component__ = __webpack_require__("../../../../../src/app/messageinbox/messageinbox.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__sentmessages_sentmessages_component__ = __webpack_require__("../../../../../src/app/sentmessages/sentmessages.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__composemessage_composemessage_component__ = __webpack_require__("../../../../../src/app/composemessage/composemessage.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__sendsms_sendsms_component__ = __webpack_require__("../../../../../src/app/sendsms/sendsms.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__enquirylist_enquirylist_component__ = __webpack_require__("../../../../../src/app/enquirylist/enquirylist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__smssetup_smssetup_component__ = __webpack_require__("../../../../../src/app/smssetup/smssetup.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__admission_form_admission_form_component__ = __webpack_require__("../../../../../src/app/admission-form/admission-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__instructor_account_ledger_ledger_component__ = __webpack_require__("../../../../../src/app/instructor/account/ledger/ledger.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__instructor_account_voucher_voucher_component__ = __webpack_require__("../../../../../src/app/instructor/account/voucher/voucher.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__instructor_account_balancesheet_balancesheet_component__ = __webpack_require__("../../../../../src/app/instructor/account/balancesheet/balancesheet.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__instructor_account_ledgersummary_ledgersummary_component__ = __webpack_require__("../../../../../src/app/instructor/account/ledgersummary/ledgersummary.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__instructor_account_accounting_accounting_component__ = __webpack_require__("../../../../../src/app/instructor/account/accounting/accounting.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__instructor_account_manage_vocher_manage_vocher_component__ = __webpack_require__("../../../../../src/app/instructor/account/manage-vocher/manage-vocher.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__instructor_transport_route_route_component__ = __webpack_require__("../../../../../src/app/instructor/transport/route/route.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__instructor_transport_route_list_route_list_component__ = __webpack_require__("../../../../../src/app/instructor/transport/route-list/route-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__instructor_transport_vehicle_list_vehicle_list_component__ = __webpack_require__("../../../../../src/app/instructor/transport/vehicle-list/vehicle-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__instructor_transport_drivers_list_drivers_list_component__ = __webpack_require__("../../../../../src/app/instructor/transport/drivers-list/drivers-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__instructor_transport_transport_bills_transport_bills_component__ = __webpack_require__("../../../../../src/app/instructor/transport/transport-bills/transport-bills.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__instructor_transport_maintenance_maintenance_component__ = __webpack_require__("../../../../../src/app/instructor/transport/maintenance/maintenance.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__instructor_transport_boardlist_boardlist_component__ = __webpack_require__("../../../../../src/app/instructor/transport/boardlist/boardlist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__instructor_transport_vehicle_board_vehicle_board_component__ = __webpack_require__("../../../../../src/app/instructor/transport/vehicle-board/vehicle-board.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__instructor_transport_driver_vehicle_driver_vehicle_component__ = __webpack_require__("../../../../../src/app/instructor/transport/driver-vehicle/driver-vehicle.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__instructor_transport_driver_report_driver_report_component__ = __webpack_require__("../../../../../src/app/instructor/transport/driver-report/driver-report.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__instructor_transport_vehicle_report_vehicle_report_component__ = __webpack_require__("../../../../../src/app/instructor/transport/vehicle-report/vehicle-report.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__instructor_transport_student_report_student_report_component__ = __webpack_require__("../../../../../src/app/instructor/transport/student-report/student-report.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__instructor_transport_staff_report_staff_report_component__ = __webpack_require__("../../../../../src/app/instructor/transport/staff-report/staff-report.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__hostel_hostel_component__ = __webpack_require__("../../../../../src/app/hostel/hostel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__hostel_room_availability_room_availability_component__ = __webpack_require__("../../../../../src/app/hostel/room-availability/room-availability.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__hostel_room_allocation_room_allocation_component__ = __webpack_require__("../../../../../src/app/hostel/room-allocation/room-allocation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__hostel_view_hostel_persons_view_hostel_persons_component__ = __webpack_require__("../../../../../src/app/hostel/view-hostel-persons/view-hostel-persons.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__hostel_collect_items_collect_items_component__ = __webpack_require__("../../../../../src/app/hostel/collect-items/collect-items.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__hostel_prepare_bill_prepare_bill_component__ = __webpack_require__("../../../../../src/app/hostel/prepare-bill/prepare-bill.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__hostel_view_details_view_details_component__ = __webpack_require__("../../../../../src/app/hostel/view-details/view-details.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__hostel_issue_items_issue_items_component__ = __webpack_require__("../../../../../src/app/hostel/issue-items/issue-items.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__hostel_health_record_health_record_component__ = __webpack_require__("../../../../../src/app/hostel/health-record/health-record.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__hostel_de_allocate_de_allocate_component__ = __webpack_require__("../../../../../src/app/hostel/de-allocate/de-allocate.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__hostel_report_report_component__ = __webpack_require__("../../../../../src/app/hostel/report/report.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__hostel_add_building_add_building_component__ = __webpack_require__("../../../../../src/app/hostel/add-building/add-building.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__hostel_add_room_add_room_component__ = __webpack_require__("../../../../../src/app/hostel/add-room/add-room.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__master_records_category_category_component__ = __webpack_require__("../../../../../src/app/master-records/category/category.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__master_records_subcategory_subcategory_component__ = __webpack_require__("../../../../../src/app/master-records/subcategory/subcategory.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__master_records_libraryfine_libraryfine_component__ = __webpack_require__("../../../../../src/app/master-records/libraryfine/libraryfine.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__master_records_publisher_publisher_component__ = __webpack_require__("../../../../../src/app/master-records/publisher/publisher.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__master_records_books_books_component__ = __webpack_require__("../../../../../src/app/master-records/books/books.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__transaction_studentreturnbooks_studentreturnbooks_component__ = __webpack_require__("../../../../../src/app/transaction/studentreturnbooks/studentreturnbooks.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__transaction_staffreturnbooks_staffreturnbooks_component__ = __webpack_require__("../../../../../src/app/transaction/staffreturnbooks/staffreturnbooks.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__viewreports_allbooks_allbooks_component__ = __webpack_require__("../../../../../src/app/viewreports/allbooks/allbooks.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__viewreports_booksavailability_booksavailability_component__ = __webpack_require__("../../../../../src/app/viewreports/booksavailability/booksavailability.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__viewreports_studentreport_studentreport_component__ = __webpack_require__("../../../../../src/app/viewreports/studentreport/studentreport.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__viewreports_staffreport_staffreport_component__ = __webpack_require__("../../../../../src/app/viewreports/staffreport/staffreport.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__viewreports_booksissuedstudents_booksissuedstudents_component__ = __webpack_require__("../../../../../src/app/viewreports/booksissuedstudents/booksissuedstudents.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__viewreports_booksissuedstaff_booksissuedstaff_component__ = __webpack_require__("../../../../../src/app/viewreports/booksissuedstaff/booksissuedstaff.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__viewreports_allfines_allfines_component__ = __webpack_require__("../../../../../src/app/viewreports/allfines/allfines.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__viewreports_bookanalysis_bookanalysis_component__ = __webpack_require__("../../../../../src/app/viewreports/bookanalysis/bookanalysis.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__opac_opac_component__ = __webpack_require__("../../../../../src/app/opac/opac.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRouter; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -640,7 +639,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -737,7 +735,7 @@ var route = [
     {
         path: 'content',
         component: __WEBPACK_IMPORTED_MODULE_1__content_wrapper_content_wrapper_component__["a" /* ContentWrapperComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */]],
+        // canActivate: [AuthGuard],
         children: [
             {
                 path: '',
@@ -749,7 +747,7 @@ var route = [
                 path: 'department',
                 component: __WEBPACK_IMPORTED_MODULE_3__department_department_component__["a" /* DepartmentComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 // data: {title: 'DEPARTMENT LIST'},
                 outlet: 'appCommon',
@@ -758,7 +756,7 @@ var route = [
                 path: 'assignment_head/manageassignment',
                 component: __WEBPACK_IMPORTED_MODULE_8__instructor_manage_assignment_manage_assignment_component__["a" /* ManageAssignmentComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 //data: { title: 'Add/Edit Assignment' },
                 outlet: 'appCommon',
@@ -767,7 +765,7 @@ var route = [
                 path: 'assignment_head/assignmentreview',
                 component: __WEBPACK_IMPORTED_MODULE_11__instructor_assignment_review_assignment_review_component__["a" /* AssignmentReviewComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 //data: { title: 'Review Assignment List' },
                 outlet: 'appCommon',
@@ -776,7 +774,7 @@ var route = [
                 path: 'assignment_head/assignmentreview/viewassignment',
                 component: __WEBPACK_IMPORTED_MODULE_12__instructor_view_answers_view_answers_component__["a" /* ViewAnswersComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 //data: { title: 'Review answers' },
                 outlet: 'appCommon',
@@ -785,7 +783,7 @@ var route = [
                 path: 'studenttakeassignment/takeassignment',
                 component: __WEBPACK_IMPORTED_MODULE_14__student_take_assignment_take_assignment_component__["a" /* TakeAssignmentComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: false, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
                 // data: { title: 'Take Assignment' },
                 outlet: 'appCommon',
@@ -794,7 +792,7 @@ var route = [
                 path: 'managecourse',
                 component: __WEBPACK_IMPORTED_MODULE_7__managecourse_managecourse_component__["a" /* ManagecourseComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
                 data: { title: 'Manage Course Instructor', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
@@ -802,7 +800,7 @@ var route = [
                 path: 'assignment_head',
                 component: __WEBPACK_IMPORTED_MODULE_0__instructor_assignment_head_assignment_head_component__["a" /* AssignmentHeadComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
                 data: { title: 'Assignment List', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
@@ -810,7 +808,7 @@ var route = [
                 path: 'studenttakeassignment',
                 component: __WEBPACK_IMPORTED_MODULE_13__student_studenttake_assignment_studenttake_assignment_component__["a" /* StudenttakeAssignmentComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
                 data: { title: 'My Assignment List', isAdmin: false, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
                 outlet: 'appCommon',
             },
@@ -818,7 +816,7 @@ var route = [
                 path: 'sharecoursematerial',
                 component: __WEBPACK_IMPORTED_MODULE_9__instructor_sharecourse_material_sharecourse_material_component__["a" /* SharecourseMaterialComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
                 data: { title: 'Share Course Materials List', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
@@ -826,7 +824,7 @@ var route = [
                 path: 'lesson-schedule',
                 component: __WEBPACK_IMPORTED_MODULE_15__instructor_lesson_schedule_lesson_schedule_component__["a" /* LessonScheduleComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
@@ -834,7 +832,7 @@ var route = [
                 path: 'receivecoursematerial',
                 component: __WEBPACK_IMPORTED_MODULE_10__student_receivecourse_material_receivecourse_material_component__["a" /* ReceivecourseMaterialComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
                 data: { title: 'Shared Course Materials', isAdmin: false, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
                 outlet: 'appCommon',
             },
@@ -842,95 +840,95 @@ var route = [
                 path: 'activity/managerubricsdefinition',
                 component: __WEBPACK_IMPORTED_MODULE_16__faculty_manage_rubrics_manage_rubrics_component__["a" /* ManageRubricsComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 // data: { title: 'Manage Rubrics' },
                 outlet: 'appCommon',
             },
             {
                 path: 'activity/reviewactivity',
-                component: __WEBPACK_IMPORTED_MODULE_20__faculty_review_activity_review_activity_component__["a" /* ReviewActivityComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_19__faculty_review_activity_review_activity_component__["a" /* ReviewActivityComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 // data: { title: 'Manage Rubrics' },
                 outlet: 'appCommon',
             },
             {
                 path: 'activity',
-                component: __WEBPACK_IMPORTED_MODULE_21__faculty_activity_activity_component__["a" /* ActivityComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_20__faculty_activity_activity_component__["a" /* ActivityComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'Activity List', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'takeactivity',
-                component: __WEBPACK_IMPORTED_MODULE_22__student_take_activity_take_activity_component__["a" /* TakeActivityComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_21__student_take_activity_take_activity_component__["a" /* TakeActivityComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'My Activity List', isAdmin: false, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'messageinbox',
-                component: __WEBPACK_IMPORTED_MODULE_23__messageinbox_messageinbox_component__["a" /* MessageinboxComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_22__messageinbox_messageinbox_component__["a" /* MessageinboxComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'Message Inbox/Recieved', isAdmin: true, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'sentmessages',
-                component: __WEBPACK_IMPORTED_MODULE_24__sentmessages_sentmessages_component__["a" /* SentmessagesComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_23__sentmessages_sentmessages_component__["a" /* SentmessagesComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'Sent messages', isAdmin: true, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'composemessage',
-                component: __WEBPACK_IMPORTED_MODULE_25__composemessage_composemessage_component__["a" /* ComposemessageComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_24__composemessage_composemessage_component__["a" /* ComposemessageComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'Compose Message', isAdmin: true, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'sendsms',
-                component: __WEBPACK_IMPORTED_MODULE_26__sendsms_sendsms_component__["a" /* SendsmsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_25__sendsms_sendsms_component__["a" /* SendsmsComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'Send SMS', isAdmin: true, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'enquirylist',
-                component: __WEBPACK_IMPORTED_MODULE_27__enquirylist_enquirylist_component__["a" /* EnquirylistComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_26__enquirylist_enquirylist_component__["a" /* EnquirylistComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'Enquiry List', isAdmin: true, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'smssetup',
-                component: __WEBPACK_IMPORTED_MODULE_28__smssetup_smssetup_component__["a" /* SmssetupComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_27__smssetup_smssetup_component__["a" /* SmssetupComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'SMS Setup', isAdmin: true, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'AdmissionForm',
-                component: __WEBPACK_IMPORTED_MODULE_29__admission_form_admission_form_component__["a" /* AdmissionFormComponent */],
-                pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
-                data: { title: 'Admission Form', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
+                component: __WEBPACK_IMPORTED_MODULE_28__admission_form_admission_form_component__["a" /* AdmissionFormComponent */],
+                // pathMatch: 'full',
+                // canActivate: [RoleGuard],
+                // data: { title: 'Admission Form', isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
                 outlet: 'appCommon',
             },
             {
                 path: 'accounting',
-                component: __WEBPACK_IMPORTED_MODULE_34__instructor_account_accounting_accounting_component__["a" /* AccountingComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_33__instructor_account_accounting_accounting_component__["a" /* AccountingComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'Create Account Group', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -938,7 +936,7 @@ var route = [
             },
             {
                 path: 'manageVocher',
-                component: __WEBPACK_IMPORTED_MODULE_35__instructor_account_manage_vocher_manage_vocher_component__["a" /* ManageVocherComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_34__instructor_account_manage_vocher_manage_vocher_component__["a" /* ManageVocherComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 data: { title: 'Create Account Group', isAdmin: false, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
@@ -946,7 +944,7 @@ var route = [
             },
             {
                 path: 'ledger',
-                component: __WEBPACK_IMPORTED_MODULE_30__instructor_account_ledger_ledger_component__["a" /* LedgerComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_29__instructor_account_ledger_ledger_component__["a" /* LedgerComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -954,7 +952,7 @@ var route = [
             },
             {
                 path: 'voucher',
-                component: __WEBPACK_IMPORTED_MODULE_31__instructor_account_voucher_voucher_component__["a" /* VoucherComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_30__instructor_account_voucher_voucher_component__["a" /* VoucherComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -962,7 +960,7 @@ var route = [
             },
             {
                 path: 'balance',
-                component: __WEBPACK_IMPORTED_MODULE_32__instructor_account_balancesheet_balancesheet_component__["a" /* BalancesheetComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_31__instructor_account_balancesheet_balancesheet_component__["a" /* BalancesheetComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -970,7 +968,7 @@ var route = [
             },
             {
                 path: 'balance',
-                component: __WEBPACK_IMPORTED_MODULE_32__instructor_account_balancesheet_balancesheet_component__["a" /* BalancesheetComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_31__instructor_account_balancesheet_balancesheet_component__["a" /* BalancesheetComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -978,7 +976,7 @@ var route = [
             },
             {
                 path: 'ledgersummary',
-                component: __WEBPACK_IMPORTED_MODULE_33__instructor_account_ledgersummary_ledgersummary_component__["a" /* LedgersummaryComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_32__instructor_account_ledgersummary_ledgersummary_component__["a" /* LedgersummaryComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -986,7 +984,7 @@ var route = [
             },
             {
                 path: 'route',
-                component: __WEBPACK_IMPORTED_MODULE_36__instructor_transport_route_route_component__["a" /* RouteComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_35__instructor_transport_route_route_component__["a" /* RouteComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -994,7 +992,7 @@ var route = [
             },
             {
                 path: 'routeList',
-                component: __WEBPACK_IMPORTED_MODULE_37__instructor_transport_route_list_route_list_component__["a" /* RouteListComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_36__instructor_transport_route_list_route_list_component__["a" /* RouteListComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1002,7 +1000,7 @@ var route = [
             },
             {
                 path: 'vehicleList',
-                component: __WEBPACK_IMPORTED_MODULE_38__instructor_transport_vehicle_list_vehicle_list_component__["a" /* VehicleListComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_37__instructor_transport_vehicle_list_vehicle_list_component__["a" /* VehicleListComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1010,7 +1008,7 @@ var route = [
             },
             {
                 path: 'driversList',
-                component: __WEBPACK_IMPORTED_MODULE_39__instructor_transport_drivers_list_drivers_list_component__["a" /* DriversListComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_38__instructor_transport_drivers_list_drivers_list_component__["a" /* DriversListComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1018,7 +1016,7 @@ var route = [
             },
             {
                 path: 'transportBills',
-                component: __WEBPACK_IMPORTED_MODULE_40__instructor_transport_transport_bills_transport_bills_component__["a" /* TransportBillsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_39__instructor_transport_transport_bills_transport_bills_component__["a" /* TransportBillsComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1026,7 +1024,7 @@ var route = [
             },
             {
                 path: 'maintenanceDetails',
-                component: __WEBPACK_IMPORTED_MODULE_41__instructor_transport_maintenance_maintenance_component__["a" /* MaintenanceComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_40__instructor_transport_maintenance_maintenance_component__["a" /* MaintenanceComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1034,7 +1032,7 @@ var route = [
             },
             {
                 path: 'boardList',
-                component: __WEBPACK_IMPORTED_MODULE_42__instructor_transport_boardlist_boardlist_component__["a" /* BoardlistComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_41__instructor_transport_boardlist_boardlist_component__["a" /* BoardlistComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 data: { title: 'Create Account Group', isAdmin: false, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
@@ -1042,7 +1040,7 @@ var route = [
             },
             {
                 path: 'AllotVehicletoBoard',
-                component: __WEBPACK_IMPORTED_MODULE_43__instructor_transport_vehicle_board_vehicle_board_component__["a" /* VehicleBoardComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_42__instructor_transport_vehicle_board_vehicle_board_component__["a" /* VehicleBoardComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 data: { title: 'Create Account Group', isAdmin: false, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
@@ -1050,7 +1048,7 @@ var route = [
             },
             {
                 path: 'DriverVehicleComponent',
-                component: __WEBPACK_IMPORTED_MODULE_44__instructor_transport_driver_vehicle_driver_vehicle_component__["a" /* DriverVehicleComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_43__instructor_transport_driver_vehicle_driver_vehicle_component__["a" /* DriverVehicleComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 data: { title: 'Create Account Group', isAdmin: false, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
@@ -1058,7 +1056,7 @@ var route = [
             },
             {
                 path: 'driverReport',
-                component: __WEBPACK_IMPORTED_MODULE_45__instructor_transport_driver_report_driver_report_component__["a" /* DriverReportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_44__instructor_transport_driver_report_driver_report_component__["a" /* DriverReportComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 data: { title: 'Create Account Group', isAdmin: false, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
@@ -1066,7 +1064,7 @@ var route = [
             },
             {
                 path: 'vehicleReport',
-                component: __WEBPACK_IMPORTED_MODULE_46__instructor_transport_vehicle_report_vehicle_report_component__["a" /* VehicleReportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_45__instructor_transport_vehicle_report_vehicle_report_component__["a" /* VehicleReportComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 data: { title: 'Create Account Group', isAdmin: false, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
@@ -1074,7 +1072,7 @@ var route = [
             },
             {
                 path: 'studentReport',
-                component: __WEBPACK_IMPORTED_MODULE_47__instructor_transport_student_report_student_report_component__["a" /* StudentReportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_46__instructor_transport_student_report_student_report_component__["a" /* StudentReportComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 data: { title: 'Create Account Group', isAdmin: false, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
@@ -1082,7 +1080,7 @@ var route = [
             },
             {
                 path: 'staffReport',
-                component: __WEBPACK_IMPORTED_MODULE_48__instructor_transport_staff_report_staff_report_component__["a" /* StaffReportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_47__instructor_transport_staff_report_staff_report_component__["a" /* StaffReportComponent */],
                 // pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 data: { title: 'Create Account Group', isAdmin: false, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
@@ -1090,111 +1088,111 @@ var route = [
             },
             {
                 path: 'hostel',
-                component: __WEBPACK_IMPORTED_MODULE_49__hostel_hostel_component__["a" /* HostelComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_48__hostel_hostel_component__["a" /* HostelComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'My Activity List', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'addbuilding',
-                component: __WEBPACK_IMPORTED_MODULE_60__hostel_add_building_add_building_component__["a" /* AddBuildingComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_59__hostel_add_building_add_building_component__["a" /* AddBuildingComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'My Activity List', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'addroom',
-                component: __WEBPACK_IMPORTED_MODULE_61__hostel_add_room_add_room_component__["a" /* AddRoomComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_60__hostel_add_room_add_room_component__["a" /* AddRoomComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'My Activity List', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'roomavailability',
-                component: __WEBPACK_IMPORTED_MODULE_50__hostel_room_availability_room_availability_component__["a" /* RoomAvailabilityComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_49__hostel_room_availability_room_availability_component__["a" /* RoomAvailabilityComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'My Activity List', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'roomallocation',
-                component: __WEBPACK_IMPORTED_MODULE_51__hostel_room_allocation_room_allocation_component__["a" /* RoomAllocationComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_50__hostel_room_allocation_room_allocation_component__["a" /* RoomAllocationComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'My Activity List', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'viewhostelpersons',
-                component: __WEBPACK_IMPORTED_MODULE_52__hostel_view_hostel_persons_view_hostel_persons_component__["a" /* ViewHostelPersonsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_51__hostel_view_hostel_persons_view_hostel_persons_component__["a" /* ViewHostelPersonsComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'My Activity List', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'collectitems',
-                component: __WEBPACK_IMPORTED_MODULE_53__hostel_collect_items_collect_items_component__["a" /* CollectItemsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_52__hostel_collect_items_collect_items_component__["a" /* CollectItemsComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'My Activity List', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'preparebill',
-                component: __WEBPACK_IMPORTED_MODULE_54__hostel_prepare_bill_prepare_bill_component__["a" /* PrepareBillComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_53__hostel_prepare_bill_prepare_bill_component__["a" /* PrepareBillComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'My Activity List', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'viewdetails',
-                component: __WEBPACK_IMPORTED_MODULE_55__hostel_view_details_view_details_component__["a" /* ViewDetailsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_54__hostel_view_details_view_details_component__["a" /* ViewDetailsComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'My Activity List', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'issueitems',
-                component: __WEBPACK_IMPORTED_MODULE_56__hostel_issue_items_issue_items_component__["a" /* IssueItemsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_55__hostel_issue_items_issue_items_component__["a" /* IssueItemsComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'My Activity List', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'healthrecord',
-                component: __WEBPACK_IMPORTED_MODULE_57__hostel_health_record_health_record_component__["a" /* HealthRecordComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_56__hostel_health_record_health_record_component__["a" /* HealthRecordComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'My Activity List', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'deallocate',
-                component: __WEBPACK_IMPORTED_MODULE_58__hostel_de_allocate_de_allocate_component__["a" /* DeAllocateComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_57__hostel_de_allocate_de_allocate_component__["a" /* DeAllocateComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'My Activity List', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'report',
-                component: __WEBPACK_IMPORTED_MODULE_59__hostel_report_report_component__["a" /* ReportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_58__hostel_report_report_component__["a" /* ReportComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                // canActivate: [RoleGuard],
                 data: { title: 'My Activity List', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'category',
-                component: __WEBPACK_IMPORTED_MODULE_62__master_records_category_category_component__["a" /* CategoryComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_61__master_records_category_category_component__["a" /* CategoryComponent */],
                 pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1202,7 +1200,7 @@ var route = [
             },
             {
                 path: 'subcategory',
-                component: __WEBPACK_IMPORTED_MODULE_63__master_records_subcategory_subcategory_component__["a" /* SubcategoryComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_62__master_records_subcategory_subcategory_component__["a" /* SubcategoryComponent */],
                 pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1210,7 +1208,7 @@ var route = [
             },
             {
                 path: 'libraryfine',
-                component: __WEBPACK_IMPORTED_MODULE_64__master_records_libraryfine_libraryfine_component__["a" /* LibraryfineComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_63__master_records_libraryfine_libraryfine_component__["a" /* LibraryfineComponent */],
                 pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1218,7 +1216,7 @@ var route = [
             },
             {
                 path: 'publisher',
-                component: __WEBPACK_IMPORTED_MODULE_65__master_records_publisher_publisher_component__["a" /* PublisherComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_64__master_records_publisher_publisher_component__["a" /* PublisherComponent */],
                 pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1226,7 +1224,7 @@ var route = [
             },
             {
                 path: 'books',
-                component: __WEBPACK_IMPORTED_MODULE_66__master_records_books_books_component__["a" /* BooksComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_65__master_records_books_books_component__["a" /* BooksComponent */],
                 pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1234,7 +1232,7 @@ var route = [
             },
             {
                 path: 'studentreturn',
-                component: __WEBPACK_IMPORTED_MODULE_67__transaction_studentreturnbooks_studentreturnbooks_component__["a" /* StudentreturnbooksComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_66__transaction_studentreturnbooks_studentreturnbooks_component__["a" /* StudentreturnbooksComponent */],
                 pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1242,7 +1240,7 @@ var route = [
             },
             {
                 path: 'staffreturn',
-                component: __WEBPACK_IMPORTED_MODULE_68__transaction_staffreturnbooks_staffreturnbooks_component__["a" /* StaffreturnbooksComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_67__transaction_staffreturnbooks_staffreturnbooks_component__["a" /* StaffreturnbooksComponent */],
                 pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1250,7 +1248,7 @@ var route = [
             },
             {
                 path: 'allbooks',
-                component: __WEBPACK_IMPORTED_MODULE_69__viewreports_allbooks_allbooks_component__["a" /* AllbooksComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_68__viewreports_allbooks_allbooks_component__["a" /* AllbooksComponent */],
                 pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1258,7 +1256,7 @@ var route = [
             },
             {
                 path: 'booksavailability',
-                component: __WEBPACK_IMPORTED_MODULE_70__viewreports_booksavailability_booksavailability_component__["a" /* BooksavailabilityComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_69__viewreports_booksavailability_booksavailability_component__["a" /* BooksavailabilityComponent */],
                 pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1266,7 +1264,7 @@ var route = [
             },
             {
                 path: 'studentreport',
-                component: __WEBPACK_IMPORTED_MODULE_71__viewreports_studentreport_studentreport_component__["a" /* StudentreportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_70__viewreports_studentreport_studentreport_component__["a" /* StudentreportComponent */],
                 pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1274,7 +1272,7 @@ var route = [
             },
             {
                 path: 'staffreport',
-                component: __WEBPACK_IMPORTED_MODULE_72__viewreports_staffreport_staffreport_component__["a" /* StaffreportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_71__viewreports_staffreport_staffreport_component__["a" /* StaffreportComponent */],
                 pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1282,7 +1280,7 @@ var route = [
             },
             {
                 path: 'bookissuedstudent',
-                component: __WEBPACK_IMPORTED_MODULE_73__viewreports_booksissuedstudents_booksissuedstudents_component__["a" /* BooksissuedstudentsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_72__viewreports_booksissuedstudents_booksissuedstudents_component__["a" /* BooksissuedstudentsComponent */],
                 pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1290,7 +1288,7 @@ var route = [
             },
             {
                 path: 'bookissuedstaff',
-                component: __WEBPACK_IMPORTED_MODULE_74__viewreports_booksissuedstaff_booksissuedstaff_component__["a" /* BooksissuedstaffComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_73__viewreports_booksissuedstaff_booksissuedstaff_component__["a" /* BooksissuedstaffComponent */],
                 pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1298,7 +1296,7 @@ var route = [
             },
             {
                 path: 'allfines',
-                component: __WEBPACK_IMPORTED_MODULE_75__viewreports_allfines_allfines_component__["a" /* AllfinesComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_74__viewreports_allfines_allfines_component__["a" /* AllfinesComponent */],
                 pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1306,7 +1304,7 @@ var route = [
             },
             {
                 path: 'bookanalysis',
-                component: __WEBPACK_IMPORTED_MODULE_76__viewreports_bookanalysis_bookanalysis_component__["a" /* BookanalysisComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_75__viewreports_bookanalysis_bookanalysis_component__["a" /* BookanalysisComponent */],
                 pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -1314,7 +1312,7 @@ var route = [
             },
             {
                 path: 'opac',
-                component: __WEBPACK_IMPORTED_MODULE_77__opac_opac_component__["a" /* OpacComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_76__opac_opac_component__["a" /* OpacComponent */],
                 pathMatch: 'full',
                 // canActivate: [RoleGuard],
                 // data: { title: 'My Activity List', isAdmin:false,isChairman:false,isProgramOwner:false,isCourseOwner:false,isStudent:true },
@@ -4550,7 +4548,6 @@ var AuthGuard = (function () {
         this.service = service;
     }
     AuthGuard.prototype.canActivate = function (next, state) {
-        var _this = this;
         var millisecond = new Date().valueOf() - JSON.parse(localStorage.getItem('loginTime'));
         // console.log(millisecond/3600000);
         if (millisecond / 3600000 > 6) {
@@ -4570,9 +4567,9 @@ var AuthGuard = (function () {
                 'crsId': crsId,
                 'sectionId': sectionId
             };
-            this.service.subUrl = 'Login/updateSessionData';
-            this.service.createPost(postData).subscribe(function (response) {
-            });
+            // this.service.subUrl = 'Login/updateSessionData';
+            // this.service.createPost(postData).subscribe(response => {    
+            // });
             //Remove local storage values
             localStorage.clear();
         }
@@ -4581,11 +4578,11 @@ var AuthGuard = (function () {
             return true;
         }
         // not logged in so redirect to login page
-        this.service.subUrl = 'Login/getBaseUrl';
-        this.service.getData().subscribe(function (response) {
-            _this.baseUrl = response.json()[0]['base_url'];
-            _this.document.location.href = _this.baseUrl + 'login';
-        });
+        // this.service.subUrl = 'Login/getBaseUrl';
+        // this.service.getData().subscribe(response => {
+        //   this.baseUrl = response.json()[0]['base_url'];
+        //   this.document.location.href = this.baseUrl+'login';
+        // });
         // this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
         return false;
     };
@@ -13440,7 +13437,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main-sidenav/main-sidenav.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"span2 bs-docs-sidebar main-sidebar fixed-height\">\n    <ul class=\"nav nav-list bs-docs-sidenav sidenavbar\">\n        <!-- <li class=\"treeview\" routerLinkActive=\"active\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['department']}}]\" class=\"key-data\" data-key=\"lg_dept\"> <i class=\"fa fa-gears\"></i>\n                    <span>Department</span>\n                    <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span>\n                </a>\n            </li> -->\n        <li role=\"separator\" class=\"divider\"></li>\n        <!-- <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['managecourse']}}]\" class=\"key-data\" data-key=\"lg_mng_course\"> Manage Course  Instructor <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span></a>\n                \n            </li>\n            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['lesson-schedule']}}]\" class=\"\" data-key=\"\"> Lesson Schedule <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span></a>\n                \n            </li>\n           \n          \n            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\n\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['assignment_head']}}]\" class=\"key-data\" data-key=\"lg_assign_list\"> Assignment <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span></a>\n                    \n                \n            </li>\n            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['sharecoursematerial']}}]\" class=\"key-data\" data-key=\"lg_share_course_mat\"> Share Course Material <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span></a>\n                \n            </li>\n            \n            <li *ngIf='is_student' class=\"treeview\" routerLinkActive=\"active\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studenttakeassignment']}}]\" class=\"key-data\" data-key=\"lg_stu_take_assign\"> Student Take Assignment <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span></a>\n                \n            </li>\n           \n            <li  *ngIf='is_student'  class=\"treeview\" routerLinkActive=\"active\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['receivecoursematerial']}}]\" class=\"key-data\" data-key=\"lg_receive_course_mat\">Receive Course Material <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span></a>\n               \n            </li>\n\n            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['activity']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Activity <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span></a>\n               \n            </li>\n\n            <li  *ngIf='is_student'  class=\"treeview\" routerLinkActive=\"active\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['takeactivity']}}]\" class=\"key-data\" data-key=\"lg_tak_actvty\"> Take Activity <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span></a>\n               \n            </li>-->\n          \n        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['AdmissionForm']}}]\" class=\"key-data\" data-key=\"lg_share_course_mat\">\n            Admission Form </a>\n        </li>\n\n\n        <li class=\"dropdown treeview\" routerLinkActive=\"active\">\n            <a class=\"dropbtn\">Accounting\n                <span class=\"pull-right-container\">\n                    <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\n                </span>\n            </a>\n            <div class=\"dropdown-content\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['accounting']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Create Account Groups\n\n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['ledger']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Create Account Ledger\n\n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['manageVocher']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Manage Voucher\n\n                </a>\n              \n                <li class=\"dropdown1 treeview\" routerLinkActive=\"active\">\n                        <a class=\"dropbtn1\"> Transaction\n                            <span class=\"pull-right-container\">\n                                <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                            </span>\n                        </a>\n                        <div class=\"dropdown-content1\">\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['voucher']}}]\"> Voucher\n                            </a>\n                           \n                        </div>\n                    </li>\n               \n              \n                <li class=\"dropdown2 treeview\" routerLinkActive=\"active\">\n                        <a class=\"dropbtn2\"> Reports\n                            <span class=\"pull-right-container\">\n                                <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                            </span>\n                        </a>\n                        <div class=\"dropdown-content2\">\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['balance']}}]\"> Balance Sheet\n                            </a>\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['ledgersummary']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Ledger Summary\n\n                            </a>\n                        </div>\n                    </li>\n               \n            </div>\n        </li>\n\n        <li class=\"dropdown treeview\" routerLinkActive=\"active\">\n            <a class=\"dropbtn\">Transport\n                <span class=\"pull-right-container\">\n                    <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\n                </span>\n            </a>\n            <div class=\"dropdown-content sideMenu\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['route']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Route\n                   \n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['routeList']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Route List\n                   \n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['boardList']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Board List\n                   \n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['vehicleList']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Vehicle List\n                    \n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['driversList']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Drivers List\n                    \n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['AllotVehicletoBoard']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Allot Vehicle to Board\n                    \n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['DriverVehicleComponent']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Allot Driver to Vehicle\n                    \n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['manageVocher']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Prepare Transport Fee\n                   \n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['transportBills']}}]\" class=\"key-data\" data-key=\"lg_actvty\">View Transport Bills\n                    \n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['maintenanceDetails']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Maintenance Details\n                    \n                </a>\n                \n                <li class=\"dropdown1 treeview\" routerLinkActive=\"active\">\n                        <a class=\"dropbtn1\"> Reports\n                            <span class=\"pull-right-container\">\n                                <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                            </span>\n                        </a>\n                        <div class=\"dropdown-content1\">\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['driverReport']}}]\"> Driver Report\n                            </a>\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['vehicleReport']}}]\"> Vehicle Report </a>\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studentReport']}}]\"> Student Wise Report </a>\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['staffReport']}}]\"> Staff Wise Report </a>\n                        </div>\n                    </li>\n                <!-- <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['driverReport']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Driver Report\n                    <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span>\n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['vehicleReport']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Vehicle Report\n                    <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span>\n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studentReport']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Student Wise Report\n                    <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span>\n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['staffReport']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Staff Wise Report\n                    <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span>\n                </a> -->\n            </div>\n        </li>\n\n        <li class=\"dropdown treeview\" routerLinkActive=\"active\">\n            <a class=\"dropbtn\">Hostel\n                <span class=\"pull-right-container\">\n                    <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\n                </span>\n            </a>\n            <div class=\"dropdown-content\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['addbuilding']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Add Building\n\n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['addroom']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Add Room\n\n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['roomavailability']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Room Availability\n\n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['roomallocation']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Room Allocation\n\n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['viewhostelpersons']}}]\" class=\"key-data\" data-key=\"lg_actvty\">View Hostel Persons\n\n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['collectitems']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Collect Items\n\n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['preparebill']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Prepare Bill\n\n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['viewdetails']}}]\" class=\"key-data\" data-key=\"lg_actvty\">View Details\n\n                </a>\n            </div>\n        </li>\n\n        <li class=\"dropdown treeview\" routerLinkActive=\"active\">\n            <a class=\"dropbtn\">Message\n                    <span class=\"pull-right-container\">\n                            <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\n                        </span>\n            </a>\n            <div class=\"dropdown-content dropdown_1\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['messageinbox']}}]\" class=\"key-data\"> Message Inbox\n\n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['sentmessages']}}]\" class=\"key-data\"> Sent Messages\n\n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['composemessage']}}]\" class=\"key-data\">Compose Message\n\n                </a>\n            </div>\n        </li>\n\n\n        <li class=\"dropdown treeview\" routerLinkActive=\"active\">\n            <a class=\"dropbtn\">SMS\n                <span class=\"pull-right-container\">\n                    <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\n                </span>\n            </a>\n            <div class=\"dropdown-content dropdown_1\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['sendsms']}}]\" class=\"key-data\"> Send SMS\n\n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['enquirylist']}}]\" class=\"key-data\"> Enquiry List\n\n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['smssetup']}}]\" class=\"key-data\"> SMS Setup\n\n                </a>\n            </div>\n        </li>\n\n        <li class=\"dropdown treeview\" routerLinkActive=\"active\">\n            <a class=\"dropbtn\">Library\n                <span class=\"pull-right-container\">\n                    <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\n                </span>\n            </a>\n            <div class=\"dropdown-content\">\n\n                <li class=\"dropdown1 treeview\" routerLinkActive=\"active\">\n                    <a class=\"dropbtn1\">Master Records\n                        <span class=\"pull-right-container\">\n                            <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                        </span>\n                    </a>\n                    <div class=\"dropdown-content1 dropdown1\">\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['category']}}]\"> Category\n                        </a>\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['subcategory']}}]\"> Sub Category </a>\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['libraryfine']}}]\">Library Fine </a>\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['publisher']}}]\">Publisher/Supplier</a>\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['books']}}]\">\n                            Books</a>\n                    </div>\n                </li>\n\n                <li class=\"dropdown2 treeview\" routerLinkActive=\"active\">\n                    <a class=\"dropbtn2\"> Transaction Records\n                        <span class=\"pull-right-container\">\n                            <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                        </span>\n                    </a>\n                    <div class=\"dropdown-content2\">\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studentreturn']}}]\"> Issues/Return Books[Student]\n                        </a>\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['staffreturn']}}]\"> Issues/Return Books[Staff] </a>\n\n                    </div>\n                </li>\n\n                <li class=\"dropdown3 treeview\" routerLinkActive=\"active\">\n                    <a class=\"dropbtn3\">View Reports\n                        <span class=\"pull-right-container\">\n                            <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                        </span>\n                    </a>\n                    <div class=\"dropdown-content3 \">\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['allbooks']}}]\"> All Books\n                        </a>\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['booksavailability']}}]\">Books Availability </a>\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studentreport']}}]\">Student Report </a>\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['staffreport']}}]\">Staff Report</a>\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['bookissuedstudent']}}]\">\n                            Books Issued To Students</a>\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['bookissuedstaff']}}]\"> Books Issued To Staff</a>\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['allfines']}}]\">All Fines</a>\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['bookanalysis']}}]\">Book Analysis</a>\n\n                    </div>\n                </li>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['opac']}}]\" class=\"key-data\"> OPAC\n\n                </a>\n            </div>\n        </li>\n\n\n\n    </ul>\n    <br>\n</div>"
+module.exports = "<div class=\"span2 bs-docs-sidebar main-sidebar fixed-height\">\n  <ul class=\"nav nav-list bs-docs-sidenav sidenavbar\">\n    <!-- <li class=\"treeview\" routerLinkActive=\"active\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['department']}}]\" class=\"key-data\" data-key=\"lg_dept\"> <i class=\"fa fa-gears\"></i>\n                    <span>Department</span>\n                    <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span>\n                </a>\n            </li> -->\n    <li role=\"separator\" class=\"divider\"></li>\n    <!-- <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['managecourse']}}]\" class=\"key-data\" data-key=\"lg_mng_course\"> Manage Course  Instructor <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span></a>\n                \n            </li>\n            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['lesson-schedule']}}]\" class=\"\" data-key=\"\"> Lesson Schedule <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span></a>\n                \n            </li>\n           \n          \n            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\n\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['assignment_head']}}]\" class=\"key-data\" data-key=\"lg_assign_list\"> Assignment <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span></a>\n                    \n                \n            </li>\n            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['sharecoursematerial']}}]\" class=\"key-data\" data-key=\"lg_share_course_mat\"> Share Course Material <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span></a>\n                \n            </li>\n            \n            <li *ngIf='is_student' class=\"treeview\" routerLinkActive=\"active\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studenttakeassignment']}}]\" class=\"key-data\" data-key=\"lg_stu_take_assign\"> Student Take Assignment <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span></a>\n                \n            </li>\n           \n            <li  *ngIf='is_student'  class=\"treeview\" routerLinkActive=\"active\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['receivecoursematerial']}}]\" class=\"key-data\" data-key=\"lg_receive_course_mat\">Receive Course Material <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span></a>\n               \n            </li>\n\n            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['activity']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Activity <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span></a>\n               \n            </li>\n\n            <li  *ngIf='is_student'  class=\"treeview\" routerLinkActive=\"active\">\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['takeactivity']}}]\" class=\"key-data\" data-key=\"lg_tak_actvty\"> Take Activity <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span></a>\n               \n            </li>-->\n\n    <li class=\"treeview\" routerLinkActive=\"active\">\n      <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['AdmissionForm']}}]\" class=\"key-data\" data-key=\"lg_share_course_mat\">\n        Admission Form\n      </a>\n    </li>\n\n\n    <li class=\"dropdown treeview\" routerLinkActive=\"active\">\n      <a class=\"dropbtn\">Accounting\n        <span class=\"pull-right-container\">\n          <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\n        </span>\n      </a>\n      <div class=\"dropdown-content\">\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['accounting']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Create Account Groups\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['ledger']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Create Account Ledger\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['manageVocher']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Manage Voucher\n\n        </a>\n\n        <li class=\"dropdown1 treeview\" routerLinkActive=\"active\">\n          <a class=\"dropbtn1\"> Transaction\n            <span class=\"pull-right-container\">\n              <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n            </span>\n          </a>\n          <div class=\"dropdown-content1\">\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['voucher']}}]\"> Voucher\n            </a>\n\n          </div>\n        </li>\n\n\n        <li class=\"dropdown2 treeview\" routerLinkActive=\"active\">\n          <a class=\"dropbtn2\"> Reports\n            <span class=\"pull-right-container\">\n              <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n            </span>\n          </a>\n          <div class=\"dropdown-content2\">\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['balance']}}]\"> Balance Sheet\n            </a>\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['ledgersummary']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Ledger Summary\n\n            </a>\n          </div>\n        </li>\n\n      </div>\n    </li>\n\n    <li class=\"dropdown treeview\" routerLinkActive=\"active\">\n      <a class=\"dropbtn\">Transport\n        <span class=\"pull-right-container\">\n          <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\n        </span>\n      </a>\n      <div class=\"dropdown-content sideMenu\">\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['route']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Route\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['routeList']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Route List\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['boardList']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Board List\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['vehicleList']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Vehicle List\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['driversList']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Drivers List\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['AllotVehicletoBoard']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Allot Vehicle to Board\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['DriverVehicleComponent']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Allot Driver to Vehicle\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['manageVocher']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Prepare Transport Fee\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['transportBills']}}]\" class=\"key-data\" data-key=\"lg_actvty\">View Transport Bills\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['maintenanceDetails']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Maintenance Details\n\n        </a>\n\n        <li class=\"dropdown1 treeview\" routerLinkActive=\"active\">\n          <a class=\"dropbtn1\"> Reports\n            <span class=\"pull-right-container\">\n              <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n            </span>\n          </a>\n          <div class=\"dropdown-content1\">\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['driverReport']}}]\"> Driver Report\n            </a>\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['vehicleReport']}}]\"> Vehicle Report </a>\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studentReport']}}]\"> Student Wise Report </a>\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['staffReport']}}]\"> Staff Wise Report </a>\n          </div>\n        </li>\n        <!-- <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['driverReport']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Driver Report\n                    <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span>\n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['vehicleReport']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Vehicle Report\n                    <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span>\n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studentReport']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Student Wise Report\n                    <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span>\n                </a>\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['staffReport']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Staff Wise Report\n                    <span class=\"pull-right-container\">\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n                    </span>\n                </a> -->\n      </div>\n    </li>\n\n    <li class=\"dropdown treeview\" routerLinkActive=\"active\">\n      <a class=\"dropbtn\">Hostel\n        <span class=\"pull-right-container\">\n          <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\n        </span>\n      </a>\n      <div class=\"dropdown-content\">\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['addbuilding']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Add Building\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['addroom']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Add Room\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['roomavailability']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Room Availability\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['roomallocation']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Room Allocation\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['viewhostelpersons']}}]\" class=\"key-data\" data-key=\"lg_actvty\">View Hostel Persons\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['collectitems']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Collect Items\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['preparebill']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Prepare Bill\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['viewdetails']}}]\" class=\"key-data\" data-key=\"lg_actvty\">View Details\n\n        </a>\n      </div>\n    </li>\n\n    <li class=\"dropdown treeview\" routerLinkActive=\"active\">\n      <a class=\"dropbtn\">Message\n        <span class=\"pull-right-container\">\n          <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\n        </span>\n      </a>\n      <div class=\"dropdown-content dropdown_1\">\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['messageinbox']}}]\" class=\"key-data\"> Message Inbox\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['sentmessages']}}]\" class=\"key-data\"> Sent Messages\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['composemessage']}}]\" class=\"key-data\">Compose Message\n\n        </a>\n      </div>\n    </li>\n\n\n    <li class=\"dropdown treeview\" routerLinkActive=\"active\">\n      <a class=\"dropbtn\">SMS\n        <span class=\"pull-right-container\">\n          <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\n        </span>\n      </a>\n      <div class=\"dropdown-content dropdown_1\">\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['sendsms']}}]\" class=\"key-data\"> Send SMS\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['enquirylist']}}]\" class=\"key-data\"> Enquiry List\n\n        </a>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['smssetup']}}]\" class=\"key-data\"> SMS Setup\n\n        </a>\n      </div>\n    </li>\n\n    <li class=\"dropdown treeview\" routerLinkActive=\"active\">\n      <a class=\"dropbtn\">Library\n        <span class=\"pull-right-container\">\n          <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\n        </span>\n      </a>\n      <div class=\"dropdown-content\">\n\n        <li class=\"dropdown1 treeview\" routerLinkActive=\"active\">\n          <a class=\"dropbtn1\">Master Records\n            <span class=\"pull-right-container\">\n              <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n            </span>\n          </a>\n          <div class=\"dropdown-content1 dropdown1\">\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['category']}}]\"> Category\n            </a>\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['subcategory']}}]\"> Sub Category </a>\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['libraryfine']}}]\">Library Fine </a>\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['publisher']}}]\">Publisher/Supplier</a>\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['books']}}]\">\n              Books</a>\n          </div>\n        </li>\n\n        <li class=\"dropdown2 treeview\" routerLinkActive=\"active\">\n          <a class=\"dropbtn2\"> Transaction Records\n            <span class=\"pull-right-container\">\n              <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n            </span>\n          </a>\n          <div class=\"dropdown-content2\">\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studentreturn']}}]\"> Issues/Return Books[Student]\n            </a>\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['staffreturn']}}]\"> Issues/Return Books[Staff] </a>\n\n          </div>\n        </li>\n\n        <li class=\"dropdown3 treeview\" routerLinkActive=\"active\">\n          <a class=\"dropbtn3\">View Reports\n            <span class=\"pull-right-container\">\n              <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\n            </span>\n          </a>\n          <div class=\"dropdown-content3 \">\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['allbooks']}}]\"> All Books\n            </a>\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['booksavailability']}}]\">Books Availability </a>\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studentreport']}}]\">Student Report </a>\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['staffreport']}}]\">Staff Report</a>\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['bookissuedstudent']}}]\">\n              Books Issued To Students</a>\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['bookissuedstaff']}}]\"> Books Issued To Staff</a>\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['allfines']}}]\">All Fines</a>\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['bookanalysis']}}]\">Book Analysis</a>\n\n          </div>\n        </li>\n        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['opac']}}]\" class=\"key-data\"> OPAC\n\n        </a>\n      </div>\n    </li>\n\n\n\n  </ul>\n  <br>\n</div>\n"
 
 /***/ }),
 
@@ -15107,8 +15104,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var PostService = (function () {
     function PostService(http) {
         this.http = http;
-        this.baseUrlFile = 'http://localhost/SVN/iondelivery_v1.0/iondeliveryServer/uploads/';
-        this.baseUrl = 'http://localhost/SVN/iondelivery_v1.0/iondeliveryServer/index.php/';
+        this.baseUrlFile = 'http://10.91.5.13/ionerpServer/uploads/';
+        this.baseUrl = 'http://10.91.5.13/ionerpServer/index.php/';
     }
     //Http Request to get the data
     PostService.prototype.getData = function () {
@@ -18066,13 +18063,8 @@ StudentreportComponent = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
-// The file contents for the current environment will overwrite these during build.
-// The build system defaults to the dev environment which uses `environment.ts`, but if you do
-// `ng build --env=prod` then `environment.prod.ts` will be used instead.
-// The list of which env maps to which file can be found in `.angular-cli.json`.
-// The file contents for the current environment will overwrite these during build.
 var environment = {
-    production: false
+    production: true
 };
 //# sourceMappingURL=environment.js.map
 
