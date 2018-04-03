@@ -1,0 +1,242 @@
+<div>
+  <section class="content-header">
+
+    <div class="panel panel-primary">
+      <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ title }}</h4>
+    </div>
+
+  </section>
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table-striped table-bordered  table-hover">
+      <thead>
+        <tr>
+          <th class="text-center">Sl No.</th>
+          <th>Room No.</th>
+          <th>Room Type</th>
+          <th>Capacity</th>
+          <th>Vacancy</th>
+          <th>Rate</th>
+          <th>Building Name</th>
+          <th class="text-center">Edit</th>
+          <th class="text-center">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-right">1</td>
+          <td>1</td>
+          <td>delux</td>
+          <td>2</td>
+          <td>2</td>
+          <td>Rs:500</td>
+          <td>Girls</td>
+          <td class="text-center" style="width:4%;">
+            <i #editElement class="glyphicon glyphicon-pencil cursor-pointer"></i>
+          </td>
+          <td class="text-center">
+            <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer"></i>
+          </td>
+        </tr>
+         <tr>
+          <td class="text-right">2</td>
+          <td>3</td>
+          <td>singelbed</td>
+          <td>3</td>
+          <td>2</td>
+          <td>Rs:1000</td>
+          <td>Male Building</td>
+          <td class="text-center" style="width:4%;">
+            <i #editElement class="glyphicon glyphicon-pencil cursor-pointer"></i>
+          </td>
+          <td class="text-center">
+            <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer"></i>
+          </td>
+        </tr>
+        <!--<tr *ngFor="let post of posts.HostelRoomList let i = index">
+          <td class="text-right">{{i+1}}</td>
+          <td>{{post.room_no}}</td>
+          <td>{{post.room_type}}</td>
+          <td>{{post.room_capacity}}</td>
+          <td>{{post.room_vacancy}}</td>
+          <td>{{post.room_rate}}</td>
+          <td>{{post. buld_name}}</td>
+          <td class="text-center" style="width:4%;">
+            <i #editElement class="glyphicon glyphicon-pencil cursor-pointer" [attr.eshostelroomid]="post.es_hostelroomid" [attr.eshostelbuldid]="post.es_hostelbuldid"
+              [attr.roomno]="post.room_no" [attr.roomtype]="post.room_type" [attr.roomcapacity]="post.room_capacity" [attr.roomrate]="post.room_rate"
+                (click)="editHostelRoom(this.editElement)"></i>
+          </td>
+          <td class="text-center">
+            <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer" [attr.eshostelroomid]="post.es_hostelroomid" (click)="deleteWarning(this.deleteElement,this.hostelRoomDeleteModal)"></i>
+          </td>
+        </tr>-->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<section class="content-header">
+
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{heading}}</h4>
+  </div>
+
+</section>
+<div class="container-fluid">
+
+  <form [formGroup]="addRoomForm">
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Select Building:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-5">
+        <select [(ngModel)]="buildId" formControlName="addBuilding" class="form-control">
+          <option [ngValue]="0" selected>Select</option>
+          <!--<option *ngFor = "let build of building" [ngValue]="build.es_hostelbuldid">
+            {{ build.buld_name}}
+          </option>-->
+          <option>Girls</option>
+          <option>madrid</option>
+          <option>Male Building</option>
+
+          <div *ngIf="addBuilding.touched && addBuilding.invalid" class="error_message">
+            <div *ngIf="addRoomForm.controls.addBuilding.errors.required">
+              This field is required.
+            </div>
+          </div>
+
+        </select>
+        <br>
+      </div>
+    </div>
+    <br>
+
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Room No:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-5">
+        <input formControlName="addRoomNo" type="text" placeholder="Enter Room No" class="form-control">
+        
+        <div *ngIf="addRoomNo.touched && addRoomNo.invalid" class="error_message">
+            <div *ngIf="addRoomForm.controls.addRoomNo.errors.required">
+              This field is required.
+            </div>
+          </div>
+
+        <br>
+      </div>
+    </div>
+    <br>
+
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Room Type:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-5">
+        <input formControlName="addRoomType" type="text" placeholder="Enter Room Type" class="form-control">
+
+        <div *ngIf="addRoomType.touched && addRoomType.invalid" class="error_message">
+            <div *ngIf="addRoomForm.controls.addRoomType.errors.required">
+              This field is required.
+            </div>
+          </div>
+
+        <br>
+      </div>
+    </div>
+    <br>
+
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Room Capacity:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-5">
+        <input formControlName="addRoomCapacity" type="text" placeholder="Enter Room Capacity" class="form-control">
+        
+        <div *ngIf="addRoomCapacity.touched && addRoomCapacity.invalid" class="error_message">
+            <div *ngIf="addRoomForm.controls.addRoomCapacity.errors.required">
+              This field is required.
+            </div>
+          </div>
+
+        <br>
+      </div>
+    </div>
+    <br>
+
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Room Rate:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-5">
+        <input formControlName="addRoomRate" type="text" placeholder="Enter Room Rate" class="form-control">
+
+        <div *ngIf="addRoomRate.touched && addRoomRate.invalid" class="error_message">
+            <div *ngIf="addRoomForm.controls.addRoomRate.errors.required">
+              This field is required.
+            </div>
+          </div>
+
+        <br>
+      </div>
+    </div>
+    <br>
+
+    <div [style.display]="isSaveHide?'none':'block'" class="pull-right btn_alignment">
+      <button type="submit" class="btn btn-primary" [disabled]="!addRoomForm.valid" (click)="createPost(addRoomForm)">
+        <i class="glyphicon glyphicon-file"></i>&nbsp;Submit</button>
+
+      <button type="reset" class="btn btn-danger">
+        <i class="glyphicon glyphicon-refresh"></i>&nbsp;Reset</button>
+    </div>
+
+     <div [style.display]="isUpdateHide?'none':'block'" class="pull-right btn_alignment">
+      <button type="submit" class="btn btn-primary" [disabled]="!addRoomForm.valid" (click)="updatePost(addRoomForm)">
+        <i class="glyphicon glyphicon-ok"></i>&nbsp;Update</button>
+
+      <button type="reset" class="btn btn-danger" (click)= "cancelUpdate()">
+        <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>
+    </div>
+
+  </form>
+</div>
+
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+
+<!-- Modal warning message to delete the Department -->
+  <div #hostelRoomDeleteModal class="modal fade" id="hostelRoomDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header warning-msg">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+        </div>
+        <div class="modal-body">
+          Hostel room will be deleted permanently.
+          <input #deleteRoomId type="hidden" name="deleteRoomId" id="deleteRoomId" [value]="delRoomId">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="deleteHostelRoomData(deleteRoomId)">
+            <i class="glyphicon glyphicon-ok"></i>
+            Yes
+          </button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            <i class="glyphicon glyphicon-remove"></i>
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

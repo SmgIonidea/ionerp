@@ -1,0 +1,232 @@
+<!--<div style="border:0px solid;">-->
+<section class="content-header">
+  <!-- Div for Page Headings -->
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review Answers</h4>
+  </div>
+  <!-- Page Headings Div Ends Here  -->
+</section>
+<br>
+
+<!--Table to display student details-->
+<div class="container-fluid" style="margin-top:-20px;">
+  <form [formGroup]="reviewForm">
+    <div class="table-responsive row">
+      <table class="table table-bordered table-responsive table-hover">
+        <thead>
+          <tr>
+            <th class="col-xs-3 col-sm-3 col-md-3 col-lg-3" colspan="2">
+              Name:
+              <strong *ngFor="let student of studentName">{{student.first_name}} </strong>
+            </th>
+            <th class="col-xs-3 col-sm-3 col-md-3 col-lg-3" colspan="2">
+              USN:
+              <strong *ngFor="let student of studentName">{{student.student_usn}}</strong>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-xs-3 col-sm-4 col-md-3 col-lg-3">Curriculum:
+              <strong>{{curriculumName}}</strong>
+            </td>
+            <td class="col-xs-3 col-sm-3 col-md-3 col-lg-3">Term:
+              <strong>{{termName}}</strong>
+            </td>
+            <td class="col-xs-3 col-sm-3 col-md-3 col-lg-3">Course:
+              <strong>{{courseName}} </strong>
+            </td>
+            <td class="col-xs-3 col-sm-2 col-md-3 col-lg-3">Section:
+              <strong> {{sectionName}}</strong>
+            </td>
+          </tr>
+          <tr>
+            <td class="col-xs-3 col-sm-3 col-md-3 col-lg-3">Type:
+              <strong> Assignment </strong>
+            </td>
+            <td *ngFor="let student of studentName" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">Assignment Head:
+              <strong>{{student.assignment_name}}</strong>
+            </td>
+            <td class="col-xs-3 col-sm-3 col-md-3 col-lg-3">Start Date:
+              <strong *ngFor="let student of studentName">{{student.initiate_date | DateFormatPipe}}</strong>
+            </td>
+            <td class="col-xs-3 col-sm-3 col-md-3 col-lg-3">End Date:
+              <strong *ngFor="let student of studentName">{{student.due_date | DateFormatPipe}}</strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--Table for student details ends-->
+
+    <!--Table for individual questions-->
+    <div class="table-responsive row" *ngFor="let flag of questionFlagList">
+      <table class="table table-bordered  table-striped table-hover" *ngIf='flag.que_flag==1'>
+        <thead>
+          <tr *ngFor="let marks of studentName">
+            <th style="width:6%;">Sl No.</th>
+            <th class="col-xs-9 col-sm-9 col-md-9 col-lg-9">Question & Answer</th>
+            <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="width:9%;">Total&nbsp;Marks({{marks.total_marks}})</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let question of questionList let i=index">
+          <tr>
+            <th>
+              <p class="pull-right">{{i+1}}</p>
+            </th>
+            <th [innerHTML]='question.que_content'>
+            </th>
+            <th>
+              <p class="pull-right">{{question.que_max_marks}}</p>
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <p class="pull-right">Ans</p>
+            </td>
+            <td [innerHTML]='question.ans_content'>
+            </td>
+            <td *ngIf="question.aq_secured_marks == 0">
+              <input type="text" style="direction:RTL;" formControlName="secured_marks" class="form-control marks" [attr.id]="'marks'+question.stud_tak_asgt_id">
+              <div *ngIf="reviewForm.controls['secured_marks'].hasError('DigitsOnly') && reviewForm.controls['secured_marks'].touched"
+                class="error_message top">
+                This field accepts only digits.
+              </div>
+            </td>
+            <td *ngIf="question.aq_secured_marks != 0">
+              <input type="text" style="direction:RTL;" formControlName="secured_marks" value="{{question.aq_secured_marks}}" class="form-control stu-marks marks"
+                [attr.id]="'marks'+question.stud_tak_asgt_id" disabled>
+            </td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th colspan="2" align="right">
+              <p> Total Marks </p>
+            </th>
+            <th *ngFor="let marks of studentName" colspan="2" align="right">
+              <p class="pull-right">{{ sum }}.00 / {{marks.total_marks}}</p>
+            </th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <!--Table for individual questions ends-->
+
+    <!-- Table for file upload of assignment -->
+    <div class="table-responsive row" *ngFor="let flag of questionFlagList">
+      <table class="table table-bordered table-striped table-hover" *ngIf='flag.que_flag==0'>
+        <thead>
+          <tr *ngFor="let marks of studentName">
+            <th style="width:6%;">Sl No.</th>
+            <th class="col-xs-9 col-sm-9 col-md-9 col-lg-9">Question & Answer</th>
+            <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="width:9%;">
+              <p>Total&nbsp;Marks({{marks.total_marks}})</p>
+            </th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let question of questionList let i=index">
+          <tr>
+            <td *ngIf='question.ans_flag==1 && i==0' colspan="2" [innerHTML]='question.ans_content'> &nbsp;
+            </td>
+            <td *ngIf='question.ans_flag==2 && i==0' colspan="2">
+              <a style="cursor:pointer;" class="glyphicon glyphicon-paperclip">&nbsp;{{question.ans_content}}</a>
+            </td>
+            <td *ngIf='question.ans_flag==3 && i==0' colspan="2">
+              <a style="cursor:pointer;">&nbsp;{{question.ans_content}}</a>
+            </td>
+            <td *ngIf='question.ans_flag==1 && i==0 && question.aq_secured_marks == 0'>
+              <input type="text" style="direction:RTL;" formControlName="secured_marks" class="form-control" [attr.id]="'marks'+question.stud_tak_asgt_id">
+              <div *ngIf="reviewForm.controls['secured_marks'].hasError('DigitsOnly') && reviewForm.controls['secured_marks'].touched"
+                class="error_message top">
+                This field accepts only digits.
+              </div>
+            </td>
+            <td *ngIf='question.ans_flag==1 && i==0 && question.aq_secured_marks != 0'>
+              <input type="text" style="direction:RTL;" formControlName="secured_marks" class="form-control" [(ngModel)]="question.aq_secured_marks"
+                [attr.id]="'marks'+question.stud_tak_asgt_id" disabled>
+            </td>
+            <td *ngIf='question.ans_flag==2 && i==0 && question.aq_secured_marks == 0'>
+              <input type="text" style="direction:RTL;" formControlName="secured_marks" class="form-control" [attr.id]="'marks'+question.stud_tak_asgt_id">
+              <div *ngIf="reviewForm.controls['secured_marks'].hasError('DigitsOnly') && reviewForm.controls['secured_marks'].touched"
+                class="error_message top">
+                This field accepts only digits.
+              </div>
+            </td>
+            <td *ngIf='question.ans_flag==2 && i==0 && question.aq_secured_marks != 0'>
+              <input type="text" style="direction:RTL;" formControlName="secured_marks" [(ngModel)]="question.aq_secured_marks" class="form-control"
+                [attr.id]="'marks'+question.stud_tak_asgt_id" disabled>
+            </td>
+            <td *ngIf='question.ans_flag==3 && i==0 && question.aq_secured_marks == 0'>
+              <input type="text" style="direction:RTL;" formControlName="secured_marks" class="form-control" [attr.id]="'marks'+question.stud_tak_asgt_id">
+              <div *ngIf="reviewForm.controls['secured_marks'].hasError('DigitsOnly') && reviewForm.controls['secured_marks'].touched"
+                class="error_message top">
+                This field accepts only digits.
+              </div>
+            </td>
+            <td *ngIf='question.ans_flag==3 && i==0 && question.aq_secured_marks != 0'>
+              <input type="text" style="direction:RTL;" formControlName="secured_marks" class="form-control" [(ngModel)]="question.aq_secured_marks"
+                [attr.id]="'marks'+question.stud_tak_asgt_id" disabled>
+            </td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr *ngFor="let question of questionList let i=index">
+            <th>
+              <p class="pull-right">{{i+1}}</p>
+            </th>
+            <th>
+              <p>
+                <a class="glyphicon glyphicon-paperclip" style="cursor:pointer;">{{question.que_content}}</a>
+              </p>
+            </th>
+            <th>
+              <p class="pull-right">{{question.que_max_marks}}</p>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <thead>
+          <tr>
+            <th colspan="2" align="right">
+              <p> Total Marks </p>
+            </th>
+            <th colspan="2" align="right" *ngFor="let marks of studentName">
+              <p class="pull-right"> {{secmarks}}.00 / {{marks.total_marks}}</p>
+            </th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <!-- Table for file upload of assignment ends -->
+
+    <!--Remarks for assignment-->
+    <div class="row">
+      <label>Remarks:</label>
+      <input type="text" placeholder="Enter Remarks" id="remarks" formControlName="remarks" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control">
+      <!--Remarks section ends-->
+
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <!--Buttons to return, accept and rework -->
+      <div class="pull-right">
+        <button type="submit" class="btn btn-primary" [routerLink]="['/content',{outlets:{appCommon:['assignment_head','assignmentreview']}}]"
+          [queryParams]="{id:headId}">
+          <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Return</button>
+        <button type="submit" class="btn btn-danger" name="rework" (click)="UpdateReworkStatus()">
+          <span class="glyphicon glyphicon-repeat"></span>&nbsp;Rework</button>
+        <button type="submit" class="btn btn-success" name="accept" (click)="SaveReviewAssignment(reviewForm)" [disabled]="!reviewForm.valid">
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;Accept</button>
+      </div>
+      <!--Button section ends-->
+    </div>
+    <!-- Tag for showing Toast Message -->
+    <toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+    <!-- Toast Tag Ends Here -->
+  </form>
+</div>
+<!--Container ends-->

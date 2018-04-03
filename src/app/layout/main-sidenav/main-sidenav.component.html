@@ -1,0 +1,341 @@
+<div class="span2 bs-docs-sidebar main-sidebar fixed-height">
+    <ul class="nav nav-list bs-docs-sidenav sidenavbar">
+        <!-- <li class="treeview" routerLinkActive="active">
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['department']}}]" class="key-data" data-key="lg_dept"> <i class="fa fa-gears"></i>
+                    <span>Department</span>
+                    <span class="pull-right-container">
+                        <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                    </span>
+                </a>
+            </li> -->
+        <li role="separator" class="divider"></li>
+        <!-- <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class="treeview" routerLinkActive="active">
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['managecourse']}}]" class="key-data" data-key="lg_mng_course"> Manage Course  Instructor <span class="pull-right-container">
+                        <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                    </span></a>
+                
+            </li>
+            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class="treeview" routerLinkActive="active">
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['lesson-schedule']}}]" class="" data-key=""> Lesson Schedule <span class="pull-right-container">
+                        <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                    </span></a>
+                
+            </li>
+           
+          
+            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class="treeview" routerLinkActive="active">
+
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['assignment_head']}}]" class="key-data" data-key="lg_assign_list"> Assignment <span class="pull-right-container">
+                        <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                    </span></a>
+                    
+                
+            </li>
+            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class="treeview" routerLinkActive="active">
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['sharecoursematerial']}}]" class="key-data" data-key="lg_share_course_mat"> Share Course Material <span class="pull-right-container">
+                        <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                    </span></a>
+                
+            </li>
+            
+            <li *ngIf='is_student' class="treeview" routerLinkActive="active">
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['studenttakeassignment']}}]" class="key-data" data-key="lg_stu_take_assign"> Student Take Assignment <span class="pull-right-container">
+                        <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                    </span></a>
+                
+            </li>
+           
+            <li  *ngIf='is_student'  class="treeview" routerLinkActive="active">
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['receivecoursematerial']}}]" class="key-data" data-key="lg_receive_course_mat">Receive Course Material <span class="pull-right-container">
+                        <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                    </span></a>
+               
+            </li>
+
+            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class="treeview" routerLinkActive="active">
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['activity']}}]" class="key-data" data-key="lg_actvty"> Activity <span class="pull-right-container">
+                        <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                    </span></a>
+               
+            </li>
+
+            <li  *ngIf='is_student'  class="treeview" routerLinkActive="active">
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['takeactivity']}}]" class="key-data" data-key="lg_tak_actvty"> Take Activity <span class="pull-right-container">
+                        <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                    </span></a>
+               
+            </li>-->
+          
+        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class="treeview" routerLinkActive="active">
+            <a href="" [routerLink]="['/content',{outlets:{appCommon:['AdmissionForm']}}]" class="key-data" data-key="lg_share_course_mat">
+            Admission Form </a>
+        </li>
+
+
+        <li class="dropdown treeview" routerLinkActive="active">
+            <a class="dropbtn">Accounting
+                <span class="pull-right-container">
+                    <i class="glyphicon glyphicon-chevron-right pull-right "></i>
+                </span>
+            </a>
+            <div class="dropdown-content">
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['accountingGroup']}}]" class="key-data" data-key="lg_actvty"> Create Account Groups
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['ledger']}}]" class="key-data" data-key="lg_actvty"> Create Account Ledger
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['manageVocher']}}]" class="key-data" data-key="lg_actvty">Manage Voucher
+
+                </a>
+              
+                <li class="dropdown1 treeview" routerLinkActive="active">
+                        <a class="dropbtn1"> Transaction
+                            <span class="pull-right-container">
+                                <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                            </span>
+                        </a>
+                        <div class="dropdown-content1">
+                            <a href="" [routerLink]="['/content',{outlets:{appCommon:['voucher']}}]"> Voucher
+                            </a>
+                           
+                        </div>
+                    </li>
+               
+              
+                <li class="dropdown2 treeview" routerLinkActive="active">
+                        <a class="dropbtn2"> Reports
+                            <span class="pull-right-container">
+                                <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                            </span>
+                        </a>
+                        <div class="dropdown-content2">
+                            <a href="" [routerLink]="['/content',{outlets:{appCommon:['balance']}}]"> Balance Sheet
+                            </a>
+                            <a href="" [routerLink]="['/content',{outlets:{appCommon:['ledgersummary']}}]" class="key-data" data-key="lg_actvty"> Ledger Summary
+
+                            </a>
+                        </div>
+                    </li>
+               
+            </div>
+        </li>
+
+        <li class="dropdown treeview" routerLinkActive="active">
+            <a class="dropbtn">Transport
+                <span class="pull-right-container">
+                    <i class="glyphicon glyphicon-chevron-right pull-right "></i>
+                </span>
+            </a>
+            <div class="dropdown-content sideMenu">
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['route']}}]" class="key-data" data-key="lg_actvty"> Route
+                   
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['routeList']}}]" class="key-data" data-key="lg_actvty">Route List
+                   
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['boardList']}}]" class="key-data" data-key="lg_actvty">Board List
+                   
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['vehicleList']}}]" class="key-data" data-key="lg_actvty">Vehicle List
+                    
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['driversList']}}]" class="key-data" data-key="lg_actvty">Drivers List
+                    
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['AllotVehicletoBoard']}}]" class="key-data" data-key="lg_actvty">Allot Vehicle to Board
+                    
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['DriverVehicleComponent']}}]" class="key-data" data-key="lg_actvty">Allot Driver to Vehicle
+                    
+                </a>
+                <!-- <a href="" [routerLink]="['/content',{outlets:{appCommon:['manageVocher']}}]" class="key-data" data-key="lg_actvty">Prepare Transport Fee
+                   
+                </a> -->
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['transportBills']}}]" class="key-data" data-key="lg_actvty">View Transport Bills
+                    
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['maintenanceDetails']}}]" class="key-data" data-key="lg_actvty">Maintenance Details
+                    
+                </a>
+                
+                <li class="dropdown1 treeview" routerLinkActive="active">
+                        <a class="dropbtn1"> Reports
+                            <span class="pull-right-container">
+                                <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                            </span>
+                        </a>
+                        <div class="dropdown-content1">
+                            <a href="" [routerLink]="['/content',{outlets:{appCommon:['driverReport']}}]"> Driver Report
+                            </a>
+                            <a href="" [routerLink]="['/content',{outlets:{appCommon:['vehicleReport']}}]"> Vehicle Report </a>
+                            <a href="" [routerLink]="['/content',{outlets:{appCommon:['studentReport']}}]"> Student Wise Report </a>
+                            <a href="" [routerLink]="['/content',{outlets:{appCommon:['staffReport']}}]"> Staff Wise Report </a>
+                        </div>
+                    </li>
+                <!-- <a href="" [routerLink]="['/content',{outlets:{appCommon:['driverReport']}}]" class="key-data" data-key="lg_actvty">Driver Report
+                    <span class="pull-right-container">
+                        <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                    </span>
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['vehicleReport']}}]" class="key-data" data-key="lg_actvty">Vehicle Report
+                    <span class="pull-right-container">
+                        <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                    </span>
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['studentReport']}}]" class="key-data" data-key="lg_actvty">Student Wise Report
+                    <span class="pull-right-container">
+                        <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                    </span>
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['staffReport']}}]" class="key-data" data-key="lg_actvty">Staff Wise Report
+                    <span class="pull-right-container">
+                        <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                    </span>
+                </a> -->
+            </div>
+        </li>
+
+        <li class="dropdown treeview" routerLinkActive="active">
+            <a class="dropbtn">Hostel
+                <span class="pull-right-container">
+                    <i class="glyphicon glyphicon-chevron-right pull-right "></i>
+                </span>
+            </a>
+            <div class="dropdown-content">
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['addbuilding']}}]" class="key-data" data-key="lg_actvty">Add Building
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['addroom']}}]" class="key-data" data-key="lg_actvty"> Add Room
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['roomavailability']}}]" class="key-data" data-key="lg_actvty">Room Availability
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['roomallocation']}}]" class="key-data" data-key="lg_actvty">Room Allocation
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['viewhostelpersons']}}]" class="key-data" data-key="lg_actvty">View Hostel Persons
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['collectitems']}}]" class="key-data" data-key="lg_actvty"> Collect Items
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['preparebill']}}]" class="key-data" data-key="lg_actvty">Prepare Bill
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['viewdetails']}}]" class="key-data" data-key="lg_actvty">View Details
+
+                </a>
+            </div>
+        </li>
+
+        <li class="dropdown treeview" routerLinkActive="active">
+            <a class="dropbtn">Message
+                    <span class="pull-right-container">
+                            <i class="glyphicon glyphicon-chevron-right pull-right "></i>
+                        </span>
+            </a>
+            <div class="dropdown-content dropdown_1">
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['messageinbox']}}]" class="key-data"> Message Inbox
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['sentmessages']}}]" class="key-data"> Sent Messages
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['composemessage']}}]" class="key-data">Compose Message
+
+                </a>
+            </div>
+        </li>
+
+
+        <li class="dropdown treeview" routerLinkActive="active">
+            <a class="dropbtn">SMS
+                <span class="pull-right-container">
+                    <i class="glyphicon glyphicon-chevron-right pull-right "></i>
+                </span>
+            </a>
+            <div class="dropdown-content dropdown_1">
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['sendsms']}}]" class="key-data"> Send SMS
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['enquirylist']}}]" class="key-data"> Enquiry List
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['smssetup']}}]" class="key-data"> SMS Setup
+
+                </a>
+            </div>
+        </li>
+
+        <li class="dropdown treeview" routerLinkActive="active">
+            <a class="dropbtn">Library
+                <span class="pull-right-container">
+                    <i class="glyphicon glyphicon-chevron-right pull-right "></i>
+                </span>
+            </a>
+            <div class="dropdown-content">
+
+                <li class="dropdown1 treeview" routerLinkActive="active">
+                    <a class="dropbtn1">Master Records
+                        <span class="pull-right-container">
+                            <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                        </span>
+                    </a>
+                    <div class="dropdown-content1 dropdown1">
+                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['category']}}]"> Category
+                        </a>
+                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['subcategory']}}]"> Sub Category </a>
+                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['libraryfine']}}]">Library Fine </a>
+                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['publisher']}}]">Publisher/Supplier</a>
+                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['books']}}]">
+                            Books</a>
+                    </div>
+                </li>
+
+                <li class="dropdown2 treeview" routerLinkActive="active">
+                    <a class="dropbtn2"> Transaction Records
+                        <span class="pull-right-container">
+                            <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                        </span>
+                    </a>
+                    <div class="dropdown-content2">
+                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['studentreturn']}}]"> Issues/Return Books[Student]
+                        </a>
+                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['staffreturn']}}]"> Issues/Return Books[Staff] </a>
+
+                    </div>
+                </li>
+
+                <li class="dropdown3 treeview" routerLinkActive="active">
+                    <a class="dropbtn3">View Reports
+                        <span class="pull-right-container">
+                            <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                        </span>
+                    </a>
+                    <div class="dropdown-content3 ">
+                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['allbooks']}}]"> All Books
+                        </a>
+                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['booksavailability']}}]">Books Availability </a>
+                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['studentreport']}}]">Student Report </a>
+                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['staffreport']}}]">Staff Report</a>
+                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['bookissuedstudent']}}]">
+                            Books Issued To Students</a>
+                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['bookissuedstaff']}}]"> Books Issued To Staff</a>
+                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['allfines']}}]">All Fines</a>
+                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['bookanalysis']}}]">Book Analysis</a>
+
+                    </div>
+                </li>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['opac']}}]" class="key-data"> OPAC
+
+                </a>
+            </div>
+        </li>
+
+
+
+    </ul>
+    <br>
+</div>

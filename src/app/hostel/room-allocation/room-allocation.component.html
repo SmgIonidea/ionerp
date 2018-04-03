@@ -1,0 +1,131 @@
+<div>
+  <section class="content-header">
+
+    <div class="panel panel-primary">
+      <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ title }}</h4>
+    </div>
+
+  </section>
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table-striped table-bordered  table-hover">
+      <thead>
+        <tr>
+          <th class="text-center">Sl No.</th>
+          <th>Person Type</th>
+          <th>Reg No / Emp No</th>
+          <th>Name</th>
+          <th>Allocated On</th>
+          <th>Dep / Class</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+         <tr>
+          <td class="text-right">1</td>
+          <td>Staff</td>
+          <td>121</td>
+          <td>T R BIBINDAS</td>
+          <td>2018-03-12</td>
+          <td>12</td>
+          <td><a style="cursor: pointer;" [routerLink]="['/content',{outlets:{appCommon:['issueitems']}}]">Issue Items</a><br>
+            <a style="cursor: pointer;" [routerLink]="['/content',{outlets:{appCommon:['healthrecord']}}]">Health Record</a><br>
+            <a style="cursor: pointer;" [routerLink]="['/content',{outlets:{appCommon:['deallocate']}}]">De-allocate</a><br>
+            <a style="cursor: pointer;" [routerLink]="['/content',{outlets:{appCommon:['report']}}]">Report</a> </td>
+        </tr>
+        <tr>
+          <td class="text-right">1</td>
+          <td>Staff</td>
+          <td>1</td>
+          <td>BIBINDAS T R</td>
+          <td>2018-03-12</td>
+          <td>10</td>
+          <td><a style="cursor: pointer;" [routerLink]="['/content',{outlets:{appCommon:['issueitems']}}]">Issue Items</a><br>
+            <a style="cursor: pointer;" [routerLink]="['/content',{outlets:{appCommon:['healthrecord']}}]">Health Record</a><br>
+            <a style="cursor: pointer;" [routerLink]="['/content',{outlets:{appCommon:['deallocate']}}]">De-allocate</a><br>
+            <a style="cursor: pointer;" [routerLink]="['/content',{outlets:{appCommon:['report']}}]">Report</a> </td>
+        </tr>
+        <!--<tr *ngFor="let post of posts let i = index">
+          <td class="text-right">{{i+1}}</td>
+          <td>{{post.es_persontype}}</td>
+          <td></td>
+          <td></td>
+          <td>{{post.alloted_date}}</td>
+          <td></td>
+          <td><a [routerLink]="['/content',{outlets:{appCommon:['issueitems']}}]">Issue Items</a><br>
+          <a [routerLink]="['/content',{outlets:{appCommon:['healthrecord']}}]">Health Record</a><br>
+          <a [routerLink]="['/content',{outlets:{appCommon:['deallocate']}}]">De-allocate</a><br>
+          <a [routerLink]="['/content',{outlets:{appCommon:['report']}}]">Report</a> </td>
+        </tr>-->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<section class="content-header">
+
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{heading}}</h4>
+  </div>
+
+</section>
+
+<div class="container-fluid">
+
+  <form [formGroup]="roomAllocationForm">
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-10px;">Select Building:
+          <!--<span class="mandatory" style="color:red;">*</span>-->
+        </label>
+      </div>
+      <div class="col-md-4">
+        <select [(ngModel)]="buildId" formControlName="selectBuilding" class="form-control" (ngModelChange)="selectRoom($event)">
+          <option [ngValue]="0" selected>Select</option>
+          <!--<option *ngFor = "let build of buildings" [ngValue]="build.es_hostelbuldid">
+            {{ build.buld_name}}
+          </option>-->
+          <option>Girls</option>
+          <option>madrid</option>
+          <option>Male Building</option>
+
+        </select>
+
+      </div>
+
+      <div class="col-md-2">
+        <label style="margin-left:-10px;">Select Room No:
+          <!--<span class="mandatory" style="color:red;">*</span>-->
+        </label>
+      </div>
+      <div class="col-md-4">
+        <select [(ngModel)]="roomId" formControlName="selectRoomNo" class="form-control" (ngModelChange)="loadData($event)">
+          <option [ngValue]="0" selected>Select</option>
+          <!--<option *ngFor = "let room of rooms" [ngValue]="room.es_hostelroomid">
+            {{ room.room_no}}
+          </option>-->
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+
+        </select>
+
+      </div>
+
+      <br>
+
+      <!--<div *ngFor="let post of posts">
+      {{ type }} : {{post.room_type}}
+      <br>
+      {{ capacity }} : {{post.room_capacity}}
+      <br>
+      {{ number }} : {{post.room_no}}
+      </div>-->
+      <div>
+        <br>
+        <label>Room Type</label> : 12x12 Sqr Ft<br> <label>Room Capacity</label> : 2 <br> <label>Room No</label> : 1
+      </div>
+    </div>
+
+
+  </form>
+</div>

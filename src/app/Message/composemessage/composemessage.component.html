@@ -1,0 +1,682 @@
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ maintitle }}</h4>
+  </div>
+</section>
+
+<div class="well1">
+  <div class="panel panel-default well" style=" border: 1px solid black;border-color:#D0D0D0;">
+    <div class="panel-body">
+      <input type="radio" [(ngModel)]="type" name="type" value="admin" [disabled]="radioButtonDisable">&nbsp;
+      <strong>To Admin</strong>&nbsp;&nbsp;
+      <input type="radio" [(ngModel)]="type" name="type" value="staff" [disabled]="radioButtonDisable">&nbsp;
+      <strong>To Staff</strong>&nbsp;&nbsp;
+      <input type="radio" [(ngModel)]="type" name="type" value="student" [disabled]="radioButtonDisable">&nbsp;
+      <strong>To Student</strong>&nbsp;&nbsp;
+      <input type="radio" [(ngModel)]="type" name="type" value="togroup" [disabled]="radioButtonDisable">&nbsp;
+      <strong>To Group</strong>
+      <div class="dropdown col-lg-2 group-drop pull-right" *ngIf="type == 'togroup'">
+        <!-- <select class="form-control">
+          <option [ngValue]="0" selected>Select Group</option>
+          <option>Group 1</option>
+          <option>Group 2</option>
+          <option>Group 3</option>
+        </select> -->
+        <select class="form-control" [(ngModel)]="selectedGroup" (ngModelChange)="onChange($event)">
+          <option *ngFor="let g of group" [selected]="g.name" value="{{g.name}}" ngDefaultControl> {{g.name}} </option>
+        </select>
+      </div>
+      <div class="col-lg-12 group-plus">
+        <strong>
+          <a *ngIf="type == 'togroup'" style="cursor: pointer;" class="col-lg-2" data-toggle="modal" data-target="#addGroupModal">{{Add_EditTitle}}
+            <i class="glyphicon glyphicon-plus"></i>
+          </a>
+        </strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Modal -->
+<div class="modal fade " id="addGroupModal" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <div class="well" style="height:500px;width: 130%;margin-left: -14%;">
+      <section class="content-header gap" style="margin-top:-10px;">
+        <div class="panel panel-primary">
+          <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ modalTitle }}</h4>
+          <button type="button" class="close" data-dismiss="modal" style="margin-right:1%;color:black;">&times;</button>
+        </div>
+      </section>
+      <div class="row col-lg-12 form-group">
+        <div class="col-lg-2">
+          <label class="modal-gname">Group name:
+            <span style="color:red;">*</span>
+          </label>
+        </div>
+        <div class="col-lg-8">
+          <input type="text" class="form-control" />
+          <!-- <div *ngIf="subjectInput.touched && subjectInput.invalid" class="error_message">
+                    <div *ngIf="composemessage.controls.subjectInput.errors.required">
+                      This field is required.
+                    </div>
+          </div> -->
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="col-md-8 col-md-offset-2">
+          <ng2-dual-list-box [data]="source" valueField="id" textField="name" (onAvailableItemSelected)="log($event)" (onSelectedItemsSelected)="log($event)"
+            (onItemsMoved)="log($event)"></ng2-dual-list-box>
+        </div>
+      </div>
+      <!-- <div class="modal-footer"> -->
+      <div class="col-lg-12">
+        <div class="row rowalign">
+          <div class="col-lg-6 pull-right btndivalign1">
+            <button class="btn btn-success">
+              <i class="glyphicon glyphicon-ok"></i>
+              {{btnTitle}}
+            </button>
+          </div>
+          <div class="col-lg-6 pull-left notealign1">
+            <label style="color:red;">Note:&nbsp;
+              <span style="color:red">*</span>&nbsp;denotes mandatory
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <!--For administartor -->
+  <form [formGroup]="composemessage">
+    <div *ngIf="type == 'admin'" class="form-group col-lg-12">
+      <div class="col-lg-2">
+        <label class="labelalignment">Name / Username:
+          <span style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-lg-8">
+        <ss-multiselect-dropdown class="siz multiselect1" [options]="myOptions" [texts]="myTexts"></ss-multiselect-dropdown>
+      </div>
+      <div class="form-group col-lg-12">
+        <div class="col-lg-2">
+          <label class="labelalignment1">Subject:
+            <span style="color:red;">*</span>
+          </label>
+        </div>
+        <div class="col-lg-8">
+          <input type="text" formControlName="subjectInput" class="form-control inputwidth" />
+          <div *ngIf="subjectInput.touched && subjectInput.invalid" class="error_message">
+            <div *ngIf="composemessage.controls.subjectInput.errors.required">
+              This field is required.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group col-lg-12">
+        <div class="col-lg-2">
+          <label class="labelalignment1">Message:
+            <span style="color:red;">*</span>
+          </label>
+        </div>
+        <div class="col-lg-8 top">
+          <simple-tiny [elementId]="'admin-editor-id'">
+          </simple-tiny>
+        </div>
+      </div>
+
+      <div class="form-group col-lg-12">
+        <div class="col-lg-2">
+          <label class="labelalignment1">Attachment:
+            <span style="color:red;">*</span>
+          </label>
+        </div>
+
+        <div class="col-lg-8">
+          <input placeholder="Upload File" formControlName="fileinput" name="addDocFiles" type="text" class="form-control siz3" readonly="readonly"
+          />
+          <!--<div class="alert alert-danger" *ngIf="addDocForm.controls.addDocFiles.errors">
+            File is required.
+          </div>-->
+          <!-- <div *ngIf="addDocFiles.touched && addDocFiles.invalid" class="error_message siz1 siz3">
+            <div *ngIf="addDocForm.controls.addDocFiles.errors.required">
+              This field is required.
+            </div>
+          </div> -->
+          <div *ngIf="fileinput.touched && fileinput.invalid" class="error_message">
+            <div *ngIf="composemessage.controls.fileinput.errors.required">
+              This field is required.
+            </div>
+          </div>
+        </div>
+ 
+
+
+  <div class="col-lg-2 filebuttons">
+    <label class="btn-bs-file btn btn-primary fileinputlabel">
+      Browse
+      <!--<input type="file" />-->
+      <input #fileInput type="file" class="siz" id="userdoc" name="userdoc" placeholder="Upload file" (change)="getFileName()"
+        accept=".pdf,.doc,.docx">
+    </label>
+    <button *ngIf="type == 'admin'" type="reset" class="btn-bs-file btn btn-danger">
+      <i class="glyphicon glyphicon-remove"></i>
+      Delete File
+    </button>
+  </div>
+  </div>
+
+  <div class="col-lg-12">
+    <div class="row rowalign">
+      <div class="col-lg-6 pull-right btndivalign">
+        <button class="btn btn-success" [disabled]="!composemessage.valid">
+          <i class="glyphicon glyphicon-ok"></i>
+          Send
+        </button>
+      </div>
+      <div class="col-lg-6 pull-left notealign">
+        <label style="color:red;">Note:&nbsp;
+          <span style="color:red">*</span>&nbsp;denotes mandatory
+        </label>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  
+    <!--For staff -->
+
+    <div *ngIf="type == 'staff'" class="form-group col-lg-12">
+
+      <div class="col-lg-2">
+        <label class="labelalignment">Department:
+          <span style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-lg-8">
+        <ss-multiselect-dropdown class="siz multiselect1" [options]="myOptions" [texts]="myDept"></ss-multiselect-dropdown>
+      </div>
+
+      <div class="col-lg-2 postdivalign">
+        <label class="labelalignment2">Post:
+          <span style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-lg-8 dropalign">
+        <ss-multiselect-dropdown class="siz multiselect1" [options]="myOptions" [texts]="myPost"></ss-multiselect-dropdown>
+      </div>
+
+      <div class="col-lg-2 postdivalign">
+        <label class="labelalignment2">Name / Username:
+          <span style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-lg-8 dropalign">
+        <ss-multiselect-dropdown class="siz multiselect1" [options]="myOptions" [texts]="myTexts"></ss-multiselect-dropdown>
+      </div>
+      <div class="form-group col-lg-12">
+        <div class="col-lg-2">
+          <label class="labelalignment1">Subject:
+            <span style="color:red;">*</span>
+          </label>
+        </div>
+        <div class="col-lg-8">
+          <input type="text" class="form-control inputwidth" formControlName="staffSubInput" />
+          <div *ngIf="staffSubInput.touched && staffSubInput.invalid" class="error_message">
+            <div *ngIf="composemessage.controls.staffSubInput.errors.required">
+              This field is required.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group col-lg-12">
+        <div class="col-lg-2">
+          <label class="labelalignment1">Message:
+            <span style="color:red;">*</span>
+          </label>
+        </div>
+        <div class="col-lg-8 top">
+          <simple-tiny [elementId]="'staff-editor-id'">
+          </simple-tiny>
+        </div>
+      </div>
+
+      <div class="form-group col-lg-12">
+        <div class="col-lg-2">
+          <label class="labelalignment1">Attachment:
+            <span style="color:red;">*</span>
+          </label>
+        </div>
+
+        <div class="col-lg-8">
+          <input placeholder="Upload File" name="addDocFiles" id="" type="text" class="form-control siz3" readonly="readonly" />
+          <!--<div class="alert alert-danger" *ngIf="addDocForm.controls.addDocFiles.errors">
+          File is required.
+        </div>-->
+          <!-- <div *ngIf="addDocFiles.touched && addDocFiles.invalid" class="error_message siz1 siz3">
+          <div *ngIf="addDocForm.controls.addDocFiles.errors.required">
+            This field is required.
+          </div>
+        </div> -->
+        </div>
+
+
+        <div class="col-lg-2 filebuttons">
+          <label class="btn-bs-file btn btn-primary fileinputlabel">
+            Browse
+            <!--<input type="file" />-->
+            <input #fileInput type="file" class="siz" id="userdoc" name="userdoc" placeholder="Upload file" accept=".pdf,.doc,.docx">
+          </label>
+          <button *ngIf="type == 'staff'" type="reset" class="btn-bs-file btn btn-danger">
+            <i class="glyphicon glyphicon-remove"></i>
+            Delete File
+          </button>
+        </div>
+      </div>
+
+      <div class="col-lg-12">
+        <div class="row rowalign">
+          <div class="col-lg-6 pull-right btndivalign">
+            <button class="btn btn-success" [disabled]="!composemessage.valid">
+              <i class="glyphicon glyphicon-ok"></i>
+              Send
+            </button>
+          </div>
+          <div class="col-lg-6 pull-left notealign">
+            <label style="color:red;">Note:&nbsp;
+              <span style="color:red">*</span>&nbsp;denotes mandatory
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+  <!--For students -->
+
+    <div *ngIf="type == 'student'" class="form-group col-lg-12">
+
+      <div class="col-lg-2">
+        <label class="labelalignment3">Class:
+          <span style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-lg-8">
+        <ss-multiselect-dropdown class="siz multiselect1" [options]="myOptions" [texts]="myClass"></ss-multiselect-dropdown>
+      </div>
+
+      <div class="col-lg-2 postdivalign">
+        <label class="labelalignment2">Student:
+          <span style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-lg-8 dropalign">
+        <ss-multiselect-dropdown class="siz multiselect1" [options]="myOptions" [texts]="myStu"></ss-multiselect-dropdown>
+      </div>
+      <div class="form-group col-lg-12">
+        <div class="col-lg-2">
+          <label class="labelalignment1">Subject:
+            <span style="color:red;">*</span>
+          </label>
+        </div>
+        <div class="col-lg-8">
+          <input type="text" class="form-control inputwidth" />
+        </div>
+      </div>
+
+      <div class="form-group col-lg-12">
+        <div class="col-lg-2">
+          <label class="labelalignment1">Message:
+            <span style="color:red;">*</span>
+          </label>
+        </div>
+        <div class="col-lg-8 top">
+          <simple-tiny [elementId]="'stu-editor-id'">
+          </simple-tiny>
+        </div>
+      </div>
+
+      <div class="form-group col-lg-12">
+        <div class="col-lg-2">
+          <label class="labelalignment1">Attachment:
+            <span style="color:red;">*</span>
+          </label>
+        </div>
+
+        <div class="col-lg-8">
+          <input placeholder="Upload File" name="addDocFiles" id="" type="text" class="form-control siz3" readonly="readonly" />
+          <!--<div class="alert alert-danger" *ngIf="addDocForm.controls.addDocFiles.errors">
+          File is required.
+        </div>-->
+          <!-- <div *ngIf="addDocFiles.touched && addDocFiles.invalid" class="error_message siz1 siz3">
+          <div *ngIf="addDocForm.controls.addDocFiles.errors.required">
+            This field is required.
+          </div>
+        </div> -->
+        </div>
+
+
+        <div class="col-lg-2 filebuttons">
+          <label class="btn-bs-file btn btn-primary fileinputlabel">
+            Browse
+            <!--<input type="file" />-->
+            <input #fileInput type="file" class="siz" id="userdoc" name="userdoc" placeholder="Upload file" accept=".pdf,.doc,.docx">
+          </label>
+          <button *ngIf="type == 'student'" type="reset" class="btn-bs-file btn btn-danger">
+            <i class="glyphicon glyphicon-remove"></i>
+            Delete File
+          </button>
+        </div>
+      </div>
+
+      <div class="col-lg-12">
+        <div class="row rowalign">
+          <div class="col-lg-6 pull-right btndivalign">
+            <button class="btn btn-success">
+              <i class="glyphicon glyphicon-ok"></i>
+              Send
+            </button>
+          </div>
+          <div class="col-lg-6 pull-left notealign">
+            <label style="color:red;">Note:&nbsp;
+              <span style="color:red">*</span>&nbsp;denotes mandatory
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <!--To group -->
+  
+    <div *ngIf="type == 'togroup'" class="form-group col-lg-12">
+
+      <div *ngIf="selectedGroup == 'Select'">
+        <div style="visibility:hidden"></div>
+      </div>
+
+      <div class="form-group col-lg-12">
+        <div *ngIf="selectedGroup == 'Group 1'">
+          <div class="col-lg-2">
+            <label class="labelalignment1">Group Members:
+              <span style="color:red;">*</span>
+            </label>
+          </div>
+
+          <div class="col-lg-8 memberalign">
+            <strong>
+              <span *ngFor="let grp1 of group1;let isLast=last">
+                {{grp1.name}}{{isLast ? '' : ', '}}
+              </span>
+            </strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group col-lg-12 memberalign1">
+        <div *ngIf="selectedGroup == 'Group 2'">
+          <div class="col-lg-2">
+            <label class="labelalignment1">Group Members:
+              <span style="color:red;">*</span>
+            </label>
+          </div>
+
+          <div class="col-lg-8 memberalign">
+            <strong>
+              <span *ngFor="let grp2 of group2;let isLast=last">
+                {{grp2.name}}{{isLast ? '' : ', '}}
+              </span>
+            </strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group col-lg-12 memberalign1">
+        <div *ngIf="selectedGroup == 'Group 3'">
+          <div class="col-lg-2">
+            <label class="labelalignment1">Group Members:
+              <span style="color:red;">*</span>
+            </label>
+          </div>
+
+          <div class="col-lg-8 memberalign">
+            <strong>
+              <span *ngFor="let grp3 of group3;let isLast=last">
+                {{grp3.name}}{{isLast ? '' : ', '}}
+              </span>
+            </strong>
+          </div>
+        </div>
+      </div>
+
+      <!--Group 1 -->
+      <div *ngIf="selectedGroup == 'Group 1'">
+        <div class="form-group col-lg-12">
+          <div class="col-lg-2">
+            <label class="labelalignment1">Subject:
+              <span style="color:red;">*</span>
+            </label>
+          </div>
+          <div class="col-lg-8">
+            <input type="text" class="form-control inputwidth" />
+          </div>
+        </div>
+
+        <div class="form-group col-lg-12">
+          <div class="col-lg-2">
+            <label class="labelalignment1">Message:
+              <span style="color:red;">*</span>
+            </label>
+          </div>
+          <div class="col-lg-8 top">
+            <simple-tiny [elementId]="'grp-editor-id'">
+            </simple-tiny>
+          </div>
+        </div>
+
+        <div class="form-group col-lg-12">
+          <div class="col-lg-2">
+            <label class="labelalignment1">Attachment:
+              <span style="color:red;">*</span>
+            </label>
+          </div>
+
+          <div class="col-lg-8">
+            <input placeholder="Upload File" name="addDocFiles" id="" type="text" class="form-control siz3" readonly="readonly" />
+            <!--<div class="alert alert-danger" *ngIf="addDocForm.controls.addDocFiles.errors">
+      File is required.
+    </div>-->
+            <!-- <div *ngIf="addDocFiles.touched && addDocFiles.invalid" class="error_message siz1 siz3">
+      <div *ngIf="addDocForm.controls.addDocFiles.errors.required">
+        This field is required.
+      </div>
+    </div> -->
+          </div>
+
+
+          <div class="col-lg-2 filebuttons">
+            <label class="btn-bs-file btn btn-primary fileinputlabel">
+              Browse
+              <!--<input type="file" />-->
+              <input #fileInput type="file" class="siz" id="userdoc" name="userdoc" placeholder="Upload file" accept=".pdf,.doc,.docx">
+            </label>
+            <button type="reset" class="btn-bs-file btn btn-danger">
+              <i class="glyphicon glyphicon-remove"></i>
+              Delete File
+            </button>
+          </div>
+        </div>
+
+        <div class="col-lg-12">
+          <div class="row rowalign">
+            <div class="col-lg-6 pull-right btndivalign">
+              <button class="btn btn-success">
+                <i class="glyphicon glyphicon-ok"></i>
+                Send
+              </button>
+            </div>
+            <div class="col-lg-6 pull-left notealign">
+              <label style="color:red;">Note:&nbsp;
+                <span style="color:red">*</span>&nbsp;denotes mandatory
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Group 2 -->
+      <div *ngIf="selectedGroup == 'Group 2'">
+        <div class="form-group col-lg-12">
+          <div class="col-lg-2">
+            <label class="labelalignment1">Subject:
+              <span style="color:red;">*</span>
+            </label>
+          </div>
+          <div class="col-lg-8">
+            <input type="text" class="form-control inputwidth" />
+          </div>
+        </div>
+
+        <div class="form-group col-lg-12">
+          <div class="col-lg-2">
+            <label class="labelalignment1">Message:
+              <span style="color:red;">*</span>
+            </label>
+          </div>
+          <div class="col-lg-8 top">
+            <simple-tiny [elementId]="'grp1-editor-id'">
+            </simple-tiny>
+          </div>
+        </div>
+
+        <div class="form-group col-lg-12">
+          <div class="col-lg-2">
+            <label class="labelalignment1">Attachment:
+              <span style="color:red;">*</span>
+            </label>
+          </div>
+
+          <div class="col-lg-8">
+            <input placeholder="Upload File" name="addDocFiles" id="" type="text" class="form-control siz3" readonly="readonly" />
+            <!--<div class="alert alert-danger" *ngIf="addDocForm.controls.addDocFiles.errors">
+          File is required.
+        </div>-->
+            <!-- <div *ngIf="addDocFiles.touched && addDocFiles.invalid" class="error_message siz1 siz3">
+          <div *ngIf="addDocForm.controls.addDocFiles.errors.required">
+            This field is required.
+          </div>
+        </div> -->
+          </div>
+
+
+          <div class="col-lg-2 filebuttons">
+            <label class="btn-bs-file btn btn-primary fileinputlabel">
+              Browse
+              <!--<input type="file" />-->
+              <input #fileInput type="file" class="siz" id="userdoc" name="userdoc" placeholder="Upload file" accept=".pdf,.doc,.docx">
+            </label>
+            <button type="reset" class="btn-bs-file btn btn-danger">
+              <i class="glyphicon glyphicon-remove"></i>
+              Delete File
+            </button>
+          </div>
+        </div>
+
+        <div class="col-lg-12">
+          <div class="row rowalign">
+            <div class="col-lg-6 pull-right btndivalign">
+              <button class="btn btn-success">
+                <i class="glyphicon glyphicon-ok"></i>
+                Send
+              </button>
+            </div>
+            <div class="col-lg-6 pull-left notealign">
+              <label style="color:red;">Note:&nbsp;
+                <span style="color:red">*</span>&nbsp;denotes mandatory
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Group 3 -->
+      <div *ngIf="selectedGroup == 'Group 3'">
+        <div class="form-group col-lg-12">
+          <div class="col-lg-2">
+            <label class="labelalignment1">Subject:
+              <span style="color:red;">*</span>
+            </label>
+          </div>
+          <div class="col-lg-8">
+            <input type="text" class="form-control inputwidth" />
+          </div>
+        </div>
+
+        <div class="form-group col-lg-12">
+          <div class="col-lg-2">
+            <label class="labelalignment1">Message:
+              <span style="color:red;">*</span>
+            </label>
+          </div>
+          <div class="col-lg-8 top">
+            <simple-tiny [elementId]="'grp2-editor-id'">
+            </simple-tiny>
+          </div>
+        </div>
+
+        <div class="form-group col-lg-12">
+          <div class="col-lg-2">
+            <label class="labelalignment1">Attachment:
+              <span style="color:red;">*</span>
+            </label>
+          </div>
+          <div class="col-lg-8">
+            <input placeholder="Upload File" name="addDocFiles" id="" type="text" class="form-control siz3" readonly="readonly" />
+            <!--<div class="alert alert-danger" *ngIf="addDocForm.controls.addDocFiles.errors">
+              File is required.
+            </div>-->
+            <!-- <div *ngIf="addDocFiles.touched && addDocFiles.invalid" class="error_message siz1 siz3">
+              <div *ngIf="addDocForm.controls.addDocFiles.errors.required">
+                This field is required.
+              </div>
+            </div> -->
+          </div>
+          <div class="col-lg-2 filebuttons">
+            <label class="btn-bs-file btn btn-primary fileinputlabel">
+              Browse
+              <!--<input type="file" />-->
+              <input #fileInput type="file" class="siz" id="userdoc" name="userdoc" placeholder="Upload file" accept=".pdf,.doc,.docx">
+            </label>
+            <button type="reset" class="btn-bs-file btn btn-danger">
+              <i class="glyphicon glyphicon-remove"></i>
+              Delete File
+            </button>
+          </div>
+        </div>
+
+        <div class="col-lg-12">
+          <div class="row rowalign">
+            <div class="col-lg-6 pull-right btndivalign">
+              <button class="btn btn-success">
+                <i class="glyphicon glyphicon-ok"></i>
+                Send
+              </button>
+            </div>
+            <div class="col-lg-6 pull-left notealign">
+              <label style="color:red;">Note:&nbsp;
+                <span style="color:red">*</span>&nbsp;denotes mandatory
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,705 @@
+        /* You can add global styles to this file, and also import other style files */
+        body{
+                font-size:12px;
+        }
+        .menu-navbar{
+                width:100%;
+        }
+        .cursor-pointer{
+                cursor: pointer;
+        }
+        /*.footer-padding{
+                padding:1px;
+        }*/
+        .warning-msg{
+                background-color:#faebcc;
+        }
+        .danger-msg{
+                background-color: red;
+        }
+        .success-msg{
+                background-color: #d6e9c6
+        }
+        .info-msg{
+                background-color: #bce8f1;
+        }
+        .college-logo{
+                margin-top: -39px;
+                margin-right: 8px;
+        }
+        /* over write the bootstrap dropdown-menu */
+        .navbar-nav > .user-menu > .dropdown-menu{
+                background-color: #fff !important;
+        }
+        .content-header {
+                position: relative !important;
+                padding: 0px 0px 0px 0px !important;
+            }
+        .sidenav-onscroll{
+                padding-top: 0px !important;
+        }
+        /* Over write of SideNavbar */
+        .sidenavbar{
+                position: relative;
+                padding-top: 88px;
+                padding-bottom: 10px;
+            }
+
+    
+
+        .multi .dropdown-toggle{  
+        width:132px; 
+        text-align: left;
+        font-size:12px;
+        }
+
+        .error_message{          
+           
+           color: #DD4B39;
+        }
+      
+        
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+    border:1px  gray;
+    background-color: rgb(245, 243, 243);
+     color: black;
+  }
+
+
+  div .dropdown-menu {
+        background-color:white;
+        color:black;
+        
+}
+ul li span{
+        color:black;
+}
+
+.section .dropdown-toggle {  
+        width: 80px; 
+        text-align: left;
+        margin-left:-14px;
+        font-size:12px;
+        height:35px;
+}
+.topic .dropdown-toggle {  
+        width: 150px; 
+        text-align: left;
+}
+
+.topic_multiselect .dropdown-toggle {
+        width: 444px;
+        text-align: left;
+}
+
+.multiselect1 .dropdown-toggle{
+        width: 665px;
+        text-align: left;
+        font-size:12px;
+}
+
+.section ul {
+        margin-left:-15px;
+        width:100%;
+}
+.section .dropdown-menu {
+        min-width: 80px;
+}
+
+.btn{
+        font-size: 12px !important;
+}
+
+.dropdown-menu > li > a{
+        font-size:12px;
+}
+
+.sidebar-mini.sidebar-collapse .section1 .dropdown-toggle{
+        width: 475px;
+        text-align: left;
+        margin-left: -15px;
+}
+
+/* Topic drop-down in Activity add page css set */
+@media (min-width:320px) { 
+        /* smartphones, iPhone, portrait 480x320 phones */
+        .topic_multiselect .dropdown-toggle {
+                width: 295px;
+                text-align: left;
+        }
+}
+@media (min-width:481px) { 
+        /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+        .topic_multiselect .dropdown-toggle {
+                width: 450px;
+                text-align: left;
+        }
+}
+@media (min-width:641px) { 
+        /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
+        .topic_multiselect .dropdown-toggle {
+                width: 680px;
+                text-align: left;
+        }
+}
+@media (min-width:961px) { 
+        /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+        .topic_multiselect .dropdown-toggle {
+                width: 525px;
+                text-align: left;
+        }
+}
+@media (min-width:1025px) { 
+        /* big landscape tablets, laptops, and desktops */ 
+        .topic_multiselect .dropdown-toggle {
+                width: 335px;
+                text-align: left;
+        }
+}
+@media (min-width:1281px) { 
+        /* hi-res laptops and desktops */ 
+        .topic_multiselect .dropdown-toggle {
+                width: 430px;
+                text-align: left;
+        }
+}
+
+
+@media (max-width: 768px) {
+        
+                      .departmentListDiv{
+                              margin-top: 34px;
+                      }
+                      .college-logo{
+                        margin-top: -48px !important;
+                        margin-right: 8px;
+                     }
+                         
+                }
+
+      @media screen and (max-width: 480px) { 
+
+        .section .dropdown-toggle {  
+                width: 301px;
+                text-align: left;
+                font-size:12px;
+        }
+
+        .topic .dropdown-toggle {  
+                width: 297px;
+                text-align: left;
+        }
+
+      .multiselect .dropdown-toggle{
+              width:272px;
+              text-align: left;
+              font-size:12px;
+      }
+      .multiselect1 .dropdown-toggle{
+        width: 300px;
+        text-align: left;
+        }
+}
+      @media screen and (max-height: 360px) {
+       
+        .section .dropdown-toggle, .topic_multiselect .dropdown-toggle {  
+                width:566px; 
+                text-align: left;
+        }
+
+        .topic .dropdown-toggle {  
+                width: 550px;
+                text-align: left;
+        }
+        
+        .multiselect .dropdown-toggle {
+                width:538px;
+                text-align: left;
+        }
+        .multiselect1 .dropdown-toggle{
+                width:570px;
+                text-align: left;
+        }
+}
+
+
+      .text-display {
+        overflow: hidden;
+        white-space: nowrap;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+      }
+
+.multi div .dropdown-toggle{
+       
+        overflow: hidden;
+        white-space: nowrap;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+}
+
+/* style for multiselect dropdown caret icon in add\edit assignment question in Assignment Module*/
+
+.multiselect .dropdown-toggle .caret{
+        float:right;
+        right:0;
+        margin-top:-10px;
+        /* position:fixed; */
+}
+
+.clo button .caret
+{
+        /* float: right; */
+        /* margin-top:6px  !important; */
+        margin-left: 60px !important;
+        vertical-align: middle;
+        /* border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important; */
+        color:#555555;
+}
+.pi button .caret
+{
+        /* float: right; */
+        margin-left:60px  !important;
+        vertical-align: middle;
+        /* border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important; */
+        color:#555555;
+}
+.topics button .caret
+{
+        /* float: right; */
+        margin-left:60px  !important;
+        vertical-align: middle;
+        /* border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important; */
+        color:#555555;
+}
+.tlo button .caret
+{
+        /* float: right; */
+        margin-left:60px  !important;
+        vertical-align: middle;
+        /* border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important; */
+        color:#555555;
+}
+.bloom button .caret
+{
+        /* float: right; */
+        /* margin-top:8%  !important; */
+        margin-left: 60px !important;
+        vertical-align: middle;
+        /* border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important; */
+        color:#555555;
+}
+.diff button .caret
+{
+        /* float: right; */
+        /* margin-top:8%  !important; */
+        margin-left: 60px !important;
+        vertical-align: middle;
+        /* border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important; */
+        color:#555555;
+}
+.quest button .caret
+{
+        /* float: right; */
+        margin-left:60px  !important;
+        vertical-align: middle;
+        /* border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important; */
+        color:#555555;
+}
+/* style for multiselect dropdown caret icon in Share Course Material Module*/
+.multiselect1 button .caret
+{
+        float: right;
+        margin-top:-1%;
+        margin-left: 565px !important;
+        vertical-align: middle;
+        /* border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important; */
+        color:#555555;
+}
+.sidebar-mini.sidebar-collapse .multiselect1 button .caret{
+        margin-top:1%;
+      }  
+
+/* style for profile dropdown menu in Menu bar  caret icon*/
+/* .dropdown-toggle .cart{
+        margin-top:10px;
+} */
+/* style for section dropdown caret icon */
+.section button .caret {
+        /* margin-left:90% !important;
+        vertical-align: center;
+        border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important;
+        color:#555555; */
+        float: right;
+        vertical-align: middle;
+        margin-top: 8px;
+        border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important;
+        color:#555555;
+}
+
+/* style for topic & topic_multiselect dropdown caret icon */
+.topic button .caret, .topic_multiselect button .caret {
+        /* margin-left:90% !important;
+        vertical-align: center;
+        border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important;
+        color:#555555; */
+        float: right;
+        vertical-align: middle;
+        margin-top: 8px;
+        border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important;
+        color:#555555;
+}
+        .section1  .dropdown-toggle 
+        {
+        width: 392px;
+        text-align: left;
+        margin-left: -14px;
+        font-size:12px;
+         }
+      
+        .section1 .dropdown .dropdown-toggle .caret
+         {
+          float: right;
+          margin-top:1%  !important;         
+          vertical-align: middle;
+          border-right: 3px solid transparent !important;
+          border-left:3px solid transparent !important;
+          border-top:6px solid !important;
+          color:#555555;
+         }
+
+
+
+
+      @media screen and (max-width: 480px)  { 
+
+        .lesStrap  .dropdown-toggle {
+                width: 270px;
+                text-align: left;
+                margin-left: -43px;
+                font-size:12px;
+        }
+              
+        .lesStrap .dropdown .dropdown-toggle .caret
+          {
+                  float: right;
+                  margin-top:1%  !important;         
+                  vertical-align: middle;
+                  border-right: 3px solid transparent !important;
+                  border-left:3px solid transparent !important;
+                  border-top:6px solid !important;
+                  color:#555555;
+          }
+      
+                .toplesson .mydp   {
+                        margin-left:-30px;
+                        width: 272px !important;    
+                        border-color: #ccc;
+                        } 
+                        
+.multiselect1 button .caret
+{
+        float: right;
+        margin-top:-5%  !important;
+        margin-left: 85% !important;
+        vertical-align: middle;
+        /* border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important; */
+        color:#555555;
+       
+}
+
+.multiselect .dropdown-toggle .caret{
+        float:right;
+        right:0;
+        margin-top:-10px;
+        /* position:fixed; */
+}
+
+.clo button .caret
+{
+        float: right;
+        margin-top:10px  !important;
+        margin-left: 60px !important;
+        vertical-align: middle;
+        /* border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important; */
+        color:#555555;
+}
+.pi button .caret
+{
+        float: right;
+        margin-top:-10px  !important;
+        margin-left:203px  !important;
+        vertical-align: middle;
+        /* border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important; */
+        color:#555555;
+}
+.topics button .caret
+{
+        /* float: right; */
+        float: right;
+        margin-top:-8px  !important;
+        margin-left:203px  !important;
+        vertical-align: middle;
+        /* border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important; */
+        color:#555555;
+}
+.tlo button .caret
+{
+        float: right;
+        margin-top:-8px  !important;
+        margin-left:203px  !important;
+        vertical-align: middle;
+        /* border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important; */
+        color:#555555;
+}
+.bloom button .caret
+{
+        float: right;
+        margin-top:4%  !important;
+        vertical-align: middle;
+        /* border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important; */
+        color:#555555;
+}
+.diff button .caret
+{
+        float: right;
+        margin-top:4%  !important;
+        vertical-align: middle;
+        /* border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important; */
+        color:#555555;
+}
+.quest button .caret
+{
+        /* float: right; */
+        float: right;
+        margin-top:-8px  !important;
+        margin-left:203px  !important;
+        vertical-align: middle;
+        /* border-right: 3px solid transparent !important;
+        border-left:3px solid transparent !important;
+        border-top:6px solid !important; */
+        color:#555555;
+}
+
+/*.skin-blue .main-header .navbar {
+    background-color: rgb(35, 47, 62);
+    height: 0px;
+    margin-top: 16px;
+}*/
+      }  
+
+      @media screen and (max-height: 360px) {
+
+
+        .lesStrap  .dropdown-toggle {
+                width: 538px;
+                text-align: left;
+                margin-left: -45px;
+                font-size:12px;
+        }
+              
+        .lesStrap .dropdown .dropdown-toggle .caret
+          {
+                  float: right;
+                  margin-top:1%  !important;         
+                  vertical-align: middle;
+                  border-right: 3px solid transparent !important;
+                  border-left:3px solid transparent !important;
+                  border-top:6px solid !important;
+                  color:#555555;
+          }
+          .toplesson .mydp   {
+                margin-left:-30px;
+                width: 539px !important;    
+                border-color: #ccc;
+                } 
+               
+
+
+        .multiselect1 button .caret
+        {
+                float: right;
+                margin-top:1%;
+                margin-left:85%  !important;
+                vertical-align: middle;
+                /* border-right: 3px solid transparent !important;
+                border-left:3px solid transparent !important;
+                border-top:6px solid !important; */
+                color:#555555;
+        }
+
+       
+
+        .multiselect .dropdown-toggle .caret{
+                float:right;
+                right:0;
+                margin-top:-10px;
+                /* position:fixed; */
+        }
+        
+        .clo button .caret
+        {
+                float: right;
+                margin-top:10px  !important;
+                margin-left: 60px !important;
+                vertical-align: middle;
+                /* border-right: 3px solid transparent !important;
+                border-left:3px solid transparent !important;
+                border-top:6px solid !important; */
+                color:#555555;
+        }
+        .pi button .caret
+        {
+                float: right;
+                margin-top:-10px  !important;
+                margin-left:90%  !important;
+                vertical-align: middle;
+                /* border-right: 3px solid transparent !important;
+                border-left:3px solid transparent !important;
+                border-top:6px solid !important; */
+                color:#555555;
+        }
+        .topics button .caret
+        {
+                float: right;
+                margin-top: -10px !important;
+                margin-left:90% !important;
+                vertical-align: middle;
+                /* border-right: 3px solid transparent !important;
+                border-left:3px solid transparent !important;
+                border-top:6px solid !important; */
+                color:#555555;
+        }
+        .tlo button .caret
+        {
+                float: right;
+                margin-top: -10px !important;
+                margin-left:90%  !important;
+                vertical-align: middle;
+                color:#555555;
+        }
+        .bloom button .caret
+        {
+                float: right;
+                margin-top:2%  !important;
+                vertical-align: middle;
+                color:#555555;
+        }
+        .diff button .caret
+        {
+                float: right;
+                margin-top:2%  !important;
+                vertical-align: middle;
+                color:#555555;
+        }
+        .quest button .caret
+        {
+                float: right;
+                margin-top: -10px !important;
+                margin-left:90%  !important;
+                vertical-align: middle;
+                color:#555555;
+        }
+
+        /*.skin-blue .main-header .navbar {
+    background-color: rgb(35, 47, 62);
+    height: 0px;
+    margin-top: 17px;
+}*/
+       
+      }
+      
+
+
+
+/* .skin-blue .main-header .navbar .sidebar-toggle:hover {
+    margin-top: 40%;
+    padding-bottom: 0px;
+} */
+
+
+  
+  /* accordion styles for manage students  */
+  .submit .panel-default .panel-heading .panel-title a {
+          font-size:12px;
+  
+  }
+  
+  .not-submit .panel-default .panel-heading .panel-title a {
+          font-size:12px;
+  
+  }
+
+  
+  .view-question .panel-default .panel-heading .panel-title a{
+        font-size:12px;
+
+  }
+  .form-control{
+        font-size: 12px !important;
+  }
+  
+
+/* enable absolute positioning */
+.inner-addon {
+        position: relative;
+      }
+      
+      /* style glyph */
+      .inner-addon .glyphicon {
+        position: absolute;
+        padding: 10px;
+        pointer-events: none;
+      }
+      
+      /* align glyph */
+      .left-addon .glyphicon  { left:  0px;}
+      .right-addon .glyphicon { right: 0px;}
+      
+      /* add padding  */
+      .left-addon input  { padding-left:  30px; }
+      .right-addon input { margin-right: 10px; }
+      
+      .panel-collapse {
+        background-color: #f5f5f5;
+        }

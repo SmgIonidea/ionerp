@@ -1,0 +1,89 @@
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Books Availability</h4>
+  </div>
+</section>
+<div class="container-fluid">
+  <form class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="category">Search:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12 category" style="margin-left:-60px;">
+        <select name="" id="" class="form-control">
+          <option [ngValue]="0" selected>Select</option>
+          <option [ngValue]="allbooks">Allbooks</option>
+          <option [ngValue]="Availablebooks">Availablebooks</option>
+          <option [ngValue]="Issuedbooks">Issuedbooks</option>
+          <option [ngValue]="Reservedbooks">Reservedbooks</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="category">Category:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12 category" style="margin-left:-60px;">
+        <select name="" id="" class="form-control">
+          <option [ngValue]="0" selected>Select Category name</option>
+          <option [ngValue]="Kannada">Kannada</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="category">SubCategory:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12 category" style="margin-left:-60px;">
+        <select name="" id="" class="form-control">
+          <option [ngValue]="0" selected>Select Category name</option>
+          <option [ngValue]="Kannada">Kannada</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group col-md-12">
+      <button id="" type="submit" class="btn btn-primary pull-right">
+        <i class="glyphicon glyphicon-search"></i>&nbsp;Search
+      </button>
+    </div>
+    <br>
+  </form>
+</div>
+<br>
+<form class="form-horizontal" style="border-top:1px;">
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <th class="text-center">Sl No.</th>
+          <th class="text-center">Accession NO</th>
+          <th class="text-center">Title</th>
+          <th class="text-center">Category / Subcategory</th>
+          <th class="text-center">Author</th>
+          <th class="text-center">Publisher</th>
+          <th class="text-center">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--<tr>
+        <td></td>
+        <td></td>
+        <td class="text-center">
+          <i #editElement class="glyphicon glyphicon-pencil cursor-pointer"></i>
+        </td>
+        <td class="text-center">
+          <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer">
+         </i>
+        </td>
+      </tr>-->
+      </tbody>
+    </table>
+  </div>
+  <br>
+</form>

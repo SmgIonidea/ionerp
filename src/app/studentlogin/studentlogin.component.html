@@ -1,0 +1,65 @@
+<div class="container">
+  <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div class="panel panel-primary">
+      <div class="panel-heading" style="background-color:rgb(35, 47, 62)">
+        <div class="panel-title">Sign In</div>
+      </div>
+      <div style="padding-top:30px" class="panel-body">
+        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+        <form id="studentloginform" class="form-horizontal" role="form" [formGroup]="studentform" (ngSubmit)='studentlogin(studentform)'>
+          <div style="margin-bottom: 25px" class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-user" style="color:grey;"></i>
+            </span>
+            <input formControlName="username" id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">
+          </div>
+          <div class="error_message" style="margin-top:-18px;font-size:12px;" *ngIf="studentform.submitted && username.untouched">
+            This field is required.
+          </div>
+          <div class="center" *ngIf="username.touched && username.invalid" class="error_message">
+            <div *ngIf="username.errors.required" style="margin-top:-18px;font-size:12px;">
+              This field is required.
+            </div>
+          </div>
+          <div style="margin-bottom: 25px" class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-lock" style="color:grey;"></i>
+            </span>
+            <input id="login-password" formControlName="password" type="password" class="form-control" name="password" placeholder="password">
+          </div>
+          <div class="error_message" style="margin-top:-18px;font-size:12px;" *ngIf="studentform.submitted && password.untouched">
+            This field is required.
+          </div>
+          <div *ngIf="password.touched && password.invalid" class="error_message">
+            <div *ngIf="password.errors.required" style="margin-top:-18px;font-size:12px;">
+              This field is required.
+            </div>
+          </div>
+          <div class="form-group">
+            <!-- Button -->
+            <div class="col-sm-12 controls">
+              <input id="btn-login" type="submit" value="Log-In" href="#" class="btn btn-primary pull-right" [disabled]="!studentform.valid"
+              />
+              <div class="input-group" style="margin-left:16px;">
+                <!-- <div class="checkbox">
+                  <label>
+                    <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
+                  </label>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-12 control">
+              <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                Don't remember password!
+                <a href="#">Forgot password?</a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+</div>

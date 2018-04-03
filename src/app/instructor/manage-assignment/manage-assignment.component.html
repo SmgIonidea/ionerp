@@ -1,0 +1,435 @@
+<section class="content-header">
+  <!--<div class="headline">-->
+  <!--Div for Page Headings -->
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add / Edit Assignment</h4>
+  </div>
+  <!--</div>-->
+  <!-- Page Headings Div Ends Here -->
+</section>
+<br>
+<form class="form-horizontal" style="margin-top: -1%;">
+  <div class="category">
+    <div class="col-lg-3 Column" data-key="lg_crclm">Curriculum:
+      <label style="color:blue;">{{curriculumValue}}</label>
+    </div>
+    <div class="col-lg-3 Column" data-key="lg_term">Term:
+      <label style="color:blue;">{{termValue}}</label>
+    </div>
+    <div class="col-lg-2 Column text-display Column-margin" data-key="lg_course_type" data-toggle="tooltip" title={{courseValue}}>Course:
+      <label style="color:blue;">{{courseValue}}</label>
+    </div>
+    <div class="col-lg-1 Column" style="margin-left:5%;" data-key="lg_section">Section:
+      <label style="color:blue;" *ngFor="let section of sectionName">{{section.mt_details_name}}</label>
+    </div>
+    <div *ngFor="let assignment of assignmentName" data-key="lg_assignment_head" style="margin-left:2%;"class="col-lg-3 Column"
+      data-toggle="tooltip" title={{assignment.assignment_name}}>Assignment Head:
+      <label style="color:blue;">{{assignment.assignment_name}}</label>
+    </div>
+  </div>
+ <br><br>
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table  class="table table-bordered table-striped table-hover" style="width:100%;">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <th class="text-center">
+            <input type="checkbox" id="checkAllQuestions" (click)="deleteAllSelected($event)">
+          </th>
+          <th class="text-center key-data" style="width:5%;" data-key="lg_slno">Q.No</th>
+          <th style="width:169px;" data-key="lg_assign_quest">Assignment Question</th>
+          <th *ngIf = 'tableCO' style="width:80px;" data-key="lg_crs_outcome">Course Outcome(s)</th>
+          <th *ngIf = 'tablePI' style="width:85px;" data-key="lg_pis">Performance Indicator(s)</th>
+          <th *ngIf = 'tableTopic' style="width:82px;" data-key="lg_topics">Topic(s)</th>
+          <th *ngIf = 'tableTLO' style="width:100px;" data-key="lg_tlo">Topic Learning Outcome(s)</th>
+          <th *ngIf = 'tableBloom' style="width:72px;" data-key="lg_blooms_level">Bloom's Level</th>
+          <th *ngIf = 'tableDL' style="width:77px;" data-key="lg_diff_level">Difficulty Level</th>
+          <th *ngIf = 'tableQT' style="width:76px;" data-key="lg_quest_type">Question Type</th>
+          <th  style="width: 35px;;" data-key="lg_marks">Marks</th>
+          <th class="text-center" data-key="lg_edit">Edit</th>
+          <th class="text-center" data-key="lg_delete">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let assign of assignmentQuests let i = index'>
+          <td class="text-center">
+           
+            <input type="checkbox" [attr.id]='assign.aq_id' (click)="deleteSelected(assign.aq_id)">
+           
+          </td>
+
+          <td>
+            <p class="pull-right">{{assign.main_que_num}}</p>
+          </td>
+          <td style="width:5px;" [innerHTML]="assign.que_content"></td>
+
+          <td *ngIf = 'tableCO' >
+
+            <span>
+              {{assign.clo}}
+              
+            </span>
+          </td>
+          <td *ngIf = 'tablePI'>
+            <span>
+              {{assign.pi}}
+            </span>
+          </td>
+          <td *ngIf = 'tableTopic'>
+            <span>
+              {{assign.topic}}
+            </span>
+          </td>
+          <td *ngIf = 'tableTLO'>
+            <span>
+              {{assign.tlo}}
+            </span>
+          </td>
+          <td *ngIf = 'tableBloom'>
+            <span>
+              {{ assign.bloom}}
+            </span>
+          </td>
+          <td *ngIf = 'tableDL'>
+            <span>
+              {{assign.diff}}
+            </span>
+          </td>
+          <td *ngIf = 'tableQT'>
+            <span>
+              {{assign.que_type}}
+              <br>
+            </span>
+
+          </td>
+          <td *ngIf="assign.que_max_marks == 0.00"></td>
+          <td *ngIf="assign.que_max_marks != 0.00"> {{assign.que_max_marks}}</td>
+          <td class="text-center center">
+            <i pageScroll href="#edit_assign" #editElement class="glyphicon glyphicon-pencil cursor-pointer" [attr.assignmentQuestioniId]="assign.aq_id"
+              (click)="editassignmentQuestions(this.editElement)"></i>
+          </td>
+          <td class="text-center center">
+            <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer" [attr.assignmentId]="assign.aq_id" (click)="deleteWarning(this.deleteElement,this.assignmentDeleteModal)"></i>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+    <!--</form>-->
+  </div>
+
+  <div>
+    <button type="button" style="display:none;" class="btn btn-danger pull-right" id="delete_question" (click)="deleteAllWarning(this.deleteAllElement,this.assignmentDeleteAllModal)">
+      <i #deleteAllElement class="glyphicon glyphicon-remove"></i> Delete All
+    </button>
+  </div>
+  <br>
+  <br>
+</form>
+<br>
+<br>
+
+<!--ADD-->
+<section class="content-header" style="margin-top:-30px;">
+  <!--<div class="headline">-->
+  <!--Div for Page Headings -->
+  <div class="panel panel-primary">
+    <h4 class="middle middle1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{title}}</h4>
+  </div>
+  <!--</div>-->
+  <!-- Page Headings Div Ends Here -->
+</section>
+<div class="container-fluid" *ngIf="!showEdit" id="edit_assign">
+  <form #newAssignmentForm="ngForm" [formGroup]="manageAssignmentForm">
+
+    <div class="row col-md-12">
+      <div class="form-group col-md-4">
+        <div class="form-group col-md-12">
+          <div class="col-md-5">
+            <label style="margin-left:-45px;display:inline;" for="" class="control-label">
+              <span class="key-data" data-key="lg_slno">Q.No:</span>
+              <font color="red">*</font>
+            </label>
+          </div>
+          <div class="col-md-7">
+            <input style="direction:RTL;" type="text" name="" id="qno" placeholder="Q.No" formControlName="qno" value="" class="form-control top"
+            />
+            <div class="error_message top" *ngIf="manageAssignmentForm.submitted && qno.untouched">
+              This field is required.
+            </div>
+            <div *ngIf="qno.touched && qno.invalid" class="error_message top">
+              <div *ngIf="qno.errors.required">
+                This field is required.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id='clo' class="form-group col-md-12">
+          <div class="col-md-5">
+            <label style="margin-left:-45px;display:inline;" class="key-data" data-key="lg_crs_outcome">Course Outcome: </label>
+          </div>
+          <div *ngFor="let post of courseList">
+            <input type="hidden" name="entity" formControlName="entityclo" id="entity" [(ngModel)]="post.cloentity" />
+          </div>
+          <div class="col-md-7">
+            <ss-multiselect-dropdown class="multi top multiselect clo" formControlName="courseOutcome" [options]="courseList" name="courseOutcome"
+              [(ngModel)]="optionsModel" (ngModelChange)="getplo($event)" [texts]="myClo" data-toggle="tooltip" title="Select Course Outcomes">
+            </ss-multiselect-dropdown>
+           
+          </div>
+        </div>
+        <div id='po_clo_crs' class="form-group col-md-12">
+          <div class="col-md-5">
+            <label style="margin-left:-45px;" for="" class="control-label" class="key-data" data-key="lg_pis">Performance Indicator: </label>
+          </div>
+          <div *ngFor="let post of performanceList">
+            <input type="hidden" name="entitypo" formControlName="entitypo" id="entitypo" [(ngModel)]="post.poentity" />
+          </div>
+          <div class="col-md-7">
+ 
+            <ss-multiselect-dropdown class="multi top multiselect pi" formControlName="performanceIndicators" [options]="performanceList"
+              name="performanceIndicators" [(ngModel)]="optionsModel1" [texts]="myPi" data-toggle="tooltip" title="Select Performance Indicator">
+            </ss-multiselect-dropdown>
+          </div>
+        </div>
+        <div id='topic' class="form-group col-md-12">
+          <div class="col-md-5">
+            <label style="margin-left:-45px;display:inline;" for="" class="control-label" class="key-data" data-key="lg_topics">Topic:
+              <font color="red">*</font>
+            </label>
+          </div>
+          <div *ngFor="let post of topicList">
+            <input type="hidden" name="entitytopic" formControlName="entitytopic" id="entitytopic" [(ngModel)]="post.topicentity" />
+          </div>
+          <div class="col-md-7">
+
+            <ss-multiselect-dropdown class="multi top multiselect topics" formControlName="topics" [options]="topicList" name="topics"
+              [(ngModel)]="optionsTlo" (click)="getErrorMsg()" (ngModelChange)="gettlo($event)" [texts]="myTopics" data-toggle="tooltip" title="Select Topics">
+            </ss-multiselect-dropdown>
+            <div class="error_message top resp" *ngIf="manageAssignmentForm.submitted && topics.untouched">
+              This field is required.
+            </div>
+            <div *ngIf="topics.invalid && topics.touched" class="error_message top resp">
+              <div *ngIf="topics.errors.required " id="topic_req" [style.display]="hideMsg?'none':'block'" >
+                This field is required.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id='tlo' class="form-group col-md-12">
+          <div class="col-md-5">
+            <label style="margin-left:-45px;max-width:initial;" for="" class="control-label">
+              <span class="key-data" data-key="lg_tlo">Topic Learning Outcome:</span>
+
+            </label>
+          </div>
+          <div *ngFor="let post of topiclearningList">
+            <input type="hidden" name="entitytlo" formControlName="entitytlo" id="entitytlo" [(ngModel)]="post.tloentity" />
+          </div>
+          <div class="col-md-7">
+
+            <ss-multiselect-dropdown class="multi top multiselect tlo" formControlName="tlo" [options]="topiclearningList" name="topiclearningList"
+              [(ngModel)]="optionsModel3" [texts]="myTlo" data-toggle="tooltip" title="Select TLO">
+            </ss-multiselect-dropdown>
+
+          </div>
+        </div>
+        <div id='blooms_level' class="form-group col-md-12">
+          <div class="col-md-5">
+            <label style="margin-left:-45px;display:inline;" for="" class="control-label">Bloom's Level: </label>
+          </div>
+          <div *ngFor="let post of bloomsList">
+            <input type="hidden" name="entitybloom" formControlName="entitybloom" id="entitybloom" [(ngModel)]="post.bloomentity" />
+          </div>
+          <div class="col-md-7">
+
+            <ss-multiselect-dropdown class="multi top multiselect bloom" formControlName="bloomLevel" [options]="bloomsList" name="bloom"
+              [(ngModel)]="optionsModel4" [texts]="myBl" data-toggle="tooltip" title="Select Bloom's Level">
+            </ss-multiselect-dropdown>
+          </div>
+        </div>
+        <div id='difficulty_level' class="form-group col-md-12">
+          <div class="col-md-5">
+            <label style="margin-left:-45px;display:inline;" for="" class="control-label key-data" data-key="lg_diff_level">Difficulty Level: </label>
+          </div>
+          <div *ngFor="let post of difficultyList">
+            <input type="hidden" name="entitydifficulty" formControlName="entitydifficulty" id="entitydifficulty" [(ngModel)]="post.difficultyentity"
+            />
+          </div>
+          <div class="col-md-7">
+
+            <ss-multiselect-dropdown class="multi top multiselect diff" formControlName="difficultyLevel" [options]="difficultyList"
+              name="difficulty" [(ngModel)]="optionsModel5" [texts]="myDl" data-toggle="tooltip" title="Select Difficulty Level">
+            </ss-multiselect-dropdown>
+          </div>
+        </div>
+
+        <div id='question_type' class="form-group col-md-12">
+          <div class="col-md-5">
+            <label style="margin-left:-45px;display:inline;" for="" class="control-label key-data" data-key="lg_quest_type">Question Type: </label>
+          </div>
+          <div *ngFor="let post of questionList">
+            <input type="hidden" name="entityquestion" formControlName="entityquestion" id="entityquestion" [(ngModel)]="post.questionentity"
+            />
+          </div>
+          <div class="col-md-7">
+
+            <ss-multiselect-dropdown class="multi top multiselect quest" formControlName="questType" [options]="questionList" name="questions"
+              [(ngModel)]="optionsModel6" [texts]="myQt" data-toggle="tooltip" title="Select Question Type">
+            </ss-multiselect-dropdown>
+          </div>
+        </div>
+        <div *ngIf='showMarks' class="form-group col-md-12">
+          <div class="col-md-5">
+            <label style="margin-left:-45px;display:inline;" for="" class="control-label">Marks: </label>
+          </div>
+          <div class="col-md-7">
+            <input type="text" style="direction:RTL;" name="" id="marks" formControlName="marks" value="" class="form-control top" (click)="marksValidation(manageAssignmentForm)"
+              placeholder="" />
+            <div class="error_message top resp" *ngIf="manageAssignmentForm.submitted && marks.dirty">
+              This field accept only integers which should be greater than zero(0).
+            </div>
+            <div *ngIf="marks.touched && marks.invalid" class="error_message top">
+              <div *ngIf="marks.errors.DigitsOnlyStart" id="error_marks">
+                This field accept only integers which should be greater than zero(0).
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-md-8">
+        <div class=" form-group col-md-12 tiny" [style.display]="isTinyMce?'block':'none'">
+          <div class="col-md-12">
+            <label for="" class="control-label pull-left drag-left-label key-data">
+              <span class="key-data" data-key="lg_assign_quest">Assignment Question:</span>
+              <font color="red">*</font>
+            </label>
+          </div>
+          <br>
+
+         
+          <!-- <simple-tiny [elementId]="'my-editor-id'" [InitialText]='tinyMcedata' class="top" formControlName="assignQuest" ngDefaultControl>
+          </simple-tiny> -->
+          <p id="error_tinymce" class="error_message siz1 siz3"></p>
+        </div>
+
+        <div class="form-group pull-left totalmarks">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <label for="department" class="control-label totalmarkslabel key-data" data-key="lg_ttl_marks">Total Marks:</label>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" *ngFor="let assignmenthead of assignmentName">
+            <input formControlName="totalMarks" style="direction:RTL;cursor:not-allowed;" type="text" name="" id="" class="form-control totalmarksinput"
+              value={{newTotalMarks}} placeholder="" readonly/>
+          </div>
+        </div>
+        <div class="form-group col-md-12"></div>
+       
+        <div [style.display]="isSaveHide?'none':'block'" class="form-group pull-right row col align-self-end">
+
+          <button class="btn-bs-file btn btn-success" [style.display]="isUpload?'inline':'none'">
+           
+            <input #fileInput type="file" id="userdoc" name="userdoc" placeholder="Upload file" (click)="clearBrowse()" (change)="uploadFile(manageAssignmentForm)"
+              accept=".pdf,.doc,.docx">
+            <i class="glyphicon glyphicon-upload"></i>
+            <span class="key-data" data-key="lg_upload">Upload</span>
+          </button>
+
+          <button id="saveAssignmentQuestions" type="submit" class="btn btn-primary" [style.display]="isQuestion?'inline':'none'" (click)="tinyMceValidation(manageAssignmentForm)">
+            <i class="glyphicon glyphicon-file"></i>
+            <span class="key-data" data-key="lg_save">Save</span>
+          </button>
+          <button type="reset" class="btn btn-primary" (click)="reset()">
+            <i class="glyphicon glyphicon-refresh"></i>
+            <span class="key-data" data-key="lg_reset">Reset</span>
+          </button>
+          <button type="button" class="btn btn-danger" [routerLink]="['/content',{outlets:{appCommon:['assignment_head']}}]">
+            <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel
+          </button>
+        </div>
+
+       
+
+
+        <div [style.display]="isUpdateHide?'none':'block'" class="form-group pull-right row col align-self-end">
+          <button class="btn-bs-file btn btn-success" [style.display]="isUpload?'inline':'none'">
+            
+            <input #fileInputUpdate type="file" id="userdoc" name="userdoc" placeholder="Upload file" (click)="clearBrowseUpdate()" (change)="uploadUpdate(manageAssignmentForm)"
+              accept=".pdf,.doc,.docx">
+            <i class="glyphicon glyphicon-upload"></i>
+            <span class="key-data" data-key="lg_upload">Upload</span>
+          </button>
+          <button id="saveAssignmentQuestions" type="button" [style.display]="isQuestion?'inline':'none'" (click)="tinyMceUpdateValidation(manageAssignmentForm)"
+            class="btn btn-primary">
+            <i class="glyphicon glyphicon-file"></i>
+            <span class="key-data" data-key="lg_update">Update</span>
+          </button>
+          <button type="reset" class="btn btn-primary" (click)="reset()">
+            <i class="glyphicon glyphicon-refresh"></i>
+            <span class="key-data" data-key="lg_reset">Reset</span>
+          </button>
+          <button type="button" class="btn btn-danger" [routerLink]="['/content',{outlets:{appCommon:['assignment_head']}}]">
+            <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Tag for showing Toast Message -->
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+<!-- Toast Tag Ends Here -->
+<!--delete modal-->
+<div #assignmentDeleteModal class="modal fade" id="assignmentDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this question?
+        <input #deleteAssignmentId type="hidden" name="deleteAssignmentId" id="deleteAssignmentId" [value]="delAssignmentId">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)='delete(deleteAssignmentId)'>
+          <i class="glyphicon glyphicon-ok"></i>
+          Yes
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <i class="glyphicon glyphicon-remove"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- delete all modal -->
+<div #assignmentDeleteAllModal class="modal fade" id="assignmentDeleteAllModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete selected questions ?
+        <input #deleteAssignmentId type="hidden" name="deleteAssignmentId" id="deleteAssignmentId" [value]="delAssignmentId">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="deleteAll()" data-dismiss="modal">
+          <i class="glyphicon glyphicon-ok"></i>
+          Yes
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <i class="glyphicon glyphicon-remove"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

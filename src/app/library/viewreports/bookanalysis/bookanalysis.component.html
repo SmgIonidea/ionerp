@@ -1,0 +1,68 @@
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Book Analysis</h4>
+  </div>
+</section>
+<div class="container-fluid">
+  <form class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+    <div class="row form-group">
+      <div class="col col-sm-12 col-xs-12 col-lg-4 col-md-4">
+        <div class="col-lg-4 col-md-4 labelfield" style="margin-left:-45px;">
+          <label for="description">From Date:</label>
+        </div>
+        <div class='right-inner-addon dateview col-lg-8 col-md-8' data-date-format="yyyy-mm-dd" align="left">
+          <my-date-picker class="" placeholder=" dd-mm-yyyy" name="admission_date1" id="admission_date1" [options]="myDatePickerOptions" [(ngModel)]="model">
+          </my-date-picker>
+        </div>
+      </div>
+      <div class="col col-sm-12 col-xs-12 col-lg-4 col-md-4">
+        <div class="col-lg-4 col-md-4 labelfield" style="margin-left:-45px;">
+          <label for="pages">To Date:</label>
+        </div>
+        <div class='right-inner-addon dateview col-lg-8 col-md-8' data-date-format="yyyy-mm-dd" align="left">
+          <my-date-picker class="" placeholder=" dd-mm-yyyy" name="admission_date1" id="admission_date1" [options]="myDatePickerOptions" [(ngModel)]="model">
+          </my-date-picker>
+        </div>
+      </div>
+      <div class="col col-sm-12 col-xs-12 col-lg-4 col-md-4">
+        <div class="col-lg-3 col-md-3" align="left">
+          <button id="" type="submit" class="pull-right btn btn-primary">
+            <span class="glyphicon glyphicon-search"></span>
+            &nbsp;Search</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<form class="form-horizontal" style="border-top:0px;">
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <th class="text-center">Accession Number</th>
+          <th class="text-center">Title</th>
+          <th class="text-center">Author</th>
+          <th class="text-center">Publisher</th>
+          <th class="text-center">No Of Times Issued</th>
+          <th class="text-center">No Of Times Returned</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--<tr>
+        <td></td>
+        <td></td>
+        <td class="text-center">
+          <i #editElement class="glyphicon glyphicon-pencil cursor-pointer"></i>
+        </td>
+        <td class="text-center">
+          <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer">
+         </i>
+        </td>
+      </tr>-->
+      </tbody>
+    </table>
+  </div>
+  <br>
+</form>

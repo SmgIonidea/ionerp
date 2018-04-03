@@ -1,0 +1,178 @@
+.btn-bs-file{
+    position:relative;
+}
+.btn-bs-file input[type="file"]{
+    position: absolute;
+    top: -9999999;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    width:0;
+    height:0;
+    outline: none;
+    cursor: inherit;
+}
+
+.panel-primary {
+    background: rgb(35, 47, 62);
+    border-radius: 20px 0 20px 0;
+    height: 30px;
+    width:100%;
+    border-color:rgb(35, 47, 62);
+  }
+
+
+  .middle {
+   
+    color: white;
+    text-align: left;
+    padding-top:3px;
+    margin-left: -14px;
+  }
+/* 
+  .middle1{
+      margin-left: -20px;
+  } */
+
+.padd{
+  margin-left: -30px;
+}
+  .well{
+    background-color: rgb(245, 243, 243);
+    width:85%;
+    box-shadow:0 3px 5px 1px #979797;
+  }
+  h4, .h4, h5, .h5, h6, .h6 {
+    margin-top: 3px;
+  }
+  .tiny{
+    margin-left:50px;
+  }
+  .totalmarks{
+    margin-left: 400px;
+  }
+
+.totalmarkslabel{
+  padding-top:10px;  
+  /* margin-left: 23px; */
+}
+
+.totalmarksinput{ 
+  width: 150px;
+  margin-left: -4px;
+}
+.drag-left-label{
+  margin-left:-15px;
+}
+
+.center {
+     margin: auto;
+     padding: 24px;
+   }
+
+   .col{
+    margin-right:-6%;
+   }
+
+   .Column
+{
+    display: table-cell;
+  }
+/* 
+  .category
+{
+    display: table;
+    width: 100%; 
+    table-layout: fixed; 
+   
+} */
+
+.category{
+  margin-left: -15px;
+}
+.Column-margin{
+  margin-left:-8%;
+}
+/*For Portait Mode view*/
+  @media screen and (max-width: 480px) {
+    .tiny{
+      margin-left:-30px;
+      width:300px;
+    }
+    .totalmarks{
+      margin-left:-16px;
+    }
+    .totalmarkslabel{
+      padding-top:10px;
+      margin-left:-14px;
+    }
+    .drag-left-label{
+      margin-left:-15px;
+    }
+    .top {
+      margin-left:-45px;
+      width:272px;
+    }
+    .resp{
+    width:272px;
+    }
+    .totalmarksinput{
+      margin-left: -60px;
+      width: 194px;
+    }
+    .category
+    {
+            width:100%; 
+            margin-left:4%;    
+    } 
+    
+  
+    .Column
+    {
+      display: table-row; 
+    }
+    
+}
+
+/*For Landscape Mode view*/
+@media screen and (max-height: 360px) {
+  .top {
+    margin-left: -45px;
+    width: 538px;
+  }
+  .tiny{
+    margin-left: -31px;
+    width: 568px;
+}
+.totalmarks{
+  margin-left: -32px;
+}
+.totalmarksinput{
+  margin-left: -137px;
+  width: 453px;
+}
+
+.totalmarkslabel{
+      padding-top:10px;
+      margin-left:2px;
+    }
+    .col{
+      margin-right:-3%;
+     }
+     .category{
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+      margin-left: 2%;
+    }
+    .Column
+    {
+      display: table-row; 
+    }
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+  padding: 7px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}

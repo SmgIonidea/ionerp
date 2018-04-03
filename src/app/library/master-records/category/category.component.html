@@ -1,0 +1,74 @@
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Category</h4>
+  </div>
+</section>
+<form class="form-horizontal" style="border-top:0px;">
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <th class="text-center">Sl No.</th>
+          <th class="text-center"> Name</th>
+          <th class="text-center">Edit</th>
+          <th class="text-center">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--<tr>
+        <td></td>
+        <td></td>
+        <td class="text-center">
+          <i #editElement class="glyphicon glyphicon-pencil cursor-pointer"></i>
+        </td>
+        <td class="text-center">
+          <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer" 
+         ></i>
+        </td>
+      </tr>-->
+      </tbody>
+    </table>
+  </div>
+  <br>
+</form>
+
+<section class="content-header">
+  <!--<div class="headline">-->
+  <!-- Div for Page Headings -->
+  <div class="panel panel-primary ">
+    <h4 class="middle middle1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Add / Edit Category</h4>
+  </div>
+  <!--</div>-->
+  <!-- Page Headings Div Ends Here -->
+</section>
+<div class="container-fluid">
+  <form class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="category">Category Name:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12 category" style="margin-left:-60px;">
+        <input type="text" name="" placeholder="Enter category Name" id="category" value="" class="form-control" />
+      </div>      
+    </div>      
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-2 col-sm-12 col-xs-12 labelfield"  style="margin-left:-60px;">
+        <label for="description">Description:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12 category" style="margin-left:-60px;">
+        <textarea type="text" placeholder="Enter Description" name="description" id="description" value="" rows="5" class="form-control">
+      </textarea>
+      </div>
+    </div>
+    <br>
+    <div class="form-group col-md-12">
+      <button id="" type="submit" class="btn btn-primary pull-right">
+        <i class="glyphicon glyphicon-file"></i>&nbsp;Save
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,233 @@
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Voucher</h4>
+  </div>
+</section>
+<form class="form-horizontal" style="border-top:0px;">
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <!-- <th class="text-center">
+            <input type="checkbox" (click)="deleteAllSelected($event)" id="delete_check">
+          </th> -->
+          <th class="text-center ">Sl&nbsp;No.</th>
+          <th class="text-center">Voucher Type</th>
+          <th class="text-center">Voucher</th>
+          <th class="text-center">Amount</th>
+          <th class="text-center">Date</th>
+          <th class="text-center">Payment Mode</th>
+          <th class="text-center">Bank Details</th>
+          <th class="text-center" style="width:4%;">Edit</th>
+          <th class="text-center" style="width:7%;">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- <tr *ngFor="let post of posts let i = index"> -->
+          <!-- <pre>{{post | json}}</pre>       -->
+          <!-- <td>
+            <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
+          </td> -->
+          <td class="text-right">
+            <p class="pull-right">1</p>
+          </td>
+          <td class="text-center">Sales Order Particulars - salary</td>
+          <td class="text-center">9</td>
+          <td class="text-center">Rs 6000.00</td>
+          <td class="text-center">09-03-2018 </td>
+          <td>Cash</td>
+          <td>
+            <h6>Acct - </h6>
+            <h6>Cheque/DD - </h6>
+            <h6>Bank - </h6>
+          </td>
+          <td class="text-center">
+            <i class="glyphicon glyphicon-pencil"></i>
+          </td>
+          <td class="text-center">
+            <i class="glyphicon glyphicon-remove"></i>
+          </td>
+          <!-- <td class="text-center center" style="width:4%;">
+            <i pageScroll href="#home" #editElement class="glyphicon glyphicon-pencil cursor-pointer editDept" [attr.assignmentId]="post.a_id"
+              [attr.assignmentName]="post.assignment_name" [attr.assignmentInitialDate]="post.initiate_date" [attr.assignmentEndDate]="post.due_date"
+              [attr.assignmentTotalMarks]="post.total_marks" [attr.assignmentInstruction]="post.instructions" (click)="editassignment(this.editElement)"
+              (click)="checkDate(post.initiate_date)"></i>
+              </td>
+           <td class="text-center center" style="width:7%;">
+              <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer deleteAssignment" [attr.assignmentId]="post.a_id" (click)="deleteWarning(this.deleteElement,this.assignmentDeleteModal)"></i>
+              </td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <br>
+  <br>
+  <br>
+</form>
+
+
+<section class="content-header">
+  <!--<div class="headline">-->
+  <!-- Div for Page Headings -->
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create New Voucher</h4>
+  </div>
+  <!--</div>-->
+  <!-- Page Headings Div Ends Here  -->
+</section>
+<div class="container-fluid" id="home">
+
+  <form class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Voucher Type:</label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select class="form-control">
+          <option>Select Voucher</option>
+          <option>Sales Order(PaidIn)</option>
+          <option>Purchase Order(PaidOut)</option>
+          <option>Payment(PaidOut)</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Voucher Number:</label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Voucher Date:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class='right-inner-addon dateview col-md-5' data-date-format="yyyy-mm-dd">
+        <my-date-picker class="" placeholder=" dd-mm-yyyy" name="admission_date1" id="admission_date1" [options]="myDatePickerOptions"
+          [(ngModel)]="model">
+        </my-date-picker>
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Payment Mode:
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select #select class="form-control" name="payment" (change)="selectDiv(select.value)">
+          <option>Select Payment</option>
+          <option value="cash">Cash</option>
+          <option value="cheque">Cheque</option>
+          <option value="dd">DD</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Narration:
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <textarea type="text" name="voucher_number" id="voucher_number" class="form-control"></textarea>
+      </div>
+    </div>
+
+
+
+    <div id="hiddeDiv" style="display:none">
+      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+          <label for="">Bank Name:
+          </label>
+        </div>
+        <div class="col col-md-5 col-sm-12 col-xs-12 category">
+          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+        </div>
+      </div>
+      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+          <label for="">Account Number:
+          </label>
+        </div>
+        <div class="col col-md-5 col-sm-12 col-xs-12 category">
+          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+        </div>
+      </div>
+      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+          <label for="">Cheque/DD Number:
+          </label>
+        </div>
+        <div class="col col-md-5 col-sm-12 col-xs-12 category">
+          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+        </div>
+      </div>
+      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+          <label for="">Teller Name:
+          </label>
+        </div>
+        <div class="col col-md-5 col-sm-12 col-xs-12 category">
+          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+        </div>
+      </div>
+      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+          <label for="">Pin:
+          </label>
+        </div>
+        <div class="col col-md-5 col-sm-12 col-xs-12 category">
+          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Particulars:
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select class="form-control">
+          <option>Select Particulars</option>
+          <option value="admission">Admission</option>
+          <option value="exam">Exam</option>
+          <option value="salary">Salary</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Amount:
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <input type="text" name="voucher_number" id="voucher_number" class="form-control top">
+      </div>
+    </div>
+
+    <div class="can">
+      <div class="btn_cancel  col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right">
+        <button id="saveAssignment" type="submit" class="btn btn-primary">
+          <i class="glyphicon glyphicon-file"></i>&nbsp;Save</button>
+        <button type="reset" class="btn btn-danger">
+          <i class="glyphicon glyphicon-refresh"></i>&nbsp;Reset</button>
+      </div>
+      <!-- <div  class="btn_cancel col-lg-3 col-md-3 col-xs-12 col-sm-6 btn_update">
+        <button  id="UpdateAssignment" type="button" class="btn btn-primary" >
+          <i class="glyphicon glyphicon-ok"></i> Update
+        </button>
+        <button id="cancelEdit" type="button" class="btn btn-danger" >
+          <i class="glyphicon glyphicon-remove"></i> Cancel
+        </button> 
+      </div>-->
+    </div>
+  </form>
+</div>

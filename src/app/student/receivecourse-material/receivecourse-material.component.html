@@ -1,0 +1,102 @@
+<!--<app-dropdown [currentPage]="currentPageVal"></app-dropdown>-->
+
+
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ title }}</h4>
+  </div>
+</section>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 row " style="margin-left: -30px;">
+  <div [style.display]="isProgramHide?'none':'block'" class="form-group col-lg-2 col-xs-12 col-md-2 col-sm-12 drop dropmob">
+    <label data-key="lg_prgm" for="program" class="col-xs-8 col-sm-8 col-md-8 col-lg-8  key-data padd padd2">Program: <span class="mandatory" style="color:red;">*</span></label>
+    <select name="program" [(ngModel)]="pgmId" id="program" (ngModelChange)="curriculum($event)" class="form-control col-lg-8 dropboxwidth"  style="font-size:12px;cursor:pointer;"  required>
+      <option [ngValue]="0" selected>Select Program</option>
+     
+      <option *ngFor="let type of programType" [ngValue]="type.pgm_id">
+        {{ type.pgm_acronym }}
+      </option>
+    </select>  
+  </div>
+
+  <div class="form-group col-lg-3  col-xs-12 col-md-3 col-sm-12 drop dropmob">
+    <label data-key="lg_cur" for="curriculum" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 key-data padd padd2">Curriculum:&nbsp;<span class="mandatory" style="color:red;">*</span></label>
+    <select name="curriculum" id="curriculum" [(ngModel)]="crclmId" (ngModelChange)="term($event)" style="font-size:12px;cursor:pointer;" class="form-control  col-lg-8 dropboxwidth"
+      ngModel required>
+      <option [ngValue]="0" selected>Select Curriculum</option>
+      
+      <option *ngFor="let type of curriculumType" [ngValue]="type.crclm_id">
+        {{ type.crclm_name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group col-lg-2  col-xs-12 col-md-2 col-sm-12 drop dropmob">
+    <label data-key="lg_term" for="term" class="col-xs-8 col-sm-8 col-md-8 col-lg-8  key-data padd padd2">Term: <span class="mandatory" style="color:red;">*</span></label>
+    <select name="term" id="term" [(ngModel)]="termId" (ngModelChange)="course($event)" class="form-control  col-lg-8 dropboxwidth" style="font-size:12px;cursor:pointer;" ngModel
+      required>
+      <option [ngValue]="0" selected>Select Term</option>
+      
+      <option *ngFor="let type of termType" [ngValue]="type.crclm_term_id">
+        {{ type.term_name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group col-lg-3  col-xs-12 col-md-3 col-sm-12 drop dropmob" >
+    <label data-key="lg_course" for="course" class="col-xs-8 col-sm-8 col-md-8 col-lg-8  key-data padd padd2">Course: <span class="mandatory" style="color:red;">*</span></label>
+    <select  name="course" id="course" [(ngModel)]="crsId" (ngModelChange)="section($event)"  class="form-control col-lg-8 dropboxwidth" style="font-size:12px;cursor:pointer;" ngModel
+      required>
+       <option [ngValue]="0" selected>Select Course</option>
+      
+      <option *ngFor="let type of courseType" [ngValue]="type.crs_id" title = "{{type.crs_code}}">
+        {{ type.crs_title }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group col-lg-1 col-xs-12 col-md-1 col-sm-12 drop">
+    <label data-key="lg_section" for="section" class=" col-xs-8 col-sm-8 col-md-12 col-lg-12  key-data padd padd2">Section:&nbsp;<span class="mandatory" style="color:red;">*</span></label>   
+      <!-- <ss-multiselect-dropdown [options]="sectionType" class="col-lg-4 section" (change)="getdropdowndata()" [(ngModel)]="changedValue" [texts]="myTexts" ></ss-multiselect-dropdown>   -->
+      <select  name="section" id="section" [(ngModel)]="sectionId" (ngModelChange)="getdropdowndata()"  class="form-control col-lg-4 sectiondropdown" style="font-size:12px;cursor:pointer;" ngModel
+      required>
+       <option [ngValue]="0" selected>Select Section</option>
+      
+      <option *ngFor="let type of sectionType" [ngValue]="type.id">
+        {{ type.name }}
+      </option>
+    </select>  
+  </div>
+
+</div>
+
+
+<div class="container-fluid" style="padding:0px;">
+ <div class="table table-responsive" style="overflow-x:initial;">
+<table datatable [dtOptions]="dtOptions" class="col-lg-12" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+  <thead>
+    <tr>
+      <th style="width:7%;">Sl&nbsp;No.</th>
+      <th  class="col-lg-2">Shared Files&nbsp;/&nbsp;URL</th>
+      <th class="col-lg-4">Description</th>
+      <th class="col-lg-3">Topic(s)</th>
+      <th class="col-lg-3">{{titletable.faculty}} </th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of posts.ReceiveCourseList let i = index">
+        <td class="text-right" style="width:7%;"><p class="pull-right">{{i+1}}</p></td>
+        <!-- <td>{{post.docment_url}}</td> -->
+        <td *ngIf="post.url_flag==1"  class="col-lg-2"><a target="_blank" [attr.href]="'https://' + post.docment_url">{{post.docment_url}}</a></td>
+        <td *ngIf="post.url_flag==0" class="col-lg-4"><a target="_blank" [attr.href]="baseUrl + post.docment_url"><span class="glyphicon glyphicon-paperclip"></span> {{post.docment_url}}</a></td>
+        <td class="col-lg-3">{{post.description}}</td>
+        <td class="col-lg-3">{{post.topic_title}}</td>
+
+        <td>{{post.course_instructor}}</td>
+
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>

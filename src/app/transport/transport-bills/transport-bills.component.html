@@ -1,0 +1,155 @@
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Transport Bills</h4>
+  </div>
+</section>
+
+<div class="container-fluid">
+  <form class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Group:
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select class="form-control">
+          <option>Select Group</option>
+          <option value="bs">Biology Science</option>
+          <option value="cs">Computer Science</option>
+          <option value="es">Electronics Science</option>
+          <option value="com">Commerce</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Class:
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select class="form-control">
+          <option>Select Class</option>
+          <option value="1a">1A</option>
+          <option value="1b">1B</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Select Year:
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select class="form-control">
+          <option>Select Year</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Select Month:
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select class="form-control">
+          <option>Select Month</option>
+          <option value="jan">January</option>
+          <option value="feb">February</option>
+          <option value="mar">March</option>
+          <option value="apr">April</option>
+          <option value="may">May</option>
+          <option value="jun">June</option>
+          <option value="jul">July</option>
+          <option value="aug">August</option>
+          <option value="sep">September</option>
+          <option value="oct">October</option>
+          <option value="nov">November</option>
+          <option value="dec">December</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Registration Number:
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <input type="text" name="regNo" id="regNo" class="form-control" />
+      </div>
+    </div>    
+      <div class="form-group btn_cancel  col-lg-3 col-md-3 col-xs-12 col-sm-6 ">
+        <button id="saveAssignment" type="submit" class="btn btn-primary">
+          <i class="glyphicon glyphicon-search"></i>&nbsp;Search</button>
+        <button type="reset" class="btn btn-danger">
+          <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>
+      </div>    
+  </form> 
+  <form class="form-horizontal" style="border-top:0px;">
+    <div class="table table-responsive" style="overflow-x:initial;">
+      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+        <thead style="background-color:#DDE1E6;">
+          <tr>
+            <!-- <th class="text-center">
+            <input type="checkbox" (click)="deleteAllSelected($event)" id="delete_check">
+          </th> -->
+            <th class="text-center ">Sl&nbsp;No.</th>
+            <th class="text-center">Registration No</th>
+            <th class="text-center">Student Class</th>
+            <th class="text-center">Father Name</th>
+            <th class="text-center">Month</th>
+            <th class="text-center">Bill Amount</th>
+            <th class="text-center">Waived</th>
+            <th class="text-center">Paid Amount</th>
+            <th class="text-center" style="width:4%;">Print</th>
+            <!-- <th class="text-center" style="width:7%;">Delete</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <!-- <tr *ngFor="let post of posts let i = index"> -->
+            <!-- <pre>{{post | json}}</pre>       -->
+            <!-- <td>
+            <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
+          </td> -->
+            <td class="text-right">
+              <p class="pull-right">1</p>
+            </td>
+            <td class="text-center">2017001007</td>
+            <td class="text-center">3b</td>
+            <td class="text-center">Rajeev</td>
+            <td class="text-center">October</td>
+            <td class="text-center">5500</td>
+            <td class="text-center">500</td>
+            <td class="text-center">5000</td>
+            <td class="text-center">
+              <i class="glyphicon glyphicon-print"></i>
+            </td>
+            <!-- <td class="text-center">
+            <i class="glyphicon glyphicon-remove"></i>
+          </td> -->
+            <!-- <td class="text-center center" style="width:4%;">
+            <i pageScroll href="#home" #editElement class="glyphicon glyphicon-pencil cursor-pointer editDept" [attr.assignmentId]="post.a_id"
+              [attr.assignmentName]="post.assignment_name" [attr.assignmentInitialDate]="post.initiate_date" [attr.assignmentEndDate]="post.due_date"
+              [attr.assignmentTotalMarks]="post.total_marks" [attr.assignmentInstruction]="post.instructions" (click)="editassignment(this.editElement)"
+              (click)="checkDate(post.initiate_date)"></i>
+              </td>
+           <td class="text-center center" style="width:7%;">
+              <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer deleteAssignment" [attr.assignmentId]="post.a_id" (click)="deleteWarning(this.deleteElement,this.assignmentDeleteModal)"></i>
+              </td> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <br>
+    <br>
+    <br>
+  </form>
+</div>

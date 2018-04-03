@@ -1,0 +1,47 @@
+.panel-primary {
+    background: rgb(35, 47, 62);
+    border-radius: 20px 0 20px 0;
+    height: 30px;
+    width:100%;
+    border-color:rgb(35, 47, 62);
+  }
+  .middle {
+    color: white;
+    text-align: left;
+    padding-top:3px;
+    margin-left: -14px;
+    margin-top:3px;
+  }
+  .labelalignment1{
+    margin-top: 18px;
+    margin-left: -42px;
+  }
+  .inputwidth{    
+    margin-left: -140px;
+    margin-top: 10px;
+  }
+  .btndivalign{
+    margin-right: -43%;
+  }  
+ 
+  @media screen and (max-width: 360px) {
+    .btndivalign{
+        margin-right: -29px;
+      }
+      .inputwidth{
+        width: 300px;
+        margin-left: -45px;
+        margin-top: -2px;
+      }
+  }
+
+  @media screen and (max-height: 360px) {
+    .inputwidth{
+        margin-left: -44px; 
+        margin-top: -2px;   
+        width: 565px;
+      }
+      .btndivalign{
+        margin-right: -29px;
+      }
+  }  

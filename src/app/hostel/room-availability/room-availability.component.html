@@ -1,0 +1,105 @@
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ title }}</h4>
+  </div>
+</section>
+<br>
+
+<!--<pre>{{room | json}}</pre>-->
+<form class="form-horizontal" style="border-top:0px;">
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <th class="text-center serial">Sl&nbsp;No.</th>
+          <th>Room No</th>
+          <th>Room Type</th>
+          <th>Capacity</th>
+          <th>Vacancy</th>
+          <th>Rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-right">
+            <p class="pull-right">1</p>
+          </td>
+          <td>1</td>
+          <td>12x12 Sqr Ft</td>
+          <td>4</td>
+          <td>4</td>
+          <td>Rs:1000</td>   
+        </tr>
+         <tr>
+          <td class="text-right">
+            <p class="pull-right">2</p>
+          </td>
+          <td>2</td>
+          <td>singelbed</td>
+          <td>3</td>
+          <td>3</td>
+          <td>Rs:1500</td>   
+        </tr>
+        <!--<tr *ngFor="let roomList of room let i = index">
+          <td class="text-right">
+            <p class="pull-right">{{i+1}}</p>
+          </td>
+          <td>{{roomList.room_no}}</td>
+          <td>{{roomList.room_type}}</td>
+          <td>{{roomList.room_capacity}}</td>
+          <td>{{roomList.room_vacancy}}</td>
+          <td>{{roomList.room_rate}}</td>   
+        </tr>-->
+      </tbody>
+    </table>
+  </div>
+</form>
+
+
+
+
+<!-- Room Availability -->
+<section class="content-header">
+  <!--<div class="headline">-->
+  <!-- Div for Page Headings -->
+
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{title1}}</h4>
+  </div>
+  <!--</div>-->
+  <!-- Page Headings Div Ends Here  -->
+</section>
+
+<div class="container-fluid cont">
+
+  <form novalidate [formGroup]="roomForm"> 
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Select Building:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-5">
+        <select  formControlName="roomavailability" class="form-control">
+          <option [ngValue]="0" selected>Select</option>
+          <!--<option *ngFor = "let avail of availability" [ngValue]="avail.es_hostelbuldid">
+            {{ avail.buld_name}}
+          </option>-->
+          <option>Girls</option>
+          <option>madrid</option>
+          <option>Male Building</option>
+        </select>
+        <br>
+      </div>
+    </div>
+    <br>
+    <div  class="pull-right btn_alignment">
+      <button  type="submit" class="btn btn-primary" (click)="searchroom(roomForm)">
+        <i class="glyphicon glyphicon-file"  ></i>&nbsp;Search</button>
+
+      <button type="reset" class="btn btn-danger">
+        <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>
+    </div>
+  </form>
+</div>
+

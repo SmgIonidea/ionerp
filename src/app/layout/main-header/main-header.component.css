@@ -1,0 +1,87 @@
+.menu-navbar{
+    min-height: 34px;
+    margin-left: 0;
+    background-color: #fafafa;
+    background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+    background-repeat: repeat-x;
+    border: 1px solid #d4d4d4;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.header-institute{
+    text-shadow: 2px 2px black;
+     color: white; 
+     font-size: 15px; 
+     margin-top: 10px;
+     margin-left:320px;
+}
+.header-department{
+    color: white; 
+    font-size: 12px;
+    margin-left:370px;
+}
+.logo-align{
+    margin-top: 2px;
+    width: auto;
+    height: 46px;
+    border-radius: 20%;
+}
+
+.img-circle {
+    border-radius: 20% !important;
+}
+
+.img_fevicon {
+    width: 45px !important;
+    -webkit-border-radius: 5px !important;
+    float: left !important;
+    background-color: white !important;
+    margin-left: 3px;
+    margin-top: 3px;
+    height: 45px;
+}
+
+@media screen and (max-width: 480px) {
+    
+ .top{
+ margin-top:-90%;
+ }
+ 
+ .header-institute{
+      margin-left: 70px;
+      font-size: 10px; 
+ }
+ 
+ .header-department{
+      margin-left: 100px;
+      font-size: 7px;
+ }
+ .logo-align{
+    margin-top:-40px;
+}
+     
+ }
+
+ @media screen and (max-height: 360px) {
+    
+ .top{
+ margin-top:-90%;
+ }
+ 
+ .header-institute{
+      margin-left: 200px;
+      font-size: 12px; 
+ }
+ 
+ .header-department{
+      margin-left: 250px;
+      font-size: 7px;
+ }
+ .logo-align{
+    margin-top:-40px;
+}
+     
+ }
+

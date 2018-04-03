@@ -1,0 +1,76 @@
+<section class="content-header">
+  <!--<div class="headline">-->
+  <!-- Div for Page Headings -->
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Manage Voucher </h4>
+  </div>
+  <!--</div>-->
+  <!-- Page Headings Div Ends Here  -->
+</section>
+<div class="table table-responsive" style="overflow-x:initial;">
+  <h5 class='text-center'>Note : You can only update an existing Voucher Type.</h5>
+  <br>
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover" >
+    <thead style="background-color:#DDE1E6;">
+      <tr>
+        <th class="text-center ">S.no</th>
+        <th class="text-center">Voucher Type</th>
+        <th class="text-center">Voucher Mode</th>
+        <!-- <th class="text-center" style="width:4%;">Edit</th>
+        <th class="text-center" style="width:7%;">Delete</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-right">
+          <p class="pull-right">1</p>
+        </td>
+        <td class="text-center">Receipt</td>
+        <td *ngIf="!isActive" class="text-center">Paidin</td>
+        <td *ngIf="isActive" class="text-center">
+          <select class="form-control">
+            <option>Select Group</option>
+            <option>Paidin</option>
+            <option>Paidout</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="text-right">
+          <p class="pull-right">2</p>
+        </td>
+        <td class="text-center">Credit Note</td>
+        <td *ngIf="!isActive" class="text-center">Paidin</td>
+        <td *ngIf="isActive" class="text-center">
+          <select class="form-control">
+            <option>Select Group</option>
+            <option>Paidin</option>
+            <option>Paidout</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="text-right">
+          <p class="pull-right">3</p>
+        </td>
+        <td class="text-center">Debit Note</td>
+        <td *ngIf="!isActive" class="text-center">Paidout</td>
+        <td *ngIf="isActive" class="text-center">
+          <select class="form-control">
+            <option>Select Group</option>
+            <option>Paidin</option>
+            <option>Paidout</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="btn_cancel  col-lg-3 col-md-3 col-xs-12 col-sm-6 " style="margin-left:40%">
+    <button *ngIf="!isActive" id="updateVocher" (click)='toggle()' type="submit" class="btn btn-primary">
+      <i class="glyphicon glyphicon-file"></i>&nbsp;Update</button>
+    <button *ngIf="isActive" id="submitVocher" (click)='toggle()' type="submit" class="btn btn-primary">
+      <i class="glyphicon glyphicon-file"></i>&nbsp;Submit</button>
+    <button *ngIf="isActive" (click)='toggle()' type="submit" class="btn btn-primary">
+      <i class="glyphicon glyphicon-file"></i>&nbsp;Back</button>
+  </div>
+</div>

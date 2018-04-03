@@ -1,0 +1,400 @@
+<div class="container-fluid" style="border:0px solid;padding-left: 0px;width: 101%;">
+  <section class="content-header">
+    <!--<div class="headline">-->
+    <!-- Div for Page Headings -->
+    <div class="panel panel-primary">
+      <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take Assignment</h4>
+    </div>
+    <!--</div>-->
+    <!-- Page Headings Div Ends Here  -->
+  </section><br>
+
+  <div class="row" *ngFor=" let post of posts.AssignmentDetailsList" style="margin-top:-2%;">
+    <div>
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">Curriculum:
+        <strong>{{post.crclm_name}}</strong>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">Term:
+        <strong>{{post.term_name}}</strong>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">Course:
+        <strong>{{post.crs_title}}</strong>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-1 col-lg-1">Section:
+        <strong>{{post.section_name}} </strong>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">Type:
+        <strong>Assignment </strong>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">Assignment Head:
+      <strong>{{post.assignment_name}} </strong>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">Start Date:
+      <strong>{{post.initiate_date | DateFormatPipe}} </strong>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">End Date:
+      <strong> {{post.due_date | DateFormatPipe}} </strong>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">Total Marks:
+      <strong>{{post.total_marks}} </strong>
+    </div>
+  </div>
+  <br>
+
+  <div class="panel panel-default well " style=" border: 1px solid black;border-color:#D0D0D0;">
+    <div class="panel-body">
+      <input type="radio" name="type" value="answer" [(ngModel)]="type" (click)="clearInputField()" [disabled]="radioButtonDisable"> Answer&nbsp;&nbsp;&nbsp;
+      <input type="radio" name="type" value="upload" [(ngModel)]="type" (click)="clearInputField()" [disabled]="radioButtonDisable"> Upload&nbsp;&nbsp;
+      <input type="radio" name="type" value="url" [(ngModel)]="type" (click)="clearInputField()" [disabled]="radioButtonDisable"> URL&nbsp;&nbsp;&nbsp;
+
+    </div>
+  </div>
+  <form #assignmentForm="ngForm" [formGroup]="addassignmentForm">
+
+    <div *ngIf="type == 'answer'">
+      <div class="table table-responsive" style="overflow-x:initial;" *ngFor=" let assign of questionType.AssignmentQuestionTypeList">
+        <table class="table table-bordered table-striped table-hover" *ngIf="assign.que_flag == 0">
+          <thead style="background-color:#DDE1E6;">
+            <tr>
+              <th class="text-center" style="width:60px;">Sl No.</th>
+              <th>Assignment Questions</th>
+              <th>Course Outcomes</th>
+              <th>Performance Indicators</th>
+              <th>Topics</th>
+              <th>Topic Learning Outcomes</th>
+              <th>Bloom's Level</th>
+              <th>Difficulty Level</th>
+              <th>Question Type</th>
+              <th>Marks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let files of files let i = index">
+              <td class="text-right" style="width:60px;">
+                <p class="pull-right">{{i+1}}</p>
+              </td>
+              <td>
+                  <a style="cursor:pointer;" target="_blank" [attr.href]="baseUrl + files.file_name">
+                  <span class="glyphicon glyphicon-paperclip"></span>{{files.file_name}}</a>
+              </td>
+              <td>
+                <span >
+                  {{ files.clo}}
+                    
+                </span>
+              </td>
+              <td>
+                
+                <span >
+                  {{ files.pi}}
+                    
+                </span>
+              </td>
+              <td>
+                
+                <span >
+                  {{ files.topic}}
+                    
+                </span>
+              </td>
+              <td>
+               
+                <span >
+                  {{ files.tlo}}
+                    
+                </span>
+              </td>
+              <td>
+                
+                <span >
+                  {{ files.bloom}}
+                    
+                </span>
+              </td>
+              <td>
+               
+                <span >
+                  {{ files.diff}}
+                    
+                </span>
+              </td>
+              <td>
+               
+                <span >
+                  {{ files.que_type}}
+                    
+                </span>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="text-right" style="width:60px;">
+                <p class="pull-right">Ans</p>
+              </td>
+              <td colspan="9">
+                <!-- <simple-tiny formControlName="addAssignmentAnswer" [elementId]="'my-ans-editor-id'" (onEditorKeyup)="keyupHandlerFunction($event)"
+                  ngDefaultControl>
+                </simple-tiny> -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table table-responsive" *ngFor=" let assign of questionType.AssignmentQuestionTypeList" style="margin-top:-2%;">
+        <table class="table table-bordered table-striped table-hover" *ngIf="assign.que_flag == 1">
+          <thead style="background-color:#F2F2F2;">
+            <tr>
+              <th style="width:6%;">Sl No.</th>
+              <th style="width:90%">Question & Answer</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let question of questions.AssignmentQuestionsList let i = index">
+            <tr style="background-color:#F2F2F2;">
+              <td class="text-right" style="width:60px;">
+                <p class="pull-right">{{i+1}}</p>
+              </td>
+              <td [innerHTML]="question.que_content"></td>
+            </tr>
+            <tr>
+              <td class="text-right" style="width:60px;">
+                <p class="pull-right">Ans</p>
+              </td>
+              <td>
+                <br>
+                <!-- <simple-tiny id="'my-ans-editor-id' + question.aq_id" formControlName="addAssignmentAnswer" [elementId]="'my-ans-editor-id' + question.aq_id "
+                  (onEditorKeyup)="keyupHandlerFunction($event)" ngDefaultControl>
+                </simple-tiny> -->
+                <br>
+                <button [attr.id]="'hide_'+question.aq_id" *ngIf=Button class="btn btn-danger align-self-end " (click)='hidebutton(question.aq_id)'
+                  (click)="hide(question.aq_id)">
+                  <span class="glyphicon  glyphicon-remove">
+                  </span>&nbsp;cancel
+                </button>
+
+                <button style="display:none;" [attr.id]="'show_'+question.aq_id" *ngIf=Button class="btn btn-success align-self-end " (click)='showbutton(question.aq_id)'
+                  (click)="show(question.aq_id)">
+                  <span class="glyphicon glyphicon-pencil">
+                  </span>&nbsp;Click to Answer
+                </button>
+
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pull-right col align-self-end">
+        <button type="submit" name="assignSubmit" class="btn btn-success" (click)="tinymceValidationSubmit(addassignmentForm)">
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;Submit</button>
+          <button type="submit" name="assignSave" class="btn btn-primary " (click)="tinymceValidationSave(addassignmentForm)">
+          <span class="glyphicon glyphicon-file"></span>&nbsp;Save</button> 
+        <!--<button type="submit" class="btn btn-primary " (click)="savePost(addassignmentForm)">
+          <span class="glyphicon glyphicon-file"></span>&nbsp;Save</button>-->
+        <button type="submit" class="btn btn-danger" [routerLink]="['/content',{outlets:{appCommon:['studenttakeassignment']}}]">
+          <span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+      </div>
+
+    </div>
+ 
+
+    <div *ngIf="type == 'upload'">
+
+      <div *ngFor=" let assign of questionType.AssignmentQuestionTypeList">
+
+        <div *ngIf="assign.que_flag == 0">
+
+          <div *ngFor="let files of files">
+              <a style="cursor:pointer;font-size:12px;padding-left:2%;" target="_blank" [attr.href]="baseUrl + files.file_name">
+              <span class="glyphicon glyphicon-paperclip"></span> {{files.file_name}}</a>
+          </div>
+
+          <br>
+          <br>
+          <p style="font-size:12px;padding-left:2%;"> Upload Your File</p>
+          <br>
+          <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6" style="font-size:12px;padding-left:2%;">
+            <input formControlName="addAssignmentUpload" name="addAssignmentUpload" id="addAssignmentUpload" [(ngModel)]="clearValue"
+              style="font-size:12px;padding-left:2%;" placeholder="Upload File" type="text" class="form-control" readonly="readonly">
+          </div>
+          <div>
+            <label class="btn-bs-file btn btn-md btn btn-success bol1">
+              <i class="glyphicon glyphicon-upload"></i> Upload
+              <input [disabled]="upload" #fileInput type="file" id="userdoc" name="userdoc" (change)="getFileName(this.replaceElement,this.splitElement)"
+                (change)="getFileSize()" placeholder="Upload file" accept=".pdf,.doc,.docx">
+            </label>
+          </div>
+          <br>
+          <label style="font-weight:bold;font-size:12px;padding-left:2%;">Note:</label>
+          <p style="font-size:12px;padding-left:2%;">(a) Files allowed are .pdf,.doc,.docx
+          </p>
+          <p style="font-size:12px;padding-left:2%;">(b) Maximum file size allowed is 1MB</p>
+          <label style="font-size:12px;padding-left:2%;" [style.display]="isFileSize?'block':'none'">
+              File Size is : {{fileSizeExt}}
+            </label>
+          <br>
+          <div class="pull-right align-self-end">
+            <button type="submit" class="btn btn-success" [disabled]="!addAssignmentUpload.valid" (click)="createPost(addassignmentForm)">
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;Submit</button>
+            <button type="submit" class="btn btn-danger" [routerLink]="['/content',{outlets:{appCommon:['studenttakeassignment']}}]">
+          <span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+          </div>
+        </div>
+
+        <div *ngIf="assign.que_flag == 1">
+          <p style="font-size:12px;padding-left:2%;"> Upload Your File</p>
+          <br>
+          <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6" style="font-size:12px;padding-left:2%;">
+            <input formControlName="addAssignmentUpload" name="addAssignmentUpload" id="addAssignmentUpload" [(ngModel)]="clearValue"
+              style="font-size:12px;padding-left:2%;" placeholder="Upload File" type="text" class="form-control" readonly="readonly">
+          </div>
+          <div>
+            <label class="btn-bs-file btn btn-md btn btn-success bol1">
+              <i class="glyphicon glyphicon-upload"></i> Upload
+              <input [disabled]="upload" #fileInput type="file" id="userdoc" name="userdoc" (change)="getFileName(this.replaceElement,this.splitElement)"
+                (change)="getFileSize()" placeholder="Upload file" accept=".pdf,.doc,.docx">
+            </label>
+          </div>
+          <br>
+
+
+          <label style="font-weight:bold;font-size:12px;padding-left:2%;">Note:</label>
+          <p style="font-size:12px;padding-left:2%;">(a) Files allowed are .pdf,.doc,.docx
+          </p>
+          <p style="font-size:12px;padding-left:2%;">(b) Maximum file size allowed is 1MB</p>
+          <label style="font-size:12px;padding-left:2%;" [style.display]="isFileSize?'block':'none'">
+              File Size is : {{fileSizeExt}}
+            </label>
+          <br>
+          <div class="pull-right align-self-end">
+            <button type="submit" class="btn btn-success" [disabled]="!addAssignmentUpload.valid" (click)="createPost(addassignmentForm)">
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;Submit</button>
+            <button type="submit" class="btn btn-danger" [routerLink]="['/content',{outlets:{appCommon:['studenttakeassignment']}}]">
+          <span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div class="well1">
+            <accordion [showArrows]="true">
+
+              <accordion-group heading="View Assignment Questions" class="col-lg-12 col-md-12 col-xs-12 col-sm-12 view-question">
+                <table class="table table-bordered table-striped table-hover">
+                  <thead>
+                    <tr>
+                      <th class="text-center">Sl&nbsp;No.</th>
+                      <th>Assignment Questions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let question of questions.AssignmentQuestionsList let i = index">
+                      <td class="text-right" style="width:8%;">
+                        <p class="pull-right">{{i+1}}</p>
+                      </td>
+                      <td>{{question.que_content}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </accordion-group>
+
+            </accordion>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div *ngIf="type == 'url'">
+
+      <div *ngFor=" let assign of questionType.AssignmentQuestionTypeList">
+
+        <div *ngIf="assign.que_flag == 0">
+
+          <div *ngFor="let files of files">
+              <a style="cursor:pointer;font-size:12px;padding-left:2%;" target="_blank" [attr.href]="baseUrl + files.file_name">
+              <span class="glyphicon glyphicon-paperclip"></span> {{files.file_name}}</a>
+          </div>
+
+          <br>
+          <br>
+          <p style="font-size:12px;padding-left:2%;"> Paste URL here</p>
+          <br>
+          <div style="font-size:12px;padding-left:2%;">
+            <input formControlName="addAssignmentUrl" name="addAssignmentUrl" id="addAssignmentUrl" type="text" class="form-control"
+              [(ngModel)]="clearValue" placeholder="Enter URL" style="width:100%;">
+          </div>
+          <br>
+          <br>
+          <div class="pull-right col align-self-end">
+            <button type="submit" class="btn btn-success" [disabled]="!addAssignmentUrl.valid" (click)="createPost(addassignmentForm)">
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;Submit</button>
+            <button type="submit" class="btn btn-danger" [routerLink]="['/content',{outlets:{appCommon:['studenttakeassignment']}}]">
+          <span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+          </div>
+        </div>
+
+        <div *ngIf="assign.que_flag == 1">
+          <p style="font-size:12px;padding-left:2%;"> Paste URL here</p>
+          <br>
+          <div style="font-size:12px;padding-left:2%;">
+            <input formControlName="addAssignmentUrl" name="addAssignmentUrl" id="addAssignmentUrl" type="text" class="form-control"
+              [(ngModel)]="clearValue" placeholder="Enter URL" style="width:100%;">
+          </div>
+          <br>
+          <br>
+          <div class="pull-right col align-self-end">
+            <button type="submit" class="btn btn-success" [disabled]="!addAssignmentUrl.valid" (click)="createPost(addassignmentForm)">
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;Submit</button>
+            <button type="submit" class="btn btn-danger" [routerLink]="['/content',{outlets:{appCommon:['studenttakeassignment']}}]">
+          <span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div class="well1">
+
+            <accordion [showArrows]="true">
+
+              <accordion-group heading="View Assignment Questions" class="col-lg-12 col-md-12 col-xs-12 col-sm-12 view-question">
+                <table class="table table-bordered table-striped table-hover">
+                  <thead>
+                    <tr>
+                      <th class="text-center">Sl&nbsp;No.</th>
+                      <th>Assignment Questions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let question of questions.AssignmentQuestionsList let i = index">
+                      <td class="text-right" style="width:8%;">
+                        <p class="pull-right">{{i+1}}</p>
+                      </td>
+                      <td>{{question.que_content}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </accordion-group>
+
+            </accordion>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </form>
+</div>
+
+<!-- Tag for showing Toast Message -->
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+<!-- Toast Tag Ends Here -->

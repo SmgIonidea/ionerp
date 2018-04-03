@@ -1,0 +1,85 @@
+.panel-primary {
+    background: rgb(35, 47, 62);
+    border-radius: 20px 0 20px 0;
+    height: 30px;
+    width:100%;
+    border-color:rgb(35, 47, 62);
+  }
+  .middle {
+    color: white;
+    text-align: left;
+    padding-top:3px;
+    margin-left: -14px;
+    margin-top:3px;
+  }
+  .labelalign{
+    margin-left: -46px;
+    margin-top: 8px;
+  }
+  .datealign{
+    margin-left: -12%;
+    width: 695px;
+  }
+  .labelalignment{
+    margin-left: -62px;
+    margin-top: 10px;
+  }
+  .labelalignment2{
+    margin-left: -60px;
+    margin-top: 12px;
+  }
+  .siz2{
+    margin-left: -134px;
+    margin-top: 5px;
+  }
+  .siz3{
+    margin-left: -134px;    
+    width: 667px;
+  }
+  .rowalign{
+    margin-top: 40px;
+  }
+.notealign{
+      margin-left: -43px;    
+}
+.btndivalign{
+    margin-right: -43%;
+  }
+
+  @media screen and (max-width: 360px) {
+    .datealign{
+      margin-left: -46px;
+      width: 334px;
+    }
+    .siz2{
+      margin-left: -61px;
+      margin-top: 0px;
+    }
+    .btndivalign{
+      margin-right: -42px;
+    }
+    .siz3{
+      margin-left: -60px;
+      margin-top: 5px;
+      width: 302px;
+    }
+  }
+  @media screen and (max-height: 360px) {
+  .datealign{
+    margin-left: -46px;
+    width: 600px;
+  }
+  .siz2{
+    margin-left: -62px;
+    margin-top: 5px;
+  }
+  .siz3{
+    margin-left: -62px;
+    margin-top: 5px;
+    width: 570px;
+  }
+  .btndivalign{
+    margin-right: -43px;
+    margin-top: -10px;
+  }
+}

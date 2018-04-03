@@ -1,0 +1,91 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    border: none;
+}
+
+.center {
+ margin: auto;
+ padding: 24px;
+}
+
+ .panel-primary {
+   background: rgb(35, 47, 62);
+   border-radius: 20px 0 20px 0;
+   height: 30px;
+   width:100%;
+   border-color:rgb(35, 47, 62);
+ }
+
+ .middle {
+   color: white;
+   text-align: left;
+   padding-top:3px;
+   margin-left: -14px;
+ }
+
+ .well{
+   background-color: rgb(245, 243, 243);
+   width:100%;
+   box-shadow:0 3px 5px 1px #979797;
+ }
+
+ h4, .h4, h5, .h5, h6, .h6 {
+   margin-top: 3px;
+ }
+
+ .modal-footer .btn + .btn {
+   margin-bottom: 0;
+   margin-left: 0px;
+ }
+
+ .btn_cancel{
+   float:right;
+   margin-right: -110px;
+   
+ }
+ .btn_update{
+   margin-right:-99px;
+ }
+
+ /*Potrait Mode*/
+ @media screen and (max-width: 480px) {
+  /*input field*/
+ .category{
+   width:340px;
+   margin-left:-60px;    
+ }
+  /*Date field*/
+ .dateview{
+  margin-left: -60px;
+  width: 340px !important;
+  border-color: #ccc;
+ }
+  /*Label field*/
+ .labelfield{
+   margin-left:-45px;
+ }
+}
+/*Landscape Mode*/
+@media screen and (max-height: 360px) {
+/*input field*/
+.category{
+ width:595px;
+ margin-left:-60px;    
+}
+/*Date field*/
+.dateview{
+margin-left: -60px;
+width: 595px !important;
+border-color: #ccc;
+}
+/*Label field*/
+.labelfield{
+ margin-left:-45px;
+}
+}

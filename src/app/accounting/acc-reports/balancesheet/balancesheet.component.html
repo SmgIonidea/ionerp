@@ -1,0 +1,126 @@
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Balance Sheet</h4>
+  </div>
+</section>
+
+
+<div class="container-fluid" >
+<form>
+  <div class="col-md-12">
+    <div class="col-md-2">
+      <label style="margin-left:-30px;">Financial Year:
+        <!-- <span class="mandatory" style="color:red;">*</span> -->
+      </label>
+    </div>
+    <div class="col-md-5">
+      <select class="form-control">
+        <option>Select Year</option>
+        <option value="15-16">01/04/2015 - 31/03/2016</option>
+        <option value="16-17">01/04/2016 - 31/03/2017</option>
+        <option value="17-18">01/04/2017 - 31/03/2018</option>
+      </select>
+      <br>
+      <!--<div style="width:50%" *ngIf="assignment.touched && assignment.invalid" class="alert alert-danger">
+    <div  *ngIf="assignmentForm.controls.assignment.errors.required">
+      Assignment Name is required.
+    </div>
+  </div>-->
+
+      <!--  for block sized error message use this class in place of "error_message" class: class="alert alert-danger alert1"  -->
+      <!-- <div class="error_message" style="margin-top:-14px;" *ngIf="assignmentForm.submitted && assignment.untouched">
+      This field is required
+    </div>
+    <div *ngIf="assignment.touched && assignment.invalid" class="error_message" style="margin-top:-14px;">
+      <div *ngIf="assignment.errors.required">
+        This field is required
+      </div>
+    </div> -->
+    </div>
+    <div class="btn_cancel  col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right">
+      <button  type="submit" class="btn btn-primary">
+        <i class="glyphicon glyphicon-search"></i>&nbsp;Search</button>
+    </div>
+  </div>
+</form>
+
+<div class="table table-responsive" style="overflow-x:initial;width:70%;margin-left:10%;">
+    <table  class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <!-- <th class="text-center">
+            <input type="checkbox" (click)="deleteAllSelected($event)" id="delete_check">
+          </th> -->
+          <!-- <th class="text-center ">Sl&nbsp;No.</th> -->
+          <th class="text-center">Paid In</th>
+          <th class="text-center">Paid Out</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- <td>
+            1
+          </td> -->
+         <td>
+           <table border="0" class="tab">
+             <tr>
+               <td>
+                Sales Order
+               </td>
+               <td class="pull-right">
+                 Rs.6000
+                </td>
+             </tr>
+           </table>
+         </td>
+         <td>
+            <table border="0" class="tab">
+              <tr>
+                <td>
+                 Salary
+                </td>
+                <td class="pull-right">
+                  Rs.10000
+                 </td>
+              </tr>
+            </table>
+          </td>
+          </tr>
+         <tr>
+           <!-- <td>
+             <b>Total Amount</b>
+           </td> -->
+           <td class="text-center">
+             <b>Total :</b>&nbsp;&nbsp;&nbsp;&nbsp; <b>Rs.6000</b>
+            </td>
+            <td class="text-center">
+                <b>Total :</b>&nbsp;&nbsp;&nbsp;&nbsp; <b>Rs.10000</b>
+              </td>
+         </tr>
+          <!-- <td class="text-right">
+            <p class="pull-right">1</p>
+          </td>
+          <td>
+            <tr>
+              <td>Sales Order</td>
+              <td ><p class="pull-right">Rs.6000</p></td>
+            </tr>
+            </td>
+          <td class="text-center">Salary&nbsp;&nbsp;&nbsp;&nbsp;Rs.10000</td> -->
+         
+          <!-- <td class="text-center center" style="width:4%;">
+            <i pageScroll href="#home" #editElement class="glyphicon glyphicon-pencil cursor-pointer editDept" [attr.assignmentId]="post.a_id"
+              [attr.assignmentName]="post.assignment_name" [attr.assignmentInitialDate]="post.initiate_date" [attr.assignmentEndDate]="post.due_date"
+              [attr.assignmentTotalMarks]="post.total_marks" [attr.assignmentInstruction]="post.instructions" (click)="editassignment(this.editElement)"
+              (click)="checkDate(post.initiate_date)"></i>
+              </td>
+           <td class="text-center center" style="width:7%;">
+              <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer deleteAssignment" [attr.assignmentId]="post.a_id" (click)="deleteWarning(this.deleteElement,this.assignmentDeleteModal)"></i>
+              </td> -->
+       
+      </tbody>
+    </table>
+  </div>
+
+</div>

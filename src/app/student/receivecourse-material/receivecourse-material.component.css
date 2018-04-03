@@ -1,0 +1,41 @@
+.middle {
+    color: white;
+    text-align: left;
+    padding-top:3px;  
+    margin-top: 3px !important;  
+    margin-left: -14px;
+  }
+  .panel {
+    height: 30px;
+  }
+
+   .panel-primary {
+    background: rgb(35, 47, 62);
+    border-radius: 20px 0 20px 0;
+    height: 30px;
+    width:100%;
+    border-color:rgb(35, 47, 62);
+  }
+
+.padd2{
+  margin-left:-12px;
+}
+.sectiondropdown{
+  width:130px;
+}
+@media screen and (max-width: 480px) {
+  .sectiondropdown{
+    width:303px;
+  }
+  .dropmob{
+    width:332px;
+  }
+}
+@media screen and (max-height: 360px) {
+  .sectiondropdown{
+    width: 568px;
+  }
+  .dropmob{
+    width:598px;
+  }
+}

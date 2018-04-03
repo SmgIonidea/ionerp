@@ -1,0 +1,205 @@
+.panel-primary {
+    background: rgb(35, 47, 62);
+    border-radius: 20px 0 20px 0;
+    height: 30px;
+    width:100%;
+    border-color:rgb(35, 47, 62);
+  }
+  .middle {
+    color: white;
+    text-align: left;
+    padding-top:3px;
+    margin-left: -14px;
+    margin-top:3px;
+  }
+  .btn-bs-file{
+    position:relative;
+}
+.btn-bs-file input[type="file"]{
+    position: absolute;
+    top: -9999999;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    width:0;
+    height:0;
+    outline: none;
+    cursor: inherit;
+}
+  
+  .panel {
+    height: 30px;
+  }
+
+  .panel-body{
+      margin-top:-25px;
+  }
+  .siz{
+    margin-left: -78px;
+  }
+  .aligndrop{
+    margin-top: -5px;
+  }
+  .inputwidth{
+    width: 666px;
+    margin-left: -88px;
+    margin-top: 10px;
+  }
+  .top {
+    margin-left: -87px;    
+    width: 693px;   
+  }
+  .well{
+    background-color: rgb(245, 243, 243);
+  }
+  .labelalignment{     
+      margin-left:-44px;
+  }
+  .labelalignment1{
+    margin-top:10px;
+    margin-left:-60px;
+  }
+  .labelalignment2{
+    margin-left: -54px;
+    margin-top: 12px;
+  }
+  .labelalignment3{
+    margin-left:-42px;
+  }
+  .multiselect1{
+    margin-top: 1%;
+  }
+  .siz3{
+    margin-left: -88px;
+    width: 667px;
+  }
+  .fileinputlabel{
+    margin-left: -50%;
+  }
+ 
+.btndivalign{
+  margin-right: -43%;
+}
+
+.rowalign{
+  margin-top: 40px;
+}
+  .notealign{
+    margin-left: -43px;    
+  }
+.dropalign{
+  margin-left: 170px;
+  margin-top: -23px;
+}
+.postdivalign{
+  margin-left:10px;
+}
+.error_message{
+  margin-left:-88px;
+}
+.notealign1{
+  margin-left: 0px;    
+}
+.btndivalign1{
+margin-right: -36%;
+margin-top: -10px;
+}
+.group-drop{
+margin-right: 530px;
+margin-top: -29px;
+}
+
+.group-plus{
+margin-left: 44%;
+margin-top: -24px;
+}
+
+.modal-gname{
+margin-left: 70px;
+margin-top: 8px;
+}
+
+.memberalign{
+  margin-top: 13px;
+  margin-left: -10%;
+}
+
+.memberalign1{
+  margin-top: -15px;
+}
+
+  @media screen and (max-width: 360px) {
+    .panel-body{
+      margin-top: -10px;
+      padding:0px;
+    }
+    .siz{
+      margin-left: -45px;
+    }
+    .inputwidth{
+      width: 300px;
+      margin-left: -60px;
+      margin-top:0px;
+    }
+    .top{
+      margin-left: -60px;
+      width: 328px;
+    }
+    .btnalign{
+      margin-left: -30px;
+    }
+    .btndivalign{
+      margin-right: -42px;
+    }
+    .siz3{
+      width: 300px;
+      margin-left: -62px;
+    }
+    .filebuttons{
+      margin-left: 19px;
+      margin-top: 5px;
+    }
+    .dropalign{
+      margin-left: 0px;
+      margin-top: 0px;
+    }
+    .error_message{
+      margin-left: -59px;
+    }
+  }
+
+  @media screen and (max-height: 360px) {
+    .siz{
+      margin-left: -45px;
+    }
+    .inputwidth{
+      width: 570px;
+      margin-left: -60px;
+      margin-top:0px;
+    }
+    .top{
+      margin-left: -59px;
+      width: 595px;
+    }
+    .siz3{
+      margin-left: -60px;
+      width: 568px;
+    }
+    .filebuttons{
+      margin-left: 23%;
+      margin-top: 5px;
+    }
+    .btndivalign{
+      margin-right: -43px;
+      margin-top: -10px;
+    }
+  .dropalign{
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  .error_message{
+    margin-left: -59px;
+  }
+  
+  }
+  
+  

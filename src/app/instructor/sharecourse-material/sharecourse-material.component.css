@@ -1,0 +1,198 @@
+ .btn-bs-file{
+    position:relative;
+}
+.btn-bs-file input[type="file"]{
+    position: absolute;
+    top: -9999999;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    width:0;
+    height:0;
+    outline: none;
+    cursor: inherit;
+}
+
+table {
+     border-collapse: collapse;
+     border-spacing: 0;
+     width: 100%;
+     border: 1px solid #ddd;
+ }
+ th, td {
+     border: none;
+     /* text-align: left; */
+     padding: 8px;
+ }
+
+.middle {
+    color: white;
+    text-align: left;
+    padding-top:3px;
+    margin-left: -14px;
+  }
+
+.pan{
+margin-top: 12px;
+}
+.top{
+  width:90px;
+  height:35px;
+  padding:10px;
+}
+  .panel-primary {
+    background: rgb(35, 47, 62);
+    border-radius: 20px 0 20px 0;
+    height: 30px;
+    width:100%;
+    border-color:rgb(35, 47, 62);
+  }
+
+  .well{
+    background-color: rgb(245, 243, 243);
+  
+  }
+  h4, .h4, h5, .h5, h6, .h6 {
+    margin-top: 3px;
+  }
+
+  .lab{
+    margin-left: -42px;
+  }
+.top{
+  width:90px;
+}
+  .lab1{
+    margin-left: -24px;
+  }
+
+
+  .siz{
+    margin-left: -40px;
+    
+  }
+
+  .siz1{
+    margin-left: -41px;
+    width: 100%;
+  }
+
+  .siz2{
+    margin-left: -41px;
+    width: 100%;
+  }
+
+  .siz3{
+    width: 107%;
+  }
+
+  .middle1{
+      margin-left: -20px;
+  }
+
+  .panel {
+    height: 30px;
+  }
+
+  .panel-body{
+      margin-top:-25px;
+  }
+  .center {
+    margin: auto;
+    padding: 20px;
+   }
+   .btn_cancel{
+    float:right;
+    margin-right:-10%;
+  }
+  .btn_update{
+    float:right;
+    margin-right:-10%;
+  }
+  .padd2{
+  margin-left:-12px;
+}
+
+.sectiondropdown{
+  width:130px;
+}
+  
+/*For Portait Mode view*/
+ @media screen and (max-width: 480px) {
+    .top {
+      margin-left: -44px;
+}
+.siz{
+  width: 300px;
+  margin-left: -20%;
+}
+
+.lab{
+  margin-left: -43px;
+}
+.siz1{
+  margin-left: -50px;
+  width: 250px;
+}
+.siz2{
+  margin-left: -50px;
+  width: 250px;
+}
+.btn_cancel{
+  float:right;
+  margin-right: -16%;
+}
+.btn_update{
+  float:right;
+  margin-right: -16%;
+}
+ /* .btn {
+    margin-right:12%;
+} */
+.dropmob{
+  width:332px;
+}
+.sectiondropdown{
+  width:303px;
+}
+
+/* .multiselect1 .dropdown-toggle{
+  width: 300px !important;
+  text-align: left;
+} */
+}
+
+/*For Landscape Mode view*/
+@media screen and (max-height: 360px) {
+.lab1{
+  margin-left: -46px;
+}
+.siz{
+  margin-left: -46px;
+  width: 570px;
+}
+.btn_cancel{
+  float:right;
+  margin-right:-384px;
+}
+.btn_update{
+  float:right;
+  margin-right:-384px;
+}
+
+.can{
+      margin-right:-610%;
+    }
+ .dropmob{
+    width:598px;
+  }
+  .sectiondropdown{
+    width: 568px;
+  }
+}
+
+
+
+
+
+
+

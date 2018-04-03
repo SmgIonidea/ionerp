@@ -1,0 +1,76 @@
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ maintitle }}</h4>
+  </div>
+</section>
+
+<div class="col-md-12">
+  <div class="col-md-6">
+    <div class="col-md-2">
+      <label class="labelalign">From:
+        <!-- <span class="mandatory" style="color:red;">*</span> -->
+      </label>
+    </div>
+    <div class='right-inner-addon date datepicker siz col-md-8' data-date-format="dd-mm-yyyy">
+      <my-date-picker class="top" placeholder=" dd-mm-yyyy" name="myinitialdate" id="myinitialdate" [options]="myDatePickerOptions"
+        [(ngModel)]="model" required>
+      </my-date-picker>
+      <!-- <br>
+        <br>
+        <div *ngIf="myinitialdate.touched && myinitialdate.invalid" class="error_message" style="margin-top:-18px;">
+          <div *ngIf="assignmentForm.controls.myinitialdate.errors.required">
+            This field is required
+          </div>
+        </div> -->
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="col-md-2">
+      <label class="labelalign">To:
+        <!-- <span class="mandatory" style="color:red;">*</span> -->
+      </label>
+    </div>
+    <div class='right-inner-addon date datepicker siz col-md-8' data-date-format="dd-mm-yyyy">
+      <my-date-picker class="top" placeholder=" dd-mm-yyyy" name="myinitialdate" id="myinitialdate" [options]="myDatePickerOptions"
+        [(ngModel)]="model" required>
+      </my-date-picker>
+      <!-- <br>
+          <br>
+          <div *ngIf="myinitialdate.touched && myinitialdate.invalid" class="error_message" style="margin-top:-18px;">
+            <div *ngIf="assignmentForm.controls.myinitialdate.errors.required">
+              This field is required
+            </div>
+          </div> -->
+    </div>
+  </div>
+</div>
+
+<div class="table table-responsive" style="overflow-x:initial;">
+    
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+    <thead style="background-color:#DDE1E6;">
+      <tr>
+        <th class="text-center col-lg-2">To [Person type]</th>
+        <th class="text-center col-lg-2">Subject</th>
+        <th class="text-center col-lg-3">Message</th>
+        <th class="text-center col-lg-2">Sent on</th>
+        <th class="text-center col-lg-1">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Admin</td>
+        <td>Test</td>
+        <td>Hello...</td>
+        <td>09-03-2018</td>
+        <td class="text-center">
+          <i class="glyphicon glyphicon-trash"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- <div>
+    <label style="color:red">Note&nbsp;<span style="color:red">*</span>&nbsp;denotes mandatory</label>
+  </div> -->

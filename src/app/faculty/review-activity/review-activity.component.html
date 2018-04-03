@@ -1,0 +1,248 @@
+<section class="content-header">
+  <!--Div for Page Headings -->
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Activity Student Marks Import</h4>
+  </div>
+  <!-- Page Headings Div Ends Here -->
+</section>
+<div class="container-fluid">
+  <div class="row" style="margin-bottom: 20px;">
+    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6 text-display table-border" data-toggle="tooltip" title={{curriculumValue}}>Curriculum:
+      <label style="color:blue;">&nbsp;{{curriculumValue}}</label>
+    </div>
+    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6 table-border">Term:
+      <label style="color:blue;">&nbsp;{{termValue}}</label>
+    </div>
+    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6 text-display table-border" data-toggle="tooltip" title={{courseValue}}>Course:
+      <label style="color:blue;">&nbsp;{{courseValue}}</label>
+    </div>
+    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6 table-border">Section:
+      <label style="color:blue;">&nbsp;{{sectionValue}}</label>
+    </div>
+    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6 text-display table-border" data-toggle="tooltip" title={{activityName}}>Activity Name:
+      <label style="color:blue;">&nbsp;{{activityName}}</label>
+    </div>
+    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6 table-border">Initial Date:
+      <label style="color:blue;">&nbsp;{{initialDate}}</label>
+    </div>
+    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6 table-border">End Date:
+      <label style="color:blue;">&nbsp;{{endDate}}</label>
+    </div>
+    <div class="col-lg-3 col-md-4 hidden-xs col-sm-6 table-border">
+      <label style="color:blue;">&nbsp;</label>
+    </div>
+    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6 table-border">Total No. of students:
+      <label style="color:blue;">&nbsp;{{studGetActDetails?.total_stud}}</label>
+    </div>
+    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6 table-border">No. of students viewed:
+      <label style="color:blue;">&nbsp;{{studGetActDetails?.stud_viewed + studGetActDetails?.stud_submtd}}</label>
+    </div>
+    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6 table-border">No. of students submitted:
+      <label style="color:blue;">&nbsp;{{studGetActDetails?.stud_submtd}}</label>
+    </div>
+    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6 table-border">No. of students yet to submit:
+      <label style="color:blue;">&nbsp;{{studGetActDetails?.total_stud - studGetActDetails?.stud_submtd}}</label>
+    </div>
+  </div>
+
+  <div id="output_field" class="foo"></div>
+
+  <div style="margin-top:10px;" class="row">
+    <accordion [showArrows]="true">
+      <accordion-group class="submit" isOpened="true">
+        <accordion-heading style="font-size: 14px;"><b>Student Details</b></accordion-heading>
+        <div class="table table-responsive" style="overflow-x:initial;">
+          <table class="table table-bordered table-striped table-hover" style="width:100%;">
+            <thead>
+              <tr>
+                <th>Sl No.</th>
+                <th>USN</th>
+                <th>Student Name</th>
+                <th>Answer submitted by student</th>
+                <ng-template ngFor let-marks [ngForOf]="marksPerQsn?.marks_per_qsn">
+                  <th>{{'C'+marks?.main_que_num+' ('+marks?.que_max_marks+')'}}</th>
+                </ng-template>
+                <ng-template ngFor let-totalMarks [ngForOf]="marksPerQsn?.total_marks">
+                  <th>Total Marks ({{totalMarks.total_marks}})</th>
+                </ng-template>
+              </tr>
+            </thead>
+            <tbody *ngIf=" ! realTableData.length > 0">
+              <tr *ngFor="let data of marksPerQsn?.stud_details; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{data?.student_usn}}</td>
+                <td>{{data?.title+' '+data?.first_name+' '+data?.last_name}}</td>
+                <td *ngIf="data?.ans_type == '1' && data?.ans_status == '2'">{{data?.ans_content}}</td>
+                <td *ngIf="data?.ans_type == '2' && data?.ans_status == '2'">
+                  <a href="{{service.baseUrl+'assets/upload/studentActivity/'+data?.ans_content}}" target="_blank">
+                    {{data?.ans_content}}
+                  </a>
+                </td>
+                <td *ngIf="data?.ans_type == '3' && data?.ans_status == '2'">
+                  <a [attr.href]="data?.ans_content" target="_blank">{{data?.ans_content}}</a>
+                </td>
+                <td *ngIf="!data?.ans_type || data?.ans_status == '1'" style="color:#8E2727;">NOT SUBMITTED</td>
+                <ng-template ngFor let-marks [ngForOf]="marksPerQsn?.marks_per_qsn">
+                  <td>-</td>
+                </ng-template>
+                <td>-</td>
+              </tr>
+            </tbody>
+            <tbody *ngIf="realTableData.length > 0">
+              <tr *ngFor="let data of realTableData; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{data[0]}}</td>
+                <td>{{data[1]}}</td>
+                <td *ngIf="data[3] == '1' && data[4] == '2'">{{data[2]}}</td>
+                <td *ngIf="data[3] == '2' && data[4] == '2'">
+                  <a href="{{service.baseUrl+'assets/upload/studentActivity/'+data[2]}}" target="_blank">{{data[2]}}</a>
+                </td>
+                <td *ngIf="data[3] == '3' && data[4] == '2'"><a [attr.href]="data[2]" target="_blank">{{data[2]}}</a></td>
+                <td *ngIf="!data[3] || data[4] == '1'" style="color:#8E2727;">NOT SUBMITTED</td>
+                <td>{{data[5] || '-'}}</td>
+                <ng-template ngFor let-marks [ngForOf]="marksPerQsn?.marks_per_qsn" let-num="index">
+                  <td>{{data[6+num] || '-'}}</td>
+                </ng-template>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </accordion-group>
+    </accordion>
+  </div>
+
+  <div class="row">
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td>
+            <b>Steps:</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1) Click on
+            <font color="#8E2727"><b>"Upload"</b></font> button to upload the .csv file. Make sure that the
+            <font color="#8E2727"><b>file name</b></font> and
+            <font color="#8E2727"><b>file headers</b></font> are not altered.<br> &nbsp;&nbsp;&nbsp; (Note:
+            <font color="#8E2727"><b>Discard previous downloaded file from your system</b></font> before downloading new file)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            2) Upon upload, student USN, sub questions with their marks and remarks will be displayed.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            3) Click on
+            <font color="#8E2727"><b>"Accept"</b></font> button to save the student data and return back to list page. Make sure that all the
+            <font
+              color="#8E2727"><b>remarks are resolved</b></font> before proceeding.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            4) To replace students data follow step 1.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row pull-right">
+    <button 
+      type="button" 
+      class="btn btn-primary col-lg-3 col-md-3 col-xs-12 col-sm-3" 
+      style="margin:0px 2px 3px 2px;" 
+      (click)="downloadCSV()">
+      <i class="glyphicon glyphicon-download"></i>&nbsp;Download
+    </button>
+    <button 
+      type="button" 
+      class="btn btn-primary upload-btn-wrapper col-lg-3 col-md-3 col-xs-12 col-sm-3" 
+      style="margin:0px 2px 3px 2px;">
+      <i class="glyphicon glyphicon-upload"></i>&nbsp;Upload .csv
+      <input 
+        #fileInput 
+        type="file" 
+        id="csvfile" 
+        name="csvfile" 
+        onclick="this.value = null" 
+        (change)="uploadCSV($event)" 
+        accept=".csv" />
+    </button>
+    <button 
+      type="button" 
+      class="btn btn-primary col-lg-3 col-md-3 col-xs-12 col-sm-3" 
+      style="margin:0px 2px 3px 2px;" 
+      (click)="acceptCSV()">
+      <i class="glyphicon glyphicon-ok"></i>&nbsp;Accept .csv
+    </button>
+    <button 
+      type="button" 
+      class="btn btn-danger col-lg-2 col-md-2 col-xs-12 col-sm-2" 
+      style="margin:0px 2px 3px 2px;" 
+      [routerLink]="['/content',{outlets:{appCommon:['activity']}}]">
+      <i class="glyphicon glyphicon-remove"></i>&nbsp;Close
+    </button>
+  </div>
+
+  <div class="row">
+    <div *ngIf="tempTableData?.length > 0" class="table table-responsive" style="overflow-x:initial;margin-top:10px;">
+      <table class="table table-bordered table-striped table-hover" style="width:100%;">
+        <thead style="background-color:#DDE1E6;">
+          <tr>
+            <th>SL NO.</th>
+            <th>REMARKS</th>
+            <th>STUDENT NAME</th>
+            <th>STUDENT USN</th>
+            <ng-template ngFor let-marks [ngForOf]="marksPerQsn?.marks_per_qsn">
+              <th>{{'C'+marks?.main_que_num+' ('+marks?.que_max_marks+')'}}</th>
+            </ng-template>
+            <ng-template ngFor let-totalMarks [ngForOf]="marksPerQsn?.total_marks">
+              <th>TOTAL MARKS ({{totalMarks.total_marks}})</th>
+            </ng-template>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of tempTableData">
+            <ng-template ngFor let-val [ngForOf]="data  | keys" let-currentElementIndex="index+1">
+              <td [hidden]="currentElementIndex == 3">{{val.value || '-'}}</td>
+            </ng-template>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- UploadError modal start-->
+<div #UploadErrorModal class="modal fade" id="UploadError" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Warning</h4>
+      </div>
+      <div class="modal-body">
+        <p id="modalContent"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">
+          <i class="glyphicon glyphicon-ok"></i>
+          Ok
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- UploadError modal end-->
+
+<div id="loader" class="loader"></div>
+
+<!-- Tag for showing Toast Message -->
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+<!-- Toast Tag Ends Here -->

@@ -1,0 +1,141 @@
+<div id="departmentListDiv" class="departmentListDiv">
+  <section class="content-header">
+    <!--<div class="headline">-->
+      <!-- Div for Page Headings -->
+      
+      <div class="panel panel-primary">
+      <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ listPageHeading }}</h4>
+    </div>
+    <!--</div>-->
+    <!-- Page Headings Div Ends Here -->
+  </section>
+   <div class="table table-responsive" style="overflow-x:initial;">
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table-striped table-bordered  table-hover">
+    <thead>
+      <tr>
+        <th class="text-center" style="width:8%;">Sl No.</th>
+        <th style="width:15%;">Department Name</th>
+        <th  style="width:71%;">Description</th>
+        <th class="text-center" style="width:4%;" >Edit</th>
+        <th class="text-center" >Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of posts.departmentList let i = index">
+        <td class="text-right" style="width:8%;">{{i+1}}</td>
+        <td style="width:15%;">{{post.dept_name}}</td>
+        <td  style="width:71%;">{{post.dept_description}}</td>
+        <td class="text-center" style="width:4%;">
+          <i #editElement class="glyphicon glyphicon-pencil cursor-pointer editDept" [attr.deptId]="post.dept_id" [attr.deptName]="post.dept_name"
+            [attr.deptDescription]="post.dept_description" (click)="editDepartment(this.editElement)"></i>
+        </td>
+        <td class="text-center">
+          <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer deleteDepartment" 
+          [attr.deptId]="post.dept_id"
+          (click)="deleteWarning(this.deleteElement,this.departmentDeleteModal)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+<form [formGroup]="depForm" class="container-fluid"  (ngSubmit)="createPost(depForm)">
+  <section class="content-header">
+    <!--<div class="headline">-->
+      <!-- Div for Page Headings -->
+       <div class="panel panel-primary ">
+      <h4 class="middle middle1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ operationHeading }}</h4>
+    </div>
+    <!--</div>-->
+    <!-- Page Headings Div Ends Here -->
+  </section>
+  <div class="form-group">
+    <div class="row">
+    <label for="department" class="col-sm-1 control-label">Department Name</label>
+    <div class="col-md-6">
+      <input formControlName="department" type="text" name="department" placeholder="Enter Department Name" id="department" value="" class="form-control" 
+      />
+      <div class="alert alert-danger" *ngIf="depForm.submitted && department.untouched">
+        This field is required
+      </div>
+      <div *ngIf="department.touched && department.invalid" class="alert alert-danger">
+        <div *ngIf="department.errors.required">
+          This field is required
+        </div>
+        <div *ngIf="department.errors.minlength">
+          Department Name should be {{department.errors.minlength.requiredLength}} required.
+        </div>
+        <div *ngIf="department.errors.CharctersOnly">
+          Department Name Should Accept only Charecters.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <label for="description" class="col-sm-1 control-label">Description</label>
+    <div class="col-md-6">
+      <textarea formControlName="description" type="text" placeholder="Enter Description" name="description" id="description" value="" class="form-control">
+      </textarea><br><br>
+      <div *ngIf="description.touched && description.invalid" class="alert alert-danger">
+        Description Should be less than 1000 charecters.
+      </div>
+    </div>
+    </div>
+    <div class="row pull-right">
+     <div [style.display]="isSaveHide?'none':'block'"  style="margin-right:1em;">
+    <button id="saveDepartment" type="submit" class="btn btn-primary" [disabled] = "!depForm.valid" >
+        <i class="glyphicon glyphicon-file"></i>&nbsp; Save
+    </button>
+    <button id="closeForm" type="button" class="btn btn-danger">
+        <i class="glyphicon glyphicon-remove"></i> &nbsp;Close
+    </button>
+  </div>
+  </div>
+  <div class="row pull-right">
+  <div [style.display]="isUpdateHide?'none':'block'"  style="margin-right:1em;">
+    <button [disabled]="!depForm.valid" id="UpdateDepartment" type="button" class="btn btn-primary" (click)="updatePost(depForm)">
+        <i class="glyphicon glyphicon-ok"></i> Update
+    </button>
+    <button id="cancelEdit" type="button" class="btn btn-danger" (click)="cencelUpdate()">
+        <i class="glyphicon glyphicon-remove"></i> Cancel
+    </button>
+  </div>
+  </div>
+  </div>
+  <!--<div class="form-group">-->
+    
+  <!--</div>-->
+  
+  
+</form>
+
+
+<!-- Tag for showing Toast Message -->
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+<!-- Toast Tag Ends Here -->
+
+<!-- Modal warning message to delete the Department -->
+<div #departmentDeleteModal  class="modal fade" id="departmentDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header warning-msg" >
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        Department will be deleted permanently.
+        <input #deleteDeptId type="hidden" name="deleteDeptId" id="deleteDeptId" [value]="delDeptId">
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="deleteDeptData(deleteDeptId)" >
+            <i class="glyphicon glyphicon-ok"></i>
+            Yes
+          </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <i class="glyphicon glyphicon-remove"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

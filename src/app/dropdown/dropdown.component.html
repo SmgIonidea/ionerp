@@ -1,0 +1,68 @@
+<section class="content-header gap" >
+  <!--<div class="headline">-->
+    <!-- Div for Page Headings -->
+     <div class="panel panel-primary">
+      <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ title }}</h4>
+    </div>
+  <!--</div>-->
+  <!-- Page Headings Div Ends Here -->
+</section>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 row">
+  <div class="form-group col-lg-2 col-xs-12 col-md-2 col-sm-12 drop ">
+    <label data-key="lg_prgm" for="program" class="col-xs-8 col-sm-8 col-md-8 col-lg-8  key-data padd">Program: <span class="mandatory" style="color:red;">*</span></label>
+    <select name="program" [(ngModel)]="pgmId" id="program" (ngModelChange)="curriculum($event)" (change)="loadAllData()" (change)="clearcurr()" class="form-control col-lg-8 dropboxwidth"  style="font-size:12px;cursor:pointer;"  required>
+      <option [ngValue]="0" selected>Select Program</option>
+      <!-- <option [ngValue]="programDrop" [selected]="programDropdown" disabled selected hidden>{{programDropdown}}</option> -->
+      <option *ngFor="let type of programType" [ngValue]="type.pgm_id">
+        {{ type.pgm_acronym }}
+      </option>
+    </select>  
+  </div>
+
+  <div class="form-group col-lg-3  col-xs-12 col-md-3 col-sm-12 drop ">
+    <label data-key="lg_cur" for="curriculum" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 key-data padd">Curriculum:&nbsp;<span class="mandatory" style="color:red;">*</span></label>
+    <select name="curriculum" id="curriculum" [(ngModel)]="crclmId" (ngModelChange)="term($event)" (change)="loadAllData()" (change)="clearterm()" style="font-size:12px;cursor:pointer;" class="form-control  col-lg-8 dropboxwidth"
+      ngModel required>
+      <option [ngValue]="0" selected="selected" >Select Curriculum</option>
+      <!-- <option [ngValue]="curriculums" [selected]="currDropdown" disabled selected hidden>{{currDropdown}}</option> -->
+      <option *ngFor="let type of curriculumType" [ngValue]="type.crclm_id">
+        {{ type.crclm_name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group col-lg-2  col-xs-12 col-md-2 col-sm-12 drop ">
+    <label data-key="lg_term" for="term" class="col-xs-8 col-sm-8 col-md-8 col-lg-8  key-data padd">Term: <span class="mandatory" style="color:red;">*</span></label>
+    <select name="term" id="term" [(ngModel)]="termId" (ngModelChange)="course($event)" (change)="loadAllData()" (change)="clearcourse()" class="form-control  col-lg-8 dropboxwidth" style="font-size:12px;cursor:pointer;" ngModel
+      required>
+      <option [ngValue]="0" selected>Select Term</option>
+      <!--<option [ngValue]="termDrop" [selected]="termDropdown" disabled selected hidden>{{termDropdown}}</option>-->
+      
+      <option *ngFor="let type of termType" [ngValue]="type.crclm_term_id">
+        {{ type.term_name }}
+      </option>
+    </select>
+  </div>
+  <!-- </div>
+
+  <div class="row col-lg-12"> -->
+  <div class="form-group col-lg-3  col-xs-12 col-md-3 col-sm-12 drop" >
+    <label data-key="lg_course" for="course" class="col-xs-8 col-sm-8 col-md-8 col-lg-8  key-data padd">Course: <span class="mandatory" style="color:red;">*</span></label>
+    <select  name="course" id="course" [(ngModel)]="crsId" (ngModelChange)="section($event)" (change)="loadAllData()"  class="form-control col-lg-8 dropboxwidth" style="font-size:12px;cursor:pointer;" ngModel
+      required>
+       <option [ngValue]="0" selected>Select Course</option>
+      <!--<option [ngValue]="courseDrop" [selected]="courseDropdown" disabled selected hidden>{{courseDropdown}}</option>-->
+     
+      <option *ngFor="let type of courseType" [ngValue]="type.crs_id" title = "{{type.crs_code}}">
+        {{ type.crs_title }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group col-lg-1 col-xs-12 col-md-1 col-sm-12 drop">
+    <label data-key="lg_section" for="section" class=" col-xs-8 col-sm-8 col-md-12 col-lg-12  key-data padd">Section:&nbsp;<span class="mandatory" style="color:red;">*</span></label>   
+    <ss-multiselect-dropdown [options]="sectionType" class="col-lg-4 section" (change)="getdropdowndata()" [(ngModel)]="changedValue" [texts]="myTexts" ></ss-multiselect-dropdown>
+  </div>
+
+</div>

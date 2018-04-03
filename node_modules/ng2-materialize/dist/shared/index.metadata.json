@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":3,"metadata":{},"exports":[{"from":"./remove-component-host/remove-component-host"},{"from":"./injection/injection.service"}]},{"__symbolic":"module","version":1,"metadata":{},"exports":[{"from":"./remove-component-host/remove-component-host"},{"from":"./injection/injection.service"}]}]

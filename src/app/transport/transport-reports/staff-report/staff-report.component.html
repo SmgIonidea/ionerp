@@ -1,0 +1,88 @@
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Staff Wise Report(Driver Copy)
+    </h4>
+  </div>
+  <div style="margin-left:89.5%">
+    <button class="btn btn-primary" (click)="export_to_excel()">
+      <i class="glyphicon glyphicon-export"></i>&nbsp;Export List
+    </button>
+  </div>
+  <br>
+</section>
+
+<div class="container-fluid">
+  <form class="form-horizontal" style="border-top:0px;">
+    <div class="table table-responsive" style="overflow-x:initial;">
+      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+        <thead style="background-color:#DDE1E6;">
+          <tr>
+            <!-- <th class="text-center">
+          <input type="checkbox" (click)="deleteAllSelected($event)" id="delete_check">
+        </th> -->
+            <th class="text-center">S.No</th>
+            <th class="text-center">EMP ID</th>
+            <th class="text-center">Name of the staff</th>
+            <th class="text-center">Department</th>
+            <th class="text-center">Post</th>
+            <th class="text-center">Type of Vehicle</th>
+            <th class="text-center">Reg.No. of the Vehicle</th>
+            <th class="text-center">Route</th>
+            <th class="text-center">Name of the Driver</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <!-- <tr *ngFor="let post of posts let i = index"> -->
+            <!-- <pre>{{post | json}}</pre>       -->
+            <!-- <td>
+          <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
+        </td> -->
+            <td class="text-center">
+              <p class="pull-right">1</p>
+            </td>
+            <td class="text-right">
+              <p class="pull-right">52</p>
+            </td>
+            <td class="text-center">Bharti kashyap</td>
+            <td class="text-center">TEACHING STAFF</td>
+            <td class="text-center">HSST ZOOLOGY</td>
+            <td class="text-center">bus</td>
+            <td class="text-center">8065</td>
+
+            <td class="text-center">Root 1(Sitai Hat)</td>
+            <td class="text-center">ANILKUMAR.S </td>
+
+          </tr>
+          <tr>
+            <!-- <tr *ngFor="let post of posts let i = index"> -->
+            <!-- <pre>{{post | json}}</pre>       -->
+            <!-- <td>
+          <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
+        </td> -->
+        <td class="text-center">
+            <p class="pull-right">2</p>
+          </td>
+          <td class="text-right">
+            <p class="pull-right">55</p>
+          </td>
+          <td class="text-center">Mustansar sdf</td>
+          <td class="text-center">TEACHING STAFF</td>
+          <td class="text-center">HSST CHEMISTRY</td>
+          <td class="text-center">bus</td>
+          <td class="text-center">8065</td>
+
+          <td class="text-center">Root 1(Board 1)</td>
+          <td class="text-center">ANILKUMAR.S </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <br>
+    <br>
+    <br>
+  </form>
+</div>

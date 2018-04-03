@@ -1,0 +1,486 @@
+<section class="content-header">
+  <!--Div for Page Headings -->
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rubrics List</h4>
+  </div>
+  <!-- Page Headings Div Ends Here -->
+</section>
+<div class="row col-md-12 col-lg-12 col-xs-12 col-sm-12">
+  <div class="col-lg-3 col-md-3 col-xs-12 col-sm-6">Curriculum:
+    <label style="color:blue;">&nbsp;{{curriculumValue}}</label>
+  </div>
+  <div class="col-lg-2 col-md-2 col-xs-12 col-sm-3">Term:
+    <label style="color:blue;">&nbsp;{{termValue}}</label>
+  </div>
+  <div class="col-lg-3 col-md-3 col-xs-12 col-sm-6 text-display" data-toggle="tooltip" title={{courseValue}}>Course:
+    <label style="color:blue;">&nbsp;{{courseValue}}</label>
+  </div>
+  <div *ngIf="sectionName?.length>0" class="col-lg-2 col-md-2 col-xs-12 col-sm-3">Section:
+    <label style="color:blue;" *ngFor="let section of sectionName">&nbsp;{{section.mt_details_name}}</label>
+  </div>
+  <div class="col-lg-2 col-md-2 col-xs-12 col-sm-3 text-display" data-toggle="tooltip" title={{activityName}}>Activity:
+    <label style="color:blue;">&nbsp;{{activityName}}</label>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<div class="table table-responsive" style="overflow-x:initial;">
+  <table class="table table-bordered table-striped table-hover" style="width:100%;">
+    <thead style="background-color:#DDE1E6;">
+      <tr>
+        <th rowspan="2">Sl No.</th>
+        <th rowspan="2">Criteria</th>
+        <th *ngIf="dropdownShow[11]==1" rowspan="2">CO Code</th>
+        <th *ngIf="dropdownShow[22]==1" rowspan="2">PI Code</th>
+        <th *ngIf="dropdownShow[12]==1" rowspan="2">TLO Code</th>
+        <th *ngIf="colspanScaleAssessment" [attr.colspan]="colspanScaleAssessment" class="text-center">Scale of Assessment</th>
+        <th class="text-center" rowspan="2">Edit</th>
+        <th class="text-center" rowspan="2">Delete</th>
+      </tr>
+      <tr>
+        <ng-template ngFor let-range [ngForOf]="rubricsRange">
+          <th class="text-center">
+            {{range.criteria_range_name?range.criteria_range_name+':'+range.criteria_range:range.criteria_range}}
+          </th>
+        </ng-template>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of criteriaData; let i = index">
+        <td width="4%" class="text-right">{{i+1}}</td>
+        <td [attr.width]="60/colspanScaleAssessment+'%'">{{data.criteria}}</td>
+        <ng-template ngFor let-clo [ngForOf]="data.co">
+          <td width="5%" *ngIf="this.dropdownShow[11] == 1">{{clo.clo_code}}</td>
+        </ng-template>
+        <td width="5%" *ngIf="!(data.co?.length >0) && (this.dropdownShow[11] == 1)"></td>
+        <ng-template ngFor let-pi [ngForOf]="data.pi">
+          <td width="5%" *ngIf="this.dropdownShow[22] == 1">{{pi.pi_code}}</td>
+        </ng-template>
+        <td width="5%" *ngIf="!(data.pi?.length >0) && (this.dropdownShow[22] == 1)"></td>
+        <ng-template ngFor let-tlo [ngForOf]="data.tlo">
+          <td width="5%" *ngIf="this.dropdownShow[12] == 1">{{tlo.tlo_code}}</td>
+        </ng-template>
+        <td width="5%" *ngIf="!(data.tlo?.length >0) && (this.dropdownShow[12] == 1)"></td>
+        <td [attr.width]="60/colspanScaleAssessment+'%'" *ngFor="let criteriaDesc of data.criteriaDesc;">
+          {{criteriaDesc.criteria_description}}
+        </td>
+        <td width="4%" class="text-center">
+          <i 
+            pageScroll 
+            href="#edit_rubric" 
+            #editElement 
+            class="glyphicon glyphicon-pencil cursor-pointer" 
+            (click)="rubricsFinalizeStatus?editCriteriaWarning(data):editCriteria(data)"></i>
+        </td>
+        <td width="4%" class="text-center">
+          <i 
+            #deleteElement 
+            class="glyphicon glyphicon-remove cursor-pointer" 
+            [attr.criteriaId]="data.rubrics_criteria_id" 
+            (click)="deleteWarning(this.deleteElement, this.criteriaDeleteModal)"></i>
+        </td>
+      </tr>
+      <tr *ngIf="!(criteriaData?.length > 0)">
+        <td colspan='16' class="text-center">No data available in table</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="criteriaData?.length > 0" class="text-right">
+  <button 
+    [disabled]="rubricsFinalizeStatus" 
+    type="button" id="finalize_rubrics" 
+    name="finalize_rubrics" 
+    class="btn btn-success"
+    (click)="finalizeRubricsDataWarning()">
+            {{rubricsFinalizeStatus?'Rubrics Finalized':'Finalize Rubrics'}}
+    </button>
+</div>
+<br>
+
+<!--ADD-->
+<section class="content-header">
+  <!--Div for Page Headings -->
+  <div class="panel panel-primary">
+    <h4 class="middle middle1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{title}}</h4>
+  </div>
+  <!-- Page Headings Div Ends Here -->
+</section>
+<div class="container-fluid" id="edit_rubric">
+  <div class="row col-lg-12 col-md-12 col-xs-12 col-sm-12">
+    <div *ngIf="!rangeExist" class="pull-right">
+      <div class="col-lg-9 col-md-9 col-xs-12 col-sm-6">Enter No. of Columns (Scale of Assessment) for Rubrics
+        <font color="red">*</font>
+        <input 
+          [class.red-border]="invalidInput" 
+          #colForRubrics 
+          type="text" 
+          style="width:50px;display: inline-block" 
+          class="form-control input-mini"
+          maxlength="1" />
+        <div *ngIf="invalidInput" style="color:red">
+          Enter valid input.
+        </div>
+      </div>
+      <div class="text-right col-lg-3 col-md-3 col-xs-12 col-sm-6">
+        <button 
+          type="button" 
+          id="generate_rubrics" 
+          name="generate_rubrics" 
+          class="btn btn-primary" 
+          (click)="GenerateRubricsTable(colForRubrics.value);">
+                Generate Rubrics
+        </button>
+      </div>
+    </div>
+    <div *ngIf="rangeExist" class="pull-right">
+      <button 
+        type="button" 
+        id="regenerate_rubrics" 
+        name="regenerate_rubrics" 
+        class="btn btn-primary" 
+        (click)='regenarateRubricScaleWarning()'>
+            Re-Generate Rubrics
+      </button>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <form 
+    [formGroup]="rubricsForm" 
+    #rubricForm="ngForm" 
+    (ngSubmit)="rubricForm.valid && (!isSaveHide? (rubricsFinalizeStatus?createRubricsCriteriaWarning(rubricsForm):createRubricsCriteria(rubricsForm)):updateRubricsCriteria(rubricsForm))">
+    <div *ngIf="rubricsCol!=0" class="col-lg-12 col-md-12 col-xs-12 col-sm-12" align="center"><b>Scale of Assessment</b></div>
+    <div *ngIf="rubricsCol!=0" class="row outer col-lg-12 col-md-12 col-xs-12 col-sm-12 text-center">
+      <div style="margin-top:130px;display:inline-flex;">
+        <div class="form-group inner" align="center"><b>Criteria : <font color='red'> * </font></b>
+          <textarea 
+            [class.red-border]="(rubricCriteria.dirty || rubricCriteria.touched || rubricForm.submitted) && rubricCriteria.errors"
+            formControlName="rubricCriteria" 
+            class="form-control set-width" 
+            rows="3" 
+            cols="15">
+          </textarea>
+          <div 
+            *ngIf="(rubricCriteria.dirty || rubricCriteria.touched || rubricForm.submitted) && rubricCriteria.errors" 
+            class="error">
+            This field is required
+          </div>
+        </div>
+        <div *ngIf="dropdownShow[11]==1" [style.order]="dropdownOrder[11]" class="form-group inner" align="center">
+          <label>CO<font color='red'> * </font></label><br>
+          <ss-multiselect-dropdown
+            class="dropup" 
+            formControlName="addRubricsCO" 
+            name="addRubricsCO" 
+            id="addRubricsCO" 
+            [options]="courseOutcomeList"
+            [(ngModel)]="optionsCO" 
+            (ngModelChange)="getPI($event);gettlo($tyevent);" 
+            [texts]="myCO" 
+            [settings]="cloSettings"
+            data-toggle="tooltip" 
+            title="Select Course Outcomes">
+          </ss-multiselect-dropdown>
+          <div *ngIf="rubricForm.submitted && addRubricsCO.errors" class="error">
+            This field is required
+          </div>
+        </div>
+        <div *ngIf="dropdownShow[22]==1" [style.order]="dropdownOrder[22]" class="form-group inner" align="center">
+          <label>PI</label><br>
+          <ss-multiselect-dropdown 
+            class="dropup"
+            formControlName="addRubricsPI" 
+            name="addRubricsPI" 
+            id="addRubricsPI" 
+            [options]="piList" 
+            [(ngModel)]="optionsPI"
+            [texts]="myPI" 
+            [settings]="piSettings" 
+            data-toggle="tooltip" 
+            title="Select Peformance Indicator">
+          </ss-multiselect-dropdown>
+          <div *ngIf="rubricForm.submitted && addRubricsPI.errors" class="error">
+            This field is required
+          </div>
+        </div>
+        <div *ngIf="dropdownShow[12]==1" [style.order]="dropdownOrder[12]" class="form-group inner" align="center">
+          <label>TLO</label><br>
+          <ss-multiselect-dropdown
+            class="dropup"
+            formControlName="addRubricsTLO" 
+            name="addRubricsTLO" 
+            id="addRubricsTLO" 
+            [options]="tloList" 
+            [(ngModel)]="optionsTLO"
+            [texts]="myTLO" 
+            [settings]="tloSettings" 
+            data-toggle="tooltip" 
+            title="Select Topic Level Outcomes">
+          </ss-multiselect-dropdown>
+          <div *ngIf="rubricForm.submitted && addRubricsTLO.errors" class="error">
+            This field is required
+          </div>
+        </div>
+      </div>
+      <ng-template ngFor let-item [ngForOf]="createRange(rubricsCol)" let-currentElementIndex="index+1">
+        <div class="inner" align="center">
+          <label>Scale:</label>
+          <input 
+            formControlName="rubricScale{{currentElementIndex}}" 
+            name="rubricScale{{currentElementIndex}}" 
+            type="text" 
+            class="form-control text-center"
+            placeholder="Ex: Good" 
+            [(ngModel)]="scaleArrayVal[currentElementIndex-1]" 
+            [readonly]="rangeExist" /><br>
+          <label>Range:</label>
+          <font color='red'> * </font>
+          <input 
+            [class.red-border]="(validateRange(currentElementIndex).dirty || validateRange(currentElementIndex).touched || rubricForm.submitted) && validateRange(currentElementIndex).errors"
+            formControlName="rubricRange{{currentElementIndex}}" 
+            type="text" 
+            class="form-control text-right" 
+            [(ngModel)]="rangeArrayVal[currentElementIndex-1]"
+            [readonly]="rangeExist" />
+          <div 
+            *ngIf="(validateRange(currentElementIndex).dirty || validateRange(currentElementIndex).touched || rubricForm.submitted) && validateRange(currentElementIndex).errors"
+            class="error">
+            This field is required
+          </div>
+          <br>
+          <textarea 
+            [class.red-border]="(validateCriteria(currentElementIndex).dirty || validateCriteria(currentElementIndex).touched || rubricForm.submitted) && validateCriteria(currentElementIndex).errors"
+            formControlName="rubricCriteria{{currentElementIndex}}" 
+            class="form-control" 
+            [(ngModel)]="criteriaDescArrayVal[currentElementIndex-1]"
+            rows="3" 
+            cols="15">
+          </textarea>
+          <div *ngIf="(validateCriteria(currentElementIndex).dirty || validateCriteria(currentElementIndex).touched || rubricForm.submitted) && validateCriteria(currentElementIndex).errors"
+            class="error">
+            This field is required
+          </div>
+        </div>
+      </ng-template>
+    </div>
+    <div class="row text-right col-lg-12 col-md-12 col-xs-10 col-sm-12" style="margin-top:10px;">
+      <button type="submit" class="btn btn-primary" *ngIf="rubricsCol!=0 && !isSaveHide">
+        <i class="glyphicon glyphicon-file"></i>&nbsp;Save
+      </button>
+      <button type="submit" class="btn btn-primary" *ngIf="rubricsCol!=0 && !isUpdateHide">
+        <i class="glyphicon glyphicon-file"></i>&nbsp;Update
+      </button>
+      <button type="button" class="btn btn-danger" [routerLink]="['/content',{outlets:{appCommon:['activity']}}]">
+        <i class="glyphicon glyphicon-remove"></i>&nbsp;Close
+      </button>
+    </div>
+  </form>
+</div>
+
+<div id="loader" class="loader"></div>
+
+<!-- Tag for showing Toast Message -->
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+<!-- Toast Tag Ends Here -->
+
+<!-- RegenerateRubricsScale modal start-->
+<div 
+  #regenarateRubricScaleModal 
+  class="modal fade" 
+  id="regenarateRubricScale" 
+  tabindex="-1" 
+  role="dialog" 
+  aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Warning</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to Redefine the Rubrics definition ?</p>
+        <p>All the Criteria and Scale of Assessment defined earlier will be deleted and you need to define all a fresh.</p><br>
+        <p>Press Ok to continue.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)='regenarateRubricScale()'>
+          <i class="glyphicon glyphicon-ok"></i>
+          Ok
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <i class="glyphicon glyphicon-remove"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- RegenarateRubricsScale modal end-->
+
+<!--delete modal start-->
+<div #criteriaDeleteModal class="modal fade" id="criteriaDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this Criteria?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="deleteCriteriaData()">
+          <i class="glyphicon glyphicon-ok"></i>
+          Yes
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <i class="glyphicon glyphicon-remove"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--delete modal end-->
+
+<!-- finalizeRubricsData modal start-->
+<div 
+  #finalizeRubricsDataModal 
+  class="modal fade" 
+  id="finalizeRubricsData" 
+  tabindex="-1" 
+  role="dialog" 
+  aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header info-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Finalize Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to finalize the defined rubrics?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)='finalizeRubricsData()'>
+          <i class="glyphicon glyphicon-ok"></i>
+          Yes
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <i class="glyphicon glyphicon-remove"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- finalizeRubricsData modal end-->
+
+<!-- editCriteriaData modal start-->
+<div #editCriteriaModal class="modal fade" id="editCriteria" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Warning</h4>
+      </div>
+      <div class="modal-body">
+        <p>Rubrics is already finalized for CIA assessment import and you might have uploaded the assessment data.</p>
+        <p>If you want to edit this criteria then all the assessment data will be erased and you need to refinalize the rubrics.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)='editCriteria(editedCriteriaData)'>
+          <i class="glyphicon glyphicon-ok"></i>
+          Ok
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <i class="glyphicon glyphicon-remove"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- editCriteriaData modal end-->
+
+<!-- finalizedCriteriaDelete modal start-->
+<div 
+  #finalizedCriteriaDeleteModal 
+  class="modal fade" 
+  id="finalizedCriteriaDelete" 
+  tabindex="-1" 
+  role="dialog" 
+  aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Warning</h4>
+      </div>
+      <div class="modal-body">
+        <p>Rubrics is already finalized for CIA assessment import and you might have uploaded the assessment data.</p>
+        <p>If you want to delete criteria under this rubrics then all the assessment data will be erased and you need to refinalize
+          the rubrics.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)='deleteCriteriaData()'>
+          <i class="glyphicon glyphicon-ok"></i>
+          Ok
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <i class="glyphicon glyphicon-remove"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- finalizedCriteriaDelete modal end-->
+
+<!-- finalizedCriteriaAdd modal start-->
+<div 
+  #finalizedCriteriaAddModal 
+  class="modal fade" 
+  id="finalizedCriteriaAdd" 
+  tabindex="-1" 
+  role="dialog" 
+  aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Warning</h4>
+      </div>
+      <div class="modal-body">
+        <p>Rubrics is already finalized for CIA assessment import and you might have uploaded the assessment data.</p>
+        <p>If you want to define one more criteria under this rubrics then all the assessment data will be erased and you need
+          to refinalize the rubrics.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)='createRubricsCriteria(editedCriteriaData)'>
+          <i class="glyphicon glyphicon-ok"></i>
+          Ok
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <i class="glyphicon glyphicon-remove"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- finalizedCriteriaDelete modal end-->

@@ -1,0 +1,28 @@
+body{
+    font-size:12px;
+}
+
+.well{
+    background-color: rgb(245, 243, 243);
+    width:95%;
+    box-shadow:0 3px 5px 1px #979797;
+  }
+
+
+  .content{
+    margin-left:53px;
+}
+
+/*For Portait Mode view*/
+@media screen and (max-width: 480px) {
+    .content {
+    margin-left: 8px;
+}    
+}
+
+/*For Landscape Mode view*/
+@media screen and (max-height: 360px) {
+    .content {
+        margin-left: 17px;
+    }
+}

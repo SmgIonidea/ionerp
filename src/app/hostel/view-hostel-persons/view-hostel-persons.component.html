@@ -1,0 +1,368 @@
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ title }}</h4>
+  </div>
+</section>
+<br>
+
+<!--<pre>{{viewperson | json}}</pre>-->
+<form class="form-horizontal" style="border-top:0px;">
+  <div class="table table-responsive" style="overflow-x:initial;" id="print1">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <th class="text-center serial">Sl&nbsp;No.</th>
+          <th>Building Name</th>
+          <th>Room Type</th>
+          <th>Room No</th>
+          <th>Person Id</th>
+          <th>Person Name</th>
+          <th>Person Type</th>
+          <th>Class / Department</th>
+          <th>Allotted On</th>
+          <th>Deallocated On</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-right">
+            <p class="pull-right">1</p>
+          </td>
+          <td>Male Building</td>
+          <td>12x12 Sqr Ft</td>
+          <td>1</td>
+          <td>12</td>
+          <td>BIBINDAS T R</td>
+          <td>STUDENT</td>
+          <td>10</td>
+          <td>12-03-2018</td>
+          <td>00-00-0000</td>
+          <td class="text-center center" style="width:4%;">
+            <i class="glyphicon glyphicon-print cursor-pointer" data-toggle="modal" data-target="#ViewDetails"></i>
+          </td>
+        </tr>
+          <tr>
+          <td class="text-right">
+            <p class="pull-right">2</p>
+          </td>
+          <td>madrid</td>
+          <td>singelbed 	</td>
+          <td>3</td>
+          <td>100</td>
+          <td>VINAYAKUMAR .V</td>
+          <td>STUDENT</td>
+          <td>03</td>
+          <td>19-03-2018</td>
+          <td>00-00-0000</td>
+          <td class="text-center center" style="width:4%;">
+            <i class="glyphicon glyphicon-print cursor-pointer" data-toggle="modal" data-target="#ViewDetails"></i>
+          </td>
+        </tr>
+        <!--<tr *ngFor="let viewpersons of viewperson let i = index">
+          <td class="text-right">
+            <p class="pull-right">{{i+1}}</p>
+          </td>
+          <td>{{viewpersons.buld_name}}</td>
+          <td>{{viewpersons.room_type}}</td>
+          <td>{{viewpersons.room_no}}</td>
+          <td>{{viewpersons.es_personid}}</td>
+          <td></td>
+          <td>{{viewpersons.es_persontype}}</td>
+          <td></td>
+          <td>{{viewpersons.alloted_date}}</td>
+          <td>{{viewpersons.dealloted_date}}</td>
+          <td class="text-center center" style="width:4%;">
+            <i class="glyphicon glyphicon-print cursor-pointer" data-toggle="modal" data-target="#ViewDetails"></i>
+          </td>
+        </tr>-->
+      </tbody>
+    </table>
+  </div>
+
+</form>
+
+<div class="pull-right">
+  <button class="btn btn-primary" data-toggle="modal" data-target="#ViewDetails_person">
+            <span class="glyphicon glyphicon-ok"></span>&nbsp;Print</button>
+</div><br><br>
+
+
+<!-- View Persons  -->
+<section class="content-header">
+  <!--<div class="headline">-->
+  <!-- Div for Page Headings -->
+
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{title1}}</h4>
+  </div>
+  <!--</div>-->
+  <!-- Page Headings Div Ends Here  -->
+</section>
+
+<div class="container-fluid cont">
+
+  <form [formGroup]="viewHostelPersonForm">
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Select Building:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-5">
+        <select class="form-control" formControlName="selectBuilding" (ngModelChange)="selectRoom($event)">
+          <option [ngValue]="0" selected>Select</option>
+          <!--<option *ngFor = "let person of hostel" [ngValue]="person.es_hostelbuldid">
+            {{ person.buld_name}}
+          </option>-->
+          <option>Girls</option>
+          <option>madrid</option>
+          <option>Male Building</option>
+        </select>
+        <br>
+      </div>
+    </div>
+    <br>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Select Room:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-5">
+        <select class="form-control" formControlName="selectRoomType">
+          <option [ngValue]="0" selected>Select</option>
+          <!--<option *ngFor = "let room of rooms" [ngValue]="room.es_hostelroomid">
+            {{ room.room_type}}
+          </option>-->
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
+        <br>
+      </div>
+    </div>
+    <br>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Person Type:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-5">
+        <!-- <select class="form-control" formControlName="selectPersonType">
+          <option [ngValue]="0" selected>Select</option> -->
+          <!--<option *ngFor = "let persons of person" [ngValue]="persons.es_hostelroomid">
+            {{ persons.es_persontype}}
+          </option>-->
+          <!-- <option>Student</option>
+          <option>Staff</option>
+          
+        </select> -->
+        <select class="form-control" id="ddlPassport" (click)="student()">
+          <option value="N">Student</option>
+          <option value="Y">Staff</option>
+      </select>
+        <br>
+      </div>
+    </div>
+    <br>
+    <div class="col-md-12" id="student">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Registration No:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-5">
+
+        <input type="text" placeholder="Enter Registration No" class="form-control disable top form-control1">
+        <br>
+        <!--<div class="error_message" style="margin-top:-14px;" *ngIf="buildForm.submitted && buildname.untouched">
+          This field is required
+        </div>
+        <div *ngIf="buildname.touched && buildname.invalid" class="error_message">
+          <div style="margin-top:-14px;" *ngIf="buildname.errors.required">
+            This field is required
+          </div>
+        </div>-->
+      </div>
+    </div>
+    <br>
+    <div class="col-md-12" id="dvPassport" style="display: none">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Employee Id:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-5">
+
+        <input type="text" placeholder="Enter Employee Id" class="form-control disable top form-control1">
+        <br>
+        <!--<div class="error_message" style="margin-top:-14px;" *ngIf="buildForm.submitted && buildname.untouched">
+          This field is required
+        </div>
+        <div *ngIf="buildname.touched && buildname.invalid" class="error_message">
+          <div style="margin-top:-14px;" *ngIf="buildname.errors.required">
+            This field is required
+          </div>
+        </div>-->
+      </div>
+    </div>
+    <br>
+    <div class="pull-right btn_alignment">
+      <button type="submit" class="btn btn-primary" (click)="searchperson(viewHostelPersonForm)" [disabled]="!viewHostelPersonForm.valid">
+        <i class="glyphicon glyphicon-file"  ></i>&nbsp;Search</button>
+
+      <button type="reset" class="btn btn-danger">
+        <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>
+    </div>
+  </form>
+</div>
+
+<div class="modal fade " id="ViewDetails" role="dialog">
+
+  <div class="modal-dialog modal-lg">
+
+    <div class="well" style="height:700px;">
+
+      <button type="button" class="close" data-dismiss="modal" style="margin-right:1%;color:black;">&times;</button>
+
+      <div id="print-section" class="solid">
+        <br>
+        <div style="margin-left:33%;font-weight:bolder;font-size:200%">
+          Your college of Engineering
+        </div><br>
+        <div style="margin-left:30%;font-weight: bolder;font-size: 100%;">
+          BLOCK - PAMGARH DISTT - JANJGIR-CHAMPA(CG) Ph. 7582844252
+        </div>
+        <br>
+        <form class="solid1">
+          <div class="panel panel-primary" style="width: 100%;">
+            <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Hostel Persons</h4>
+          </div>
+
+          <div class="col-md-12">
+            <div class="col-md-4">
+              <label style="margin-left:-20px;">Building Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+          <!--<span class="mandatory" style="color:red;">*</span>-->
+        </label>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="col-md-4">
+              <label style="margin-left:-20px;">Room Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+          <!--<span class="mandatory" style="color:red;">*</span>-->
+        </label>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="col-md-4">
+              <label style="margin-left:-20px;">Room No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+          <!--<span class="mandatory" style="color:red;">*</span>-->
+        </label>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="col-md-4">
+              <label style="margin-left:-20px;">Person Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+          <!--<span class="mandatory" style="color:red;">*</span>-->
+        </label>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="col-md-4">
+              <label style="margin-left:-20px;">Registration No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+          <!--<span class="mandatory" style="color:red;">*</span>-->
+        </label>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="col-md-4">
+              <label style="margin-left:-20px;">Person Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+          <!--<span class="mandatory" style="color:red;">*</span>-->
+        </label>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="col-md-4">
+              <label style="margin-left:-20px;">Allocated On&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+          <!--<span class="mandatory" style="color:red;">*</span>-->
+        </label>
+            </div>
+          </div><br>
+          <p><b style="margin-left: 2%;font-size: 15px;">Item Issued</b></p>
+          <div class="panel panel-primary" style="width: 100%;margin-top:2%;">
+            <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sl No.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Item_Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Item_name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QTY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date_of_Issue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returned_On</h4>
+          </div><br>
+
+          <p><b style="margin-left: 2%;
+    font-size: 15px;">Payment Details</b></p>
+          <div class="panel panel-primary" style="width: 100%;margin-top:2%;">
+            <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sl No.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Month&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bill_Amount&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waived&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Paid_AMount&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Paid_On</h4>
+          </div>
+
+
+
+        </form>
+
+      </div>
+
+      <div class="modal-footer">
+        <div class="pull-right">
+          <button class="btn btn-primary" data-dismiss="modal" (click)="print()">
+            <span class="glyphicon glyphicon-ok"></span>&nbsp;Print</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade " id="ViewDetails_person" role="dialog">
+
+  <div class="modal-dialog modal-lg">
+
+    <div class="well" style="height:500px;width: 130%;margin-left: -14%;">
+
+      <button type="button" class="close" data-dismiss="modal" style="margin-right:1%;color:black;">&times;</button>
+
+      <div id="print-section" class="solid">
+        <br>
+        <div style="margin-left:33%;font-weight:bolder;font-size:200%">
+          Your college of Engineering
+        </div><br>
+        <div style="margin-left:30%;font-weight: bolder;font-size: 100%;">
+          BLOCK - PAMGARH DISTT - JANJGIR-CHAMPA(CG) Ph. 7582844252
+        </div>
+        <br>
+        <form class="solid1">
+
+
+
+          <p><b style="margin-left: 2%;
+    font-size: 15px;">Hostel Persons</b></p>
+          <div class="panel panel-primary" style="width: 100%;margin-top:2%;">
+            <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sl No.&nbsp;Building_Name&nbsp;Room_Type&nbsp;Room_No&nbsp;Person_Id&nbsp;Person_Name&nbsp;Person_Type&nbsp;Class/Department&nbsp;Allotted_On&nbsp;Deallocated_On</h4>
+          </div>
+
+
+
+        </form>
+
+      </div>
+
+      <div class="modal-footer">
+        <div class="pull-right">
+          <button class="btn btn-primary" data-dismiss="modal" (click)="printtable()">
+            <span class="glyphicon glyphicon-ok"></span>&nbsp;Print</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,1501 @@
+<form method="post" name="preadmission" action="">
+  <div class="container-fluid">
+    <section class="content-header gap">
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRE ADMISSION
+        </h4>
+      </div>
+    </section>
+    <div align="right" valign="top">
+      <font color="#FF0000" face="Verdana, Arial, Helvetica, sans-serif" size="2">Note : * denotes mandatory&nbsp;</font>
+    </div>
+    <!-- Registraion number and Admission number Begins -->
+    <div class="">
+      <div class="row form-group ">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6">Registration No:
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <input class="form-control" type="text" name="admission_id" value="">
+          </div>
+        </div>
+      </div>
+      <div class="row form-group ">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6">Admission No.
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <input class="form-control" type="text" name="admission_id" value="">
+          </div>
+        </div>
+      </div>
+      <!-- Registraion number and Admission number Ends -->
+      <br>
+      <!-- Pre Admission Details Begins -->
+
+      <!-- Title Name and First Name Begins -->
+      <div class="row form-group">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6">Tittle:
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <select class="form-control" name="pre_serialno" id="pre_serialno">
+              <option value="">Select Tittle </option>
+              <option value="Master">Master</option>
+              <option value="Miss">Miss</option>
+              <option value="Mrs">Mrs</option>
+            </select>
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6">First Name:
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <input class="form-control" name="pre_name" type="text" id="pre_name" value="" />
+            <input name="uid" type="hidden" value="" />
+            <input name="newpreadmission" type="hidden" value="newpreadmission" />
+          </div>
+        </div>
+      </div>
+      <!-- Title Name and First Name Ends -->
+      <br>
+      <!-- Middle Name and Last Name Begins -->
+      <div class="row form-group">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6">Middle&nbsp;Name:
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <input class="form-control" name="middle_name" type="text" value="" />
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6">Last Name:
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <input class="form-control" name="pre_lastname" type="text" value="" />
+          </div>
+        </div>
+      </div>
+      <!-- Middle Name and Last Name Ends -->
+      <br>
+      <!--Current Session and Select Date Begins -->
+      <div class="row form-group ">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6">Current Session:
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <select class="form-control" name="acad_year" id="acad_year">
+              <option value="">Select Date </option>
+              <option value="Current Date">Current Date</option>
+              <option value="Tomorrow">Tomorrow</option>
+              <option value="Yesterday">Yesterday</option>
+            </select>
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6">Gender
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+
+          <div class="col-lg-6 col-md-6">
+            <select class="form-control" name="pre_gender" id="pre_gender">
+              <option value="">Select Gender </option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <!--Current Session and Select Date Ends -->
+      <br>
+      <!--Date Of Birth and  Age Begins -->
+      <div class="row form-group ">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6">Date Of Birth
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class='right-inner-addon date datepicker siz col-md-6' data-date-format="yyyy-mm-dd">
+            <my-date-picker class="toplesson" placeholder=" dd-mm-yyyy"  name="admission_date1" id="admission_date1"
+              [options]="myDatePickerOptions" [(ngModel)]="model">
+            </my-date-picker>           
+          </div>
+          <!-- <div class="col-lg-6 col-md-6">
+            <input class="form-control" name="pre_dateofbirth" type="text" id="pre_dateofbirth" value="" readonly />
+          </div> -->
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6">Age:
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <input class="form-control" name="pre_age" id='pre_age' type="text" value="" onfocus='Javascript:checkAge();' readonly/>
+          </div>
+        </div>
+      </div>
+      <!--Date Of Birth and Age Ends -->
+      <br>
+      <!--Place Of Birth and Religion Begins -->
+      <div class="row form-group ">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6">Place Of Birth:</div>
+          <div class="col-lg-6 col-md-6">
+            <input class="form-control" type="text" name="pre_placeofbirth" value="" />
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6">Religion:</div>
+
+          <div class="col-lg-6 col-md-6">
+            <input class="form-control" type="text" name="test2" value="" />
+          </div>
+        </div>
+      </div>
+      <!--Place Of Birth and Religion Ends -->
+      <br>
+      <!--Nationality and Board Begins -->
+      <div class="row form-group ">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">Nationality:</div>
+          <div class="col-lg-6 col-md-6" align="left">
+            <input class="form-control" type="text" name="test1" value="" />
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">Board:</div>
+          <div class="col-lg-6 col-md-6" align="left">
+            <input class="form-control" type="text" name="board" value="" />
+          </div>
+        </div>
+      </div>
+      <!--Nationality and Board Ends -->
+      <br>
+      <!--Category,Caste and Mother tongue Begins -->
+      <div class="row form-group ">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="row form-group ">
+            <div class="col-lg-6 col-md-6" style="padding-left:30px;">Category:</div>
+            <div class="col-lg-6 col-md-6">
+              <select class="form-control" name="pre_gender" id="pre_gender">
+                <option value="">Select Caste </option>
+                <option value="General">General</option>
+                <option value="OBC">OBC</option>
+                <option value="SC/ST">SC/ST</option>
+              </select>
+            </div>
+          </div>
+          <br>
+          <div class="row form-group ">
+            <div class="col-lg-6 col-md-6" style="padding-left:30px;">Caste:</div>
+            <div class="col-lg-6 col-md-6" align="left">
+              <input class="form-control" type="text" name="test3" value="" />
+            </div>
+          </div>
+          <br>
+          <div class="row form-group ">
+            <div class="col-lg-6 col-md-6" style="padding-left:30px;">Mother Tongue:</div>
+            <div class="col-lg-6 col-md-6">
+              <input class="form-control" type="text" name="pre_alerge" value="" />
+            </div>
+          </div>
+          <br>
+          <div class="row form-group ">
+            <div class="col-lg-6 col-md-6" style="padding-left:30px;">Class:
+              <span class="mandatory" style="color:#FF0000">*</span>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <select class="form-control" name="pre_class">
+                <option value="">Select Class</option>
+                <option></option>
+              </select>
+            </div>
+          </div>
+          <br>
+          <div class="row form-group ">
+            <div class="col-lg-6 col-md-6" style="padding-left:30px;">User Name:
+              <span class="mandatory" style="color:#FF0000">*</span>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <input class="form-control" name="pre_student_username" type="text" id="pre_student_username" value="">
+            </div>
+          </div>
+
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="image-upload col-lg-6 col-md-6">
+            <label style="padding-left:280px;">
+              <img src="./assets/js_css/images/nophoto.jpg" style="width:120px;height:150px;pointer-events: none" />
+            </label>
+            <!-- <div> -->
+                <label class="btn-bs-file btn btn-primary lab1 top" style="background:grey;margin-left:80px">
+                    Browse
+                    <!--<input type="file" />-->
+                    <input  type="file" class="" id="" name="">
+                  </label>
+              <!-- <input type="file" name="pre_image" id="pre_image" /> -->
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+      <br>
+      <!--Category,Caste and Mother tongue Ends -->
+      <!--Password and Blood Group Begins -->
+      <div class="row form-group ">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">Password:
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_student_password" type="text" id="pre_student_password">
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">Blood Group:</div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_blood_group" type="text" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!--Password and Blood Group Ends -->
+      <!--Medium and Previous College Attended Begins -->
+      <div class="row form-group ">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">Medium: </div>
+          <div class="col-lg-6 col-md-6" align="left">
+            <input class="form-control" type="pre_weight" name="pre_weight" value="" />
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">Previous College Attended :</div>
+          <div class="col-lg-6 col-md-6" align="left">
+            <input class="form-control" type="text" name="es_home" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!--Medium and Previous College Attended  Ends -->
+      <!--Aadhar No and Class In Which Was Studying Begins -->
+      <div class="row form-group ">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">Aadhar No.</div>
+          <div class="col-lg-6 col-md-6" align="left">
+            <input class="form-control" type="text" name="aadharno" value="" />
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" height="44">Class In Which Was Studying:
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6" align="left">
+            <input class="form-control" type="text" name="pre_hobbies" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!--Aadhar No and Class In Which Was Studying Ends -->
+      <!--Date of Leaving Previous College and >Admission Date Begins -->
+      <div class="row form-group ">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">Date of Leaving Previous College:
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <!-- <div class="col-lg-6 col-md-6" align="left">
+            <input class="form-control" name="pre_dateofbirth1" type="text" id="pre_dateofbirth1" value="" readonly />
+          </div> -->
+          <div class='right-inner-addon date datepicker siz col-md-6' data-date-format="yyyy-mm-dd">
+            <my-date-picker class="toplesson" placeholder=" dd-mm-yyyy"  name="admission_date1" id="admission_date1"
+              [options]="myDatePickerOptions" [(ngModel)]="model">
+            </my-date-picker>           
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">Admission Date:</div>
+          <div class='right-inner-addon date datepicker siz col-md-6' data-date-format="yyyy-mm-dd">
+            <my-date-picker class="toplesson" placeholder=" dd-mm-yyyy"  name="admission_date1" id="admission_date1"
+              [options]="myDatePickerOptions" [(ngModel)]="model">
+            </my-date-picker>           
+          </div>
+          <!-- <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="admission_date" type="text" id="admission_date" value="" readonly />
+          </div> -->
+        </div>
+      </div>
+      <br>
+      <!--Date of Leaving Previous College and Admission Date Ends -->
+      <!--Transfer Certificate is enclosed and Date Of Birth Certificate Joined or Not Begins -->
+      <div class="row form-group ">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">Transfer Certificate is enclosed:</div>
+          <div class="col-lg-6 col-md-6" align="left">Yes
+            <input type="radio" name="es_econbackward" id="es_econbackward" value="Yes" />&nbsp; No
+            <input type="radio" name="es_econbackward" id="es_econbackward" value="No" />
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">Date Of Birth Certificate Joined or Not:</div>
+          <div class="col-lg-6 col-md-6" align="left">Yes
+            <input type="radio" name="es_econbackward1" id="es_econbackward1" style="width:10px;" value="Yes" />&nbsp; No
+            <input type="radio" name="es_econbackward1" id="es_econbackward1" style="width:10px;" value="No" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!--Transfer Certificate is enclosed and Date Of Birth Certificate Joined or Not Ends -->
+      <!--Cast Certificate joined or Not and Mark Sheet Joined or Not Begins -->
+      <div class="row form-group ">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">Cast Certificate joined or Not:</div>
+          <div class="col-lg-6 col-md-6" align="left">Yes
+            <input type="radio" name="es_econbackward2" id="es_econbackward2" style="width:10px;" value="Yes" />&nbsp; No
+            <input type="radio" name="es_econbackward2" id="es_econbackward2" style="width:10px;" value="No" />
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">Mark Sheet Joined or Not:</div>
+          <div class="col-lg-6 col-md-6" align="left">Yes
+            <input type="radio" name="es_econbackward3" id="es_econbackward3" style="width:10px;" value="Yes" /> &nbsp;No
+            <input type="radio" name="es_econbackward3" id="es_econbackward3" style="width:10px;" value="No" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!--Cast Certificate joined or Not and Mark Sheet Joined or Not  Ends -->
+      <!--Admission Type,Educational Gap(if Any) and Physical Handicaped Begins -->
+      <div class="row form-group ">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="row form-group ">
+            <div class="col-lg-6 col-md-6" align="left" style="padding-left:30px;">Admission Type:
+            </div>
+            <div class="col-lg-6 col-md-6" align="left">
+              <select class="form-control" name="es_econbackward4" id="es_econbackward4">
+                <option value="">Select Type</option>
+                <option value="General">General </option>
+                <option value="Underprivilaged">Underprivilaged </option>
+                <option value="Weaker">Weaker </option>
+              </select>
+            </div>
+          </div>
+          <br>
+          <div class="row form-group ">
+            <div class="col-lg-6 col-md-6" align="left" style="padding-left:30px;">Educational Gap(if Any)</div>
+            <div class="col-lg-6 col-md-6" align="left">
+              <input class="form-control" type="text" name="edugap" value="" />
+            </div>
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">Physical Handicaped: </div>
+          <div class="col-lg-6 col-md-6" align="left">Yes
+            <input type="radio" name="es_econbackward5" id="es_econbackward5" value="Yes" /> &nbsp;No
+            <input type="radio" name="es_econbackward5" id="es_econbackward5" value="No" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!--Admission Type,Educational Gap(if Any) and Physical Handicaped  Ends -->
+    </div>
+    <!-- End Of Pre Admission Details -->
+    <!-- Begining of Present Address -->
+    <section class="content-header gap">
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Present Address
+        </h4>
+      </div>
+    </section>
+    <div class="">
+      <!-- Begining of Residential Address and city -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Residential Address:
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <textarea class="form-control" name="pre_address1" type="text"></textarea>
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            City:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_city1" type="text" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of Residential Address and city -->
+      <!-- Begining of Area and  Pin Code -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Area:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_country1" type="text" value="" />
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            Pin Code:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_pincode1" type="text" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of  Area and  Pin Code -->
+      <!-- Begining of  State and  SMS Mobile No -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            State:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_state1" type="text" value="" />
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            SMS Mobile No:
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_mobile1" type="text" value="" />
+            <!-- <span style="color:#FF0000">(All future SMS messages will be sent to this number)</span> -->
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of   State and  SMS Mobile No -->
+      <!-- Begining of   Home Landline no and Fathers Phone No -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Home Landline no:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_phno1" type="text" value="" />
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            Fathers Phone No:
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_contactno1" type="text" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of  Home Landline no and Fathers Phone No -->
+      <!-- Begining of Mothers Phone No and E-mail -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Mothers Phone No:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_contactno2" type="text" value="" />
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            E-mail:
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_resno1" type="text" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of Mothers Phone No and E-mail -->
+    </div>
+    <!-- End of Present Address -->
+
+    <!-- Begining of Permanent Address -->
+    <section class="content-header gap">
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Permanent Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="admin" style="float:right;margin-right:10px;">
+            <input type="checkbox" name="sameaddress" id="sameaddress" value="0">Same as Above
+          </span>
+        </h4>
+      </div>
+    </section>
+    <div class="">
+      <!-- Begining of  Address and city -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Address:
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <textarea class="form-control" name="pre_address1" type="text"></textarea>
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            City:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_city1" type="text" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of Residential Address and city -->
+      <!-- Begining of Area and  Pin Code -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Area:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_country1" type="text" value="" />
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            Pin Code:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_pincode1" type="text" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of  Area and  Pin Code -->
+      <!-- Begining of  State and  SMS Mobile No -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            State:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_state1" type="text" value="" />
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            SMS Mobile No:
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_mobile1" type="text" value="" />
+            <!-- <span style="color:#FF0000">(All future SMS messages will be sent to this number)</span> -->
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of   State and  SMS Mobile No -->
+      <!-- Begining of   Home Landline no and Fathers Phone No -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Home Landline no:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_phno1" type="text" value="" />
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            Fathers Phone No:
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_contactno1" type="text" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of  Home Landline no and Fathers Phone No -->
+      <!-- Begining of Mothers Phone No and E-mail -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Mothers Phone No:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_contactno2" type="text" value="" />
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            E-mail:
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_resno1" type="text" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of Mothers Phone No and E-mail -->
+    </div>
+    <!-- End of Permanent Address -->
+    <!-- Begining of Father's Details Address -->
+    <section class="content-header gap">
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Father's Details
+        </h4>
+      </div>
+    </section>
+
+    <div class="">
+      <!-- Begining of Father Name and Educational Qualification -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Father Name(Full):
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_fathername" type="text" value="" />
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            Educational Qualification:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" type="text" name="pre_contactname1" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of Father Name and Educational Qualification -->
+      <!-- Begining of Age and Department -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Age:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_prev_acadamicname" type="text" value="" />
+          </div>
+        </div>
+        <!-- <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+        <div class="col-lg-6 col-md-6" align="left" valign="top">
+          Department:
+        </div>
+        <div class="col-lg-6 col-md-6" align="left" valign="top">
+          <input name="pre_prev_class" type="text" value="" />
+        </div>
+      </div> -->
+      </div>
+      <br>
+      <!-- End of of Age and Department -->
+      <!-- Begining of  Occupation and Designation -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Occupation:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_fathersoccupation" type="text" value="" />
+          </div>
+        </div>
+        <!-- <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+        <div class="col-lg-6 col-md-6" align="left" valign="top">
+          Designation:
+        </div>
+        <div class="col-lg-6 col-md-6" align="left" valign="top">
+          <input name="pre_fathersoccupation2" type="text" value="" />
+        </div>
+      </div> -->
+      </div>
+      <br>
+      <!-- End of  Occupation and Designation -->
+      <!-- Begining of  Office Address and Monthly Income -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Office Address:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <textarea class="form-control" name="pre_prev_university"></textarea>
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            Monthly Income:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_prev_percentage" type="text" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of Office Address and Monthly Income -->
+    </div>
+    <!-- End of Father's Details -->
+    <!-- Begining of Mother's Details Address -->
+    <section class="content-header gap">
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mother's Details
+        </h4>
+      </div>
+    </section>
+    <div class="">
+      <!-- Begining of Mother Name and Educational Qualification -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Mother Name(Full):
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_fathername" type="text" value="" />
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            Educational Qualification:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" type="text" name="pre_contactname1" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of Mother Name and Educational Qualification -->
+      <!-- Begining of Age and Department -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Age:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_prev_acadamicname" type="text" value="" />
+          </div>
+        </div>
+        <!-- <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            Department:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input name="pre_prev_class" type="text" value="" />
+          </div>
+        </div> -->
+      </div>
+      <br>
+      <!-- End of of Age and Department -->
+      <!-- Begining of  Occupation and Designation -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Occupation:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_fathersoccupation" type="text" value="" />
+          </div>
+        </div>
+        <!-- <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            Designation:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input name="pre_fathersoccupation2" type="text" value="" />
+          </div>
+        </div> -->
+      </div>
+      <br>
+      <!-- End of  Occupation and Designation -->
+      <!-- Begining of  Office Address and Monthly Income -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Office Address:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <textarea class="form-control" name="pre_prev_university"></textarea>
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            Monthly Income:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_prev_percentage" type="text" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of Office Address and Monthly Income -->
+    </div>
+    <!-- End of Mother's Details -->
+    <!-- Begining of Guardian's Details Address -->
+    <section class="content-header gap">
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Guardian's Details
+        </h4>
+      </div>
+    </section>
+    <div class="">
+      <!-- Begining of  Name Of Gaurdian  and Office Phone -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Name Of Gaurdian :
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_current_class2" type="text" value="" />
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            Office Phone:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="pre_resno" type="text" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of Residential Address Of Gaurdian -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Residential Address Of Gaurdian :
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <textarea class="form-control" name="pre_current_percentage2"></textarea>
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of Residential Address Of Gaurdian -->
+    </div>
+    <!-- End of Guardian's Details -->
+    <!-- Begining of Family Details Address -->
+    <section class="content-header gap">
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Family Details
+        </h4>
+      </div>
+    </section>
+    <div class="table table-responsive" style="overflow-x:initial;">
+      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+        <thead>
+        <tr>
+          <th align="left">
+            <span class="narmal">Sr. No. </span>
+          </th>
+          <th align="left">
+            <span class="narmal">Name of Family Members </span>
+          </th>
+          <th align="center">
+            <span class="narmal">Age </span>
+          </th>
+          <th align="left">
+            <span class="narmal">Relation With Student </span>
+          </th>
+          <th align="left">
+            <span class="narmal">Education </span>
+          </th>
+          <th align="left">
+            <span class="narmal">Occupation </span>
+          </th>
+        </tr>
+      </thead>
+
+<tbody>   
+     <tr>
+          <td align="left">
+            <span class="narmal">1 </span>
+          </td>
+          <td align="left">
+            <input class="form-control" name="pre_family1" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="age1" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="relation1" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="eduation1" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="occupation1" type="text" value="" />
+          </td>
+        </tr>
+        <tr>
+          <td align="left">
+            <span class="narmal">2 </span>
+          </td>
+          <td align="left">
+            <input class="form-control" name="pre_family2" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="age2" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="relation2" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="eduation2" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="occupation2" type="text" value="" />
+          </td>
+        </tr>
+        <tr>
+          <td align="left">
+            <span class="narmal">3 </span>
+          </td>
+          <td align="left">
+            <input class="form-control" name="pre_family3" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="age3" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="relation3" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="eduation3" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="occupation3" type="text" value="" />
+          </td>
+        </tr>
+        <tr>
+          <td align="left">
+            <span class="narmal">4 </span>
+          </td>
+          <td align="left">
+            <input class="form-control" name="pre_family4" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="age4" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="relation4" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="eduation4" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="occupation4" type="text" value="" />
+          </td>
+        </tr>
+        <tr>
+          <td align="left">
+            <span class="narmal">5 </span>
+          </td>
+          <td align="left">
+            <input class="form-control" name="pre_family5" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="age5" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="relation5" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="eduation5" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="occupation5" type="text" value="" />
+          </td>
+        </tr>
+        <tr>
+          <td align="left">
+            <span class="narmal">6 </span>
+          </td>
+          <td align="left">
+            <input class="form-control" name="pre_family6" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="age6" type="text" value="">
+          </td>
+          <td align="left">
+            <input class="form-control" name="relation6" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="eduation6" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="occupation6" type="text" value="" />
+          </td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+    <br>
+    <!-- End of Family Details -->
+    <!-- Begining of Previous College Details Address -->
+    <section class="content-header gap">
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Previous College Details
+        </h4>
+      </div>
+    </section>
+    <div class="table table-responsive" style="overflow-x:initial;">
+      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+       <thead>
+        <tr>
+          <th align="left">
+            <span class="narmal">Sr. No. </span>
+          </th>
+          <th align="left">
+            <span class="narmal">Name of College & Address </span>
+          </th>
+          <th align="left">
+            <span class="narmal">Enrollment No. </span>
+          </th>
+          <th align="left">
+            <span class="narmal">From Year </span>
+          </th>
+          <th align="left">
+            <span class="narmal">Year Upto </span>
+          </th>
+          <th align="left">
+            <span class="narmal">Reason Of Leaving</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="left">
+            <span class="narmal">1 </span>
+          </td>
+          <td align="left">
+            <input class="form-control" name="pre_schl1" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="enrlno1" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="yearfrom1" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="yearupto1" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="reason1" type="text" value="" />
+          </td>
+        </tr>
+        <tr>
+          <td align="left">
+            <span class="narmal">2 </span>
+          </td>
+          <td align="left">
+            <input class="form-control" name="pre_schl2" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="enrlno2" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="yearfrom2" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="yearupto2" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="reason2" type="text" value="" />
+          </td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+    <!-- End of Previous College Details -->
+    <br>
+    <!-- Begining of Other Information Address -->
+    <section class="content-header gap">
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other Information
+        </h4>
+      </div>
+    </section>
+    <div class="">
+      <!-- Begining of Any Relationship with Higher Personality and Health Problem If Any -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Any Relationship with Higher Personality:
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" type="text" name="pre_current_result2" value="" />
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            Health Problem If Any :
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" type="text" name="pre_current_class3" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of  Any Relationship with Higher Personality and Health Problem If Any -->
+      <!-- Begining of Extra Curricular Interest -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Extra Curricular Interest :
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" type="text" name="pre_current_percentage3" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of  Extra Curricular Interest -->
+    </div>
+    <!-- End of Other Information -->
+    <!-- Begining of Name and Class of your other Student in this College -->
+    <section class="content-header gap">
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name and Class of your other Student in this College</h4>
+      </div>
+    </section>
+    <div class="row">
+      <div class="col col-lg-4 col-md-4" align="center" valign="middle">
+        <strong>1st Student Admi. No. </strong>
+      </div>
+
+      <div class="col col-lg-4 col-md-4" align="center" valign="middle">
+        <strong>2nd Student Admi. No.</strong>
+      </div>
+
+      <div class="col col-lg-4 col-md-4" align="center" valign="middle">
+        <strong>3rd Student Admi. No.</strong>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-lg-4 col-md-4" align="left">
+        <input class="form-control" type="text" name="pre_current_result3" value="" />
+      </div>
+
+      <div class="col col-lg-4 col-md-4" align="left">
+        <input class="form-control" type="text" name="pre_physical_status" value="" />
+      </div>
+
+      <div class="col col-lg-4 col-md-4" align="left">
+        <input class="form-control" type="text" name="pre_special_care" value="" />
+      </div>
+    </div>
+    <br>
+    <!-- End of Name and Class of your other Student in this College -->
+    <!-- Begining of Withdrawal Details -->
+    <section class="content-header gap">
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Withdrawal Details
+        </h4>
+      </div>
+    </section>
+    <div class="">
+      <!-- Begining of Date of Leaving  and Class from which left -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Date of Leaving :
+          </div>
+          <div class='right-inner-addon date datepicker siz col-md-6' data-date-format="yyyy-mm-dd">
+            <my-date-picker class="toplesson" placeholder=" dd-mm-yyyy"  name="admission_date1" id="admission_date1"
+              [options]="myDatePickerOptions" [(ngModel)]="model">
+            </my-date-picker>           
+          </div>
+          <!-- <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" name="admission_date1" type="text" id="admission_date1" value="" readonly />
+          </div> -->
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            Class from which left :
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" type="text" name="pre_emailid" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of Date of Leaving  and Class from which left -->
+      <!-- Begining of Reason -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Reason :
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" type="text" name="pre_emailid2" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of Reason -->
+    </div>
+    <!-- End of Withdrawal Details -->
+    <!-- Begining of Alumini Login -->
+    <section class="content-header gap">
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alumini Login
+        </h4>
+      </div>
+    </section>
+    <div class="container">
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Login Id :
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <label>518</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <!-- End of Alumini Login -->
+    <!-- Begining of Transport -->
+    <section class="content-header gap">
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Transport
+        </h4>
+      </div>
+    </section>
+    <div class="">
+      <!-- Begining of College Bus Transport -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            College Bus Transport :
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input type="checkbox" name="transport" value="YES" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of College Bus Transport -->
+      <!-- Begining of Pick-up Point-->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Pick-up Point :
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <select class="form-control" name="tr_place_id">
+              <option value="">-- Select --</option>
+              <option value=""></option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of Pick-up Point -->
+      <!-- Begining of Route / Board-->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Route / Board :
+          </div>
+          <div class="col-lg-6 col-md-6" align="left">
+            <select class="form-control" name="boardid">
+              <option value="">Select Route/Board</option>
+              <option value=""> </option>
+              <option value=""></option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of Route / Board -->
+      <!-- Begining of Other Transport-->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Other Transport :
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <input class="form-control" type="text" name="pre_physical_details" value="" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of Other Transport -->
+
+      <!-- Begining of Other Transport Description -->
+      <div class="row">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" align="left">
+            Other Transport Description :
+          </div>
+          <div class="col-lg-6 col-md-6" align="left" valign="top">
+            <textarea class="form-control" cols="25" rows="5" name="pre_height"></textarea>
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of Other Transport Description  -->
+    </div>
+    <!-- End of Transport -->
+    <button type="button" class="pull-right btn btn-primary">
+      <i class="glyphicon glyphicon-ok"></i>&nbsp;Submit
+    </button>
+  </div>
+  <br>
+</form>
+<!-- <span class="mandatory" style="color:#FF0000">*</span> -->
+
+
+<!-- <a target='#timeline'>
+    Submit</a>
+
+    <div id="timeline"  >
+        hello
+      </div> -->
+<!-- <section>
+  <div class="panel" style="background-color:lightskyblue;">
+    <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <b>Search Student Record</b>
+    </h4>
+  </div>
+  <div align="right" valign="top">
+    <font color="#FF0000" face="Verdana, Arial, Helvetica, sans-serif" size="2">Note : * denotes mandatory&nbsp;</font>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+        <div class="col-lg-6 col-md-6" align="left">
+          Class:
+        </div>
+        <div class="col-lg-6 col-md-6" align="left" valign="top">
+          <select name="">
+            <option value="all">Select</option>
+            <option value=""></option>
+          </select>
+        </div>
+      </div>
+      <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+        <div class="col-lg-6 col-md-6" align="left">
+          Student Name :
+        </div>
+        <div class="col-lg-6 col-md-6" align="left" valign="top">
+          <input type="text" name="pre_student_name" value="" />
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+        <div class="col-lg-6 col-md-6" align="left">
+          Academic Year:
+        </div>
+        <div class="col-lg-6 col-md-6" align="left" valign="top">
+          <select name="ac_year">
+            <option value="select">Select Academic Year</option>
+            <option value=""></option>
+          </select>
+        </div>
+      </div>
+      <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+        <div class="col-lg-6 col-md-6" align="left">
+          Last Name :
+        </div>
+        <div class="col-lg-6 col-md-6" align="left" valign="top">
+          <input type="text" name="pre_last_name" value="" />
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+        <div class="col-lg-6 col-md-6" align="left">
+          Admission Id:
+        </div>
+        <div class="col-lg-6 col-md-6" align="left" valign="top">
+          <input type="text" name="pre_last_name" value="" />
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+  <button type="button" class="pull-right btn btn-primary">
+    <i class="glyphicon glyphicon-ok"></i>&nbsp;Search
+  </button>
+  <br>
+  <br>
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+    <thead>
+      <tr style="text-align:center;background-color:lightskyblue;">
+        <th>Applicant Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td align="left">
+          <span class="narmal">1 </span>
+        </td>
+        <td align="left">
+          <a style="border-radius:25px;
+          background: lightskyblue;color:black;">Edit </a> &nbsp; &nbsp;
+          <a style="border-radius:25px;
+        background: lightskyblue;color:black;">View Profile </a>&nbsp; &nbsp;
+          <a style="border-radius:25px;
+        background: lightskyblue;color:black;"> Attendance </a>&nbsp; &nbsp;
+          <a style="border-radius:25px;
+        background: lightskyblue;color:black;">Fees </a>&nbsp; &nbsp;
+          <a style="border-radius:25px;
+        background: lightskyblue;color:black;"> Marks </a>&nbsp; &nbsp;
+          <a style="border-radius:25px;
+        background: lightskyblue;color:black;">Status </a>&nbsp; &nbsp;
+          <a style="border-radius:25px;background:lightskyblue;color:black;">
+            <i title="Delete" class="fa fa-trash" style="font-size:14px;color:red"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td align="left">
+          <span class="narmal">2 </span>
+        </td>
+        <td align="left">
+          <a style="border-radius:25px;
+          background: lightskyblue;color:black;">Edit </a> &nbsp; &nbsp;
+          <a style="border-radius:25px;
+        background: lightskyblue;color:black;">View Profile </a>&nbsp; &nbsp;
+          <a style="border-radius:25px;
+        background: lightskyblue;color:black;"> Attendance </a>&nbsp; &nbsp;
+          <a style="border-radius:25px;
+        background: lightskyblue;color:black;">Fees </a>&nbsp; &nbsp;
+          <a style="border-radius:25px;
+        background: lightskyblue;color:black;"> Marks </a>&nbsp; &nbsp;
+          <a style="border-radius:25px;
+        background: lightskyblue;color:black;">Status </a>&nbsp; &nbsp;
+          <a style="border-radius:25px;background:lightskyblue;color:black;">
+            <i title="Delete" class="fa fa-trash" style="font-size:14px;color:red"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<br>
+<br> -->
+
+<!-- Help Desk -->
+<!-- <section>
+  <div class="panel" style="background-color:lightskyblue;">
+    <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <b>Help Desk</b>
+    </h4>
+  </div>
+  <div style=" border: 1px solid black;border-color:lightskyblue;">
+    <p> </p>    
+  </div>
+</section> -->

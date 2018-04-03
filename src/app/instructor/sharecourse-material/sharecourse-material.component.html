@@ -1,0 +1,302 @@
+<!--load dropdown component-->
+<!--<app-dropdown [currentPage]="currentPageVal"></app-dropdown>-->
+
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ title }}</h4>
+  </div>
+</section>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 row " style="margin-left: -30px;">
+  <div [style.display]="isProgramHide?'none':'block'" class="form-group col-lg-2 col-xs-12 col-md-2 col-sm-12 drop dropmob">
+    <label data-key="lg_prgm" for="program" class="col-xs-8 col-sm-8 col-md-8 col-lg-8  key-data padd padd2">Program: <span class="mandatory" style="color:red;">*</span></label>
+    <select name="program" [(ngModel)]="pgmId" id="program" (ngModelChange)="curriculum($event)" class="form-control col-lg-8 dropboxwidth"  style="font-size:12px;cursor:pointer;"  required>
+      <option [ngValue]="0" selected>Select Program</option>
+     
+      <option *ngFor="let type of programType" [ngValue]="type.pgm_id">
+        {{ type.pgm_acronym }}
+      </option>
+    </select>  
+  </div>
+
+  <div class="form-group col-lg-3  col-xs-12 col-md-3 col-sm-12 drop dropmob">
+    <label data-key="lg_cur" for="curriculum" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 key-data padd padd2">Curriculum:&nbsp;<span class="mandatory" style="color:red;">*</span></label>
+    <select name="curriculum" id="curriculum" [(ngModel)]="crclmId" (ngModelChange)="term($event)" style="font-size:12px;cursor:pointer;" class="form-control  col-lg-8 dropboxwidth"
+      ngModel required>
+      <option [ngValue]="0" selected>Select Curriculum</option>
+
+      <option *ngFor="let type of curriculumType" [ngValue]="type.crclm_id">
+        {{ type.crclm_name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group col-lg-2  col-xs-12 col-md-2 col-sm-12 drop dropmob">
+    <label data-key="lg_term" for="term" class="col-xs-8 col-sm-8 col-md-8 col-lg-8  key-data padd padd2">Term: <span class="mandatory" style="color:red;">*</span></label>
+    <select name="term" id="term" [(ngModel)]="termId" (ngModelChange)="course($event)" class="form-control  col-lg-8 dropboxwidth" style="font-size:12px;cursor:pointer;" ngModel
+      required>
+      <option [ngValue]="0" selected>Select Term</option>
+
+      <option *ngFor="let type of termType" [ngValue]="type.crclm_term_id">
+        {{ type.term_name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group col-lg-3  col-xs-12 col-md-3 col-sm-12 drop dropmob" >
+    <label data-key="lg_course" for="course" class="col-xs-8 col-sm-8 col-md-8 col-lg-8  key-data padd padd2">Course: <span class="mandatory" style="color:red;">*</span></label>
+    <select  name="course" id="course" [(ngModel)]="crsId" (ngModelChange)="section($event)"  class="form-control col-lg-8 dropboxwidth" style="font-size:12px;cursor:pointer;" ngModel
+      required>
+       <option [ngValue]="0" selected>Select Course</option>
+      
+      <option *ngFor="let type of courseType" [ngValue]="type.crs_id" title = "{{type.crs_code}}">
+        {{ type.crs_title }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group col-lg-1 col-xs-12 col-md-1 col-sm-12 drop dropmob">
+    <label data-key="lg_section" for="section" class=" col-xs-8 col-sm-8 col-md-12 col-lg-12  key-data padd padd2">Section:&nbsp;<span class="mandatory" style="color:red;">*</span></label>   
+      <!-- <ss-multiselect-dropdown [options]="sectionType" class="col-lg-4 section" (change)="getdropdowndata()" [(ngModel)]="changedValue" [texts]="myTexts" ></ss-multiselect-dropdown>   -->
+      <select  name="section" id="section" [(ngModel)]="sectionId" (ngModelChange)="getdropdowndata()"  class="form-control col-lg-4 sectiondropdown" style="font-size:12px;cursor:pointer;" ngModel
+      required>
+       <option [ngValue]="0" selected>Select Section</option>
+      
+      <option *ngFor="let type of sectionType" [ngValue]="type.id">
+        {{ type.name }}
+      </option>
+    </select>
+  </div>
+
+</div>
+
+<div class="container-fluid" style="padding:0px;">
+
+  <!--load datatables-->
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" class="col-lg-12" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead>
+        <tr>
+          <th class="text-center">Sl&nbsp;No.</th>
+          <th class="col-lg-2">Shared Files&nbsp;/&nbsp;URL</th>
+          <th class="col-lg-4">Description</th>
+          <th class="col-lg-3">Topic(s)</th>
+          <th class="col-lg-1">Section</th>
+          <th class="col-lg-1">Created&nbsp;On</th>
+          <th class="text-center" style="width:4%;">Edit</th>
+          <th class="text-center " style="width:4%;">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of posts.ShareCourseList let i = index">
+          <td class="text-right" style="width:8%;"><p class="pull-right">{{i+1}}</p></td>
+          <!-- <td>{{post.docment_url}}</td> -->
+          <td *ngIf="post.url_flag==1" class="col-lg-2"><a target="_blank" [attr.href]="'https://' + post.docment_url">{{post.docment_url}}</a></td>
+          <td *ngIf="post.url_flag==0" class="col-lg-2"><a target="_blank" [attr.href]="baseUrl + post.docment_url"><span class="glyphicon glyphicon-paperclip"></span> {{post.docment_url}}</a></td>
+          <td class="col-lg-4">{{post.description}}</td>
+          <td class="col-lg-3">{{post.topic_title}}</td>
+          <td>{{post.mt_details_name}}</td>
+          <td>{{post.created_date | DateFormatPipe}}</td>
+          <td class="text-center center" style="width:4%;">
+            <!--<i class="glyphicon glyphicon-pencil cursor-pointer" (click)="showEdit=true"></i>-->
+            <i pageScroll href="#shareCourse" #editElement class="glyphicon glyphicon-pencil cursor-pointer glypichon3" [attr.matId]="post.mat_id" [attr.documentUrl]="post.docment_url"
+              [attr.desc]="post.description" [attr.topicId]="post.topic_ids" [attr.urlFlag]="post.url_flag" (click)="editShareCourseMaterial(this.editElement)"></i>
+          </td>
+          <td class="text-center  center" style="width:4%;">
+            <!--<i class="glyphicon glyphicon-remove cursor-pointer"></i>-->
+            <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer glypichon3" [attr.matId]="post.mat_id" (click)="deleteWarning(this.deleteElement,this.courseMaterialDeleteModal)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--datatables ends-->
+
+  <br>
+
+  <!--ADD/Edit COURSE MATERIAL-->
+  <section class="content-header pan">
+    <!--<div class="headline">-->
+    <!-- Div for Page Headings -->
+
+    <div class="panel panel-primary">
+      <h4 class="middle middle1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{title}}</h4>
+    </div>
+    <!--</div>-->
+    <!-- Page Headings Div Ends Here  -->
+  </section>
+  <!-- <div class="panel-body pan"> -->
+
+
+  <!--radio button tab-->
+  <div class="well1">
+    <div class="panel panel-default well " style=" border: 1px solid black;border-color:#D0D0D0;">
+      <div class="panel-body">
+        <input type="radio" [(ngModel)]="type" name="type" (click)="clearInputField()" value="Documents" [disabled]="radioButtonDisable">Documents&nbsp;&nbsp;
+        <input type="radio" [(ngModel)]="type" name="type" (click)="clearInputField()" value="URL" [disabled]="radioButtonDisable">URL
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group col-lg-10" id="shareCourse">
+    <form #docForm="ngForm" [formGroup]="addDocForm">
+
+        <!--for Documents-->
+        <div *ngIf="type == 'Documents'" class="form-group col-lg-12">
+          <div class="col-lg-2">
+            <label class="lab">File:
+              <!--<span style="color:red;">*</span>-->
+            </label>
+          </div>
+          <div class="col-lg-8">
+            <input formControlName="addDocFiles" placeholder="Upload File" name="addDocFiles" id="addDocFiles" type="text" [(ngModel)]="clearValue" class="form-control siz siz3"
+            readonly="readonly" />
+            <!--<div class="alert alert-danger" *ngIf="addDocForm.controls.addDocFiles.errors">
+            File is required.
+          </div>-->
+          <div *ngIf="addDocFiles.touched && addDocFiles.invalid" class="error_message siz1 siz3">
+            <div *ngIf="addDocForm.controls.addDocFiles.errors.required">
+              This field is required.
+            </div>
+          </div>
+          <div class="siz">
+            <label>Note:
+              <span style="color:red;">*</span>
+              &nbsp;.pdf, .doc and .docx. Maximum upload file size: 5 MB
+            </label>
+          </div>
+          <div class="siz" [style.display]="isFileSize?'block':'none'">
+            <label>
+              File Size is : {{fileSizeExt}}
+            </label>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <label class="btn-bs-file btn btn-primary lab1 top">
+              Browse
+              <!--<input type="file" />-->
+              <input #fileInput type="file" class="siz" id="userdoc" name="userdoc" (click)="clearBrowse()" (change)="getFileName(this.replaceElement,this.splitElement)" (change)="getFileSize()" placeholder="Upload file"
+                accept=".pdf,.doc,.docx">
+            </label>
+          </div>
+        </div>
+
+        <!--for URL-->
+        <div *ngIf="type == 'URL'" class="form-group col-lg-12">
+          <div class="col-lg-2">
+            <label class="lab">Reference / Path:<span style="color:red;">*</span>
+              
+            </label>
+          </div>
+          <div class="col-lg-10">
+            <input formControlName="addUrlFiles" placeholder="Enter URL" name="addUrlFiles" id="addUrlFiles" type="text" [(ngModel)]="clearValue" class="form-control siz"
+            />
+            <!--<div class="alert alert-danger" *ngIf="addUrlForm.controls.addUrlFiles.errors">
+            Path is required.
+          </div>-->
+          <div *ngIf="addUrlFiles.touched && addUrlFiles.invalid" class="error_message siz2">
+            <div *ngIf="addDocForm.controls.addUrlFiles.errors.required">
+              This field is required.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group col-lg-12">
+        <div class="col-lg-2">
+          <label class="lab">Topic(s):</label>
+        </div>
+        <div class="col-lg-10">
+          <ss-multiselect-dropdown formControlName="addDocTopic" name="addDocTopic" id="addDocTopic" class="siz multiselect1" [options]="myOptions"
+            [(ngModel)]="editedIds" (ngModelChange)="onChange($event)" [texts]="myTexts">
+          </ss-multiselect-dropdown>
+        </div>
+      </div>
+
+        <div class="form-group col-lg-12">
+          <div class="col-lg-2">
+            <label class="lab">Description:</label>
+          </div>
+          <div class="col-lg-10">
+            <textarea formControlName="addDocInfo" name="addDocInfo" placeholder="Enter Description" id="addDocInfo" rows="3" cols="20" class="form-control siz"></textarea>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="can">
+    <div class="form-group col-lg-12" >
+
+      <div [style.display]="isSaveHide?'none':'block'" class="btn_cancel col-lg-3 col-md-3 col-xs-12 col-sm-6">
+
+        <button *ngIf="type == 'Documents'" id="saveDepartment" type="submit" class="btn-bs-file btn btn-success" [disabled]="!addDocFiles.valid"
+          (click)="createPost(addDocForm)">
+          <i class="glyphicon glyphicon-upload"></i> Upload
+        </button>
+
+        <button *ngIf="type == 'URL'" id="saveDepartment" (click)="createPost(addDocForm)" type="submit" class="btn btn-primary"
+          [disabled]="!addUrlFiles.valid">
+          <!-- <button *ngIf="type == 'URL'" id="saveDepartment" type="submit" class="btn btn-primary"> -->
+          <i class="glyphicon glyphicon-file"></i> Save
+        </button>
+
+        <button id="closeForm" type="reset" class="btn btn-info" (click)="reset()">
+          <i class="glyphicon glyphicon-refresh"></i> Reset
+        </button>
+
+      </div>
+
+      <div [style.display]="isUpdateHide?'none':'block'" class="btn_update col-lg-3 col-md-3 col-xs-12 col-sm-6">
+
+        <!--<button [disabled]="!addDocForm.valid" id="UpdateDepartment" type="button" class="btn btn-primary" (click)="updatePost(addDocForm)">-->
+        <button *ngIf="type == 'Documents'" id="UpdateDepartment" type="button" class="btn btn-primary" [disabled]="!addDocFiles.valid"
+          (click)="updatePost(addDocForm)">
+          <i class="glyphicon glyphicon-ok"></i> Update
+        </button>
+        <button *ngIf="type == 'URL'" id="UpdateDepartment" type="button" class="btn btn-primary" [disabled]="!addUrlFiles.valid"
+          (click)="updatePost(addDocForm)">
+          <i class="glyphicon glyphicon-ok"></i> Update
+        </button>
+
+        <button id="cancelEdit" type="button" class="btn btn-danger" (click)="cancelUpdate()">
+          <i class="glyphicon glyphicon-remove"></i> Cancel
+        </button>
+
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
+
+  <!-- Tag for showing Toast Message -->
+  <toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+  <!-- Toast Tag Ends Here -->
+
+
+  <!-- Modal warning message to delete the Department -->
+  <div #courseMaterialDeleteModal class="modal fade" id="courseMaterialDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header warning-msg">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+        </div>
+        <div class="modal-body">
+          Course Material will be deleted permanently.
+          <input #deleteMatId type="hidden" name="deleteMatId" id="deleteMatId" [value]="delMatId">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="deleteCourseMaterialData(deleteMatId)">
+            <i class="glyphicon glyphicon-ok"></i>
+            Yes
+          </button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            <i class="glyphicon glyphicon-remove"></i>
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

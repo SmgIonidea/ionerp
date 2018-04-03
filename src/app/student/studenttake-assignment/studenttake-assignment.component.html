@@ -1,0 +1,159 @@
+<!--<app-dropdown [currentPage]="currentPageVal"></app-dropdown>-->
+
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ title }}</h4>
+  </div>
+</section>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 row " style="margin-left: -30px;">
+  <div [style.display]="isProgramHide?'none':'block'" class="form-group col-lg-2 col-xs-12 col-md-2 col-sm-12 drop dropmob">
+    <label data-key="lg_prgm" for="program" class="col-xs-8 col-sm-8 col-md-8 col-lg-8  key-data padd padd2">Program: <span class="mandatory" style="color:red;">*</span></label>
+    <select name="program" [(ngModel)]="pgmId" id="program" (ngModelChange)="curriculum($event)" class="form-control col-lg-8 dropboxwidth"  style="font-size:12px;cursor:pointer;"  required>
+      <option [ngValue]="0" selected>Select Program</option>
+     
+      <option *ngFor="let type of programType" [ngValue]="type.pgm_id">
+        {{ type.pgm_acronym }}
+      </option>
+    </select>  
+  </div>
+
+  <div class="form-group col-lg-3  col-xs-12 col-md-3 col-sm-12 drop dropmob">
+    <label data-key="lg_cur" for="curriculum" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 key-data padd padd2">Curriculum:&nbsp;<span class="mandatory" style="color:red;">*</span></label>
+    <select name="curriculum" id="curriculum" [(ngModel)]="crclmId" (ngModelChange)="term($event)" style="font-size:12px;cursor:pointer;" class="form-control  col-lg-8 dropboxwidth"
+      ngModel required>
+      <option [ngValue]="0" selected>Select Curriculum</option>
+      
+      <option *ngFor="let type of curriculumType" [ngValue]="type.crclm_id">
+        {{ type.crclm_name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group col-lg-2  col-xs-12 col-md-2 col-sm-12 drop dropmob">
+    <label data-key="lg_term" for="term" class="col-xs-8 col-sm-8 col-md-8 col-lg-8  key-data padd padd2">Term: <span class="mandatory" style="color:red;">*</span></label>
+    <select name="term" id="term" [(ngModel)]="termId" (ngModelChange)="course($event)" class="form-control  col-lg-8 dropboxwidth" style="font-size:12px;cursor:pointer;" ngModel
+      required>
+      <option [ngValue]="0" selected>Select Term</option>
+      
+      <option *ngFor="let type of termType" [ngValue]="type.crclm_term_id">
+        {{ type.term_name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group col-lg-3  col-xs-12 col-md-3 col-sm-12 drop dropmob" >
+    <label data-key="lg_course" for="course" class="col-xs-8 col-sm-8 col-md-8 col-lg-8  key-data padd padd2">Course: <span class="mandatory" style="color:red;">*</span></label>
+    <select  name="course" id="course" [(ngModel)]="crsId" (ngModelChange)="section($event)"  class="form-control col-lg-8 dropboxwidth" style="font-size:12px;cursor:pointer;" ngModel
+      required>
+       <option [ngValue]="0" selected>Select Course</option>
+      
+      <option *ngFor="let type of courseType" [ngValue]="type.crs_id" title = "{{type.crs_code}}">
+        {{ type.crs_title }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group col-lg-1 col-xs-12 col-md-1 col-sm-12 drop">
+    <label data-key="lg_section" for="section" class=" col-xs-8 col-sm-8 col-md-12 col-lg-12  key-data padd padd2">Section:&nbsp;<span class="mandatory" style="color:red;">*</span></label>   
+      <!-- <ss-multiselect-dropdown [options]="sectionType" class="col-lg-4 section" (change)="getdropdowndata()" [(ngModel)]="changedValue" [texts]="myTexts" ></ss-multiselect-dropdown>   -->
+      <select  name="section" id="section" [(ngModel)]="sectionId" (ngModelChange)="getdropdowndata()"  class="form-control col-lg-4 sectiondropdown" style="font-size:12px;cursor:pointer;" ngModel
+      required>
+       <option [ngValue]="0" selected>Select Section</option>
+      
+      <option *ngFor="let type of sectionType" [ngValue]="type.id">
+        {{ type.name }}
+      </option>
+    </select>  
+  </div>
+
+</div>
+
+<!--<pre>{{studentassignmentType | json}}</pre>-->
+
+<!--<div class="container-fluid" style="border:0px solid;">
+  <form class=" form-horizontal" style="border-top:0px;">
+    <div class="table table-responsive" style="overflow-x:initial;">
+      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover"style="width:100%;">
+        <thead style="background-color:#DDE1E6;">
+          <tr>
+            <th class="text-center">Sl No.</th>
+            <th style="display:none;">Id</th>
+            <th>Assignment Heads</th>
+            <th style="color:gray">Total Marks</th>
+            <th>Start Date</th>
+            <th>Due Date</th>
+            <th>Take Assignment</th>
+            <th>status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let studentList of studentassignmentType let i = index">
+            <td class="text-right"><p class="pull-right">{{i+1}}</p></td>
+            <th style="display:none;">{{studentList.a_id}}</th>
+            <td>{{studentList.assignment_name}}</td>
+            <td>{{studentList.total_marks}}</td>
+            <td>{{studentList.initiate_date | DateFormatPipe}}</td>
+            <td>{{studentList.due_date | DateFormatPipe}}</td>
+            <td><a href="" [routerLink]="['/content',{outlets:{appCommon:['takeassignment']}}]" [queryParams]="{id:studentList.a_id}">Take Assignment</a></td>
+            <td class="text-center " *ngIf="studentList.status==1">
+              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-ok"></span>&nbsp;Complete</button></td>
+            <td class="text-center " *ngIf="studentList.status==0">
+              <button type="submit" class="btn btn-warning btn-block"><span class="glyphicon glyphicon-option-horizontal"></span>&nbsp;Pending</button></td>
+            <td class="text-center " *ngIf="studentList.status==-1">
+              <button type="submit" class="btn btn-danger btn-block"><span class="glyphicon glyphicon-repeat"></span>&nbsp;Rework</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br><br><br><br><br>
+  </form>
+</div>
+-->
+
+
+<div class="container-fluid" style="padding:0px;">
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover" style="width:100%;">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <th class="text-center" style="width:7%;">Sl No.</th>
+          <th style="display:none;">Id</th>
+          <th>Assignment Heads</th>
+          <th>Total Marks</th>
+          <th>Start Date</th>
+          <th>Due Date</th>
+          <th>Take Assignment</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let studentList of studentassignmentType let i = index">
+          <!--<td class="text-right" style="width:7%;">{{i+1}}</td>-->
+          <td class="text-right" style="width:7%;">
+            <p class="pull-right">{{i+1}}</p>
+          </td>
+          <th style="display:none;">{{studentList.a_id}}</th>
+          <td>{{studentList.assignment_name}}</td>
+          <td>{{studentList.total_marks}}</td>
+          <td>{{studentList.initiate_date | DateFormatPipe}}</td>
+          <td>{{studentList.due_date | DateFormatPipe}}</td>
+          <td><a href="" [routerLink]="['/content',{outlets:{appCommon:['studenttakeassignment','takeassignment']}}]" [queryParams]="{id:studentList.a_id, studId:studentList.ssd_id}">Take Assignment</a></td>
+          <td class="text-center " *ngIf="studentList.status_flag==1">
+            <button type="submit" class="btn btn-warning btn-block"><span></span>&nbsp;Pending</button></td>
+          <td class="text-center " *ngIf="studentList.status_flag==2">
+            <button type="submit" class="btn btn-success btn-block"><span></span>&nbsp;Submitted</button></td>
+          <td class="text-center " *ngIf="studentList.status_flag==3">
+            <button type="submit" class="btn btn-danger btn-block"><span></span>&nbsp;Rework</button></td>
+          <td class="text-center " *ngIf="studentList.status_flag==4">
+            <button type="submit" class="btn btn-success btn-block"><span></span>&nbsp;Accepted</button></td>
+        
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!--margin-top: -270px;
+    margin-left: -45px;-->

@@ -1,0 +1,66 @@
+.panel-primary {
+    background: rgb(35, 47, 62);
+    border-radius: 20px 0 20px 0;
+    height: 30px;
+    width:100%;
+    border-color:rgb(35, 47, 62);
+  }
+
+
+  .cont{
+  margin-top:-4%;
+  }
+
+  .middle {
+   
+    color: white;
+    text-align: left;
+    padding-top:3px;
+    margin-left: -14px;
+  }
+
+  .middle1{
+      margin-left: -20px;
+  }
+
+  h4, .h4, h5, .h5, h6, .h6 {
+    margin-top: 3px;
+  }
+
+  .table-border{
+      border: 1px solid lightgray;
+      padding: 5px 0px 0px 5px; 
+      margin-top: -1px;
+      margin-left: -1px;
+  }
+
+  .upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  .upload-btn-wrapper input[type=file] {
+     /* font-size: 100px;  */
+    position: absolute;
+    left: 0; 
+    top: 0; 
+    opacity: 0;
+  }
+
+  .loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background:repeating-linear-gradient(
+  45deg,
+  rgba(0, 0, 0, 0.2),
+  rgba(0, 0, 0, 0.2) 10px,
+  rgba(0, 0, 0, 0.3) 10px,
+  rgba(0, 0, 0, 0.3) 20px
+), url('/assets/js_css/images/load.gif') 50% 50% no-repeat rgb(249,249,249);
+    opacity: .8;
+}

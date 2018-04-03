@@ -1,0 +1,383 @@
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ title }}</h4>
+  </div>
+</section>
+<br>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 row side">
+  <div class="form-group col-lg-3 col-xs-12 col-md-3 col-sm-12 drop ">
+    <label class="col-xs-8 col-sm-8 col-md-8 col-lg-8 padd">Curriculum:
+      <span class="mandatory" style="color:red;">*</span>
+    </label>
+    <select class="form-control col-lg-10 section1 form-control3" style="font-size:12px;cursor:pointer;" name="curriculum" id="curriculum"
+      [(ngModel)]="crclmId" (ngModelChange)="term($event)" (ngModelChange)="getDeliveryMethod($event)" 
+      required>
+      <option [ngValue]="0" selected>Select Curriculum</option>
+
+      <!--<option [ngValue]="crclDrop" [selected]="currDropdown" disabled selected hidden>{{currDropdown}}</option>-->
+
+      <option *ngFor="let type of curriculumType" [ngValue]="type.crclm_id">
+        {{ type.crclm_name }}
+      </option>
+    </select>
+  </div>
+  <div class="form-group col-lg-2 col-xs-12 col-md-2 col-sm-12 drop ">
+    <label class="col-xs-8 col-sm-8 col-md-8 col-lg-8 padd">Term:
+      <span class="mandatory" style="color:red;">*</span>
+    </label>
+    <select class="form-control col-lg-8 section1 form-control3" style="font-size:12px;cursor:pointer;" name="term" id="term"
+      [(ngModel)]="termId" (ngModelChange)="course($event)"  required>
+      <option [ngValue]="0" selected>Select Term</option>
+
+      <!--<option [ngValue]="termDrop" [selected]="termDropdown" disabled selected hidden>{{termDropdown}}</option>-->
+
+      <option *ngFor="let type of termType" [ngValue]="type.crclm_term_id">
+        {{ type.term_name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group col-lg-2  col-xs-12 col-md-2 col-sm-12 drop ">
+    <label data-key="lg_term" for="term" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 padd">Course:
+      <span class="mandatory" style="color:red;">*</span>
+    </label>
+    <select class="form-control  col-lg-8 section1 form-control3" style="font-size:12px;cursor:pointer;" name="course" id="course"
+      [(ngModel)]="crsId" (ngModelChange)="section($event)" (ngModelChange)="getBloomType($event)"  required>
+      <option [ngValue]="0" selected>Select Course</option>
+      <!--<option [ngValue]="courseDrop" [selected]="courseDropdown" disabled selected hidden>{{courseDropdown}}</option>-->
+
+      <option *ngFor="let type of courseType" title="{{type.crs_code}}" [ngValue]="type.crs_id">
+        {{ type.crs_title }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group col-lg-2 col-xs-12 col-md-2 col-sm-12 drop">
+    <label data-key="lg_section" for="section" class=" col-xs-8 col-sm-8 col-md-8 col-lg-8 padd">Section:
+      <span class="mandatory" style="color:red;">*</span>
+    </label>
+    <!--<ss-multiselect-dropdown [options]="sectionType" class="col-lg-10 section" (change)="topics()" [(ngModel)]="changedValue"
+      [texts]="myTexts"></ss-multiselect-dropdown>-->
+        <select class="form-control col-lg-8 section1 form-control3" style="font-size:12px;cursor:pointer;" name="section" id="section"
+     [(ngModel)]="secID" (ngModelChange)="topics($event)" required>
+      <option [ngValue]="0" selected>Select Section</option>
+      <!--<option [ngValue]="topicdrop" [selected]="topicDropdown" disabled selected hidden>{{topicDropdown}}</option>-->
+
+      <option *ngFor="let type of sectionType" [ngValue]="type.id">
+        {{type.name}}
+      </option>
+    </select>
+  </div>
+    
+    <div class="form-group col-lg-3  col-xs-12 col-md-3 col-sm-12 drop">
+    <label data-key="lg_course" for="course" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 padd">Topic:
+      <span class="mandatory" style="color:red;">*</span>
+    </label>
+    <select class="form-control col-lg-8 section1 form-control3" style="font-size:12px;cursor:pointer;" name="topic" id="topic"
+      [(ngModel)]="topID" (ngModelChange)="gettabledata()"  required>topicType
+      <option [ngValue]="0" selected>Select Topic</option>
+      <!--<option [ngValue]="topicdrop" [selected]="topicDropdown" disabled selected hidden>{{topicDropdown}}</option>-->
+
+      <option *ngFor="let type of topicType" [ngValue]="type.topic_id">
+        {{type.topic_title}}
+      </option>
+    </select>
+  </div>
+  <!--<div class="form-group col-lg-2 col-xs-12 col-md-2 col-sm-12 drop">
+    <label data-key="lg_section" for="section" class=" col-xs-8 col-sm-8 col-md-8 col-lg-8 padd">Section:
+      <span class="mandatory" style="color:red;">*</span>
+    </label>
+    <ss-multiselect-dropdown [options]="sectionType" class="col-lg-10 section"  (change)="topics($event)" [(ngModel)]="changedValue" 
+      [texts]="myTexts"></ss-multiselect-dropdown>
+  </div>
+  <div class="form-group col-lg-3  col-xs-12 col-md-3 col-sm-12 drop">
+    <label data-key="lg_course" for="course" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 padd">Topic:
+      <span class="mandatory" style="color:red;">*</span>
+    </label>
+    <select class="form-control col-lg-8 section1 form-control3" style="font-size:12px;cursor:pointer;" name="topic" id="topic"
+      [(ngModel)]="topID" (ngModelChange)="gettabledata($event)"  required>topicType
+      <option [ngValue]="0" selected>Select Topic</option>
+      <option [ngValue]="topicdrop" [selected]="topicDropdown" disabled selected hidden>{{topicDropdown}}</option>
+
+      <option *ngFor="let type of topicType" [ngValue]="type.topic_id">
+        {{type.topic_title}}
+      </option>
+    </select>
+  </div>-->
+</div>
+
+<form class="form-horizontal" style="border-top:0px;">
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <th class="text-center serial">Sl&nbsp;No.</th>
+          <th>Portion&nbsp;to&nbsp;be&nbsp;covered</th>
+          <th class="text-center">Actual&nbsp;Start&nbsp;Date</th>
+          <th class="text-center">Delivered&nbsp;Date</th>
+          <th>Delivery&nbsp;Method</th>
+          <th>Bloom's&nbsp;Level</th>
+          <th class="text-center">Delivery&nbsp;Status</th>
+          <th class="text-center" style="width:4%;">Edit</th>
+          <th class="text-center" style="width:7%;">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of posts let i=index">
+          <td class="text-right">
+            <p class="pull-right">{{post.slno}}</p>
+          </td>
+          <td>{{post.portion_per_hour}}</td>
+          <td class="text-center">{{post.start_date | DateFormatPipe}}</td>
+          <td class="text-center">{{post.completion_date | DateFormatPipe}}</td>
+          <td>
+            <!--<span *ngFor ="let methodtype of post.method "><p>-->
+            {{post.method}}
+            <!--</p>
+            </span>-->
+          </td>
+          <td>
+            <!-- <span *ngFor ="let bloomtype of post.bloom ">-->
+            <!--<p>-->
+            {{post.bloom}}
+            <!--</p>-->
+            <!--</span>-->
+          </td>
+          <!--<td class="text-center" *ngIf="post.status==2">
+            <button #reopenElement type="submit" class="btn btn-success btn-block" data-toggle="modal" data-target="#Re-open">
+                  <span class="glyphicon glyphicon-ok"></span>&nbsp;Complete</button>
+          </td>-->
+          <td class="text-center" *ngIf="post.status==2">
+            <button #reopenElement type="submit" class="btn btn-success btn-block" [attr.lessonscheduleId]="post.lsn_sch_id" (click)="reopenwarning(this.reopenElement,this.Reopen)">
+              &nbsp;Complete</button>
+          </td>
+          <td class="text-center" *ngIf="post.status==1">
+            <button #completeElement type="submit" class="btn btn-success btn-block" [attr.lessonscheduleId]="post.lsn_sch_id" (click)="complete(this.completeElement)">
+              &nbsp;In-progress</button>
+          </td>
+          <td class="text-center" *ngIf="post.status==0">
+            <button #inprogressElement type="submit" class="btn btn-warning btn-block" [attr.lessonscheduleId]="post.lsn_sch_id" (click)="inprogress(this.inprogressElement)">
+              &nbsp;Not Intiated</button>
+          </td>
+          <!--<td class="text-center center" style="width:4%;" *ngIf="(post.status==0 || post.status==2)">
+          </td>
+          <td class="text-center center" style="width:4%;" *ngIf="post.status==1 ">
+            <i pageScroll href="#home" #editElement class="glyphicon glyphicon-pencil cursor-pointer"
+            [attr.lessonscheduleId]="post.lsn_sch_id"
+            [attr.lessonscheduleStartdate]="post.start_date"
+            [attr.lessonschedulecompletiondate]="post.completion_date"
+              (click)="editlesson(this.editElement)" (click)="edit(post.lsn_sch_id)"></i>
+          </td>-->
+          <td class="text-center center" style="width:4%;">
+            <i pageScroll href="#home" #editElement class="glyphicon glyphicon-pencil cursor-pointer" [attr.lessonscheduleId]="post.lsn_sch_id"
+              [attr.lessonscheduleStartdate]="post.start_date" [attr.lessonschedulecompletiondate]="post.completion_date" [attr.lessschedulestatus]="post.status"
+              (click)="editlesson(this.editElement)" (click)="edit(post.lsn_sch_id,post.status)" (click)="checkDate(post.start_date)"></i>
+          </td>
+          <td class="text-center center" style="width:7%;">
+            <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer deleteLessonSchedule" [attr.lessonschId]="post.lsn_sch_id"
+              [attr.lessstatus]="post.status" (click)="deleteWarning(this.deleteElement,this.LessonScheduleDeleteModal)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</form>
+
+<!-- Tag for showing Toast Message -->
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+<!-- Toast Tag Ends Here -->
+
+
+<!-- Add Assignment head -->
+<section class="content-header">
+  <!--<div class="headline">-->
+  <!-- Div for Page Headings -->
+
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{title1}}</h4>
+  </div>
+  <!--</div>-->
+  <!-- Page Headings Div Ends Here  -->
+</section>
+<div class="container-fluid cont" id="home">
+
+  <form [formGroup]="lessonForm">
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Sl No:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-5">
+        <!--<input type="text" formControlName="lesson" name="lesson" id="lesson" placeholder="Enter Sl No" disabled="disabled" class="form-control disable top form-control1">-->
+        <input type="text" formControlName="lesson" name="lesson" id="lesson" placeholder="Enter Sl No"  class="form-control disable top form-control1">
+        <br>
+        <div class="error_message" style="margin-top:-14px;" *ngIf="lessonForm.submitted && lesson.untouched">
+          This field is required
+        </div>
+        <div *ngIf="lesson.touched && lesson.invalid" class="error_message">
+          <div style="margin-top:-14px;" *ngIf="lesson.errors.required">
+            This field is required
+          </div>
+          <div *ngIf="lesson.errors.DigitsOnly">
+            Slno Should Accept only Digits.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Delivery Method:
+          <!--<span class="mandatory" style="color:red;">*</span>-->
+        </label>
+      </div>
+      <div class="col-md-5">
+        <ss-multiselect-dropdown formControlName="deliveryMethod" [options]="DeliverMethodType" name="deliveryMethod" class="col-lg-10 section1 lesStrap"
+          [(ngModel)]="optionsdlvrmethod" [texts]="myDeliveryMethod"></ss-multiselect-dropdown>
+      </div>
+    </div>
+    <br>
+    <div class="form-group col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Bloom's Level:
+          <!--<span class="mandatory" style="color:red;">*</span>-->
+        </label>
+      </div>
+      <div class="col-md-5" style="font-size:12px;cursor:pointer;">
+        <ss-multiselect-dropdown formControlName="bloom" [options]="bloomType" name="bloom" class="col-lg-10 section1 lesStrap" [(ngModel)]="optionsBloom"
+          [texts]="myBlooms"></ss-multiselect-dropdown>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Actual Start Date:
+        </label>
+      </div>
+      <div class='right-inner-addon date datepicker siz col-md-5' data-date-format="yyyy-mm-dd">
+
+        <my-date-picker class="toplesson" placeholder=" dd-mm-yyyy" formControlName="actualStartDate" name="actualStartDate" id="actualStartDate"
+          [options]="myDatePickerOptions" (dateChanged)="onDateChanged($event)" [(ngModel)]="model">
+        </my-date-picker>
+        <br>
+        <br>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Delivered Date:
+        </label>
+      </div>
+      <div class='right-inner-addon date datepicker siz col-md-5' data-date-format="yyyy-mm-dd">
+
+        <my-date-picker class="toplesson" placeholder=" dd-mm-yyyy" formControlName="completionDate" name="completionDate" id="completionDate"
+          #dateElement [options]="myDatePickerOptions1" [(ngModel)]="model1" [selDate]="selDate" >
+        </my-date-picker>
+        <br>
+        <br>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Portion to be covered: </label>
+        <span class="mandatory" style="color:red;">*</span>
+      </div>
+      <div class="col-md-5">
+
+        <textarea class="form-control top form-control2" placeholder="Enter Portion to be covered" formControlName="portion" name="portion"
+          id="portion" rows="5"></textarea>
+        <div class="error_message" *ngIf="lessonForm.submitted && portion.untouched">
+          This field is required
+        </div>
+        <div *ngIf="portion.touched && portion.invalid" class="error_message">
+          <div *ngIf="portion.errors.required">
+            This field is required
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br>
+    <div [style.display]="isSaveHide?'none':'block'" class="pull-right btn_alignment">
+      <button id="savelesson" type="submit" class="btn btn-primary" [disabled]="!lessonForm.valid" (click)="createPost(lessonForm)">
+        <i class="glyphicon glyphicon-file"></i>&nbsp;Save</button>
+      <button type="reset" class="btn btn-info" (click)="cancelReset()">
+        <i class="glyphicon glyphicon-refresh"></i>&nbsp;Reset</button>
+      <button type="reset" class="btn btn-danger" (click)="cancelUpdate()">
+        <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>
+    </div>
+    <div [style.display]="isUpdateHide?'none':'block'" class="pull-right">
+      <button id="updatelesson" type="submit" class="btn btn-primary" [disabled]="!lessonForm.valid" (click)="updatePost(lessonForm)"
+        (click)="cancelUpdate()">
+        <i class="glyphicon glyphicon-file"></i>&nbsp;Update</button>
+      <!--<button type="reset" class="btn btn-info" (click)="cancelReset()">
+        <i class="glyphicon glyphicon-refresh"></i>&nbsp;Reset</button>-->
+      <button type="reset" class="btn btn-danger" (click)="cancelUpdate()">
+        <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>
+    </div>
+  </form>
+</div>
+
+
+<div class="modal fade" #Reopen id="Reopen" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content well">
+      <button type="button" class="close" data-dismiss="modal" style="margin-right:1%;color:white;">&times;</button>
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Re-Open Confirmation</h4>
+      </div>
+      <div class="" style="font-size:12px;">
+        <p>
+          <b>Are you sure you want to re-open the topic content?</b>
+        </p>
+
+        <input #lessscheId type="hidden" name="reopenId" id="reopenId" [value]="reopenId">
+        <form #f="ngForm">
+          <b>Status:
+            <span class="mandatory" style="color:red;">*</span>
+          </b> &nbsp;
+          <input type="radio" name="inprg" [(ngModel)]="inprg" [value]="1">&nbsp;In-Progress &nbsp; &nbsp;
+          <input type="radio" name="inprg" [(ngModel)]="inprg" [value]="0">&nbsp;Not Initiated
+          <br><br>
+          <div class="pull-right">
+            <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="reopen(f,lessscheId)">
+              <span class="glyphicon glyphicon-ok"></span>&nbsp;Ok</button>
+            <button class="btn btn-danger" data-dismiss="modal">
+              <span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+          </div>
+        </form>
+      </div>
+      <!-- <div class="modal-footer">            
+           
+            </div> -->
+    </div>
+  </div>
+</div>
+
+<div #LessonScheduleDeleteModal class="modal fade" id="LessonScheduleDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        Lesson Schedule will be deleted permanently.
+        <input #deleteLessonId type="hidden" name="deleteLessonId" id="deleteLessonId" [value]="delLessonId">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="deleteLessonScheduleData(deleteLessonId)">
+          <i class="glyphicon glyphicon-ok"></i>
+          Yes
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <i class="glyphicon glyphicon-remove"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

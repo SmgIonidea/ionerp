@@ -1,0 +1,239 @@
+<div>
+  <section class="content-header">
+
+    <div class="panel panel-primary">
+      <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ title }}</h4>
+    </div>
+
+  </section>
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table-striped table-bordered  table-hover">
+      <thead>
+        <tr>
+          <th class="text-center">Sl No.</th>
+          <th>Building Name<br>Room Type / Number</th>
+          <th>Person Name<br>[Person Type]</th>
+          <th>Month</th>
+          <th>Bill Amount</th>
+          <th>Waived</th>
+          <th>Paid Amount</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-right">1</td>
+          <td>Male Building</td>
+          <td>STUDENT</td>
+          <td>3</td>
+          <td>Rs:1000</td>
+          <td></td>
+          <td>Rs:500</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<section class="content-header">
+
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{heading}}</h4>
+  </div>
+
+</section>
+
+<div class="container-fluid">
+
+  <form [formGroup]="hostelChargeForm">
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Select Building:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-5">
+        <select formControlName="selectBuilding" class="form-control">
+          <option [ngValue]="0" selected>Select</option>
+          <!--<option *ngFor = "let build of building" [ngValue]="build.es_hostelbuldid">
+            {{ build.buld_name}}
+          </option>-->
+
+          <!--<div *ngIf="addBuilding.touched && addBuilding.invalid" class="error_message">
+            <div *ngIf="addRoomForm.controls.addBuilding.errors.required">
+              This field is required.
+            </div>
+          </div>-->
+          <option>Girls</option>
+          <option>madrid</option>
+          <option>Male Building</option>
+
+        </select>
+        <br>
+      </div>
+    </div>
+    <br>
+
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Select Year:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-5">
+        <select formControlName="selectYear" class="form-control">
+          <option [ngValue]="0" selected>Select</option>
+          <!--<option *ngFor = "let build of building" [ngValue]="build.es_hostelbuldid">
+            {{ build.buld_name}}
+          </option>-->
+
+          <!--<div *ngIf="addBuilding.touched && addBuilding.invalid" class="error_message">
+            <div *ngIf="addRoomForm.controls.addBuilding.errors.required">
+              This field is required.
+            </div>
+          </div>-->
+          <option>2015</option>
+          <option>2016</option>
+          <option>2017</option>
+          <option>2018</option>
+        </select>
+        <br>
+      </div>
+    </div>
+    <br>
+
+
+<div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Select Month:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-5">
+        <select [(ngModel)]="buildId" formControlName="selectMonth" class="form-control">
+          <option [ngValue]="0" selected>Select</option>
+          <!--<option *ngFor = "let build of building" [ngValue]="build.es_hostelbuldid">
+            {{ build.buld_name}}
+          </option>-->
+
+          <!--<div *ngIf="addBuilding.touched && addBuilding.invalid" class="error_message">
+            <div *ngIf="addRoomForm.controls.addBuilding.errors.required">
+              This field is required.
+            </div>
+          </div>-->
+          <option>January</option>
+          <option>Febrauary</option>
+          <option>March</option>
+          <option>April</option>
+          <option>May</option>
+          <option>June</option>
+          <option>July</option>
+          <option>August</option>
+          <option>September</option>
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
+        </select>
+        <br>
+      </div>
+    </div>
+    <br>
+
+
+<div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Person Type:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-5">
+        <select [(ngModel)]="buildId" formControlName="selectType" class="form-control">
+          <option [ngValue]="0" selected>Select</option>
+          <!--<option *ngFor = "let build of building" [ngValue]="build.es_hostelbuldid">
+            {{ build.buld_name}}
+          </option>-->
+
+          <!--<div *ngIf="addBuilding.touched && addBuilding.invalid" class="error_message">
+            <div *ngIf="addRoomForm.controls.addBuilding.errors.required">
+              This field is required.
+            </div>
+          </div>-->
+          <option>Student</option>
+          <option>Staff</option>
+
+        </select>
+        <br>
+      </div>
+    </div>
+    <br>
+
+
+<div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Payment Status:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-5">
+        <select [(ngModel)]="buildId" formControlName="selectStatus" class="form-control">
+          <option [ngValue]="0" selected>Select</option>
+          <!--<option *ngFor = "let build of building" [ngValue]="build.es_hostelbuldid">
+            {{ build.buld_name}}
+          </option>-->
+
+          <!--<div *ngIf="addBuilding.touched && addBuilding.invalid" class="error_message">
+            <div *ngIf="addRoomForm.controls.addBuilding.errors.required">
+              This field is required.
+            </div>
+          </div>-->
+          <option>Paid</option>
+          <option>Unpaid</option>
+
+        </select>
+        <br>
+      </div>
+    </div>
+    <br>
+
+     <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Registration No:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-5">
+        <input formControlName="registrationNo" type="text" placeholder="Enter Room No" class="form-control">
+        
+        <!--<div *ngIf="addRoomNo.touched && addRoomNo.invalid" class="error_message">
+            <div *ngIf="addRoomForm.controls.addRoomNo.errors.required">
+              This field is required.
+            </div>
+          </div>-->
+
+        <br>
+      </div>
+    </div>
+    <br>
+
+    <div class="pull-right">
+      <button type="submit" class="btn btn-primary">
+        <i class="glyphicon glyphicon-file"></i>&nbsp;Search</button>
+
+      <button type="reset" class="btn btn-danger">
+        <i class="glyphicon glyphicon-refresh"></i>&nbsp;Export to Excel Sheet</button><br>
+    </div>
+    
+
+<div class="col-md-12" style="text-align: right;padding-right: 150px;">
+  <br>
+
+    <div><label>  Total Dues	:	---</label></div><br>
+<div><label>Amount Received	:	---</label></div><br>
+<div><label>Deductions Allowed	:	---</label></div><br>
+<div><label>Balace	:	---</label></div><br>
+</div>
+
+
+  </form>
+</div>

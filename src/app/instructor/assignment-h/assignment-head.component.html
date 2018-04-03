@@ -1,0 +1,353 @@
+<div class="container" style="border:0px solid;">
+  <form class=" form-horizontal" style="border-top:0px;width:93%;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <th class="text-center"><input type="checkbox"></th>
+          <!-- <th></th> -->
+          <th class="text-center">SI NO.</th>
+          <th class="text-center">Assignment Head</th>
+          <th class="text-center" width="10%">Initiated Date</th>
+          <th class="text-center" width="10%">Due Date</th>
+          <th class="text-center">Add/Edit Questions</th>
+          <th class="text-center">Manage Students</th>
+          <th class="text-center">View Progress</th>
+          <th class="text-center">Review Assignment</th>
+          <th class="text-center">Assignment Status</th>
+          <th class="text-center" width="3%">Edit</th>
+          <th class="text-center" width="3%">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-right"><input type="checkbox"></td>
+          <td class="text-right">1</td>
+          <td class="text-center">Assign 1</td>
+          <td class="text-center">12-07-2017</td>
+          <td class="text-center">30-07-2017</td>
+          <td class="text-center"><a href="" [routerLink]="['/content',{outlets:{appCommon:['manageassignment']}}]">Add/Edit Questions</a></td>
+          <td class="text-center"><a href="#" data-toggle="modal" data-target="#manage_students">Manage Students</a></td>
+          <td class="text-center"><a href="#" data-toggle="modal" data-target="#view_progress">View Progress</a></td>
+          <td class="text-center"><a href="" [routerLink]="['/content',{outlets:{appCommon:['assignmentreview']}}]">Review Assignment</a></td>
+          <td class="text-center "><button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-ok"></span>&nbsp;Complete</button></td>
+          <td class="text-center"><i class=" text-center glyphicon glyphicon-pencil cursor-pointer editDept " (click)="showEdit=true"></i></td>
+          <td class="text-center"><i class=" text-center glyphicon glyphicon-remove cursor-pointer "></i></td>
+        </tr>
+        <tr>
+          <td class="text-right"><input type="checkbox"></td>
+          <td class="text-right">2</td>
+          <td class="text-center"> Assign 2</td>
+          <td class="text-center">20-07-2017</td>
+          <td class="text-center">30-07-2017</td>
+          <td class="text-center"><a href="" [routerLink]="['/content',{outlets:{appCommon:['manageassignment']}}]">Add/Edit Questions</a></td>
+          <td class="text-center"><a href="#" data-toggle="modal" data-target="#manage_students">Manage Students</a></td>
+          <td class="text-center"><a href="#" data-toggle="modal" data-target="#view_progress">View Progress</a></td>
+          <td class="text-center"><a href="" [routerLink]="['/content',{outlets:{appCommon:['assignmentreview']}}]">Review Assignment</a></td>
+          <td class="text-center "><button type="submit" class="btn btn-danger btn-block"><span class="glyphicon glyphicon-repeat"></span>&nbsp;Rework</button></td>
+          <td class="text-center"><i class=" text-center glyphicon glyphicon-pencil cursor-pointer editDept " (click)="showEdit=true"></i></td>
+          <td class="text-center"><i class=" text-center glyphicon glyphicon-remove cursor-pointer "></i></td>
+        </tr>
+        <tr>
+          <td class="text-right"><input type="checkbox"></td>
+          <td class="text-right">3</td>
+          <td class="text-center">Assign 3</td>
+          <td class="text-center">25-07-2017</td>
+          <td class="text-center">05-08-2017</td>
+          <td class="text-center"><a href="" [routerLink]="['/content',{outlets:{appCommon:['manageassignment']}}]">Add/Edit Questions</a></td>
+          <td class="text-center"><a href="#" data-toggle="modal" data-target="#manage_students">Manage Students</a></td>
+          <td class="text-center"><a href="#" data-toggle="modal" data-target="#view_progress">View Progress</a></td>
+          <td class="text-center"><a href="" [routerLink]="['/content',{outlets:{appCommon:['assignmentreview']}}]">Review Assignment</a></td>
+          <td class="text-center "><button type="submit" class="btn btn-warning btn-block"><span class="glyphicon glyphicon-option-horizontal"></span>&nbsp;Pending</button></td>
+          <td class="text-center"><i class="  glyphicon glyphicon-pencil cursor-pointer editDept " (click)="showEdit=true"></i></td>
+          <td class="text-center"><i class="  glyphicon glyphicon-remove cursor-pointer "></i></td>
+        </tr>
+      </tbody>
+    </table>
+    <br><br><br>
+  </form>
+</div>
+
+<!-- Add Assignment head -->
+
+<div class="container" style="border:0px solid;" *ngIf="!showEdit">
+  <!-- <div style="background-color:black;border-radius:5px;color:white;">
+    <h4>Add Assignment Head</h4>
+  </div> -->
+  <section class="content-header" style="margin-left:2%;margin-top:1%;">
+    <div class="headline">
+      <!-- Div for Page Headings -->
+      <div class="heading">
+        Add Assignment Head
+      </div>
+    </div>
+    <!-- Page Headings Div Ends Here -->
+  </section>
+  <form class=" form-horizontal" style="border-top:0px;width:93%;" #myForm="ngForm" novalidate>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label>Assignment Head : <span class="mandatory"style="color:red;">*</span></label>
+      </div>
+      <div class="col-md-10">
+        <input type="text" class="form-control" style="width:50%">
+      </div>&nbsp;&nbsp;&nbsp;
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label>Initial Date : <span class="mandatory"style="color:red;">*</span></label>
+      </div>
+      <div class='right-inner-addon date datepicker col-md-5' data-date-format="yyyy-mm-dd">
+        <my-date-picker name="mydate" [options]="myDatePickerOptions" [(ngModel)]="model" required>
+        </my-date-picker>
+      </div>&nbsp;&nbsp;&nbsp;
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label>Due Date : <span class="mandatory"style="color:red;">*</span></label>
+      </div>
+      <div class='right-inner-addon date datepicker col-md-5' data-date-format="yyyy-mm-dd">
+        <my-date-picker name="mydate" [options]="myDatePickerOptions" [(ngModel)]="model" required>
+        </my-date-picker>
+      </div>&nbsp;&nbsp;&nbsp;
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label>Total Marks : </label>
+      </div>
+      <div class="col-md-10">
+        <input type="text" class="form-control " />
+      </div>&nbsp;&nbsp;&nbsp;
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label>Instructions : </label>
+      </div>
+      <div class="col-md-10">
+        <textarea class="form-control " rows="5"></textarea>
+      </div>&nbsp;&nbsp;&nbsp;
+    </div>
+    <div class="pull-right">
+      <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-file"></i>Save</button>
+      <button type="reset" class="btn btn-danger" (click)="myForm.resetForm({})"><i class="glyphicon glyphicon-remove" ></i>Cancel</button>
+    </div>
+  </form>
+</div>
+
+<!-- Edit Assignment head -->
+
+<div class="container" style="border:0px solid;" id="edithead" *ngIf="showEdit">
+  <!-- <div style="background-color:black;border-radius:5px;color:white;">
+    <h4>Edit Assignment Head</h4>
+  </div> -->
+  <section class="content-header" style="margin-left:2%;margin-top:1%;">
+    <div class="headline">
+      <!-- Div for Page Headings -->
+      <div class="heading">
+        Edit Assignment Head
+      </div>
+    </div>
+    <!-- Page Headings Div Ends Here -->
+  </section>
+  <form class=" form-horizontal" style="border-top:0px;width:93%;" #myForm="ngForm" novalidate>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label>Assignment Head : <span class="mandatory"style="color:red;">*</span></label>
+      </div>
+      <div class="col-md-10">
+        <input type="text" class="form-control" style="width:50%">
+      </div>&nbsp;&nbsp;&nbsp;
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label>Initial Date : <span class="mandatory"style="color:red;">*</span></label>
+      </div>
+      <div class='right-inner-addon date datepicker col-md-5' data-date-format="yyyy-mm-dd">
+        <my-date-picker name="mydate" [options]="myDatePickerOptions" [(ngModel)]="model" required>
+        </my-date-picker>
+      </div>&nbsp;&nbsp;&nbsp;
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label>Due Date : <span class="mandatory"style="color:red;">*</span></label>
+      </div>
+      <div class='right-inner-addon date datepicker col-md-5' data-date-format="yyyy-mm-dd">
+        <my-date-picker name="mydate" [options]="myDatePickerOptions" [(ngModel)]="model" required>
+        </my-date-picker>
+      </div>&nbsp;&nbsp;&nbsp;
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label>Total Marks : </label>
+      </div>
+      <div class="col-md-10">
+        <input type="text" class="form-control " />
+      </div>&nbsp;&nbsp;&nbsp;
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label>Instructions : </label>
+      </div>
+      <div class="col-md-10">
+        <textarea class="form-control "></textarea>
+      </div>&nbsp;&nbsp;&nbsp;
+    </div>
+    <div class="pull-right">
+      <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-refresh"></i>Update</button>
+      <button type="reset" class="btn btn-danger" *ngIf="showEdit" (click)="showEdit=!showEdit"><i class="glyphicon glyphicon-remove"></i>Cancel</button>
+    </div>
+  </form>
+</div>
+
+
+
+<!-- Trigger the modal with a button -->
+<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#manage_students">Manage Students</button>
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#view_progress">view_progress</button> -->
+<!-- Modal -->
+<div class="modal fade" id="manage_students" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <!-- <div class="modal-header" style="background-color:#4c6e7a;color:white;height:50px;;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h5 style="margin-top:1%;">Manage Students</h5>
+      </div> -->
+      <section class="content-header" style="margin-left:2%;margin-top:1%;">
+        <button type="button" class="close" data-dismiss="modal" style="margin-right:1%;">&times;</button>
+        <div class="headline">
+          <!-- Div for Page Headings -->
+          <div class="heading">
+            Manage Students
+          </div>
+        </div>
+        <!-- Page Headings Div Ends Here -->
+      </section>
+      <div class="modal-body">
+        <div style="font-size:16px;">
+          <strong>Curricullum:</strong><label style="color:#0094de;"> B.E in CSE 2013-2017</label>&nbsp;
+          <strong>Term:</strong><label style="color:#0094de;"> 5 - Semester</label>&nbsp;
+          <strong>Course:</strong><label style="color:#0094de;"> Data Communication</label>&nbsp;
+          <strong>Section:</strong><label style="color:#0094de;"> A</label>
+        </div><br>
+        <div style="font-size:16px;">
+          <strong> Type:</strong><label style="color:#0094de;"> Assignment</label>&nbsp;
+          <strong>Assignment head:</strong><label style="color:#0094de;"> Assign 1</label>&nbsp;
+          <strong>Start-date:</strong><label style="color:#0094de;"> 29-08-2017</label>&nbsp;
+          <strong>End-date:</strong><label style="color:#0094de;"> 05-09-2017</label>&nbsp;
+        </div>
+        <br>
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table">
+          <tr>
+            <th class="text-center"><input type="checkbox" /></th>
+            <th>USN</th>
+            <th>Name</th>
+            <th class="text-center"><input type="checkbox" /></th>
+            <th>USN</th>
+            <th>Name</th>
+            <th class="text-center"><input type="checkbox" /></th>
+            <th>USN</th>
+            <th>Name</th>
+          </tr>
+          <tr>
+            <td class="text-right"><input type="checkbox" /></td>
+            <td>4PM08IS001</td>
+            <td>Adithya </td>
+            <td class="text-right"><input type="checkbox" /></td>
+            <td>1JN13LNI01</td>
+            <td>Shet Sagar</td>
+            <td class="text-right"><input type="checkbox" /></td>
+            <td>4PM08IS002</td>
+            <td>Pai</td>
+          </tr>
+          <tr>
+            <td class="text-right"><input type="checkbox" /></td>
+            <td>4PM08IS001</td>
+            <td>Adithya </td>
+            <td class="text-right"><input type="checkbox" /></td>
+            <td>1JN13LNI01</td>
+            <td>Shet Sagar</td>
+            <td class="text-right"><input type="checkbox" /></td>
+            <td>4PM08IS002</td>
+            <td>Pai</td>
+          </tr>
+          <tr>
+            <td class="text-right"><input type="checkbox" /></td>
+            <td>4PM08IS001</td>
+            <td>Adithya </td>
+            <td class="text-right"><input type="checkbox" /></td>
+            <td>1JN13LNI01</td>
+            <td>Shet Sagar</td>
+            <td class="text-right"><input type="checkbox" /></td>
+            <td>4PM08IS002</td>
+            <td>Pai</td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <div class="pull-right">
+          <button class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span>&nbsp;Submit Assignment</button>
+          <button class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>&nbsp;cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="view_progress" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <!-- <div class="modal-header" style="background-color:#4c6e7a;color:white;height:50px;;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h5 style="margin-top:1%;">View Progress</h5>
+      </div> -->
+      <section class="content-header" style="margin-left:2%;margin-top:1%;">
+        <button type="button" class="close" data-dismiss="modal" style="margin-right:1%;">&times;</button>
+        <div class="headline">
+          <!-- Div for Page Headings -->
+          <div class="heading">
+            View Progress
+          </div>
+        </div>
+        <!-- Page Headings Div Ends Here -->
+      </section>
+      <div class="modal-body">
+        <div style="font-size:16px;">
+          <strong>Curricullum:</strong><label style="color:#0094de;"> B.E in CSE 2013-2017</label>&nbsp;
+          <strong>Term:</strong><label style="color:#0094de;"> 5 - Semester</label>&nbsp;
+          <strong>Course:</strong><label style="color:#0094de;"> Data Communication</label>&nbsp;
+          <strong>Section:</strong><label style="color:#0094de;"> A</label>
+
+        </div><br>
+        <div style="font-size:16px;">
+          <strong> Type:</strong><label style="color:#0094de;"> Assignment</label>&nbsp;
+          <strong>Assignment head:</strong><label style="color:#0094de;"> Assign 1</label>&nbsp;
+          <strong>Start-date:</strong><label style="color:#0094de;"> 29-08-2017</label>&nbsp;
+          <strong>End-date:</strong><label style="color:#0094de;"> 05-09-2017</label>&nbsp;
+        </div>
+        <br>
+        <h5>Total Progress in</h5>
+        <!-- <progress value="70" max="100" style="width:100%;height:25px;"></progress> -->
+        <div class="progress">
+          <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" [attr.aria-valuenow]="progress" aria-valuemin="0"
+            aria-valuemax="100" style="min-width:70%;" [style.width]="(progress/100)*100 + '%'">
+            {{70}}%
+          </div>
+        </div>
+        <a href="#">
+          <h5><span class="glyphicon glyphicon-play"></span>
+            <u>List of students who have not submitted</u>
+          </h5>
+        </a>
+        <a href="#">
+          <h5><span class="glyphicon glyphicon-play"></span>
+            <u>List of students who have submitted</u>
+          </h5>
+        </a>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger pull-right" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>close</button>
+      </div>
+    </div>
+  </div>
+</div>

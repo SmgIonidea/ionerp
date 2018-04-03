@@ -1,0 +1,584 @@
+<div class="container-fluid">
+  <section class="content-header" style="margin-top: -13px;">
+    <!--<div class="headline">-->
+      <!-- Div for Page Headings -->
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mainTitle}}</h4>
+      </div>
+      <!--</div>-->
+    <!-- Page Headings Div Ends Here -->
+  </section>
+
+  <div class="row">
+    <div class="form-group col-lg-3">
+      <label data-key="lg_cur" for="curriculum" class="key-data"> Curriculum: <span style="color:red;">*</span></label>
+      <select name="curriculum" id="curriculum" [(ngModel)]="crclmId" (ngModelChange)="term($event)" class="form-control" ngModel required>
+        <option [ngValue]="0" selected>Select Curriculum</option>
+        <option *ngFor="let type of curriculumType" [ngValue]="type.crclm_id">
+          {{ type.crclm_name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group col-lg-2">
+      <label data-key="lg_term" for="term" class="key-data"> Term: <span style="color:red;">*</span></label>
+      <select name="term" id="term" [(ngModel)]="termId" (ngModelChange)="course($event)" class="form-control" ngModel required>
+        <option [ngValue]="0" selected>Select Term</option>
+        <option *ngFor="let type of termType" [ngValue]="type.crclm_term_id">
+          {{ type.term_name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group col-lg-3">
+      <label data-key="lg_course" for="course" class="key-data"> Course: <span style="color:red;">*</span></label>
+      <select name="course" id="course" [(ngModel)]="crsId" (ngModelChange)="section($event)" class="form-control" ngModel required>
+        <option [ngValue]="0" selected>Select Course</option>     
+        <option *ngFor="let type of courseType" [ngValue]="type.crs_id" title = "{{type.crs_code}}">
+          {{ type.crs_title }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group col-lg-2">
+      <label data-key="lg_section" for="section" class="key-data"> Section: <span style="color:red;">*</span></label>   
+        <select name="section" id="section" [(ngModel)]="sectionId" (ngModelChange)="getActivityList()" class="form-control" ngModel required>
+        <option [ngValue]="0" selected>Select Section</option>
+        <option *ngFor="let type of sectionType" [ngValue]="type.id">
+          {{ type.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group col-lg-2">
+      <label data-key="lg_topic" for="topic" class="key-data"> Topic: </label>   
+      <div>
+        <ss-multiselect-dropdown [options]="topicType" class="topic" [(ngModel)]="changedTopic" 
+          (ngModelChange)="filterActivity(changedTopic)" [texts]="myTexts1" [settings]="topicMultSettings1">
+        </ss-multiselect-dropdown>
+      </div>
+    </div>
+  </div>
+
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered" 
+      style="width:100%;">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <th style="width:5px;">Sl No.</th>
+          <th>Activity Name</th>
+          <!-- <th *ngIf="columnShow[11]==1">Course Outcomes(COs)</th> -->
+          <!-- <th *ngIf="columnShow[22]==1">Performance Indicators(PIs)</th> -->
+          <th style="width:200px;">Topics</th>
+          <!-- <th *ngIf="columnShow[12]==1">Topic Learning Outcomes(TLOs)</th> -->
+          <th>Initial Date</th>
+          <th>Due Date</th>
+          <th>Manage Rubrics</th>
+          <th>Manage Students</th>
+          <th>View Progress</th>
+          <th>Review Activity</th>          
+          <th>Activity Status</th>
+          <th style="width:5px;">Edit</th>
+          <th style="width:5px;">Delete</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="activityList">
+        <tr *ngFor="let activity of activityList; let i = index">
+          <td class="text-right">{{i+1}}</td>
+          <td title="{{activity.ao_method_description}}">{{activity.ao_method_name}}</td>
+          <!-- <td *ngIf="columnShow[11]==1">
+            <ng-template ngFor let-clo [ngForOf]="activity.co">{{clo.clo_code}}</ng-template>
+          </td> -->
+          <!-- <td *ngIf="columnShow[22]==1">
+            <ng-template ngFor let-pi [ngForOf]="activity.pi">{{pi.pi_code}}</ng-template>
+          </td> -->
+          <td *ngFor="let topic of activity.topic;">{{topic.topic_title}}</td>
+          <!-- <td *ngIf="columnShow[12]==1">
+            <ng-template ngFor let-tlo [ngForOf]="activity.tlo">{{tlo.tlo_code}}</ng-template>
+          </td> -->
+          <td>{{activity.initiate_date}}</td>
+          <td>{{activity.end_date}}</td>
+          <td>
+            <a [routerLink]="['/content',{outlets:{appCommon:['activity','managerubricsdefinition']}}]" 
+              [queryParams]="{id:activity.ao_method_id}">Add/Edit Rubrics</a>
+          </td>
+          <td><a (click)="manageStudents(activity.ao_method_id)">Manage Students</a></td>
+          <td><a (click)="viewProgress(activity.ao_method_id)">View Progress</a></td>
+          <td><a (click)="reviewActivity(activity.ao_method_id)">Review Activity</a></td>
+          <td class="text-center" *ngIf="activity.status==2">
+            <button type="submit" class="btn btn-success btn-block">
+              <span class="glyphicon"></span>&nbsp;Complete</button>
+          </td>
+          <td class="text-center" *ngIf="activity.status==1">
+            <button type="submit" class="btn btn-success btn-block">
+              <span class="glyphicon"></span>&nbsp;In-progress</button>
+          </td>
+          <td class="text-center" *ngIf="activity.status==0">
+            <button type="submit" class="btn btn-warning btn-block">
+              <span class="glyphicon "></span>&nbsp;Not-Initiated</button>
+          </td>
+          <td class="text-center">
+            <button pageScroll href="#edit_page" *ngIf="activity.status==0" class="glyphicon glyphicon-pencil custom-btn btn" 
+              (click)="editActivity(activity)"></button>
+            <button pageScroll href="#edit_page" *ngIf="activity.status==1 || activity.status==2" class="glyphicon glyphicon-pencil custom-btn btn" 
+              (click)="editActivity(activity)" disabled></button>
+          </td>
+          <td class="text-center"><button #deleteElement class="glyphicon glyphicon-remove custom-btn btn" 
+            [attr.activityId]="activity.ao_method_id" (click)="deleteWarning(this.deleteElement, this.activityDeleteModal)"></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="edit_page" style="margin-bottom: 50px;">
+    <section class="content-header">
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{title}}</h4>
+      </div>
+    </section>
+    <form [formGroup]="activityForm" #f="ngForm" (ngSubmit)="f.valid && saveActivity(activityForm)">
+      <div class="form-group row">
+        <label for="activityName" class="col-lg-2 control-label">Activity Name: <span style="color:red;">*</span>
+        </label>
+        <div class="col-md-5">
+          <input formControlName="activityName" type="text" name="activityName" id="activityName" value="" class="form-control"
+            placeholder="Enter Activity Name">
+          <div class="error" *ngIf="(activityName.dirty || activityName.touched || f.submitted) && activityName.errors">
+            <div *ngIf="activityName.errors.required">
+              Activity Name is required.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="activityDetails" class="col-lg-2 control-label">Activity Details: </label>
+        <div class="col-md-5">
+          <textarea formControlName="activityDetails" type="text" name="activityDetails" id="activityDetails" 
+            value="" class="form-control" placeholder="Enter Activity Details"></textarea>
+          <div *ngIf="activityDetails?.touched && activityDetails?.invalid" class="error">
+            Description Should be less than 1000 charecters.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="topics" class="col-lg-2 control-label">Topics: </label>
+        <div class="col-md-5">
+          <ss-multiselect-dropdown formControlName="addTopics" name="addTopics" id="addTopics" class="topic_multiselect" 
+            [options]="topicOptions" [(ngModel)]="editedIds" [texts]="myTexts2" [settings]="topicMultSettings2" (click)="increaseHeight()">
+          </ss-multiselect-dropdown>
+        </div>
+      </div>
+
+      <div class="row">
+        <label class="col-lg-2 control-label">Initial Date: <span style="color:red;">*</span></label>
+        <div class='right-inner-addon date datepicker col-md-5' data-date-format="yyyy-mm-dd">
+          <my-date-picker placeholder=" dd-mm-yyyy" formControlName="initialDate" name="initialDate" 
+            id="initialDate" [options]="myDatePickerOptions" (dateChanged)="onDateChanged($event)" [(ngModel)]="model" required>
+          </my-date-picker>
+          <div class="error" *ngIf="(initialDate.dirty || initialDate.touched || f.submitted) && initialDate.errors">
+            <div *ngIf="initialDate.errors.required">
+              Initial Date is required.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:10px;">
+        <label class="col-lg-2 control-label">Due Date: <span style="color:red;">*</span></label>
+        <div class='right-inner-addon date datepicker col-md-5' data-date-format="yyyy-mm-dd">
+          <my-date-picker placeholder=" dd-mm-yyyy" formControlName="endDate" name="endDate" 
+            id="endDate" [options]="myDatePickerOptions1" [selDate]="selDate" [(ngModel)]="model1" required>
+          </my-date-picker>
+          <div class="error" *ngIf="(endDate.dirty || endDate.touched || f.submitted) && endDate.errors">
+            <div *ngIf="endDate.errors.required">
+              Due Date is required.
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row pull-right">
+        <div [style.display]="isSaveHide?'none':'block'" style="margin-right:6em;">
+          <button id="saveActivity" type="submit" class="btn btn-primary">
+              <i class="glyphicon glyphicon-file"></i> Save
+          </button>
+          <button id="closeForm" type="reset" class="btn btn-info">
+              <i class="glyphicon glyphicon-refresh"></i> Reset
+          </button>
+        </div>
+      </div>
+      <div class="row pull-right">
+        <div [style.display]="isUpdateHide?'none':'block'" style="margin-right:6em;">
+          <button id="UpdateActivity" type="button" class="btn btn-primary" 
+            (click)="updatePost(activityForm)">
+              <i class="glyphicon glyphicon-ok"></i> Update
+          </button>
+          <button id="cancelEdit" type="button" class="btn btn-danger" (click)="cancelUpdate()">
+              <i class="glyphicon glyphicon-remove"></i> Cancel
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+  <!--delete modal start-->
+  <div #activityDeleteModal class="modal fade" id="activityDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header warning-msg">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+        </div>
+        <div class="modal-body">
+          Are you sure you want delete this Activity?
+          <input #deleteActivityId type="hidden" name="deleteActivityId" id="deleteActivityId" [value]="delActivityId">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="deleteActivityData(deleteActivityId)">
+            <i class="glyphicon glyphicon-ok"></i>
+            Ok
+          </button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            <i class="glyphicon glyphicon-remove"></i>
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--delete modal end-->
+
+  <!-- Tag for showing Toast Message -->
+    <toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+  <!-- Toast Tag Ends Here -->
+
+  <!-- manage students modal start -->
+  <div class="modal fade" id="manage_students" role="dialog" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+      <!-- Modal content-->
+      <div class="modal-content well">
+        <!-- <section class="content-header" style="margin-left:2%;margin-top:1%;"> -->
+        <!--<div class="headline">-->
+        <!-- Div for Page Heading -->
+
+        <div class="panel panel-primary">
+          <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage Students</h4>
+        </div>
+
+        <!-- Page Heading Div Ends Here -->
+        <!-- </section> -->
+      
+        <div class="modal-body" style="font-size:12px;">
+          <table style="width:100%">
+            <tr>
+              <td class="Column">
+                <strong>Curriculum:</strong>
+                <label style="color:blue;" title={{curriculumName}}>&nbsp;{{curriculumName}}</label>
+              </td>
+              <td class="Column">
+                <strong>Term:</strong>
+                <label style="color:blue;">&nbsp;{{termName}}</label>
+              </td>
+              <td class="Column">
+                <strong>Course:</strong>
+                <label style="color:blue;" title={{courseName}}>&nbsp;{{courseName}}</label>&nbsp;
+              </td>
+              <td class="Column">
+                <strong>Section:</strong>
+                <label style="color:blue;">
+                  &nbsp;{{sectionName}}
+                </label>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="Column">
+                <strong>Type:</strong>
+                <label style="color:blue;">&nbsp;Activity</label>&nbsp;
+              </td>
+              <td class="Column">
+                <strong>Activity Name:</strong>
+                <label *ngFor="let activity of activityDet" style="color:blue;" title="{{activity.ao_method_name}}">
+                  &nbsp;{{activity.ao_method_name}}
+                </label>&nbsp;
+              </td>
+              <td class="Column">
+                <strong>Initial Date:</strong>
+                <label *ngFor="let activity of activityDet" style="color:blue;">
+                  &nbsp;{{activity.initiate_date | DateFormatPipe}}
+                </label>&nbsp;
+              </td>
+              <td class="Column">
+                <strong>End Date:</strong>
+                <label *ngFor="let activity of activityDet" style="color:blue;">
+                  &nbsp;{{activity.end_date | DateFormatPipe}}
+                </label>&nbsp;
+              </td>
+            </tr>
+          </table>
+          
+          <div class="table table-responsive row col-lg-12 col-md-12 hidden-xs col-sm-12" style="margin-top: 20px">
+            <table class="table">
+              <td>
+                <table class="table table-striped table-hover">
+                  <thead>
+                    <th class="col-lg-1">
+                      <input type="checkbox" class="main-chkbox" id="mainCheckBox1" data-className="class1" #mainBox1 
+                        (click)="checkAll(mainBox1)">
+                    </th>
+                    <th class="col-lg-1">USN</th>
+                    <th class="col-lg-2">Name</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let student of first_table; let i = index;">
+                      <td class="col-lg-1">
+                        <input type="checkbox" class="class1" (change)="checkIfSelected(box1)" id="class1{{i}}" #box1
+                          value="{{student.ssd_id}}">
+                      </td>
+                      <td class="col-lg-1">{{student.student_usn}}</td>
+                      <td class="col-lg-2">{{student.first_name}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td>
+                <table class="table table-striped table-hover">
+                  <thead>
+                    <th class="col-lg-1">
+                      <input type="checkbox" class="main-chkbox" id="mainCheckBox2" data-className="class2" #mainBox2 
+                        (click)="checkAll(mainBox2)">
+                    </th>
+                    <th class="col-lg-1">USN</th>
+                    <th class="col-lg-2">Name</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let student of second_table; let i = index;">
+                      <td class="col-lg-1">
+                        <input type="checkbox" class="class2" (change)="checkIfSelected(box2)" id="class2{{i}}" #box2
+                          value="{{student.ssd_id}}">
+                      </td>
+                      <td class="col-lg-1">{{student.student_usn}}</td>
+                      <td class="col-lg-2">{{student.first_name}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td>
+                <table class="table table-striped table-hover">
+                  <thead>
+                    <th class="col-lg-1">
+                      <input type="checkbox" class="main-chkbox" id="mainCheckBox3" data-className="class3" #mainBox3 
+                        (click)="checkAll(mainBox3)">
+                    </th>
+                    <th class="col-lg-1">USN</th>
+                    <th class="col-lg-2">Name</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let student of third_table; let i = index;">
+                      <td class="col-lg-1">
+                        <input type="checkbox" class="class3" (change)="checkIfSelected(box3)" id="class3{{i}}" #box3
+                          value="{{student.ssd_id}}">
+                        </td>
+                      <td class="col-lg-1">{{student.student_usn}}</td>
+                      <td class="col-lg-2">{{student.first_name}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </table>
+          </div>
+
+            <div class="table table-responsive row hidden-lg hidden-md col-xs-12 hidden-sm" style="margin-top: 20px">
+              <table class="table table-striped table-hover">
+                <thead>
+                  <th class="col-lg-1">
+                    <input type="checkbox" class="main-chkbox" id="mainCheckBox4" data-className="class4" #mainBox4 
+                      (click)="checkAll(mainBox4)">
+                  </th>
+                  <th class="col-lg-1">USN</th>
+                  <th class="col-lg-2">Name</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let student of stu_name; let i = index;">
+                    <td class="col-lg-1">
+                      <input type="checkbox" class="class4" (change)="checkIfSelected(box4)" id="class4{{i}}" #box4
+                        value="{{student.ssd_id}}">
+                    </td>
+                    <td class="col-lg-1">{{student.student_usn}}</td>
+                    <td class="col-lg-2">{{student.first_name}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <div class="siz pull-left">
+              <label>Note:
+                <span style="color:red;">*</span>
+                &nbsp;Please select atleast one student.
+              </label>
+            </div>
+            <div class="pull-right" style="margin-right:4em;">
+              <button class="btn btn-primary" data-dismiss="modal" (click)="saveStudents()" id="submit_stu" disabled>
+                <span class="glyphicon glyphicon-ok"></span>&nbsp;Submit</button>
+              <button class="btn btn-danger" data-dismiss="modal" (click)="uncheckAll()">
+                <span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+  </div>
+  <!-- manage students modal end -->
+
+
+  <!-- view progress modal start -->
+  <div class="modal fade" id="view_progress" role="dialog" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+      <!-- Modal content-->
+      <div class="modal-content well">
+        <!-- <section class="content-header" style="margin-left:2%;margin-top:1%;"> -->
+        <button type="button" class="close" data-dismiss="modal" style="margin-right:1%;color:white;">&times;</button>
+        <!--<div class="headline">-->
+        <!-- Div for Page Heading -->
+
+        <div class="panel panel-primary">
+          <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Progress</h4>
+        </div>
+
+        <!-- Page Heading Div Ends Here -->
+        <!-- </section> -->
+      
+        <div class="modal-body" style="font-size:12px;">
+          <table style="width:100%">
+            <tr>
+              <td class="Column">
+                <strong>Curriculum:</strong>
+                <label style="color:blue;" title={{curriculumName}}>&nbsp;{{curriculumName}}</label>
+              </td>
+              <td class="Column">
+                <strong>Term:</strong>
+                <label style="color:blue;">&nbsp;{{termName}}</label>
+              </td>
+              <td class="Column">
+                <strong>Course:</strong>
+                <label style="color:blue;" title={{courseName}}>&nbsp;{{courseName}}</label>&nbsp;
+              </td>
+              <td class="Column">
+                <strong>Section:</strong>
+                <label style="color:blue;">
+                  &nbsp;{{sectionName}}
+                </label>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="Column">
+                <strong>Type:</strong>
+                <label style="color:blue;">&nbsp;Activity</label>&nbsp;
+              </td>
+              <td class="Column">
+                <strong>Activity Name:</strong>
+                <label *ngFor="let activity of activityDet" style="color:blue;" title="{{activity.ao_method_name}}">
+                  &nbsp;{{activity.ao_method_name}}
+                </label>&nbsp;
+              </td>
+              <td class="Column">
+                <strong>Initial Date:</strong>
+                <label *ngFor="let activity of activityDet" style="color:blue;">
+                  &nbsp;{{activity.initiate_date | DateFormatPipe}}
+                </label>&nbsp;
+              </td>
+              <td class="Column">
+                <strong>End Date:</strong>
+                <label *ngFor="let activity of activityDet" style="color:blue;">
+                  &nbsp;{{activity.end_date | DateFormatPipe}}
+                </label>&nbsp;
+              </td>
+            </tr>
+          </table>
+          
+          <br>        
+          <div>
+            <strong>Total Progress: {{percentage  | number }}%</strong>
+          </div>
+          <br>
+          
+          <div class="progress">
+            <div class="progress-bar progress-bar-success progress-bar-striped progress " role="progressbar" [attr.aria-valuenow]="percentage"
+              aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ 'width': percentage + '%' }">
+              {{percentage  | number }}%
+            </div>
+          </div>
+          <div>
+            <accordion [showArrows]="true">
+              <accordion-group heading="List of students who have not submitted" class="not-submit" is-open="true">
+                <table style="border:none;width:100%">
+                  <tr>
+                    <th>
+                      <i class="glyphicon glyphicon-none"></i>
+                      <u class="head-style">USN</u>
+                    </th>
+                    <th>
+                      <i class="glyphicon glyphicon-none"></i>
+                      <u class="head-style">Name</u>
+                    </th>
+                  </tr>
+                  <tr *ngFor="let student of stuNotSubmit">
+                    <td>
+                      <i class="glyphicon glyphicon-play"></i>
+                      {{student.student_usn}}
+                    </td>
+                    <td>
+                      <i class="glyphicon glyphicon-play"></i>
+                      {{student.first_name}}
+                    </td>
+                  </tr>
+                </table>
+              </accordion-group>
+
+              <accordion-group heading="List of students who have submitted" class="submit">
+                <table style="border:none;width:100%">
+                  <tr>
+                    <th>
+                      <i class="glyphicon glyphicon-none"></i>
+                      <u class="head-style">USN</u>
+                    </th>
+                    <th>
+                      <i class="glyphicon glyphicon-none"></i>
+                      <u class="head-style">Name</u>
+                    </th>
+                  </tr>
+                  <tr *ngFor="let student of stuSubmit">
+                    <td>
+                      <i class="glyphicon glyphicon-play"></i>
+                      {{student.student_usn}}
+                    </td>
+                    <td>
+                      <i class="glyphicon glyphicon-play"></i>
+                      {{student.first_name}}
+                    </td>
+                  </tr>
+                </table>
+              </accordion-group>
+            </accordion>
+          </div>    
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-danger pull-right" data-dismiss="modal">
+              <span class="glyphicon glyphicon-remove"></span>&nbsp;Close</button>
+          </div>
+          
+        </div>
+      </div>
+  </div>
+  <!-- view progress modal end -->
+</div>

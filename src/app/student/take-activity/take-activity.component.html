@@ -1,0 +1,380 @@
+<div class="container-fluid">
+  <section class="content-header" style="margin-top: -13px;">
+    <div class="panel panel-primary">
+      <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mainTitle}}</h4>
+    </div>
+  </section>
+
+  <div class="row">
+    <div class="form-group col-lg-3">
+      <label data-key="lg_cur" for="curriculum" class="key-data"> Curriculum: <span style="color:red;">*</span></label>
+      <select name="curriculum" id="curriculum" [(ngModel)]="crclmId" (ngModelChange)="term($event)" class="form-control" ngModel required>
+        <option [ngValue]="0" selected>Select Curriculum</option>
+        <option *ngFor="let type of curriculumType" [ngValue]="type.crclm_id">
+          {{ type.crclm_name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group col-lg-2">
+      <label data-key="lg_term" for="term" class="key-data"> Term: <span style="color:red;">*</span></label>
+      <select name="term" id="term" [(ngModel)]="termId" (ngModelChange)="course($event)" class="form-control" ngModel required>
+        <option [ngValue]="0" selected>Select Term</option>
+        <option *ngFor="let type of termType" [ngValue]="type.crclm_term_id">
+          {{ type.term_name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group col-lg-3">
+      <label data-key="lg_course" for="course" class="key-data"> Course: <span style="color:red;">*</span></label>
+      <select name="course" id="course" [(ngModel)]="crsId" (ngModelChange)="getActivity($event)" class="form-control" ngModel required>
+        <option [ngValue]="0" selected>Select Course</option>     
+        <option *ngFor="let type of courseType" [ngValue]="type.crs_id">
+          {{ type.crs_title }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered" style="width:100%;">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <th>Sl No.</th>
+          <th>Activity Name</th>
+          <th>Activity Details</th>
+          <th>View Rubrics</th>
+          <th>Initial Date</th>
+          <th>Due Date</th>
+          <th>My Action</th>
+          <th>Secured Marks</th>
+          <th>Detailed Marks</th>
+        </tr>
+      </thead>
+
+      <tbody *ngIf="stuActivityList">
+        <tr *ngFor="let activity of stuActivityList; let i = index;">
+          <td class="text-right">{{i+1}}</td>
+          <td>{{activity.ao_method_name}}</td>
+          <td>{{activity.ao_method_description}}</td>
+          <td><a (click)="viewRubrics(activity)">View Rubrics</a></td>
+          <td>{{activity.initiate_date}}</td>
+          <td>{{activity.end_date}}</td>
+          <td *ngIf="!activity.ans_status" pageScroll href="#ans_section"><a (click)="clickToAnswer(activity)">Click To Answer</a></td>
+          <td *ngIf="activity.ans_status==1" pageScroll href="#ans_section"><a (click)="inProgress(activity)">In-progress</a></td>
+          <td *ngIf="activity.ans_status==2">Completed</td>
+
+          <td *ngIf="(!activity.ans_status || activity.ans_status==1) && activity.dlvry_flag==1">--</td>
+          <td *ngIf="activity.ans_status==2 && (!activity.dlvry_flag==2 || activity.dlvry_flag==1)">Correction Pending</td>
+          <td *ngIf="activity.dlvry_flag==2">
+            <ng-template ngFor let-marks [ngForOf]="activity.marks">
+              <td>{{marks.secured_marks}}/{{marks.total_marks}}</td>
+            </ng-template>
+          </td>
+
+          <td *ngIf="(!activity.ans_status || activity.ans_status==1) && activity.dlvry_flag==1">--</td>
+          <td *ngIf="activity.ans_status==2 && (!activity.dlvry_flag==2 || activity.dlvry_flag==1)">Correction Pending</td>
+          <td *ngIf="activity.dlvry_flag==2"><a (click)="detailedMarks(activity)">Detailed Marks</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="clickAns" id="ans_section">
+    <section class="content-header">
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{title}} - {{activityHead}}</h4>
+      </div>
+    </section>
+
+    <div class="panel panel-default well" style=" border: 1px solid black;border-color:#D0D0D0;">
+      <div class="panel-body">
+        <input type="radio" name="type" value="answer" [(ngModel)]="type" (click)="clearInputField()" [disabled]="radioButtonDisable"> Answer&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="type" value="upload" [(ngModel)]="type" (click)="clearInputField()" [disabled]="radioButtonDisable"> Upload&nbsp;&nbsp;
+        <input type="radio" name="type" value="url" [(ngModel)]="type" (click)="clearInputField()" [disabled]="radioButtonDisable"> URL&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+
+    <form #activityForm="ngForm" [formGroup]="addActivityAnsForm">
+      <div *ngIf="type == 'answer'">
+        <div class="row">
+          <div class="col-lg-1">
+            <label for="details"> Details: <span style="color:red;">*</span></label>
+          </div>
+          <div class="col-lg-11">
+            <!-- <simple-tiny formControlName="addActivityAnswer" [elementId]="'my-ans-editor'" ngDefaultControl></simple-tiny> -->
+            <p id="error_tinymce" class="error_message"></p>
+          </div>
+        </div>
+        <div class="row pull-right mar-top" style="margin-right:2em;">
+          <button type="submit" id="submitAns" name="submitAns" class="btn btn-success" (click)="submitTinymceAnswer()">
+            <span class="glyphicon glyphicon-ok"></span>&nbsp;Submit</button>
+            <button type="submit" id="saveAns" name="saveAns" class="btn btn-primary" (click)="saveTinymceAnswer()">
+            <span class="glyphicon glyphicon-file"></span>&nbsp;Save</button>
+          <button type="reset" class="btn btn-danger" (click)="cancelActAns()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+        </div>
+      </div>
+
+      <div *ngIf="type == 'upload'">
+        <div class="row">
+          <div class="col-lg-2">
+            <label for="file"> File: <span style="color:red;">*</span></label>
+          </div>
+          <div class="col-lg-8">
+            <input type="text" formControlName="addActivityUpload" placeholder="Upload File" name="addActivityUpload" id="addActivityUpload" 
+              [(ngModel)]="clearValue" class="form-control" readonly="readonly"/>
+            <div>
+              <label>Note: <span style="color:red;">*</span>
+                &nbsp;.pdf, .doc and .docx. Maximum upload file size: 2 MB
+              </label>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <label class="btn-bs-file btn btn-primary top">
+              Browse
+              <input #fileInput type="file" id="activityDoc" name="activityDoc" (change)="onChange($event)" accept=".pdf,.doc,.docx">
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-2">
+            <label for="add_info_file">Additional Information: </label>
+          </div>
+          <div class="col-lg-8">
+            <textarea formControlName="fileAdditionalInfo" type="text" name="fileAdditionalInfo" id="fileAdditionalInfo" 
+              class="form-control" placeholder="Enter Additional Information"></textarea>
+            <div *ngIf="fileAdditionalInfo?.touched && fileAdditionalInfo?.invalid" class="error_message">
+              Description Should be less than 1000 charecters.
+            </div>
+          </div>
+        </div>
+        <div class="row pull-right mar-top" style="margin-right:4em;">
+          <button type="submit" id="saveFile" name="saveFile" class="btn btn-success" (click)="uploadFile(fileAdditionalInfo)"
+            [disabled]="!addActivityUpload.valid"><span class="glyphicon glyphicon-ok"></span>&nbsp;Submit</button>
+          <button type="reset" class="btn btn-danger" (click)="cancelActAns()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+        </div>
+      </div>
+
+      <div *ngIf="type == 'url'">
+        <div class="row">
+          <div class="col-lg-2">
+            <label for="url"> Reference/Path: <span style="color:red;">*</span></label>
+          </div>
+          <div class="col-lg-8">
+            <input type="text" formControlName="addActivityUrl" class="form-control" [(ngModel)]="clearValue" placeholder="Enter URL">
+          </div>
+        </div><br>
+        <div class="row">
+          <div class="col-lg-2">
+            <label for="add_info_url">Additional Information: </label>
+          </div>
+          <div class="col-lg-8">
+            <textarea formControlName="urlAdditionalInfo" type="text" name="urlAdditionalInfo" id="urlAdditionalInfo" 
+              class="form-control" placeholder="Enter Additional Information"></textarea>
+            <div *ngIf="urlAdditionalInfo?.touched && urlAdditionalInfo?.invalid" class="error_message">
+              Description Should be less than 1000 charecters.
+            </div>
+          </div>
+        </div>
+        <div class="row pull-right mar-top" style="margin-right:4em;">
+          <button type="submit" id="saveUrl" name="saveUrl" class="btn btn-success" (click)="saveUrl(addActivityUrl, urlAdditionalInfo)" [disabled]="!addActivityUrl.valid">
+              <span class="glyphicon glyphicon-ok"></span>&nbsp;Submit</button>
+          <button type="reset" class="btn btn-danger" (click)="cancelActAns()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Tag for showing Toast Message -->
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+<!-- Toast Tag Ends Here -->
+
+<!-- Rubrics list modal start -->
+<div class="modal fade" id="view_rubrics" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content well" style="background-color: white">
+      <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rubrics List</h4>
+      </div>
+
+      <div class="modal-body">
+        <div class="table table-responsive">
+          <table style="width:100%;">
+            <tr>
+              <td class="Column">
+                <strong>Curriculum:</strong>
+                <label style="color:blue;" title={{curriculumName}}>&nbsp;{{curriculumName}}</label>
+              </td>
+              <td class="Column">
+                <strong>Term:</strong>
+                <label style="color:blue;">&nbsp;{{termName}}</label>
+              </td>
+              <td class="Column">
+                <strong>Course:</strong>
+                <label style="color:blue;" title={{courseName}}>&nbsp;{{courseName}}</label>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="Column">
+                <strong>Activity Name:</strong>
+                <label *ngFor="let activity of activityDet" style="color:blue;" title="{{activity.ao_method_name}}">
+                  &nbsp;{{activity.ao_method_name}}
+                </label>
+              </td>
+              <td class="Column">
+                <strong>Initial Date:</strong>
+                <label *ngFor="let activity of activityDet" style="color:blue;">
+                  &nbsp;{{activity.initiate_date | DateFormatPipe}}
+                </label>
+              </td>
+              <td class="Column">
+                <strong>End Date:</strong>
+                <label *ngFor="let activity of activityDet" style="color:blue;">
+                  &nbsp;{{activity.end_date | DateFormatPipe}}
+                </label>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="table table-responsive">
+          <table class="table custom-border" style="width:100%;">
+            <thead>
+              <tr>
+                <th rowspan="2">Sl No.</th>
+                <th rowspan="2">Criteria</th>
+                <th *ngIf="colspanScaleAssessment" [attr.colspan]="colspanScaleAssessment" class="text-center">Scale of Assessment</th>
+              </tr>
+              <tr>
+                <ng-template ngFor let-range [ngForOf]="rubricsRange">
+                  <th class="text-center">
+                    {{range.criteria_range_name?range.criteria_range_name+':'+range.criteria_range:range.criteria_range}}
+                  </th>
+                </ng-template>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of criteriaData; let i = index">
+                <td width="5%" class="text-right">{{i+1}}</td>
+                <td [attr.width]="60/colspanScaleAssessment+'%'">{{data.criteria}}</td>
+                <td [attr.width]="60/colspanScaleAssessment+'%'" *ngFor="let criteriaDesc of data.criteriaDesc;">
+                  {{criteriaDesc.criteria_description}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="pull-right">
+          <button type="button" class="btn btn-success" (click)="exportRubricsListPdf()"><span class="glyphicon glyphicon-book"></span>&nbsp;Export .pdf</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>&nbsp;Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Rubrics list modal end -->
+
+<!-- Detailed marks modal start -->
+<div class="modal fade" id="detailed_marks" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content well" style="background-color: white">
+      <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Detailed Marks</h4>
+      </div>
+
+      <div class="modal-body">
+        <div class="table table-responsive">
+          <table style="width:100%;">
+            <tr>
+              <td class="Column">
+                <strong>Curriculum:</strong>
+                <label style="color:blue;" title={{curriculumName}}>&nbsp;{{curriculumName}}</label>
+              </td>
+              <td class="Column">
+                <strong>Term:</strong>
+                <label style="color:blue;">&nbsp;{{termName}}</label>
+              </td>
+              <td class="Column">
+                <strong>Course:</strong>
+                <label style="color:blue;" title={{courseName}}>&nbsp;{{courseName}}</label>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="Column">
+                <strong>Activity Name:</strong>
+                <label *ngFor="let activity of activityDet" style="color:blue;" title="{{activity.ao_method_name}}">
+                  &nbsp;{{activity.ao_method_name}}
+                </label>
+              </td>
+              <td class="Column">
+                <strong>Initial Date:</strong>
+                <label *ngFor="let activity of activityDet" style="color:blue;">
+                  &nbsp;{{activity.initiate_date | DateFormatPipe}}
+                </label>
+              </td>
+              <td class="Column">
+                <strong>End Date:</strong>
+                <label *ngFor="let activity of activityDet" style="color:blue;">
+                  &nbsp;{{activity.end_date | DateFormatPipe}}
+                </label>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="table table-responsive">
+          <table class="table custom-border" style="width:100%;">
+            <thead>
+              <tr>
+                <th rowspan="2">Sl No.</th>
+                <th rowspan="2">Criteria</th>
+                <th *ngIf="colspanScaleAssessment" [attr.colspan]="colspanScaleAssessment" class="text-center">Scale of Assessment</th>
+                <th rowspan="2">Marks Secured</th>
+              </tr>
+              <tr>
+                <ng-template ngFor let-range [ngForOf]="rubricsRange">
+                  <th class="text-center">
+                    {{range.criteria_range_name?range.criteria_range_name+':'+range.criteria_range:range.criteria_range}}
+                  </th>
+                </ng-template>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of criteriaData; let i = index">
+                <td width="5%" class="text-right">{{i+1}}</td>
+                <td [attr.width]="60/colspanScaleAssessment+'%'">{{data.criteria}}</td>
+                <td [attr.width]="60/colspanScaleAssessment+'%'" *ngFor="let criteriaDesc of data.criteriaDesc;">
+                  {{criteriaDesc.criteria_description}}
+                </td>
+                <td>{{data.secured_marks}}</td>
+              </tr>
+              <tr>
+                <th [attr.colspan]="2 + colspanScaleAssessment">Total Marks</th>
+                <th width="10%">{{securedTotalMarks}}/{{totalMarks}}</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="pull-right">
+          <button type="button" class="btn btn-success" (click)="exportDetailedMarksPdf()"><span class="glyphicon glyphicon-book"></span>&nbsp;Export .pdf</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>&nbsp;Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Detailed marks modal end -->

@@ -1,0 +1,608 @@
+<!-- <div class="container" style="border:0px solid;"> -->
+<!--<app-dropdown [currentPage]="currentPageVal"></app-dropdown>-->
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ maintitle }}</h4>
+  </div>
+</section>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 row " style="margin-left: -30px;">
+  <div [style.display]="isProgramHide?'none':'block'" class="form-group col-lg-2 col-xs-12 col-md-2 col-sm-12 drop dropmob">
+    <label data-key="lg_prgm" for="program" class="col-xs-8 col-sm-8 col-md-8 col-lg-8  key-data padd padd2">Program: <span class="mandatory" style="color:red;">*</span></label>
+    <select name="program" [(ngModel)]="pgmId" id="program" (ngModelChange)="curriculum($event)" class="form-control col-lg-8 dropboxwidth"  style="font-size:12px;cursor:pointer;"  required>
+      <option [ngValue]="0" selected>Select Program</option>
+     
+      <option *ngFor="let type of programType" [ngValue]="type.pgm_id">
+        {{ type.pgm_acronym }}
+      </option>
+    </select>  
+  </div>
+
+  <div class="form-group col-lg-3  col-xs-12 col-md-3 col-sm-12 drop dropmob">
+    <label data-key="lg_cur" for="curriculum" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 key-data padd padd2">Curriculum:&nbsp;<span class="mandatory" style="color:red;">*</span></label>
+    <select name="curriculum" id="curriculum" [(ngModel)]="crclmId" (ngModelChange)="term($event)" style="font-size:12px;cursor:pointer;" class="form-control  col-lg-8 dropboxwidth"
+      ngModel required>
+      <option [ngValue]="0" selected>Select Curriculum</option>
+      
+      <option *ngFor="let type of curriculumType" [ngValue]="type.crclm_id">
+        {{ type.crclm_name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group col-lg-2  col-xs-12 col-md-2 col-sm-12 drop dropmob">
+    <label data-key="lg_term" for="term" class="col-xs-8 col-sm-8 col-md-8 col-lg-8  key-data padd padd2">Term: <span class="mandatory" style="color:red;">*</span></label>
+    <select name="term" id="term" [(ngModel)]="termId" (ngModelChange)="course($event)" class="form-control  col-lg-8 dropboxwidth" style="font-size:12px;cursor:pointer;" ngModel
+      required>
+      <option [ngValue]="0" selected>Select Term</option>
+      
+      <option *ngFor="let type of termType" [ngValue]="type.crclm_term_id">
+        {{ type.term_name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group col-lg-3  col-xs-12 col-md-3 col-sm-12 drop dropmob" >
+    <label data-key="lg_course" for="course" class="col-xs-8 col-sm-8 col-md-8 col-lg-8  key-data padd padd2">Course: <span class="mandatory" style="color:red;">*</span></label>
+    <select  name="course" id="course" [(ngModel)]="crsId" (ngModelChange)="section($event)"  class="form-control col-lg-8 dropboxwidth" style="font-size:12px;cursor:pointer;" ngModel
+      required>
+       <option [ngValue]="0" selected>Select Course</option>
+      
+      <option *ngFor="let type of courseType" [ngValue]="type.crs_id" title = "{{type.crs_code}}">
+        {{ type.crs_title }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group col-lg-1 col-xs-12 col-md-1 col-sm-12 drop dropmob dropmulti">
+    <label data-key="lg_section" for="section" class=" col-xs-8 col-sm-8 col-md-12 col-lg-12  key-data padd padd2">Section:&nbsp;<span class="mandatory" style="color:red;">*</span></label>   
+      <!-- <ss-multiselect-dropdown [options]="sectionType" class="col-lg-4 section" (change)="getdropdowndata()" [(ngModel)]="changedValue" [texts]="myTexts" ></ss-multiselect-dropdown>   -->
+      <select  name="section" id="section" [(ngModel)]="sectionId" (ngModelChange)="getdropdowndata()"  class="form-control col-lg-4 sectiondropdown" style="font-size:12px;cursor:pointer;" ngModel
+      required>
+       <option [ngValue]="0" selected>Select Section</option>
+      
+      <option *ngFor="let type of sectionType" [ngValue]="type.id">
+        {{ type.name }}
+      </option>
+    </select>  
+  </div>
+
+</div>
+<form class="form-horizontal" style="border-top:0px;">
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <th class="text-center">
+            <input type="checkbox" (click)="deleteAllSelected($event)" id="delete_check">
+          </th>
+          <th class="text-center ">Sl&nbsp;No.</th>
+          <th class="text-center">Assignment Head</th>
+          <th class="text-center">Initial&nbsp;Date</th>
+          <th class="text-center">Due&nbsp;Date</th>
+          <th class="text-center">Add&nbsp;/&nbsp;Edit Questions</th>
+          <th class="text-center">Manage Students</th>
+          <th class="text-center">View Progress</th>
+          <th class="text-center">Review Assignment</th>
+          <th class="text-center">Assignment Status</th>
+          <th class="text-center" style="width:4%;">Edit</th>
+          <th class="text-center" style="width:7%;">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of posts.assignmentList let i = index">
+          <!-- <tr *ngFor="let post of posts let i = index"> -->
+          <!-- <pre>{{post | json}}</pre>       -->
+          <td>
+            <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
+          </td>
+          <td class="text-right">
+            <p class="pull-right">{{i+1}}</p>
+          </td>
+          <td>{{post.assignment_name}}</td>
+          <td class="text-center">{{post.initiate_date | DateFormatPipe}}</td>
+          <td class="text-center">{{post.due_date | DateFormatPipe}}</td>
+          <td class="text-center">
+            <a href="" [routerLink]="['/content',{outlets:{appCommon:['assignment_head','manageassignment']}}]" [queryParams]="{id:post.a_id}">Add&nbsp;/&nbsp;Edit Questions</a>
+          </td>
+          <td class="text-center" #manageStudents [attr.assignmentId]="post.a_id">
+            <a href="#" data-toggle="modal" data-target="#manage_students" (click)="getStudents(this.manageStudents)">Manage Students</a>
+          </td>
+          <td class="text-center" [routerLink]="['/content',{outlets:{appCommon:['assignment_head']}}]" [queryParams]="{id:post.a_id}">
+            <a href="#" data-toggle="modal" data-target="#view_progress" (click)="getStudentProgressPercentage(post.a_id)">View Progress</a>
+          </td>
+          <td class="text-center">
+            <a href="" [routerLink]="['/content',{outlets:{appCommon:['assignment_head','assignmentreview']}}]" [queryParams]="{id:post.a_id}">Review Assignment</a>
+          </td>
+          <td class="text-center" *ngIf="post.status==2">
+            <button type="submit" class="btn btn-success btn-block">
+              <span class="glyphicon"></span>&nbsp;Complete</button>
+          </td>
+          <td class="text-center" *ngIf="post.status==1">
+            <button type="submit" class="btn btn-success btn-block">
+              <span class="glyphicon"></span>&nbsp;In-progress</button>
+          </td>
+          <td class="text-center" *ngIf="post.status==0">
+            <button type="submit" class="btn btn-warning btn-block">
+              <span class="glyphicon "></span>&nbsp;Not-Initiated</button>
+          </td>
+          <td class="text-center center" style="width:4%;">
+            <i pageScroll href="#home" #editElement class="glyphicon glyphicon-pencil cursor-pointer editDept" [attr.assignmentId]="post.a_id"
+              [attr.assignmentName]="post.assignment_name" [attr.assignmentInitialDate]="post.initiate_date" [attr.assignmentEndDate]="post.due_date"
+              [attr.assignmentTotalMarks]="post.total_marks" [attr.assignmentInstruction]="post.instructions" (click)="editassignment(this.editElement)" (click)="checkDate(post.initiate_date)"></i>
+            <!--<i class=" text-center glyphicon glyphicon-pencil cursor-pointer editDept " (click)="showEdit=true"></i></td>-->
+            <td class="text-center center" style="width:7%;">
+              <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer deleteAssignment" [attr.assignmentId]="post.a_id" (click)="deleteWarning(this.deleteElement,this.assignmentDeleteModal)"></i>
+              <!--<i class=" text-center glyphicon glyphicon-remove cursor-pointer "></i>-->
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div> 
+  <div>
+  <button type="button" class="btn btn-danger pull-right"  id="delete_head" (click)="deleteAllWarning(this.deleteAllElement,this.assignmentDeleteAllModal)">
+      <i #deleteAllElement class="glyphicon glyphicon-remove"></i> Delete All
+  </button>
+</div> 
+  <br>
+  <br>
+  <br>
+</form>
+<!-- </div> -->
+
+
+
+<!-- Add Assignment head -->
+<section class="content-header">
+  <!--<div class="headline">-->
+  <!-- Div for Page Headings -->
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{title}}</h4>
+  </div>
+  <!--</div>-->
+  <!-- Page Headings Div Ends Here  -->
+</section>
+<div class="container-fluid" *ngIf="!showEdit" id="home">
+
+  <form [formGroup]="assignmentForm" (ngSubmit)="createPost(assignmentForm)">
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Assignment Head:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col-md-5">
+        <input formControlName="assignment" type="text" name="assignment" id="assignment" placeholder="Enter Assignment Head" class="form-control top">
+        <br>
+        <!--<div style="width:50%" *ngIf="assignment.touched && assignment.invalid" class="alert alert-danger">
+        <div  *ngIf="assignmentForm.controls.assignment.errors.required">
+          Assignment Name is required.
+        </div>
+      </div>-->
+
+      <!--  for block sized error message use this class in place of "error_message" class: class="alert alert-danger alert1"  -->
+        <div class="error_message" style="margin-top:-14px;" *ngIf="assignmentForm.submitted && assignment.untouched">
+          This field is required
+        </div>
+        <div *ngIf="assignment.touched && assignment.invalid" class="error_message" style="margin-top:-14px;">
+          <div *ngIf="assignment.errors.required">
+            This field is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Initial Date:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class='right-inner-addon date datepicker siz col-md-5' data-date-format="dd-mm-yyyy">
+
+        <my-date-picker class="top" placeholder=" dd-mm-yyyy" formControlName="myinitialdate" 
+        name="myinitialdate" id="myinitialdate"
+          [options]="myDatePickerOptions" (dateChanged)="onDateChanged($event)" [(ngModel)]="model" required>
+        </my-date-picker>
+        <br>
+        <br>
+        <div *ngIf="myinitialdate.touched && myinitialdate.invalid" class="error_message" style="margin-top:-18px;">
+          <div *ngIf="assignmentForm.controls.myinitialdate.errors.required">
+            This field is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Due Date:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class='right-inner-addon date datepicker siz col-md-5' data-date-format="dd-mm-yyyy">
+
+        <my-date-picker class="top" placeholder=" dd-mm-yyyy" formControlName="myenddate"
+         name="myenddate" id="myenddate" [options]="myDatePickerOptions1"
+          [(ngModel)]="model1" [selDate]="selDate"  required >
+        </my-date-picker>
+        <br>
+        <br>
+        <div *ngIf="myenddate.touched && myenddate.invalid" class="error_message" style="margin-top:-18px;">
+          <div *ngIf="assignmentForm.controls.myenddate.errors.required">
+            This field is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Total Marks: </label>
+      </div>
+      <div class="col-md-5">
+
+        <input type="text" style="direction:RTL;" *ngIf='!flag' placeholder="Enter Total Marks eg:5.00" formControlName="totalmarks"
+          name="totalmarks" id="totalmarks" class="form-control top" />
+
+          <div class="error_message"  *ngIf="assignmentForm.submitted && totalmarks.untouched">
+            This field accepts only digits.
+          </div>
+          <div *ngIf="totalmarks.touched && totalmarks.invalid" class="error_message" >
+           <div *ngIf="totalmarks.errors.DigitswithDecimals">
+            This field accepts only digits.
+            </div>
+          </div>
+
+          <input type="text" style="direction:RTL;" *ngIf='flag' placeholder="Enter Total Marks eg:5.00" formControlName="totalmarks"
+          name="totalmarks" id="totalmarks" class="form-control top" disabled />
+        <br>
+        
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <label style="margin-left:-30px;">Instructions: </label>
+      </div>
+      <div class="col-md-5">
+
+        <textarea class="form-control top" placeholder="Enter Instructions" formControlName="instructions" name="instructions" id="instructions"
+          rows="5"></textarea>
+
+      </div>
+
+    </div>
+    <br>
+    <div class="can">
+      <div [style.display]="isSaveHide?'none':'block'" class="btn_cancel  col-lg-3 col-md-3 col-xs-12 col-sm-6">
+        <button id="saveAssignment" type="submit" class="btn btn-primary" [disabled]="!assignmentForm.valid">
+          <i class="glyphicon glyphicon-file"></i>&nbsp;Save</button>
+        <button type="reset" class="btn btn-danger">
+          <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>
+      </div>
+      <div [style.display]="isUpdateHide?'none':'block'" class="btn_cancel col-lg-3 col-md-3 col-xs-12 col-sm-6 btn_update">
+        <button [disabled]="!assignmentForm.valid" id="UpdateAssignment" type="button" class="btn btn-primary" (click)="updatePost(assignmentForm)">
+          <i class="glyphicon glyphicon-ok"></i> Update
+        </button>
+        <button id="cancelEdit" type="button" class="btn btn-danger" (click)="cancelUpdate()">
+          <i class="glyphicon glyphicon-remove"></i> Cancel
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Tag for showing Toast Message -->
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+<!-- Toast Tag Ends Here -->
+
+
+<!--delete modal-->
+<div #assignmentDeleteModal class="modal fade" id="assignmentDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this assignment?
+        <input #deleteAssignmentId type="hidden" name="deleteAssignmentId" id="deleteAssignmentId" [value]="delAssignmentId">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="deleteAssignmentData(deleteAssignmentId)">
+          <i class="glyphicon glyphicon-ok"></i>
+          Yes
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <i class="glyphicon glyphicon-remove"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- delete all modal -->
+<div #assignmentDeleteAllModal class="modal fade" id="assignmentDeleteAllModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header warning-msg">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete selected assignments?
+          <input #deleteAssignmentId type="hidden" name="deleteAssignmentId" id="deleteAssignmentId" [value]="delAssignmentId">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="deleteAll()" data-dismiss="modal">
+            <i class="glyphicon glyphicon-ok"></i>
+            Yes
+          </button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            <i class="glyphicon glyphicon-remove"></i>
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Trigger the modal with a button -->
+<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#manage_students">Manage Students</button>
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#view_progress">view_progress</button> -->
+<!-- Modal -->
+<!-- Trigger the modal with a button -->
+<div class="modal fade" id="manage_students" role="dialog">
+  <!-- <form name="studentListForm" (ngSubmit)="saveStudents(studentListForm)"> -->
+  <div class="modal-dialog modal-lg">
+    <!-- Modal content-->
+    <div class="modal-content well">
+      <!-- <section class="content-header" style="margin-left:2%;margin-top:1%;"> -->
+      <button type="button" class="close" data-dismiss="modal" style="margin-right:1%;color:white;">&times;</button>
+      <!--<div class="headline">-->
+      <!-- Div for Page Headings -->
+
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage Students</h4>
+      </div>
+
+      <!-- Page Headings Div Ends Here -->
+      <!-- </section> -->
+    <div class="modal-body" style="font-size:12px;">     
+        <div class="category">
+          <div class="Column text-display" title={{crclm.crclm_name}} *ngFor=" let crclm of curriculumName">
+            <strong>Curriculum:</strong>
+            <label style="color:blue;" title={{crclm.crclm_name}}>{{crclm.crclm_name}}</label>
+            <!-- <pre>{{curriculumType | json}}</pre> -->
+          </div>
+          <div class="Column" *ngFor=" let term of termName">
+            <strong>Term:</strong>
+            <label style="color:blue;">{{term.term_name}}</label>
+          </div>
+          <div class="Column text-display" *ngFor=" let course of courseName">
+            <strong>Course:</strong>
+            <label style="color:blue;" title={{course.crs_title}}({{course.crs_code}})>{{course.crs_title}}</label>
+          </div>
+          <div class="Column">
+            <strong>Section:</strong>
+            <label style="color:blue; " title={{secname.mt_details_name}} *ngFor="let secname of sectionName">{{secname.mt_details_name}}</label>
+          </div>
+        </div>
+
+        <div class="category">
+          <div class="Column">
+            <strong>Type:</strong>
+            <label style="color:blue;">Assignment</label></div>
+          <div class="Column text-display">
+            <strong>Assignment Head:</strong>
+            <label *ngFor="let assignment of assignmentName" style="color:blue;" title={{assignment.assignment_name}}>{{assignment.assignment_name}}</label></div>
+          <div class="Column">
+               <strong>Start Date:</strong>
+            <label *ngFor="let assignment of assignmentName" style="color:blue;">{{assignment.initiate_date | DateFormatPipe}}</label></div>
+          <div class="Column">
+            <strong>End Date:</strong>
+            <label *ngFor="let assignment of assignmentName" style="color:blue;">{{assignment.due_date | DateFormatPipe}}</label></div>
+        </div>        
+        <br>
+
+        <div class="table table-responsive" style="overflow:auto; height:200px;">
+          <form [formGroup]="stuForm">
+          <table class="table table-striped table-hover">
+            <tr>
+              <th class="text-center">
+                <input type="checkbox" class="js-selectall" data-target=".js-selectall1" (click)="checkall($event)" id="checkall" />
+              </th>
+              <th>USN</th>
+              <th>Name</th>
+
+            </tr>
+            <tr *ngFor="let student of stu_name">
+              <td class="text-center">
+                <input type="checkbox" (change)="checkIfSelected(student.ssd_id)" formControlName="stu_check"  value='{{student.ssd_id}}' class="js-selectall1" id="{{student.ssd_id}}"
+                />
+              </td>
+              <td>{{student.student_usn}}</td>
+              <td>{{student.first_name}} </td>
+            </tr>
+          </table>
+        </form>
+        </div>
+
+        <!-- <div class="table table-responsive" id="manage_table_mobile" style="overflow:auto; height:200px;">
+          <table class="table table-striped table-hover">
+            <tr>
+              <th class="text-center">
+                <input type="checkbox" class="select" data-target=".selectmob" (click)="checkallmob()" />
+              </th>
+              <th>USN</th>
+              <th>Name</th>
+            </tr>
+            <tr *ngFor="let student of stu_name">
+              <td class="text-center">
+                <input type="checkbox" (change)="checkIfSelected(student.ssd_id)" value='{{student.ssd_id}}' class="js-selectall1" id="{{student.ssd_id}}"
+                />
+              </td>
+              <td>{{student.student_usn}}</td>
+              <td>{{student.first_name}} </td>
+            </tr>
+
+          </table>
+        </div> -->
+      </div>
+
+      <div class="modal-footer">
+        <div class="pull-left">
+          <label>Note:
+            <span style="color:red;">*</span>
+            &nbsp;Please Select atleast one Student
+          </label>
+        </div>
+        <div class="pull-right" *ngFor="let assignment of assignmentName">
+          <button class="btn btn-primary" data-dismiss="modal" (click)="saveStudents(assignment.a_id)"  id="submit_stu" disabled>
+            <span class="glyphicon glyphicon-ok"></span>&nbsp;Submit</button>
+          <button class="btn btn-danger" data-dismiss="modal" (click)="uncheckAll()">
+            <span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade " id="view_progress" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <!-- Modal content-->
+    <div class="modal-content well">
+      <!-- <section class="content-header" style="margin-left:2%;margin-top:1%;"> -->
+      <button type="button" class="close" data-dismiss="modal" style="margin-right:1%;">&times;</button>
+      <!--<div class="headline">-->
+      <!-- Div for Page Headings -->
+
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Progress</h4>
+      </div>
+      <!--</div>-->
+      <!-- Page Headings Div Ends Here -->
+      <!-- </section> -->
+      <div class="modal-body">
+        
+          <div class="category">
+              <div class="Column text-display" title={{crclm.crclm_name}} *ngFor=" let crclm of curriculumName">
+                <strong>Curriculum:</strong>
+                <label style="color:blue;" title={{crclm.crclm_name}}>{{crclm.crclm_name}}</label>
+              </div>
+              <div class="Column" *ngFor=" let term of termName">
+                <strong>Term:</strong>
+                <label style="color:blue;">{{term.term_name}}</label>
+              </div>
+              <div class="Column text-display" *ngFor=" let course of courseName">
+                <strong>Course:</strong>
+                <label style="color:blue;" title={{course.crs_title}}({{course.crs_code}})>{{course.crs_title}}</label></div>
+              <div class="Column">
+                <strong>Section:</strong>
+                <label style="color:blue; " title={{secname.mt_details_name}} *ngFor="let secname of sectionName">{{secname.mt_details_name}}</label>
+              </div>
+            </div>
+    
+            <div class="category">
+              <div class="Column">
+                <strong>Type:</strong>
+                <label style="color:blue;">Assignment</label></div>
+              <div class="Column text-display">
+                <strong>Assignment Head:</strong>
+                <label *ngFor="let assignment of assignmentName" style="color:blue;" title={{assignment.assignment_name}}>{{assignment.assignment_name}}</label></div>
+              <div class="Column">
+                <strong>Start Date:</strong>
+                <label *ngFor="let assignment of assignmentName" style="color:blue;">{{assignment.initiate_date | DateFormatPipe}}</label></div>
+              <div class="Column">
+                <strong>End Date:</strong>
+                <label *ngFor="let assignment of assignmentName" style="color:blue;">{{assignment.due_date | DateFormatPipe}}</label></div>
+            </div>        
+        <br>        
+        <div>
+          <strong>Total Progress: {{percentage  | number }}%</strong>
+        </div>
+        <br>
+        <!-- <progress value="70" max="100" style="width:100%;height:25px;"></progress> -->
+        <div class="progress">
+          <div class="progress-bar progress-bar-success progress-bar-striped progress " role="progressbar" [attr.aria-valuenow]="percentage"
+         aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ 'width': percentage + '%' }">
+            {{percentage  | number }}%
+          </div>
+        </div>
+        <div class="">
+          <accordion [showArrows]="true">
+            <accordion-group heading="List of students who have not submitted" class="not-submit">
+              <table cellspacing="0" cellpadding="0" style="border:none;">
+                <tr>
+                  <th>
+                    <i class="glyphicon glyphicon-none"></i>
+                    <u class="head-style">USN</u>
+                  </th>
+                  <th>
+                    <i class="glyphicon glyphicon-none"></i>
+                    <u class="head-style">Name</u>
+                  </th>
+                </tr>
+                <tr *ngFor="let progress of stunot_progress">
+                  <td>
+                    <i class="glyphicon glyphicon-play"></i>
+                    {{progress.student_usn}}
+                  </td>
+                  <td>
+                    <i class="glyphicon glyphicon-play"></i>
+                    {{progress.first_name}}
+                  </td>
+                </tr>
+              </table>
+            </accordion-group>
+            <!-- <br>
+            <br> -->
+
+            <accordion-group heading="List of students who have submitted" class="submit">
+
+              <!-- <ul *ngFor="let progress of student_progress">
+                <li>
+                  {{progress.student_usn}}
+                </li>
+                <li>{{progress.first_name}}</li>
+              </ul> -->
+              <table cellspacing="0" cellpadding="0" style="border:none;">
+                <tr>
+                  <th>
+                    <i class="glyphicon glyphicon-none"></i>
+                    <u class="head-style">USN</u>
+                  </th>
+                  <th>
+                    <i class="glyphicon glyphicon-none"></i>
+                    <u class="head-style">Name</u>
+                  </th>
+                </tr>
+                <tr *ngFor="let progress of student_progress">
+                  <td>
+                    <i class="glyphicon glyphicon-play"></i>
+                    {{progress.student_usn}}
+                  </td>
+                  <td>
+                    <i class="glyphicon glyphicon-play"></i>
+                    {{progress.first_name}}
+                  </td>
+                </tr>
+              </table>
+            </accordion-group>
+
+          </accordion>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger pull-right" data-dismiss="modal">
+          <span class="glyphicon glyphicon-remove"></span>&nbsp;Close</button>
+      </div>
+    </div>
+  </div>
+</div>

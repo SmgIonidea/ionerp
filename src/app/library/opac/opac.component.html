@@ -1,0 +1,72 @@
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Online Public Access Catlog[OPAC] <span style="float:right;padding-right:100px;">Date:</span></h4>
+  </div>
+</section>
+<form>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 row">
+     <div class="form-group col-lg-3 col-xs-12 col-md-3 col-sm-12">
+     <label class="col-xs-8 col-sm-8 col-md-8 col-lg-8 labelfield">Category Name:</label>
+     <select class="form-control col-lg-8 category" style="font-size:12px;cursor:pointer;" required>
+     <option [ngValue]="0" selected>Select Category name</option>
+     <option [ngValue]="Kannada">Kannada</option>
+     </select> 
+     </div>
+    
+     <div class="form-group col-lg-3 col-xs-12 col-md-3 col-sm-12">
+     <label class="col-xs-8 col-sm-8 col-md-8 col-lg-8 labelfield">Subject Category:</label>
+     <select style="font-size:12px;cursor:pointer;" class="form-control col-lg-8 category" required>
+     <option [ngValue]="0" selected>Select Subject Category</option>
+     <option [ngValue]="Kannada">Kannada</option>
+     </select>
+     </div>
+    
+     <div class="form-group col-lg-2 col-xs-12 col-md-2 col-sm-12">
+     <label class="col-xs-8 col-sm-8 col-md-8 col-lg-8 labelfield">Title:</label>
+     <input class="form-control category" type="text" name="" id="" value="" placeholder="" />
+     </div>
+     <div class="form-group col-lg-2 col-xs-12 col-md-2 col-sm-12">
+     <label class="col-xs-8 col-sm-8 col-md-8 col-lg-8 labelfield">Author:</label>
+     <input class="form-control category" type="text" name="" id="" value="" placeholder="" />
+     </div>
+     <div class="row form-group" style="padding-top:22px;">
+        <div class="pull-right btn_alignment">
+          <button id="" type="submit" class="btn btn-primary">
+            <!--<i class="glyphicon glyphicon-file"></i>-->
+            <span class="glyphicon glyphicon-search"></span>
+            &nbsp;Search</button>
+        </div>
+      </div>
+    </div>
+    </form>
+
+<form class="form-horizontal" style="border-top:0px;">
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <th class="text-center">S NO</th>
+          <th class="text-center">accession Number</th>
+          <th class="text-center">Title</th>
+          <th class="text-center">category/subcategory</th>
+          <th class="text-center">Author</th>
+          <th class="text-center">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--<tr>
+        <td></td>
+        <td></td>
+        <td class="text-center">
+          <i #editElement class="glyphicon glyphicon-pencil cursor-pointer"></i>
+        </td>
+        <td class="text-center">
+          <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer">
+         </i>
+        </td>
+      </tr>-->
+      </tbody>
+    </table>
+  </div>
+  <br>
+</form>

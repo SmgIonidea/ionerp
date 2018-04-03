@@ -1,0 +1,160 @@
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vehicle List</h4>
+  </div>
+</section>
+
+<form class="form-horizontal" style="border-top:0px;">
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <!-- <th class="text-center">
+            <input type="checkbox" (click)="deleteAllSelected($event)" id="delete_check">
+          </th> -->
+          <th class="text-center ">Sl&nbsp;No.</th>
+          <th class="text-center">Vehicle Registration No</th>
+          <th class="text-center">Transport Type</th>
+          <th class="text-center">Capacity of Passengers</th>
+          <th class="text-center" style="width:4%;">Edit</th>
+          <th class="text-center" style="width:7%;">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- <tr *ngFor="let post of posts let i = index"> -->
+          <!-- <pre>{{post | json}}</pre>       -->
+          <!-- <td>
+            <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
+          </td> -->
+          <td class="text-right">
+            <p class="pull-right">1</p>
+          </td>
+          <td class="text-center"> KA 14 A 0007</td>
+          <td class="text-center">Van</td>
+          <td class="text-center">10</td>
+          <td class="text-center">
+            <i class="glyphicon glyphicon-pencil"></i>
+          </td>
+          <td class="text-center">
+            <i class="glyphicon glyphicon-remove"></i>
+          </td>
+          <!-- <td class="text-center center" style="width:4%;">
+            <i pageScroll href="#home" #editElement class="glyphicon glyphicon-pencil cursor-pointer editDept" [attr.assignmentId]="post.a_id"
+              [attr.assignmentName]="post.assignment_name" [attr.assignmentInitialDate]="post.initiate_date" [attr.assignmentEndDate]="post.due_date"
+              [attr.assignmentTotalMarks]="post.total_marks" [attr.assignmentInstruction]="post.instructions" (click)="editassignment(this.editElement)"
+              (click)="checkDate(post.initiate_date)"></i>
+              </td>
+           <td class="text-center center" style="width:7%;">
+              <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer deleteAssignment" [attr.assignmentId]="post.a_id" (click)="deleteWarning(this.deleteElement,this.assignmentDeleteModal)"></i>
+              </td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <br>
+  <br>
+</form>
+
+<section class="content-header">
+  <!--<div class="headline">-->
+  <!-- Div for Page Headings -->
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add New Vehicle</h4>
+  </div>
+  <!--</div>-->
+  <!-- Page Headings Div Ends Here  -->
+</section>
+<div class="container-fluid">
+  <form class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Transport Type:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select class="form-control">
+          <option>Select Vehicle</option>
+          <option>Bus</option>
+          <option>MiniBus</option>
+          <option>Car</option>
+          <option>Van</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Transport Name:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <input type="text" name="transportName" id="transportName" class="form-control" />
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Vehicle Reg.on #:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <input type="text" name="regNo" id="regNo" class="form-control" />
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Number of Passengers:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <input type="text" name="passngers" id="passngers" class="form-control" />
+      </div>
+    </div>
+
+    <div class="form-group col-sm-12 col-xs-12 col-lg-12 col-md-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="fromdate">Purchase Date:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class='right-inner-addon dateview col-md-5' data-date-format="yyyy-mm-dd">
+        <my-date-picker class="" placeholder=" dd-mm-yyyy" name="purchaseDate" id="purchaseDate" [options]="myDatePickerOptions"
+          [(ngModel)]="model">
+        </my-date-picker>
+      </div>
+    </div>
+    <div class="form-group col-sm-12 col-xs-12 col-lg-12 col-md-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="fromdate">Insurance Date:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class='right-inner-addon dateview col-md-5' data-date-format="yyyy-mm-dd">
+        <my-date-picker class="" placeholder=" dd-mm-yyyy" name="insuranceDate" id="insuranceDate" [options]="myDatePickerOptions"
+          [(ngModel)]="model">
+        </my-date-picker>
+      </div>
+    </div>
+    <div class="form-group col-sm-12 col-xs-12 col-lg-12 col-md-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="fromdate">Insurance Renewal Date:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class='right-inner-addon dateview col-md-5' data-date-format="yyyy-mm-dd">
+        <my-date-picker class="" placeholder=" dd-mm-yyyy" name="renewalDate" id="renewalDate" [options]="myDatePickerOptions" [(ngModel)]="model">
+        </my-date-picker>
+      </div>
+    </div>
+    <div class="btn_cancel  col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right">
+      <button id="saveAssignment" type="submit" class="btn btn-primary">
+        <i class="glyphicon glyphicon-file"></i>&nbsp;Save</button>
+      <button type="reset" class="btn btn-danger">
+        <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>
+    </div>
+  </form>
+</div>

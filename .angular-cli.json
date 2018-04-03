@@ -1,0 +1,89 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "a-ion-erp"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.css",
+                "./assets/js_css/bootstrap/css/animate.min.css",
+                "./assets/js_css/jquery/css/jquery.noty.css",
+                "./assets/js_css/jquery/css/noty_theme_default.css",
+                "./assets/js_css/jquery/css/jquery.multiselect.css",
+                "./assets/js_css/custom/css/custom.css",
+                "./assets/js_css/custom/css/_all-skins.css",
+                "./assets/js_css/custom/css/ionerp.css",
+                "./assets/js_css/font-awesome/css/font-awesome.css",
+                "../node_modules/bootstrap/dist/css/bootstrap.css",
+                "./assets/js_css/bootstrap/css/dataTables.bootstrap.min.css",
+                "../node_modules/angular2-toaster/toaster.css"
+                
+                
+      ],
+      "scripts": [ 
+                "../node_modules/jquery/dist/jquery.js",
+                "../node_modules/datatables.net/js/jquery.dataTables.js",
+                "./assets/js_css/jquery/js/jquery-ui.js",
+                "./assets/js_css/jquery/js/jquery.noty.js",
+                "./assets/js_css/jquery/js/jquery.multiselect.js",
+                "./assets/js_css/jquery/js/jquery.validate.js",
+                "./assets/js_css/custom/js/ionerp.js",
+                "../node_modules/bootstrap/dist/js/bootstrap.js",
+                "./assets/js_css/bootstrap/js/dataTables.bootstrap.min.js",
+                "../node_modules/tinymce/tinymce.js",
+                "../node_modules/tinymce/themes/modern/theme.js",
+                "../node_modules/tinymce/plugins/link/plugin.js",
+                "../node_modules/tinymce/plugins/paste/plugin.js",
+                "../node_modules/tinymce/plugins/table/plugin.js"
+                
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "component": {}
+  }
+}

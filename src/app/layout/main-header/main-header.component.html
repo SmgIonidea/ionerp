@@ -1,0 +1,83 @@
+<header class="main-header">
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini">
+            <div class="img_circle">
+                <div class="pull-left">
+                    <img src="./assets/js_css/images/fevicon.png" class="img_fevicon" />
+                </div>
+            </div>
+        </span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg">
+            <div class="img_circle_one">
+                <div class="pull-left">
+                    <img src="./assets/js_css/images/IonCUDOS.png" class="img_circle_one" />
+                </div>
+            </div>
+        </span>
+       
+    </a>
+   
+    <!-- Header Navbar: style can be found in header.less -->
+
+    <nav class="navbar navbar-static-top">
+        <span>
+            <b class="header-institute">Your {{title}}, Place. (T1)</b>
+            <br>
+            <!-- <b class="header-department">Department of {{title}}.</b> -->
+        </span>
+        <div class="logo-lg college-logo">
+            <div class="pull-right">
+                    <!-- width="45px" height="45px" -->
+                <img src="./assets/js_css/images/your_logo.png" alt="" class="logo-align">
+            </div>
+        </div>
+        <!-- <div class="pull-right" style="padding-top:5px;">
+            <a href="#" data-toggle="modal" data-target="#rolebased" style="color:white;">|&nbsp;Select Department&nbsp;|</a>
+        </div> -->
+    </nav>
+    
+    <menu-navbar></menu-navbar>
+</header>
+
+
+<div class="modal fade" id="rolebased" role="dialog" style="border-radius:70px 70px 70px 70px;">
+    <div class="modal-dialog modal-sm">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:lightskyblue;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Select Department</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <!--<select class="form-control" name="pre_serialno" id="pre_serialno">
+                        <option [ngValue]="0">Select Department </option>
+                        <option [ngValue]="InformationScienceEngineering">Information Science Engineering</option>
+                        <option [ngValue]="ComputerScienceEngineering">Computer Science Engineering</option>
+                        <option [ngValue]="ElectricalandElectronicsEngineering">Electrical and Electronics Engineering</option>
+                        <option [ngValue]="ElectricalandCommunicationEngineering">Electrical and Communication Engineering</option>
+                        <option [ngValue]="CivilEngineering">Civil Engineering</option>
+                        <option [ngValue]="MechanicalEngineering">Mechanical Engineering</option>
+</select>-->
+
+ <select name="program" [(ngModel)]="Id" id="program" (ngModelChange)="submit($event)" class="form-control">
+    <option  [ngValue]="0" selected>Select Oragnisation</option>
+                        <option *ngFor="let type of programType" [ngValue]="type.id">
+        {{ type.text}}
+      </option>
+ </select>
+
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" (click)="reload()" data-dismiss="modal" >Ok</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

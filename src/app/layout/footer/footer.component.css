@@ -1,0 +1,42 @@
+body{
+    font-size:12px;
+}
+.footer-settings{
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+    width:100%;
+    font-size:12px;
+    height:30px;
+     position:fixed;
+    bottom:0; 
+}
+
+@media screen and (max-height: 360px) { 
+    .footer-settings{
+        background-color:black;
+        color:white;
+        text-align:center;
+        padding:0px;
+        width:100%;
+        font-size:12px;
+        height:auto;     
+        position:static;  
+    }
+   
+   }
+
+   @media screen and (max-width: 480px) { 
+    .footer-settings{
+        background-color:black;
+        color:white;
+        text-align:center;
+        padding:0px;
+        width:100%;
+        font-size:12px;
+        height:auto;     
+        position:static;   
+    }
+   
+   }
