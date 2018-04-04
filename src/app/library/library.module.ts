@@ -26,6 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
    
    
     OpacComponent,
-  ]
+  ],
+  exports: [OpacComponent],
+  bootstrap: [OpacComponent]
 })
 export class LibraryModule { }

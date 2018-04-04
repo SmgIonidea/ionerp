@@ -16,6 +16,11 @@ import { RouterModule } from '@angular/router';
   ],
   declarations: [
     StudentreturnbooksComponent,
+    StaffreturnbooksComponent,
+  ],
+    exports: [StudentreturnbooksComponent,
+      StaffreturnbooksComponent,],
+  bootstrap: [StudentreturnbooksComponent,
     StaffreturnbooksComponent,]
 })
 export class TransactionModule { }
