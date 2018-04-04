@@ -27,6 +27,23 @@ import { RouterModule } from '@angular/router';
     BooksissuedstudentsComponent,
     BooksissuedstaffComponent,
     AllfinesComponent,
+    BookanalysisComponent,
+  ],
+  exports: [AllbooksComponent,
+    BooksavailabilityComponent,
+    StudentreportComponent,
+    StaffreportComponent,
+    BooksissuedstudentsComponent,
+    BooksissuedstaffComponent,
+    AllfinesComponent,
+    BookanalysisComponent,],
+  bootstrap: [AllbooksComponent,
+    BooksavailabilityComponent,
+    StudentreportComponent,
+    StaffreportComponent,
+    BooksissuedstudentsComponent,
+    BooksissuedstaffComponent,
+    AllfinesComponent,
     BookanalysisComponent,]
 })
 export class ViewreportsModule { }

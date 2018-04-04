@@ -22,6 +22,14 @@ import { RouterModule } from '@angular/router';
     LibraryfineComponent,
     PublisherComponent,
     BooksComponent,
-   ]
+   ],
+   exports: [CategoryComponent,SubcategoryComponent,
+    LibraryfineComponent,
+    PublisherComponent,
+    BooksComponent],
+  bootstrap: [CategoryComponent,SubcategoryComponent,
+    LibraryfineComponent,
+    PublisherComponent,
+    BooksComponent]
 })
 export class MasterRecordsModule { }
