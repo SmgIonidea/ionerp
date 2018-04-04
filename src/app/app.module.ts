@@ -1,5 +1,5 @@
 import { AppRouter } from './app.router';
-import { LoginComponent } from './login/login.component';
+import { LoginModule } from './login/login.module';
 // import { ToastService } from './common/toast.service';
 import { PostService } from './services/post.service';
 import { HttpModule } from '@angular/http';
@@ -95,23 +95,23 @@ import { HostelModule } from './hostel/hostel.module';
 // import { AddBuildingComponent } from './hostel/add-building/add-building.component';
 // import { AddRoomComponent } from './hostel/add-room/add-room.component';
 import { DualListBoxModule } from 'ng2-dual-list-box';
-import { CategoryComponent } from './library/master-records/category/category.component';
-import { SubcategoryComponent } from './library/master-records/subcategory/subcategory.component';
-import { LibraryfineComponent } from './library/master-records/libraryfine/libraryfine.component';
-import { PublisherComponent } from './library/master-records/publisher/publisher.component';
-import { BooksComponent } from './library/master-records/books/books.component';
-import { StudentreturnbooksComponent } from './library/transaction/studentreturnbooks/studentreturnbooks.component';
-import { StaffreturnbooksComponent } from './library/transaction/staffreturnbooks/staffreturnbooks.component';
-import { AllbooksComponent } from './library/viewreports/allbooks/allbooks.component';
-import { BooksavailabilityComponent } from './library/viewreports/booksavailability/booksavailability.component';
-import { StudentreportComponent } from './library/viewreports/studentreport/studentreport.component';
-import { StaffreportComponent } from './library/viewreports/staffreport/staffreport.component';
-import { BooksissuedstudentsComponent } from './library/viewreports/booksissuedstudents/booksissuedstudents.component';
-import { BooksissuedstaffComponent } from './library/viewreports/booksissuedstaff/booksissuedstaff.component';
-import { AllfinesComponent } from './library/viewreports/allfines/allfines.component';
-import { BookanalysisComponent } from './library/viewreports/bookanalysis/bookanalysis.component';
-import { OpacComponent } from './library/opac/opac.component';
-
+//import { CategoryComponent } from './library/master-records/category/category.component';
+//import { SubcategoryComponent } from './library/master-records/subcategory/subcategory.component';
+//import { LibraryfineComponent } from './library/master-records/libraryfine/libraryfine.component';
+//import { PublisherComponent } from './library/master-records/publisher/publisher.component';
+//import { BooksComponent } from './library/master-records/books/books.component';
+//import { StudentreturnbooksComponent } from './library/transaction/studentreturnbooks/studentreturnbooks.component';
+//import { StaffreturnbooksComponent } from './library/transaction/staffreturnbooks/staffreturnbooks.component';
+//import { AllbooksComponent } from './library/viewreports/allbooks/allbooks.component';
+//import { BooksavailabilityComponent } from './library/viewreports/booksavailability/booksavailability.component';
+//import { StudentreportComponent } from './library/viewreports/studentreport/studentreport.component';
+//import { StaffreportComponent } from './library/viewreports/staffreport/staffreport.component';
+//import { BooksissuedstudentsComponent } from './library/viewreports/booksissuedstudents/booksissuedstudents.component';
+//import { BooksissuedstaffComponent } from './library/viewreports/booksissuedstaff/booksissuedstaff.component';
+//import { AllfinesComponent } from './library/viewreports/allfines/allfines.component';
+//import { BookanalysisComponent } from './library/viewreports/bookanalysis/bookanalysis.component';
+//import { OpacComponent } from './library/opac/opac.component';
+import {LibraryModule} from './library/library.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -121,7 +121,7 @@ import { OpacComponent } from './library/opac/opac.component';
     // FooterComponent,
     ContentWrapperComponent,
     DepartmentComponent,
-    LoginComponent,
+   
     DashboardComponent,
     // MenuNavbarComponent,
     DropdownComponent,
@@ -184,22 +184,22 @@ import { OpacComponent } from './library/opac/opac.component';
     // HealthRecordComponent,
     // DeAllocateComponent,
     // ReportComponent,
-    CategoryComponent,
-    SubcategoryComponent,
-    LibraryfineComponent,
-    PublisherComponent,
-    BooksComponent,
-    StudentreturnbooksComponent,
-    StaffreturnbooksComponent,
-    AllbooksComponent,
-    BooksavailabilityComponent,
-    StudentreportComponent,
-    StaffreportComponent,
-    BooksissuedstudentsComponent,
-    BooksissuedstaffComponent,
-    AllfinesComponent,
-    BookanalysisComponent,
-    OpacComponent
+  //  CategoryComponent,
+   // SubcategoryComponent,
+   // LibraryfineComponent,
+//    PublisherComponent,
+//    BooksComponent,
+//    StudentreturnbooksComponent,
+//    StaffreturnbooksComponent,
+   // AllbooksComponent,
+   // BooksavailabilityComponent,
+    //StudentreportComponent,
+    //StaffreportComponent,
+    //BooksissuedstudentsComponent,
+    //BooksissuedstaffComponent,
+    //AllfinesComponent,
+    //BookanalysisComponent,
+    //OpacComponent
    
   ],
   imports: [
@@ -224,7 +224,9 @@ import { OpacComponent } from './library/opac/opac.component';
     HostelModule,
     LayoutModule,
     AccountingModule,
-    TransportModule
+    TransportModule,
+LibraryModule,
+LoginComponent
 
   ],
   providers: [
