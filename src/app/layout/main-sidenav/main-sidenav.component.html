@@ -72,7 +72,7 @@
         </li>
 
 
-        <li class="dropdown treeview" routerLinkActive="active">
+        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class="dropdown treeview" routerLinkActive="active">
             <a class="dropbtn">Accounting
                 <span class="pull-right-container">
                     <i class="glyphicon glyphicon-chevron-right pull-right "></i>
@@ -103,7 +103,7 @@
                     </li>
                
               
-                <li class="dropdown2 treeview" routerLinkActive="active">
+                <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class="dropdown2 treeview" routerLinkActive="active">
                         <a class="dropbtn2"> Reports
                             <span class="pull-right-container">
                                 <i class="glyphicon glyphicon-chevron-right pull-right"></i>
@@ -121,7 +121,7 @@
             </div>
         </li>
 
-        <li class="dropdown treeview" routerLinkActive="active">
+        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class="dropdown treeview" routerLinkActive="active">
             <a class="dropbtn">Transport
                 <span class="pull-right-container">
                     <i class="glyphicon glyphicon-chevron-right pull-right "></i>
@@ -196,7 +196,7 @@
             </div>
         </li>
 
-        <li class="dropdown treeview" routerLinkActive="active">
+        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class="dropdown treeview" routerLinkActive="active">
             <a class="dropbtn">Hostel
                 <span class="pull-right-container">
                     <i class="glyphicon glyphicon-chevron-right pull-right "></i>
@@ -230,7 +230,7 @@
             </div>
         </li>
 
-        <li class="dropdown treeview" routerLinkActive="active">
+        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class="dropdown treeview" routerLinkActive="active">
             <a class="dropbtn">Message
                     <span class="pull-right-container">
                             <i class="glyphicon glyphicon-chevron-right pull-right "></i>
@@ -250,7 +250,7 @@
         </li>
 
 
-        <li class="dropdown treeview" routerLinkActive="active">
+        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class="dropdown treeview" routerLinkActive="active">
             <a class="dropbtn">SMS
                 <span class="pull-right-container">
                     <i class="glyphicon glyphicon-chevron-right pull-right "></i>
@@ -269,7 +269,7 @@
             </div>
         </li>
 
-        <li class="dropdown treeview" routerLinkActive="active">
+        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class="dropdown treeview" routerLinkActive="active">
             <a class="dropbtn">Library
                 <span class="pull-right-container">
                     <i class="glyphicon glyphicon-chevron-right pull-right "></i>
