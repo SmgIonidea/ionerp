@@ -1,0 +1,13 @@
+{
+    "lg_prgm":"Programa",
+    "lg_cur":"Plan de estudios",
+    "lg_term":"Término",
+    "lg_course":"Curso",
+    "lg_section":"Sección",
+    "lg_dept" :"Departamento",
+    "lg_mng_course":"Administrar cursos",
+    "lg_stu_take_assign":"la asignación del estudiante",
+    "lg_assign_list":"Lista de asignaciones",
+    "lg_share_course_mat":"compartir material del curso",
+    "lg_receive_course_mat":"recibir material del curso"
+}

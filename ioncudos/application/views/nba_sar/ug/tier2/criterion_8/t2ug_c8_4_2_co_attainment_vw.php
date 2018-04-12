@@ -1,0 +1,47 @@
+<?php
+/**
+ * Description      :   View for NBA SAR Report - Section 8.4.2 (TIER I) - Attainment of Course Outcomes
+ * Created          :   26-12-2016
+ * Author           :   Shayista Mulla
+ * Date                 Modified By                     Description
+  --------------------------------------------------------------------------------------------------------------- */
+?>
+<?php
+$select_curriculum_options[''] = 'Select Curriculum';
+if (!empty($curriculum_list)) {
+    foreach ($curriculum_list as $curriculum_list_data) {
+        $select_curriculum_options[$curriculum_list_data['crclm_id']] = $curriculum_list_data['crclm_name'];
+    }
+}
+if (!$is_export) {
+    ?>
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="span4">
+                <div class="control-group">
+                    <label class="control-label">Curriculum</label>
+                    <div class="controls">
+                        <?php
+                        $curriculum_list_selected = @$filter_crclm_id;
+                        echo form_dropdown('curriculum_list__' . $view_id . '_' . $nba_report_id, $select_curriculum_options, $curriculum_list_selected, 'id="t1_c8_crclm_list" class="filter" autofocus = "autofocus"');
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>		
+    </div>
+
+    <div class="row-fluid">
+        <div class="span12 cl">
+            <b>Course List : </b>
+        </div>
+    </div>
+    <div id="sem_wise_course_grid">
+        <?php echo @$crs_grid_vw; ?>
+    </div>
+<?php } ?>
+<div id="co_target_level">    
+    <?php echo @$crs_co_table_vw; ?>
+</div>
+<!-- End of file t2ug_c8_4_2_co_attainment_vw.php 
+        Location: .nba_sar/ug/tier2/criterion_8/t2ug_c8_4_2_co_attainment_vw.php -->

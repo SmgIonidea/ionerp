@@ -1,0 +1,104 @@
+.dataTable{
+    border-collapse:unset !important;    
+    border-radius: 5px !important;
+    border: 1px solid #00c0ef ;
+}
+.dataTable> thead{        
+    color: #000;
+    font-size: 12px;    
+    background-color: #00c0ef !important;    
+    border: none !important;
+}    
+table.dataTable > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > th, .table > caption + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > td, .table > thead:first-child > tr:first-child > td{
+    color: #000;
+    font-size: 12px;    
+    border-color: #00c0ef;
+}    
+
+table.dataTable tbody th, table.dataTable tbody td{
+    padding: 2px 2px;
+    border: 1px solid #00c0ef;
+    
+}
+table.dataTable tbody tr td:first-child{
+    border-left: none !important;
+}
+table.dataTable tbody tr td{
+    border-right: none !important;
+}
+table.dataTable tbody tr td{
+    border-bottom: none !important;
+}
+
+div.dataTables_filter {
+   width: 50%;
+   float: right;
+   text-align: right;
+}
+div.dataTables_length{
+    float: left;
+}
+div.DTTT_container{
+    float: right;
+    margin: 2px 4px 2px 4px;
+}
+.no-pad{
+    padding: 0px !important;
+}
+
+/******************************** Datatable Pagination CSS***********************/
+div.dataTables_paginate {
+    text-align: right;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    background: linear-gradient(to bottom, white 0%, #dcdcdc 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #cacaca;
+    color: #333 !important;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 0px;
+    margin: 0px;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    color: #333 !important;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 1px;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    text-decoration: none !important;
+}
+
+.pagination{
+    font-size: 10px;
+    font-weight: 600;
+}
+.pagination > li > a, .pagination > li > span{
+    padding: 1px 5px !important;
+}
+.pagination > .paginate_button:hover{
+    border-color: #d9edf7 !important;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    background-color: #3c8dbc;
+    border-color: #3c8dbc;
+    color: #fff;
+    cursor: default;
+    z-index: 2;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+    color: #23527c;
+    background-color: #eee;
+    border-color: #FF6600;
+}
+/******************************** End Datatable Pagination CSS***********************/ 

@@ -1,0 +1,12 @@
+SELECT m.pi_codes FROM clo_po_map c, measures m where crclm_id=5 and crs_id=8 and m.msr_id=c.msr_id
+
+
+
+SELECT m.pi_codes,c.msr_id FROM clo_po_map c, measures m where crclm_id=5 and crs_id=8 and m.msr_id=c.msr_id and c.msr_id=60
+
+
+Assignment Question - SELECT q.que_content from dlvry_assignment as d , dlvry_assignment_question as q where d.a_id=q.a_id
+
+
+
+INSERT INTO `ioncudos_india_dev_v5_3`.`dlvry_assignment_mapping` (`a_map_id`, `aq_id`, `entity_id`, `actual_map_id`, `created_by`, `created_date`, `modified_by`, `modified_date`) VALUES ('12', '1', '16', '60', '1', '2017-10-03', NULL, NULL);

@@ -1,0 +1,27 @@
+<?php
+$config['mysql_datatypes'] = array(
+        'INT' => 'number',
+        'TINYINT' => 'number',
+        'SMALLINT' => 'number',
+        'MEDIUMINT' => 'number',
+        'BIGINT' => 'number',
+        'FLOAT' => 'text',
+        'DOUBLE' => 'text',
+        'DECIMAL' => 'text',
+        'DATE' => 'date ',
+        'DATETIME' => 'datetime ',
+        'TIMESTAMP' => 'datetime ',
+        'TIME' => 'time ',
+        'YEAR' => 'month',
+        'CHAR' => 'text',
+        'VARCHAR' => 'text',
+        'BLOB' => 'textarea',
+        'TEXT' => 'textarea',
+        'TINYBLOB' => 'textarea',
+        'TINYTEXT' => 'textarea',
+        'MEDIUMBLOB' => 'textarea',
+        'MEDIUMTEXT' => 'textarea',
+        'LONGBLOB' => 'textarea',
+        'LONGTEXT' => 'textarea',
+        'ENUM' => 'select'
+    );

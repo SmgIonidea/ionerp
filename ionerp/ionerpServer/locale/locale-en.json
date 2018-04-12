@@ -1,0 +1,13 @@
+{
+    "lg_prgm":"Program",
+    "lg_cur":"Curriculum",
+    "lg_term":"Term",
+    "lg_course":"Course",
+    "lg_section":"Section",
+    "lg_dept" :"Department",
+    "lg_mng_course":"Manage Course",
+    "lg_stu_take_assign":"Student Take Assignment",
+    "lg_assign_list":"Assignment Lists",
+    "lg_share_course_mat":"Share Course Material",
+    "lg_receive_course_mat":"Receive Course Material"
+}

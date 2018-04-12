@@ -1,0 +1,13 @@
+{
+    "lg_prgm":"программа",
+    "lg_cur":"учебный план",
+    "lg_term":"Срок",
+    "lg_course":"Курс",
+    "lg_section":"Раздел",
+    "lg_dept" :"отдел",
+    "lg_mng_course":"Управление курсом",
+    "lg_stu_take_assign":"студент получает задание",
+    "lg_assign_list":"Список назначений",
+    "lg_share_course_mat":"Поделиться материалами курса",
+    "lg_receive_course_mat":"получать материал курса"
+}

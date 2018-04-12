@@ -1,0 +1,23 @@
+Topic list page
+1.Add button is not present at the top of the list page. [done]
+2.Add button at the right bottom of the list page is "Add topic"change it to only ADD [done]
+3.Previous and next tab in the topic list page are not same as other pages.(pagination) [its default]
+4.In list page,Curriculum,terms,course should be marked as mandatory feilds(*) [done]
+5.Edit and delete icon should be alligned center in list page.
+6.Search function not working properly.
+
+
+Topic Edit page.
+7.Icon for update button in the edit topic page is missing
+8.In edit topic page plz change the error message as"This feild is required"
+9.After editing the values, if update or cancel button is pressed the page is redirecting to list page without any records.
+10.The mandatory feilds should be maintained as : with * in UI
+11. Duration feild should only take integer value
+
+
+
+Add topic
+12. in add topic page Curriculum,terms,course should be marked as mandatory feilds(*)
+13.only when Topic title and duration is entered and clicked save, it should not be added, validation should be done for curriculum,terms,course
+14.The mandatory feilds should be maintained as : with * in UI
+15.dynamic text boxes validation not done

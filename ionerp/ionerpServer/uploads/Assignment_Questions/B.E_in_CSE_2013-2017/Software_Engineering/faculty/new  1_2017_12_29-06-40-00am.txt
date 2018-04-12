@@ -1,0 +1,1 @@
+SELECT a.que_content FROM dlvry_assignment_question AS a, dlvry_assignment AS b WHERE a.a_id=b.a_id;

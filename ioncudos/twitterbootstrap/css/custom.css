@@ -1,0 +1,1135 @@
+/*
+        Custom CSS to override the bootstrap.css
+*/
+/*
+body{
+        background: rgb(231, 231, 193);
+}
+.navbar .divider-vertical{
+        height: 40px;
+        margin: 0 9px;
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-right-color: rgb(221, 215, 215);
+        border-left-width: 1px;
+        border-left-style: solid;
+        
+        border-left-color: rgb(170, 165, 165);;
+}
+.navbar-inner {
+        margin-left: -31px;
+        background: rgb(162, 139, 116);
+}
+body > .navbar {
+        font-size: 16px;
+}
+
+.nav > li:hover {
+        text-decoration: none;
+        background-color: #eeeddd;
+}
+hr{
+        margin: 0px 0px 5px 0px;
+}
+
+
+
+
+
+*/
+div{
+    text-align:justify;
+    text-justify:inter-word;
+}
+.fixed-height{
+    min-height:472px;
+}
+
+.new_fixed-height{
+    min-height:420px;
+}
+.gray-block{
+    padding: 10px 20px 10px;
+    *padding-top: 19px;
+    background-color: rgb(245, 243, 243);
+    border: 1px solid #ddd;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.bs-docs-sidenav{
+    width: 100%;
+}
+.footer-color{
+    max-height:10px;
+    padding:0; margin: 0;
+}
+.footer-hr{
+    margin: 0;
+}
+.footer-p{
+    margin: 0;
+    background: rgb(162, 43, 43) 60%;
+    height: 30px;
+    color: white;
+    font-size: 11px;
+
+    background: #020031;
+    background: -moz-linear-gradient(45deg, #020031 0%, #6d3353 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#020031), color-stop(100%,#6d3353));
+    background: -webkit-linear-gradient(45deg, rgb(73, 0, 3) 0%,rgb(162, 43, 43) 100%);
+    background: -o-linear-gradient(45deg, #020031 0%,#6d3353 100%);
+    background: -ms-linear-gradient(45deg, #020031 0%,#6d3353 100%);
+    background: rgb(35, 47, 62);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020031', endColorstr='#6d3353',GradientType=1 );
+    -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+    -moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+}
+
+table .header{cursor:pointer;}table .header:after{content:"";float:right;margin-top:7px;border-width:0 4px 4px;border-style:solid;border-color:#000 transparent;visibility:hidden;}
+table .headerSortUp,table .headerSortDown{background-color:rgba(141, 192, 219, 0.25);text-shadow:0 1px 1px rgba(255, 255, 255, 0.75);}
+table .header:hover:after{visibility:visible;}
+table .headerSortDown:after,table .headerSortDown:hover:after{visibility:visible;filter:alpha(opacity=60);-khtml-opacity:0.6;-moz-opacity:0.6;opacity:0.6;}
+table .headerSortUp:after{border-bottom:none;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid #000;visibility:visible;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;filter:alpha(opacity=60);-khtml-opacity:0.6;-moz-opacity:0.6;opacity:0.6;}
+
+
+div.dataTables_paginate {
+    float: right;
+    margin: 0;
+}
+
+
+div.dataTables_length label {
+    width: 460px;
+    float: left;
+    text-align: left;
+}
+
+div.dataTables_length select {
+    width: 75px;
+}
+
+div.dataTables_filter label {
+    float: right;
+}
+
+div.dataTables_info {
+    padding-top: 8px;
+}
+
+
+table {
+    margin: 1em 0;
+    clear: both;
+}
+
+table.dataTable th:active {
+    outline: none;
+}
+.container {
+    margin-right: auto;
+    margin-left: 80px;
+}
+
+.navbar-inner-custom {
+    background-color: rgb(35, 47, 62);
+    border-radius: 20px 0 20px 0;
+    color: #FFFFFF;
+    font-weight: inherit;
+    font-size: 18px;
+    height: 22px;
+    list-style: none outside none;
+    margin-bottom: 15px;
+    padding: 3px 20px;
+}
+
+.navbar .brand-custom {
+    display: block;
+    float: left;
+    padding: 10px 20px 10px;
+    margin-left: -20px;
+    font-size: 20px;
+    font-weight: 200;
+    color: rgb(248, 242, 242);
+    text-shadow: 0 1px 0 rgb(114, 114, 114);
+}
+
+.table{
+    width:"100%";
+}
+.myTag {
+    background: none repeat scroll 0 0 rgb(218, 188, 168);
+    border: 1px solid rgb(210, 145, 74);
+    border-radius: 3px 3px 3px 3px;
+    color: rgb(122, 89, 70);
+    float: left;
+    font-size: 13px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    padding: 6px 5px 5px 5px;
+    text-decoration: none;
+    vertical-align: middle;
+    line-height: 18px;
+    height: 18px;
+    -moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.rightJustified {
+    text-align : right;  
+}
+
+
+.navbar .brand-custom {
+    display: block;
+    float: left;
+    padding: 10px 20px 10px;
+    margin-left: -20px;
+    font-size: 20px;
+    font-weight: 200;
+    color: rgb(248, 242, 242);
+    text-shadow: 0 1px 0 rgb(114, 114, 114);
+}
+
+.table{
+    width:"100%";
+}
+
+.navbar-inner-custom1 {
+    min-height: 60px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: #fafafa;
+    background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
+    background-image: -webkit-linear-gradient(top, rgb(218, 174, 174), rgb(122, 14, 14));
+    background-image: -o-linear-gradient(top, rgb(218, 174, 174), rgb(122, 14, 14));
+    background-image: linear-gradient(to bottom, #E67A17, #E67A17);
+    background-repeat: repeat-x;
+    border: 1px solid #d4d4d4;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+    *zoom: 1;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+} 
+
+input:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 255, 1);
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 255, 1); 
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 255, 1);
+    border:1px solid rgba(0,0,255, 0.8); 
+}
+
+.marginpo {
+
+    margin-top:15px;
+
+}
+
+.peo{
+    margin: 0px;
+    width: 80%;
+    height: 60px;
+}
+/* Mritunjay : Import Checbox Padding*/
+.font_color{
+    color : red;
+}
+.cursor_pointer:hover{
+    cursor:pointer;
+}
+.checkbox_padding {
+    padding-left : 15px;
+    color : blue;
+}
+.checkbox_padding_one {
+    padding-left : 15px;
+    color : blue;
+}
+#loading,#loading_popup,#loading_div,#loading_modal{
+    display:none;
+}
+#loading img,#loading_popup img,#loading_div,#loading_modal img{
+    position:relative;
+    top:50%;
+    left: 50%;
+}
+.ui-front {
+    z-index: 9999 !important;
+    position:fixed !important;
+}
+.img_bckground{
+    background-color:#F2F2F2;
+}
+/* Abhinay */
+.navbar-collapse-custom {
+    min-height: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: #bbbbbb;
+    background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
+    background-image: -webkit-linear-gradient(top, rgb(218, 174, 174), rgb(122, 14, 14));
+    background-image: -o-linear-gradient(top, rgb(218, 174, 174), rgb(122, 14, 14));
+    background-image: linear-gradient(to bottom, rgb(218, 174, 174), rgb(122, 14, 14));
+    background-repeat: repeat-x;
+    border: 1px solid #d4d4d4;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+    *zoom: 1;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+}
+
+.bs-docs-sidenav{
+    text-align:left;
+
+}
+
+
+/*  Css class used in login-view page */
+
+.form-signin {
+    max-width: 300px;
+    padding: 19px 29px 29px;
+    margin: 0 auto 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    box-shadow: 0 1px 2px rgb(238, 238, 238);
+}
+a:hover
+
+{
+    color:orange;
+}
+
+/*************** new ********************/
+
+.breadcrumb {
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.breadcrumb > li {
+    display: inline-block;
+}
+
+.breadcrumbstyle {
+    background-color: rgb(35, 47, 62);
+    border-radius: 20px 0 20px 0;
+    color: #FFFFFF;
+    font-weight: inherit;
+    font-size: 18px;
+    height: 22px;
+    list-style: none outside none;
+    margin-bottom: 15px;
+    padding: 3px 20px;
+}
+
+.main1 {
+    max-width:94%;
+    /* margin:-2.222222% auto; */
+}	
+
+.leftdiv {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 3px 5px 1px #979797;
+    width:100%;
+}
+/*custom table
+Author: Mritunjay
+Date: 24/3/2014 */
+custom_table {
+    max-width: 100%;
+
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.custom_table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.custom_table th,
+.custom_table td {
+    padding: 8px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+
+}
+
+.custom_table th {
+    font-weight: bold;
+}
+
+.custom_table thead th {
+    vertical-align: bottom;
+}
+
+.custom_table caption + thead tr:first-child th,
+.custom_table caption + thead tr:first-child td,
+.custom_table colgroup + thead tr:first-child th,
+.custom_table colgroup + thead tr:first-child td,
+.custom_table thead:first-child tr:first-child th,
+.custom_table thead:first-child tr:first-child td {
+    border-top: 0;
+}
+
+.custom_table tbody + tbody {
+
+}
+
+.custom_table .custom_table {
+
+}
+/** Mapping Drop down width and height **/
+
+.map_select{
+    width:57px;
+    height:30px;
+}
+
+/* End Here*/
+
+.col-xs-1,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12,
+.col-sm-1,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-lg-1,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}	
+/*lesson Schedule img classes */
+.imgclass{
+    height:30px!important;
+    max-width:45px!important;
+}
+.imgtbleclass{
+    position:relative;
+    bottom:20px;
+}
+.add_imgtbleclass{
+    position:relative;
+}
+.img_margin{
+    margin-left:15px;
+}
+.img_float_rght{
+    float:right;
+}
+
+/* align left */
+.modal-align-left{
+    position: relative;
+    left: 20px;
+
+}
+
+.qp_table , .qp_table th, .qp_table td {
+    text-align: center !important;
+    vertical-align: middle !important;
+    border: 0px !important;
+	
+
+}
+
+.rubrics_meta_data_table , .qp_table th, .qp_table td {
+text-align: left !important;
+    border: 0px !important;
+	vertical-align: middle !important;
+
+}
+.import_crs_table , .import_crs_table th, .import_crs_table td {
+    text-align: left !important;
+    vertical-align: middle !important;
+    border: 0px !important;
+}
+/* Image thumb nail classes */
+img {
+    vertical-align: middle;
+}
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    display: block;
+    width: 100% \9;
+    max-width: 100%;
+    height: auto;
+}
+.img-rounded {
+    border-radius: 6px;
+}
+.img-thumbnail {
+    display: inline-block;
+    width: 55px;
+    max-width: 100%;
+    height: 45px ;
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.cursor_default{
+    cursor: default;
+}
+
+.cite_color{
+    color:red;
+}
+.modal_custom {
+    width: 60%;
+}
+
+.custom_question_paper_undefined{
+    color:#b94a48;
+    font-size:18px;
+}
+
+.custom_question_paper_undefined_disp{
+    min-height:350px;
+}
+.error_color_maroon {
+    color:#b94a48;
+}
+.custom_hr_style{
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+label.error{
+    color:red ;
+}
+
+/* change button color */
+.my-btn {
+    /*.buttonBackground(@yourColor, @yourColorDarker, @textAndBorder); - alternate */
+    color: rgb(255, 255, 255);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: rgb(204, 153, 224);
+    background-image: -moz-linear-gradient(top, #cc99cc, #cc99ff);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgb(204, 153, 204)), to(rgb(204, 153, 255)));
+    background-image: -webkit-linear-gradient(top, rgb(204, 153, 204), rgb(204, 153, 255));
+    background-image: -o-linear-gradient(top, #cc99cc, #cc99ff);
+    background-image: linear-gradient(to bottom, rgb(204, 153, 204), rgb(204, 153, 255));
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffcc99cc', endColorstr='#ffcc99ff', GradientType=0);
+    border-color: rgb(204, 153, 255) rgb(204, 153, 255) rgb(166, 77, 255);
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+.my-btn:hover, .my-btn:focus, .my-btn:active, .my-btn.active, .my-btn.disabled, .my-btn[disabled] {
+    color: rgb(255, 255, 255);
+    background-color: rgb(204, 153, 255);
+}
+
+/* table, div and textarea size */
+.peo_div_size {
+    width: 100% !important;
+}
+
+.peo_textarea_size {
+    width: 80%;
+}
+
+.po_textarea_size {
+    width: 70%;
+}
+
+.table_size {
+    width: 100% !important;
+}
+
+.dataTable{
+    width: 100% !important;
+}
+
+.org_text_size{
+    width: 100%;
+}
+
+.org_me_text_size{
+    width: 100%;
+}
+
+.dept_textarea_size{
+    width: 80%;
+}
+
+.program_type_textarea_size{
+    width: 80%;
+}
+
+.program_mode_textarea_size{
+    width: 80%;
+}
+
+.user_designation_textarea_size{
+    width: 80%;
+}
+
+.po_type_textarea_size{
+    width: 80%;
+}
+
+.acc_type_textarea_size{
+    width: 80%;
+}
+
+.ao_method_textarea_size{
+    width: 80%;
+}
+
+.blooms_level_textarea_size{
+    width: 80%;
+}
+
+.color_maroon{
+    color:#8E2727;
+}
+
+.inline_class{
+    display:inline-block;
+}
+
+.font_bold{
+    font-weight: bold;
+}
+
+.hr_line {
+    height: 1px;
+    color: #A4A4A4;
+    background-color: #A4A4A4;
+    border: none;
+}
+
+.level1 { box-decoration-break: slice; }
+
+.background-nba{
+    background-color:rgb(250, 204, 166);
+}
+
+.header-nba{
+    font-size:14px;
+}
+
+.table-nba{
+    border-color:black !important;
+}
+.table-nba td {
+    margin:0px;
+    border-color:black !important;
+}
+
+.table-nba th {
+
+    border-color:black !important;
+
+}
+
+.td_color{
+
+    background-color:rgb(253, 229, 188);
+
+}
+
+
+.ul_class{
+
+    margin:0px;
+
+}
+/*
+lesson Schedule related CSS written by chetan.
+*/
+
+.input-small {
+    width: 99px;
+}
+
+.loader_schedule {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px; 
+    margin-top: -450px; 
+}
+.loader_question {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px; 
+    margin-top: -10px; 
+}
+
+.set_margin {
+    margin: 0px;
+}
+
+.align_center {
+    vertical-align: middle;
+}
+
+/* multi select decoration */
+.multi_select_decoration {
+    text-decoration: none !important;
+    border: 1px solid #ddd !important;
+    color: rgb(111, 100, 100) !important;
+    text-align: left !important;
+    background-color: white !important;
+    font-size: 12px !important;
+}
+
+/* main bar box shadow */
+.box_shadow {
+    box-shadow: 6px 5px 5px rgb(150, 150, 150) !important; 
+    margin-bottom: 8px;
+}
+
+/* main top bar decoration */
+.agreement_main_top_bar {
+    border: 0px;
+    min-height: 55px;
+    background: rgb(255, 255, 255);
+    border-top-color: rgb(35, 47, 62);
+    border-bottom-color: rgb(35, 47, 62);
+    border-left-color: rgb(35, 47, 62);
+}
+
+/* image logo decoration */
+.agreement_logo_img_decoration {
+    margin-left:2%;
+    float:left;
+    height: 50px;
+    width: 190px;
+}
+
+/* image decoration */
+.agreement_navbar_img_decoration {
+    position: absolute; 
+    margin: 0;
+    top: 5px;
+    left: 83px;
+}
+
+/* navbar background effects */
+.navbar_background_effects {
+    background-color: rgba(0, 0, 0, 0); 
+    margin: 0px;
+}
+
+/* subtitle decoration */
+.subtitle_decoration {
+    font-size: 11px; 
+    color: white; 
+    font-family: Libre Baskerville, serif;
+}
+
+/* agreement header text decoration */
+.agreeement_header_decoration {
+    color: rgb(159, 162, 166);
+}
+
+/* agreement details decoration */
+.agreement_details {
+    padding-top: 30px;
+}
+
+/* agreement sub points decoration */
+.agreement_bullets_align {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 170%;
+}
+
+/* font size 12 */
+.char_font_size_12 {
+    font-size: 12px !important;
+}
+
+/* font size 14 */
+.char_font_size_14 {
+    font-size: 14px !important;
+}
+
+/* sticky buttons */
+.sticky_button {
+    margin-top: 10px; 
+    margin-right: 22px;
+}
+
+.txt_right{
+    text-align:right;
+}
+
+/* gap/space between 2 buttons */
+.space_button {
+    margin-right: 2px;
+}
+
+.err_msg{
+    color: red;
+    text-align: center;
+}
+
+label {
+    cursor : default !important;
+}
+
+.div_border_one{
+    height: 20px;
+    border:1px solid #ddd;
+    position:relative;
+    margin:0 0;
+    padding: 10px 20px 10px;
+}
+
+.div_border{
+    height: auto;
+    border:1px solid #ddd;
+    position:relative;
+    margin:0 0;
+    padding: 10px 20px 10px;
+}
+
+body .modal-admin {
+    /* new custom width */
+    width: 1110px;
+    height:auto;
+    /* must be half of the width, minus scrollbar on the left (30px) */
+    margin-left: -555px;
+}
+
+body .new-modal-admin {
+    /* new custom width */
+    left:36px;
+    width: 1110px;
+    height:auto;
+    /* must be half of the width, minus scrollbar on the left (30px) */
+
+}
+
+.modal-dialog {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.modal-content {
+    height: auto;
+    min-height: 100%;
+    border-radius: 0;
+}
+
+.span_textbox {
+    white-space: nowrap;
+    width: 1px !important;
+}
+
+.wrapper input[type="text"] {
+    position: relative; 
+}
+
+/* landing page css */
+.shortcut-bar {padding-bottom: 40px; padding-top: 10px;text-align: center;}
+.shortcut-items {margin:0px; padding:0px;}
+.shortcut-items li {display: inline-block;height:150px;list-style: outside none none; margin: 10px 8px; position: relative; width:265px; text-align: center;}
+.shortcut-items li a {background: none repeat scroll 0 0 #F0F0F0; border-radius: 5px;color: #222;display: inline-block; height: 150px; text-decoration: none; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);width:265px;}
+.shortcut-items li a:hover { background: none repeat scroll 0 0 #EBEBEB; background-color:#6B6161 !important;}
+.shortcut-items li a i { display: inline-block; font-size: 48px;height: 50px; line-height: 80px;margin-top: 20px; margin-bottom: 30px; width: 80px;}
+.shortcut-items li a .shortcut-label { display: block; margin-top: 5px; text-align:center; font-size: 13px;}
+.shortcut-items .count-noty, .board-widget-wrap .count-noty { background: none repeat scroll 0 0 rgba(220, 83, 44, 0.75); border: 2px solid #fccabf; border-radius: 100%;color: #fff; display: inline-block; font-size: 12px; font-weight: bold; line-height: 20px; padding: 2px 5px;position: absolute;right: 10px;top: -10px;}
+
+.img-circle {
+    border-radius: 20% !important;
+}
+
+.icon_glip{  margin:10px auto; padding:10px 0px; position:relative; text-align:center !important;}
+
+/*.navbar-hover  li a:hover{
+background-color:#C1C2C3 !important;
+}*/
+
+/* CSS used here will be applied after bootstrap.css */
+.badge-notify{
+    background:red;
+    padding-top: -70px;
+    left:40px;
+    top: 20px !important;
+}
+
+/* navbar select box width */
+.navbar_select_box {
+    height: 29px;
+    padding-bottom: 0px !important;
+	position: relative !important;
+	top:3px !important;
+}
+
+/* footer settings */
+.footer_settings {
+    position: absolute; 
+    bottom: 20px; 
+    width: 100%;
+}
+
+.form-horizontal_new .control-label {
+    float: left;
+    width: 100px;
+    padding-top: 5px;
+}
+
+/* align text content right or left */
+.text_align_right {
+    text-align: right !important;
+}
+
+.text_align_left {
+    text-align: left !important;
+}
+/* align arrow of multi select dropdown in the middle*/
+.arrow{
+    position:relative;
+}
+.arrow1{
+    position:absolute;
+    right:7px;
+}
+.norap{
+	white-space:nowrap;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+/*
+ * Styles for demo only
+ */
+.container_one{
+    margin-top:20px;
+	margin-right: auto;
+    margin-left: 37px;
+}
+.image-preview-input {
+    position: relative;
+	overflow: hidden;
+	margin: 0px;    
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;    
+}
+.image-preview-input input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.image-preview-input-title {
+    margin-left:2px;
+}
+
+.display_none{
+transition-duration: 0.4s;
+display:none !important;
+}
+.full_width{
+margin-left:0px !important;
+width:100% !important;
+}
+
+
+.caret-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid rgba(0, 0, 0, 0);
+    border-right: 4px solid rgba(0, 0, 0, 0);
+    border-bottom: 4px solid;
+    
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: middle;
+}
+
+.navbar-inner-one {
+  min-height: 34px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: #fafafa;
+  background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+  background-repeat: repeat-x;
+  border: 1px solid #d4d4d4;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+  *zoom: 1;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+}
+
+/* On Mouse Over Dropdown menu*/
+
+/* BE SURE TO INCLUDE THE CSS RESET FOUND IN THE DEMO PAGE'S CSS */
+
+/*------------------------------------*\
+    NAV
+\*------------------------------------*/
+.drop_nav {
+    list-style: none;
+    font-weight: bold;
+    margin-bottom: 10px;
+    float: left; /* Clear floats */
+    width: 100%;
+    /* Bring the nav above everything else--uncomment if needed.
+    position: relative;
+    z-index: 5;
+    */
+}
+.drop_nav li {
+    float: left;
+    margin-right: 10px;
+    position: relative;
+}
+.drop_nav a {
+    display: block;
+    padding: 5px;
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+}
+.drop_nav a:hover {
+    color: #fff;
+    background-color: #6b0c36;
+    text-decoration: underline;
+}
+
+/*--- DROPDOWN ---*/
+.drop_nav ul {
+    background-color: #fff; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+    background: rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+    list-style: none;
+    position: absolute;
+    left: -9999px; /* Hide off-screen when not needed (this is more accessible than display: none;) */
+}
+.drop_nav ul li {
+    padding-top: 1px; /* Introducing a padding between the li and the a give the illusion spaced items */
+    float: none;
+}
+.drop_nav ul a {
+    white-space: nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+}
+.drop_nav li:hover ul { /* Display the dropdown on hover */
+    left: 0; /* Bring back on-screen when needed */
+}
+.drop_nav li:hover a { /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+    background-color: #6b0c36;
+    text-decoration: underline;
+}
+.drop_nav li:hover ul a { /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
+    text-decoration: none;
+}
+.drop_nav li:hover ul li a:hover { /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+    background-color: #333;
+}
+

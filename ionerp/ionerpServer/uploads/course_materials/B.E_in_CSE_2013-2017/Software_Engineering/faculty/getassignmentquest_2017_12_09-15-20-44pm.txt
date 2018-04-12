@@ -1,0 +1,86 @@
+ public function getAssignmentQuest($id) {
+
+        $table_name = '';
+        $final_result = Array();
+        $results = Array();
+        $assignmentNameQuery = "SELECT q.que_content,q.que_max_marks,q.aq_id from dlvry_assignment as d , dlvry_assignment_question as q where d.a_id='$id'";
+        $assignmentNameData = $this->db->query($assignmentNameQuery);
+        $assignmentQuestResult = $assignmentNameData->result_array();
+//        var_dump($assignmentQuestResult); exit;
+        $final_result[$id] = Array();
+        foreach ($assignmentQuestResult as $quest) {
+//            var_dump($quest); 
+            array_push($final_result, $quest);
+            $aq_id = $quest['aq_id'];
+            $sql = "Select entity_id,actual_map_id FROM dlvry_assignment_mapping WHERE aq_id = $aq_id ";
+            $entity_id = $this->db->query($sql);
+            $entity_result = $entity_id->result_array();
+//            var_dump($entity_result);
+            foreach ($entity_result as $entity_id) {
+//                array_push($final_result, $entity_result);
+                $id = $entity_id['entity_id'];
+                $sql = "Select entity_name FROM entity WHERE entity_id = $id";
+                $entity_name = $this->db->query($sql);
+                $entity_name_result = $entity_name->result_array();
+//                var_dump($entity_name_result);
+                foreach ($entity_name_result as $entity_name) {
+
+                    if ($entity_name['entity_name'] == 'clo') {
+
+                        $table_name = 'clo';
+                        $col_id = 'clo_id';
+                        $code_name = 'clo_code';
+                    } else if ($entity_name['entity_name'] == "topic") {
+                        $col_id = 'topic_id';
+                        $code_name = 'topic_title';
+                        $table_name = 'topic';
+                    } else if ($entity_name['entity_name'] == "tlo") {
+                        $col_id = 'tlo_id';
+                        $code_name = 'tlo_code';
+                        $table_name = 'tlo';
+                    } else if ($entity_name['entity_name'] == "bloom's_level") {
+                        $col_id = 'bloom_id';
+                        $code_name = 'level';
+                        $table_name = 'bloom_level';
+                    }
+//                    else if ($entity_name['entity_name'] == "question_type") {
+//                        $col_id = 'master_type_id';
+//                        $code_name = 'mt_details_name';
+//                        $table_name = 'master_type_details';
+//                    }
+
+                    $sql = "SELECT $col_id , $code_name  FROM  $table_name WHERE $col_id = $id  ";
+                    $result_set = $this->db->query($sql);
+                    $results = $result_set->result_array();
+                    $count = 0;
+//                    $aq_id = $quest['aq_id'];
+                    $final_result[$aq_id] = Array();
+                    foreach ($results as $key => $resultArray) {
+                        $final_result[$aq_id] = $resultArray;
+                        $count ++;
+                    }
+
+                    array_push($final_result,  $final_result[$aq_id]);
+//                    foreach ($results as $array_set) {
+//                    }
+                }
+            }
+//            var_dump($final_result);
+//           $course_outcomes     = "SELECT d.aq_id, d.entity_id , d.actual_map_id , c.clo_code from dlvry_assignment_mapping as d, clo as c where c.clo_id = d.actual_map_id and aq_id='$aq_id' ";
+//           $data[$key]["course_outcomes"] = $this->db->query($course_outcomes)->result_array();
+//           
+//           $performance_outcomes     = "SELECT d.aq_id, d.entity_id , d.actual_map_id , t.topic_title from dlvry_assignment_mapping as d, topic as t where t.topic_id = d.actual_map_id and aq_id='$aq_id' ";
+//           $data[$key]["performance_outcomes"] = $this->db->query($performance_outcomes)->result_array();
+//           $topic_outcomes     = "SELECT d.entity_id , d.actual_map_id , c.clo_code from dlvry_assignment_mapping as d, clo as c where c.clo_id = d.actual_map_id and aq_id='$aq_id' ";
+//           $data[$key]["topic_outcomes"] = $this->db->query($topic_outcomes)->result_array();
+//           
+//           $tlo_outcomes     = "SELECT d.entity_id , d.actual_map_id , c.clo_code from dlvry_assignment_mapping as d, clo as c where c.clo_id = d.actual_map_id and aq_id='$aq_id' ";
+//           $data[$key]["tlo_outcomes"] = $this->db->query($tlo_outcomes)->result_array();
+        }
+        var_dump($final_result);
+        exit;
+        return json_encode($final_result);
+//        echo json_encode($data);
+//        exit;
+//        return $assignmentQuestResult;
+    }

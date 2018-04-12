@@ -1,0 +1,22 @@
+
+label.error,div.error{
+    color:red;
+    font-weight: normal;
+}
+.padl25{
+    padding-left: 25px;
+}
+.ele_required:before{
+    content: '*';
+    color: red;
+     
+}
+.red{
+    color:red !important;
+}
+.no_bg_color{
+    background-color: none !important;
+}
+#category_tree{
+    border:none !important;
+}
