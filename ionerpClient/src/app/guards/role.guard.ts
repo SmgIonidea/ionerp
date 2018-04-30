@@ -13,13 +13,13 @@ export class RoleGuard implements CanActivate {
 
     canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-            if (localStorage.getItem('student') == "true")
+            if (localStorage.getItem('role') == "Student")
                 this.is_student = true;
 
-            if (localStorage.getItem('admin') == "true")
+            if (localStorage.getItem('isAdmin') == "Admin")
                 this.is_admin = true;
 
-            if (localStorage.getItem('chairman') == "true")
+            if (localStorage.getItem('isChairman') == "Chairman")
                 this.is_chairman = true;
 
             if (localStorage.getItem('program_owner') == "true")

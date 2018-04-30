@@ -120,6 +120,21 @@ ul li span{
         margin-left: -15px;
 }
 
+/* style for profile */
+.popoverText .popover  {
+        margin-left:-100px !important; 
+        margin-bottom: 100px;
+        height:auto;
+        width:auto;
+        top:75px !important;
+        font-size: 12px !important;
+
+    }
+
+    .popoverText .popover.bottom > .arrow {
+            left:93% !important;
+    }
+
 /* Topic drop-down in Activity add page css set */
 @media (min-width:320px) { 
         /* smartphones, iPhone, portrait 480x320 phones */

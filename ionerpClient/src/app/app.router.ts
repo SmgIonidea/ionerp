@@ -79,8 +79,13 @@ import { BookanalysisComponent } from './library/viewreports/bookanalysis/bookan
 import { OpacComponent } from './library/opac/opac.component';
 const route: Routes = [
   {
+    path: 'login',
+    component: LoginComponent,
+    pathMatch: 'full'
+  },
+  {
     path: '',
-    component: ContentWrapperComponent,
+    component: LoginComponent,
     pathMatch: 'full'
   },
   {

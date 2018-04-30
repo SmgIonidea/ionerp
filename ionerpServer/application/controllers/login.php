@@ -50,61 +50,64 @@ class Login extends CI_Controller {
 	public function index(){
 		$incomingFormData =  $this->readHttpRequest();
 		$formData = json_decode($incomingFormData);
-		$userName = base64_decode($formData->identity);
-		$password = base64_decode($formData->password);
-
-		if($this->ion_auth->logged_in()){
-
-		}else{
-			if ($this->ion_auth->login($userName,$password)) {
-				$this->session->set_userdata('user_input', $userName);
-				$data['admin'] = $this->ion_auth->is_admin();
-				$data['course_owner'] = $this->ion_auth->in_group('Course Owner');
-				$data['program_owner'] = $this->ion_auth->in_group('Program Owner');
-				$data['chairman'] = $this->ion_auth->in_group('Chairman');
-				$data['student'] = $this->ion_auth->in_group('Student');
-				$data['isLoggedIn'] = TRUE;
-				$data['id'] = $this->ion_auth->user()->row()->id;
-				$data['username'] = $this->ion_auth->user()->row()->username;
-				$data['email'] = $this->ion_auth->user()->row()->email;
-                $data['password'] = $password;
-				$data['title'] = $this->ion_auth->user()->row()->title;
-				$data['first_name'] = $this->ion_auth->user()->row()->first_name;
-				$data['last_name'] = $this->ion_auth->user()->row()->last_name;
-				$data['user_dept_id'] = $this->ion_auth->user()->row()->user_dept_id;
-				$data['user_dept_name'] = $this->Login_model->fetch_dept_name($this->ion_auth->user()->row()->user_dept_id)->dept_name;
-				$data['base_dept_id'] = $this->ion_auth->user()->row()->base_dept_id;
-				$data['base_dept_name'] = $this->Login_model->fetch_dept_name($this->ion_auth->user()->row()->base_dept_id)->dept_name;
-				if($this->Login_model->fetch_assigned_dept($this->ion_auth->user()->row()->id)){
-					$data['assigned_dept_id'] = $this->Login_model->fetch_assigned_dept($this->ion_auth->user()->row()->id)->assigned_dept_id;
-					$data['assigned_dept_name'] = $this->Login_model->fetch_assigned_dept($this->ion_auth->user()->row()->id)->dept_name;
-				}else{
-					$data['assigned_dept_id'] = null;
-					$data['assigned_dept_name'] = null;
-				}
-				$data['user_qualification'] = $this->ion_auth->user()->row()->user_qualification;
-
-                $session_data = $this->Login_model->fetch_session_data($this->ion_auth->user()->row()->id);
-                if(!empty($session_data)){
-                $data['dept_id'] = $session_data['0']['dept_id'];
-                $data['dept_name'] = $session_data['0']['dept_name'];
-                $data['pgm_id'] = $session_data['0']['pgm_id'];
-                $data['pgm_name'] = $session_data['0']['pgm_specialization'];
-                $data['crclm_id'] = $session_data['0']['crclm_id'];
-                $data['crclm_name'] = $session_data['0']['crclm_name'];
-                $data['crclm_term_id'] = $session_data['0']['crclm_term_id'];
-                $data['term_name'] = $session_data['0']['term_name'];
-                $data['crs_id'] = $session_data['0']['crs_id'];
-                $data['crs_name'] = $session_data['0']['crs_title'];
-                $data['section_id'] = $session_data['0']['section_id'];
-                $data['section_name'] = $session_data['0']['mt_details_name'];
-                }
-				echo json_encode($data);
-			}else{
-				$data['isLoggedIn'] = FALSE;
-				echo json_encode($data);
-			}
-		}
+//		$userName = base64_decode($formData->identity);
+//		$password = base64_decode($formData->password);
+        
+        $getData = $this->Login_model->getUser($formData);
+       
+         echo json_encode($getData);
+//		if($this->ion_auth->logged_in()){
+//
+//		}else{
+//			if ($this->ion_auth->login($userName,$password)) {
+//				$this->session->set_userdata('user_input', $userName);
+//				$data['admin'] = $this->ion_auth->is_admin();
+//				$data['course_owner'] = $this->ion_auth->in_group('Course Owner');
+//				$data['program_owner'] = $this->ion_auth->in_group('Program Owner');
+//				$data['chairman'] = $this->ion_auth->in_group('Chairman');
+//				$data['student'] = $this->ion_auth->in_group('Student');
+//				$data['isLoggedIn'] = TRUE;
+//				$data['id'] = $this->ion_auth->user()->row()->id;
+//				$data['username'] = $this->ion_auth->user()->row()->username;
+//				$data['email'] = $this->ion_auth->user()->row()->email;
+//                $data['password'] = $password;
+//				$data['title'] = $this->ion_auth->user()->row()->title;
+//				$data['first_name'] = $this->ion_auth->user()->row()->first_name;
+//				$data['last_name'] = $this->ion_auth->user()->row()->last_name;
+//				$data['user_dept_id'] = $this->ion_auth->user()->row()->user_dept_id;
+//				$data['user_dept_name'] = $this->Login_model->fetch_dept_name($this->ion_auth->user()->row()->user_dept_id)->dept_name;
+//				$data['base_dept_id'] = $this->ion_auth->user()->row()->base_dept_id;
+//				$data['base_dept_name'] = $this->Login_model->fetch_dept_name($this->ion_auth->user()->row()->base_dept_id)->dept_name;
+//				if($this->Login_model->fetch_assigned_dept($this->ion_auth->user()->row()->id)){
+//					$data['assigned_dept_id'] = $this->Login_model->fetch_assigned_dept($this->ion_auth->user()->row()->id)->assigned_dept_id;
+//					$data['assigned_dept_name'] = $this->Login_model->fetch_assigned_dept($this->ion_auth->user()->row()->id)->dept_name;
+//				}else{
+//					$data['assigned_dept_id'] = null;
+//					$data['assigned_dept_name'] = null;
+//				}
+//				$data['user_qualification'] = $this->ion_auth->user()->row()->user_qualification;
+//
+//                $session_data = $this->Login_model->fetch_session_data($this->ion_auth->user()->row()->id);
+//                if(!empty($session_data)){
+//                $data['dept_id'] = $session_data['0']['dept_id'];
+//                $data['dept_name'] = $session_data['0']['dept_name'];
+//                $data['pgm_id'] = $session_data['0']['pgm_id'];
+//                $data['pgm_name'] = $session_data['0']['pgm_specialization'];
+//                $data['crclm_id'] = $session_data['0']['crclm_id'];
+//                $data['crclm_name'] = $session_data['0']['crclm_name'];
+//                $data['crclm_term_id'] = $session_data['0']['crclm_term_id'];
+//                $data['term_name'] = $session_data['0']['term_name'];
+//                $data['crs_id'] = $session_data['0']['crs_id'];
+//                $data['crs_name'] = $session_data['0']['crs_title'];
+//                $data['section_id'] = $session_data['0']['section_id'];
+//                $data['section_name'] = $session_data['0']['mt_details_name'];
+//                }
+//				echo json_encode($data);
+//			}else{
+//				$data['isLoggedIn'] = FALSE;
+//				echo json_encode($data);
+//			}
+//		}
 	}
 
     public function getBaseUrl(){

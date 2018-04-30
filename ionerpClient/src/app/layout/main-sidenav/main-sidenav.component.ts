@@ -29,19 +29,19 @@ export class MainSidenavComponent implements OnInit {
     // alert(localStorage.getItem('student'));
     // alert(localStorage.getItem('admin'));
 
-    if (localStorage.getItem('student') == "true")
+    if (localStorage.getItem('role') == "Student")
       this.is_student = true;
 
-    if (localStorage.getItem('admin') == "true")
+    if (localStorage.getItem('isAdmin') == "Admin")
       this.is_admin = true;
 
-    if (localStorage.getItem('chairman') == "true")
+    if (localStorage.getItem('isChairman') == "Chairman")
       this.is_chairman = true;
 
-    if (localStorage.getItem('program_owner') == "true")
+    if (localStorage.getItem('role') == "Program Owner")
       this.is_program_owner = true;
 
-    if (localStorage.getItem('course_owner') == "true")
+    if (localStorage.getItem('role') == "Course Owner")
       this.is_course_owner = true;
    
   }

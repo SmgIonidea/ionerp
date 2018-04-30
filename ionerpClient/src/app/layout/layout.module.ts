@@ -7,12 +7,14 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { CharLimiterPipe } from "./../services/char-limiter.pipe";
 import { FormsModule } from '@angular/forms';
+import {PopoverModule} from "ngx-popover";
 @NgModule({
   imports: [
     
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    PopoverModule
   ],
   declarations: [
     MainHeaderComponent,
