@@ -4,8 +4,8 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class PostService {
-  public baseUrlFile = 'http://localhost/ionerp/ionerpServer/uploads/'
-  public baseUrl = 'http://localhost/ionerp/ionerpServer/index.php/';
+  public baseUrlFile = 'http://10.91.5.13/ionerp/ionerpServer/uploads/'
+  public baseUrl = 'http://10.91.5.13/ionerp/ionerpServer/index.php/';
   public subUrl;
   constructor(private http: Http) { }
   //Http Request to get the data

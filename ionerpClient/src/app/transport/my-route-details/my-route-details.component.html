@@ -1,0 +1,97 @@
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Transport Details</h4>
+  </div>
+ 
+</section>
+
+<div class="container-fluid">
+<form class="form-horizontal" style="border-top:0px;">
+<div class="table table-responsive" style="overflow-x:initial;">
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+    <thead style="background-color:#DDE1E6;">
+      <tr>
+        <!-- <th class="text-center">
+          <input type="checkbox" (click)="deleteAllSelected($event)" id="delete_check">
+        </th> -->
+        <th class="text-center ">Type of Vehicle</th>
+        <th class="text-center">Registration No of Vehicle</th>
+        <th class="text-center">Route</th>
+        <th class="text-center">Driver Name</th>
+        <th class="text-center">Monthly Charges</th>
+        
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <!-- <tr *ngFor="let post of posts let i = index"> -->
+        <!-- <pre>{{post | json}}</pre>       -->
+        <!-- <td>
+          <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
+        </td> -->
+       
+        <td class="text-center">Car</td>
+        <td class="text-center">KA 14 A 007</td>
+        <td class="text-center">Alkola-Police Chowki-Kashipura</td>
+        <td class="text-center">Vijay</td>
+        <td class="text-center">250</td>
+        
+       </tr>
+    </tbody>
+  </table>
+</div>
+
+<br>
+<br>
+<br>
+</form>
+
+
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View My Transport Bills</h4>
+  </div>
+ 
+</section>
+<form class="form-horizontal" style="border-top:0px;">
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <!-- <th class="text-center">
+            <input type="checkbox" (click)="deleteAllSelected($event)" id="delete_check">
+          </th> -->
+          <th class="text-center ">Sl&nbsp;No.</th>
+          <th class="text-center">Month</th>
+          <th class="text-center">Bill Amount</th>
+          <th class="text-center">Waived</th>
+          <th class="text-center">Paid Amount</th>
+          <th class="text-center">Action</th>
+          
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- <tr *ngFor="let post of posts let i = index"> -->
+          <!-- <pre>{{post | json}}</pre>       -->
+          <!-- <td>
+            <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
+          </td> -->
+          <td class="text-center">1</td>
+          <td class="text-center">August</td>
+          <td class="text-center">3000</td>
+          <td class="text-center">500</td>
+          <td class="text-center">2500</td>
+          <td class="text-center"><i class="glyphicon glyphicon-print"></i></td>
+          
+         </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <br>
+  <br>
+  <br>
+  </form>
+
+</div>

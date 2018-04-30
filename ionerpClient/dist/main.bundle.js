@@ -1800,48 +1800,50 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__accounting_acc_reports_ledgersummary_ledgersummary_component__ = __webpack_require__("../../../../../src/app/accounting/acc-reports/ledgersummary/ledgersummary.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__accounting_accounting_group_accounting_group_component__ = __webpack_require__("../../../../../src/app/accounting/accounting-group/accounting-group.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__accounting_manage_vocher_manage_vocher_component__ = __webpack_require__("../../../../../src/app/accounting/manage-vocher/manage-vocher.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__transport_route_route_component__ = __webpack_require__("../../../../../src/app/transport/route/route.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__transport_route_list_route_list_component__ = __webpack_require__("../../../../../src/app/transport/route-list/route-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__transport_vehicle_list_vehicle_list_component__ = __webpack_require__("../../../../../src/app/transport/vehicle-list/vehicle-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__transport_drivers_list_drivers_list_component__ = __webpack_require__("../../../../../src/app/transport/drivers-list/drivers-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__transport_transport_bills_transport_bills_component__ = __webpack_require__("../../../../../src/app/transport/transport-bills/transport-bills.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__transport_maintenance_maintenance_component__ = __webpack_require__("../../../../../src/app/transport/maintenance/maintenance.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__transport_boardlist_boardlist_component__ = __webpack_require__("../../../../../src/app/transport/boardlist/boardlist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__transport_vehicle_board_vehicle_board_component__ = __webpack_require__("../../../../../src/app/transport/vehicle-board/vehicle-board.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__transport_driver_vehicle_driver_vehicle_component__ = __webpack_require__("../../../../../src/app/transport/driver-vehicle/driver-vehicle.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__transport_transport_reports_driver_report_driver_report_component__ = __webpack_require__("../../../../../src/app/transport/transport-reports/driver-report/driver-report.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__transport_transport_reports_vehicle_report_vehicle_report_component__ = __webpack_require__("../../../../../src/app/transport/transport-reports/vehicle-report/vehicle-report.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__transport_transport_reports_student_report_student_report_component__ = __webpack_require__("../../../../../src/app/transport/transport-reports/student-report/student-report.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__transport_transport_reports_staff_report_staff_report_component__ = __webpack_require__("../../../../../src/app/transport/transport-reports/staff-report/staff-report.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__hostel_hostel_component__ = __webpack_require__("../../../../../src/app/hostel/hostel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__hostel_room_availability_room_availability_component__ = __webpack_require__("../../../../../src/app/hostel/room-availability/room-availability.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__hostel_room_allocation_room_allocation_component__ = __webpack_require__("../../../../../src/app/hostel/room-allocation/room-allocation.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__hostel_view_hostel_persons_view_hostel_persons_component__ = __webpack_require__("../../../../../src/app/hostel/view-hostel-persons/view-hostel-persons.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__hostel_collect_items_collect_items_component__ = __webpack_require__("../../../../../src/app/hostel/collect-items/collect-items.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__hostel_prepare_bill_prepare_bill_component__ = __webpack_require__("../../../../../src/app/hostel/prepare-bill/prepare-bill.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__hostel_view_details_view_details_component__ = __webpack_require__("../../../../../src/app/hostel/view-details/view-details.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__hostel_issue_items_issue_items_component__ = __webpack_require__("../../../../../src/app/hostel/issue-items/issue-items.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__hostel_health_record_health_record_component__ = __webpack_require__("../../../../../src/app/hostel/health-record/health-record.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__hostel_de_allocate_de_allocate_component__ = __webpack_require__("../../../../../src/app/hostel/de-allocate/de-allocate.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__hostel_report_report_component__ = __webpack_require__("../../../../../src/app/hostel/report/report.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__hostel_add_building_add_building_component__ = __webpack_require__("../../../../../src/app/hostel/add-building/add-building.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__hostel_add_room_add_room_component__ = __webpack_require__("../../../../../src/app/hostel/add-room/add-room.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__library_master_records_category_category_component__ = __webpack_require__("../../../../../src/app/library/master-records/category/category.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__library_master_records_subcategory_subcategory_component__ = __webpack_require__("../../../../../src/app/library/master-records/subcategory/subcategory.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__library_master_records_libraryfine_libraryfine_component__ = __webpack_require__("../../../../../src/app/library/master-records/libraryfine/libraryfine.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__library_master_records_publisher_publisher_component__ = __webpack_require__("../../../../../src/app/library/master-records/publisher/publisher.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__library_master_records_books_books_component__ = __webpack_require__("../../../../../src/app/library/master-records/books/books.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__library_transaction_studentreturnbooks_studentreturnbooks_component__ = __webpack_require__("../../../../../src/app/library/transaction/studentreturnbooks/studentreturnbooks.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__library_transaction_staffreturnbooks_staffreturnbooks_component__ = __webpack_require__("../../../../../src/app/library/transaction/staffreturnbooks/staffreturnbooks.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__library_viewreports_allbooks_allbooks_component__ = __webpack_require__("../../../../../src/app/library/viewreports/allbooks/allbooks.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__library_viewreports_booksavailability_booksavailability_component__ = __webpack_require__("../../../../../src/app/library/viewreports/booksavailability/booksavailability.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__library_viewreports_studentreport_studentreport_component__ = __webpack_require__("../../../../../src/app/library/viewreports/studentreport/studentreport.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__library_viewreports_staffreport_staffreport_component__ = __webpack_require__("../../../../../src/app/library/viewreports/staffreport/staffreport.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__library_viewreports_booksissuedstudents_booksissuedstudents_component__ = __webpack_require__("../../../../../src/app/library/viewreports/booksissuedstudents/booksissuedstudents.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__library_viewreports_booksissuedstaff_booksissuedstaff_component__ = __webpack_require__("../../../../../src/app/library/viewreports/booksissuedstaff/booksissuedstaff.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__library_viewreports_allfines_allfines_component__ = __webpack_require__("../../../../../src/app/library/viewreports/allfines/allfines.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__library_viewreports_bookanalysis_bookanalysis_component__ = __webpack_require__("../../../../../src/app/library/viewreports/bookanalysis/bookanalysis.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__library_opac_opac_component__ = __webpack_require__("../../../../../src/app/library/opac/opac.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__transport_my_route_details_my_route_details_component__ = __webpack_require__("../../../../../src/app/transport/my-route-details/my-route-details.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__transport_all_route_board_all_route_board_component__ = __webpack_require__("../../../../../src/app/transport/all-route-board/all-route-board.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__transport_route_route_component__ = __webpack_require__("../../../../../src/app/transport/route/route.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__transport_route_list_route_list_component__ = __webpack_require__("../../../../../src/app/transport/route-list/route-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__transport_vehicle_list_vehicle_list_component__ = __webpack_require__("../../../../../src/app/transport/vehicle-list/vehicle-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__transport_drivers_list_drivers_list_component__ = __webpack_require__("../../../../../src/app/transport/drivers-list/drivers-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__transport_transport_bills_transport_bills_component__ = __webpack_require__("../../../../../src/app/transport/transport-bills/transport-bills.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__transport_maintenance_maintenance_component__ = __webpack_require__("../../../../../src/app/transport/maintenance/maintenance.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__transport_boardlist_boardlist_component__ = __webpack_require__("../../../../../src/app/transport/boardlist/boardlist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__transport_vehicle_board_vehicle_board_component__ = __webpack_require__("../../../../../src/app/transport/vehicle-board/vehicle-board.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__transport_driver_vehicle_driver_vehicle_component__ = __webpack_require__("../../../../../src/app/transport/driver-vehicle/driver-vehicle.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__transport_transport_reports_driver_report_driver_report_component__ = __webpack_require__("../../../../../src/app/transport/transport-reports/driver-report/driver-report.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__transport_transport_reports_vehicle_report_vehicle_report_component__ = __webpack_require__("../../../../../src/app/transport/transport-reports/vehicle-report/vehicle-report.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__transport_transport_reports_student_report_student_report_component__ = __webpack_require__("../../../../../src/app/transport/transport-reports/student-report/student-report.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__transport_transport_reports_staff_report_staff_report_component__ = __webpack_require__("../../../../../src/app/transport/transport-reports/staff-report/staff-report.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__hostel_hostel_component__ = __webpack_require__("../../../../../src/app/hostel/hostel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__hostel_room_availability_room_availability_component__ = __webpack_require__("../../../../../src/app/hostel/room-availability/room-availability.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__hostel_room_allocation_room_allocation_component__ = __webpack_require__("../../../../../src/app/hostel/room-allocation/room-allocation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__hostel_view_hostel_persons_view_hostel_persons_component__ = __webpack_require__("../../../../../src/app/hostel/view-hostel-persons/view-hostel-persons.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__hostel_collect_items_collect_items_component__ = __webpack_require__("../../../../../src/app/hostel/collect-items/collect-items.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__hostel_prepare_bill_prepare_bill_component__ = __webpack_require__("../../../../../src/app/hostel/prepare-bill/prepare-bill.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__hostel_view_details_view_details_component__ = __webpack_require__("../../../../../src/app/hostel/view-details/view-details.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__hostel_issue_items_issue_items_component__ = __webpack_require__("../../../../../src/app/hostel/issue-items/issue-items.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__hostel_health_record_health_record_component__ = __webpack_require__("../../../../../src/app/hostel/health-record/health-record.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__hostel_de_allocate_de_allocate_component__ = __webpack_require__("../../../../../src/app/hostel/de-allocate/de-allocate.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__hostel_report_report_component__ = __webpack_require__("../../../../../src/app/hostel/report/report.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__hostel_add_building_add_building_component__ = __webpack_require__("../../../../../src/app/hostel/add-building/add-building.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__hostel_add_room_add_room_component__ = __webpack_require__("../../../../../src/app/hostel/add-room/add-room.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__library_master_records_category_category_component__ = __webpack_require__("../../../../../src/app/library/master-records/category/category.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__library_master_records_subcategory_subcategory_component__ = __webpack_require__("../../../../../src/app/library/master-records/subcategory/subcategory.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__library_master_records_libraryfine_libraryfine_component__ = __webpack_require__("../../../../../src/app/library/master-records/libraryfine/libraryfine.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__library_master_records_publisher_publisher_component__ = __webpack_require__("../../../../../src/app/library/master-records/publisher/publisher.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__library_master_records_books_books_component__ = __webpack_require__("../../../../../src/app/library/master-records/books/books.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__library_transaction_studentreturnbooks_studentreturnbooks_component__ = __webpack_require__("../../../../../src/app/library/transaction/studentreturnbooks/studentreturnbooks.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__library_transaction_staffreturnbooks_staffreturnbooks_component__ = __webpack_require__("../../../../../src/app/library/transaction/staffreturnbooks/staffreturnbooks.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__library_viewreports_allbooks_allbooks_component__ = __webpack_require__("../../../../../src/app/library/viewreports/allbooks/allbooks.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__library_viewreports_booksavailability_booksavailability_component__ = __webpack_require__("../../../../../src/app/library/viewreports/booksavailability/booksavailability.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__library_viewreports_studentreport_studentreport_component__ = __webpack_require__("../../../../../src/app/library/viewreports/studentreport/studentreport.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__library_viewreports_staffreport_staffreport_component__ = __webpack_require__("../../../../../src/app/library/viewreports/staffreport/staffreport.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__library_viewreports_booksissuedstudents_booksissuedstudents_component__ = __webpack_require__("../../../../../src/app/library/viewreports/booksissuedstudents/booksissuedstudents.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__library_viewreports_booksissuedstaff_booksissuedstaff_component__ = __webpack_require__("../../../../../src/app/library/viewreports/booksissuedstaff/booksissuedstaff.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__library_viewreports_allfines_allfines_component__ = __webpack_require__("../../../../../src/app/library/viewreports/allfines/allfines.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_77__library_viewreports_bookanalysis_bookanalysis_component__ = __webpack_require__("../../../../../src/app/library/viewreports/bookanalysis/bookanalysis.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_78__library_opac_opac_component__ = __webpack_require__("../../../../../src/app/library/opac/opac.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRouter; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1849,6 +1851,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -2084,440 +2088,456 @@ var route = [
                 path: 'messageinbox',
                 component: __WEBPACK_IMPORTED_MODULE_22__Message_messageinbox_messageinbox_component__["a" /* MessageinboxComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'sentmessages',
                 component: __WEBPACK_IMPORTED_MODULE_23__Message_sentmessages_sentmessages_component__["a" /* SentmessagesComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'composemessage',
                 component: __WEBPACK_IMPORTED_MODULE_24__Message_composemessage_composemessage_component__["a" /* ComposemessageComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'sendsms',
                 component: __WEBPACK_IMPORTED_MODULE_25__SMS_sendsms_sendsms_component__["a" /* SendsmsComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'enquirylist',
                 component: __WEBPACK_IMPORTED_MODULE_26__SMS_enquirylist_enquirylist_component__["a" /* EnquirylistComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'smssetup',
                 component: __WEBPACK_IMPORTED_MODULE_27__SMS_smssetup_smssetup_component__["a" /* SmssetupComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'AdmissionForm',
                 component: __WEBPACK_IMPORTED_MODULE_28__admission_form_admission_form_component__["a" /* AdmissionFormComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'accountingGroup',
                 component: __WEBPACK_IMPORTED_MODULE_33__accounting_accounting_group_accounting_group_component__["a" /* AccountingGroupComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'manageVocher',
                 component: __WEBPACK_IMPORTED_MODULE_34__accounting_manage_vocher_manage_vocher_component__["a" /* ManageVocherComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'ledger',
                 component: __WEBPACK_IMPORTED_MODULE_29__accounting_ledger_ledger_component__["a" /* LedgerComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'voucher',
                 component: __WEBPACK_IMPORTED_MODULE_30__accounting_acc_transaction_voucher_voucher_component__["a" /* VoucherComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'balance',
                 component: __WEBPACK_IMPORTED_MODULE_31__accounting_acc_reports_balancesheet_balancesheet_component__["a" /* BalancesheetComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'ledgersummary',
                 component: __WEBPACK_IMPORTED_MODULE_32__accounting_acc_reports_ledgersummary_ledgersummary_component__["a" /* LedgersummaryComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'routeDetails',
+                component: __WEBPACK_IMPORTED_MODULE_35__transport_my_route_details_my_route_details_component__["a" /* MyRouteDetailsComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'allRouteBoard',
+                component: __WEBPACK_IMPORTED_MODULE_36__transport_all_route_board_all_route_board_component__["a" /* AllRouteBoardComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'route',
-                component: __WEBPACK_IMPORTED_MODULE_35__transport_route_route_component__["a" /* RouteComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_37__transport_route_route_component__["a" /* RouteComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'routeList',
-                component: __WEBPACK_IMPORTED_MODULE_36__transport_route_list_route_list_component__["a" /* RouteListComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_38__transport_route_list_route_list_component__["a" /* RouteListComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'vehicleList',
-                component: __WEBPACK_IMPORTED_MODULE_37__transport_vehicle_list_vehicle_list_component__["a" /* VehicleListComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_39__transport_vehicle_list_vehicle_list_component__["a" /* VehicleListComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'driversList',
-                component: __WEBPACK_IMPORTED_MODULE_38__transport_drivers_list_drivers_list_component__["a" /* DriversListComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_40__transport_drivers_list_drivers_list_component__["a" /* DriversListComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'transportBills',
-                component: __WEBPACK_IMPORTED_MODULE_39__transport_transport_bills_transport_bills_component__["a" /* TransportBillsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_41__transport_transport_bills_transport_bills_component__["a" /* TransportBillsComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'maintenanceDetails',
-                component: __WEBPACK_IMPORTED_MODULE_40__transport_maintenance_maintenance_component__["a" /* MaintenanceComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_42__transport_maintenance_maintenance_component__["a" /* MaintenanceComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'boardList',
-                component: __WEBPACK_IMPORTED_MODULE_41__transport_boardlist_boardlist_component__["a" /* BoardlistComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_43__transport_boardlist_boardlist_component__["a" /* BoardlistComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'AllotVehicletoBoard',
-                component: __WEBPACK_IMPORTED_MODULE_42__transport_vehicle_board_vehicle_board_component__["a" /* VehicleBoardComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_44__transport_vehicle_board_vehicle_board_component__["a" /* VehicleBoardComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'DriverVehicleComponent',
-                component: __WEBPACK_IMPORTED_MODULE_43__transport_driver_vehicle_driver_vehicle_component__["a" /* DriverVehicleComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_45__transport_driver_vehicle_driver_vehicle_component__["a" /* DriverVehicleComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'driverReport',
-                component: __WEBPACK_IMPORTED_MODULE_44__transport_transport_reports_driver_report_driver_report_component__["a" /* DriverReportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_46__transport_transport_reports_driver_report_driver_report_component__["a" /* DriverReportComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'vehicleReport',
-                component: __WEBPACK_IMPORTED_MODULE_45__transport_transport_reports_vehicle_report_vehicle_report_component__["a" /* VehicleReportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_47__transport_transport_reports_vehicle_report_vehicle_report_component__["a" /* VehicleReportComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'studentReport',
-                component: __WEBPACK_IMPORTED_MODULE_46__transport_transport_reports_student_report_student_report_component__["a" /* StudentReportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_48__transport_transport_reports_student_report_student_report_component__["a" /* StudentReportComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'staffReport',
-                component: __WEBPACK_IMPORTED_MODULE_47__transport_transport_reports_staff_report_staff_report_component__["a" /* StaffReportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_49__transport_transport_reports_staff_report_staff_report_component__["a" /* StaffReportComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'hostel',
-                component: __WEBPACK_IMPORTED_MODULE_48__hostel_hostel_component__["a" /* HostelComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_50__hostel_hostel_component__["a" /* HostelComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'addbuilding',
-                component: __WEBPACK_IMPORTED_MODULE_59__hostel_add_building_add_building_component__["a" /* AddBuildingComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_61__hostel_add_building_add_building_component__["a" /* AddBuildingComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'addroom',
-                component: __WEBPACK_IMPORTED_MODULE_60__hostel_add_room_add_room_component__["a" /* AddRoomComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_62__hostel_add_room_add_room_component__["a" /* AddRoomComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'roomavailability',
-                component: __WEBPACK_IMPORTED_MODULE_49__hostel_room_availability_room_availability_component__["a" /* RoomAvailabilityComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_51__hostel_room_availability_room_availability_component__["a" /* RoomAvailabilityComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'roomallocation',
-                component: __WEBPACK_IMPORTED_MODULE_50__hostel_room_allocation_room_allocation_component__["a" /* RoomAllocationComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_52__hostel_room_allocation_room_allocation_component__["a" /* RoomAllocationComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'viewhostelpersons',
-                component: __WEBPACK_IMPORTED_MODULE_51__hostel_view_hostel_persons_view_hostel_persons_component__["a" /* ViewHostelPersonsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_53__hostel_view_hostel_persons_view_hostel_persons_component__["a" /* ViewHostelPersonsComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'collectitems',
-                component: __WEBPACK_IMPORTED_MODULE_52__hostel_collect_items_collect_items_component__["a" /* CollectItemsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_54__hostel_collect_items_collect_items_component__["a" /* CollectItemsComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'preparebill',
-                component: __WEBPACK_IMPORTED_MODULE_53__hostel_prepare_bill_prepare_bill_component__["a" /* PrepareBillComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_55__hostel_prepare_bill_prepare_bill_component__["a" /* PrepareBillComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'viewdetails',
-                component: __WEBPACK_IMPORTED_MODULE_54__hostel_view_details_view_details_component__["a" /* ViewDetailsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_56__hostel_view_details_view_details_component__["a" /* ViewDetailsComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'issueitems',
-                component: __WEBPACK_IMPORTED_MODULE_55__hostel_issue_items_issue_items_component__["a" /* IssueItemsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_57__hostel_issue_items_issue_items_component__["a" /* IssueItemsComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'healthrecord',
-                component: __WEBPACK_IMPORTED_MODULE_56__hostel_health_record_health_record_component__["a" /* HealthRecordComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_58__hostel_health_record_health_record_component__["a" /* HealthRecordComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'deallocate',
-                component: __WEBPACK_IMPORTED_MODULE_57__hostel_de_allocate_de_allocate_component__["a" /* DeAllocateComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_59__hostel_de_allocate_de_allocate_component__["a" /* DeAllocateComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'report',
-                component: __WEBPACK_IMPORTED_MODULE_58__hostel_report_report_component__["a" /* ReportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_60__hostel_report_report_component__["a" /* ReportComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:false },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'category',
-                component: __WEBPACK_IMPORTED_MODULE_61__library_master_records_category_category_component__["a" /* CategoryComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_63__library_master_records_category_category_component__["a" /* CategoryComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'subcategory',
-                component: __WEBPACK_IMPORTED_MODULE_62__library_master_records_subcategory_subcategory_component__["a" /* SubcategoryComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_64__library_master_records_subcategory_subcategory_component__["a" /* SubcategoryComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'libraryfine',
-                component: __WEBPACK_IMPORTED_MODULE_63__library_master_records_libraryfine_libraryfine_component__["a" /* LibraryfineComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_65__library_master_records_libraryfine_libraryfine_component__["a" /* LibraryfineComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'publisher',
-                component: __WEBPACK_IMPORTED_MODULE_64__library_master_records_publisher_publisher_component__["a" /* PublisherComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_66__library_master_records_publisher_publisher_component__["a" /* PublisherComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'books',
-                component: __WEBPACK_IMPORTED_MODULE_65__library_master_records_books_books_component__["a" /* BooksComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_67__library_master_records_books_books_component__["a" /* BooksComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'studentreturn',
-                component: __WEBPACK_IMPORTED_MODULE_66__library_transaction_studentreturnbooks_studentreturnbooks_component__["a" /* StudentreturnbooksComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_68__library_transaction_studentreturnbooks_studentreturnbooks_component__["a" /* StudentreturnbooksComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'staffreturn',
-                component: __WEBPACK_IMPORTED_MODULE_67__library_transaction_staffreturnbooks_staffreturnbooks_component__["a" /* StaffreturnbooksComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_69__library_transaction_staffreturnbooks_staffreturnbooks_component__["a" /* StaffreturnbooksComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'allbooks',
-                component: __WEBPACK_IMPORTED_MODULE_68__library_viewreports_allbooks_allbooks_component__["a" /* AllbooksComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_70__library_viewreports_allbooks_allbooks_component__["a" /* AllbooksComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'booksavailability',
-                component: __WEBPACK_IMPORTED_MODULE_69__library_viewreports_booksavailability_booksavailability_component__["a" /* BooksavailabilityComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_71__library_viewreports_booksavailability_booksavailability_component__["a" /* BooksavailabilityComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'studentreport',
-                component: __WEBPACK_IMPORTED_MODULE_70__library_viewreports_studentreport_studentreport_component__["a" /* StudentreportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_72__library_viewreports_studentreport_studentreport_component__["a" /* StudentreportComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'staffreport',
-                component: __WEBPACK_IMPORTED_MODULE_71__library_viewreports_staffreport_staffreport_component__["a" /* StaffreportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_73__library_viewreports_staffreport_staffreport_component__["a" /* StaffreportComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'bookissuedstudent',
-                component: __WEBPACK_IMPORTED_MODULE_72__library_viewreports_booksissuedstudents_booksissuedstudents_component__["a" /* BooksissuedstudentsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_74__library_viewreports_booksissuedstudents_booksissuedstudents_component__["a" /* BooksissuedstudentsComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'bookissuedstaff',
-                component: __WEBPACK_IMPORTED_MODULE_73__library_viewreports_booksissuedstaff_booksissuedstaff_component__["a" /* BooksissuedstaffComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_75__library_viewreports_booksissuedstaff_booksissuedstaff_component__["a" /* BooksissuedstaffComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'allfines',
-                component: __WEBPACK_IMPORTED_MODULE_74__library_viewreports_allfines_allfines_component__["a" /* AllfinesComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_76__library_viewreports_allfines_allfines_component__["a" /* AllfinesComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: { isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'bookanalysis',
-                component: __WEBPACK_IMPORTED_MODULE_75__library_viewreports_bookanalysis_bookanalysis_component__["a" /* BookanalysisComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_77__library_viewreports_bookanalysis_bookanalysis_component__["a" /* BookanalysisComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {  isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'opac',
-                component: __WEBPACK_IMPORTED_MODULE_76__library_opac_opac_component__["a" /* OpacComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_78__library_opac_opac_component__["a" /* OpacComponent */],
                 pathMatch: 'full',
-                // canActivate: [RoleGuard],
-                // data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             }
         ]
@@ -15551,8 +15571,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var PostService = (function () {
     function PostService(http) {
         this.http = http;
-        this.baseUrlFile = 'http://localhost/ionerp/ionerpServer/uploads/';
-        this.baseUrl = 'http://localhost/ionerp/ionerpServer/index.php/';
+        this.baseUrlFile = 'http://10.91.5.13/ionerp/ionerpServer/uploads/';
+        this.baseUrl = 'http://10.91.5.13/ionerp/ionerpServer/index.php/';
     }
     //Http Request to get the data
     PostService.prototype.getData = function () {
@@ -17869,6 +17889,67 @@ ToastComponent = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/transport/all-route-board/all-route-board.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".panel-primary {\r\n    background: rgb(35, 47, 62);\r\n    border-radius: 20px 0px 20px 0px;\r\n    height: 30px;\r\n    width:100%;\r\n    border-color:rgb(35, 47, 62);\r\n}\r\n\r\n.middle {\r\n    color: white;\r\n    text-align: left;\r\n    padding-top:3px;\r\n    margin-left: -14px;\r\n}\r\n\r\nh4, .h4, h5, .h5, h6, .h6 {\r\n    margin-top: 3px;\r\n}\r\n.btn_cancel{\r\n    float:right;\r\n    margin-right:-10%;\r\n  }\r\n  .btn_update{\r\n    float:right;\r\n    margin-right:-10%;\r\n  }\r\n/*Potrait Mode*/\r\n@media screen and (max-width: 480px) {\r\n /*input field*/\r\n.category{\r\n  width:340px;\r\n  margin-left:-60px;    \r\n}\r\n /*Date field*/\r\n.dateview{\r\n margin-left: -60px;\r\n width: 340px !important;\r\n border-color: #ccc;\r\n}\r\n /*Label field*/\r\n.labelfield{\r\n  margin-left:-45px;\r\n}\r\n}\r\n/*Landscape Mode*/\r\n@media screen and (max-height: 360px) {\r\n/*input field*/\r\n.category{\r\nwidth:595px;\r\nmargin-left:-60px;    \r\n}\r\n/*Date field*/\r\n.dateview{\r\nmargin-left: -60px;\r\nwidth: 595px !important;\r\nborder-color: #ccc;\r\n}\r\n/*Label field*/\r\n.labelfield{\r\nmargin-left:-45px;\r\n}\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/transport/all-route-board/all-route-board.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<section class=\"content-header gap\" style=\"margin-top:-10px;\">\r\n  <div class=\"panel panel-primary\">\r\n    <h4 class=\"middle\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View All Route/Board</h4>\r\n  </div>\r\n \r\n</section>\r\n\r\n<div class=\"container-fluid\">\r\n<form class=\"form-horizontal\" style=\"border-top:0px;\">\r\n<div class=\"table table-responsive\" style=\"overflow-x:initial;\">\r\n  <table datatable [dtOptions]=\"dtOptions\" [dtTrigger]=\"dtTrigger\" class=\"table table-bordered table-striped table-hover\">\r\n    <thead style=\"background-color:#DDE1E6;\">\r\n      <tr>\r\n        <!-- <th class=\"text-center\">\r\n          <input type=\"checkbox\" (click)=\"deleteAllSelected($event)\" id=\"delete_check\">\r\n        </th> -->\r\n        <th class=\"text-center \">Sl&nbsp;No.</th>\r\n        <th class=\"text-center\">Board</th>\r\n        <th class=\"text-center\">Vehicle Number</th>\r\n        <th class=\"text-center\">Driver</th>\r\n        \r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr>\r\n        <!-- <tr *ngFor=\"let post of posts let i = index\"> -->\r\n        <!-- <pre>{{post | json}}</pre>       -->\r\n        <!-- <td>\r\n          <input type=\"checkbox\" id=\"{{post.a_id}}\" (click)=\"deleteSelected(post.a_id)\">\r\n        </td> -->\r\n        <td class=\"text-right\">\r\n          <p class=\"pull-right\">1</p>\r\n        </td>\r\n        <td class=\"text-center\">Test</td>\r\n        <td class=\"text-center\">KA 14 A 007</td>\r\n        <td class=\"text-center\">Vijay</td>\r\n        \r\n       </tr>\r\n    </tbody>\r\n  </table>\r\n</div>\r\n\r\n<br>\r\n<br>\r\n<br>\r\n</form>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/transport/all-route-board/all-route-board.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AllRouteBoardComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AllRouteBoardComponent = (function () {
+    function AllRouteBoardComponent() {
+    }
+    AllRouteBoardComponent.prototype.ngOnInit = function () {
+    };
+    return AllRouteBoardComponent;
+}());
+AllRouteBoardComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-all-route-board',
+        template: __webpack_require__("../../../../../src/app/transport/all-route-board/all-route-board.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/transport/all-route-board/all-route-board.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], AllRouteBoardComponent);
+
+//# sourceMappingURL=all-route-board.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/transport/boardlist/boardlist.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18149,6 +18230,67 @@ MaintenanceComponent = __decorate([
 ], MaintenanceComponent);
 
 //# sourceMappingURL=maintenance.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/transport/my-route-details/my-route-details.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".panel-primary {\r\n    background: rgb(35, 47, 62);\r\n    border-radius: 20px 0px 20px 0px;\r\n    height: 30px;\r\n    width:100%;\r\n    border-color:rgb(35, 47, 62);\r\n}\r\n\r\n.middle {\r\n    color: white;\r\n    text-align: left;\r\n    padding-top:3px;\r\n    margin-left: -14px;\r\n}\r\n\r\nh4, .h4, h5, .h5, h6, .h6 {\r\n    margin-top: 3px;\r\n}\r\n.btn_cancel{\r\n    float:right;\r\n    margin-right:-10%;\r\n  }\r\n  .btn_update{\r\n    float:right;\r\n    margin-right:-10%;\r\n  }\r\n/*Potrait Mode*/\r\n@media screen and (max-width: 480px) {\r\n /*input field*/\r\n.category{\r\n  width:340px;\r\n  margin-left:-60px;    \r\n}\r\n /*Date field*/\r\n.dateview{\r\n margin-left: -60px;\r\n width: 340px !important;\r\n border-color: #ccc;\r\n}\r\n /*Label field*/\r\n.labelfield{\r\n  margin-left:-45px;\r\n}\r\n}\r\n/*Landscape Mode*/\r\n@media screen and (max-height: 360px) {\r\n/*input field*/\r\n.category{\r\nwidth:595px;\r\nmargin-left:-60px;    \r\n}\r\n/*Date field*/\r\n.dateview{\r\nmargin-left: -60px;\r\nwidth: 595px !important;\r\nborder-color: #ccc;\r\n}\r\n/*Label field*/\r\n.labelfield{\r\nmargin-left:-45px;\r\n}\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/transport/my-route-details/my-route-details.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<section class=\"content-header gap\" style=\"margin-top:-10px;\">\r\n  <div class=\"panel panel-primary\">\r\n    <h4 class=\"middle\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Transport Details</h4>\r\n  </div>\r\n \r\n</section>\r\n\r\n<div class=\"container-fluid\">\r\n<form class=\"form-horizontal\" style=\"border-top:0px;\">\r\n<div class=\"table table-responsive\" style=\"overflow-x:initial;\">\r\n  <table datatable [dtOptions]=\"dtOptions\" [dtTrigger]=\"dtTrigger\" class=\"table table-bordered table-striped table-hover\">\r\n    <thead style=\"background-color:#DDE1E6;\">\r\n      <tr>\r\n        <!-- <th class=\"text-center\">\r\n          <input type=\"checkbox\" (click)=\"deleteAllSelected($event)\" id=\"delete_check\">\r\n        </th> -->\r\n        <th class=\"text-center \">Type of Vehicle</th>\r\n        <th class=\"text-center\">Registration No of Vehicle</th>\r\n        <th class=\"text-center\">Route</th>\r\n        <th class=\"text-center\">Driver Name</th>\r\n        <th class=\"text-center\">Monthly Charges</th>\r\n        \r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr>\r\n        <!-- <tr *ngFor=\"let post of posts let i = index\"> -->\r\n        <!-- <pre>{{post | json}}</pre>       -->\r\n        <!-- <td>\r\n          <input type=\"checkbox\" id=\"{{post.a_id}}\" (click)=\"deleteSelected(post.a_id)\">\r\n        </td> -->\r\n       \r\n        <td class=\"text-center\">Car</td>\r\n        <td class=\"text-center\">KA 14 A 007</td>\r\n        <td class=\"text-center\">Alkola-Police Chowki-Kashipura</td>\r\n        <td class=\"text-center\">Vijay</td>\r\n        <td class=\"text-center\">250</td>\r\n        \r\n       </tr>\r\n    </tbody>\r\n  </table>\r\n</div>\r\n\r\n<br>\r\n<br>\r\n<br>\r\n</form>\r\n\r\n\r\n<section class=\"content-header gap\" style=\"margin-top:-10px;\">\r\n  <div class=\"panel panel-primary\">\r\n    <h4 class=\"middle\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View My Transport Bills</h4>\r\n  </div>\r\n \r\n</section>\r\n<form class=\"form-horizontal\" style=\"border-top:0px;\">\r\n  <div class=\"table table-responsive\" style=\"overflow-x:initial;\">\r\n    <table datatable [dtOptions]=\"dtOptions\" [dtTrigger]=\"dtTrigger\" class=\"table table-bordered table-striped table-hover\">\r\n      <thead style=\"background-color:#DDE1E6;\">\r\n        <tr>\r\n          <!-- <th class=\"text-center\">\r\n            <input type=\"checkbox\" (click)=\"deleteAllSelected($event)\" id=\"delete_check\">\r\n          </th> -->\r\n          <th class=\"text-center \">Sl&nbsp;No.</th>\r\n          <th class=\"text-center\">Month</th>\r\n          <th class=\"text-center\">Bill Amount</th>\r\n          <th class=\"text-center\">Waived</th>\r\n          <th class=\"text-center\">Paid Amount</th>\r\n          <th class=\"text-center\">Action</th>\r\n          \r\n          </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr>\r\n          <!-- <tr *ngFor=\"let post of posts let i = index\"> -->\r\n          <!-- <pre>{{post | json}}</pre>       -->\r\n          <!-- <td>\r\n            <input type=\"checkbox\" id=\"{{post.a_id}}\" (click)=\"deleteSelected(post.a_id)\">\r\n          </td> -->\r\n          <td class=\"text-center\">1</td>\r\n          <td class=\"text-center\">August</td>\r\n          <td class=\"text-center\">3000</td>\r\n          <td class=\"text-center\">500</td>\r\n          <td class=\"text-center\">2500</td>\r\n          <td class=\"text-center\"><i class=\"glyphicon glyphicon-print\"></i></td>\r\n          \r\n         </tr>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n  \r\n  <br>\r\n  <br>\r\n  <br>\r\n  </form>\r\n\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/transport/my-route-details/my-route-details.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyRouteDetailsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MyRouteDetailsComponent = (function () {
+    function MyRouteDetailsComponent() {
+    }
+    MyRouteDetailsComponent.prototype.ngOnInit = function () {
+    };
+    return MyRouteDetailsComponent;
+}());
+MyRouteDetailsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-my-route-details',
+        template: __webpack_require__("../../../../../src/app/transport/my-route-details/my-route-details.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/transport/my-route-details/my-route-details.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], MyRouteDetailsComponent);
+
+//# sourceMappingURL=my-route-details.component.js.map
 
 /***/ }),
 
@@ -18711,6 +18853,8 @@ VehicleReportComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__vehicle_board_vehicle_board_component__ = __webpack_require__("../../../../../src/app/transport/vehicle-board/vehicle-board.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__driver_vehicle_driver_vehicle_component__ = __webpack_require__("../../../../../src/app/transport/driver-vehicle/driver-vehicle.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__transport_reports_transport_reports_module__ = __webpack_require__("../../../../../src/app/transport/transport-reports/transport-reports.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__my_route_details_my_route_details_component__ = __webpack_require__("../../../../../src/app/transport/my-route-details/my-route-details.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__all_route_board_all_route_board_component__ = __webpack_require__("../../../../../src/app/transport/all-route-board/all-route-board.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransportModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -18718,6 +18862,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -18758,6 +18904,8 @@ TransportModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_12__boardlist_boardlist_component__["a" /* BoardlistComponent */],
             __WEBPACK_IMPORTED_MODULE_13__vehicle_board_vehicle_board_component__["a" /* VehicleBoardComponent */],
             __WEBPACK_IMPORTED_MODULE_14__driver_vehicle_driver_vehicle_component__["a" /* DriverVehicleComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__my_route_details_my_route_details_component__["a" /* MyRouteDetailsComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__all_route_board_all_route_board_component__["a" /* AllRouteBoardComponent */],
         ]
     })
 ], TransportModule);
