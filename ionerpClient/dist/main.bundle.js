@@ -15571,8 +15571,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var PostService = (function () {
     function PostService(http) {
         this.http = http;
-        this.baseUrlFile = 'http://10.91.5.13/ionerp/ionerpServer/uploads/';
-        this.baseUrl = 'http://10.91.5.13/ionerp/ionerpServer/index.php/';
+        this.baseUrlFile = 'https://10.91.5.13/ionerp/ionerpServer/uploads/';
+        this.baseUrl = 'https://10.91.5.13/ionerp/ionerpServer/index.php/';
     }
     //Http Request to get the data
     PostService.prototype.getData = function () {
