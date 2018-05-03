@@ -4,9 +4,9 @@ import { TakeAssignmentComponent } from '../../student/take-assignment/take-assi
 import { TakeActivityComponent } from './../../student/take-activity/take-activity.component';
 import { ComposemessageComponent } from './../../Message/composemessage/composemessage.component';
 declare var tinymce: any;
-tinymce.PluginManager.load('jbimages', '/assets/tinymce/plugins/jbimages/plugin.js');
-tinymce.PluginManager.load('image', '/assets/tinymce/plugins/image/plugin.js');
-tinymce.PluginManager.load('code', '/assets/tinymce/plugins/code/plugin.js');
+tinymce.PluginManager.load('jbimages', '/ionerp/ionerpClient/dist/assets/tinymce/plugins/jbimages/plugin.js');
+tinymce.PluginManager.load('image', '/ionerp/ionerpClient/dist/assets/tinymce/plugins/image/plugin.js');
+tinymce.PluginManager.load('code', '/ionerp/ionerpClient/dist/assets/tinymce/plugins/code/plugin.js');
 
 interface HTMLInputEvent extends Event {
   target: HTMLInputElement & EventTarget;
@@ -33,7 +33,7 @@ export class TinymceComponent implements AfterViewInit, OnDestroy {
     tinymce.init({
       selector: '#' + this.elementId,
       plugins: ['link', 'paste', 'table', 'image', 'code'],
-      skin_url: '/assets/skins/lightgray',
+      skin_url: '/ionerp/ionerpClient/dist/assets/skins/lightgray',
       toolbar: "insertfile undo redo |  bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image |code",
       branding: false,
       file_picker_types: 'image',
