@@ -20,11 +20,11 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class login_model extends CI_Model {
+class Login_model extends CI_Model {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('configuaration/users/users_model');
+        $this->load->model('configuaration/users/Users_model');
         $this->load->library('Session');
         // $this->load->library('ionauth/ion_auth');
         // $this->load->library('form_validation');
