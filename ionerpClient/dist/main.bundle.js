@@ -1783,67 +1783,68 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__instructor_lesson_schedule_lesson_schedule_component__ = __webpack_require__("../../../../../src/app/instructor/lesson-schedule/lesson-schedule.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__faculty_manage_rubrics_manage_rubrics_component__ = __webpack_require__("../../../../../src/app/faculty/manage-rubrics/manage-rubrics.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__studentlogin_studentlogin_component__ = __webpack_require__("../../../../../src/app/studentlogin/studentlogin.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__guards_role_guard__ = __webpack_require__("../../../../../src/app/guards/role.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__faculty_review_activity_review_activity_component__ = __webpack_require__("../../../../../src/app/faculty/review-activity/review-activity.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__faculty_activity_activity_component__ = __webpack_require__("../../../../../src/app/faculty/activity/activity.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__student_take_activity_take_activity_component__ = __webpack_require__("../../../../../src/app/student/take-activity/take-activity.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__Message_messageinbox_messageinbox_component__ = __webpack_require__("../../../../../src/app/Message/messageinbox/messageinbox.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__Message_sentmessages_sentmessages_component__ = __webpack_require__("../../../../../src/app/Message/sentmessages/sentmessages.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__Message_composemessage_composemessage_component__ = __webpack_require__("../../../../../src/app/Message/composemessage/composemessage.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__SMS_sendsms_sendsms_component__ = __webpack_require__("../../../../../src/app/SMS/sendsms/sendsms.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__SMS_enquirylist_enquirylist_component__ = __webpack_require__("../../../../../src/app/SMS/enquirylist/enquirylist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__SMS_smssetup_smssetup_component__ = __webpack_require__("../../../../../src/app/SMS/smssetup/smssetup.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__admission_form_admission_form_component__ = __webpack_require__("../../../../../src/app/admission-form/admission-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__accounting_ledger_ledger_component__ = __webpack_require__("../../../../../src/app/accounting/ledger/ledger.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__accounting_acc_transaction_voucher_voucher_component__ = __webpack_require__("../../../../../src/app/accounting/acc-transaction/voucher/voucher.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__accounting_acc_reports_balancesheet_balancesheet_component__ = __webpack_require__("../../../../../src/app/accounting/acc-reports/balancesheet/balancesheet.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__accounting_acc_reports_ledgersummary_ledgersummary_component__ = __webpack_require__("../../../../../src/app/accounting/acc-reports/ledgersummary/ledgersummary.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__accounting_accounting_group_accounting_group_component__ = __webpack_require__("../../../../../src/app/accounting/accounting-group/accounting-group.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__accounting_manage_vocher_manage_vocher_component__ = __webpack_require__("../../../../../src/app/accounting/manage-vocher/manage-vocher.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__transport_my_route_details_my_route_details_component__ = __webpack_require__("../../../../../src/app/transport/my-route-details/my-route-details.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__transport_all_route_board_all_route_board_component__ = __webpack_require__("../../../../../src/app/transport/all-route-board/all-route-board.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__transport_route_route_component__ = __webpack_require__("../../../../../src/app/transport/route/route.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__transport_route_list_route_list_component__ = __webpack_require__("../../../../../src/app/transport/route-list/route-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__transport_vehicle_list_vehicle_list_component__ = __webpack_require__("../../../../../src/app/transport/vehicle-list/vehicle-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__transport_drivers_list_drivers_list_component__ = __webpack_require__("../../../../../src/app/transport/drivers-list/drivers-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__transport_transport_bills_transport_bills_component__ = __webpack_require__("../../../../../src/app/transport/transport-bills/transport-bills.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__transport_maintenance_maintenance_component__ = __webpack_require__("../../../../../src/app/transport/maintenance/maintenance.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__transport_boardlist_boardlist_component__ = __webpack_require__("../../../../../src/app/transport/boardlist/boardlist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__transport_vehicle_board_vehicle_board_component__ = __webpack_require__("../../../../../src/app/transport/vehicle-board/vehicle-board.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__transport_driver_vehicle_driver_vehicle_component__ = __webpack_require__("../../../../../src/app/transport/driver-vehicle/driver-vehicle.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__transport_transport_reports_driver_report_driver_report_component__ = __webpack_require__("../../../../../src/app/transport/transport-reports/driver-report/driver-report.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__transport_transport_reports_vehicle_report_vehicle_report_component__ = __webpack_require__("../../../../../src/app/transport/transport-reports/vehicle-report/vehicle-report.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__transport_transport_reports_student_report_student_report_component__ = __webpack_require__("../../../../../src/app/transport/transport-reports/student-report/student-report.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__transport_transport_reports_staff_report_staff_report_component__ = __webpack_require__("../../../../../src/app/transport/transport-reports/staff-report/staff-report.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__hostel_hostel_component__ = __webpack_require__("../../../../../src/app/hostel/hostel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__hostel_room_availability_room_availability_component__ = __webpack_require__("../../../../../src/app/hostel/room-availability/room-availability.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__hostel_room_allocation_room_allocation_component__ = __webpack_require__("../../../../../src/app/hostel/room-allocation/room-allocation.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__hostel_view_hostel_persons_view_hostel_persons_component__ = __webpack_require__("../../../../../src/app/hostel/view-hostel-persons/view-hostel-persons.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__hostel_collect_items_collect_items_component__ = __webpack_require__("../../../../../src/app/hostel/collect-items/collect-items.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__hostel_prepare_bill_prepare_bill_component__ = __webpack_require__("../../../../../src/app/hostel/prepare-bill/prepare-bill.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__hostel_view_details_view_details_component__ = __webpack_require__("../../../../../src/app/hostel/view-details/view-details.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__hostel_issue_items_issue_items_component__ = __webpack_require__("../../../../../src/app/hostel/issue-items/issue-items.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__hostel_health_record_health_record_component__ = __webpack_require__("../../../../../src/app/hostel/health-record/health-record.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__hostel_de_allocate_de_allocate_component__ = __webpack_require__("../../../../../src/app/hostel/de-allocate/de-allocate.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__hostel_report_report_component__ = __webpack_require__("../../../../../src/app/hostel/report/report.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__hostel_add_building_add_building_component__ = __webpack_require__("../../../../../src/app/hostel/add-building/add-building.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__hostel_add_room_add_room_component__ = __webpack_require__("../../../../../src/app/hostel/add-room/add-room.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__library_master_records_category_category_component__ = __webpack_require__("../../../../../src/app/library/master-records/category/category.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__library_master_records_subcategory_subcategory_component__ = __webpack_require__("../../../../../src/app/library/master-records/subcategory/subcategory.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__library_master_records_libraryfine_libraryfine_component__ = __webpack_require__("../../../../../src/app/library/master-records/libraryfine/libraryfine.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__library_master_records_publisher_publisher_component__ = __webpack_require__("../../../../../src/app/library/master-records/publisher/publisher.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__library_master_records_books_books_component__ = __webpack_require__("../../../../../src/app/library/master-records/books/books.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__library_transaction_studentreturnbooks_studentreturnbooks_component__ = __webpack_require__("../../../../../src/app/library/transaction/studentreturnbooks/studentreturnbooks.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__library_transaction_staffreturnbooks_staffreturnbooks_component__ = __webpack_require__("../../../../../src/app/library/transaction/staffreturnbooks/staffreturnbooks.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__library_viewreports_allbooks_allbooks_component__ = __webpack_require__("../../../../../src/app/library/viewreports/allbooks/allbooks.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__library_viewreports_booksavailability_booksavailability_component__ = __webpack_require__("../../../../../src/app/library/viewreports/booksavailability/booksavailability.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__library_viewreports_studentreport_studentreport_component__ = __webpack_require__("../../../../../src/app/library/viewreports/studentreport/studentreport.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__library_viewreports_staffreport_staffreport_component__ = __webpack_require__("../../../../../src/app/library/viewreports/staffreport/staffreport.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__library_viewreports_booksissuedstudents_booksissuedstudents_component__ = __webpack_require__("../../../../../src/app/library/viewreports/booksissuedstudents/booksissuedstudents.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__library_viewreports_booksissuedstaff_booksissuedstaff_component__ = __webpack_require__("../../../../../src/app/library/viewreports/booksissuedstaff/booksissuedstaff.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__library_viewreports_allfines_allfines_component__ = __webpack_require__("../../../../../src/app/library/viewreports/allfines/allfines.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_77__library_viewreports_bookanalysis_bookanalysis_component__ = __webpack_require__("../../../../../src/app/library/viewreports/bookanalysis/bookanalysis.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_78__library_opac_opac_component__ = __webpack_require__("../../../../../src/app/library/opac/opac.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__guards_role_guard__ = __webpack_require__("../../../../../src/app/guards/role.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__faculty_review_activity_review_activity_component__ = __webpack_require__("../../../../../src/app/faculty/review-activity/review-activity.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__faculty_activity_activity_component__ = __webpack_require__("../../../../../src/app/faculty/activity/activity.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__student_take_activity_take_activity_component__ = __webpack_require__("../../../../../src/app/student/take-activity/take-activity.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__Message_messageinbox_messageinbox_component__ = __webpack_require__("../../../../../src/app/Message/messageinbox/messageinbox.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__Message_sentmessages_sentmessages_component__ = __webpack_require__("../../../../../src/app/Message/sentmessages/sentmessages.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__Message_composemessage_composemessage_component__ = __webpack_require__("../../../../../src/app/Message/composemessage/composemessage.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__SMS_sendsms_sendsms_component__ = __webpack_require__("../../../../../src/app/SMS/sendsms/sendsms.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__SMS_enquirylist_enquirylist_component__ = __webpack_require__("../../../../../src/app/SMS/enquirylist/enquirylist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__SMS_smssetup_smssetup_component__ = __webpack_require__("../../../../../src/app/SMS/smssetup/smssetup.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__admission_form_admission_form_component__ = __webpack_require__("../../../../../src/app/admission-form/admission-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__accounting_ledger_ledger_component__ = __webpack_require__("../../../../../src/app/accounting/ledger/ledger.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__accounting_acc_transaction_voucher_voucher_component__ = __webpack_require__("../../../../../src/app/accounting/acc-transaction/voucher/voucher.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__accounting_acc_reports_balancesheet_balancesheet_component__ = __webpack_require__("../../../../../src/app/accounting/acc-reports/balancesheet/balancesheet.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__accounting_acc_reports_ledgersummary_ledgersummary_component__ = __webpack_require__("../../../../../src/app/accounting/acc-reports/ledgersummary/ledgersummary.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__accounting_accounting_group_accounting_group_component__ = __webpack_require__("../../../../../src/app/accounting/accounting-group/accounting-group.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__accounting_manage_vocher_manage_vocher_component__ = __webpack_require__("../../../../../src/app/accounting/manage-vocher/manage-vocher.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__transport_my_route_details_my_route_details_component__ = __webpack_require__("../../../../../src/app/transport/my-route-details/my-route-details.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__transport_all_route_board_all_route_board_component__ = __webpack_require__("../../../../../src/app/transport/all-route-board/all-route-board.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__transport_route_route_component__ = __webpack_require__("../../../../../src/app/transport/route/route.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__transport_route_list_route_list_component__ = __webpack_require__("../../../../../src/app/transport/route-list/route-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__transport_vehicle_list_vehicle_list_component__ = __webpack_require__("../../../../../src/app/transport/vehicle-list/vehicle-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__transport_drivers_list_drivers_list_component__ = __webpack_require__("../../../../../src/app/transport/drivers-list/drivers-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__transport_transport_bills_transport_bills_component__ = __webpack_require__("../../../../../src/app/transport/transport-bills/transport-bills.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__transport_maintenance_maintenance_component__ = __webpack_require__("../../../../../src/app/transport/maintenance/maintenance.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__transport_boardlist_boardlist_component__ = __webpack_require__("../../../../../src/app/transport/boardlist/boardlist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__transport_vehicle_board_vehicle_board_component__ = __webpack_require__("../../../../../src/app/transport/vehicle-board/vehicle-board.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__transport_driver_vehicle_driver_vehicle_component__ = __webpack_require__("../../../../../src/app/transport/driver-vehicle/driver-vehicle.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__transport_transport_reports_driver_report_driver_report_component__ = __webpack_require__("../../../../../src/app/transport/transport-reports/driver-report/driver-report.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__transport_transport_reports_vehicle_report_vehicle_report_component__ = __webpack_require__("../../../../../src/app/transport/transport-reports/vehicle-report/vehicle-report.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__transport_transport_reports_student_report_student_report_component__ = __webpack_require__("../../../../../src/app/transport/transport-reports/student-report/student-report.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__transport_transport_reports_staff_report_staff_report_component__ = __webpack_require__("../../../../../src/app/transport/transport-reports/staff-report/staff-report.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__hostel_hostel_component__ = __webpack_require__("../../../../../src/app/hostel/hostel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__hostel_room_availability_room_availability_component__ = __webpack_require__("../../../../../src/app/hostel/room-availability/room-availability.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__hostel_room_allocation_room_allocation_component__ = __webpack_require__("../../../../../src/app/hostel/room-allocation/room-allocation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__hostel_view_hostel_persons_view_hostel_persons_component__ = __webpack_require__("../../../../../src/app/hostel/view-hostel-persons/view-hostel-persons.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__hostel_collect_items_collect_items_component__ = __webpack_require__("../../../../../src/app/hostel/collect-items/collect-items.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__hostel_prepare_bill_prepare_bill_component__ = __webpack_require__("../../../../../src/app/hostel/prepare-bill/prepare-bill.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__hostel_view_details_view_details_component__ = __webpack_require__("../../../../../src/app/hostel/view-details/view-details.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__hostel_issue_items_issue_items_component__ = __webpack_require__("../../../../../src/app/hostel/issue-items/issue-items.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__hostel_health_record_health_record_component__ = __webpack_require__("../../../../../src/app/hostel/health-record/health-record.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__hostel_de_allocate_de_allocate_component__ = __webpack_require__("../../../../../src/app/hostel/de-allocate/de-allocate.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__hostel_report_report_component__ = __webpack_require__("../../../../../src/app/hostel/report/report.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__hostel_add_building_add_building_component__ = __webpack_require__("../../../../../src/app/hostel/add-building/add-building.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__hostel_add_room_add_room_component__ = __webpack_require__("../../../../../src/app/hostel/add-room/add-room.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__library_master_records_category_category_component__ = __webpack_require__("../../../../../src/app/library/master-records/category/category.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__library_master_records_subcategory_subcategory_component__ = __webpack_require__("../../../../../src/app/library/master-records/subcategory/subcategory.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__library_master_records_libraryfine_libraryfine_component__ = __webpack_require__("../../../../../src/app/library/master-records/libraryfine/libraryfine.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__library_master_records_publisher_publisher_component__ = __webpack_require__("../../../../../src/app/library/master-records/publisher/publisher.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__library_master_records_books_books_component__ = __webpack_require__("../../../../../src/app/library/master-records/books/books.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__library_transaction_studentreturnbooks_studentreturnbooks_component__ = __webpack_require__("../../../../../src/app/library/transaction/studentreturnbooks/studentreturnbooks.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__library_transaction_staffreturnbooks_staffreturnbooks_component__ = __webpack_require__("../../../../../src/app/library/transaction/staffreturnbooks/staffreturnbooks.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__library_viewreports_allbooks_allbooks_component__ = __webpack_require__("../../../../../src/app/library/viewreports/allbooks/allbooks.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__library_viewreports_booksavailability_booksavailability_component__ = __webpack_require__("../../../../../src/app/library/viewreports/booksavailability/booksavailability.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__library_viewreports_studentreport_studentreport_component__ = __webpack_require__("../../../../../src/app/library/viewreports/studentreport/studentreport.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__library_viewreports_staffreport_staffreport_component__ = __webpack_require__("../../../../../src/app/library/viewreports/staffreport/staffreport.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__library_viewreports_booksissuedstudents_booksissuedstudents_component__ = __webpack_require__("../../../../../src/app/library/viewreports/booksissuedstudents/booksissuedstudents.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_76__library_viewreports_booksissuedstaff_booksissuedstaff_component__ = __webpack_require__("../../../../../src/app/library/viewreports/booksissuedstaff/booksissuedstaff.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_77__library_viewreports_allfines_allfines_component__ = __webpack_require__("../../../../../src/app/library/viewreports/allfines/allfines.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_78__library_viewreports_bookanalysis_bookanalysis_component__ = __webpack_require__("../../../../../src/app/library/viewreports/bookanalysis/bookanalysis.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_79__library_opac_opac_component__ = __webpack_require__("../../../../../src/app/library/opac/opac.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRouter; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1851,6 +1852,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1949,7 +1951,7 @@ var route = [
     {
         path: 'content',
         component: __WEBPACK_IMPORTED_MODULE_1__content_wrapper_content_wrapper_component__["a" /* ContentWrapperComponent */],
-        // canActivate: [AuthGuard],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */]],
         children: [
             {
                 path: '',
@@ -1961,7 +1963,7 @@ var route = [
                 path: 'department',
                 component: __WEBPACK_IMPORTED_MODULE_3__department_department_component__["a" /* DepartmentComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 // data: {title: 'DEPARTMENT LIST'},
                 outlet: 'appCommon',
@@ -1970,7 +1972,7 @@ var route = [
                 path: 'assignment_head/manageassignment',
                 component: __WEBPACK_IMPORTED_MODULE_8__instructor_manage_assignment_manage_assignment_component__["a" /* ManageAssignmentComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 //data: { title: 'Add/Edit Assignment' },
                 outlet: 'appCommon',
@@ -1979,7 +1981,7 @@ var route = [
                 path: 'assignment_head/assignmentreview',
                 component: __WEBPACK_IMPORTED_MODULE_11__instructor_assignment_review_assignment_review_component__["a" /* AssignmentReviewComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 //data: { title: 'Review Assignment List' },
                 outlet: 'appCommon',
@@ -1988,7 +1990,7 @@ var route = [
                 path: 'assignment_head/assignmentreview/viewassignment',
                 component: __WEBPACK_IMPORTED_MODULE_12__instructor_view_answers_view_answers_component__["a" /* ViewAnswersComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 //data: { title: 'Review answers' },
                 outlet: 'appCommon',
@@ -1997,7 +1999,7 @@ var route = [
                 path: 'studenttakeassignment/takeassignment',
                 component: __WEBPACK_IMPORTED_MODULE_14__student_take_assignment_take_assignment_component__["a" /* TakeAssignmentComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: false, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
                 // data: { title: 'Take Assignment' },
                 outlet: 'appCommon',
@@ -2006,7 +2008,7 @@ var route = [
                 path: 'managecourse',
                 component: __WEBPACK_IMPORTED_MODULE_7__managecourse_managecourse_component__["a" /* ManagecourseComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { title: 'Manage Course Instructor', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
@@ -2014,7 +2016,7 @@ var route = [
                 path: 'assignment_head',
                 component: __WEBPACK_IMPORTED_MODULE_0__instructor_assignment_head_assignment_head_component__["a" /* AssignmentHeadComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { title: 'Assignment List', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
@@ -2022,7 +2024,7 @@ var route = [
                 path: 'studenttakeassignment',
                 component: __WEBPACK_IMPORTED_MODULE_13__student_studenttake_assignment_studenttake_assignment_component__["a" /* StudenttakeAssignmentComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { title: 'My Assignment List', isAdmin: false, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
                 outlet: 'appCommon',
             },
@@ -2030,7 +2032,7 @@ var route = [
                 path: 'sharecoursematerial',
                 component: __WEBPACK_IMPORTED_MODULE_9__instructor_sharecourse_material_sharecourse_material_component__["a" /* SharecourseMaterialComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { title: 'Share Course Materials List', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
@@ -2038,7 +2040,7 @@ var route = [
                 path: 'lesson-schedule',
                 component: __WEBPACK_IMPORTED_MODULE_15__instructor_lesson_schedule_lesson_schedule_component__["a" /* LessonScheduleComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
@@ -2046,7 +2048,7 @@ var route = [
                 path: 'receivecoursematerial',
                 component: __WEBPACK_IMPORTED_MODULE_10__student_receivecourse_material_receivecourse_material_component__["a" /* ReceivecourseMaterialComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { title: 'Shared Course Materials', isAdmin: false, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
                 outlet: 'appCommon',
             },
@@ -2054,489 +2056,489 @@ var route = [
                 path: 'activity/managerubricsdefinition',
                 component: __WEBPACK_IMPORTED_MODULE_16__faculty_manage_rubrics_manage_rubrics_component__["a" /* ManageRubricsComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 // data: { title: 'Manage Rubrics' },
                 outlet: 'appCommon',
             },
             {
                 path: 'activity/reviewactivity',
-                component: __WEBPACK_IMPORTED_MODULE_19__faculty_review_activity_review_activity_component__["a" /* ReviewActivityComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_20__faculty_review_activity_review_activity_component__["a" /* ReviewActivityComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 // data: { title: 'Manage Rubrics' },
                 outlet: 'appCommon',
             },
             {
                 path: 'activity',
-                component: __WEBPACK_IMPORTED_MODULE_20__faculty_activity_activity_component__["a" /* ActivityComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_21__faculty_activity_activity_component__["a" /* ActivityComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { title: 'Activity List', isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'takeactivity',
-                component: __WEBPACK_IMPORTED_MODULE_21__student_take_activity_take_activity_component__["a" /* TakeActivityComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_22__student_take_activity_take_activity_component__["a" /* TakeActivityComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { title: 'My Activity List', isAdmin: false, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'messageinbox',
-                component: __WEBPACK_IMPORTED_MODULE_22__Message_messageinbox_messageinbox_component__["a" /* MessageinboxComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_23__Message_messageinbox_messageinbox_component__["a" /* MessageinboxComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'sentmessages',
-                component: __WEBPACK_IMPORTED_MODULE_23__Message_sentmessages_sentmessages_component__["a" /* SentmessagesComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_24__Message_sentmessages_sentmessages_component__["a" /* SentmessagesComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'composemessage',
-                component: __WEBPACK_IMPORTED_MODULE_24__Message_composemessage_composemessage_component__["a" /* ComposemessageComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_25__Message_composemessage_composemessage_component__["a" /* ComposemessageComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'sendsms',
-                component: __WEBPACK_IMPORTED_MODULE_25__SMS_sendsms_sendsms_component__["a" /* SendsmsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_26__SMS_sendsms_sendsms_component__["a" /* SendsmsComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'enquirylist',
-                component: __WEBPACK_IMPORTED_MODULE_26__SMS_enquirylist_enquirylist_component__["a" /* EnquirylistComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_27__SMS_enquirylist_enquirylist_component__["a" /* EnquirylistComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'smssetup',
-                component: __WEBPACK_IMPORTED_MODULE_27__SMS_smssetup_smssetup_component__["a" /* SmssetupComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_28__SMS_smssetup_smssetup_component__["a" /* SmssetupComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'AdmissionForm',
-                component: __WEBPACK_IMPORTED_MODULE_28__admission_form_admission_form_component__["a" /* AdmissionFormComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_29__admission_form_admission_form_component__["a" /* AdmissionFormComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'accountingGroup',
-                component: __WEBPACK_IMPORTED_MODULE_33__accounting_accounting_group_accounting_group_component__["a" /* AccountingGroupComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_34__accounting_accounting_group_accounting_group_component__["a" /* AccountingGroupComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'manageVocher',
-                component: __WEBPACK_IMPORTED_MODULE_34__accounting_manage_vocher_manage_vocher_component__["a" /* ManageVocherComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_35__accounting_manage_vocher_manage_vocher_component__["a" /* ManageVocherComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'ledger',
-                component: __WEBPACK_IMPORTED_MODULE_29__accounting_ledger_ledger_component__["a" /* LedgerComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_30__accounting_ledger_ledger_component__["a" /* LedgerComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'voucher',
-                component: __WEBPACK_IMPORTED_MODULE_30__accounting_acc_transaction_voucher_voucher_component__["a" /* VoucherComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_31__accounting_acc_transaction_voucher_voucher_component__["a" /* VoucherComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'balance',
-                component: __WEBPACK_IMPORTED_MODULE_31__accounting_acc_reports_balancesheet_balancesheet_component__["a" /* BalancesheetComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_32__accounting_acc_reports_balancesheet_balancesheet_component__["a" /* BalancesheetComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'ledgersummary',
-                component: __WEBPACK_IMPORTED_MODULE_32__accounting_acc_reports_ledgersummary_ledgersummary_component__["a" /* LedgersummaryComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_33__accounting_acc_reports_ledgersummary_ledgersummary_component__["a" /* LedgersummaryComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'routeDetails',
-                component: __WEBPACK_IMPORTED_MODULE_35__transport_my_route_details_my_route_details_component__["a" /* MyRouteDetailsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_36__transport_my_route_details_my_route_details_component__["a" /* MyRouteDetailsComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'allRouteBoard',
-                component: __WEBPACK_IMPORTED_MODULE_36__transport_all_route_board_all_route_board_component__["a" /* AllRouteBoardComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_37__transport_all_route_board_all_route_board_component__["a" /* AllRouteBoardComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: false, isProgramOwner: false, isCourseOwner: false, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'route',
-                component: __WEBPACK_IMPORTED_MODULE_37__transport_route_route_component__["a" /* RouteComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_38__transport_route_route_component__["a" /* RouteComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'routeList',
-                component: __WEBPACK_IMPORTED_MODULE_38__transport_route_list_route_list_component__["a" /* RouteListComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_39__transport_route_list_route_list_component__["a" /* RouteListComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'vehicleList',
-                component: __WEBPACK_IMPORTED_MODULE_39__transport_vehicle_list_vehicle_list_component__["a" /* VehicleListComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_40__transport_vehicle_list_vehicle_list_component__["a" /* VehicleListComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'driversList',
-                component: __WEBPACK_IMPORTED_MODULE_40__transport_drivers_list_drivers_list_component__["a" /* DriversListComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_41__transport_drivers_list_drivers_list_component__["a" /* DriversListComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'transportBills',
-                component: __WEBPACK_IMPORTED_MODULE_41__transport_transport_bills_transport_bills_component__["a" /* TransportBillsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_42__transport_transport_bills_transport_bills_component__["a" /* TransportBillsComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'maintenanceDetails',
-                component: __WEBPACK_IMPORTED_MODULE_42__transport_maintenance_maintenance_component__["a" /* MaintenanceComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_43__transport_maintenance_maintenance_component__["a" /* MaintenanceComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'boardList',
-                component: __WEBPACK_IMPORTED_MODULE_43__transport_boardlist_boardlist_component__["a" /* BoardlistComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_44__transport_boardlist_boardlist_component__["a" /* BoardlistComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'AllotVehicletoBoard',
-                component: __WEBPACK_IMPORTED_MODULE_44__transport_vehicle_board_vehicle_board_component__["a" /* VehicleBoardComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_45__transport_vehicle_board_vehicle_board_component__["a" /* VehicleBoardComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'DriverVehicleComponent',
-                component: __WEBPACK_IMPORTED_MODULE_45__transport_driver_vehicle_driver_vehicle_component__["a" /* DriverVehicleComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_46__transport_driver_vehicle_driver_vehicle_component__["a" /* DriverVehicleComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'driverReport',
-                component: __WEBPACK_IMPORTED_MODULE_46__transport_transport_reports_driver_report_driver_report_component__["a" /* DriverReportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_47__transport_transport_reports_driver_report_driver_report_component__["a" /* DriverReportComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'vehicleReport',
-                component: __WEBPACK_IMPORTED_MODULE_47__transport_transport_reports_vehicle_report_vehicle_report_component__["a" /* VehicleReportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_48__transport_transport_reports_vehicle_report_vehicle_report_component__["a" /* VehicleReportComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'studentReport',
-                component: __WEBPACK_IMPORTED_MODULE_48__transport_transport_reports_student_report_student_report_component__["a" /* StudentReportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_49__transport_transport_reports_student_report_student_report_component__["a" /* StudentReportComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'staffReport',
-                component: __WEBPACK_IMPORTED_MODULE_49__transport_transport_reports_staff_report_staff_report_component__["a" /* StaffReportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_50__transport_transport_reports_staff_report_staff_report_component__["a" /* StaffReportComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'hostel',
-                component: __WEBPACK_IMPORTED_MODULE_50__hostel_hostel_component__["a" /* HostelComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_51__hostel_hostel_component__["a" /* HostelComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'addbuilding',
-                component: __WEBPACK_IMPORTED_MODULE_61__hostel_add_building_add_building_component__["a" /* AddBuildingComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_62__hostel_add_building_add_building_component__["a" /* AddBuildingComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'addroom',
-                component: __WEBPACK_IMPORTED_MODULE_62__hostel_add_room_add_room_component__["a" /* AddRoomComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_63__hostel_add_room_add_room_component__["a" /* AddRoomComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'roomavailability',
-                component: __WEBPACK_IMPORTED_MODULE_51__hostel_room_availability_room_availability_component__["a" /* RoomAvailabilityComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_52__hostel_room_availability_room_availability_component__["a" /* RoomAvailabilityComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'roomallocation',
-                component: __WEBPACK_IMPORTED_MODULE_52__hostel_room_allocation_room_allocation_component__["a" /* RoomAllocationComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_53__hostel_room_allocation_room_allocation_component__["a" /* RoomAllocationComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'viewhostelpersons',
-                component: __WEBPACK_IMPORTED_MODULE_53__hostel_view_hostel_persons_view_hostel_persons_component__["a" /* ViewHostelPersonsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_54__hostel_view_hostel_persons_view_hostel_persons_component__["a" /* ViewHostelPersonsComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'collectitems',
-                component: __WEBPACK_IMPORTED_MODULE_54__hostel_collect_items_collect_items_component__["a" /* CollectItemsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_55__hostel_collect_items_collect_items_component__["a" /* CollectItemsComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'preparebill',
-                component: __WEBPACK_IMPORTED_MODULE_55__hostel_prepare_bill_prepare_bill_component__["a" /* PrepareBillComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_56__hostel_prepare_bill_prepare_bill_component__["a" /* PrepareBillComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'viewdetails',
-                component: __WEBPACK_IMPORTED_MODULE_56__hostel_view_details_view_details_component__["a" /* ViewDetailsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_57__hostel_view_details_view_details_component__["a" /* ViewDetailsComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'issueitems',
-                component: __WEBPACK_IMPORTED_MODULE_57__hostel_issue_items_issue_items_component__["a" /* IssueItemsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_58__hostel_issue_items_issue_items_component__["a" /* IssueItemsComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'healthrecord',
-                component: __WEBPACK_IMPORTED_MODULE_58__hostel_health_record_health_record_component__["a" /* HealthRecordComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_59__hostel_health_record_health_record_component__["a" /* HealthRecordComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'deallocate',
-                component: __WEBPACK_IMPORTED_MODULE_59__hostel_de_allocate_de_allocate_component__["a" /* DeAllocateComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_60__hostel_de_allocate_de_allocate_component__["a" /* DeAllocateComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'report',
-                component: __WEBPACK_IMPORTED_MODULE_60__hostel_report_report_component__["a" /* ReportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_61__hostel_report_report_component__["a" /* ReportComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: false },
                 outlet: 'appCommon',
             },
             {
                 path: 'category',
-                component: __WEBPACK_IMPORTED_MODULE_63__library_master_records_category_category_component__["a" /* CategoryComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_64__library_master_records_category_category_component__["a" /* CategoryComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'subcategory',
-                component: __WEBPACK_IMPORTED_MODULE_64__library_master_records_subcategory_subcategory_component__["a" /* SubcategoryComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_65__library_master_records_subcategory_subcategory_component__["a" /* SubcategoryComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'libraryfine',
-                component: __WEBPACK_IMPORTED_MODULE_65__library_master_records_libraryfine_libraryfine_component__["a" /* LibraryfineComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_66__library_master_records_libraryfine_libraryfine_component__["a" /* LibraryfineComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'publisher',
-                component: __WEBPACK_IMPORTED_MODULE_66__library_master_records_publisher_publisher_component__["a" /* PublisherComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_67__library_master_records_publisher_publisher_component__["a" /* PublisherComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'books',
-                component: __WEBPACK_IMPORTED_MODULE_67__library_master_records_books_books_component__["a" /* BooksComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_68__library_master_records_books_books_component__["a" /* BooksComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'studentreturn',
-                component: __WEBPACK_IMPORTED_MODULE_68__library_transaction_studentreturnbooks_studentreturnbooks_component__["a" /* StudentreturnbooksComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_69__library_transaction_studentreturnbooks_studentreturnbooks_component__["a" /* StudentreturnbooksComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'staffreturn',
-                component: __WEBPACK_IMPORTED_MODULE_69__library_transaction_staffreturnbooks_staffreturnbooks_component__["a" /* StaffreturnbooksComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_70__library_transaction_staffreturnbooks_staffreturnbooks_component__["a" /* StaffreturnbooksComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'allbooks',
-                component: __WEBPACK_IMPORTED_MODULE_70__library_viewreports_allbooks_allbooks_component__["a" /* AllbooksComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_71__library_viewreports_allbooks_allbooks_component__["a" /* AllbooksComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'booksavailability',
-                component: __WEBPACK_IMPORTED_MODULE_71__library_viewreports_booksavailability_booksavailability_component__["a" /* BooksavailabilityComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_72__library_viewreports_booksavailability_booksavailability_component__["a" /* BooksavailabilityComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'studentreport',
-                component: __WEBPACK_IMPORTED_MODULE_72__library_viewreports_studentreport_studentreport_component__["a" /* StudentreportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_73__library_viewreports_studentreport_studentreport_component__["a" /* StudentreportComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'staffreport',
-                component: __WEBPACK_IMPORTED_MODULE_73__library_viewreports_staffreport_staffreport_component__["a" /* StaffreportComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_74__library_viewreports_staffreport_staffreport_component__["a" /* StaffreportComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'bookissuedstudent',
-                component: __WEBPACK_IMPORTED_MODULE_74__library_viewreports_booksissuedstudents_booksissuedstudents_component__["a" /* BooksissuedstudentsComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_75__library_viewreports_booksissuedstudents_booksissuedstudents_component__["a" /* BooksissuedstudentsComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'bookissuedstaff',
-                component: __WEBPACK_IMPORTED_MODULE_75__library_viewreports_booksissuedstaff_booksissuedstaff_component__["a" /* BooksissuedstaffComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_76__library_viewreports_booksissuedstaff_booksissuedstaff_component__["a" /* BooksissuedstaffComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'allfines',
-                component: __WEBPACK_IMPORTED_MODULE_76__library_viewreports_allfines_allfines_component__["a" /* AllfinesComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_77__library_viewreports_allfines_allfines_component__["a" /* AllfinesComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'bookanalysis',
-                component: __WEBPACK_IMPORTED_MODULE_77__library_viewreports_bookanalysis_bookanalysis_component__["a" /* BookanalysisComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_78__library_viewreports_bookanalysis_bookanalysis_component__["a" /* BookanalysisComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             },
             {
                 path: 'opac',
-                component: __WEBPACK_IMPORTED_MODULE_78__library_opac_opac_component__["a" /* OpacComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_79__library_opac_opac_component__["a" /* OpacComponent */],
                 pathMatch: 'full',
-                canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_role_guard__["a" /* RoleGuard */]],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
             }
@@ -2787,6 +2789,7 @@ var DashboardComponent = (function () {
     }
     DashboardComponent.prototype.ngOnInit = function () {
         this.titleService.setTitle('Dashboard');
+        window.history.forward();
     };
     return DashboardComponent;
 }());
@@ -5403,14 +5406,16 @@ var AuthGuard = (function () {
             // logged in so return true
             return true;
         }
-        // not logged in so redirect to login page
-        this.service.subUrl = 'Login/getBaseUrl';
-        this.service.getData().subscribe(function (response) {
-            _this.baseUrl = response.json()[0]['base_url'];
-            _this.document.location.href = _this.baseUrl + 'login';
-        });
-        // this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
-        return false;
+        else {
+            // not logged in so redirect to login page
+            this.service.subUrl = 'Login/getBaseUrl';
+            this.service.getData().subscribe(function (response) {
+                _this.baseUrl = response.json()[0]['base_url'];
+                _this.document.location.href = _this.baseUrl + 'login';
+            });
+            // this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
+            return false;
+        }
     };
     return AuthGuard;
 }());
@@ -5459,9 +5464,9 @@ var RoleGuard = (function () {
             this.is_admin = true;
         if (localStorage.getItem('isChairman') == "Chairman")
             this.is_chairman = true;
-        if (localStorage.getItem('program_owner') == "true")
+        if (localStorage.getItem('role') == "Program Owner")
             this.is_program_owner = true;
-        if (localStorage.getItem('course_owner') == "true")
+        if (localStorage.getItem('role') == "Course Owner")
             this.is_course_owner = true;
         //Code accessing the page according to Role
         if (next.data.isAdmin && this.is_admin)
@@ -13312,7 +13317,7 @@ var MenuNavbarComponent = (function () {
         //Remove local storage values
         localStorage.clear();
         console.log(localStorage);
-        this.document.location.href = '/ionerp/ionerpClient/dist/';
+        this.document.location.href = '/login';
     };
     return MenuNavbarComponent;
 }());
@@ -15571,8 +15576,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var PostService = (function () {
     function PostService(http) {
         this.http = http;
-        this.baseUrlFile = 'https://10.91.5.13/ionerp/ionerpServer/uploads/';
-        this.baseUrl = 'https://10.91.5.13/ionerp/ionerpServer/index.php/';
+        this.baseUrlFile = 'http://localhost/ionerp/ionerpServer/uploads/';
+        this.baseUrl = 'http://localhost/ionerp/ionerpServer/index.php/';
     }
     //Http Request to get the data
     PostService.prototype.getData = function () {

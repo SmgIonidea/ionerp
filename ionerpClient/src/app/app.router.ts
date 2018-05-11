@@ -99,7 +99,7 @@ const route: Routes = [
   {
     path: 'content',
     component: ContentWrapperComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',

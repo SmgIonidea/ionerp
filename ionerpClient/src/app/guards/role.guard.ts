@@ -22,10 +22,10 @@ export class RoleGuard implements CanActivate {
             if (localStorage.getItem('isChairman') == "Chairman")
                 this.is_chairman = true;
 
-            if (localStorage.getItem('program_owner') == "true")
+            if (localStorage.getItem('role') == "Program Owner")
                 this.is_program_owner = true;
 
-            if (localStorage.getItem('course_owner') == "true")
+            if (localStorage.getItem('role') == "Course Owner")
                 this.is_course_owner = true;
 
             //Code accessing the page according to Role

@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
      this.titleService.setTitle('Dashboard');
+     window.history.forward();
   }
 
 }
