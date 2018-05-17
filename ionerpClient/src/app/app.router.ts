@@ -79,6 +79,28 @@ import { BooksissuedstaffComponent } from './library/viewreports/booksissuedstaf
 import { AllfinesComponent } from './library/viewreports/allfines/allfines.component';
 import { BookanalysisComponent } from './library/viewreports/bookanalysis/bookanalysis.component';
 import { OpacComponent } from './library/opac/opac.component';
+import { PostVacancyComponent } from './hrd/post-vacancy/post-vacancy.component';
+import { ClassifiedsComponent } from './hrd/classifieds/classifieds.component';
+import { ApplicantEnquiryComponent } from './hrd/applicant-enquiry/applicant-enquiry.component';
+import { SearchApplicantsComponent } from './hrd/search-applicants/search-applicants.component';
+import { TakeInterviewComponent } from './hrd/take-interview/take-interview.component';
+import { ApplicantsListComponent } from './hrd/applicants-list/applicants-list.component';
+import { OfferLetterComponent } from './hrd/offer-letter/offer-letter.component';
+import { LetterFormatsComponent } from './hrd/letter-formats/letter-formats.component';
+import { ResignTerminationComponent } from './hrd/resign-termination/resign-termination.component';
+import { OtherLetterFormatsComponent } from './hrd/other-letter-formats/other-letter-formats.component';
+import { SendLetterComponent } from './hrd/send-letter/send-letter.component';
+import { PrintLetterComponent } from './hrd/print-letter/print-letter.component';
+import { AnnualLeaveComponent } from './payroll/annual-leave/annual-leave.component';
+import { AllowanceTypeComponent } from './payroll/allowance-type/allowance-type.component';
+import { DeductionTypeComponent } from './payroll/deduction-type/deduction-type.component';
+import { LoanComponent } from './payroll/loan/loan.component';
+import { TaxComponent } from './payroll/tax/tax.component';
+import { PFComponent } from './payroll/pf/pf.component';
+import { IssueLoanComponent } from './payroll/employee/issue-loan/issue-loan.component';
+import { LoanIssuedToComponent } from './payroll/employee/loan-issued-to/loan-issued-to.component';
+import { EmployeePayslipComponent } from './payroll/payslip-generation/employee-payslip/employee-payslip.component';
+import { PayslipListComponent } from './payroll/payslip-generation/payslip-list/payslip-list.component';
 const route: Routes = [
   {
     path: 'login',
@@ -691,7 +713,184 @@ const route: Routes = [
         canActivate: [RoleGuard],
         data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
         outlet: 'appCommon',
-      }
+      },
+      //HRD Component
+      {
+        path: 'postVacancy',
+        component: PostVacancyComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'classifieds',
+        component: ClassifiedsComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'applicantEnquiry',
+        component: ApplicantEnquiryComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'searchApplicants',
+        component: SearchApplicantsComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'takeInterview',
+        component: TakeInterviewComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'applicantsList',
+        component: ApplicantsListComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'offerLetter',
+        component: OfferLetterComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'letterFormats',
+        component: LetterFormatsComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'resignTerminatation',
+        component: ResignTerminationComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'otherLetterFormats',
+        component: OtherLetterFormatsComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'sendLetter',
+        component: SendLetterComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'printLetter',
+        component: PrintLetterComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'annualLeave',
+        component: AnnualLeaveComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'allowanceType',
+        component: AllowanceTypeComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'deductionType',
+        component: DeductionTypeComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'loan',
+        component: LoanComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'tax',
+        component: TaxComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'pf',
+        component: PFComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'issueLoan',
+        component: IssueLoanComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'loanIssuedTo',
+        component: LoanIssuedToComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'employeePayslip',
+        component: EmployeePayslipComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
+      {
+        path: 'payslipList',
+        component: PayslipListComponent,
+        pathMatch: 'full',
+        canActivate: [RoleGuard],
+        data: {isAdmin:true,isChairman:true,isProgramOwner:true,isCourseOwner:true,isStudent:true },
+        outlet: 'appCommon',
+      },
                   
     ]
   },

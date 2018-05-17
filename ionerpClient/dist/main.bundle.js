@@ -1592,7 +1592,9 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__transport_transport_module__ = __webpack_require__("../../../../../src/app/transport/transport.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__hostel_hostel_module__ = __webpack_require__("../../../../../src/app/hostel/hostel.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_49_ng2_dual_list_box__ = __webpack_require__("../../../../ng2-dual-list-box/esm5/ng2-dual-list-box.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__library_library_module__ = __webpack_require__("../../../../../src/app/library/library.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__hrd_hrd_module__ = __webpack_require__("../../../../../src/app/hrd/hrd.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__payroll_payroll_module__ = __webpack_require__("../../../../../src/app/payroll/payroll.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__library_library_module__ = __webpack_require__("../../../../../src/app/library/library.module.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1651,6 +1653,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+ //HRD Component
+ //Payroll Component
 
 var AppModule = (function () {
     function AppModule() {
@@ -1708,8 +1712,10 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_12__layout_layout_module__["a" /* LayoutModule */],
             __WEBPACK_IMPORTED_MODULE_46__accounting_accounting_module__["a" /* AccountingModule */],
             __WEBPACK_IMPORTED_MODULE_47__transport_transport_module__["a" /* TransportModule */],
-            __WEBPACK_IMPORTED_MODULE_50__library_library_module__["a" /* LibraryModule */],
-            __WEBPACK_IMPORTED_MODULE_1__login_login_module__["a" /* LoginModule */]
+            __WEBPACK_IMPORTED_MODULE_52__library_library_module__["a" /* LibraryModule */],
+            __WEBPACK_IMPORTED_MODULE_1__login_login_module__["a" /* LoginModule */],
+            __WEBPACK_IMPORTED_MODULE_50__hrd_hrd_module__["a" /* HrdModule */],
+            __WEBPACK_IMPORTED_MODULE_51__payroll_payroll_module__["a" /* PayrollModule */]
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */],
@@ -1845,6 +1851,28 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_77__library_viewreports_allfines_allfines_component__ = __webpack_require__("../../../../../src/app/library/viewreports/allfines/allfines.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_78__library_viewreports_bookanalysis_bookanalysis_component__ = __webpack_require__("../../../../../src/app/library/viewreports/bookanalysis/bookanalysis.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_79__library_opac_opac_component__ = __webpack_require__("../../../../../src/app/library/opac/opac.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_80__hrd_post_vacancy_post_vacancy_component__ = __webpack_require__("../../../../../src/app/hrd/post-vacancy/post-vacancy.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_81__hrd_classifieds_classifieds_component__ = __webpack_require__("../../../../../src/app/hrd/classifieds/classifieds.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_82__hrd_applicant_enquiry_applicant_enquiry_component__ = __webpack_require__("../../../../../src/app/hrd/applicant-enquiry/applicant-enquiry.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_83__hrd_search_applicants_search_applicants_component__ = __webpack_require__("../../../../../src/app/hrd/search-applicants/search-applicants.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_84__hrd_take_interview_take_interview_component__ = __webpack_require__("../../../../../src/app/hrd/take-interview/take-interview.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_85__hrd_applicants_list_applicants_list_component__ = __webpack_require__("../../../../../src/app/hrd/applicants-list/applicants-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_86__hrd_offer_letter_offer_letter_component__ = __webpack_require__("../../../../../src/app/hrd/offer-letter/offer-letter.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_87__hrd_letter_formats_letter_formats_component__ = __webpack_require__("../../../../../src/app/hrd/letter-formats/letter-formats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_88__hrd_resign_termination_resign_termination_component__ = __webpack_require__("../../../../../src/app/hrd/resign-termination/resign-termination.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_89__hrd_other_letter_formats_other_letter_formats_component__ = __webpack_require__("../../../../../src/app/hrd/other-letter-formats/other-letter-formats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_90__hrd_send_letter_send_letter_component__ = __webpack_require__("../../../../../src/app/hrd/send-letter/send-letter.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_91__hrd_print_letter_print_letter_component__ = __webpack_require__("../../../../../src/app/hrd/print-letter/print-letter.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_92__payroll_annual_leave_annual_leave_component__ = __webpack_require__("../../../../../src/app/payroll/annual-leave/annual-leave.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_93__payroll_allowance_type_allowance_type_component__ = __webpack_require__("../../../../../src/app/payroll/allowance-type/allowance-type.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_94__payroll_deduction_type_deduction_type_component__ = __webpack_require__("../../../../../src/app/payroll/deduction-type/deduction-type.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_95__payroll_loan_loan_component__ = __webpack_require__("../../../../../src/app/payroll/loan/loan.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_96__payroll_tax_tax_component__ = __webpack_require__("../../../../../src/app/payroll/tax/tax.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_97__payroll_pf_pf_component__ = __webpack_require__("../../../../../src/app/payroll/pf/pf.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_98__payroll_employee_issue_loan_issue_loan_component__ = __webpack_require__("../../../../../src/app/payroll/employee/issue-loan/issue-loan.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_99__payroll_employee_loan_issued_to_loan_issued_to_component__ = __webpack_require__("../../../../../src/app/payroll/employee/loan-issued-to/loan-issued-to.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_100__payroll_payslip_generation_employee_payslip_employee_payslip_component__ = __webpack_require__("../../../../../src/app/payroll/payslip-generation/employee-payslip/employee-payslip.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_101__payroll_payslip_generation_payslip_list_payslip_list_component__ = __webpack_require__("../../../../../src/app/payroll/payslip-generation/payslip-list/payslip-list.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRouter; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1852,6 +1880,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2541,7 +2591,184 @@ var route = [
                 canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
                 data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
                 outlet: 'appCommon',
-            }
+            },
+            //HRD Component
+            {
+                path: 'postVacancy',
+                component: __WEBPACK_IMPORTED_MODULE_80__hrd_post_vacancy_post_vacancy_component__["a" /* PostVacancyComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'classifieds',
+                component: __WEBPACK_IMPORTED_MODULE_81__hrd_classifieds_classifieds_component__["a" /* ClassifiedsComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'applicantEnquiry',
+                component: __WEBPACK_IMPORTED_MODULE_82__hrd_applicant_enquiry_applicant_enquiry_component__["a" /* ApplicantEnquiryComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'searchApplicants',
+                component: __WEBPACK_IMPORTED_MODULE_83__hrd_search_applicants_search_applicants_component__["a" /* SearchApplicantsComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'takeInterview',
+                component: __WEBPACK_IMPORTED_MODULE_84__hrd_take_interview_take_interview_component__["a" /* TakeInterviewComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'applicantsList',
+                component: __WEBPACK_IMPORTED_MODULE_85__hrd_applicants_list_applicants_list_component__["a" /* ApplicantsListComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'offerLetter',
+                component: __WEBPACK_IMPORTED_MODULE_86__hrd_offer_letter_offer_letter_component__["a" /* OfferLetterComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'letterFormats',
+                component: __WEBPACK_IMPORTED_MODULE_87__hrd_letter_formats_letter_formats_component__["a" /* LetterFormatsComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'resignTerminatation',
+                component: __WEBPACK_IMPORTED_MODULE_88__hrd_resign_termination_resign_termination_component__["a" /* ResignTerminationComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'otherLetterFormats',
+                component: __WEBPACK_IMPORTED_MODULE_89__hrd_other_letter_formats_other_letter_formats_component__["a" /* OtherLetterFormatsComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'sendLetter',
+                component: __WEBPACK_IMPORTED_MODULE_90__hrd_send_letter_send_letter_component__["a" /* SendLetterComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'printLetter',
+                component: __WEBPACK_IMPORTED_MODULE_91__hrd_print_letter_print_letter_component__["a" /* PrintLetterComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'annualLeave',
+                component: __WEBPACK_IMPORTED_MODULE_92__payroll_annual_leave_annual_leave_component__["a" /* AnnualLeaveComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'allowanceType',
+                component: __WEBPACK_IMPORTED_MODULE_93__payroll_allowance_type_allowance_type_component__["a" /* AllowanceTypeComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'deductionType',
+                component: __WEBPACK_IMPORTED_MODULE_94__payroll_deduction_type_deduction_type_component__["a" /* DeductionTypeComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'loan',
+                component: __WEBPACK_IMPORTED_MODULE_95__payroll_loan_loan_component__["a" /* LoanComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'tax',
+                component: __WEBPACK_IMPORTED_MODULE_96__payroll_tax_tax_component__["a" /* TaxComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'pf',
+                component: __WEBPACK_IMPORTED_MODULE_97__payroll_pf_pf_component__["a" /* PFComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'issueLoan',
+                component: __WEBPACK_IMPORTED_MODULE_98__payroll_employee_issue_loan_issue_loan_component__["a" /* IssueLoanComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'loanIssuedTo',
+                component: __WEBPACK_IMPORTED_MODULE_99__payroll_employee_loan_issued_to_loan_issued_to_component__["a" /* LoanIssuedToComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'employeePayslip',
+                component: __WEBPACK_IMPORTED_MODULE_100__payroll_payslip_generation_employee_payslip_employee_payslip_component__["a" /* EmployeePayslipComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
+            {
+                path: 'payslipList',
+                component: __WEBPACK_IMPORTED_MODULE_101__payroll_payslip_generation_payslip_list_payslip_list_component__["a" /* PayslipListComponent */],
+                pathMatch: 'full',
+                canActivate: [__WEBPACK_IMPORTED_MODULE_19__guards_role_guard__["a" /* RoleGuard */]],
+                data: { isAdmin: true, isChairman: true, isProgramOwner: true, isCourseOwner: true, isStudent: true },
+                outlet: 'appCommon',
+            },
         ]
     },
 ];
@@ -5406,16 +5633,14 @@ var AuthGuard = (function () {
             // logged in so return true
             return true;
         }
-        else {
-            // not logged in so redirect to login page
-            this.service.subUrl = 'Login/getBaseUrl';
-            this.service.getData().subscribe(function (response) {
-                _this.baseUrl = response.json()[0]['base_url'];
-                _this.document.location.href = _this.baseUrl + 'login';
-            });
-            // this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
-            return false;
-        }
+        // not logged in so redirect to login page
+        this.service.subUrl = 'Login/getBaseUrl';
+        this.service.getData().subscribe(function (response) {
+            _this.baseUrl = response.json()[0]['base_url'];
+            _this.document.location.href = _this.baseUrl + 'login';
+        });
+        // this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
+        return false;
     };
     return AuthGuard;
 }());
@@ -7580,6 +7805,808 @@ ViewHostelPersonsComponent = __decorate([
 
 var _a, _b, _c, _d, _e;
 //# sourceMappingURL=view-hostel-persons.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/applicant-enquiry/applicant-enquiry.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/applicant-enquiry/applicant-enquiry.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  applicant-enquiry works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/applicant-enquiry/applicant-enquiry.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApplicantEnquiryComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ApplicantEnquiryComponent = (function () {
+    function ApplicantEnquiryComponent() {
+    }
+    ApplicantEnquiryComponent.prototype.ngOnInit = function () {
+    };
+    return ApplicantEnquiryComponent;
+}());
+ApplicantEnquiryComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-applicant-enquiry',
+        template: __webpack_require__("../../../../../src/app/hrd/applicant-enquiry/applicant-enquiry.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/hrd/applicant-enquiry/applicant-enquiry.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ApplicantEnquiryComponent);
+
+//# sourceMappingURL=applicant-enquiry.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/applicants-list/applicants-list.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/applicants-list/applicants-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  applicants-list works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/applicants-list/applicants-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApplicantsListComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ApplicantsListComponent = (function () {
+    function ApplicantsListComponent() {
+    }
+    ApplicantsListComponent.prototype.ngOnInit = function () {
+    };
+    return ApplicantsListComponent;
+}());
+ApplicantsListComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-applicants-list',
+        template: __webpack_require__("../../../../../src/app/hrd/applicants-list/applicants-list.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/hrd/applicants-list/applicants-list.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ApplicantsListComponent);
+
+//# sourceMappingURL=applicants-list.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/classifieds/classifieds.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/classifieds/classifieds.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  classifieds works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/classifieds/classifieds.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClassifiedsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ClassifiedsComponent = (function () {
+    function ClassifiedsComponent() {
+    }
+    ClassifiedsComponent.prototype.ngOnInit = function () {
+    };
+    return ClassifiedsComponent;
+}());
+ClassifiedsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-classifieds',
+        template: __webpack_require__("../../../../../src/app/hrd/classifieds/classifieds.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/hrd/classifieds/classifieds.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ClassifiedsComponent);
+
+//# sourceMappingURL=classifieds.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/hrd.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__post_vacancy_post_vacancy_component__ = __webpack_require__("../../../../../src/app/hrd/post-vacancy/post-vacancy.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__classifieds_classifieds_component__ = __webpack_require__("../../../../../src/app/hrd/classifieds/classifieds.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__applicant_enquiry_applicant_enquiry_component__ = __webpack_require__("../../../../../src/app/hrd/applicant-enquiry/applicant-enquiry.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__search_applicants_search_applicants_component__ = __webpack_require__("../../../../../src/app/hrd/search-applicants/search-applicants.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__take_interview_take_interview_component__ = __webpack_require__("../../../../../src/app/hrd/take-interview/take-interview.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__applicants_list_applicants_list_component__ = __webpack_require__("../../../../../src/app/hrd/applicants-list/applicants-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__offer_letter_offer_letter_component__ = __webpack_require__("../../../../../src/app/hrd/offer-letter/offer-letter.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__letter_formats_letter_formats_component__ = __webpack_require__("../../../../../src/app/hrd/letter-formats/letter-formats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__resign_termination_resign_termination_component__ = __webpack_require__("../../../../../src/app/hrd/resign-termination/resign-termination.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__other_letter_formats_other_letter_formats_component__ = __webpack_require__("../../../../../src/app/hrd/other-letter-formats/other-letter-formats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__send_letter_send_letter_component__ = __webpack_require__("../../../../../src/app/hrd/send-letter/send-letter.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__print_letter_print_letter_component__ = __webpack_require__("../../../../../src/app/hrd/print-letter/print-letter.component.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HrdModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var HrdModule = (function () {
+    function HrdModule() {
+    }
+    return HrdModule;
+}());
+HrdModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]
+        ],
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_2__post_vacancy_post_vacancy_component__["a" /* PostVacancyComponent */],
+            __WEBPACK_IMPORTED_MODULE_3__classifieds_classifieds_component__["a" /* ClassifiedsComponent */],
+            __WEBPACK_IMPORTED_MODULE_4__applicant_enquiry_applicant_enquiry_component__["a" /* ApplicantEnquiryComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__search_applicants_search_applicants_component__["a" /* SearchApplicantsComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__take_interview_take_interview_component__["a" /* TakeInterviewComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__applicants_list_applicants_list_component__["a" /* ApplicantsListComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__offer_letter_offer_letter_component__["a" /* OfferLetterComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__letter_formats_letter_formats_component__["a" /* LetterFormatsComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__resign_termination_resign_termination_component__["a" /* ResignTerminationComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__other_letter_formats_other_letter_formats_component__["a" /* OtherLetterFormatsComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__send_letter_send_letter_component__["a" /* SendLetterComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__print_letter_print_letter_component__["a" /* PrintLetterComponent */],
+        ]
+    })
+], HrdModule);
+
+//# sourceMappingURL=hrd.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/letter-formats/letter-formats.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/letter-formats/letter-formats.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  letter-formats works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/letter-formats/letter-formats.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LetterFormatsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var LetterFormatsComponent = (function () {
+    function LetterFormatsComponent() {
+    }
+    LetterFormatsComponent.prototype.ngOnInit = function () {
+    };
+    return LetterFormatsComponent;
+}());
+LetterFormatsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-letter-formats',
+        template: __webpack_require__("../../../../../src/app/hrd/letter-formats/letter-formats.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/hrd/letter-formats/letter-formats.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], LetterFormatsComponent);
+
+//# sourceMappingURL=letter-formats.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/offer-letter/offer-letter.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/offer-letter/offer-letter.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  offer-letter works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/offer-letter/offer-letter.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OfferLetterComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var OfferLetterComponent = (function () {
+    function OfferLetterComponent() {
+    }
+    OfferLetterComponent.prototype.ngOnInit = function () {
+    };
+    return OfferLetterComponent;
+}());
+OfferLetterComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-offer-letter',
+        template: __webpack_require__("../../../../../src/app/hrd/offer-letter/offer-letter.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/hrd/offer-letter/offer-letter.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], OfferLetterComponent);
+
+//# sourceMappingURL=offer-letter.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/other-letter-formats/other-letter-formats.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/other-letter-formats/other-letter-formats.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  other-letter-formats works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/other-letter-formats/other-letter-formats.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OtherLetterFormatsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var OtherLetterFormatsComponent = (function () {
+    function OtherLetterFormatsComponent() {
+    }
+    OtherLetterFormatsComponent.prototype.ngOnInit = function () {
+    };
+    return OtherLetterFormatsComponent;
+}());
+OtherLetterFormatsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-other-letter-formats',
+        template: __webpack_require__("../../../../../src/app/hrd/other-letter-formats/other-letter-formats.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/hrd/other-letter-formats/other-letter-formats.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], OtherLetterFormatsComponent);
+
+//# sourceMappingURL=other-letter-formats.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/post-vacancy/post-vacancy.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/post-vacancy/post-vacancy.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  post-vacancy works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/post-vacancy/post-vacancy.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PostVacancyComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PostVacancyComponent = (function () {
+    function PostVacancyComponent() {
+    }
+    PostVacancyComponent.prototype.ngOnInit = function () {
+    };
+    return PostVacancyComponent;
+}());
+PostVacancyComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-post-vacancy',
+        template: __webpack_require__("../../../../../src/app/hrd/post-vacancy/post-vacancy.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/hrd/post-vacancy/post-vacancy.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], PostVacancyComponent);
+
+//# sourceMappingURL=post-vacancy.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/print-letter/print-letter.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/print-letter/print-letter.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  print-letter works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/print-letter/print-letter.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PrintLetterComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PrintLetterComponent = (function () {
+    function PrintLetterComponent() {
+    }
+    PrintLetterComponent.prototype.ngOnInit = function () {
+    };
+    return PrintLetterComponent;
+}());
+PrintLetterComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-print-letter',
+        template: __webpack_require__("../../../../../src/app/hrd/print-letter/print-letter.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/hrd/print-letter/print-letter.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], PrintLetterComponent);
+
+//# sourceMappingURL=print-letter.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/resign-termination/resign-termination.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/resign-termination/resign-termination.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  resign-termination works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/resign-termination/resign-termination.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResignTerminationComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ResignTerminationComponent = (function () {
+    function ResignTerminationComponent() {
+    }
+    ResignTerminationComponent.prototype.ngOnInit = function () {
+    };
+    return ResignTerminationComponent;
+}());
+ResignTerminationComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-resign-termination',
+        template: __webpack_require__("../../../../../src/app/hrd/resign-termination/resign-termination.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/hrd/resign-termination/resign-termination.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ResignTerminationComponent);
+
+//# sourceMappingURL=resign-termination.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/search-applicants/search-applicants.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/search-applicants/search-applicants.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  search-applicants works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/search-applicants/search-applicants.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchApplicantsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SearchApplicantsComponent = (function () {
+    function SearchApplicantsComponent() {
+    }
+    SearchApplicantsComponent.prototype.ngOnInit = function () {
+    };
+    return SearchApplicantsComponent;
+}());
+SearchApplicantsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-search-applicants',
+        template: __webpack_require__("../../../../../src/app/hrd/search-applicants/search-applicants.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/hrd/search-applicants/search-applicants.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], SearchApplicantsComponent);
+
+//# sourceMappingURL=search-applicants.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/send-letter/send-letter.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/send-letter/send-letter.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  send-letter works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/send-letter/send-letter.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SendLetterComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SendLetterComponent = (function () {
+    function SendLetterComponent() {
+    }
+    SendLetterComponent.prototype.ngOnInit = function () {
+    };
+    return SendLetterComponent;
+}());
+SendLetterComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-send-letter',
+        template: __webpack_require__("../../../../../src/app/hrd/send-letter/send-letter.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/hrd/send-letter/send-letter.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], SendLetterComponent);
+
+//# sourceMappingURL=send-letter.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/take-interview/take-interview.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/take-interview/take-interview.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  take-interview works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/hrd/take-interview/take-interview.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TakeInterviewComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var TakeInterviewComponent = (function () {
+    function TakeInterviewComponent() {
+    }
+    TakeInterviewComponent.prototype.ngOnInit = function () {
+    };
+    return TakeInterviewComponent;
+}());
+TakeInterviewComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-take-interview',
+        template: __webpack_require__("../../../../../src/app/hrd/take-interview/take-interview.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/hrd/take-interview/take-interview.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], TakeInterviewComponent);
+
+//# sourceMappingURL=take-interview.component.js.map
 
 /***/ }),
 
@@ -13061,7 +14088,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\r\n        .sidenavbar {\r\n            position: absolute;\r\n            padding-top: 1px;\r\n            padding-bottom: 10px;\r\n            padding-left: 5px;\r\n            \r\n        }\r\n        \r\n        .main-sidebar{\r\n                 position: absolute;\r\n                margin-left:1%;\r\n                min-height:44%;\r\n                 /*padding-left:15%;*/\r\n                \r\n                 margin-top:7%;\r\n                 font-size:12px;\r\n                 width:12%;\r\n                 padding-top:0px;\r\n        }\r\n        \r\n        .divider{\r\n                border: 1px solid #e5e5e5;\r\n                color: #000000;     \r\n                width:100%;\r\n           }\r\n        \r\n        a {\r\n             color: #000000;\r\n            text-decoration: none;\r\n            cursor: pointer;\r\n        }\r\n        \r\n        li {\r\n            line-height: 14px;\r\n        }\r\n        \r\n        .sidebar-menu > li > a {\r\n            padding: 12px 37px 10px 15px !important;\r\n            display: block;\r\n        }   \r\n        \r\n        .bs-docs-sidenav { \r\n            width: 205px;\r\n            margin: 0 0 0;\r\n            padding: 0;\r\n            background-color: #fff;\r\n            border-radius: 6px;\r\n            box-shadow: 0 3px 5px 1px #979797;       \r\n        }\r\n        \r\n        .bs-docs-sidenav > li > a {\r\n            display: block;\r\n            width: 190px \\9;\r\n            color: #000000;\r\n            margin: 0 0 -1px;\r\n            padding: 8px 14px;\r\n            border: 1px solid #e5e5e5;\r\n        }\r\n         \r\n        .nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {\r\n            color: #ffffff;\r\n            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);\r\n            background-color: #C1C2C3;\r\n        }\r\n        \r\n        /* hover on menu */\r\n\r\n.dropbtn{\r\n   color: black;\r\n    padding: 10px;\r\n    width:205px;\r\n    /* font-size: 16px;\r\n    border: none; */\r\n}\r\n\r\n.dropbtn1{\r\n    color: black;\r\n     padding: 30px;\r\n     width:205px;\r\n    \r\n     /* font-size: 16px;\r\n     border: none; */\r\n }\r\n\r\n .dropbtn2{\r\n    color: black;\r\n     padding: 30px;\r\n     width:205px;\r\n     /* font-size: 16px;\r\n     border: none; */\r\n }\r\n\r\n .dropbtn3{\r\n    color: black;\r\n     padding: 30px;\r\n     width:205px;\r\n     /* font-size: 16px;\r\n     border: none; */\r\n }\r\n\r\n \r\n\r\n.dropdown {\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n\r\n.dropdown1 {\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n.dropdown2 {\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n.dropdown3 {\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n\r\n.dropdown-content {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #f1f1f1;\r\n    min-width: 200px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n    margin-left: 60%;\r\n    margin-top: -30%;\r\n}\r\n\r\n.dropdown-content1 {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #f1f1f1;\r\n    min-width: 200px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n    margin-left: 90%;\r\n    margin-top: -30%;\r\n}\r\n.dropdown-content2 {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #f1f1f1;\r\n    min-width: 200px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n    margin-left: 90%;\r\n    margin-top: -30%;\r\n}\r\n.dropdown-content3 {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #f1f1f1;\r\n    min-width: 200px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n    margin-left: 90%;\r\n    margin-top: -30%;\r\n}\r\n\r\n.dropdown_1{\r\n    margin-left: 60% !important;\r\n    margin-top: -35% !important;\r\n}\r\n.sideMenu {\r\n    margin-left: 60%;\r\n    margin-top: -50%;\r\n}\r\n.sideMenu_stutransport {\r\n    margin-left: 60%;\r\n    margin-top: -15%;\r\n}\r\n\r\n\r\n\r\n.dropdown-content a {\r\n    color: black;\r\n    padding: 12px 16px;\r\n    text-decoration: none;\r\n    display: block;\r\n}\r\n\r\n.dropdown-content1 a {\r\n    color: black;\r\n    padding: 12px 16px;\r\n    text-decoration: none;\r\n    display: block;\r\n}\r\n\r\n.dropdown-content2 a {\r\n    color: black;\r\n    padding: 12px 16px;\r\n    text-decoration: none;\r\n    display: block;\r\n}\r\n\r\n.dropdown-content3 a {\r\n    color: black;\r\n    padding: 12px 16px;\r\n    text-decoration: none;\r\n    display: block;\r\n}\r\n\r\n.dropdown-content a:hover {\r\n    background-color: #C1C2C3;\r\n}\r\n.dropdown-content1 a:hover {\r\n    background-color: #C1C2C3;\r\n}\r\n.dropdown-content2 a:hover {\r\n    background-color: #C1C2C3;\r\n}\r\n.dropdown-content3 a:hover {\r\n    background-color: #C1C2C3;\r\n}\r\n\r\n.dropdown:hover .dropdown-content {\r\n    display: block;\r\n}\r\n.dropdown1:hover .dropdown-content1 {\r\n    display: block;\r\n}\r\n.dropdown2:hover .dropdown-content2 {\r\n    display: block;\r\n}\r\n.dropdown3:hover .dropdown-content3 {\r\n    display: block;\r\n}\r\n\r\n.dropdown:hover .dropbtn {\r\n    background-color: #c1c2c3;\r\n}\r\n.dropdown1:hover .dropbtn1 {\r\n    background-color: #c1c2c3;\r\n}\r\n.dropdown2:hover .dropbtn2 {\r\n    background-color: #c1c2c3;\r\n}\r\n.dropdown3:hover .dropbtn3 {\r\n    background-color: #c1c2c3;\r\n}\r\n\r\n\r\n/*For Portait Mode view*/\r\n @media screen and (max-width: 480px) {  \r\n.main-sidebar{\r\n    margin-top:40%;\r\n}\r\n.sidenavbar {\r\nmargin-left:10px;\r\n}\r\n.content {\r\n    margin-left: 5px;\r\n} \r\n.dropdown-content {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #f1f1f1;\r\n    min-width: 200px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n    margin-left: 30%;\r\n    margin-top: -30%;\r\n}\r\n\r\n.dropdown-content1 {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #f1f1f1;\r\n    min-width: 200px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n    margin-left:40%;\r\n    margin-top: -30%;\r\n}\r\n.dropdown-content2 {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #f1f1f1;\r\n    min-width: 200px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n    margin-left: 40%;\r\n    margin-top: -30%;\r\n}\r\n.dropdown-content3 {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #f1f1f1;\r\n    min-width: 200px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n    margin-left: 40%;\r\n    margin-top: -30%;\r\n}\r\n\r\n}\r\n\r\n /*For Landscape Mode view*/     \r\n @media screen and (max-height: 360px) {\r\n  .main-sidebar{\r\n      margin-top:145px;\r\n      }\r\n       .sidenavbar {\r\n        margin-left:10px;\r\n       }                          \r\n     .content {\r\n     margin-left: 5px;\r\n     }\r\n }                           \r\n           \r\n\r\n        ", ""]);
+exports.push([module.i, "\r\n        .sidenavbar {\r\n            position: absolute;\r\n            padding-top: 1px;\r\n            padding-bottom: 10px;\r\n            padding-left: 5px;\r\n            \r\n        }\r\n        \r\n        .main-sidebar{\r\n                 position: absolute;\r\n                margin-left:1%;\r\n                min-height:44%;\r\n                 /*padding-left:15%;*/\r\n                \r\n                 margin-top:7%;\r\n                 font-size:12px;\r\n                 width:12%;\r\n                 padding-top:0px;\r\n        }\r\n        \r\n        .divider{\r\n                border: 1px solid #e5e5e5;\r\n                color: #000000;     \r\n                width:100%;\r\n           }\r\n        \r\n        a {\r\n             color: #000000;\r\n            text-decoration: none;\r\n            cursor: pointer;\r\n        }\r\n        \r\n        li {\r\n            line-height: 14px;\r\n        }\r\n        \r\n        .sidebar-menu > li > a {\r\n            padding: 12px 37px 10px 15px !important;\r\n            display: block;\r\n        }   \r\n        \r\n        .bs-docs-sidenav { \r\n            width: 205px;\r\n            margin: 0 0 0;\r\n            padding: 0;\r\n            background-color: #fff;\r\n            border-radius: 6px;\r\n            box-shadow: 0 3px 5px 1px #979797;       \r\n        }\r\n        \r\n        .bs-docs-sidenav > li > a {\r\n            display: block;\r\n            width: 190px \\9;\r\n            color: #000000;\r\n            margin: 0 0 -1px;\r\n            padding: 8px 14px;\r\n            border: 1px solid #e5e5e5;\r\n        }\r\n         \r\n        .nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {\r\n            color: #ffffff;\r\n            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);\r\n            background-color: #C1C2C3;\r\n        }\r\n        \r\n        /* hover on menu */\r\n\r\n.dropbtn{\r\n   color: black;\r\n    padding: 10px;\r\n    width:205px;\r\n    /* font-size: 16px;\r\n    border: none; */\r\n}\r\n\r\n.dropbtn1{\r\n    color: black;\r\n     padding: 30px;\r\n     width:205px;\r\n    \r\n     /* font-size: 16px;\r\n     border: none; */\r\n }\r\n\r\n .dropbtn2{\r\n    color: black;\r\n     padding: 30px;\r\n     width:205px;\r\n     /* font-size: 16px;\r\n     border: none; */\r\n }\r\n\r\n .dropbtn3{\r\n    color: black;\r\n     padding: 30px;\r\n     width:205px;\r\n     /* font-size: 16px;\r\n     border: none; */\r\n }\r\n\r\n \r\n\r\n.dropdown {\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n\r\n.dropdown1 {\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n.dropdown2 {\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n.dropdown3 {\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n\r\n.dropdown-content {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #f1f1f1;\r\n    min-width: 200px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n    margin-left: 60%;\r\n    margin-top: -30%;\r\n}\r\n\r\n.dropdown-content1 {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #f1f1f1;\r\n    min-width: 200px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n    margin-left: 90%;\r\n    margin-top: -30%;\r\n}\r\n.dropdown-content2 {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #f1f1f1;\r\n    min-width: 200px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n    margin-left: 90%;\r\n    margin-top: -30%;\r\n}\r\n.dropdown-content3 {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #f1f1f1;\r\n    min-width: 200px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n    margin-left: 90%;\r\n    margin-top: -30%;\r\n}\r\n\r\n.dropdown_1{\r\n    margin-left: 60% !important;\r\n    margin-top: -35% !important;\r\n}\r\n.sideMenu {\r\n    margin-left: 60%;\r\n    margin-top: -50%;\r\n}\r\n.sideMenu_stutransport {\r\n    margin-left: 60%;\r\n    margin-top: -15%;\r\n}\r\n\r\n.sideMenu_hrd {\r\n    margin-left: 60%;\r\n    margin-top: -125%;\r\n}\r\n\r\n.sideMenu_payroll{\r\n    margin-left: 60%;\r\n    margin-top: -140%; \r\n}\r\n\r\n.dropdown-content a {\r\n    color: black;\r\n    padding: 12px 16px;\r\n    text-decoration: none;\r\n    display: block;\r\n}\r\n\r\n.dropdown-content1 a {\r\n    color: black;\r\n    padding: 12px 16px;\r\n    text-decoration: none;\r\n    display: block;\r\n}\r\n\r\n.dropdown-content2 a {\r\n    color: black;\r\n    padding: 12px 16px;\r\n    text-decoration: none;\r\n    display: block;\r\n}\r\n\r\n.dropdown-content3 a {\r\n    color: black;\r\n    padding: 12px 16px;\r\n    text-decoration: none;\r\n    display: block;\r\n}\r\n\r\n.dropdown-content a:hover {\r\n    background-color: #C1C2C3;\r\n}\r\n.dropdown-content1 a:hover {\r\n    background-color: #C1C2C3;\r\n}\r\n.dropdown-content2 a:hover {\r\n    background-color: #C1C2C3;\r\n}\r\n.dropdown-content3 a:hover {\r\n    background-color: #C1C2C3;\r\n}\r\n\r\n.dropdown:hover .dropdown-content {\r\n    display: block;\r\n}\r\n.dropdown1:hover .dropdown-content1 {\r\n    display: block;\r\n}\r\n.dropdown2:hover .dropdown-content2 {\r\n    display: block;\r\n}\r\n.dropdown3:hover .dropdown-content3 {\r\n    display: block;\r\n}\r\n\r\n.dropdown:hover .dropbtn {\r\n    background-color: #c1c2c3;\r\n}\r\n.dropdown1:hover .dropbtn1 {\r\n    background-color: #c1c2c3;\r\n}\r\n.dropdown2:hover .dropbtn2 {\r\n    background-color: #c1c2c3;\r\n}\r\n.dropdown3:hover .dropbtn3 {\r\n    background-color: #c1c2c3;\r\n}\r\n\r\n\r\n/*For Portait Mode view*/\r\n @media screen and (max-width: 480px) {  \r\n.main-sidebar{\r\n    margin-top:40%;\r\n}\r\n.sidenavbar {\r\nmargin-left:10px;\r\n}\r\n.content {\r\n    margin-left: 5px;\r\n} \r\n.dropdown-content {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #f1f1f1;\r\n    min-width: 200px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n    margin-left: 30%;\r\n    margin-top: -30%;\r\n}\r\n\r\n.dropdown-content1 {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #f1f1f1;\r\n    min-width: 200px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n    margin-left:40%;\r\n    margin-top: -30%;\r\n}\r\n.dropdown-content2 {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #f1f1f1;\r\n    min-width: 200px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n    margin-left: 40%;\r\n    margin-top: -30%;\r\n}\r\n.dropdown-content3 {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #f1f1f1;\r\n    min-width: 200px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n    margin-left: 40%;\r\n    margin-top: -30%;\r\n}\r\n\r\n}\r\n\r\n /*For Landscape Mode view*/     \r\n @media screen and (max-height: 360px) {\r\n  .main-sidebar{\r\n      margin-top:145px;\r\n      }\r\n       .sidenavbar {\r\n        margin-left:10px;\r\n       }                          \r\n     .content {\r\n     margin-left: 5px;\r\n     }\r\n }                           \r\n           \r\n\r\n        ", ""]);
 
 // exports
 
@@ -13074,7 +14101,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/layout/main-sidenav/main-sidenav.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"span2 bs-docs-sidebar main-sidebar fixed-height\">\r\n    <ul class=\"nav nav-list bs-docs-sidenav sidenavbar\">\r\n        <!-- <li class=\"treeview\" routerLinkActive=\"active\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['department']}}]\" class=\"key-data\" data-key=\"lg_dept\"> <i class=\"fa fa-gears\"></i>\r\n                    <span>Department</span>\r\n                    <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span>\r\n                </a>\r\n            </li> -->\r\n        <li role=\"separator\" class=\"divider\"></li>\r\n        <!-- <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['managecourse']}}]\" class=\"key-data\" data-key=\"lg_mng_course\"> Manage Course  Instructor <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span></a>\r\n                \r\n            </li>\r\n            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['lesson-schedule']}}]\" class=\"\" data-key=\"\"> Lesson Schedule <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span></a>\r\n                \r\n            </li>\r\n           \r\n          \r\n            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\r\n\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['assignment_head']}}]\" class=\"key-data\" data-key=\"lg_assign_list\"> Assignment <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span></a>\r\n                    \r\n                \r\n            </li>\r\n            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['sharecoursematerial']}}]\" class=\"key-data\" data-key=\"lg_share_course_mat\"> Share Course Material <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span></a>\r\n                \r\n            </li>\r\n            \r\n            <li *ngIf='is_student' class=\"treeview\" routerLinkActive=\"active\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studenttakeassignment']}}]\" class=\"key-data\" data-key=\"lg_stu_take_assign\"> Student Take Assignment <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span></a>\r\n                \r\n            </li>\r\n           \r\n            <li  *ngIf='is_student'  class=\"treeview\" routerLinkActive=\"active\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['receivecoursematerial']}}]\" class=\"key-data\" data-key=\"lg_receive_course_mat\">Receive Course Material <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span></a>\r\n               \r\n            </li>\r\n\r\n            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['activity']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Activity <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span></a>\r\n               \r\n            </li>\r\n\r\n            <li  *ngIf='is_student'  class=\"treeview\" routerLinkActive=\"active\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['takeactivity']}}]\" class=\"key-data\" data-key=\"lg_tak_actvty\"> Take Activity <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span></a>\r\n               \r\n            </li>-->\r\n          \r\n        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class=\"treeview\" routerLinkActive=\"active\">\r\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['AdmissionForm']}}]\" class=\"key-data\" data-key=\"lg_admission_form\">\r\n                <i class=\"fa fa-wpforms fa-fw\" aria-hidden=\"true\"></i>&nbsp;  Admission Form </a>\r\n        </li>\r\n\r\n\r\n        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"dropdown treeview\" routerLinkActive=\"active\">\r\n            <a class=\"dropbtn key-data\" data-key=\"lg_accounting\"> <i class=\"fa fa-file-text fa-fw\" aria-hidden=\"true\"></i>&nbsp; Accounting\r\n                <span class=\"pull-right-container\">\r\n                    <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\r\n                </span>\r\n            </a>\r\n            <div class=\"dropdown-content\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['accountingGroup']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Create Account Groups\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['ledger']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Create Account Ledger\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['manageVocher']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Manage Voucher\r\n\r\n                </a>\r\n              \r\n                <li class=\"dropdown1 treeview\" routerLinkActive=\"active\">\r\n                        <a class=\"dropbtn1\"> Transaction\r\n                            <span class=\"pull-right-container\">\r\n                                <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                            </span>\r\n                        </a>\r\n                        <div class=\"dropdown-content1\">\r\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['voucher']}}]\"> Voucher\r\n                            </a>\r\n                           \r\n                        </div>\r\n                    </li>\r\n               \r\n              \r\n                <li *ngIf='is_admin || is_chairman || is_student' class=\"dropdown2 treeview\" routerLinkActive=\"active\">\r\n                        <a class=\"dropbtn2\"> Reports\r\n                            <span class=\"pull-right-container\">\r\n                                <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                            </span>\r\n                        </a>\r\n                        <div class=\"dropdown-content2\">\r\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['balance']}}]\"> Balance Sheet\r\n                            </a>\r\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['ledgersummary']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Ledger Summary\r\n\r\n                            </a>\r\n                        </div>\r\n                    </li>\r\n               \r\n            </div>\r\n        </li>\r\n\r\n        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class=\"dropdown treeview\" routerLinkActive=\"active\">\r\n            <a class=\"dropbtn key-data\" data-key=\"lg_transport\"> <i class=\"fa fa-bus fa-fw\" aria-hidden=\"true\"></i>&nbsp; Transport\r\n                <span class=\"pull-right-container\">\r\n                    <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\r\n                </span>\r\n            </a>\r\n            <div class=\"dropdown-content sideMenu\">\r\n                   \r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['route']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Route\r\n                   \r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['routeList']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Route List\r\n                   \r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['boardList']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Board List\r\n                   \r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['vehicleList']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Vehicle List\r\n                    \r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['driversList']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Drivers List\r\n                    \r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['AllotVehicletoBoard']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Allot Vehicle to Board\r\n                    \r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['DriverVehicleComponent']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Allot Driver to Vehicle\r\n                    \r\n                </a>\r\n                <!-- <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['manageVocher']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Prepare Transport Fee\r\n                   \r\n                </a> -->\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['transportBills']}}]\" class=\"key-data\" data-key=\"lg_actvty\">View Transport Bills\r\n                    \r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['maintenanceDetails']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Maintenance Details\r\n                    \r\n                </a>\r\n                \r\n                <li class=\"dropdown1 treeview\" routerLinkActive=\"active\">\r\n                        <a class=\"dropbtn1\"> Reports\r\n                            <span class=\"pull-right-container\">\r\n                                <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                            </span>\r\n                        </a>\r\n                        <div class=\"dropdown-content1\">\r\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['driverReport']}}]\"> Driver Report\r\n                            </a>\r\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['vehicleReport']}}]\"> Vehicle Report </a>\r\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studentReport']}}]\"> Student Wise Report </a>\r\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['staffReport']}}]\"> Staff Wise Report </a>\r\n                        </div>\r\n                    </li>\r\n                <!-- <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['driverReport']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Driver Report\r\n                    <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span>\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['vehicleReport']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Vehicle Report\r\n                    <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span>\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studentReport']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Student Wise Report\r\n                    <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span>\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['staffReport']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Staff Wise Report\r\n                    <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span>\r\n                </a> -->\r\n            </div>\r\n        </li>\r\n        <li *ngIf='is_student' class=\"dropdown treeview\" routerLinkActive=\"active\">\r\n            <a class=\"dropbtn key-data\"  data-key=\"lg_transport\"> <i class=\"fa fa-bus fa-fw\" aria-hidden=\"true\"></i>&nbsp; Transport\r\n                <span class=\"pull-right-container\">\r\n                    <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\r\n                </span>\r\n            </a>\r\n            <div class=\"dropdown-content sideMenu_stutransport\">\r\n                <a  href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['routeDetails']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> My Route / Board Details\r\n                   \r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['allRouteBoard']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> View ALl Route / Board\r\n               \r\n                </a>\r\n            </div>\r\n        </li>\r\n        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class=\"dropdown treeview\" routerLinkActive=\"active\">\r\n            <a class=\"dropbtn key-data \" data-key=\"lg_hostel\"> <i class=\"fa fa-building fa-fw\" aria-hidden=\"true\"></i>&nbsp; Hostel\r\n                <!-- <img src=\"/assets/js_css/images/arrow_right.png\" height=\"15px\" width=\"20px\"/> -->\r\n                <span class=\"pull-right-container\" >\r\n                    <i class=\"glyphicon glyphicon-chevron-right pull-right \" ></i>\r\n                </span>\r\n            </a>\r\n            <div class=\"dropdown-content\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['addbuilding']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Add Building\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['addroom']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Add Room\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['roomavailability']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Room Availability\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['roomallocation']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Room Allocation\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['viewhostelpersons']}}]\" class=\"key-data\" data-key=\"lg_actvty\">View Hostel Persons\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['collectitems']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Collect Items\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['preparebill']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Prepare Bill\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['viewdetails']}}]\" class=\"key-data\" data-key=\"lg_actvty\">View Details\r\n\r\n                </a>\r\n            </div>\r\n        </li>\r\n\r\n        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner || is_student' class=\"dropdown treeview\" routerLinkActive=\"active\">\r\n            <a class=\"dropbtn key-data\" data-key=\"lg_msg\"> <i class=\"fa fa-envelope fa-fw\" aria-hidden=\"true\"></i>&nbsp; Message\r\n                    <span class=\"pull-right-container\">\r\n                            <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\r\n                        </span>\r\n            </a>\r\n            <div class=\"dropdown-content dropdown_1\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['messageinbox']}}]\" class=\"key-data\"> Message Inbox\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['sentmessages']}}]\" class=\"key-data\"> Sent Messages\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['composemessage']}}]\" class=\"key-data\">Compose Message\r\n\r\n                </a>\r\n            </div>\r\n        </li>\r\n\r\n\r\n        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class=\"dropdown treeview\" routerLinkActive=\"active\">\r\n            <a class=\"dropbtn key-data\" data-key=\"lg_sms\"><i class=\"fa fa-paper-plane fa-fw\" aria-hidden=\"true\"></i>&nbsp; SMS\r\n                <span class=\"pull-right-container\">\r\n                    <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\r\n                </span>\r\n            </a>\r\n            <div class=\"dropdown-content dropdown_1\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['sendsms']}}]\" class=\"key-data\"> Send SMS\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['enquirylist']}}]\" class=\"key-data\"> Enquiry List\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['smssetup']}}]\" class=\"key-data\"> SMS Setup\r\n\r\n                </a>\r\n            </div>\r\n        </li>\r\n\r\n        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class=\"dropdown treeview\" routerLinkActive=\"active\">\r\n            <a class=\"dropbtn key-data\" data-key=\"lg_lib\"><i class=\"fa fa-book fa-fw\" aria-hidden=\"true\"></i>&nbsp; Library\r\n                <span class=\"pull-right-container\">\r\n                    <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\r\n                </span>\r\n            </a>\r\n            <div class=\"dropdown-content\">\r\n\r\n                <li class=\"dropdown1 treeview\" routerLinkActive=\"active\">\r\n                    <a class=\"dropbtn1\">Master Records\r\n                        <span class=\"pull-right-container\">\r\n                            <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                        </span>\r\n                    </a>\r\n                    <div class=\"dropdown-content1 dropdown1\">\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['category']}}]\"> Category\r\n                        </a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['subcategory']}}]\"> Sub Category </a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['libraryfine']}}]\">Library Fine </a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['publisher']}}]\">Publisher/Supplier</a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['books']}}]\">\r\n                            Books</a>\r\n                    </div>\r\n                </li>\r\n\r\n                <li class=\"dropdown2 treeview\" routerLinkActive=\"active\">\r\n                    <a class=\"dropbtn2\"> Transaction Records\r\n                        <span class=\"pull-right-container\">\r\n                            <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                        </span>\r\n                    </a>\r\n                    <div class=\"dropdown-content2\">\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studentreturn']}}]\"> Issues/Return Books[Student]\r\n                        </a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['staffreturn']}}]\"> Issues/Return Books[Staff] </a>\r\n\r\n                    </div>\r\n                </li>\r\n\r\n                <li class=\"dropdown3 treeview\" routerLinkActive=\"active\">\r\n                    <a class=\"dropbtn3\">View Reports\r\n                        <span class=\"pull-right-container\">\r\n                            <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                        </span>\r\n                    </a>\r\n                    <div class=\"dropdown-content3 \">\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['allbooks']}}]\"> All Books\r\n                        </a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['booksavailability']}}]\">Books Availability </a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studentreport']}}]\">Student Report </a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['staffreport']}}]\">Staff Report</a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['bookissuedstudent']}}]\">\r\n                            Books Issued To Students</a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['bookissuedstaff']}}]\"> Books Issued To Staff</a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['allfines']}}]\">All Fines</a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['bookanalysis']}}]\">Book Analysis</a>\r\n\r\n                    </div>\r\n                </li>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['opac']}}]\" class=\"key-data\"> OPAC\r\n\r\n                </a>\r\n            </div>\r\n        </li>\r\n\r\n\r\n\r\n    </ul>\r\n    <br>\r\n</div>"
+module.exports = "<div class=\"span2 bs-docs-sidebar main-sidebar fixed-height\">\r\n    <ul class=\"nav nav-list bs-docs-sidenav sidenavbar\">\r\n        <!-- <li class=\"treeview\" routerLinkActive=\"active\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['department']}}]\" class=\"key-data\" data-key=\"lg_dept\"> <i class=\"fa fa-gears\"></i>\r\n                    <span>Department</span>\r\n                    <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span>\r\n                </a>\r\n            </li> -->\r\n        <li role=\"separator\" class=\"divider\"></li>\r\n        <!-- <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['managecourse']}}]\" class=\"key-data\" data-key=\"lg_mng_course\"> Manage Course  Instructor <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span></a>\r\n                \r\n            </li>\r\n            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['lesson-schedule']}}]\" class=\"\" data-key=\"\"> Lesson Schedule <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span></a>\r\n                \r\n            </li>\r\n           \r\n          \r\n            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\r\n\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['assignment_head']}}]\" class=\"key-data\" data-key=\"lg_assign_list\"> Assignment <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span></a>\r\n                    \r\n                \r\n            </li>\r\n            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['sharecoursematerial']}}]\" class=\"key-data\" data-key=\"lg_share_course_mat\"> Share Course Material <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span></a>\r\n                \r\n            </li>\r\n            \r\n            <li *ngIf='is_student' class=\"treeview\" routerLinkActive=\"active\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studenttakeassignment']}}]\" class=\"key-data\" data-key=\"lg_stu_take_assign\"> Student Take Assignment <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span></a>\r\n                \r\n            </li>\r\n           \r\n            <li  *ngIf='is_student'  class=\"treeview\" routerLinkActive=\"active\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['receivecoursematerial']}}]\" class=\"key-data\" data-key=\"lg_receive_course_mat\">Receive Course Material <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span></a>\r\n               \r\n            </li>\r\n\r\n            <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"treeview\" routerLinkActive=\"active\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['activity']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Activity <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span></a>\r\n               \r\n            </li>\r\n\r\n            <li  *ngIf='is_student'  class=\"treeview\" routerLinkActive=\"active\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['takeactivity']}}]\" class=\"key-data\" data-key=\"lg_tak_actvty\"> Take Activity <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span></a>\r\n               \r\n            </li>-->\r\n          \r\n        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class=\"treeview\" routerLinkActive=\"active\">\r\n            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['AdmissionForm']}}]\" class=\"key-data\" data-key=\"lg_admission_form\">\r\n                <i class=\"fa fa-wpforms fa-fw\" aria-hidden=\"true\"></i>&nbsp;  Admission Form </a>\r\n        </li>\r\n\r\n\r\n        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class=\"dropdown treeview\" routerLinkActive=\"active\">\r\n            <a class=\"dropbtn key-data\" data-key=\"lg_accounting\"> <i class=\"fa fa-file-text fa-fw\" aria-hidden=\"true\"></i>&nbsp; Accounting\r\n                <span class=\"pull-right-container\">\r\n                    <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\r\n                </span>\r\n            </a>\r\n            <div class=\"dropdown-content\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['accountingGroup']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Create Account Groups\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['ledger']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Create Account Ledger\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['manageVocher']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Manage Voucher\r\n\r\n                </a>\r\n              \r\n                <li class=\"dropdown1 treeview\" routerLinkActive=\"active\">\r\n                        <a class=\"dropbtn1\"> Transaction\r\n                            <span class=\"pull-right-container\">\r\n                                <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                            </span>\r\n                        </a>\r\n                        <div class=\"dropdown-content1\">\r\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['voucher']}}]\"> Voucher\r\n                            </a>\r\n                           \r\n                        </div>\r\n                    </li>\r\n               \r\n              \r\n                <li *ngIf='is_admin || is_chairman || is_student' class=\"dropdown2 treeview\" routerLinkActive=\"active\">\r\n                        <a class=\"dropbtn2\"> Reports\r\n                            <span class=\"pull-right-container\">\r\n                                <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                            </span>\r\n                        </a>\r\n                        <div class=\"dropdown-content2\">\r\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['balance']}}]\"> Balance Sheet\r\n                            </a>\r\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['ledgersummary']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Ledger Summary\r\n\r\n                            </a>\r\n                        </div>\r\n                    </li>\r\n               \r\n            </div>\r\n        </li>\r\n\r\n        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class=\"dropdown treeview\" routerLinkActive=\"active\">\r\n            <a class=\"dropbtn key-data\" data-key=\"lg_transport\"> <i class=\"fa fa-bus fa-fw\" aria-hidden=\"true\"></i>&nbsp; Transport\r\n                <span class=\"pull-right-container\">\r\n                    <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\r\n                </span>\r\n            </a>\r\n            <div class=\"dropdown-content sideMenu\">\r\n                   \r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['route']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Route\r\n                   \r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['routeList']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Route List\r\n                   \r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['boardList']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Board List\r\n                   \r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['vehicleList']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Vehicle List\r\n                    \r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['driversList']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Drivers List\r\n                    \r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['AllotVehicletoBoard']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Allot Vehicle to Board\r\n                    \r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['DriverVehicleComponent']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Allot Driver to Vehicle\r\n                    \r\n                </a>\r\n                <!-- <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['manageVocher']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Prepare Transport Fee\r\n                   \r\n                </a> -->\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['transportBills']}}]\" class=\"key-data\" data-key=\"lg_actvty\">View Transport Bills\r\n                    \r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['maintenanceDetails']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Maintenance Details\r\n                    \r\n                </a>\r\n                \r\n                <li class=\"dropdown1 treeview\" routerLinkActive=\"active\">\r\n                        <a class=\"dropbtn1\"> Reports\r\n                            <span class=\"pull-right-container\">\r\n                                <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                            </span>\r\n                        </a>\r\n                        <div class=\"dropdown-content1\">\r\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['driverReport']}}]\"> Driver Report\r\n                            </a>\r\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['vehicleReport']}}]\"> Vehicle Report </a>\r\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studentReport']}}]\"> Student Wise Report </a>\r\n                            <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['staffReport']}}]\"> Staff Wise Report </a>\r\n                        </div>\r\n                    </li>\r\n                <!-- <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['driverReport']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Driver Report\r\n                    <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span>\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['vehicleReport']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Vehicle Report\r\n                    <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span>\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studentReport']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Student Wise Report\r\n                    <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span>\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['staffReport']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Staff Wise Report\r\n                    <span class=\"pull-right-container\">\r\n                        <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                    </span>\r\n                </a> -->\r\n            </div>\r\n        </li>\r\n        <li *ngIf='is_student' class=\"dropdown treeview\" routerLinkActive=\"active\">\r\n            <a class=\"dropbtn key-data\"  data-key=\"lg_transport\"> <i class=\"fa fa-bus fa-fw\" aria-hidden=\"true\"></i>&nbsp; Transport\r\n                <span class=\"pull-right-container\">\r\n                    <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\r\n                </span>\r\n            </a>\r\n            <div class=\"dropdown-content sideMenu_stutransport\">\r\n                <a  href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['routeDetails']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> My Route / Board Details\r\n                   \r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['allRouteBoard']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> View ALl Route / Board\r\n               \r\n                </a>\r\n            </div>\r\n        </li>\r\n        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class=\"dropdown treeview\" routerLinkActive=\"active\">\r\n            <a class=\"dropbtn key-data \" data-key=\"lg_hostel\"> <i class=\"fa fa-building fa-fw\" aria-hidden=\"true\"></i>&nbsp; Hostel\r\n                <!-- <img src=\"/assets/js_css/images/arrow_right.png\" height=\"15px\" width=\"20px\"/> -->\r\n                <span class=\"pull-right-container\" >\r\n                    <i class=\"glyphicon glyphicon-chevron-right pull-right \" ></i>\r\n                </span>\r\n            </a>\r\n            <div class=\"dropdown-content\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['addbuilding']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Add Building\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['addroom']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Add Room\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['roomavailability']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Room Availability\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['roomallocation']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Room Allocation\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['viewhostelpersons']}}]\" class=\"key-data\" data-key=\"lg_actvty\">View Hostel Persons\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['collectitems']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Collect Items\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['preparebill']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Prepare Bill\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['viewdetails']}}]\" class=\"key-data\" data-key=\"lg_actvty\">View Details\r\n\r\n                </a>\r\n            </div>\r\n        </li>\r\n\r\n        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner || is_student' class=\"dropdown treeview\" routerLinkActive=\"active\">\r\n            <a class=\"dropbtn key-data\" data-key=\"lg_msg\"> <i class=\"fa fa-envelope fa-fw\" aria-hidden=\"true\"></i>&nbsp; Message\r\n                    <span class=\"pull-right-container\">\r\n                            <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\r\n                        </span>\r\n            </a>\r\n            <div class=\"dropdown-content dropdown_1\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['messageinbox']}}]\" class=\"key-data\"> Message Inbox\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['sentmessages']}}]\" class=\"key-data\"> Sent Messages\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['composemessage']}}]\" class=\"key-data\">Compose Message\r\n\r\n                </a>\r\n            </div>\r\n        </li>\r\n\r\n\r\n        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class=\"dropdown treeview\" routerLinkActive=\"active\">\r\n            <a class=\"dropbtn key-data\" data-key=\"lg_sms\"><i class=\"fa fa-paper-plane fa-fw\" aria-hidden=\"true\"></i>&nbsp; SMS\r\n                <span class=\"pull-right-container\">\r\n                    <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\r\n                </span>\r\n            </a>\r\n            <div class=\"dropdown-content dropdown_1\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['sendsms']}}]\" class=\"key-data\"> Send SMS\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['enquirylist']}}]\" class=\"key-data\"> Enquiry List\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['smssetup']}}]\" class=\"key-data\"> SMS Setup\r\n\r\n                </a>\r\n            </div>\r\n        </li>\r\n\r\n        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class=\"dropdown treeview\" routerLinkActive=\"active\">\r\n            <a class=\"dropbtn key-data\" data-key=\"lg_lib\"><i class=\"fa fa-book fa-fw\" aria-hidden=\"true\"></i>&nbsp; Library\r\n                <span class=\"pull-right-container\">\r\n                    <i class=\"glyphicon glyphicon-chevron-right pull-right \"></i>\r\n                </span>\r\n            </a>\r\n            <div class=\"dropdown-content\">\r\n\r\n                <li class=\"dropdown1 treeview\" routerLinkActive=\"active\">\r\n                    <a class=\"dropbtn1\">Master Records\r\n                        <span class=\"pull-right-container\">\r\n                            <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                        </span>\r\n                    </a>\r\n                    <div class=\"dropdown-content1 dropdown1\">\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['category']}}]\"> Category\r\n                        </a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['subcategory']}}]\"> Sub Category </a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['libraryfine']}}]\">Library Fine </a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['publisher']}}]\">Publisher/Supplier</a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['books']}}]\">\r\n                            Books</a>\r\n                    </div>\r\n                </li>\r\n\r\n                <li class=\"dropdown2 treeview\" routerLinkActive=\"active\">\r\n                    <a class=\"dropbtn2\"> Transaction Records\r\n                        <span class=\"pull-right-container\">\r\n                            <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                        </span>\r\n                    </a>\r\n                    <div class=\"dropdown-content2\">\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studentreturn']}}]\"> Issues/Return Books[Student]\r\n                        </a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['staffreturn']}}]\"> Issues/Return Books[Staff] </a>\r\n\r\n                    </div>\r\n                </li>\r\n\r\n                <li class=\"dropdown3 treeview\" routerLinkActive=\"active\">\r\n                    <a class=\"dropbtn3\">View Reports\r\n                        <span class=\"pull-right-container\">\r\n                            <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                        </span>\r\n                    </a>\r\n                    <div class=\"dropdown-content3 \">\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['allbooks']}}]\"> All Books\r\n                        </a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['booksavailability']}}]\">Books Availability </a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['studentreport']}}]\">Student Report </a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['staffreport']}}]\">Staff Report</a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['bookissuedstudent']}}]\">\r\n                            Books Issued To Students</a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['bookissuedstaff']}}]\"> Books Issued To Staff</a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['allfines']}}]\">All Fines</a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['bookanalysis']}}]\">Book Analysis</a>\r\n\r\n                    </div>\r\n                </li>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['opac']}}]\" class=\"key-data\"> OPAC\r\n\r\n                </a>\r\n            </div>\r\n        </li>\r\n\r\n\r\n        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class=\"dropdown treeview\" routerLinkActive=\"active\">\r\n            <a class=\"dropbtn key-data \" data-key=\"lg_hostel\"> <i class=\"fa fa-users fa-fw\" aria-hidden=\"true\"></i>&nbsp; HRD\r\n                <!-- <img src=\"/assets/js_css/images/arrow_right.png\" height=\"15px\" width=\"20px\"/> -->\r\n                <span class=\"pull-right-container\" >\r\n                    <i class=\"glyphicon glyphicon-chevron-right pull-right \" ></i>\r\n                </span>\r\n            </a>\r\n            <div class=\"dropdown-content sideMenu_hrd\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['postVacancy']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Post Vacancy\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['classifieds']}}]\" class=\"key-data\" data-key=\"lg_actvty\"> Classifieds\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['applicantEnquiry']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Applicant Enquiry\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['searchApplicants']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Search Applicants\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['takeInterview']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Take Interview\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['applicantsList']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Applicants List\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['offerLetter']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Offer Letter\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['letterFormats']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Letter Formats\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['resignTerminatation']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Resignation/Termination\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['otherLetterFormats']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Other Letter Formats\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['sendLetter']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Send Letter\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['printLetter']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Print Letter\r\n                </a>\r\n            </div>\r\n        </li>\r\n\r\n        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class=\"dropdown treeview\" routerLinkActive=\"active\">\r\n            <a class=\"dropbtn key-data \" data-key=\"lg_hostel\"> <i class=\"fa fa-briefcase fa-fw\" aria-hidden=\"true\"></i>&nbsp; Payroll\r\n                <!-- <img src=\"/assets/js_css/images/arrow_right.png\" height=\"15px\" width=\"20px\"/> -->\r\n                <span class=\"pull-right-container\" >\r\n                    <i class=\"glyphicon glyphicon-chevron-right pull-right \" ></i>\r\n                </span>\r\n            </a>\r\n            <div class=\"dropdown-content sideMenu_payroll\">\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['annualLeave']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Create Annual Leave\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['allowanceType']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Create Allowance Type\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['deductionType']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Create Deduction Type\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['loan']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Create a Loan\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['tax']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Create a Tax\r\n\r\n                </a>\r\n                <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['pf']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Create PF\r\n\r\n                </a>\r\n                <li class=\"dropdown1 treeview\" routerLinkActive=\"active\">\r\n                    <a class=\"dropbtn1\"> Employee\r\n                        <span class=\"pull-right-container\">\r\n                            <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                        </span>\r\n                    </a>\r\n                    \r\n                    <div class=\"dropdown-content1\">\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['issueLoan']}}]\">Issue Loan\r\n                        </a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['loanIssuedTo']}}]\">Loan Issued To\r\n                        </a>\r\n                       \r\n                    </div>\r\n                </li>\r\n           \r\n          \r\n            <li *ngIf='is_admin || is_chairman || is_student' class=\"dropdown2 treeview\" routerLinkActive=\"active\">\r\n                    <a class=\"dropbtn2\"> Payslip Generation\r\n                        <span class=\"pull-right-container\">\r\n                            <i class=\"glyphicon glyphicon-chevron-right pull-right\"></i>\r\n                        </span>\r\n                    </a>\r\n                    <div class=\"dropdown-content2\">\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['employeePayslip']}}]\">Employee Payslip\r\n                        </a>\r\n                        <a href=\"\" [routerLink]=\"['/content',{outlets:{appCommon:['payslipList']}}]\" class=\"key-data\" data-key=\"lg_actvty\">Payslip List\r\n\r\n                        </a>\r\n                    </div>\r\n                </li>\r\n            </div>\r\n        </li>\r\n\r\n    </ul>\r\n    <br>\r\n</div>"
 
 /***/ }),
 
@@ -13170,7 +14197,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/layout/menu-navbar/menu-navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-inverse menu-navbar  col-lg-12 col-md-12 col-xs-12 col-sm-12\" style=\"margin-left: 0;\" ngStickyNav>\r\n    <div class=\"navbar-header\" style=\"margin-top:-7px;\">\r\n\r\n        <div>\r\n            <!-- Sidebar toggle button-->\r\n            <a href=\"#\" class=\"sidebar-toggle\" data-toggle=\"push-menu\" role=\"button\" style=\"color: #5B5E60;background: none;\">\r\n                <span class=\"sr-only gly\">Toggle navigation</span>\r\n            </a>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"pull-right span1 profile \">\r\n        <div [popover]=\"myPopover\" class=\"dropdown\" id=\"profile_tooltip\">\r\n            <a href=\"\" class=\"\" data-toggle=\"dropdown\">\r\n                <!-- <img src=\"/assets/js_css/images/userimage_mini_v2.png\" align=\"middle\" border=\"0\"> -->\r\n                <span><i class=\"fa fa-group fa-2x\" ></i></span>\r\n            </a>\r\n            <div class=\"dropdown-content popuptext\" style=\"border-radius: 5px 5px 5px 5px;\">\r\n                <div class=\"text-display\">\r\n                    <p style=\"font-size:9px;margin-left:8px;margin-top: 7px;\" [title]=\"role\">\r\n                        Role:{{role | charLimiter:30}}\r\n                    </p>\r\n                </div>\r\n                <div style=\"white-space: nowrap;\" [title]=\"role\">\r\n                    &nbsp;\r\n                    <span class=\"glyphicon glyphicon-user \"></span>\r\n                    Welcome:\r\n                    <a style=\"color:#1d89c8;\">{{username | charLimiter:15}}</a>\r\n\r\n                </div>\r\n                <div class=\"divider\"></div>\r\n                <div class=\"row\" style=\"margin-left: 25px;margin-top: 5px;\">\r\n                    <a title=\"Click to Logout\" (click)=\"logout();\" style=\"font-size:12px;cursor:pointer\">\r\n                        <i class=\"glyphicon glyphicon-off\"></i> &nbsp; Log-out\r\n                    </a>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"pull-right academic org\" *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' >\r\n        <a href=\"#\" data-toggle=\"modal\" data-target=\"#rolebased\">|&nbsp;&nbsp;Change Organisation&nbsp;&nbsp;|&nbsp;&nbsp;</a>\r\n    </div>\r\n    <!-- Collect the nav links, forms, and other content for toggling -->\r\n    <div id=\"bs-example-navbar-collapse-1\" class=\"collapse navbar-collapse\" [ngClass]=\"{ 'in': isIn }\">\r\n        <ul class=\"nav navbar-nav\">\r\n            <!-- <li>\r\n                <a (click)=\"navigateToIonCudos()\" style=\"color:black;cursor:pointer\">Home</a>\r\n            </li> -->\r\n        </ul>\r\n    </div>\r\n</nav>\r\n\r\n<popover-content class=\"popoverText\" #myPopover title=\" Role:{{role | charLimiter:30}}\" placement=\"bottom\" [animation]=\"true\" [closeOnClickOutside]=\"true\">\r\n    \r\n        <!-- <a href=\"\" class=\"dropdown-toggle dropbtn \" data-toggle=\"dropdown\">\r\n            <img src=\"/assets/js_css/images/userimage_mini_v2.png\" align=\"middle\" border=\"0\">\r\n\r\n        </a> -->\r\n        <div>\r\n           \r\n            <div style=\"white-space: nowrap;\" [title]=\"role\">\r\n                &nbsp;\r\n                <span class=\"glyphicon glyphicon-user \"></span>\r\n                Welcome:\r\n                <a style=\"color:#1d89c8;\">{{username | charLimiter:15}}</a>\r\n\r\n            </div>\r\n            <div class=\"divider\"></div>\r\n            <div class=\"row\" style=\"margin-left: 25px;margin-top: 5px;\">\r\n                <a title=\"Click to Logout\" (click)=\"logout();\" style=\"font-size:12px;cursor:pointer\">\r\n                    <i class=\"glyphicon glyphicon-off\"></i> &nbsp; Log-out\r\n                </a>\r\n            </div>\r\n        </div>\r\n \r\n</popover-content>"
+module.exports = "<nav class=\"navbar navbar-inverse menu-navbar  col-lg-12 col-md-12 col-xs-12 col-sm-12\" style=\"margin-left: 0;\" ngStickyNav>\r\n    <div class=\"navbar-header\" style=\"margin-top:-7px;\">\r\n\r\n        <div>\r\n            <!-- Sidebar toggle button-->\r\n            <a href=\"#\" class=\"sidebar-toggle\" data-toggle=\"push-menu\" role=\"button\" style=\"color: #5B5E60;background: none;\">\r\n                <span class=\"sr-only gly\">Toggle navigation</span>\r\n            </a>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"pull-right span1 profile \">\r\n        <div [popover]=\"myPopover\" class=\"dropdown\" id=\"profile_tooltip\">\r\n            <a href=\"\" class=\"\" data-toggle=\"dropdown\">\r\n                <!-- <img src=\"/assets/js_css/images/userimage_mini_v2.png\" align=\"middle\" border=\"0\"> -->\r\n                <span><i class=\"fa fa-user fa-2x\" ></i></span>\r\n            </a>\r\n            <div class=\"dropdown-content popuptext\" style=\"border-radius: 5px 5px 5px 5px;\">\r\n                <div class=\"text-display\">\r\n                    <p style=\"font-size:9px;margin-left:8px;margin-top: 7px;\" [title]=\"role\">\r\n                        Role:{{role | charLimiter:30}}\r\n                    </p>\r\n                </div>\r\n                <div style=\"white-space: nowrap;\" [title]=\"role\">\r\n                    &nbsp;\r\n                    <span class=\"glyphicon glyphicon-user \"></span>\r\n                    Welcome:\r\n                    <a style=\"color:#1d89c8;\">{{username | charLimiter:15}}</a>\r\n\r\n                </div>\r\n                <div class=\"divider\"></div>\r\n                <div class=\"row\" style=\"margin-left: 25px;margin-top: 5px;\">\r\n                    <a title=\"Click to Logout\" (click)=\"logout();\" style=\"font-size:12px;cursor:pointer\">\r\n                        <i class=\"glyphicon glyphicon-off\"></i> &nbsp; Log-out\r\n                    </a>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"pull-right academic org\" *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' >\r\n        <a href=\"#\" data-toggle=\"modal\" data-target=\"#rolebased\">|&nbsp;&nbsp;Change Organisation&nbsp;&nbsp;|&nbsp;&nbsp;</a>\r\n    </div>\r\n    <!-- Collect the nav links, forms, and other content for toggling -->\r\n    <div id=\"bs-example-navbar-collapse-1\" class=\"collapse navbar-collapse\" [ngClass]=\"{ 'in': isIn }\">\r\n        <ul class=\"nav navbar-nav\">\r\n            <!-- <li>\r\n                <a (click)=\"navigateToIonCudos()\" style=\"color:black;cursor:pointer\">Home</a>\r\n            </li> -->\r\n        </ul>\r\n    </div>\r\n</nav>\r\n\r\n<popover-content class=\"popoverText\" #myPopover title=\" Role:{{role | charLimiter:30}}\" placement=\"bottom\" [animation]=\"true\" [closeOnClickOutside]=\"true\">\r\n    \r\n        <!-- <a href=\"\" class=\"dropdown-toggle dropbtn \" data-toggle=\"dropdown\">\r\n            <img src=\"/assets/js_css/images/userimage_mini_v2.png\" align=\"middle\" border=\"0\">\r\n\r\n        </a> -->\r\n        <div>\r\n           \r\n            <div style=\"white-space: nowrap;\" [title]=\"role\">\r\n                &nbsp;\r\n                <span class=\"glyphicon glyphicon-user \"></span>\r\n                Welcome:\r\n                <a style=\"color:#1d89c8;\">{{username | charLimiter:15}}</a>\r\n\r\n            </div>\r\n            <div class=\"divider\"></div>\r\n            <div class=\"row\" style=\"margin-left: 25px;margin-top: 5px;\">\r\n                <a title=\"Click to Logout\" (click)=\"logout();\" style=\"font-size:12px;cursor:pointer\">\r\n                    <i class=\"glyphicon glyphicon-off\"></i> &nbsp; Log-out\r\n                </a>\r\n            </div>\r\n        </div>\r\n \r\n</popover-content>"
 
 /***/ }),
 
@@ -15482,6 +16509,680 @@ ManagecourseComponent = __decorate([
 
 var _a, _b, _c, _d, _e, _f, _g;
 //# sourceMappingURL=managecourse.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/allowance-type/allowance-type.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/allowance-type/allowance-type.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  allowance-type works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/allowance-type/allowance-type.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AllowanceTypeComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AllowanceTypeComponent = (function () {
+    function AllowanceTypeComponent() {
+    }
+    AllowanceTypeComponent.prototype.ngOnInit = function () {
+    };
+    return AllowanceTypeComponent;
+}());
+AllowanceTypeComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-allowance-type',
+        template: __webpack_require__("../../../../../src/app/payroll/allowance-type/allowance-type.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/payroll/allowance-type/allowance-type.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], AllowanceTypeComponent);
+
+//# sourceMappingURL=allowance-type.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/annual-leave/annual-leave.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/annual-leave/annual-leave.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  annual-leave works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/annual-leave/annual-leave.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnnualLeaveComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AnnualLeaveComponent = (function () {
+    function AnnualLeaveComponent() {
+    }
+    AnnualLeaveComponent.prototype.ngOnInit = function () {
+    };
+    return AnnualLeaveComponent;
+}());
+AnnualLeaveComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-annual-leave',
+        template: __webpack_require__("../../../../../src/app/payroll/annual-leave/annual-leave.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/payroll/annual-leave/annual-leave.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], AnnualLeaveComponent);
+
+//# sourceMappingURL=annual-leave.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/deduction-type/deduction-type.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/deduction-type/deduction-type.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  deduction-type works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/deduction-type/deduction-type.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeductionTypeComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var DeductionTypeComponent = (function () {
+    function DeductionTypeComponent() {
+    }
+    DeductionTypeComponent.prototype.ngOnInit = function () {
+    };
+    return DeductionTypeComponent;
+}());
+DeductionTypeComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-deduction-type',
+        template: __webpack_require__("../../../../../src/app/payroll/deduction-type/deduction-type.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/payroll/deduction-type/deduction-type.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], DeductionTypeComponent);
+
+//# sourceMappingURL=deduction-type.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/employee/issue-loan/issue-loan.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/employee/issue-loan/issue-loan.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  issue-loan works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/employee/issue-loan/issue-loan.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IssueLoanComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var IssueLoanComponent = (function () {
+    function IssueLoanComponent() {
+    }
+    IssueLoanComponent.prototype.ngOnInit = function () {
+    };
+    return IssueLoanComponent;
+}());
+IssueLoanComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-issue-loan',
+        template: __webpack_require__("../../../../../src/app/payroll/employee/issue-loan/issue-loan.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/payroll/employee/issue-loan/issue-loan.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], IssueLoanComponent);
+
+//# sourceMappingURL=issue-loan.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/employee/loan-issued-to/loan-issued-to.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/employee/loan-issued-to/loan-issued-to.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  loan-issued-to works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/employee/loan-issued-to/loan-issued-to.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoanIssuedToComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var LoanIssuedToComponent = (function () {
+    function LoanIssuedToComponent() {
+    }
+    LoanIssuedToComponent.prototype.ngOnInit = function () {
+    };
+    return LoanIssuedToComponent;
+}());
+LoanIssuedToComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-loan-issued-to',
+        template: __webpack_require__("../../../../../src/app/payroll/employee/loan-issued-to/loan-issued-to.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/payroll/employee/loan-issued-to/loan-issued-to.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], LoanIssuedToComponent);
+
+//# sourceMappingURL=loan-issued-to.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/loan/loan.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/loan/loan.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  loan works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/loan/loan.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoanComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var LoanComponent = (function () {
+    function LoanComponent() {
+    }
+    LoanComponent.prototype.ngOnInit = function () {
+    };
+    return LoanComponent;
+}());
+LoanComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-loan',
+        template: __webpack_require__("../../../../../src/app/payroll/loan/loan.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/payroll/loan/loan.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], LoanComponent);
+
+//# sourceMappingURL=loan.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/payroll.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__annual_leave_annual_leave_component__ = __webpack_require__("../../../../../src/app/payroll/annual-leave/annual-leave.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__allowance_type_allowance_type_component__ = __webpack_require__("../../../../../src/app/payroll/allowance-type/allowance-type.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__deduction_type_deduction_type_component__ = __webpack_require__("../../../../../src/app/payroll/deduction-type/deduction-type.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__loan_loan_component__ = __webpack_require__("../../../../../src/app/payroll/loan/loan.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tax_tax_component__ = __webpack_require__("../../../../../src/app/payroll/tax/tax.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pf_pf_component__ = __webpack_require__("../../../../../src/app/payroll/pf/pf.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__employee_issue_loan_issue_loan_component__ = __webpack_require__("../../../../../src/app/payroll/employee/issue-loan/issue-loan.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__employee_loan_issued_to_loan_issued_to_component__ = __webpack_require__("../../../../../src/app/payroll/employee/loan-issued-to/loan-issued-to.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__payslip_generation_employee_payslip_employee_payslip_component__ = __webpack_require__("../../../../../src/app/payroll/payslip-generation/employee-payslip/employee-payslip.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__payslip_generation_payslip_list_payslip_list_component__ = __webpack_require__("../../../../../src/app/payroll/payslip-generation/payslip-list/payslip-list.component.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PayrollModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+var PayrollModule = (function () {
+    function PayrollModule() {
+    }
+    return PayrollModule;
+}());
+PayrollModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]
+        ],
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_2__annual_leave_annual_leave_component__["a" /* AnnualLeaveComponent */],
+            __WEBPACK_IMPORTED_MODULE_3__allowance_type_allowance_type_component__["a" /* AllowanceTypeComponent */],
+            __WEBPACK_IMPORTED_MODULE_4__deduction_type_deduction_type_component__["a" /* DeductionTypeComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__loan_loan_component__["a" /* LoanComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__tax_tax_component__["a" /* TaxComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__pf_pf_component__["a" /* PFComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__employee_issue_loan_issue_loan_component__["a" /* IssueLoanComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__employee_loan_issued_to_loan_issued_to_component__["a" /* LoanIssuedToComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__payslip_generation_employee_payslip_employee_payslip_component__["a" /* EmployeePayslipComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__payslip_generation_payslip_list_payslip_list_component__["a" /* PayslipListComponent */],
+        ]
+    })
+], PayrollModule);
+
+//# sourceMappingURL=payroll.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/payslip-generation/employee-payslip/employee-payslip.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/payslip-generation/employee-payslip/employee-payslip.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  employee-payslip works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/payslip-generation/employee-payslip/employee-payslip.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmployeePayslipComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var EmployeePayslipComponent = (function () {
+    function EmployeePayslipComponent() {
+    }
+    EmployeePayslipComponent.prototype.ngOnInit = function () {
+    };
+    return EmployeePayslipComponent;
+}());
+EmployeePayslipComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-employee-payslip',
+        template: __webpack_require__("../../../../../src/app/payroll/payslip-generation/employee-payslip/employee-payslip.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/payroll/payslip-generation/employee-payslip/employee-payslip.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], EmployeePayslipComponent);
+
+//# sourceMappingURL=employee-payslip.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/payslip-generation/payslip-list/payslip-list.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/payslip-generation/payslip-list/payslip-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  payslip-list works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/payslip-generation/payslip-list/payslip-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PayslipListComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PayslipListComponent = (function () {
+    function PayslipListComponent() {
+    }
+    PayslipListComponent.prototype.ngOnInit = function () {
+    };
+    return PayslipListComponent;
+}());
+PayslipListComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-payslip-list',
+        template: __webpack_require__("../../../../../src/app/payroll/payslip-generation/payslip-list/payslip-list.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/payroll/payslip-generation/payslip-list/payslip-list.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], PayslipListComponent);
+
+//# sourceMappingURL=payslip-list.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/pf/pf.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/pf/pf.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  pf works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/pf/pf.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PFComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PFComponent = (function () {
+    function PFComponent() {
+    }
+    PFComponent.prototype.ngOnInit = function () {
+    };
+    return PFComponent;
+}());
+PFComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-pf',
+        template: __webpack_require__("../../../../../src/app/payroll/pf/pf.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/payroll/pf/pf.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], PFComponent);
+
+//# sourceMappingURL=pf.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/tax/tax.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/tax/tax.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  tax works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/tax/tax.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TaxComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var TaxComponent = (function () {
+    function TaxComponent() {
+    }
+    TaxComponent.prototype.ngOnInit = function () {
+    };
+    return TaxComponent;
+}());
+TaxComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-tax',
+        template: __webpack_require__("../../../../../src/app/payroll/tax/tax.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/payroll/tax/tax.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], TaxComponent);
+
+//# sourceMappingURL=tax.component.js.map
 
 /***/ }),
 

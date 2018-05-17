@@ -178,7 +178,15 @@
     margin-top: -15%;
 }
 
+.sideMenu_hrd {
+    margin-left: 60%;
+    margin-top: -125%;
+}
 
+.sideMenu_payroll{
+    margin-left: 60%;
+    margin-top: -140%; 
+}
 
 .dropdown-content a {
     color: black;

@@ -59,8 +59,12 @@ import { HostelComponent } from './hostel/hostel.component';
 import { HostelModule } from './hostel/hostel.module';
 
 import { DualListBoxModule } from 'ng2-dual-list-box';
+import {HrdModule} from './hrd/hrd.module'; //HRD Component
+import {PayrollModule} from './payroll/payroll.module'; //Payroll Component
 
 import { LibraryModule } from './library/library.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -95,6 +99,9 @@ import { LibraryModule } from './library/library.module';
 
     AdmissionFormComponent,
 
+    
+
+    
 
   ],
   imports: [
@@ -121,7 +128,9 @@ import { LibraryModule } from './library/library.module';
     AccountingModule,
     TransportModule,
     LibraryModule,
-    LoginModule
+    LoginModule,
+    HrdModule,
+    PayrollModule
 
   ],
   providers: [

@@ -351,6 +351,111 @@
         </li>
 
 
+        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="dropdown treeview" routerLinkActive="active">
+            <a class="dropbtn key-data " data-key="lg_hostel"> <i class="fa fa-users fa-fw" aria-hidden="true"></i>&nbsp; HRD
+                <!-- <img src="/assets/js_css/images/arrow_right.png" height="15px" width="20px"/> -->
+                <span class="pull-right-container" >
+                    <i class="glyphicon glyphicon-chevron-right pull-right " ></i>
+                </span>
+            </a>
+            <div class="dropdown-content sideMenu_hrd">
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['postVacancy']}}]" class="key-data" data-key="lg_actvty">Post Vacancy
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['classifieds']}}]" class="key-data" data-key="lg_actvty"> Classifieds
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['applicantEnquiry']}}]" class="key-data" data-key="lg_actvty">Applicant Enquiry
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['searchApplicants']}}]" class="key-data" data-key="lg_actvty">Search Applicants
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['takeInterview']}}]" class="key-data" data-key="lg_actvty">Take Interview
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['applicantsList']}}]" class="key-data" data-key="lg_actvty">Applicants List
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['offerLetter']}}]" class="key-data" data-key="lg_actvty">Offer Letter
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['letterFormats']}}]" class="key-data" data-key="lg_actvty">Letter Formats
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['resignTerminatation']}}]" class="key-data" data-key="lg_actvty">Resignation/Termination
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['otherLetterFormats']}}]" class="key-data" data-key="lg_actvty">Other Letter Formats
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['sendLetter']}}]" class="key-data" data-key="lg_actvty">Send Letter
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['printLetter']}}]" class="key-data" data-key="lg_actvty">Print Letter
+                </a>
+            </div>
+        </li>
+
+        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="dropdown treeview" routerLinkActive="active">
+            <a class="dropbtn key-data " data-key="lg_hostel"> <i class="fa fa-briefcase fa-fw" aria-hidden="true"></i>&nbsp; Payroll
+                <!-- <img src="/assets/js_css/images/arrow_right.png" height="15px" width="20px"/> -->
+                <span class="pull-right-container" >
+                    <i class="glyphicon glyphicon-chevron-right pull-right " ></i>
+                </span>
+            </a>
+            <div class="dropdown-content sideMenu_payroll">
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['annualLeave']}}]" class="key-data" data-key="lg_actvty">Create Annual Leave
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['allowanceType']}}]" class="key-data" data-key="lg_actvty">Create Allowance Type
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['deductionType']}}]" class="key-data" data-key="lg_actvty">Create Deduction Type
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['loan']}}]" class="key-data" data-key="lg_actvty">Create a Loan
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['tax']}}]" class="key-data" data-key="lg_actvty">Create a Tax
+
+                </a>
+                <a href="" [routerLink]="['/content',{outlets:{appCommon:['pf']}}]" class="key-data" data-key="lg_actvty">Create PF
+
+                </a>
+                <li class="dropdown1 treeview" routerLinkActive="active">
+                    <a class="dropbtn1"> Employee
+                        <span class="pull-right-container">
+                            <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                        </span>
+                    </a>
+                    
+                    <div class="dropdown-content1">
+                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['issueLoan']}}]">Issue Loan
+                        </a>
+                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['loanIssuedTo']}}]">Loan Issued To
+                        </a>
+                       
+                    </div>
+                </li>
+           
+          
+            <li *ngIf='is_admin || is_chairman || is_student' class="dropdown2 treeview" routerLinkActive="active">
+                    <a class="dropbtn2"> Payslip Generation
+                        <span class="pull-right-container">
+                            <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                        </span>
+                    </a>
+                    <div class="dropdown-content2">
+                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['employeePayslip']}}]">Employee Payslip
+                        </a>
+                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['payslipList']}}]" class="key-data" data-key="lg_actvty">Payslip List
+
+                        </a>
+                    </div>
+                </li>
+            </div>
+        </li>
 
     </ul>
     <br>
