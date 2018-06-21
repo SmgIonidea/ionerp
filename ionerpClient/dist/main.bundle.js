@@ -16828,8 +16828,11 @@ DeductionTypeComponent = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__issue_loan_issue_loan_component__ = __webpack_require__("../../../../../src/app/payroll/employee/issue-loan/issue-loan.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__loan_issued_to_loan_issued_to_component__ = __webpack_require__("../../../../../src/app/payroll/employee/loan-issued-to/loan-issued-to.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_mydatepicker__ = __webpack_require__("../../../../mydatepicker/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular_datatables__ = __webpack_require__("../../../../angular-datatables/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__issue_loan_issue_loan_component__ = __webpack_require__("../../../../../src/app/payroll/employee/issue-loan/issue-loan.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__loan_issued_to_loan_issued_to_component__ = __webpack_require__("../../../../../src/app/payroll/employee/loan-issued-to/loan-issued-to.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmployeeModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -16837,6 +16840,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -16849,11 +16855,14 @@ var EmployeeModule = (function () {
 EmployeeModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]
+            __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
+            __WEBPACK_IMPORTED_MODULE_2_mydatepicker__["MyDatePickerModule"],
+            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormsModule */], __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* ReactiveFormsModule */],
+            __WEBPACK_IMPORTED_MODULE_3_angular_datatables__["a" /* DataTablesModule */]
         ],
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__issue_loan_issue_loan_component__["a" /* IssueLoanComponent */],
-            __WEBPACK_IMPORTED_MODULE_3__loan_issued_to_loan_issued_to_component__["a" /* LoanIssuedToComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__issue_loan_issue_loan_component__["a" /* IssueLoanComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__loan_issued_to_loan_issued_to_component__["a" /* LoanIssuedToComponent */],
         ]
     })
 ], EmployeeModule);
@@ -17126,10 +17135,10 @@ LoanComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__loan_loan_component__ = __webpack_require__("../../../../../src/app/payroll/loan/loan.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__tax_tax_component__ = __webpack_require__("../../../../../src/app/payroll/tax/tax.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pf_pf_component__ = __webpack_require__("../../../../../src/app/payroll/pf/pf.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angular_datatables__ = __webpack_require__("../../../../angular-datatables/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_angular_2_dropdown_multiselect__ = __webpack_require__("../../../../angular-2-dropdown-multiselect/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_mydatepicker__ = __webpack_require__("../../../../mydatepicker/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angular_datatables__ = __webpack_require__("../../../../angular-datatables/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angular_2_dropdown_multiselect__ = __webpack_require__("../../../../angular-2-dropdown-multiselect/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_mydatepicker__ = __webpack_require__("../../../../mydatepicker/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PayrollModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -17160,11 +17169,13 @@ PayrollModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
-            __WEBPACK_IMPORTED_MODULE_12_angular_datatables__["a" /* DataTablesModule */],
-            __WEBPACK_IMPORTED_MODULE_13_angular_2_dropdown_multiselect__["a" /* MultiselectDropdownModule */],
-            __WEBPACK_IMPORTED_MODULE_14_mydatepicker__["MyDatePickerModule"],
-            __WEBPACK_IMPORTED_MODULE_15__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_15__angular_forms__["b" /* ReactiveFormsModule */]
+            __WEBPACK_IMPORTED_MODULE_10_angular_datatables__["a" /* DataTablesModule */],
+            __WEBPACK_IMPORTED_MODULE_11_angular_2_dropdown_multiselect__["a" /* MultiselectDropdownModule */],
+            __WEBPACK_IMPORTED_MODULE_12_mydatepicker__["MyDatePickerModule"],
+            __WEBPACK_IMPORTED_MODULE_13__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_13__angular_forms__["b" /* ReactiveFormsModule */],
+            __WEBPACK_IMPORTED_MODULE_2__employee_employee_module__["a" /* EmployeeModule */],
+            __WEBPACK_IMPORTED_MODULE_3__payslip_generation_payslip_generation_module__["a" /* PayslipGenerationModule */]
         ],
         declarations: [
             __WEBPACK_IMPORTED_MODULE_4__annual_leave_annual_leave_component__["a" /* AnnualLeaveComponent */],
@@ -17264,6 +17275,9 @@ EmployeePayslipComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__employee_payslip_employee_payslip_component__ = __webpack_require__("../../../../../src/app/payroll/payslip-generation/employee-payslip/employee-payslip.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__payslip_list_payslip_list_component__ = __webpack_require__("../../../../../src/app/payroll/payslip-generation/payslip-list/payslip-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_mydatepicker__ = __webpack_require__("../../../../mydatepicker/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_datatables__ = __webpack_require__("../../../../angular-datatables/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PayslipGenerationModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -17271,6 +17285,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -17283,7 +17300,10 @@ var PayslipGenerationModule = (function () {
 PayslipGenerationModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]
+            __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
+            __WEBPACK_IMPORTED_MODULE_4_mydatepicker__["MyDatePickerModule"],
+            __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormsModule */], __WEBPACK_IMPORTED_MODULE_6__angular_forms__["b" /* ReactiveFormsModule */],
+            __WEBPACK_IMPORTED_MODULE_5_angular_datatables__["a" /* DataTablesModule */]
         ],
         declarations: [
             __WEBPACK_IMPORTED_MODULE_2__employee_payslip_employee_payslip_component__["a" /* EmployeePayslipComponent */],

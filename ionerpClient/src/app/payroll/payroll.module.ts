@@ -11,8 +11,7 @@ import { PFComponent } from './pf/pf.component';
 import { DataTablesModule } from 'angular-datatables';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { MyDatePickerModule } from 'mydatepicker';
-import { EmployeeModule } from './employee/employee.module';
-import { PayslipGenerationModule } from './payslip-generation/payslip-generation.module';
+
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 @NgModule({
   imports: [
@@ -21,7 +20,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MultiselectDropdownModule,
     MyDatePickerModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    EmployeeModule,
+    PayslipGenerationModule
+
 
   ],
   declarations: [
