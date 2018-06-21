@@ -1,3 +1,70 @@
-<p>
-  loan-issued-to works!
-</p>
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loan Issued To
+    </h4>
+  </div>
+
+  <br>
+</section>
+
+<div class="container-fluid">
+  <form class="form-horizontal" style="border-top:0px;">
+    <div class="table table-responsive" style="overflow-x:initial;">
+      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+        <thead style="background-color:#DDE1E6;">
+          <tr>
+            <!-- <th class="text-center">
+            <input type="checkbox" (click)="deleteAllSelected($event)" id="delete_check">
+          </th> -->
+            <th class="text-center">S.No</th>
+            <th class="text-center">Employee Name</th>
+            <th class="text-center">Issued On</th>
+            <th class="text-center">Loan(Total Installment)</th>
+            <th class="text-center">Interest</th>
+            <th class="text-center">Paid(Installment Completed)</th>
+            <th class="text-center">Balance</th>
+            <!-- <th class="text-center">Actions</th> -->
+
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <!-- <tr *ngFor="let post of posts let i = index"> -->
+            <!-- <pre>{{post | json}}</pre>       -->
+            <!-- <td>
+            <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
+          </td> -->
+            <td class="text-center">
+              <p class="pull-right">1</p>
+            </td>
+            <td class="text-center">
+              <h6>Anil Kumar </h6>
+              <h6>[ID-2]</h6>
+              <h6>Dept- Teaching Staff</h6>
+            </td>
+            <td class="text-center">18/05/2018</td>
+            <td class="text-center">Rs.1234(5)</td>
+            <td class="text-center">
+              <h6>Rs.86.38</h6>
+              <h6>[7]%</h6></td>
+            <td class="text-center">Rs.1320.38(5)</td>
+            <td class="text-center">0.0</td>
+
+            <!-- <td class="text-center">
+              <i class="glyphicon glyphicon-pencil" style="cursor:pointer"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="glyphicon glyphicon-remove" style="cursor:pointer"></i>
+            </td> -->
+
+
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <br>
+    <br>
+    <br>
+  </form>
+</div>

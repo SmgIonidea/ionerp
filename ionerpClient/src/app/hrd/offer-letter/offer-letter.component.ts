@@ -9,7 +9,12 @@ export class OfferLetterComponent implements OnInit {
 
   constructor() { }
 
+  maintitle;
+
   ngOnInit() {
+
+    this.maintitle = "Generate offer letter";
+
   }
 
 }

@@ -1,3 +1,295 @@
-<p>
-  issue-loan works!
-</p>
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Issue Loan</h4>
+  </div>
+</section>
+
+
+
+
+<div class="container-fluid" id="home">
+
+  <form class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Select Employee:<span class="mandatory" style="color:red;">*</span></label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select #selectemp class="form-control" (change)="employee(selectemp.value)">
+            <option >Select</option>
+          <option value="a">Anil Kumar</option>
+          <!-- <option value="b">Bharath</option> -->
+         
+        </select>
+      </div>
+    </div>
+    
+    <div id="wholeDiv" style="display:none;">
+    <div id="employeeDiv" style="display:none">
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Employee Id:</label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category label_align">
+        2
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Employee Name:</label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category label_align">
+        Anil Kumar
+      </div> 
+    </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Department Name:</label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category label_align">
+        Teaching Staff
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Post:</label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category label_align">
+        Asst Professor
+      </div>
+    </div>
+    
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+          <label for="">Basic Salary:</label>
+        </div>
+        <div class="col col-md-5 col-sm-12 col-xs-12 category label_align">
+         Rs.10000
+        </div>
+      </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Select Loan Type:<span class="mandatory" style="color:red;">*</span></label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select #selectloan class="form-control" (change)="loan(selectloan.value)" id="loan">
+          <option value="selLoan">Select</option>
+          <option value="loanA">Home Loan</option>
+         
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div id="loanDiv" style="display:none">
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+          <label for="">Max Limit:</label>
+        </div>
+        <div class="col col-md-5 col-sm-12 col-xs-12 category label_align">
+          Rs.100000
+        </div>
+      </div>
+      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+          <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+            <label for="">Loan Amount:<span class="mandatory" style="color:red;">*</span>
+            </label>
+          </div>
+          <div class="col col-md-5 col-sm-12 col-xs-12 category">
+            <input type="text" name="loan_amt" id="loan_amt" class="form-control">
+          </div>
+        </div>
+        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+            <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+              <label for="">Interest Rate:</label>
+            </div>
+            <div class="col col-md-5 col-sm-12 col-xs-12 category label_align">
+              8%
+            </div>
+          </div>
+          <div class="form-group col-md-12 col-sm-12 col-xs-12">
+              <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+                <label for="">No of Installments:<span class="mandatory" style="color:red;">*</span>
+                </label>
+              </div>
+              <div class="col col-md-5 col-sm-12 col-xs-12 category">
+                <input type="text" name="installments" id="installments" class="form-control">
+              </div>
+            </div>
+            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+                  <label for="">Date of Joining:</label>
+                </div>
+                <div class="col col-md-5 col-sm-12 col-xs-12 category label_align">
+                  18-05-2017
+                </div>
+              </div>
+              <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                  <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+                    <label for="">Deduction starts from:
+                      <span class="mandatory" style="color:red;">*</span>
+                    </label>
+                  </div>
+                  <div class='right-inner-addon dateview col-md-5' data-date-format="yyyy-mm-dd">
+                    <my-date-picker class="" placeholder=" dd-mm-yyyy" name="admission_date1" id="admission_date1" [options]="myDatePickerOptions"
+                      [(ngModel)]="model">
+                    </my-date-picker>
+                  </div>
+                  <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+                       
+                      </div>
+                      <div class="col col-md-5 col-sm-12 col-xs-12 category" style="color:red">
+                          [Please select future date to deduct EMI from Salary.]
+                      </div>
+                    </div>
+                </div>
+                
+            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+                  <label for="">Deduction Amount:<span class="mandatory" style="color:red;">*</span>
+                  </label>
+                </div>
+                <div class="col col-md-5 col-sm-12 col-xs-12 category">
+                  <input type="text" name="loan_amt" id="loan_amt" class="form-control">
+                </div>
+                <div class="col col-md-5 col-sm-12 col-xs-12 category gen_btn">
+                    <button class="btn btn-info" name="generate" id="loan_amt" >Generate</button>
+                  </div>
+                  <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+                       
+                      </div>
+                      <div class="col col-md-5 col-sm-12 col-xs-12 category" style="color:red">
+                          Total Amount = Loan Amount + ((Loan Amount x Interest Rate) / 100) 
+                          Deduction Amount = (Total Amount / Installment)
+                      </div>
+                    </div>
+                  
+              </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+          <label for="">Voucher Type:<span class="mandatory" style="color:red;">*</span></label>
+        </div>
+        <div class="col col-md-5 col-sm-12 col-xs-12 category">
+          <select class="form-control">
+              <option >Select</option>
+            <option value="receipt">Receipt</option>
+            <option value="b">Sales</option>
+           
+          </select>
+        </div>
+      </div>
+   
+
+      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+          <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+            <label for="">Ledger Type:<span class="mandatory" style="color:red;">*</span></label>
+          </div>
+          <div class="col col-md-5 col-sm-12 col-xs-12 category">
+            <select class="form-control">
+                <option >Select</option>
+              <option value="a">Admission</option>
+              <option value="b">Salary</option>
+             
+            </select>
+          </div>
+        </div>
+        
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Payment Mode:<span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select #select class="form-control" name="payment" (change)="selectDiv(select.value)">
+          <option>Select Payment</option>
+          <option value="cash">Cash</option>
+          <option value="cheque">Cheque</option>
+          <option value="dd">DD</option>
+        </select>
+      </div>
+    </div>
+
+    
+
+
+
+    <div id="hiddeDiv" style="display:none">
+      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+          <label for="">Bank Name:
+          </label>
+        </div>
+        <div class="col col-md-5 col-sm-12 col-xs-12 category">
+          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+        </div>
+      </div>
+      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+          <label for="">Account Number:
+          </label>
+        </div>
+        <div class="col col-md-5 col-sm-12 col-xs-12 category">
+          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+        </div>
+      </div>
+      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+          <label for="">Cheque/DD Number:
+          </label>
+        </div>
+        <div class="col col-md-5 col-sm-12 col-xs-12 category">
+          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+        </div>
+      </div>
+      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+          <label for="">Teller Name:
+          </label>
+        </div>
+        <div class="col col-md-5 col-sm-12 col-xs-12 category">
+          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+        </div>
+      </div>
+      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+          <label for="">Pin:
+          </label>
+        </div>
+        <div class="col col-md-5 col-sm-12 col-xs-12 category">
+          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+          <label for="">Narration:
+          </label>
+        </div>
+        <div class="col col-md-5 col-sm-12 col-xs-12 category">
+          <textarea type="text" name="voucher_number" id="voucher_number" class="form-control"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="can">
+      <div class="btn_cancel  col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right">
+        <button id="saveAssignment" type="submit" class="btn btn-primary">
+          <i class="glyphicon glyphicon-file"></i>&nbsp;Save</button>
+        <button type="reset" class="btn btn-danger">
+          <i class="glyphicon glyphicon-refresh"></i>&nbsp;Reset</button>
+      </div>
+      <!-- <div  class="btn_cancel col-lg-3 col-md-3 col-xs-12 col-sm-6 btn_update">
+        <button  id="UpdateAssignment" type="button" class="btn btn-primary" >
+          <i class="glyphicon glyphicon-ok"></i> Update
+        </button>
+        <button id="cancelEdit" type="button" class="btn btn-danger" >
+          <i class="glyphicon glyphicon-remove"></i> Cancel
+        </button> 
+      </div>-->
+    </div>
+  </form>
+</div>

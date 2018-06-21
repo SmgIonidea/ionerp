@@ -10,9 +10,21 @@ import { IssueLoanComponent } from './employee/issue-loan/issue-loan.component';
 import { LoanIssuedToComponent } from './employee/loan-issued-to/loan-issued-to.component';
 import { EmployeePayslipComponent } from './payslip-generation/employee-payslip/employee-payslip.component';
 import { PayslipListComponent } from './payslip-generation/payslip-list/payslip-list.component';
+import { DataTablesModule } from 'angular-datatables';
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
+import { MyDatePickerModule } from 'mydatepicker';
+import { EmployeeModule } from './employee/employee.module';
+import { PayslipGenerationModule } from './payslip-generation/payslip-generation.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    DataTablesModule,
+    MultiselectDropdownModule,
+    MyDatePickerModule,
+    FormsModule,
+    ReactiveFormsModule
+
   ],
   declarations: [
     AnnualLeaveComponent,

@@ -1,3 +1,190 @@
-<p>
-  post-vacancy works!
-</p>
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Post Vacancy</h4>
+  </div>
+  <!--<span style="float:right;padding-right:100px;">Date:</span>-->
+</section>
+
+<!-- <div class="container"> -->
+<form>
+  <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="form-group col-lg-4 col-xs-12 col-md-4 col-sm-12">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 labelfield " align="left" style="margin-left:-30px;padding-top:10px">
+        <label>Start Date:</label>
+      </div>
+      <div class='right-inner-addon dateview col-md-8' data-date-format="yyyy-mm-dd" style="margin-left:-40px;">
+        <my-date-picker class="" placeholder=" dd-mm-yyyy" name="admission_date1" id="admission_date1" [options]="myDatePickerOptions"
+          [(ngModel)]="model">
+        </my-date-picker>
+      </div>
+    </div>
+    <div class="form-group col-lg-4 col-xs-12 col-md-4 col-sm-12">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 labelfield " align="left" style="margin-left:-90px;padding-top:10px">
+        <label>End Date:</label>
+      </div>
+      <div class='right-inner-addon dateview col-md-8' data-date-format="yyyy-mm-dd" style="margin-left:-40px;">
+        <my-date-picker class="" placeholder=" dd-mm-yyyy" name="admission_date1" id="admission_date1" [options]="myDatePickerOptions"
+          [(ngModel)]="model">
+        </my-date-picker>
+      </div>
+    </div>
+    <div class="form-group col-lg-4 col-md-4 btnalign">
+      <div class="col-md-4 col-lg-4">
+        <button id="" type="submit" class="btn btn-primary search search-height">
+          <span class="glyphicon glyphicon-search"></span>
+          &nbsp;Search</button>
+      </div>
+      <!-- <div></div> -->
+      <!-- <br class="display"> -->
+      <div class=" col-md-4 col-lg-4 addpostbtn-align">
+        <button id="" type="submit" class="btn btn-primary search search-height" data-toggle="modal" data-target="#manage_students">
+          <span class="glyphicon glyphicon-file"></span>
+          <a href="#"></a>
+          &nbsp;Add Post</button>
+      </div>
+    </div>
+    <!--<div  class="form-group col-lg-3 col-xs-12 col-md-3 col-sm-12"></div>-->
+    <!--<div class="row form-group" style="padding-top:22px;">
+        <div class="pull-right btn_alignment">
+          <button id="" type="submit" class="btn btn-primary">
+            <i class="glyphicon glyphicon-file"></i>
+            <span class="glyphicon glyphicon-search"></span>
+            &nbsp;Search</button>
+        </div>
+      </div>-->
+  </div>
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <th class="text-center col-lg-1">Sl No.</th>
+          <th class="text-center col-lg-2">Department</th>
+          <th class="text-center col-lg-3">Post</th>
+          <th class="text-center col-lg-3">Posted On</th>
+          <th class="text-center col-lg-2">Position</th>
+          <th class="text-center col-lg-1">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-right">1</td>
+          <td class="text-center">Teaching staff</td>
+          <td class="text-center">Hsst English</td>
+          <td class="text-center">09-03-2018</td>
+          <td class="text-center">3</td>
+          <td>
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editclassified"><span class="glyphicon glyphicon-pencil"></span></button>&nbsp; -->
+            <span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#editclassified"></span>&nbsp;
+            <span class="glyphicon glyphicon-print" data-toggle="modal" data-target="#printclassified"></span>&nbsp;
+            <span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#deleteclassified"></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</form>
+<!-- <div> -->
+<!--<td class="text-center" #manageStudents [attr.assignmentId]="post.a_id">
+      <a href="#" data-toggle="modal" data-target="#manage_students" (click)="getStudents(this.manageStudents)">Manage Students</a>
+    </td>-->
+<div class="modal fade" id="manage_students" role="dialog">
+  <!-- <form name="studentListForm" (ngSubmit)="saveStudents(studentListForm)"> -->
+  <div class="modal-dialog modal-lg">
+    <!-- Modal content-->
+    <div class="modal-content well">
+      <!-- <section class="content-header" style="margin-left:2%;margin-top:1%;"> -->
+      <button type="button" class="close" data-dismiss="modal" style="margin-right:1%;color:white;">&times;</button>
+      <!--<div class="headline">-->
+      <!-- Div for Page Headings -->
+
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Post</h4>
+      </div>
+
+      <!-- Page Headings Div Ends Here -->
+      <!-- </section> -->
+      <div class="modal-body" style="font-size:12px;">
+        <form class="container">
+          <!--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">-->
+          <div class="row form-group col-md-8">
+            <div class="col-md-4 labelfield ">
+              <label>Department Name:</label>
+            </div>
+            <div class="category col-md-4">
+              <select class="form-control" style="font-size:12px;cursor:pointer;" required>
+                <option [ngValue]="0" selected>Select Department</option>
+                <option [ngValue]="Kannada">Teaching Staff</option>
+                <option [ngValue]="Kannada">Non-Teaching Staff</option>
+              </select>
+            </div>
+          </div>
+          <div class="row form-group col-md-8">
+            <div class=" col-md-4 labelfield">
+              <label>Post:</label>
+            </div>
+            <div class="category col-md-4">
+              <select class=" form-control" style="font-size:12px;cursor:pointer;" required>
+                <option [ngValue]="0" selected>Select Department</option>
+                <option [ngValue]="Kannada">Teaching Staff</option>
+                <option [ngValue]="Kannada">Non-Teaching Staff</option>
+              </select>
+            </div>
+          </div>
+          <div class="row form-group  col-md-8">
+            <div class=" col-md-4 labelfield">
+              <label>Qualification:</label>
+            </div>
+            <div class="category col-md-4">
+              <input type=text name="" id="" value="" class="form-control">
+            </div>
+          </div>
+          <div class="row form-group  col-md-8 ">
+            <div class=" col-md-4 labelfield">
+              <label>Experience:</label>
+            </div>
+            <div class="category col-md-4 ">
+              <input type=text name="" id="" value="" class="form-control">
+            </div>
+          </div>
+          <div class="row form-group  col-md-8 ">
+            <div class="col-md-4 labelfield">
+              <label>Posting Date :</label>
+            </div>
+            <div class="category col-md-4 ">
+              <div class='right-inner-addon' data-date-format="yyyy-mm-dd">
+                <my-date-picker class="" placeholder=" dd-mm-yyyy" name="admission_date1" id="admission_date1" [options]="myDatePickerOptions"
+                  [(ngModel)]="model">
+                </my-date-picker>
+              </div>
+            </div>
+          </div>
+          <div class="row form-group col-md-8">
+            <div class=" col-md-4 labelfield">
+              <label>No of Positions:</label>
+            </div>
+            <div class=" category col-md-4">
+              <input type="text" name="" id="" value="" class="form-control">
+            </div>
+          </div>
+          <!--<div class="row col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                  <div class="col-xs-8 col-sm-8 col-md-4 col-md-4 ">
+                    <label>No of Positions:</label>
+                  </div>
+                  <div class="col-xs-8 col-sm-8 col-md-4 col-md-4">
+                    <input type=text name="" id="" value="" class="form-control">
+                  </div>
+                </div>-->
+          <!--</div>-->
+        </form>
+      </div>
+      <div class="modal-footer">
+        <div class="pull-right">
+          <button class="btn btn-primary" data-dismiss="modal" (click)="saveStudents()" id="submit_stu" disabled>
+            <span class="glyphicon glyphicon-ok"></span>&nbsp;Submit</button>
+          <button class="btn btn-danger" data-dismiss="modal" (click)="uncheckAll()">
+            <span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

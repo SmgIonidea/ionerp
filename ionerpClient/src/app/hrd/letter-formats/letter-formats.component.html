@@ -1,3 +1,164 @@
-<p>
-  letter-formats works!
-</p>
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ maintitle1 }}</h4>
+  </div>
+</section>
+
+<div class="table table-responsive" style="overflow-x:initial;">
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+    <thead style="background-color:#DDE1E6;">
+      <tr>
+        <th class="text-center" style="width:4%;">Sl&nbsp;No.</th>
+        <th class="text-center">Mail format</th>
+        <th class="text-center"style="width:8%;">Edit&nbsp;format</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-right">
+          <p class="pull-right">1</p>
+        </td>
+        <td class="text-center">This is a sample template for Short listed candidate</td>
+        <!-- <td class="text-center" id="my-editor-1" click="show()"><i class="glyphicon glyphicon-pencil" ></i></td>              -->
+        <td class="text-center">
+          <a style="cursor: pointer;color: black;" data-toggle="modal" data-target="#editmailformat1">
+            <i class="glyphicon glyphicon-pencil"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade " id="editmailformat1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="well modal-align">
+      <section class="content-header gap" style="margin-top:-10px;">
+        <div class="panel panel-primary">
+          <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ editmail1 }}</h4>
+          <button type="button" class="close" data-dismiss="modal" style="margin-right:1%;color:black;">&times;</button>
+        </div>
+      </section>
+      <div class="col-lg-12">
+        <div>
+          <label>Mail format:</label>
+        </div>
+          <!-- <simple-tiny [elementId]="'my-editor-id'"></simple-tiny> -->   
+          <div>
+          <textarea class="form-control" rows="20" cols="52"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="content-header gap" style="margin-top:-10px;">
+    <div class="panel panel-primary">
+      <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ maintitle2 }}</h4>
+    </div>
+  </section>
+  
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <th class="text-center" style="width:4%;">Sl&nbsp;No.</th>
+          <th class="text-center">Mail format</th>
+          <th class="text-center" style="width:8%;">Edit&nbsp;format</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-right">
+            <p class="pull-right">1</p>
+          </td>
+          <td class="text-center">This is a sample template for selected candidate</td>
+          <!-- <td class="text-center" id="my-editor-1" click="show()"><i class="glyphicon glyphicon-pencil" ></i></td>              -->
+          <td class="text-center">
+            <a style="cursor: pointer;color: black;" data-toggle="modal" data-target="#editmailformat2">
+              <i class="glyphicon glyphicon-pencil"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal fade " id="editmailformat2" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="well modal-align" >
+        <section class="content-header gap" style="margin-top:-10px;">
+          <div class="panel panel-primary">
+            <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ editmail2 }}</h4>
+            <button type="button" class="close" data-dismiss="modal" style="margin-right:1%;color:black;">&times;</button>
+          </div>
+        </section>
+        <div class="col-lg-12">
+          <div>
+            <label>Mail format:</label>
+          </div>
+            <!-- <simple-tiny [elementId]="'my-editor-id'"></simple-tiny> -->   
+            <div>
+            <textarea class="form-control" rows="20" cols="52"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="content-header gap" style="margin-top:-10px;">
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ maintitle3 }}</h4>
+      </div>
+    </section>
+    
+    <div class="table table-responsive" style="overflow-x:initial;">
+      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+        <thead style="background-color:#DDE1E6;">
+          <tr>
+            <th class="text-center" style="width:4%;">Sl&nbsp;No.</th>
+            <th class="text-center">Mail format</th>
+            <th class="text-center" style="width:8%;">Edit&nbsp;format</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-right">
+              <p class="pull-right">1</p>
+            </td>
+            <td class="text-center">This is a sample template for terminated candidate</td>
+            <!-- <td class="text-center" id="my-editor-1" click="show()"><i class="glyphicon glyphicon-pencil" ></i></td>              -->
+            <td class="text-center">
+              <a style="cursor: pointer;color: black;" data-toggle="modal" data-target="#editmailformat3">
+                <i class="glyphicon glyphicon-pencil"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade " id="editmailformat3" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="well modal-align">
+          <section class="content-header gap" style="margin-top:-10px;">
+            <div class="panel panel-primary">
+              <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ editmail3 }}</h4>
+              <button type="button" class="close" data-dismiss="modal" style="margin-right:1%;color:black;">&times;</button>
+            </div>
+          </section>
+          <div class="col-lg-12">
+            <div>
+              <label>Mail format:</label>
+            </div>
+              <!-- <simple-tiny [elementId]="'my-editor-id'"></simple-tiny> -->   
+              <div>
+              <textarea class="form-control" rows="20" cols="52"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

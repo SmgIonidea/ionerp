@@ -1,3 +1,86 @@
-<p>
-  search-applicants works!
-</p>
+<section class="content-header" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search Applicants</h4>
+  </div>
+  <!--<span style="float:right;padding-right:100px;">Date:</span>-->
+</section>
+
+<!-- <div class="container"> -->
+  <form>
+    <div class="row col-md-12 col-lg-12">
+      <div class="form-group col-lg-4  col-md-4 ">
+        <div class=" col-md-4 col-lg-4 labelfield " align="left" style="margin-left:-30px;padding-top:10px">
+          <label>Department:</label></div>
+          <div class=" category  col-md-8 col-lg-8" style="margin-left:-30px;">
+        <select class="form-control" style="font-size:12px;cursor:pointer;" required>
+     <option [ngValue]="0" selected>Select Department</option>
+     <option [ngValue]="Kannada">Teaching Staff</option>
+     <option [ngValue]="Kannada">Non-Teaching Staff</option>
+     </select>
+     </div>
+      </div>
+      <div class="form-group col-lg-4  col-md-4 ">
+        <div class=" col-md-4 col-lg-4 labelfield" align="left" style="margin-left:-45px;padding-top:10px">
+          <label>Post:</label></div>
+           <div class=" category col-md-8 col-lg-8" style="margin-left:-30px;">
+        <select class="form-control" style="font-size:12px;cursor:pointer;" required>
+     <option [ngValue]="0" selected>Select Post</option>
+     <option [ngValue]="Kannada">HSST English</option>
+     <option [ngValue]="Kannada">HSST Hindi</option>
+     <option [ngValue]="Kannada">HSST Physics</option>
+     <option [ngValue]="Kannada">HSST Kannada</option>
+     <option [ngValue]="Kannada">HSST Chemistry</option>
+     <option [ngValue]="Kannada">HSST Mathematics</option>
+     </select>
+     </div>
+      </div>
+      <div class="form-group col-lg-4 col-xs-12 col-md-4 col-sm-12 search-btn">
+        <div class="col-xs-8 col-sm-8 col-md-6 col-lg-6">
+          <button id="" type="submit" class="btn btn-primary">
+            <span class="glyphicon glyphicon-search"></span>
+            &nbsp;Search</button>
+        </div>
+      </div>
+    </div>
+    <div class="table table-responsive" style="overflow-x:initial;">
+      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+        <thead style="background-color:#DDE1E6;">
+          <tr>
+            <th class="text-center col-lg-1">Sl No.</th>
+            <th class="text-center col-lg-2">Name</th>
+            <th class="text-center col-lg-2">Department Post applied</th>
+            <th class="text-center col-lg-3">Primary Subject</th>
+            <th class="text-center col-lg-3">Secondary Subject</th>            
+            <th class="text-center col-lg-1">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-right">1</td>
+            <td class="text-center">Amit</td>
+            <td class="text-center">Teaching staff</td>
+            <td class="text-center">English</td>
+            <td class="text-center">Maths</td>            
+            <td>           
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editclassified"><span class="glyphicon glyphicon-pencil"></span></button>&nbsp; -->
+                <span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#editclassified"></span>&nbsp;
+                <span class="glyphicon glyphicon-print" data-toggle="modal" data-target="#printclassified"></span>&nbsp;
+              <span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#deleteclassified"></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pull-right">
+      <button class="btn btn-primary">
+          <i class="glyphicon glyphicon-envelope"></i>
+          Email Notification
+        </button>&nbsp;&nbsp;
+    <button class="btn btn-primary">
+      <i class="glyphicon glyphicon-print"></i>
+      Print
+    </button>    
+  </div>
+  <br><br><br> 
+  </form>
+  <!-- <div> -->

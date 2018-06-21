@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MyDatePickerModule } from 'mydatepicker';
 import { PostVacancyComponent } from './post-vacancy/post-vacancy.component';
 import { ClassifiedsComponent } from './classifieds/classifieds.component';
 import { ApplicantEnquiryComponent } from './applicant-enquiry/applicant-enquiry.component';
@@ -12,34 +14,42 @@ import { ResignTerminationComponent } from './resign-termination/resign-terminat
 import { OtherLetterFormatsComponent } from './other-letter-formats/other-letter-formats.component';
 import { SendLetterComponent } from './send-letter/send-letter.component';
 import { PrintLetterComponent } from './print-letter/print-letter.component';
+import { DataTablesModule } from 'angular-datatables';
+
+
+
 @NgModule({
+
   imports: [
-    CommonModule
+    CommonModule,
+    DataTablesModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MyDatePickerModule
+
+
+    
   ],
+
   declarations: [
     PostVacancyComponent,
-
     ClassifiedsComponent,
-
     ApplicantEnquiryComponent,
-
     SearchApplicantsComponent,
-
     TakeInterviewComponent,
-
     ApplicantsListComponent,
-
     OfferLetterComponent,
-
     LetterFormatsComponent,
-
     ResignTerminationComponent,
-
     OtherLetterFormatsComponent,
-
     SendLetterComponent,
-
     PrintLetterComponent,
+ 
+    
+   
+  ],
+  providers:[
+    
   ]
 })
 export class HrdModule { }

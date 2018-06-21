@@ -25,7 +25,7 @@ webpackJsonp([4],{
  * https://github.com/softsimon/angular-2-dropdown-multiselect
  */
 var MULTISELECT_VALUE_ACCESSOR = {
-    provide: __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* NG_VALUE_ACCESSOR */],
+    provide: __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* NG_VALUE_ACCESSOR */],
     useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return MultiselectDropdown; }),
     multi: true
 };
@@ -466,7 +466,7 @@ MultiselectDropdown.decorators = [
 /** @nocollapse */
 MultiselectDropdown.ctorParameters = function () { return [
     { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"], },
-    { type: __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* FormBuilder */], },
+    { type: __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormBuilder */], },
     { type: __WEBPACK_IMPORTED_MODULE_4__search_filter_pipe__["a" /* MultiSelectSearchFilter */], },
     { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["IterableDiffers"], },
 ]; };
@@ -1054,7 +1054,7 @@ var ListFilterPipe = (function () {
 
 
 var DROPDOWN_CONTROL_VALUE_ACCESSOR = {
-    provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* NG_VALUE_ACCESSOR */],
+    provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* NG_VALUE_ACCESSOR */],
     useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return AngularMultiSelect; }),
     multi: true
 };
@@ -17521,7 +17521,7 @@ var FocusDirective = (function () {
 
 
 var MYDP_VALUE_ACCESSOR = {
-    provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* NG_VALUE_ACCESSOR */],
+    provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* NG_VALUE_ACCESSOR */],
     useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return MyDatePicker; }),
     multi: true
 };
@@ -19231,10 +19231,10 @@ var DualListBoxComponent = /** @class */ (function () {
         this.searchTermSelected = '';
         this.availableItems = [];
         this.selectedItems = [];
-        this.availableListBoxControl = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormControl */]();
-        this.selectedListBoxControl = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormControl */]();
-        this.availableSearchInputControl = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormControl */]();
-        this.selectedSearchInputControl = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormControl */]();
+        this.availableListBoxControl = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* FormControl */]();
+        this.selectedListBoxControl = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* FormControl */]();
+        this.availableSearchInputControl = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* FormControl */]();
+        this.selectedSearchInputControl = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* FormControl */]();
         this._onChange = function (_) { };
         this._onTouched = function () { };
         this.listBoxForm = this.fb.group({
@@ -19408,14 +19408,14 @@ DualListBoxComponent.decorators = [
                 template: "<div class=\"row\" [formGroup]=\"listBoxForm\">\n    <div class=\"col-md-5 col-lg-5 col-sm-12\">\n        <h4 class=\"text-center vertical-spacing-5\">{{availableText}}</h4>\n        <input type=\"text\" class=\"form-control vertical-spacing-5\" placeholder=\"{{availableFilterPlaceholder}}\"\n               formControlName=\"availableSearchInput\" />\n        <select class=\"form-control list-box\" formControlName=\"availableListBox\" multiple>\n            <option *ngFor=\"let item of availableItems | arrayFilter:['text', searchTermAvailable] | arraySort:['text', 'ASC'];trackBy:trackByValue\"\n                    [value]=\"item?.value\"\n                    (dblclick)=\"moveAvailableItemToSelected(item)\">{{item?.text}}</option>\n        </select>\n    </div>\n    <div class=\"col-md-2 col-lg-2 col-sm-12 center-block text-center\">\n        <button type=\"button\"\n                class=\"btn btn-default col-md-8 col-md-offset-2 atr top80 sm-spacing\"\n                *ngIf=\"moveAllButton\" (click)=\"moveAllItemsToSelected()\">\n            <span class=\"glyphicon glyphicon-list\"></span>\n            <span class=\"glyphicon glyphicon-chevron-right\"></span>\n        </button>\n        <button type=\"button\"\n                class=\"btn btn-default col-md-8 col-md-offset-2 str vertical-spacing-5 sm-spacing\"\n                [disabled]=\"!availableListBoxControl.value?.length\"\n                (click)=\"moveMarkedAvailableItemsToSelected()\">\n            <span class=\"glyphicon glyphicon-chevron-right\"></span>\n        </button>\n        <button type=\"button\"\n                class=\"btn btn-default col-md-8 col-md-offset-2 stl vertical-spacing-5 sm-spacing\"\n                [disabled]=\"!selectedListBoxControl.value?.length\"\n                (click)=\"moveMarkedSelectedItemsToAvailable()\">\n            <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </button>\n        <button type=\"button\"\n                class=\"btn btn-default col-md-8 col-md-offset-2 atl bottom10 sm-spacing\"\n                *ngIf=\"moveAllButton\" (click)=\"moveAllItemsToAvailable()\">\n            <span class=\"glyphicon glyphicon-chevron-left\"></span>\n            <span class=\"glyphicon glyphicon-list\"></span>\n        </button>\n    </div>\n    <div class=\"col-md-5 col-lg-5 col-sm-12\">\n        <h4 class=\"text-center vertical-spacing-5\">{{selectedText}}</h4>\n        <input type=\"text\" class=\"form-control vertical-spacing-5\" placeholder=\"{{selectedFilterPlaceholder}}\"\n               formControlName=\"selectedSearchInput\" />\n        <select class=\"form-control list-box\" formControlName=\"selectedListBox\" multiple>\n            <option *ngFor=\"let item of selectedItems | arrayFilter:['text', searchTermSelected] | arraySort:['text', 'ASC'];trackBy:trackByValue\"\n                    [value]=\"item?.value\"\n                    (dblclick)=\"moveSelectedItemToAvailable(item)\">{{item?.text}}</option>\n        </select>\n    </div>\n</div>",
                 styles: [".list-box{\n    min-height:200px;\n    width:100%;\n}\n.top100{\n    margin-top:100px;\n}\n.top80{\n    margin-top:80px;\n}\n.bottom10{\n    margin-bottom:10px;\n}\n.vertical-spacing-5{\n    margin-top:5px;\n    margin-bottom:5px;\n}\n.center-block{\n    min-height:50px;\n}\n@media only screen and (max-width : 768px){\n    .sm-spacing{\n        margin-top:10px;\n        margin-bottom:10px;\n    }\n}\n@media only screen and (min-width : 768px) and (max-width : 992px){\n    .sm-spacing{\n        margin-top:10px;\n        margin-bottom:10px;\n    }\n}\n@media only screen and (max-width : 480px){\n    .sm-spacing{\n        margin-top:10px;\n        margin-bottom:10px;\n    }\n}"],
                 providers: [{
-                        provide: __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* NG_VALUE_ACCESSOR */],
+                        provide: __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* NG_VALUE_ACCESSOR */],
                         useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return DualListBoxComponent; }),
                         multi: true
                     }]
             },] },
 ];
 DualListBoxComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* FormBuilder */], },
+    { type: __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormBuilder */], },
 ]; };
 DualListBoxComponent.propDecorators = {
     "data": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
@@ -94878,7 +94878,7 @@ function transition$$1(stateChangeExpr, steps) {
 /* unused harmony export AbstractFormGroupDirective */
 /* unused harmony export CheckboxControlValueAccessor */
 /* unused harmony export ControlContainer */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return NG_VALUE_ACCESSOR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return NG_VALUE_ACCESSOR; });
 /* unused harmony export COMPOSITION_BUFFER_MODE */
 /* unused harmony export DefaultValueAccessor */
 /* unused harmony export NgControl */
@@ -94902,14 +94902,14 @@ function transition$$1(stateChangeExpr, steps) {
 /* unused harmony export MinLengthValidator */
 /* unused harmony export PatternValidator */
 /* unused harmony export RequiredValidator */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return FormBuilder; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return FormBuilder; });
 /* unused harmony export AbstractControl */
 /* unused harmony export FormArray */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return FormControl; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return FormGroup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return FormControl; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return FormGroup; });
 /* unused harmony export NG_ASYNC_VALIDATORS */
 /* unused harmony export NG_VALIDATORS */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return Validators; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return Validators; });
 /* unused harmony export VERSION */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FormsModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ReactiveFormsModule; });

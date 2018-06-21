@@ -30,6 +30,7 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2
 import { AssignmentReviewComponent } from './instructor/assignment-review/assignment-review.component';
 import { ViewAnswersComponent } from './instructor/view-answers/view-answers.component';
 import { MyDatePickerModule } from 'mydatepicker';//datepicker
+// import { TinymceComponent } from './thirdparty/tinymce/tinymce.component';
 
 import { StudenttakeAssignmentComponent } from './student/studenttake-assignment/studenttake-assignment.component';
 import { TakeAssignmentComponent } from './student/take-assignment/take-assignment.component';
@@ -98,6 +99,7 @@ import { LibraryModule } from './library/library.module';
     KeysPipe,
 
     AdmissionFormComponent,
+    // TinymceComponent
 
     
 
@@ -130,7 +132,8 @@ import { LibraryModule } from './library/library.module';
     LibraryModule,
     LoginModule,
     HrdModule,
-    PayrollModule
+    PayrollModule,
+    // TinymceComponent
 
   ],
   providers: [
@@ -147,7 +150,9 @@ import { LibraryModule } from './library/library.module';
    
     AuthGuard,
     RoleGuard,
-    TakeActivityComponent
+    TakeActivityComponent,
+    // TinymceComponent
+
   ],
   bootstrap: [AppComponent]
 })

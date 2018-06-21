@@ -1,3 +1,549 @@
-<p>
-  employee-payslip works!
-</p>
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Employee Payslip</h4>
+  </div>
+</section>
+
+
+
+
+<div class="container-fluid" id="home">
+
+  <form class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Payslip for:
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select #selectyear class="form-control">
+          <option>Select Year</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+        </select>
+
+
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category space_align">
+        <select #selectmonth class="form-control">
+          <option>Select Month</option>
+          <option value="jan">January</option>
+          <option value="feb">February</option>
+          <option value="mar">March</option>
+          <option value="apr">April</option>
+          <option value="may">May</option>
+          <option value="jun">June</option>
+          <option value="jul">July</option>
+          <option value="aug">August</option>
+          <option value="sep">September</option>
+          <option value="oct">October</option>
+          <option value="nov">November</option>
+          <option value="dec">December</option>
+
+        </select>
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Department:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select #selectemp class="form-control">
+          <option>Select</option>
+          <option value="teaching">Teaching Staff</option>
+          <option value="nonteaching">Non-Teaching Staff</option>
+
+        </select>
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Select Employee:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select #selectemp class="form-control">
+          <option>Select</option>
+          <option value="a">Anil Kumar</option>
+          <!-- <option value="b">Bharath</option> -->
+
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Voucher Type:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select class="form-control">
+          <option>Select</option>
+          <option value="receipt">Receipt</option>
+          <option value="b">Sales</option>
+
+        </select>
+      </div>
+    </div>
+
+
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Ledger Type:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select class="form-control">
+          <option>Select</option>
+          <option value="a">Admission</option>
+          <option value="b">Salary</option>
+
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Payment Mode:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select #select class="form-control" name="payment" (change)="selectDiv(select.value)">
+          <option>Select Payment</option>
+          <option value="cash">Cash</option>
+          <option value="cheque">Cheque</option>
+          <option value="dd">DD</option>
+        </select>
+      </div>
+    </div>
+
+
+
+    <div id="hiddeDiv" style="display:none">
+      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+          <label for="">Bank Name:
+          </label>
+        </div>
+        <div class="col col-md-5 col-sm-12 col-xs-12 category">
+          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+        </div>
+      </div>
+      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+          <label for="">Account Number:
+          </label>
+        </div>
+        <div class="col col-md-5 col-sm-12 col-xs-12 category">
+          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+        </div>
+      </div>
+      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+          <label for="">Cheque/DD Number:
+          </label>
+        </div>
+        <div class="col col-md-5 col-sm-12 col-xs-12 category">
+          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+        </div>
+      </div>
+      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+          <label for="">Teller Name:
+          </label>
+        </div>
+        <div class="col col-md-5 col-sm-12 col-xs-12 category">
+          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+        </div>
+      </div>
+      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+          <label for="">Pin:
+          </label>
+        </div>
+        <div class="col col-md-5 col-sm-12 col-xs-12 category">
+          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="">Narration:
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <textarea type="text" name="voucher_number" id="voucher_number" class="form-control"></textarea>
+      </div>
+    </div>
+
+    <div class="can">
+      <div class="btn_cancel  col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right">
+        <button id="saveAssignment" type="submit" class="btn btn-primary" data-target="#employeeDiv" (click)="showEmpDetails()">
+          <i class="glyphicon glyphicon-file"></i>&nbsp;Submit</button>
+        <button type="reset" class="btn btn-danger">
+          <i class="glyphicon glyphicon-refresh"></i>&nbsp;Reset</button>
+      </div>
+      <!-- <div  class="btn_cancel col-lg-3 col-md-3 col-xs-12 col-sm-6 btn_update">
+            <button  id="UpdateAssignment" type="button" class="btn btn-primary" >
+              <i class="glyphicon glyphicon-ok"></i> Update
+            </button>
+            <button id="cancelEdit" type="button" class="btn btn-danger" >
+              <i class="glyphicon glyphicon-remove"></i> Cancel
+            </button> 
+          </div>-->
+    </div>
+
+
+
+    <div id="employeeDiv" style="display:none">
+
+      <div class="row form-group " style="margin-top:20px;">
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6 ">
+          <div class="col-lg-6 col-md-6 labelfield"><b>Employee Id : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+            </div>
+          <div class='col-lg-6 col-md-6 label_align'>
+            2
+          </div>
+          <div class="col-lg-6 col-md-6 labelfield"><b>Department Name :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+           </div>
+          <div class="col-lg-6 col-md-6 label_align" >
+            Teaching Staff
+          </div>
+          <div class="col-lg-6 col-md-6 labelfield"><b>Date of Joining :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+            </div>
+          <div class="col-lg-6 col-md-6 label_align">
+            18/05/2017
+          </div>
+          <div class="col-lg-6 col-md-6 labelfield"><b>Payslip for the Month :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+            </div>
+          <div class="col-lg-6 col-md-6 label_align">
+            Jan 2017
+          </div>
+          <div class="col-lg-6 col-md-6 labelfield"><b>Basic Salary :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+            </div>
+          <div class="col-lg-6 col-md-6 label_align">
+              Rs.10000
+          </div>
+        </div>
+        <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6 img_align align_img">
+          <img src="assets/js_css/images/prof.png" height="80" width="80">
+        </div>
+      </div>
+
+      <!-- <div class="table table-responsive"> -->
+        <section class="content-header gap">
+          <div class="panel panel-primary">
+            <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allowance
+            </h4>
+          </div>
+        </section>
+        <table class="table table-bordered table-striped table-hover">
+          <thead style="background-color:#DDE1E6;">
+            <tr>
+              <!-- <th class="text-center">
+            <input type="checkbox" (click)="deleteAllSelected($event)" id="delete_check">
+          </th> -->
+              <th class="text-center">S.No</th>
+              <th class="text-center">Allowance Type</th>
+              <th class="text-center">Amount</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- <tr *ngFor="let post of posts let i = index"> -->
+              <!-- <pre>{{post | json}}</pre>       -->
+              <!-- <td>
+            <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
+          </td> -->
+              <td class="text-center">
+                <p class="pull-right">1</p>
+              </td>
+              <td class="text-center">Bonus</td>
+              <td class="text-center">Rs.1000</td>
+            </tr>
+
+          </tbody>
+        </table>
+        <br>
+        <section class="content-header gap">
+          <div class="panel panel-primary">
+            <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Deduction's
+            </h4>
+          </div>
+        </section>
+        <table class="table table-bordered table-striped table-hover">
+          <thead style="background-color:#DDE1E6;">
+            <tr>
+              <!-- <th class="text-center">
+              <input type="checkbox" (click)="deleteAllSelected($event)" id="delete_check">
+            </th> -->
+              <th class="text-center">S.No</th>
+              <th class="text-center">Deduction Type</th>
+              <th class="text-center">Amount</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- <tr *ngFor="let post of posts let i = index"> -->
+              <!-- <pre>{{post | json}}</pre>       -->
+              <!-- <td>
+              <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
+            </td> -->
+              <td class="text-center">
+                <p class="pull-right">1</p>
+              </td>
+              <td class="text-center">EMI</td>
+              <td class="text-center">Rs.1560</td>
+            </tr>
+
+          </tbody>
+        </table>
+        <br>
+        <section class="content-header gap">
+          <div class="panel panel-primary">
+            <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Deduction's
+            </h4>
+          </div>
+        </section>
+        <table class="table table-bordered table-striped table-hover">
+          <thead style="background-color:#DDE1E6;">
+            <tr>
+              <!-- <th class="text-center">
+                <input type="checkbox" (click)="deleteAllSelected($event)" id="delete_check">
+              </th> -->
+              <th class="text-center">S.No</th>
+              <th class="text-center">Deduction Type</th>
+              <th class="text-center">Amount</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- <tr *ngFor="let post of posts let i = index"> -->
+              <!-- <pre>{{post | json}}</pre>       -->
+              <!-- <td>
+                <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
+              </td> -->
+              <td class="text-center">
+                <p class="pull-right">1</p>
+              </td>
+              <td class="text-center">EMI</td>
+              <td class="text-center">Rs.1560</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <section class="content-header gap">
+          <div class="panel panel-primary">
+            <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tax
+            </h4>
+          </div>
+        </section>
+        <table class="table table-bordered table-striped table-hover">
+          <thead style="background-color:#DDE1E6;">
+            <tr>
+              <!-- <th class="text-center">
+                  <input type="checkbox" (click)="deleteAllSelected($event)" id="delete_check">
+                </th> -->
+              <th class="text-center">S.No</th>
+              <th class="text-center">Tax Type</th>
+              <th class="text-center">Amount</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- <tr *ngFor="let post of posts let i = index"> -->
+              <!-- <pre>{{post | json}}</pre>       -->
+              <!-- <td>
+                  <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
+                </td> -->
+              <td class="text-center">
+                <p class="pull-right">1</p>
+              </td>
+              <td class="text-center">Income Tax</td>
+              <td class="text-center">Rs.2560</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <section class="content-header gap">
+          <div class="panel panel-primary">
+            <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loan
+            </h4>
+          </div>
+        </section>
+        <table class="table table-bordered table-striped table-hover table_width">
+          <thead style="background-color:#DDE1E6;">
+            <tr>
+              <!-- <th class="text-center">
+                    <input type="checkbox" (click)="deleteAllSelected($event)" id="delete_check">
+                  </th> -->
+              <th class="text-center">S.No</th>
+              <th class="text-center">Loan Type</th>
+              <th class="text-center">Loan Amount</th>
+              <th class="text-center">No of Installments Left</th>
+              <th class="text-center">Amount</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- <tr *ngFor="let post of posts let i = index"> -->
+              <!-- <pre>{{post | json}}</pre>       -->
+              <!-- <td>
+                    <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
+                  </td> -->
+              <td class="text-center">
+                <p class="pull-right">1</p>
+              </td>
+              <td class="text-center">Home Loan</td>
+              <td class="text-center">Rs.10000</td>
+              <td class="text-center">2</td>
+              <td class="text-center">Rs.12000</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <section class="content-header gap">
+          <div class="panel panel-primary">
+            <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PF
+            </h4>
+          </div>
+        </section>
+        <table class="table table-bordered table-striped table-hover">
+          <thead style="background-color:#DDE1E6;">
+            <tr>
+              <!-- <th class="text-center">
+                      <input type="checkbox" (click)="deleteAllSelected($event)" id="delete_check">
+                    </th> -->
+              <th class="text-center">S.No</th>
+              <th class="text-center">PF Deduction Type</th>
+              <th class="text-center">Amount</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- <tr *ngFor="let post of posts let i = index"> -->
+              <!-- <pre>{{post | json}}</pre>       -->
+              <!-- <td>
+                      <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
+                    </td> -->
+              <td class="text-center">
+                <p class="pull-right">1</p>
+              </td>
+              <td class="text-center">PF</td>
+              <td class="text-center">Rs.1560</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <section class="content-header gap">
+          <div class="panel panel-primary">
+            <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leaves Information
+            </h4>
+          </div>
+        </section>
+        <table class="table table-bordered table-striped table-hover table_width">
+          <thead style="background-color:#DDE1E6;">
+            <tr>
+              <!-- <th class="text-center">
+                        <input type="checkbox" (click)="deleteAllSelected($event)" id="delete_check">
+                      </th> -->
+              <th class="text-center">S.No</th>
+              <th class="text-center">Paid Leave</th>
+              <th class="text-center">UnPaid Leave</th>
+              <th class="text-center">Total Leaves</th>
+              <th class="text-center">Leave Deduction</th>
+              <th class="text-center">Amount</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- <tr *ngFor="let post of posts let i = index"> -->
+              <!-- <pre>{{post | json}}</pre>       -->
+              <!-- <td>
+                        <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
+                      </td> -->
+              <td class="text-center">
+                <p class="pull-right">1</p>
+              </td>
+              <td class="text-center">10</td>
+              <td class="text-center">20</td>
+              <td class="text-center">30</td>
+              <td class="text-center">5</td>
+              <td class="text-center">Rs.0</td>
+            </tr>
+
+          </tbody>
+        </table>
+        <div class=" col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right details_align">
+          <div>
+            <h6>
+              <b>Basic Salary &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Rs.10000</b>
+            </h6>
+          </div>
+          <div>
+            <h6>
+              <b>Total Allowances : + Rs.1000</b>
+            </h6>
+          </div>
+          <div>
+            <h6>
+              <b>Total Deductions : - Rs.1560</b>
+            </h6>
+          </div>
+          <hr>
+          <div>
+
+           
+            <h6>
+              <b>Net Salary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Rs.9440</b>
+            </h6>
+           
+          </div>
+          <hr>
+
+
+        </div>
+      <!-- </div> -->
+
+      <div class="can">
+        <div class="print_btn  col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right">
+          <button id="saveAssignment" type="submit" class="btn btn-primary">
+            <i class="glyphicon glyphicon-print"></i>&nbsp;Print</button>
+
+        </div>
+
+      </div>
+
+    </div>
+    <!-- </div> -->
+
+
+  </form>
+</div>

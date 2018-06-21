@@ -1,3 +1,584 @@
-<p>
-  applicant-enquiry works!
-</p>
+<form method="post" name="preadmission" action="">
+  <section class="content-header gap">
+    <div class="panel panel-primary">
+      <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Applicant Enquiry
+      </h4>
+    </div>
+  </section>
+  <div class="row form-group ">
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6">
+        <label>First Name:</label>
+        <span class="mandatory" style="color:#FF0000">*</span>
+      </div>
+      <div class="category col-lg-6 col-md-6">
+        <input class="form-control" type="text" name="admission_id" value="">
+      </div>
+    </div>
+  </div>
+  <div class="row form-group ">
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6">
+        <label>Last Name:</label>
+        <span class="mandatory" style="color:#FF0000">*</span>
+      </div>
+      <div class="category col-lg-6 col-md-6">
+        <input class="form-control" type="text" name="admission_id" value="">
+      </div>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6">
+        <label>Gender:</label>
+        <span class="mandatory" style="color:#FF0000">*</span>
+      </div>
+      <div class="category col-lg-6 col-md-6">
+        <select class="form-control" name="pre_serialno" id="pre_serialno">
+          <option value="">Select Gender </option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6">
+        <label>Date of Birth:</label>
+        <span class="mandatory" style="color:#FF0000">*</span>
+      </div>
+      <div class="right-inner-addon dateview col-lg-6 col-md-6" data-date-format="yyyy-mm-dd">       
+          <my-date-picker class="" placeholder=" dd-mm-yyyy" name="purchaseDate" id="purchaseDate" [options]="myDatePickerOptions"
+            [(ngModel)]="model">
+          </my-date-picker>      
+      </div>
+    </div>
+  </div>
+  
+  <div class="row form-group">
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6">
+        <label>Department:</label>
+        <span class="mandatory" style="color:#FF0000">*</span>
+      </div>
+      <div class="category col-lg-6 col-md-6">
+        <select class="form-control" name="pre_serialno" id="pre_serialno">
+          <option value="">Select Staff </option>
+          <option value="Teaching">Teaching Staff</option>
+          <option value="Non-Teaching">Non-Teaching Staff</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6">
+        <label> Class:</label>
+        <span class="mandatory" style="color:#FF0000">*</span>
+      </div>
+      <div class="category col-lg-6 col-md-6">
+        <select class="form-control" name="pre_serialno" id="pre_serialno">
+          <option value="">Select Class </option>
+          <option value="a">A</option>
+          <option value="b">B</option>
+          <option value="c">C</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6">
+        <label>Post Applied For:</label>
+        <span class="mandatory" style="color:#FF0000">*</span>
+      </div>
+      <div class="category col-lg-6 col-md-6">
+        <select class="form-control" name="pre_serialno" id="pre_serialno">
+          <option value="">Select Post </option>
+          <option value="Master">Master</option>
+          <option value="Miss">Miss</option>
+          <option value="Mrs">Mrs</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6">
+        <label>Primary Subject:</label>
+        <span class="mandatory" style="color:#FF0000">*</span>
+      </div>
+      <div class="category col-lg-6 col-md-6">
+        <select class="form-control" name="pre_serialno" id="pre_serialno">
+          <option value="">Select Subject </option>
+          <option value="Engineering Mathematics">Engineering Mathematics</option>
+          <option value="JAVA">JAVA</option>
+          <option value="Net">>.Net</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row form-group ">
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6">
+        <label>Secondary Subject:</label>
+        <span class="mandatory" style="color:#FF0000">*</span>
+      </div>
+      <div class="category col-lg-6 col-md-6">
+        <input class="form-control" type="text" name="admission_id" value="">
+      </div>
+    </div>
+  </div>
+  <div class="row form-group ">
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6">
+        <label>Email:</label>
+        <span class="mandatory" style="color:#FF0000">*</span>
+      </div>
+      <div class="category col-lg-6 col-md-6">
+        <input class="form-control" type="text" name="admission_id" value="">
+      </div>
+    </div>
+  </div>
+
+  <section class="content-header">
+    <div class="panel panel-primary">
+      <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Qualification
+      </h4>
+    </div>
+  </section>
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead>
+        <tr>
+          <th align="left">
+            <span class="narmal">Sr. No. </span>
+          </th>
+          <th align="left">
+            <span class="narmal">Exam Passed </span>
+          </th>
+          <th align="center">
+            <span class="narmal">Marks Obtained </span>
+          </th>
+          <th align="left">
+            <span class="narmal">Board/University </span>
+          </th>
+          <th align="left">
+            <span class="narmal">Year </span>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td align="left">
+            <span class="narmal">1 </span>
+          </td>
+          <td align="left">
+            <input class="form-control" name="pre_family1" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="age1" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="relation1" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="eduation1" type="text" value="" />
+          </td>
+        </tr>
+        <tr>
+          <td align="left">
+            <span class="narmal">2 </span>
+          </td>
+          <td align="left">
+            <input class="form-control" name="pre_family2" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="age2" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="relation2" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="eduation2" type="text" value="" />
+          </td>
+        </tr>
+        <tr>
+          <td align="left">
+            <span class="narmal">3 </span>
+          </td>
+          <td align="left">
+            <input class="form-control" name="pre_family3" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="age3" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="relation3" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="eduation3" type="text" value="" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+  <section class="content-header">
+    <div class="panel panel-primary">
+      <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reference
+      </h4>
+    </div>
+  </section>
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead>
+        <tr>
+          <th align="left">
+            <span class="narmal">Sr. No. </span>
+          </th>
+          <th align="left">
+            <span class="narmal">Reference </span>
+          </th>
+          <th align="center">
+            <span class="narmal">Designation</span>
+          </th>
+          <th align="left">
+            <span class="narmal">Institute </span>
+          </th>
+          <th align="left">
+            <span class="narmal">E-Mail</span>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td align="left">
+            <span class="narmal">1 </span>
+          </td>
+          <td align="left">
+            <input class="form-control" name="pre_family1" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="age1" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="relation1" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="relation1" type="text" value="" />
+          </td>
+        </tr>
+        <tr>
+          <td align="left">
+            <span class="narmal">2 </span>
+          </td>
+          <td align="left">
+            <input class="form-control" name="pre_family2" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="age2" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="relation2" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="relation1" type="text" value="" />
+          </td>
+        </tr>
+        <tr>
+          <td align="left">
+            <span class="narmal">3 </span>
+          </td>
+          <td align="left">
+            <input class="form-control" name="pre_family3" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="age3" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="relation3" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="relation1" type="text" value="" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Begining of Present Address -->
+  <section class="content-header gap">
+    <div class="panel panel-primary">
+      <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Present Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      </h4>
+    </div>
+  </section>
+  <!-- Begining of  Address and city -->
+  <div class="row">
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6" align="left">
+        <label> Address:</label>
+        <span class="mandatory" style="color:#FF0000">*</span>
+      </div>
+      <div class="category col-lg-6 col-md-6" align="left" valign="top">
+        <textarea class="form-control" name="pre_address1" type="text"></textarea>
+      </div>
+    </div>
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6" align="left" valign="top">
+        <label>  City:</label>
+      </div>
+      <div class="category col-lg-6 col-md-6" align="left" valign="top">
+        <input class="form-control" name="pre_city1" type="text" value="" />
+      </div>
+    </div>
+  </div>
+  <br>
+  <!-- End of Residential Address and city -->
+  <!-- Begining of Area and  Pin Code -->
+  <div class="row">
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6" align="left">
+        <label> Area:</label>
+      </div>
+      <div class="category col-lg-6 col-md-6" align="left" valign="top">
+        <input class="form-control" name="pre_country1" type="text" value="" />
+      </div>
+    </div>
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6" align="left" valign="top">
+        <label>Postal Code:</label>
+      </div>
+      <div class="category col-lg-6 col-md-6" align="left" valign="top">
+        <input class="form-control" name="pre_pincode1" type="text" value="" />
+      </div>
+    </div>
+  </div>
+  <br>
+  <!-- End of  Area and  Pin Code -->
+  <!-- Begining of  State and  SMS Mobile No -->
+  <div class="row">
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6" align="left">
+        <label>State:</label>
+      </div>
+      <div class="category col-lg-6 col-md-6" align="left" valign="top">
+        <input class="form-control" name="pre_state1" type="text" value="" />
+      </div>
+    </div>
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6" align="left" valign="top">
+        <label> Mobile No:</label>
+        <span class="mandatory" style="color:#FF0000">*</span>
+      </div>
+      <div class="category col-lg-6 col-md-6" align="left" valign="top">
+        <input class="form-control" name="pre_mobile1" type="text" value="" />
+        <!-- <span style="color:#FF0000">(All future SMS messages will be sent to this number)</span> -->
+      </div>
+    </div>
+  </div>
+  <br>
+  <!-- End of   State and  SMS Mobile No -->
+  <div class="row">
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6" align="left">
+        <label> Phone No:</label>
+      </div>
+      <div class="category col-lg-6 col-md-6" align="left" valign="top">
+        <input class="form-control" name="pre_contactno2" type="text" value="" />
+      </div>
+    </div>
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6" align="left" valign="top">
+        <label>E-mail:</label>
+        <span class="mandatory" style="color:#FF0000">*</span>
+      </div>
+      <div class="category col-lg-6 col-md-6" align="left" valign="top">
+        <input class="form-control" name="pre_resno1" type="text" value="" />
+      </div>
+    </div>
+  </div>
+  <br>
+  <!-- End of Present Address -->
+  <!-- Begining of Permanent Address -->
+  <section class="content-header">
+    <div class="panel panel-primary">
+      <h4 class="middle" style="height:auto;">&nbsp;&nbsp;&nbsp;&nbsp;Permanent Address&nbsp;&nbsp;&nbsp;
+        <span class="admin" style="float:right;height:auto;margin-right:10px;">
+          <input type="checkbox" name="sameaddress" id="sameaddress" value="0">&nbsp;Same as Above
+        </span>
+      </h4>
+    </div>
+  </section>
+  <!-- Begining of  Address and city -->
+  <div class="row">
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6" align="left">
+        <label> Address:</label>
+        <span class="mandatory" style="color:#FF0000">*</span>
+      </div>
+      <div class="category col-lg-6 col-md-6" align="left" valign="top">
+        <textarea class="form-control" name="pre_address1" type="text"></textarea>
+      </div>
+    </div>
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6" align="left" valign="top">
+        <label> City:</label>
+      </div>
+      <div class="category col-lg-6 col-md-6" align="left" valign="top">
+        <input class="form-control" name="pre_city1" type="text" value="" />
+      </div>
+    </div>
+  </div>
+  <br>
+  <!-- End of Residential Address and city -->
+  <!-- Begining of Area and  Pin Code -->
+  <div class="row">
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6" align="left">
+        <label> Area:</label>
+      </div>
+      <div class="category col-lg-6 col-md-6" align="left" valign="top">
+        <input class="form-control" name="pre_country1" type="text" value="" />
+      </div>
+    </div>
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6" align="left" valign="top">
+        <label> Postal Code:</label>
+      </div>
+      <div class="category col-lg-6 col-md-6" align="left" valign="top">
+        <input class="form-control" name="pre_pincode1" type="text" value="" />
+      </div>
+    </div>
+  </div>
+  <br>
+  <!-- End of  Area and  Pin Code -->
+  <!-- Begining of  State and  SMS Mobile No -->
+  <div class="row">
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6" align="left">
+        <label>State:</label>
+      </div>
+      <div class="category col-lg-6 col-md-6" align="left" valign="top">
+        <input class="form-control" name="pre_state1" type="text" value="" />
+      </div>
+    </div>
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6" align="left" valign="top">
+        <label> Mobile No:</label>
+        <span class="mandatory" style="color:#FF0000">*</span>
+      </div>
+      <div class="category col-lg-6 col-md-6" align="left" valign="top">
+        <input class="form-control" name="pre_mobile1" type="text" value="" />
+        <!-- <span style="color:#FF0000">(All future SMS messages will be sent to this number)</span> -->
+      </div>
+    </div>
+  </div>
+  <br>
+  <!-- End of   State and  SMS Mobile No -->
+  <!-- Begining of Mothers Phone No and E-mail -->
+  <div class="row">
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6" align="left">
+        <label> Phone No:</label>
+      </div>
+      <div class="category col-lg-6 col-md-6" align="left" valign="top">
+        <input class="form-control" name="pre_contactno2" type="text" value="" />
+      </div>
+    </div>
+    <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <div class="labelfield col-lg-6 col-md-6" align="left" valign="top">
+        <label>E-mail:</label>
+        <span class="mandatory" style="color:#FF0000">*</span>
+      </div>
+      <div class="category col-lg-6 col-md-6" align="left" valign="top">
+        <input class="form-control" name="pre_resno1" type="text" value="" />
+      </div>
+    </div>
+  </div>
+  <br>
+  <!-- End of Mothers Phone No and E-mail -->
+
+
+  <section class="content-header">
+    <div class="panel panel-primary">
+      <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Experience
+      </h4>
+    </div>
+  </section>
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead>
+        <tr>
+          <th align="left">
+            <span class="narmal">Sr. No. </span>
+          </th>
+          <th align="left">
+            <span class="narmal">Institution </span>
+          </th>
+          <th align="center">
+            <span class="narmal">Position</span>
+          </th>
+          <th align="left">
+            <span class="narmal">Period </span>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td align="left">
+            <span class="narmal">1 </span>
+          </td>
+          <td align="left">
+            <input class="form-control" name="pre_family1" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="age1" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="relation1" type="text" value="" />
+          </td>
+        </tr>
+        <tr>
+          <td align="left">
+            <span class="narmal">2 </span>
+          </td>
+          <td align="left">
+            <input class="form-control" name="pre_family2" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="age2" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="relation2" type="text" value="" />
+          </td>
+        </tr>
+        <tr>
+          <td align="left">
+            <span class="narmal">3 </span>
+          </td>
+          <td align="left">
+            <input class="form-control" name="pre_family3" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="age3" type="text" value="" />
+          </td>
+          <td align="left">
+            <input class="form-control" name="relation3" type="text" value="" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- End of Permanent Address -->
+  <div class="wrapper">
+    <button type="button" class="btn btn-primary">Add Candidate</button>
+  </div>
+</form>

@@ -1,0 +1,121 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    border: none;
+}
+
+.center {
+ margin: auto;
+ padding: 24px;
+}
+
+ .panel-primary {
+   background: rgb(35, 47, 62);
+   border-radius: 20px 0 20px 0;
+   height: 30px;
+   width:100%;
+   border-color:rgb(35, 47, 62);
+ }
+
+ .middle {
+   color: white;
+   text-align: left;
+   padding-top:3px;
+   margin-left: -14px;
+ }
+
+ .well{
+   background-color: rgb(245, 243, 243);
+   width:100%;
+   box-shadow:0 3px 5px 1px #979797;
+ }
+
+ h4, .h4, h5, .h5, h6, .h6 {
+   margin-top: 3px;
+ }
+
+ .modal-footer .btn + .btn {
+   margin-bottom: 0;
+   margin-left: 0px;
+ }
+
+ .btn_cancel{
+   float:right;
+   margin-right: -110px;   
+ } 
+ .btnalign{
+  margin-left:-150px;
+  margin-top:2px;
+ }
+ .display{
+  display: none;
+}
+
+/*For Portait Mode view*/
+ @media screen and (max-width: 480px) {
+    /*input field*/
+ .category{
+  width:325px !important;
+  margin-left:-45px !important;    
+}
+  /*Label field*/
+  .labelfield{
+    margin-left:-30px !important;
+  }   
+    
+   .dateview{
+    margin-left: -30px !important;
+    width: 332px !important;
+    border-color: #ccc;
+   }  
+   .search{
+     margin-left:60px !important;
+   }
+   .search-height{
+     margin-top:20px;
+   }
+   .btnalign{
+    margin-left: -90px;
+   }
+   .display{
+    display: none;
+  }
+  
+}
+
+/*For Landscape Mode view*/
+@media screen and (max-height: 360px) {
+  /*input field*/
+  .category{
+  width:595px !important;
+  margin-left:-45px !important;    
+  }
+ /*Label field*/
+  .labelfield{
+  margin-left:-30px !important;
+  }
+  .btnalign{
+    margin-left: -30px;
+  }
+   .dateview{
+     margin-left: -30px !important;
+     width: 595px !important;
+     border-color: #ccc;
+     } 
+
+     .addpostbtn-align{
+      margin-left: 90px;
+      margin-top: -50px;
+     }
+
+     .display{
+       display: block;
+     }
+
+}
+

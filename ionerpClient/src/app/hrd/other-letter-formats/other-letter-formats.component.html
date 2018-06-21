@@ -1,3 +1,91 @@
-<p>
-  other-letter-formats works!
-</p>
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other Letters Format</h4>
+  </div>
+</section>
+<div class="row" style="float:right;padding-right:20px;">
+  <button id="add" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#manage_students">
+            &nbsp;Add New </button>
+</div>
+<div class="row"></div><br>
+<form class="form-horizontal" style="border-top:0px;">
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <th class="text-center">S NO</th>
+          <th class="text-center">Letter Title</th>
+          <th class="text-center">Letter Message</th>
+          <th class="text-center">Edit</th>
+          <th class="text-center">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--<tr>
+        <td></td>
+        <td></td>
+        <td class="text-center">
+          <i #editElement class="glyphicon glyphicon-pencil cursor-pointer"></i>
+        </td>
+        <td class="text-center">
+          <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer">
+         </i>
+        </td>
+      </tr>-->
+      </tbody>
+    </table>
+  </div>
+  <br>
+</form>
+
+
+
+<div class="modal fade" id="manage_students" role="dialog">
+  <!-- <form name="studentListForm" (ngSubmit)="saveStudents(studentListForm)"> -->
+  <div class="modal-dialog modal-lg">
+    <!-- Modal content-->
+    <div class="modal-content well">
+      <!-- <section class="content-header" style="margin-left:2%;margin-top:1%;"> -->
+      <button type="button" class="close" data-dismiss="modal" style="margin-right:1%;color:white;">&times;</button>
+      <!--<div class="headline">-->
+      <!-- Div for Page Headings -->
+
+      <div class="panel panel-primary">
+        <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Letter Format</h4>
+      </div>
+
+      <!-- Page Headings Div Ends Here -->
+      <!-- </section> -->
+      <div class="modal-body" style="font-size:12px">
+        <form class="container">
+            <div class="row form-group  col-md-8">
+              <div class=" col-md-4  ">
+                <label>Title:</label>
+              </div>
+              <div class=" col-md-4 ">
+                <input type=text name="" id="" value="" class="form-control">
+              </div>
+            </div>
+            <div class="row form-group col-md-8 ">
+              <div class="col-md-4 ">
+                <label>Description:</label>
+              </div>
+              <div class=" col-md-4 ">
+                <!--<input type=text name="" id="" value="" class="form-control">-->
+                <textarea name="description" id="description" rows="5" class="form-control">
+                      </textarea>
+              </div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <div class="pull-right">
+          <button class="btn btn-primary" data-dismiss="modal" (click)="saveStudents()" id="submit_stu" disabled>
+            <span class="glyphicon glyphicon-ok"></span>&nbsp;Submit</button>
+          <button class="btn btn-danger" data-dismiss="modal" (click)="uncheckAll()">
+            <span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

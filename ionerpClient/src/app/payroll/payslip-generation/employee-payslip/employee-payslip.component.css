@@ -1,0 +1,185 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    border: none;
+}
+
+.center {
+ margin: auto;
+ padding: 24px;
+}
+
+ .panel-primary {
+   background: rgb(35, 47, 62);
+   border-radius: 20px 0 20px 0;
+   height: 30px;
+   width:100%;
+   border-color:rgb(35, 47, 62);
+ }
+
+ .middle {
+   color: white;
+   text-align: left;
+   padding-top:3px;
+   margin-left: -14px;
+ }
+
+ .well{
+   background-color: rgb(245, 243, 243);
+   width:100%;
+   box-shadow:0 3px 5px 1px #979797;
+ }
+
+ h4, .h4, h5, .h5, h6, .h6 {
+   margin-top: 3px;
+ }
+
+ .modal-footer .btn + .btn {
+   margin-bottom: 0;
+   margin-left: 0px;
+ }
+
+ .btn_cancel{
+   float:right;
+   margin-right: -110px;
+   
+ }
+ .btn_update{
+   margin-right:-99px;
+ }
+ .align_img {
+   margin-top:-20px;
+ }
+ /* print button */
+ .print_btn{
+  margin-right:90px;
+  margin-top:170px;
+}
+.details_align{
+  margin-right:-70px;
+}
+hr{
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: 55px;
+  border-style: inset;
+  border-width: 1px;
+}
+
+ /*Potrait Mode*/
+   @media screen and (max-width: 480px) {
+     /*input field*/
+    .category{
+      width:340px;
+      margin-left:-60px;    
+    }
+    /* space alignment for month dropdown */
+    .space_align{
+      margin-top:20px;
+    }
+     /*Date field*/
+    .dateview{
+     margin-left: -60px;
+     width: 340px !important;
+     border-color: #ccc;
+    }
+     /*Label field*/
+    .labelfield{
+      margin-left:-45px;
+    }
+    /* style for img alignment */
+   .img_align{
+    margin-left:200px;
+    margin-top:-85px;
+   }
+   /* align labels  */
+   .label_align{
+    margin-left:100px;
+    margin-top:-15px;
+   }
+   .btn_cancel{
+     margin-right:-30px;
+   }
+   /* print button */
+    .print_btn{
+      margin-right:-60px;
+      margin-top:10px;
+    }
+    .table_width{
+      overflow-y:scroll;
+      height:100px;
+      display:block;
+   }
+   .details_align{
+    margin-right:-60px;
+  }
+  hr{
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: 45px;
+    border-style: inset;
+    border-width: 1px;
+  }
+  
+   }
+ /*Landscape Mode*/
+ @media screen and (max-height: 360px) {
+   /*input field*/
+  .category{
+    width:595px;
+    margin-left:-60px;    
+  }
+  /* space alignment for month dropdown */
+  .space_align{
+    margin-top:20px;
+  }
+   /*Date field*/
+  .dateview{
+   margin-left: -60px;
+   width: 595px !important;
+   border-color: #ccc;
+  }
+   /*Label field*/
+  .labelfield{
+    margin-left:-45px;
+  }
+  /* style for img alignment */
+  .img_align{
+    margin-left:450px;
+    margin-top:-85px;
+   }
+   /* align labels  */
+   .label_align{
+    margin-left:150px;
+    margin-top:-15px;
+   }
+   .btn_cancel{
+     margin-right:-150px;
+   }
+   /* print button */
+    .print_btn{
+      margin-right:-390px;
+      /* margin-top:10px; */
+    }
+    .details_align{
+      margin-right:-325px;
+    }
+    hr{
+      display: block;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      margin-left: auto;
+      margin-right: 310px;
+      border-style: inset;
+      border-width: 1px;
+    }
+ }

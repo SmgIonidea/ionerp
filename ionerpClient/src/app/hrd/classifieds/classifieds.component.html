@@ -1,3 +1,269 @@
-<p>
-  classifieds works!
-</p>
+<section class="content-header" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Classifieds</h4>
+  </div>
+</section>
+<form>
+  <div class="row col-md-12">
+    <div class="col-md-8">
+      <div class="col-md-2">
+        <label class="labelfield" style="padding-top:10px;margin-left:-30px;">Start-date :
+          <!-- <span class="mandatory" style="color:red;">*</span> -->
+        </label>
+      </div>
+      <div class='right-inner-addon dateview col-md-3' data-date-format="dd-mm-yyyy" style="margin-left:-30px;">
+        <my-date-picker class="" placeholder=" dd-mm-yyyy" name="myinitialdate" id="myinitialdate" [options]="myDatePickerOptions"
+          [(ngModel)]="model" required>
+        </my-date-picker>
+      </div>
+      <div class="col-md-2">
+        <label class="labelfield" style="padding-top:10px;margin-left:-20px;">End-date :
+        </label>
+      </div>
+      <div class='right-inner-addon dateview col-md-3' data-date-format="dd-mm-yyyy" style="margin-left:-30px;">
+        <my-date-picker class="" placeholder=" dd-mm-yyyy" name="myinitialdate" id="myinitialdate" [options]="myDatePickerOptions"
+          [(ngModel)]="model" required>
+        </my-date-picker>
+      </div>
+    </div>
+    <div class="col-md-4 btn-align">
+      <button type="button" class="btn btn-primary">
+        <span class="glyphicon glyphicon-search"></span>&nbsp;Search</button>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addclassified">
+        <span class="glyphicon glyphicon-plus"></span>&nbsp;Add Classified</button>
+    </div>
+  </div>
+  <div class="row"></div>
+  <div class="row"></div>
+  <br>
+  <br>
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <th class="text-center col-lg-1">Sl No.</th>
+          <th class="text-center col-lg-2">Name</th>
+          <th class="text-center col-lg-3">Type of Ad</th>
+          <th class="text-center col-lg-3">Posted Date</th>
+          <th class="text-center col-lg-2">E-Mail</th>
+          <th class="text-center col-lg-1">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Admin</td>
+          <td>Asst Professor</td>
+          <td>09-03-2018 5:57:40</td>
+          <td>
+            <a href="">admin@ionidea.com</a>
+          </td>
+          <td>
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editclassified"><span class="glyphicon glyphicon-pencil"></span></button>&nbsp; -->
+            <span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#editclassified"></span>&nbsp;
+            <span class="glyphicon glyphicon-print" data-toggle="modal" data-target="#printclassified"></span>&nbsp;
+            <span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#deleteclassified"></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</form>
+
+<!-- Modal -->
+<div class="modal fade" id="addclassified" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="background-color:#f5f3f3;">
+      <div class="modal-header" style="color:white;background-color:#3f3f46;">
+        <button type="button" class="close" data-dismiss="modal" style="color:white;">&times;</button>
+        <h4 class="modal-title">Add Classified</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row form-group ">
+          <div class="col-lg-3 col-md-3">
+            <label>Name :</label>
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <input class="form-control" type="text" name="admission_id" value="">
+          </div>
+        </div>
+        <div class="row form-group ">
+          <div class="col-lg-3 col-md-3">
+            <label>Type of Ad :</label>
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <input class="form-control" type="text" name="admission_id" value="">
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-lg-3 col-md-3">
+            <label>Posted Date :</label>
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="right-inner-addon col-lg-6 col-md-6" data-date-format="yyyy-mm-dd">
+            <my-date-picker class="" placeholder=" dd-mm-yyyy" name="purchaseDate" id="purchaseDate" [options]="myDatePickerOptions"
+              [(ngModel)]="model">
+            </my-date-picker>
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-lg-3 col-md-3">
+            <label>Deatils :</label>
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-9 col-md-9">
+            <textarea class="form-control" rows="10" cols="100" type="text" name="admission_id" value=""></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;Submit</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="editclassified" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="background-color:#f5f3f3;">
+      <div class="modal-header" style="color:white;background-color:#3f3f46;">
+        <button type="button" class="close" data-dismiss="modal" style="color:white;">&times;</button>
+        <h4 class="modal-title">Edit Classified</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row form-group ">
+          <div class="col-lg-3 col-md-3">
+            <label>Name :</label>
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <input class="form-control" type="text" name="admission_id" value="Admin">
+          </div>
+        </div>
+        <div class="row form-group ">
+          <div class="col-lg-3 col-md-3">
+            <label>Type of Ad :</label>
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <input class="form-control" type="text" name="admission_id" value="Asst Professor">
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-lg-3 col-md-3">
+            <label>Posted Date :</label>
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="right-inner-addon  col-lg-6 col-md-6" data-date-format="yyyy-mm-dd">
+            <my-date-picker class="" placeholder=" dd-mm-yyyy" name="purchaseDate" id="purchaseDate" [options]="myDatePickerOptions"
+              [(ngModel)]="model">
+            </my-date-picker>
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-lg-3 col-md-3">
+            <label>Deatils :</label>
+            <span class="mandatory" style="color:#FF0000">*</span>
+          </div>
+          <div class="col-lg-9 col-md-9">
+            <textarea class="form-control" rows="10" cols="100" type="text" name="admission_id" value=""></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;Submit</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="printclassified" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="background-color:#f5f3f3;">
+      <div class="modal-header" style="color:white;background-color:#3f3f46;">
+        <button type="button" class="close" data-dismiss="modal" style="color:white;">&times;</button>
+        <h4 class="modal-title">Print Classified</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row form-group ">
+          <div class="col-lg-3 col-md-3">
+            <label>Name :</label>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            Admin
+          </div>
+        </div>
+        <div class="row form-group ">
+          <div class="col-lg-3 col-md-3">
+            <label>Type of Ad :</label>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            Asst Professor
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-lg-3 col-md-3">
+            <label>Posted Date :</label>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            09-03-2018 5:57:40
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-lg-3 col-md-3">
+            <label>Deatils :</label>
+          </div>
+          <div class="col-lg-9 col-md-9">
+            <p>We develop software products for ISVs (Independent Software Vendors) and mission critical software applications
+              for Enterprises in several industries, including Tech,Telecommunications,Financial Services, Banking, Healthcare,
+              Biotech, Pharmaceutical and Retail.</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">
+          <span class="glyphicon glyphicon-print"></span>&nbsp;Print</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="deleteclassified" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="background-color:#f5f3f3;">
+      <div class="modal-header" style="color:white;background-color:#3f3f46;">
+        <button type="button" class="close" data-dismiss="modal" style="color:white;">&times;</button>
+        <h4 class="modal-title">Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        <h5>Are you sure want to delete?</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;yes</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <span class="glyphicon glyphicon-remove"></span>&nbsp;No</button>
+      </div>
+    </div>
+  </div>
+</div>

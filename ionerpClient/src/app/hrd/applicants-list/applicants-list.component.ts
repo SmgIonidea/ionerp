@@ -9,7 +9,12 @@ export class ApplicantsListComponent implements OnInit {
 
   constructor() { }
 
+  maintitle;
+
   ngOnInit() {
+
+    this.maintitle = "Applicants List";
+
   }
 
 }

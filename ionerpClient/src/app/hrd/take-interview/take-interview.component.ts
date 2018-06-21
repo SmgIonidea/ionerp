@@ -9,7 +9,12 @@ export class TakeInterviewComponent implements OnInit {
 
   constructor() { }
 
+  maintitle;
+  
   ngOnInit() {
+
+    this.maintitle = "Take Interview";
+    
   }
 
 }

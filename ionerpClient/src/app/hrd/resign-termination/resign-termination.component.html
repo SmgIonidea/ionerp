@@ -1,3 +1,406 @@
-<p>
-  resign-termination works!
-</p>
+<section class="content-header" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resignation/Termination</h4>
+  </div>
+</section>
+<form>
+  <div class="row">
+    <div class="col-md-10">
+      <div class="labelfield col-md-2">
+        <label class="" style="padding-top:10px;">Department:
+          <!-- <span class="mandatory" style="color:red;">*</span> -->
+        </label>
+      </div>
+      <div class="category col-md-2">
+        <select class="form-control" name="pre_serialno" id="pre_serialno">
+          <option value="">Select Staff </option>
+          <option value="Teaching">Teaching Staff</option>
+          <option value="Non-Teaching">Non-Teaching Staff</option>
+        </select>
+      </div>
+      <div class="labelfield col-md-2">
+        <label class="" style="padding-top:10px;">Post:
+        </label>
+      </div>
+      <div class="category col-md-2">
+        <select class="form-control" name="pre_serialno" id="pre_serialno">
+          <option value="">Select Post </option>
+          <option value="Engineering Mathematics">Engineering Mathematics</option>
+          <option value="JAVA">JAVA</option>
+          <option value="Net">.Net</option>
+          <option value="DBMS">DBMS</option>
+          <option value="Electronics">Electronics</option>
+          <option value="FT">Field Theory</option>
+          <option value="unix">Unix</option>
+        </select>
+      </div>
+      <div class="labelfield col-md-2">
+        <label style="padding-top:10px;">Employee ID:</label>
+        <span class="mandatory" style="color:#FF0000">*</span>
+      </div>
+      <div class="category col-md-2">
+        <input class="form-control" type="text" name="admission_id" value="">
+      </div>
+    </div>
+    <div class="col-md-2">
+      <button type="button" class="btn btn-primary">
+        <span class="glyphicon glyphicon-search"></span>&nbsp;Search</button>
+    </div>
+  </div>
+
+  <div class="row"></div>
+  <br>
+  <br>
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <th class="text-center col-lg-1">Sl No.</th>
+          <th class="text-center col-lg-2">Emp ID</th>
+          <th class="text-center col-lg-2">Name</th>
+          <th class="text-center col-lg-2">Department[Post]</th>
+          <th class="text-center col-lg-2">Date of Joining</th>
+          <th class="text-center col-lg-1">Status</th>
+          <th class="text-center col-lg-2">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>879</td>
+          <td>NeelKanta</td>
+          <td>Teaching Staff[JAVA]</td>
+          <td>
+            19/11/2014
+          </td>
+          <td>
+            Resigned
+          </td>
+          <td style="text-align:center;">
+            <div class="row">
+              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#employee_certificate1" style="width:50%;">
+                <span class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;EC</button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>643</td>
+          <td>Sushil Kumar</td>
+          <td>Teaching Staff[Electronics]</td>
+          <td>
+            19/11/2014
+          </td>
+          <td>
+           
+          </td>
+          <td style="text-align:center;">
+            <div class="row">
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#termination2" style="width:50%;">
+                <span class="glyphicon glyphicon-log-out"></span>&nbsp;&nbsp;Terminate</button>
+            </div>
+            <br>
+            <div class="row">
+              <button type="button" class="btn btn-primary" style="width:50%;">
+                <span class="glyphicon glyphicon-random"></span>&nbsp;&nbsp;Resigned</button>
+            </div>
+            <br>
+            <div class="row">
+              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#employee_certificate2" style="width:50%;">
+                <span class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;EC</button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>244</td>
+          <td>Praveen</td>
+          <td>Teaching Staff[OOPS]</td>
+          <td>
+            19/11/2014
+          </td>
+          <td>
+            Terminated
+          </td>
+          <td style="text-align:center;">
+            <div class="row">
+              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#employee_certificate3" style="width:50%;">
+                <span class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;EC</button>
+            </div>
+          </td>
+        </tr>
+        <!-- <tr>
+          <td>4</td>
+          <td>746</td>
+          <td>Pramila</td>
+          <td>Teaching Staff[DBMS]</td>
+          <td>
+            19/11/2014
+          </td>
+          <td>
+            --
+          </td>
+          <td style="text-align:center;">
+            <div class="row">
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#termination1" style="width:50%;">
+                <span class="glyphicon glyphicon-log-out"></span>&nbsp;&nbsp;Terminate</button>
+            </div>
+            <br>
+            <div class="row">
+              <button type="button" class="btn btn-primary" style="width:50%;">
+                <span class="glyphicon glyphicon-random"></span>&nbsp;&nbsp;Resigned</button>
+            </div>
+            <br>
+            <div class="row">
+              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#employee_certificate4" style="width:50%;">
+                <span class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;EC</button>
+            </div>
+          </td>
+        </tr> -->
+      </tbody>
+    </table>
+  </div>
+</form>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="employee_certificate4" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="background-color:#f5f3f3;">
+      <div class="modal-header" style="color:white;background-color:#3f3f46;">
+        <button type="button" class="close" data-dismiss="modal" style="color:white;">&times;</button>
+        <img src="./assets/js_css/images/IonCUDOS.png" style="width:80px;height:30px;" />
+        <h4 class="modal-title" style="text-align:center;">IONIDEA Institute Of Technology</h4>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title" style="text-align:center;">Employee Certificate</h4>
+        <br>
+        <br>
+        <p>This is certified that
+          <b>PRAMILLA</b> &nbsp;D/O Mr.
+          <input class="form-control" type="text" name="admission_id" value="" /> had been worked as
+          <b>DBMS</b> lecturer in this college from 01/01/1970 to .She is very hardworking & dedicated employee. I wish .she all
+          success in life. </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;Print</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="employee_certificate3" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="background-color:#f5f3f3;">
+      <div class="modal-header" style="color:white;background-color:#3f3f46;">
+        <button type="button" class="close" data-dismiss="modal" style="color:white;">&times;</button>
+        <img src="./assets/js_css/images/IonCUDOS.png" style="width:80px;height:30px;" />
+        <h4 class="modal-title" style="text-align:center;">IONIDEA Institute Of Technology</h4>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title" style="text-align:center;">Employee Certificate</h4>
+        <br>
+        <br>
+        <p>This is certified that
+          <b>PRAVEEN </b> &nbsp;S/O Mr.
+          <input class="form-control" type="text" name="admission_id" value="" /> had been worked as
+          <b>Object Oriented Programming Structure(OOPS)</b> lecturer in this college from 01/01/1970 to .He is very hardworking
+          & dedicated employee. I wish .He all success in life. </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;Print</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="employee_certificate2" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="background-color:#f5f3f3;">
+      <div class="modal-header" style="color:white;background-color:#3f3f46;">
+        <button type="button" class="close" data-dismiss="modal" style="color:white;">&times;</button>
+        <img src="./assets/js_css/images/IonCUDOS.png" style="width:80px;height:30px;" />
+        <h4 class="modal-title" style="text-align:center;">IONIDEA Institute Of Technology</h4>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title" style="text-align:center;">Employee Certificate</h4>
+        <br>
+        <br>
+        <p>This is certified that
+          <b>SUSHIL KUMAR</b> &nbsp; S/O Mr.
+          <input class="form-control" type="text" name="admission_id" value="" /> had been worked as
+          <b>Electronics </b>lecturer in this college from 01/01/1970 to .He is very hardworking & dedicated employee. I wish
+          .He all success in life. </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;Print</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="employee_certificate1" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="background-color:#f5f3f3;">
+      <div class="modal-header" style="color:white;background-color:#3f3f46;">
+        <button type="button" class="close" data-dismiss="modal" style="color:white;">&times;</button>
+        <img src="./assets/js_css/images/IonCUDOS.png" style="width:80px;height:30px;" />
+        <h4 class="modal-title" style="text-align:center;">IONIDEA Institute Of Technology</h4>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title" style="text-align:center;">Employee Certificate</h4>
+        <br>
+        <br>
+        <p>This is certified that
+          <b>NEELKANTA</b> &nbsp;S/O Mr.
+          <input class="form-control" type="text" name="admission_id" value="" /> had been worked as
+          <b>JAVA</b> lecturer in this college from 01/01/1970 to .He is very hardworking & dedicated employee. I wish .He all
+          success in life. </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;Print</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="termination1" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="background-color:#f5f3f3;">
+      <div class="modal-header" style="color:white;background-color:#3f3f46;">
+        <button type="button" class="close" data-dismiss="modal" style="color:white;">&times;</button>
+        <img src="./assets/js_css/images/IonCUDOS.png" style="width:80px;height:30px;" />
+        <h4 class="modal-title" style="text-align:center;">IONIDEA Institute Of Technology</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-4">
+            <label class="labelalign">Staff Name:
+              <!-- <span class="mandatory" style="color:red;">*</span> -->
+            </label>
+          </div>         
+          <div class="col-md-4">
+              Pramila
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <label class="labelalign">Department:
+            </label>
+          </div>
+          <div class="col-md-4">
+              TEACHING STAFF
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+              <label class="labelalign">Post:  </label>         
+          </div>
+          <div class="col-md-4">
+            DBMS
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label class="labelalign">Date:</label>
+                              
+            </div>
+            <div class="col-md-4">
+             19/11/2014
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">
+          <span class="glyphicon glyphicon-ok"></span>&nbsp;Print</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="termination2" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#f5f3f3;">
+        <div class="modal-header" style="color:white;background-color:#3f3f46;">
+          <button type="button" class="close" data-dismiss="modal" style="color:white;">&times;</button>
+          <img src="./assets/js_css/images/IonCUDOS.png" style="width:80px;height:30px;" />
+          <h4 class="modal-title" style="text-align:center;">IONIDEA Institute Of Technology</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <label class="labelalign">Staff Name:
+                <!-- <span class="mandatory" style="color:red;">*</span> -->
+              </label>
+            </div>
+            <div class="col-md-4">
+               Sushil Kumar
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <label class="labelalign">Department:
+              </label>
+            </div>
+            <div class="col-md-4">
+               TEACHING STAFF
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+                <label class="labelalign">Post:   </label>        
+            </div>
+            <div class="col-md-4">
+              Electronics
+            </div>
+          </div>         
+          <div class="row">
+              <div class="col-md-4">
+                  <label class="labelalign">Date:</label>
+                
+              </div>
+              <div class="col-md-4">
+               19/11/2018
+              </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">
+            <span class="glyphicon glyphicon-ok"></span>&nbsp;Print</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            <span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>

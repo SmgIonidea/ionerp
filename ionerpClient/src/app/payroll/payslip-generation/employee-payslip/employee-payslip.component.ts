@@ -11,5 +11,19 @@ export class EmployeePayslipComponent implements OnInit {
 
   ngOnInit() {
   }
+  selectDiv(select_item){
+    if (select_item == "cheque" || select_item == "dd" ) {
+      // this.hiddenDiv.style.visibility='visible';
+    $('#hiddeDiv').css('display','block');
+    // Form.fileURL.focus();
+  } 
+  else{
+    // this.hiddenDiv.style.visibility='hidden';
+    $('#hiddeDiv').css('display','none');
+  }
+  }
 
+  showEmpDetails(){
+    $('#employeeDiv').css('display','block');
+  }
 }

@@ -1,3 +1,87 @@
-<p>
-  offer-letter works!
-</p>
+<section class="content-header gap" style="margin-top:-10px;">
+  <div class="panel panel-primary">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ maintitle }}</h4>
+  </div>
+</section>
+
+<div class="col-lg-12">  
+   
+  <div class="col-lg-2">
+    <label class="labelalign">Department:
+      <span class="mandatory" style="color:red;">*</span>
+    </label>
+  </div>
+  <div class="col-lg-2">
+    <select class="form-control dropdownalign">
+      <option selected>Select</option>         
+      <option>Teaching staff</option>
+      <option>Non-teaching staff</option>
+      <option>Academics department</option>        
+    </select>
+    <br>
+  </div>  
+  
+  <div class="col-md-2">
+    <label class="labelalign" >Post:
+      <span class="mandatory" style="color:red;">*</span>
+    </label>
+  </div>
+  <div class="col-md-2">
+    <select class="form-control dropdownalign2">
+      <option selected>Select</option>         
+      <option>Post 1</option>
+      <option>Post 2</option>
+      <option>Post 3</option>        
+    </select>
+    <br>
+  </div>  
+
+  <div class="col-md-2">
+    <label class="labelalign">Employee Id:
+      <span class="mandatory" style="color:red;">*</span>
+    </label>
+  </div>
+  <div class="col-md-2">
+    <input type="text" class="form-control inputalign"/>
+  </div>
+</div>
+<br>
+<form class="form-horizontal" style="border-top:0px;">
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>     
+            <th class="text-left">
+                <input type="checkbox">
+              </th>     
+          <th class="text-center ">Sl&nbsp;No.</th>
+          <th class="text-center">Candidate Name</th>
+          <th class="text-center">Post</th>
+          <th class="text-center">Status</th>          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>   
+            <td class="text-left">
+                <input type="checkbox">
+              </td>       
+          <td class="text-right"><p class="pull-right">1</p></td>
+          <td class="text-center">Amit</td>
+          <td class="text-center">Lecturer</td>
+          <td class="text-center">Letter not sent</td>                   
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pull-right">
+      <button class="btn btn-primary">
+          <i class="glyphicon glyphicon-print"></i>
+          Send mail
+        </button>&nbsp;&nbsp;
+    <button class="btn btn-primary">
+      <i class="glyphicon glyphicon-print"></i>
+      Print
+    </button>    
+  </div>
+  <br><br><br>  
+</form>
