@@ -53,8 +53,14 @@ th, td {
    margin-right:-99px;
  }
 
+ .delete-btn{
+   padding-top:25px;
+ }
  
-
+.categorybtn{
+  margin-left:-45px;
+  padding-top:25px;
+}
 
  /*Potrait Mode*/
    @media screen and (max-width: 480px) {
