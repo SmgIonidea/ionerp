@@ -16822,6 +16822,46 @@ DeductionTypeComponent = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/payroll/employee/employee.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__issue_loan_issue_loan_component__ = __webpack_require__("../../../../../src/app/payroll/employee/issue-loan/issue-loan.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__loan_issued_to_loan_issued_to_component__ = __webpack_require__("../../../../../src/app/payroll/employee/loan-issued-to/loan-issued-to.component.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmployeeModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var EmployeeModule = (function () {
+    function EmployeeModule() {
+    }
+    return EmployeeModule;
+}());
+EmployeeModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]
+        ],
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_2__issue_loan_issue_loan_component__["a" /* IssueLoanComponent */],
+            __WEBPACK_IMPORTED_MODULE_3__loan_issued_to_loan_issued_to_component__["a" /* LoanIssuedToComponent */],
+        ]
+    })
+], EmployeeModule);
+
+//# sourceMappingURL=employee.module.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/payroll/employee/issue-loan/issue-loan.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17078,16 +17118,14 @@ LoanComponent = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__annual_leave_annual_leave_component__ = __webpack_require__("../../../../../src/app/payroll/annual-leave/annual-leave.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__allowance_type_allowance_type_component__ = __webpack_require__("../../../../../src/app/payroll/allowance-type/allowance-type.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__deduction_type_deduction_type_component__ = __webpack_require__("../../../../../src/app/payroll/deduction-type/deduction-type.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__loan_loan_component__ = __webpack_require__("../../../../../src/app/payroll/loan/loan.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tax_tax_component__ = __webpack_require__("../../../../../src/app/payroll/tax/tax.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pf_pf_component__ = __webpack_require__("../../../../../src/app/payroll/pf/pf.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__employee_issue_loan_issue_loan_component__ = __webpack_require__("../../../../../src/app/payroll/employee/issue-loan/issue-loan.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__employee_loan_issued_to_loan_issued_to_component__ = __webpack_require__("../../../../../src/app/payroll/employee/loan-issued-to/loan-issued-to.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__payslip_generation_employee_payslip_employee_payslip_component__ = __webpack_require__("../../../../../src/app/payroll/payslip-generation/employee-payslip/employee-payslip.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__payslip_generation_payslip_list_payslip_list_component__ = __webpack_require__("../../../../../src/app/payroll/payslip-generation/payslip-list/payslip-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__employee_employee_module__ = __webpack_require__("../../../../../src/app/payroll/employee/employee.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__payslip_generation_payslip_generation_module__ = __webpack_require__("../../../../../src/app/payroll/payslip-generation/payslip-generation.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__annual_leave_annual_leave_component__ = __webpack_require__("../../../../../src/app/payroll/annual-leave/annual-leave.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__allowance_type_allowance_type_component__ = __webpack_require__("../../../../../src/app/payroll/allowance-type/allowance-type.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__deduction_type_deduction_type_component__ = __webpack_require__("../../../../../src/app/payroll/deduction-type/deduction-type.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__loan_loan_component__ = __webpack_require__("../../../../../src/app/payroll/loan/loan.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__tax_tax_component__ = __webpack_require__("../../../../../src/app/payroll/tax/tax.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pf_pf_component__ = __webpack_require__("../../../../../src/app/payroll/pf/pf.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angular_datatables__ = __webpack_require__("../../../../angular-datatables/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_angular_2_dropdown_multiselect__ = __webpack_require__("../../../../angular-2-dropdown-multiselect/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_mydatepicker__ = __webpack_require__("../../../../mydatepicker/index.js");
@@ -17099,8 +17137,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
 
 
 
@@ -17131,16 +17167,12 @@ PayrollModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_15__angular_forms__["b" /* ReactiveFormsModule */]
         ],
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__annual_leave_annual_leave_component__["a" /* AnnualLeaveComponent */],
-            __WEBPACK_IMPORTED_MODULE_3__allowance_type_allowance_type_component__["a" /* AllowanceTypeComponent */],
-            __WEBPACK_IMPORTED_MODULE_4__deduction_type_deduction_type_component__["a" /* DeductionTypeComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__loan_loan_component__["a" /* LoanComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__tax_tax_component__["a" /* TaxComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__pf_pf_component__["a" /* PFComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__employee_issue_loan_issue_loan_component__["a" /* IssueLoanComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__employee_loan_issued_to_loan_issued_to_component__["a" /* LoanIssuedToComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__payslip_generation_employee_payslip_employee_payslip_component__["a" /* EmployeePayslipComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__payslip_generation_payslip_list_payslip_list_component__["a" /* PayslipListComponent */],
+            __WEBPACK_IMPORTED_MODULE_4__annual_leave_annual_leave_component__["a" /* AnnualLeaveComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__allowance_type_allowance_type_component__["a" /* AllowanceTypeComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__deduction_type_deduction_type_component__["a" /* DeductionTypeComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__loan_loan_component__["a" /* LoanComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__tax_tax_component__["a" /* TaxComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__pf_pf_component__["a" /* PFComponent */],
         ]
     })
 ], PayrollModule);
@@ -17221,6 +17253,46 @@ EmployeePayslipComponent = __decorate([
 ], EmployeePayslipComponent);
 
 //# sourceMappingURL=employee-payslip.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/payroll/payslip-generation/payslip-generation.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__employee_payslip_employee_payslip_component__ = __webpack_require__("../../../../../src/app/payroll/payslip-generation/employee-payslip/employee-payslip.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__payslip_list_payslip_list_component__ = __webpack_require__("../../../../../src/app/payroll/payslip-generation/payslip-list/payslip-list.component.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PayslipGenerationModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var PayslipGenerationModule = (function () {
+    function PayslipGenerationModule() {
+    }
+    return PayslipGenerationModule;
+}());
+PayslipGenerationModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]
+        ],
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_2__employee_payslip_employee_payslip_component__["a" /* EmployeePayslipComponent */],
+            __WEBPACK_IMPORTED_MODULE_3__payslip_list_payslip_list_component__["a" /* PayslipListComponent */],
+        ]
+    })
+], PayslipGenerationModule);
+
+//# sourceMappingURL=payslip-generation.module.js.map
 
 /***/ }),
 
