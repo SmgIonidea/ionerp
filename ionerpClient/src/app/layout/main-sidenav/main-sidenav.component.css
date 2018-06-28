@@ -169,9 +169,15 @@
     margin-left: 60% !important;
     margin-top: -35% !important;
 }
-.sideMenu {
+
+.sideMenu_account{
     margin-left: 60%;
-    margin-top: -50%;
+    margin-top: -15%;
+}
+
+.sideMenu_transport {
+    margin-left: 60%;
+    margin-top: -30%;
 }
 .sideMenu_stutransport {
     margin-left: 60%;
@@ -180,12 +186,12 @@
 
 .sideMenu_hrd {
     margin-left: 60%;
-    margin-top: -125%;
+    margin-top: -45%;
 }
 
 .sideMenu_payroll{
     margin-left: 60%;
-    margin-top: -140%; 
+    margin-top: -60%; 
 }
 
 .dropdown-content a {

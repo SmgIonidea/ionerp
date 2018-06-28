@@ -384,7 +384,7 @@ margin-top: 8px;
     margin-right: -120px;
   }
   :host /deep/ ss-multiselect-dropdown .dropdown {
-    /* width: 350.53px; */
+    width: 350.53px;
     display: block;
     /* margin-left: -40px !important; */
     height: 34px;

@@ -66,10 +66,10 @@
                
             </li>-->
           
-        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="treeview" routerLinkActive="active">
+        <!-- <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="treeview" routerLinkActive="active">
             <a href="" [routerLink]="['/content',{outlets:{appCommon:['AdmissionForm']}}]" class="key-data" data-key="lg_admission_form">
                 <i class="fa fa-wpforms fa-fw" aria-hidden="true"></i>&nbsp;  Admission Form </a>
-        </li>
+        </li> -->
 
 
         <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class="dropdown treeview" routerLinkActive="active">
@@ -78,7 +78,7 @@
                     <i class="glyphicon glyphicon-chevron-right pull-right "></i>
                 </span>
             </a>
-            <div class="dropdown-content">
+            <div class="dropdown-content sideMenu_account">
                 <a href="" [routerLink]="['/content',{outlets:{appCommon:['accountingGroup']}}]" class="key-data" data-key="lg_actvty"> Create Account Groups
 
                 </a>
@@ -127,7 +127,7 @@
                     <i class="glyphicon glyphicon-chevron-right pull-right "></i>
                 </span>
             </a>
-            <div class="dropdown-content sideMenu">
+            <div class="dropdown-content sideMenu_transport">
                    
                 <a href="" [routerLink]="['/content',{outlets:{appCommon:['route']}}]" class="key-data" data-key="lg_actvty"> Route
                    
@@ -211,9 +211,9 @@
                 </a>
             </div>
         </li>
-        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="dropdown treeview" routerLinkActive="active">
+        <!-- <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="dropdown treeview" routerLinkActive="active">
             <a class="dropbtn key-data " data-key="lg_hostel"> <i class="fa fa-building fa-fw" aria-hidden="true"></i>&nbsp; Hostel
-                <!-- <img src="/assets/js_css/images/arrow_right.png" height="15px" width="20px"/> -->
+               
                 <span class="pull-right-container" >
                     <i class="glyphicon glyphicon-chevron-right pull-right " ></i>
                 </span>
@@ -244,9 +244,9 @@
 
                 </a>
             </div>
-        </li>
+        </li> -->
 
-        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner || is_student' class="dropdown treeview" routerLinkActive="active">
+        <!-- <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner || is_student' class="dropdown treeview" routerLinkActive="active">
             <a class="dropbtn key-data" data-key="lg_msg"> <i class="fa fa-envelope fa-fw" aria-hidden="true"></i>&nbsp; Message
                     <span class="pull-right-container">
                             <i class="glyphicon glyphicon-chevron-right pull-right "></i>
@@ -263,10 +263,10 @@
 
                 </a>
             </div>
-        </li>
+        </li> -->
 
 
-        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="dropdown treeview" routerLinkActive="active">
+        <!-- <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="dropdown treeview" routerLinkActive="active">
             <a class="dropbtn key-data" data-key="lg_sms"><i class="fa fa-paper-plane fa-fw" aria-hidden="true"></i>&nbsp; SMS
                 <span class="pull-right-container">
                     <i class="glyphicon glyphicon-chevron-right pull-right "></i>
@@ -283,9 +283,9 @@
 
                 </a>
             </div>
-        </li>
+        </li> -->
 
-        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="dropdown treeview" routerLinkActive="active">
+        <!-- <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="dropdown treeview" routerLinkActive="active">
             <a class="dropbtn key-data" data-key="lg_lib"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp; Library
                 <span class="pull-right-container">
                     <i class="glyphicon glyphicon-chevron-right pull-right "></i>
@@ -348,7 +348,7 @@
 
                 </a>
             </div>
-        </li>
+        </li> -->
 
 
         <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="dropdown treeview" routerLinkActive="active">
