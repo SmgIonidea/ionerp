@@ -44,14 +44,45 @@ th, td {
    margin-left: 0px;
  }
 
- .btn_cancel{
+ /* .btn_cancel{
    float:right;
    margin-right: -110px;
    
  }
  .btn_update{
    margin-right:-99px;
+ } */
+
+ .btn_align{
+  margin-right: -112px;
  }
+
+.btn_save{
+  margin-left:-5px;
+}
+
+.btn_update{
+  margin-left:-15px;
+}
+
+.btn_cancel{
+  margin-left: 77px;
+  margin-top: -48px;
+}
+
+.btn-bs-file{
+  position:relative;
+}
+.btn-bs-file input[type="file"]{
+  position: absolute;
+  top: -9999999;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  width:0;
+  height:0;
+  outline: none;
+  cursor: inherit;
+}
 
  /*Potrait Mode*/
  @media screen and (max-width: 480px) {

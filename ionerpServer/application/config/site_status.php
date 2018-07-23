@@ -11,7 +11,7 @@ defined('APP_HOST') OR define('APP_HOST', $_SERVER['HTTP_HOST']);
 defined('APP_VER') OR define('APP_VER', 'IonERP');
 defined('APP_BASE') OR define('APP_BASE', 'http://' . APP_HOST . '/' . APP_VER . '/');
 defined('DB_HOST') OR define('DB_HOST', $_SERVER['HTTP_HOST']);
-defined('DB_NAME') OR define('DB_NAME', 'ionerp');
+defined('DB_NAME') OR define('DB_NAME', 'ionerpgrp');
 defined('DB_USER') OR define('DB_USER', 'root');
 defined('DB_PASS') OR define('DB_PASS', '');
 defined('ENC_KEY') OR define('ENC_KEY', 'cinaacabcdef123ef4578z1k2l3i4p5o67q890n98b');

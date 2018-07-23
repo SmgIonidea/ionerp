@@ -1,12 +1,12 @@
 <section class="content-header gap" style="margin-top:-10px;">
   <div class="panel panel-primary">
-    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Balance Sheet</h4>
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{maintitle}}</h4>
   </div>
 </section>
 
 
 <div class="container-fluid" >
-<form>
+<form [formGroup]="balanceForm" (ngSubmit)="searchdata(balanceForm)">
   <div class="col-md-12">
     <div class="col-md-2">
       <label style="margin-left:-30px;">Financial Year:
@@ -14,11 +14,11 @@
       </label>
     </div>
     <div class="col-md-5">
-      <select class="form-control">
-        <option>Select Year</option>
-        <option value="15-16">01/04/2015 - 31/03/2016</option>
-        <option value="16-17">01/04/2016 - 31/03/2017</option>
-        <option value="17-18">01/04/2017 - 31/03/2018</option>
+      <select formControlName="financeyear" class="form-control">
+        <option [ngValue]="0" selected>Select Year</option>
+        <option *ngFor="let finance of year"  [ngValue]="finance.financeyear">
+          {{finance.financeyear}}
+          </option>
       </select>
       <br>
       <!--<div style="width:50%" *ngIf="assignment.touched && assignment.invalid" class="alert alert-danger">
@@ -64,24 +64,24 @@
           </td> -->
          <td>
            <table border="0" class="tab">
-             <tr>
+             <tr *ngFor="let postsin of searchresult">
                <td>
-                Sales Order
+                {{postsin.es_vouchertype}}
                </td>
                <td class="pull-right">
-                 Rs.6000
+                {{postsin.es_amount}}
                 </td>
              </tr>
            </table>
          </td>
          <td>
             <table border="0" class="tab">
-              <tr>
+              <tr *ngFor = "let postsout of paidoutresult">
                 <td>
-                 Salary
+                  {{postsout.es_vouchertype}}
                 </td>
                 <td class="pull-right">
-                  Rs.10000
+                 {{postsout.es_amount}}
                  </td>
               </tr>
             </table>
@@ -91,11 +91,11 @@
            <!-- <td>
              <b>Total Amount</b>
            </td> -->
-           <td class="text-center">
-             <b>Total :</b>&nbsp;&nbsp;&nbsp;&nbsp; <b>Rs.6000</b>
+           <td *ngFor="let totin of totalinresult " class="text-center">
+             <b>Total :</b>&nbsp;&nbsp;&nbsp;&nbsp; <b>{{totin.totalin}}</b>
             </td>
-            <td class="text-center">
-                <b>Total :</b>&nbsp;&nbsp;&nbsp;&nbsp; <b>Rs.10000</b>
+            <td *ngFor="let totout of totaloutresult " class="text-center">
+                <b>Total :</b>&nbsp;&nbsp;&nbsp;&nbsp; <b>{{totout.totalout}}</b>
               </td>
          </tr>
           <!-- <td class="text-right">

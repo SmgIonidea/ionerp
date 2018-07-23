@@ -1,21 +1,19 @@
-<section class="content-header">
+<section class="">
   <!--<div class="headline">-->
   <!-- Div for Page Headings -->
   <div class="panel panel-primary">
-    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Groups</h4>
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{maintitle}}</h4>
   </div>
   <!--</div>-->
   <!-- Page Headings Div Ends Here  -->
 </section>
+<!--<pre>{{post | json}}</pre>-->
 
 <form class="form-horizontal" style="border-top:0px;">
   <div class="table table-responsive" style="overflow-x:initial;">
     <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
       <thead style="background-color:#DDE1E6;">
         <tr>
-          <!-- <th class="text-center">
-            <input type="checkbox" (click)="deleteAllSelected($event)" id="delete_check">
-          </th> -->
           <th class="text-center ">Sl&nbsp;No.</th>
           <th class="text-center">Group Name</th>
           <th class="text-center">Under Group</th>
@@ -25,34 +23,26 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <!-- <tr *ngFor="let post of posts let i = index"> -->
-          <!-- <pre>{{post | json}}</pre>       -->
-          <!-- <td>
-            <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
-          </td> -->
+        <tr *ngFor="let posts of post.accountingList let i = index">
           <td class="text-right">
-            <p class="pull-right">1</p>
+            <p class="pull-right">{{i+1}}</p>
           </td>
-
-          <td class="text-center">ASDF</td>
-          <td class="text-center">BIOLOGY SCIENCE</td>
+          <td class="text-center">{{posts.fa_groupname}}</td>
+          <td class="text-center">{{posts.fa_undergroup}}</td>
 
           <td>
-            <i class="glyphicon glyphicon-pencil"></i>
+            <i #editElement class="glyphicon glyphicon-pencil" [attr.accountId]="posts.es_fa_groupsid" [attr.accountgrp]="posts.fa_groupname"
+             [attr.accountundergrp]="posts.fa_undergroup" (click)="editaccount(this.editElement)"></i>
           </td>
           <td>
-            <i class="glyphicon glyphicon-remove"></i>
+            
+            <!--<i #deleteElement class="glyphicon glyphicon-remove" [attr.accountId]="posts.es_fa_groupsid" 
+             (click)="deleteWarning(this.deleteElement,this.accontDeleteModal)" ></i>-->
+
+             <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer deleteAccount" 
+          [attr.accId]="posts.es_fa_groupsid"
+          (click)="deleteWarning(this.deleteElement,this.accountDeleteModal)"></i>
           </td>
-          <!-- <td class="text-center center" style="width:4%;">
-            <i pageScroll href="#home" #editElement class="glyphicon glyphicon-pencil cursor-pointer editDept" [attr.assignmentId]="post.a_id"
-              [attr.assignmentName]="post.assignment_name" [attr.assignmentInitialDate]="post.initiate_date" [attr.assignmentEndDate]="post.due_date"
-              [attr.assignmentTotalMarks]="post.total_marks" [attr.assignmentInstruction]="post.instructions" (click)="editassignment(this.editElement)"
-              (click)="checkDate(post.initiate_date)"></i>
-              </td>
-           <td class="text-center center" style="width:7%;">
-              <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer deleteAssignment" [attr.assignmentId]="post.a_id" (click)="deleteWarning(this.deleteElement,this.assignmentDeleteModal)"></i>
-              </td> -->
         </tr>
       </tbody>
     </table>
@@ -68,13 +58,13 @@
   <!--<div class="headline">-->
   <!-- Div for Page Headings -->
   <div class="panel panel-primary">
-    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create Account Groups</h4>
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{title}}</h4>
   </div>
   <!--</div>-->
   <!-- Page Headings Div Ends Here  -->
 </section>
 <div class="container-fluid" id="home">
-  <form class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+  <form [formGroup]="accountGrpForm" (ngSubmit)="createPost(accountGrpForm)" class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
       <div class="col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
         <label for="category">Group Name:
@@ -82,7 +72,15 @@
         </label>
       </div>
       <div class="col-md-6 col-sm-12 col-xs-12 category" style="margin-left:-60px;">
-        <input type="text" name="assignment" id="assignment" placeholder="Name of Group" class="form-control">
+        <input type="text" formControlName="grpName" id="grpName" placeholder="Name of Group" class="form-control">
+        <div class="error_message" style="margin-top:-14px;" *ngIf="accountGrpForm.submitted && grpName.untouched">
+          This field is required
+        </div>
+        <div *ngIf="grpName.touched && grpName.invalid" class="error_message" style="margin-top:-14px;">
+          <div *ngIf="grpName.errors.required">
+            This field is required
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
@@ -92,21 +90,73 @@
         </label>
       </div>
       <div class="col-md-6 col-sm-12 col-xs-12 category" style="margin-left:-60px;">
-        <select class="form-control">
-          <option>Select Group</option>
+        <select formControlName="underGrp" class="form-control" id="underGrp">
+          <option [ngValue]="0" selected>Select Under Group</option>
+      
+      <option *ngFor="let undergrp of groups" [ngValue]="undergrp.es_groupname">
+        {{ undergrp.es_groupname }}
+      </option>
+          <!--<option>Select Group</option>
           <option>BIOLOGY SCIENCE</option>
           <option>COMPUTER SCIENCE</option>
-          <option>ELECTRONICS SCIENCE</option>
+          <option>ELECTRONICS SCIENCE</option>-->
         </select>
+        <div class="error_message" style="margin-top:-14px;" *ngIf="accountGrpForm.submitted && underGrp.untouched">
+          This field is required
+        </div>
+        <div *ngIf="underGrp.touched && underGrp.invalid" class="error_message" style="margin-top:-14px;">
+          <div *ngIf="underGrp.errors.required">
+            This field is required
+          </div>
+        </div>
       </div>
     </div>
     <div class="can">
-      <div class="btn_cancel  col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right">
-        <button id="saveAssignment" type="submit" class="btn btn-primary">
+      <div [style.display]="isSaveHide?'none':'block'" class="btn_cancel  col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right">
+        <button id="saveAccountgrp" type="submit" [disabled]="!accountGrpForm.valid" class="btn btn-primary">
           <i class="glyphicon glyphicon-file"></i>&nbsp;Save</button>
         <button type="reset" class="btn btn-danger">
           <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>
       </div>
+       <div [style.display]="isUpdateHide?'none':'block'" class="btn_cancel col-lg-3 col-md-3 col-xs-12 col-sm-6 btn_update">
+        <button [disabled]="!accountGrpForm.valid" id="UpdateAccount" type="button" class="btn btn-primary" (click)="updateAccount(accountGrpForm)">
+          <i class="glyphicon glyphicon-ok"></i> Update
+        </button>
+        <button id="cancelEdit" type="button" class="btn btn-danger" (click)="cancelUpdate()">
+          <i class="glyphicon glyphicon-remove"></i> Cancel
+        </button>
+      </div>
     </div>
   </form>
+</div>
+
+<!-- Tag for showing Toast Message -->
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+<!-- Toast Tag Ends Here -->
+
+
+
+<div #accountDeleteModal  class="modal fade" id="accountDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header warning-msg" >
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        Account will be deleted permanently.
+        <input #deleteAccntId type="hidden" name="deleteAccntId" id="deleteAccntId" [value]="delAccntId">
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="deleteAccntData(deleteAccntId)" >
+            <i class="glyphicon glyphicon-ok"></i>
+            Yes
+          </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <i class="glyphicon glyphicon-remove"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

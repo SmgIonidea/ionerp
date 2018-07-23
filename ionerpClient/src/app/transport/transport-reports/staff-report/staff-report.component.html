@@ -1,7 +1,7 @@
 <section class="content-header gap" style="margin-top:-10px;">
   <div class="panel panel-primary">
-    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Staff Wise Report(Driver Copy)
-    </h4>
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{maintitle}}
+    </h4>    
   </div>
   <div style="margin-left:89.5%">
     <button class="btn btn-primary" (click)="export_to_excel()">
@@ -16,73 +16,37 @@
     <div class="table table-responsive" style="overflow-x:initial;">
       <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
         <thead style="background-color:#DDE1E6;">
-          <tr>
-            <!-- <th class="text-center">
-          <input type="checkbox" (click)="deleteAllSelected($event)" id="delete_check">
-        </th> -->
-            <th class="text-center">S.No</th>
-            <th class="text-center">EMP ID</th>
+          <tr>           
+            <th class="text-center" style="width: 3%">Sl.No</th>
+            <th class="text-center" style="width: 3%">Emp.Id</th>
             <th class="text-center">Name of the staff</th>
             <th class="text-center">Department</th>
             <th class="text-center">Post</th>
-            <th class="text-center">Type of Vehicle</th>
-            <th class="text-center">Reg.No. of the Vehicle</th>
-            <th class="text-center">Route</th>
-            <th class="text-center">Name of the Driver</th>
-
+            <th class="text-center" style="width: 3%">Type of Vehicle</th>
+            <th class="text-center" style="width: 10%">Reg.No. of the Vehicle</th>
+            <th class="text-center" style="width: 15%">Route</th>
+            <th class="text-center">Driver</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <!-- <tr *ngFor="let post of posts let i = index"> -->
-            <!-- <pre>{{post | json}}</pre>       -->
-            <!-- <td>
-          <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
-        </td> -->
+          <tr *ngFor="let post of staffWiseReport let i = index">        
             <td class="text-center">
-              <p class="pull-right">1</p>
+              <p class="pull-right">{{i+1}}</p>
             </td>
             <td class="text-right">
-              <p class="pull-right">52</p>
+              <p class="pull-right">{{post.es_staffid}}</p>
             </td>
-            <td class="text-center">Bharti kashyap</td>
-            <td class="text-center">TEACHING STAFF</td>
-            <td class="text-center">HSST ZOOLOGY</td>
-            <td class="text-center">bus</td>
-            <td class="text-center">8065</td>
-
-            <td class="text-center">Root 1(Sitai Hat)</td>
-            <td class="text-center">ANILKUMAR.S </td>
-
-          </tr>
-          <tr>
-            <!-- <tr *ngFor="let post of posts let i = index"> -->
-            <!-- <pre>{{post | json}}</pre>       -->
-            <!-- <td>
-          <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
-        </td> -->
-        <td class="text-center">
-            <p class="pull-right">2</p>
-          </td>
-          <td class="text-right">
-            <p class="pull-right">55</p>
-          </td>
-          <td class="text-center">Mustansar sdf</td>
-          <td class="text-center">TEACHING STAFF</td>
-          <td class="text-center">HSST CHEMISTRY</td>
-          <td class="text-center">bus</td>
-          <td class="text-center">8065</td>
-
-          <td class="text-center">Root 1(Board 1)</td>
-          <td class="text-center">ANILKUMAR.S </td>
-
-          </tr>
+            <td class="text-center">{{post.st_firstname}}{{post.st_lastname}}</td>
+            <td class="text-center">{{post.es_deptname}}</td>
+            <td class="text-center">{{post.es_postname}}</td>
+            <td class="text-center">{{post.tr_transport_type}}</td>
+            <td class="text-center">{{post.tr_vehicle_no}}</td>
+            <td class="text-center">{{post.route_title}} ({{post.route_Via}}) ({{post.board_title}})</td>
+            <td class="text-center">{{post.driver_name}}</td>
+          </tr>                  
         </tbody>
       </table>
     </div>
-
-    <br>
-    <br>
-    <br>
+    <br><br><br>       
   </form>
 </div>

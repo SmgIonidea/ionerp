@@ -1,6 +1,6 @@
 <section class="content-header gap" style="margin-top:-10px;">
   <div class="panel panel-primary">
-    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vehicle List</h4>
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ maintitle }}</h4>
   </div>
 </section>
 
@@ -21,23 +21,23 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let post of vehicleListData let i = index">
           <!-- <tr *ngFor="let post of posts let i = index"> -->
           <!-- <pre>{{post | json}}</pre>       -->
           <!-- <td>
             <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
           </td> -->
           <td class="text-right">
-            <p class="pull-right">1</p>
+            <p class="pull-right">{{i+1}}</p>
           </td>
-          <td class="text-center"> KA 14 A 0007</td>
-          <td class="text-center">Van</td>
-          <td class="text-center">10</td>
+          <td class="text-center">{{post.tr_vehicle_no}}</td>
+          <td class="text-center">{{post.tr_transport_type}}</td>
+          <td class="text-center">{{post.tr_seating_capacity}}</td>
           <td class="text-center">
-            <i class="glyphicon glyphicon-pencil"></i>
+            <i #editElement class="glyphicon glyphicon-pencil" style="cursor: pointer;" [attr.transportid]="post.es_transportid" [attr.transtype]="post.tr_transport_type" [attr.transname]="post.tr_transport_name" [attr.vehiclenum]="post.tr_vehicle_no" [attr.passengers]="post.tr_seating_capacity" [attr.purchasedate]="post.tr_purchase_date" [attr.insrdate]="post.tr_insurance_date" [attr.renewaldate]="post.tr_ins_renewal_date" (click)="editVehicleList(this.editElement)"></i>
           </td>
           <td class="text-center">
-            <i class="glyphicon glyphicon-remove"></i>
+            <i #deleteElement class="glyphicon glyphicon-remove" style="cursor: pointer;" [attr.transportid]="post.es_transportid" (click)="deleteWarning(this.deleteElement,this.vehicleListDeleteModal)"></i>
           </td>
           <!-- <td class="text-center center" style="width:4%;">
             <i pageScroll href="#home" #editElement class="glyphicon glyphicon-pencil cursor-pointer editDept" [attr.assignmentId]="post.a_id"
@@ -57,17 +57,46 @@
   <br>
 </form>
 
+<div #vehicleListDeleteModal class="modal fade" id="vehicleListDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete the vehicle list?
+        <!-- <input #deleteRouteId type="hidden" name="deleteRouteId" id="deleteRouteId" [value]="delRouteId"> -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="deleteVehicleDetails(vehicleListId)">
+          <i class="glyphicon glyphicon-ok"></i>
+          Yes
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <i class="glyphicon glyphicon-remove"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+
 <section class="content-header">
   <!--<div class="headline">-->
   <!-- Div for Page Headings -->
   <div class="panel panel-primary">
-    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add New Vehicle</h4>
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ subtitle }}</h4>
   </div>
   <!--</div>-->
   <!-- Page Headings Div Ends Here  -->
 </section>
 <div class="container-fluid">
-  <form class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+  <form [formGroup]="vehicleList" class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
       <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
         <label for="">Transport Type:
@@ -75,13 +104,15 @@
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <select class="form-control">
-          <option>Select Vehicle</option>
-          <option>Bus</option>
-          <option>MiniBus</option>
-          <option>Car</option>
-          <option>Van</option>
+        <select formControlName="transportList" class="form-control">
+          <option value="" disabled selected>Select your option</option>
+          <option *ngFor="let post of typeListData let i = index">{{post}}</option>
         </select>
+        <div *ngIf="transportList.touched && transportList.invalid" class="error_message">
+          <div *ngIf="vehicleList.controls.transportList.errors.required">
+            This field is required.
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
@@ -91,7 +122,12 @@
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <input type="text" name="transportName" id="transportName" class="form-control" />
+        <input type="text" name="transportName" id="transportName" formControlName="transportName" class="form-control" />
+        <div *ngIf="transportName.touched && transportName.invalid" class="error_message">
+          <div *ngIf="vehicleList.controls.transportName.errors.required">
+            This field is required.
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
@@ -101,7 +137,15 @@
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <input type="text" name="regNo" id="regNo" class="form-control" />
+        <input type="text" name="regNo" id="regNo" formControlName="vehicleRegNumber" class="form-control" />
+        <div *ngIf="vehicleRegNumber.touched && vehicleRegNumber.invalid" class="error_message">
+          <div *ngIf="vehicleList.controls.vehicleRegNumber.errors.required">
+            This field is required.
+          </div>
+          <div *ngIf="vehicleList.controls.vehicleRegNumber.errors.DigitsOnly">
+            Digits Only.
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
@@ -111,7 +155,12 @@
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <input type="text" name="passngers" id="passngers" class="form-control" />
+        <input type="text" formControlName="numOfPassengers" name="passngers" id="passngers" class="form-control" />
+        <div *ngIf="numOfPassengers.touched && numOfPassengers.invalid" class="error_message">
+          <div *ngIf="vehicleList.controls.numOfPassengers.errors.required">
+            This field is required.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -122,9 +171,22 @@
         </label>
       </div>
       <div class='right-inner-addon dateview col-md-5' data-date-format="yyyy-mm-dd">
-        <my-date-picker class="" placeholder=" dd-mm-yyyy" name="purchaseDate" id="purchaseDate" [options]="myDatePickerOptions"
-          [(ngModel)]="model">
+        <my-date-picker formControlName="purchaseDate" [(ngModel)]="model" class="" placeholder=" dd-mm-yyyy" name="purchaseDate" id="purchaseDate" [options]="myDatePickerOptions1">
+          <!-- [(ngModel)]="model" -->
         </my-date-picker>
+        <div class="error_message top resp" *ngIf="vehicleList.submitted && purchaseDate.dirty">
+          This field is Required
+        </div>
+        <div *ngIf="purchaseDate.touched && purchaseDate.invalid" class="error_message">
+          <div *ngIf="purchaseDate.errors.required">
+            This field is Required
+          </div>
+        </div>
+        <!-- <div *ngIf="purchaseDate.touched && purchaseDate.invalid" class="error_message">
+          <div *ngIf="vehicleList.controls.purchaseDate.errors.required">
+            This field is required.
+          </div>
+        </div> -->
       </div>
     </div>
     <div class="form-group col-sm-12 col-xs-12 col-lg-12 col-md-12">
@@ -134,9 +196,24 @@
         </label>
       </div>
       <div class='right-inner-addon dateview col-md-5' data-date-format="yyyy-mm-dd">
-        <my-date-picker class="" placeholder=" dd-mm-yyyy" name="insuranceDate" id="insuranceDate" [options]="myDatePickerOptions"
-          [(ngModel)]="model">
+        <my-date-picker formControlName="insureDate" [(ngModel)]="model1" class="" placeholder="dd-mm-yyyy" id="insuranceDate" [options]="myDatePickerOptions2">
+
+
+          <!-- <div *ngIf="insureDate.touched && insureDate.invalid" class="error_message">
+            <div *ngIf="vehicleList.controls.insureDate.errors.required">
+              This field is required.
+            </div>
+          </div> -->
+          <!-- [(ngModel)]="model" -->
         </my-date-picker>
+      </div>
+      <div class="error_message top resp" *ngIf="vehicleList.submitted && insureDate.dirty">
+        This field is Required
+      </div>
+      <div *ngIf="insureDate.touched && insureDate.invalid" class="error_message top">
+        <div *ngIf="insureDate.errors.required">
+          This field is Required
+        </div>
       </div>
     </div>
     <div class="form-group col-sm-12 col-xs-12 col-lg-12 col-md-12">
@@ -146,14 +223,33 @@
         </label>
       </div>
       <div class='right-inner-addon dateview col-md-5' data-date-format="yyyy-mm-dd">
-        <my-date-picker class="" placeholder=" dd-mm-yyyy" name="renewalDate" id="renewalDate" [options]="myDatePickerOptions" [(ngModel)]="model">
+        <my-date-picker formControlName="insureRenewDate" [(ngModel)]="model2" class="" placeholder=" dd-mm-yyyy" name="renewalDate" id="renewalDate"
+          [options]="myDatePickerOptions3">
+
+          <!-- <div *ngIf="insureRenewDate.touched && insureRenewDate.invalid" class="error_message">
+                <div *ngIf="vehicleList.controls.insureRenewDate.errors.required">
+                  This field is required.
+                </div>
+              </div> -->
+          <!-- [(ngModel)]="model" -->
         </my-date-picker>
       </div>
+      <div class="error_message top resp" *ngIf="vehicleList.submitted && insureRenewDate.dirty">
+        This field is Required
+      </div>
+      <div *ngIf="insureRenewDate.touched && insureRenewDate.invalid" class="error_message top">
+        <div *ngIf="insureRenewDate.errors.required">
+          This field is Required
+        </div>
+      </div>
     </div>
-    <div class="btn_cancel  col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right">
-      <button id="saveAssignment" type="submit" class="btn btn-primary">
+    <div class="btn_align col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right">
+      <button [style.display]="isSaveHide?'none':'block'" type="submit" [disabled]="!vehicleList.valid" class="btn btn-primary btn_save"
+        (click)="saveVehicleDetails(vehicleList)">
         <i class="glyphicon glyphicon-file"></i>&nbsp;Save</button>
-      <button type="reset" class="btn btn-danger">
+      <button [style.display]="isUpdateHide?'none':'block'" type="submit" class="btn btn-primary btn_update" [disabled]="!vehicleList.valid" (click)="updateVehicleDetails(vehicleList)">
+        <i class="glyphicon glyphicon-file"></i>&nbsp;Update</button>
+      <button type="reset" class="btn btn-danger btn_cancel" (click)="cancelUpdate()">
         <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>
     </div>
   </form>

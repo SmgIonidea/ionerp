@@ -10,7 +10,7 @@
 
 
 <div class="table table-responsive" style="overflow-x:initial;width:70%;margin-left:15%;">
-
+   
   <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
     <thead style="background-color:#DDE1E6;">
       <tr>
@@ -24,91 +24,67 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-
+      
+      <tr *ngFor="let vehicle of driverVehicleList let i=index">
+         
         <td class="text-right">
-          <p class="pull-right">1</p>
+          <p class="pull-right">{{i+1}}</p>
         </td>
-
-        <td class="text-center">1234</td>
-        <td *ngIf="!isActive" class="text-center">Pankaj</td>
-        <td *ngIf="isActive" class="text-center">
-          <select class="form-control">
-            <option>Select Driver</option>
-            <option>Narayana</option>
-            <option>panku</option>
-            <option>PK</option>
-
-          </select>
-
-        </td>
+        
         <td class="text-center">
-          <i  (click)='toggle()' class="glyphicon glyphicon-pencil"></i>
-        </td>
-        <!-- <td>
-          <i class="glyphicon glyphicon-remove"></i>
+          <input type="hidden"  [value]="vehicle.vehicle_id" class="vehicle"> {{vehicle.vehicle_no}}</td>
+        <!-- <td  class="text-center">
+            <select class="form-control" formControlName="driver" >
+              
+                <option *ngFor="let driver of driverList" [value]="driver.driver_id">{{driver.driver_id}}</option>
+               
+    
+              </select>
+    
         </td> -->
-
-
+<td>
+        <p style="display:block;" [attr.id]="'para_' + vehicle.id">{{vehicle.driver_name}}</p>
+            <select  style="display:none;" [attr.id]="'select_' +  vehicle.id"  [(ngModel)]="vehicle.driver_id" (ngModelChange)="save_id($event)"
+               class="form-control" >
+            
+              <option *ngFor="let driver of driverList" [value]="driver.id" >{{driver.driver_name}}</option>
+            </select>
+          </td>
+        <!-- <td class="text-center">
+          <i #editElement [attr.allotId]="vehicle.id"  [attr.driverName]="vehicle.driver_id" [style.display]="isIconHide?'none':'block'"  (click)="editAllotDriver(this.editElement)" class="glyphicon glyphicon-pencil"></i>
+          <div  [style.display]="isSaveHide?'none':'block'" class="btn_cancel  col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right">
+              <button  id="" type="submit" class="btn btn-primary">
+                <i class="glyphicon glyphicon-file"></i>&nbsp;Save</button>
+              <button type="reset" class="btn btn-danger">
+                <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>
+            </div>
+        </td> -->
+        <td class="text-center" style="width:1%;" id="resize" >
+          <button type="submit" style="display:none;" [attr.id]="'submit_' +  vehicle.id" (click)='save(vehicle.id)'
+            class="btn btn-primary" (click)="proceedDelivery(vehicle.id)"><span class="glyphicon glyphicon-file"></span>&nbsp;Save</button>
+          <button style="display:none;" [attr.id]="'cancel_' +  vehicle.id" (click)='cancel(vehicle.id)'
+            class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+          <i [attr.id]="'hide' +  vehicle.id" class="glyphicon glyphicon-pencil  editDept" (click)="startEdit(vehicle.id)"
+             (click)='resize()' style="cursor:pointer;margin-top:10px;"></i>
+        </td>
+        <!-- <td class="text-center col-lg-1" id="resize" *ngIf="manageList.status==1">
+          
+          <i [attr.id]="'hide' +  vehicle.id" class="glyphicon glyphicon-pencil cursor-pointer editDept center" 
+             ></i>
+        </td> -->
+       
+   
+      
       </tr>
-      <tr>
-
-        <td class="text-right">
-          <p class="pull-right">2</p>
-        </td>
-
-        <td class="text-center">5678</td>
-        <td *ngIf="!isActive" class="text-center">Narayana</td>
-        <td *ngIf="isActive" class="text-center">
-          <select class="form-control">
-            <option>Select Driver</option>
-            <option>Pankaj</option>
-            <option>Panku</option>
-            <option>PK</option>
-
-          </select>
-        </td>
-        <td class="text-center">
-          <i (click)='toggle()' class="glyphicon glyphicon-pencil"></i>
-        </td>
-
-
-
-
-      </tr>
-      <tr>
-
-        <td class="text-right">
-          <p class="pull-right">3</p>
-        </td>
-
-        <td class="text-center">8901</td>
-        <td *ngIf="!isActive" class="text-center">Panku</td>
-        <td *ngIf="isActive" class="text-center">
-          <select class="form-control">
-            <option>Select Driver</option>
-            <option>Narayana</option>
-            <option>Pankaj</option>
-            <option>PK</option>
-
-          </select>
-        </td>
-        <td class="text-center">
-          <i (click)='toggle()' class="glyphicon glyphicon-pencil"></i>
-        </td>
-
-
-
-      </tr>
+   
     </tbody>
   </table>
-  <div *ngIf="isActive" class="can ">
-    <div style="margin-left:40%;" class="btn_cancel  col-lg-3 col-md-3 col-xs-12 col-sm-6 ">
-      <button id="saveAssignment" type="submit" class="btn btn-primary">
-        <i class="glyphicon glyphicon-file"></i>&nbsp;Save</button>
-      <button type="reset" class="btn btn-danger">
-        <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>
-    </div>
 
-  </div>
+  
+
 </div>
+
+
+ <!-- Tag for showing Toast Message -->
+ <toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+ <!-- Toast Tag Ends Here -->

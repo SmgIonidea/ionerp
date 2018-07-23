@@ -24,85 +24,35 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr *ngFor="let board of vehicleBoardList let i=index">
 
         <td class="text-right">
-          <p class="pull-right">1</p>
+          <p class="pull-right">{{i+1}}</p>
         </td>
 
-        <td class="text-center">Board 1</td>
-        <td *ngIf="!isActive" class="text-center">8065</td>
-        <td *ngIf="isActive" class="text-center">
-          <select class="form-control">
-            <option>Select Board</option>
-            <option>1234</option>
-            <option>5678</option>
-            <option>8901</option>
-
-          </select>
-
-        </td>
         <td class="text-center">
-          <i (click)='toggle()' class="glyphicon glyphicon-pencil"></i>
+            <input type="hidden"  [value]="board.board_id">{{board.board_name}}
+          </td>
+        <td  class="text-center">
+            <p style="display:block;" [attr.id]="'para_' + board.id">{{board.vehicle_no}}</p>
+            <select  style="display:none;" [attr.id]="'select_' +  board.id"  [(ngModel)]="board.vehicle_id" (ngModelChange)="save_id($event)"
+            class="form-control" >
+         
+           <option *ngFor="let vehicle of vehicleList" [value]="vehicle.vehicle_id" >{{vehicle.tr_vehicle_no}}</option>
+         </select>
         </td>
-        <!-- <td>
-          <i class="glyphicon glyphicon-remove"></i>
-        </td> -->
+       
+        <td class="text-center" style="width:1%;" id="resize" >
+            <button type="submit" style="display:none;" [attr.id]="'submit_' +  board.id" (click)='save(board.id)'
+              class="btn btn-primary" (click)="proceedDelivery(board.id)"><span class="glyphicon glyphicon-file"></span>&nbsp;Save</button>
+            <button style="display:none;" [attr.id]="'cancel_' +  board.id" (click)='cancel(board.id)'
+              class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</button>
+            <i [attr.id]="'hide' +  board.id" class="glyphicon glyphicon-pencil  editDept" (click)="startEdit(board.id)"
+               (click)='resize()' style="cursor:pointer;margin-top:10px;"></i>
+          </td>
 
-
-      </tr>
-      <tr>
-
-        <td class="text-right">
-          <p class="pull-right">2</p>
-        </td>
-
-        <td class="text-center">Board 2</td>
-        <td *ngIf="!isActive" class="text-center">1234</td>
-        <td *ngIf="isActive" class="text-center">
-          <select class="form-control">
-            <option>Select Board</option>
-            <option>8065</option>
-            <option>5678</option>
-            <option>8901</option>
-
-          </select>
-        </td>
-        <td class="text-center">
-          <i (click)='toggle()' class="glyphicon glyphicon-pencil"></i>
-        </td>
-        <!-- <td>
-          <i class="glyphicon glyphicon-remove"></i>
-        </td> -->
-
-
-
-      </tr>
-      <tr>
-
-        <td class="text-right">
-          <p class="pull-right">3</p>
-        </td>
-
-        <td class="text-center">Board 3</td>
-        <td *ngIf="!isActive" class="text-center">5678</td>
-        <td *ngIf="isActive" class="text-center">
-          <select class="form-control">
-            <option>Select Board</option>
-            <option>8065</option>
-            <option>1234</option>
-            <option>8901</option>
-
-          </select>
-        </td>
-        <td class="text-center">
-          <i (click)='toggle()' class="glyphicon glyphicon-pencil"></i>
-        </td>
-        <!-- <td>
-          <i (click)='toggle()' class="glyphicon glyphicon-remove"></i>
-        </td> -->
-
-
+  
+     
       </tr>
     </tbody>
   </table>
@@ -117,3 +67,7 @@
   </div>
  
 </div>
+
+<!-- Tag for showing Toast Message -->
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+<!-- Toast Tag Ends Here -->

@@ -44,6 +44,23 @@ th, td {
    margin-left: 0px;
  }
 
+ .btn_align{
+  margin-right: -112px;
+ }
+
+.btn_save{
+  margin-left:-5px;
+}
+
+.btn_update{
+  margin-left:-15px;
+}
+
+.btn_cancel{
+  margin-left: 77px;
+  margin-top: -48px;
+}
+ 
 
  /*Potrait Mode*/
  @media screen and (max-width: 480px) {

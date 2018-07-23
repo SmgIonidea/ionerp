@@ -31,41 +31,24 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr *ngFor="let student of studentWiseReportList">
             <!-- <tr *ngFor="let post of posts let i = index"> -->
             <!-- <pre>{{post | json}}</pre>       -->
             <!-- <td>
           <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
         </td> -->
             <td class="text-right">
-              <p class="pull-right">532</p>
+              <p class="pull-right">{{student.es_preadmissionid}}</p>
             </td>
-            <td class="text-center">Pankaj</td>
-            <td class="text-center">Sbk</td>
-            <td class="text-center">Vulta(Root 1)(Boart 1)</td>
-            <td class="text-center">9560248029</td>
-            <td class="text-center">Rs 500.00</td>
+            <td class="text-center">{{student.pre_name}}</td>
+            <td class="text-center">{{student.pre_fathername}}</td>
+            <td class="text-center">{{student.route_title}}({{student.route_Via}})({{student.board_title}})</td>
+            <td class="text-center">{{student.pre_mobile1}}</td>
+            <td class="text-center">{{student.amount}}</td>
             <td class="text-center">
-              <img src="assets/js_css/images/prof.png" height="42" width="42"> </td>
+              <img src="assets/js_css/images/{{student.pre_image}}" height="42" width="42"> </td>
           </tr>
-          <tr>
-            <!-- <tr *ngFor="let post of posts let i = index"> -->
-            <!-- <pre>{{post | json}}</pre>       -->
-            <!-- <td>
-          <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
-        </td> -->
-            <td class="text-right">
-              <p class="pull-right">526</p>
-            </td>
-            <td class="text-center">PRIYA</td>
-            <td class="text-center">GANESH RAM PATEL</td>
-            <td class="text-center">Vulta(Root 1)(Boart 1)</td>
-            <td class="text-center">7582844252</td>
-            <td class="text-center">Rs 500.00</td>
-            <td class="text-center">
-              <img src="assets/js_css/images/prof.png" height="42" width="42"> </td>
-
-          </tr>
+         
         </tbody>
       </table>
     </div>

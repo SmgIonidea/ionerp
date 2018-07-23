@@ -3,6 +3,8 @@
     <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maintenance Details</h4>
   </div>
 </section>
+
+<!-- <pre>{{maintainanceList | json}}</pre> -->
 <form class="form-horizontal" style="border-top:0px;">
   <div class="table table-responsive" style="overflow-x:initial;">
     <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
@@ -13,40 +15,40 @@
             </th> -->
           <th class="text-center ">Sl&nbsp;No.</th>
           <th class="text-center">Registration Number</th>
+          <th class="text-center">Maintenance Type</th>
           <th class="text-center">Maintenance Date</th>
+
           <th class="text-center">Amount</th>
           <th class="text-center" style="width:4%;">Edit</th>
           <th class="text-center" style="width:7%;">Delete</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <!-- <tr *ngFor="let post of posts let i = index"> -->
+        <!-- <tr> -->
+        <tr *ngFor="let maintainance of maintainanceList let i = index">
           <!-- <pre>{{post | json}}</pre>       -->
           <!-- <td>
               <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
             </td> -->
           <td class="text-right">
-            <p class="pull-right">1</p>
+            <p class="pull-right">{{i+1}}</p>
           </td>
-          <td class="text-center"> KA 14 A 1857</td>
-          <td class="text-center">01-12-2017</td>
-          <td class="text-center">Rs 6000.00</td>
+          <td class="text-center">{{maintainance.tr_transportid}}</td>
+          <td class="text-center">{{maintainance.tr_maintenance_type}}</td>
+
+
+          <td class="text-center">{{maintainance.tr_date_of_maintenance}}</td>
+          <td class="text-center">{{maintainance.tr_amount_paid}}</td>
           <td class="text-center">
-            <i class="glyphicon glyphicon-pencil"></i>
+            <i pageScroll href="#home" #editElement class="glyphicon glyphicon-pencil cursor-pointer editDept" [attr.maintainanceId]="maintainance.es_transport_maintenanceid"
+              [attr.transportId]="maintainance.tr_transportid" [attr.maintenance_type]="maintainance.tr_maintenance_type" [attr.ledgerId]="maintainance.ledgerId"
+              [attr.voucherEntryId]="maintainance.voucherEntryId" [attr.voucherId]="maintainance.voucherId" [attr.maintenanceDate]="maintainance.tr_date_of_maintenance"
+              [attr.tr_remarks]="maintainance.tr_remarks" (click)="editMaintenance(this.editElement)" (click)="checkDate(post.initiate_date)"></i>
           </td>
           <td class="text-center">
-            <i class="glyphicon glyphicon-remove"></i>
+            <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer deleteAssignment" [attr.maintainanceId]="maintainance.es_transport_maintenanceid" (click)="deleteWarning(this.deleteElement,this.maintenanceDeleteModal)"></i>
           </td>
-          <!-- <td class="text-center center" style="width:4%;">
-              <i pageScroll href="#home" #editElement class="glyphicon glyphicon-pencil cursor-pointer editDept" [attr.assignmentId]="post.a_id"
-                [attr.assignmentName]="post.assignment_name" [attr.assignmentInitialDate]="post.initiate_date" [attr.assignmentEndDate]="post.due_date"
-                [attr.assignmentTotalMarks]="post.total_marks" [attr.assignmentInstruction]="post.instructions" (click)="editassignment(this.editElement)"
-                (click)="checkDate(post.initiate_date)"></i>
-                </td>
-             <td class="text-center center" style="width:7%;">
-                <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer deleteAssignment" [attr.assignmentId]="post.a_id" (click)="deleteWarning(this.deleteElement,this.assignmentDeleteModal)"></i>
-                </td> -->
+
         </tr>
       </tbody>
     </table>
@@ -69,170 +71,266 @@
 </section>
 <div class="container-fluid">
 
-  <form class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+  <form [formGroup]="maintenancedetailForm" (ngSubmit)=createpost(maintenancedetailForm)>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
-      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
         <label for="">Registration Number:
           <span class="mandatory" style="color:red;">*</span>
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <select class="form-control">
+        <select class="form-control" formControlName="regno" name="regno">
           <option>Select Vehicle</option>
-          <option>KA 14 A 007</option>
-          <option>KA 14 A 1857</option>
-          <option>KA 14 B 933</option>
+          <option *ngFor='let busses of busList' [value]="busses.regNo">{{busses.regNo}} </option>
+
         </select>
+        <div class="error_message" *ngIf="maintenancedetailForm.submitted && regno.untouched">
+          This field is required
+        </div>
+        <div *ngIf="regno.touched && regno.invalid" class="error_message">
+          <div *ngIf="regno.errors.required">
+            This field is required
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
-      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
         <label for="">Maintenance Type:
           <span class="mandatory" style="color:red;">*</span>
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <input type="text" name="maintenance_type" id="maintenance_type" class="form-control">
+        <input type="text" id="maintenanceType" class="form-control" formControlName="maintenanceType" name="maintenanceType">
+        <div class="error_message" *ngIf="maintenancedetailForm.submitted && maintenanceType.untouched">
+          This field is required
+        </div>
+        <div *ngIf="maintenanceType.touched && maintenanceType.invalid" class="error_message">
+          <div *ngIf="maintenanceType.errors.required">
+            This field is required
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
-      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
         <label for="">Maintenance Date:
           <span class="mandatory" style="color:red;">*</span>
         </label>
       </div>
       <div class='right-inner-addon dateview siz col-md-5' data-date-format="dd-mm-yyyy">
-          <my-date-picker class="" placeholder=" dd-mm-yyyy" name="maintenanceDate" id="maintenanceDate" [options]="myDatePickerOptions"
-            [(ngModel)]="model" required>
-          </my-date-picker>         
+        <my-date-picker class="" placeholder=" dd-mm-yyyy" name="maintenanceDate" id="maintenanceDate" [options]="myDatePickerOptions"
+          [(ngModel)]="model" formControlName="maintenanceDate" required>
+        </my-date-picker>
+        <div class="error_message" *ngIf="maintenancedetailForm.submitted && maintenanceDate.untouched">
+          This field is required
         </div>
-    </div>   
+        <div *ngIf="maintenanceDate.touched && maintenanceDate.invalid" class="error_message">
+          <div *ngIf="maintenanceDate.errors.required">
+            This field is required
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
-      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
         <label for="">Amount Paid:
           <span class="mandatory" style="color:red;">*</span>
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <input type="text" name="amtPaid" id="amtPaid" class="form-control">
+        <input type="text" id="amountPaid" class="form-control" formControlName="amountPaid" name="amountPaid">
+        <div class="error_message" *ngIf="maintenancedetailForm.submitted && amountPaid.untouched">
+          This field is required
+        </div>
+        <div *ngIf="amountPaid.touched && amountPaid.invalid" class="error_message">
+          <div *ngIf="amountPaid.errors.required">
+            This field is required
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
-      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
         <label for="">Remarks:
           <span class="mandatory" style="color:red;">*</span>
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <input type="text" name="remarks" id="remarks" class="form-control">
+        <input type="text" id="remarks" class="form-control" formControlName="remarks" name="remarks">
+        <div class="error_message" *ngIf="maintenancedetailForm.submitted && remarks.untouched">
+          This field is required
+        </div>
+        <div *ngIf="remarks.touched && remarks.invalid" class="error_message">
+          <div *ngIf="remarks.errors.required">
+            This field is required
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
-      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
         <label for="">Payment Mode:
           <span class="mandatory" style="color:red;">*</span>
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <select #select class="form-control" name="payment" (change)="selectDiv(select.value)">
+        <select #select class="form-control" (change)="selectDiv(select.value)" formControlName="payMode" name="paymode">
+          <option value=''>Select Payment Mode</option>
           <option value="cash">Cash</option>
-          <option value="cheque">Cheque</option>
-          <option value="dd">DD</option>
+          <option Value="cheque">Cheque</option>
+          <option Value="dd">DD</option>
         </select>
+        <div class="error_message" *ngIf="maintenancedetailForm.submitted && payMode.untouched">
+          This field is required
+        </div>
+        <div *ngIf="payMode.touched && payMode.invalid" class="error_message">
+          <div *ngIf="payMode.errors.required">
+            This field is required
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
-      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
         <label for="">Voucher Type:
           <span class="mandatory" style="color:red;">*</span>
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <select class="form-control" name="payment">
-          <option>Select Voucher</option>
-          <option value="admission(paidin)">Admission (PaidIn)</option>
-          <option value="payment(paidout)">Payment (PaidOut)</option>
-          <option value="salary(paidout)">Salary (PaidOut)</option>
+        <select class="form-control" formControlName="voucherType" name="voucherType">
+          <option value=''>Select Voucher</option>
+          <option *ngFor='let voucher of VoucherList' [value]="voucher.es_voucherid">{{voucher.voucher_type}}({{voucher.voucher_mode}})</option>
+
         </select>
+        <div class="error_message" *ngIf="maintenancedetailForm.submitted && voucherType.untouched">
+          This field is required
+        </div>
+        <div *ngIf="voucherType.touched && voucherType.invalid" class="error_message">
+          <div *ngIf="voucherType.errors.required">
+            This field is required
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
-      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
         <label for="">Ledger Type:
           <span class="mandatory" style="color:red;">*</span>
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <select class="form-control" name="payment">
-          <option>Select Ledger</option>
-          <option value="admission">Admission</option>
-          <option value="exam">Examination</option>
-          <option value="salary">Salary</option>
+        <select class="form-control" formControlName="ledgerType" name="ledgerType">
+          <option value=''>Select Ledger</option>
+          <option *ngFor='let ledger of ledgerList' [value]='ledger.es_ledgerid'>{{ledger.lg_name}}</option>
+
         </select>
+        <div class="error_message" *ngIf="maintenancedetailForm.submitted && ledgerType.untouched">
+          This field is required
+        </div>
+        <div *ngIf="ledgerType.touched && ledgerType.invalid" class="error_message">
+          <div *ngIf="ledgerType.errors.required">
+            This field is required
+          </div>
+        </div>
       </div>
     </div>
     <div id="hiddeDiv" style="display:none">
       <div class="form-group col-md-12 col-sm-12 col-xs-12">
-        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
           <label for="">Bank Name:
           </label>
         </div>
         <div class="col col-md-5 col-sm-12 col-xs-12 category">
-          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+          <input type="text" id="bankName" class="form-control" name="bankName">
         </div>
       </div>
       <div class="form-group col-md-12 col-sm-12 col-xs-12">
-        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
           <label for="">Account Number:
           </label>
         </div>
         <div class="col col-md-5 col-sm-12 col-xs-12 category">
-          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+          <input type="text" id="accNum" class="form-control" name="accNum">
         </div>
       </div>
       <div class="form-group col-md-12 col-sm-12 col-xs-12">
-        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
           <label for="">Cheque/DD Number:
           </label>
         </div>
         <div class="col col-md-5 col-sm-12 col-xs-12 category">
-          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+          <input type="text" id="chNum" class="form-control" name="chNum">
         </div>
       </div>
       <div class="form-group col-md-12 col-sm-12 col-xs-12">
-        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
           <label for="">Teller Name:
           </label>
         </div>
         <div class="col col-md-5 col-sm-12 col-xs-12 category">
-          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+          <input type="text" id="tellNum" class="form-control" name="tellNum">
         </div>
       </div>
       <div class="form-group col-md-12 col-sm-12 col-xs-12">
-        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
           <label for="">Pin:
           </label>
         </div>
         <div class="col col-md-5 col-sm-12 col-xs-12 category">
-          <input type="text" name="voucher_number" id="voucher_number" class="form-control">
+          <input type="text" id="pin" class="form-control" name="pin">
         </div>
       </div>
     </div>
+    <input type="hidden" formControlName="voucherEntry" name="voucherEntry" value="">
+    <input type="hidden" formControlName="maintainanceID" name="maintainanceID" value="">
     <div class="can">
-      <div class="btn_cancel  col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right">
-        <button id="saveAssignment" type="submit" class="btn btn-primary">
+      <div [style.display]="isSaveHide?'none':'block'" class="btn_cancel  col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right">
+        <button id="saveAssignment" type="submit" class="btn btn-primary" [disabled]="!maintenancedetailForm.valid">
           <i class="glyphicon glyphicon-file"></i>&nbsp;Save</button>
         <button type="reset" class="btn btn-danger">
           <i class="glyphicon glyphicon-refresh"></i>&nbsp;Reset</button>
       </div>
-      <!-- <div  class="btn_cancel col-lg-3 col-md-3 col-xs-12 col-sm-6 btn_update">
-          <button  id="UpdateAssignment" type="button" class="btn btn-primary" >
-            <i class="glyphicon glyphicon-ok"></i> Update
-          </button>
-          <button id="cancelEdit" type="button" class="btn btn-danger" >
-            <i class="glyphicon glyphicon-remove"></i> Cancel
-          </button> 
-        </div>-->
+      <div [style.display]="isUpdateHide?'none':'block'" class="btn_cancel col-lg-3 col-md-3 col-xs-12 col-sm-6 btn_update">
+        <button id="UpdateAssignment" type="button" class="btn btn-primary" [disabled]="!maintenancedetailForm.valid" (click)='editForm(maintenancedetailForm)'>
+          <i class="glyphicon glyphicon-ok"></i> Update
+        </button>
+        <button id="cancelEdit" type="reset" class="btn btn-danger">
+          <i class="glyphicon glyphicon-remove"></i> Cancel
+        </button>
+      </div>
     </div>
   </form>
 </div>
+
+
+
+<div #maintenanceDeleteModal class="modal fade" id="maintenanceDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this maintenance details?
+        <!-- <input  type="hidden"  [value]="delrequirementid"> -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="deleteMaintenanceData(maintenancedelId)">
+          <i class="glyphicon glyphicon-ok"></i>
+          Yes
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <i class="glyphicon glyphicon-remove"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<toaster-container  [toasterconfig]="tosterconfig"></toaster-container>
+

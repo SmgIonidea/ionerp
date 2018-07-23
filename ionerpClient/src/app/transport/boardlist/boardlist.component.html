@@ -2,7 +2,7 @@
   <!--<div class="headline">-->
   <!-- Div for Page Headings -->
   <div class="panel panel-primary">
-    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;Board List</h4>
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;{{ maintitle }}</h4>
   </div>
   <!--</div>-->
   <!-- Page Headings Div Ends Here  -->
@@ -14,7 +14,7 @@
         <!-- <th class="text-center">
             <input type="checkbox" (click)="deleteAllSelected($event)" id="delete_check">
           </th> -->
-        <th class="text-center ">Sl&nbsp;No.</th>
+        <th class="text-center" style="width:4%;">Sl&nbsp;No.</th>
         <th class="text-center">Route</th>
         <th class="text-center">Route Title</th>
 
@@ -25,26 +25,30 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <!-- <tr *ngFor="let post of posts let i = index"> -->
+      <!-- <tr *ngFor="let post of posts let i = index"> -->
         <!-- <pre>{{post | json}}</pre>       -->
         <!-- <td>
             <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
           </td> -->
+          <!--  -->
+      <tr *ngFor="let board of BoardData let i = index">  
         <td class="text-right">
-          <p class="pull-right">1</p>
+          <p class="pull-right">{{i+1}}</p>
         </td>
 
-        <td class="text-center">1</td>
-        <td class="text-center">asdasdf</td>
-        <td class="text-center">fghfhfg</td>
-        <td class="text-center">25</td>
+        <td class="text-center">{{board.route}}</td>
+        <td class="text-center">{{board.route_title}}</td>
+        <td class="text-center">{{board.board_title}}</td>
+        <td class="text-center">{{board.capacity}}</td>
 
         <td>
-          <i class="glyphicon glyphicon-pencil"></i>
+          <i #editElement class="glyphicon glyphicon-pencil" style="cursor: pointer;" 
+          [attr.boardId] = "board.id" [attr.routeTitle]="board.route_title" [attr.boardTitle]="board.board_title"
+          [attr.capacity]="board.capacity" (click)="editBoardList(this.editElement)"></i>
         </td>
         <td>
-          <i class="glyphicon glyphicon-remove"></i>
+          <i #deleteElement class="glyphicon glyphicon-remove"  style="cursor:pointer;" 
+          [attr.boardId]="board.id" (click)="deleteWarning(this.deleteElement,this.boardDeleteModal)"></i>
         </td>
         <!-- <td class="text-center center" style="width:4%;">
             <i pageScroll href="#home" #editElement class="glyphicon glyphicon-pencil cursor-pointer editDept" [attr.assignmentId]="post.a_id"
@@ -58,31 +62,39 @@
       </tr>
     </tbody>
   </table>
+  <div class="container" id="div1" style="margin-right:-50%">
+    <button id="create" class="btn btn-primary" (click)="convert()"><span class="glyphicon glyphicon-print"></span>&nbsp;Print Table Details</button> 
 </div>
+</div>
+
+
 <section class="content-header">
   <!--<div class="headline">-->
   <!-- Div for Page Headings -->
   <div class="panel panel-primary">
-    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;Add / Edit Board</h4>
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;{{ subtitle }}</h4>
   </div>
   <!--</div>-->
   <!-- Page Headings Div Ends Here  -->
 </section>
 <div class="container-fluid" id="home">
-  <form class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+  <form [formGroup]="boardList" class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
       <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
-        <label for="">Route:
+        <label for="">Route Title:
           <span class="mandatory" style="color:red;">*</span>
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <select class="form-control">
-          <option>Select Route</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
+        <select formControlName="boardRouteNameList" class="form-control route" >
+          <option value="" disabled selected>Select Route</option>
+          <option *ngFor="let post of RouteNameData let i = index" [value]="post.id">{{post.route_Via}}</option>        
         </select>
+        <div *ngIf="boardRouteNameList.touched && boardRouteNameList.invalid" class="error_message">
+          <div *ngIf="boardList.controls.boardRouteNameList.errors.required">
+            This field is required.
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
@@ -92,7 +104,12 @@
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <input type="text" name="assignment" id="assignment" placeholder="Name of Board" class="form-control">
+        <input type="text" name="assignment" id="assignment" formControlName="boardTitle" placeholder="Name of Board" class="form-control">
+        <div *ngIf="boardTitle.touched && boardTitle.invalid" class="error_message">
+          <div *ngIf="boardList.controls.boardTitle.errors.required">
+            This field is required.
+          </div>          
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
@@ -102,14 +119,56 @@
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <input type="text" name="assignment" id="assignment" placeholder="Capacity of Board" class="form-control">
+        <input type="text" name="assignment" id="assignment" formControlName="boardCapacity" placeholder="Capacity of Board" class="form-control">
+        <div *ngIf="boardCapacity.touched && boardCapacity.invalid" class="error_message">
+          <div *ngIf="boardList.controls.boardCapacity.errors.required">
+            This field is required.
+          </div>
+          <div *ngIf="boardList.controls.boardCapacity.errors.DigitsOnly">
+            Digits Only.
+          </div>
+        </div>
       </div>
     </div>
-    <div class="btn_cancel  col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right">
-      <button id="saveAssignment" type="submit" class="btn btn-primary">
+    <div class="btn_align col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right">
+      <button [style.display]="isSaveHide?'none':'block'" type="submit" [disabled]="!boardList.valid" class="btn btn-primary btn_save" (click)="saveBoardDetails(boardList)">
         <i class="glyphicon glyphicon-file"></i>&nbsp;Save</button>
-      <button type="reset" class="btn btn-danger">
-        <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>
+        <button [style.display]="isUpdateHide?'none':'block'" type="submit" class="btn btn-primary btn_update" [disabled]="!boardList.valid" (click)="updatePost(boardList)">
+          <i class="glyphicon glyphicon-file"></i>&nbsp;Update</button>
+      <button type="reset" class="btn btn-danger btn_cancel" (click)="cancelUpdate()" >
+        <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>       
     </div>
   </form>
+  
+</div>
+
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+
+
+<!--delete modal-->
+<div #boardDeleteModal class="modal fade" id="boardDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this Board?
+        <!-- <input #deleteLeaveId type="hidden" name="deleteLeaveId" id="deleteLeaveId" [value]="deleteLeaveId"> -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="deleteBoardData(boardId)">
+          <i class="glyphicon glyphicon-ok"></i>
+          Yes
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <i class="glyphicon glyphicon-remove"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

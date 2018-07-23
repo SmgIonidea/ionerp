@@ -1,32 +1,43 @@
-import { Component, OnInit } from '@angular/core';
-// import { Angular2Csv } from 'angular2-csv/Angular2-csv';
+import { Component, OnInit ,ViewChild} from '@angular/core';
+import { PostService } from '../../../services/post.service';
+import { DataTableDirective } from 'angular-datatables';
+import { RouterModule, ActivatedRoute, Params, Event } from '@angular/router';
+import * as $ from 'jquery';
+import { Subject } from 'rxjs/Rx';
+
 @Component({
   selector: 'app-vehicle-report',
   templateUrl: './vehicle-report.component.html',
   styleUrls: ['./vehicle-report.component.css']
 })
 export class VehicleReportComponent implements OnInit {
+  vehicleReportList;
+  @ViewChild(DataTableDirective)
+  dtElement: DataTableDirective;
+  dtOptions: DataTables.Settings = {};
+  dtInstance: DataTables.Api;
+  dtTrigger = new Subject();
+  constructor(private service: PostService, 
+    private activatedRoute: ActivatedRoute,) { }
 
-  constructor() { }
 
   ngOnInit() {
-    
+    this.service.subUrl = 'transport/VehicleReport/getVehicleReportList';
+    this.service.getData().subscribe(response => {
+      this.vehicleReportList = response.json();
+      this.tableRerender();
+      this.dtTrigger.next();
+      });
   }
 
-  export_to_excel(){
-   var data = [
-      {
-        date_of_purchase: "12-03-2004",
-        type: "Van",
-        registration_number: "KA 14 A 007",
-        route:"Vijaynagar to Vinobhanagar",
-        insurance_valid_upto:"22-09-2038",
-        allocated_driver_name:"Prakash",
-        seating_capacity: "8 "
-      },
-      
-    ];
-
-    // new Angular2Csv(data, 'Vehicle_Report');
+  tableRerender(): void {
+    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+      // Destroy the table first
+      dtInstance.destroy();
+    });
   }
+  ngAfterViewInit(): void {
+    this.dtTrigger.next();
+  }
+ 
 }

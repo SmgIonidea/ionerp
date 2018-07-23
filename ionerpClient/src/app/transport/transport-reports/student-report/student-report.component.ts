@@ -1,40 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 // import { Angular2Csv } from 'angular2-csv/Angular2-csv';
+import { PostService } from '../../../services/post.service';
+import { DataTableDirective } from 'angular-datatables';
+import { RouterModule, ActivatedRoute, Params, Event } from '@angular/router';
+import * as $ from 'jquery';
+import { Subject } from 'rxjs/Rx';
 @Component({
   selector: 'app-student-report',
   templateUrl: './student-report.component.html',
   styleUrls: ['./student-report.component.css']
 })
 export class StudentReportComponent implements OnInit {
+  studentWiseReportList;
+  @ViewChild(DataTableDirective)
+  dtElement: DataTableDirective;
+  dtOptions: DataTables.Settings = {};
+  dtInstance: DataTables.Api;
+  dtTrigger = new Subject();
+  constructor(private service: PostService, 
+    private activatedRoute: ActivatedRoute,) { }
 
-  constructor() { }
 
   ngOnInit() {
+    this.service.subUrl = 'transport/StudentWiseReport/getStudentWiseReportList';
+    this.service.getData().subscribe(response => {
+      this.studentWiseReportList = response.json();
+      this.tableRerender();
+      this.dtTrigger.next();
+      });
   }
 
-  export_to_excel(){
-    var data = [
-       {
-        reg_no: "532",
-         Name: "Pankaj",
-         Father_Name: "Sbk",
-         From_Place:"Vulta(Root 1)(Boart 1)",
-         Mobile_No:"9560248029",
-         TPT_Fee:"Rs 500.00",
-        
-       },
-       {
-        reg_no: "526",
-         Name: "PRIYA",
-         Father_Name: "GANESH RAM PATEL",
-         From_Place:"Vulta(Root 1)(Boart 1)",
-         Mobile_No:"7582844252",
-         TPT_Fee:"Rs 500.00",
-        
-       },
-       
-     ];
- 
-    //  new Angular2Csv(data, 'Student_Report');
-   }
+  tableRerender(): void {
+    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+      // Destroy the table first
+      dtInstance.destroy();
+    });
+  }
+  ngAfterViewInit(): void {
+    this.dtTrigger.next();
+  }
+  
 }

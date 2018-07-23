@@ -29,22 +29,22 @@
           </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let vehicle of vehicleReportList let i=index">
           <!-- <tr *ngFor="let post of posts let i = index"> -->
           <!-- <pre>{{post | json}}</pre>       -->
           <!-- <td>
             <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
           </td> -->
           <td class="text-right">
-            <p class="pull-right">1</p>
+            <p class="pull-right">{{i+1}}</p>
           </td>
-          <td class="text-center">12-03-2004</td>
-          <td class="text-center">Van</td>
-          <td class="text-center">KA 14 A 007</td>
-          <td class="text-center">Vijaynagar to Vinobhanagar</td>
-          <td class="text-center">22-09-2038</td>
-          <td class="text-center">Prakash</td>
-          <td class="text-center">8</td>
+          <td class="text-center">{{vehicle.purchase_date | date: 'dd-MM-yyyy'}}</td>
+          <td class="text-center">{{vehicle.vehicle_type}}</td>
+          <td class="text-center">{{vehicle.vehicle_no}}</td>
+          <td class="text-center">{{vehicle.route_name}}({{vehicle.board_name}})</td>
+          <td class="text-center">{{vehicle.renewal_date | date: 'dd-MM-yyyy'}}</td>
+          <td class="text-center">{{vehicle.driver_name}}</td>
+          <td class="text-center">{{vehicle.seating_capacity}}</td>
          </tr>
       </tbody>
     </table>

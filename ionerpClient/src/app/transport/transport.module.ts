@@ -16,6 +16,9 @@ import { DriverVehicleComponent } from './driver-vehicle/driver-vehicle.componen
 import {TransportReportsModule} from './transport-reports/transport-reports.module';
 import { MyRouteDetailsComponent } from './my-route-details/my-route-details.component';
 import { AllRouteBoardComponent } from './all-route-board/all-route-board.component'
+import { ToastService } from '../common/toast.service';
+import { ToasterModule, ToasterService, ToasterConfig } from 'angular2-toaster';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -23,7 +26,9 @@ import { AllRouteBoardComponent } from './all-route-board/all-route-board.compon
     FormsModule,
     DataTablesModule,
     MyDatePickerModule,
-    TransportReportsModule
+    TransportReportsModule,
+    ReactiveFormsModule,
+    ToasterModule
     
   ],
   declarations: [RouteComponent,

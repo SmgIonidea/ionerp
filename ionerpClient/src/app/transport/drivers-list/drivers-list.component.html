@@ -1,6 +1,6 @@
 <section class="content-header gap" style="margin-top:-10px;">
   <div class="panel panel-primary">
-    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drivers List</h4>
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ maintitle }}</h4>
   </div>
 </section>
 
@@ -21,51 +21,70 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <!-- <tr *ngFor="let post of posts let i = index"> -->
+           <!-- <tr *ngFor="let post of posts let i = index"> -->
           <!-- <pre>{{post | json}}</pre>       -->
           <!-- <td>
             <input type="checkbox" id="{{post.a_id}}" (click)="deleteSelected(post.a_id)">
           </td> -->
+        <tr *ngFor="let post of driverDetails let i = index">    
           <td class="text-right">
-            <p class="pull-right">1</p>
+            <p class="pull-right">{{i+1}}</p>
           </td>
-          <td class="text-center">Rajesh</td>
-          <td class="text-center">abc123</td>
-          <td class="text-center">Govt of India</td>
+          <td class="text-center">{{post.driver_name}}</td>
+          <td class="text-center">{{post.driver_license}}</td>
+          <td class="text-center">{{post.issuing_authority}}</td>
           <td class="text-center">
-            <i class="glyphicon glyphicon-pencil"></i>
+            <i #editElement class="glyphicon glyphicon-pencil" style="cursor: pointer;" [attr.transDriverId]="post.id" [attr.driverName]="post.driver_name" [attr.driverAddress]="post.driver_addrs" [attr.mobile]="post.diver_mobile" [attr.DL]="post.driver_license" [attr.authority]="post.issuing_authority" [attr.DLvalid]="post.valid_date" [attr.licenseDoc]="post.license_doc" (click)="editDriverList(this.editElement)"></i>
           </td>
           <td class="text-center">
-            <i class="glyphicon glyphicon-remove"></i>
-          </td>
-          <!-- <td class="text-center center" style="width:4%;">
-            <i pageScroll href="#home" #editElement class="glyphicon glyphicon-pencil cursor-pointer editDept" [attr.assignmentId]="post.a_id"
-              [attr.assignmentName]="post.assignment_name" [attr.assignmentInitialDate]="post.initiate_date" [attr.assignmentEndDate]="post.due_date"
-              [attr.assignmentTotalMarks]="post.total_marks" [attr.assignmentInstruction]="post.instructions" (click)="editassignment(this.editElement)"
-              (click)="checkDate(post.initiate_date)"></i>
-              </td>
-           <td class="text-center center" style="width:7%;">
-              <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer deleteAssignment" [attr.assignmentId]="post.a_id" (click)="deleteWarning(this.deleteElement,this.assignmentDeleteModal)"></i>
-              </td> -->
+            <i #deleteElement class="glyphicon glyphicon-remove" [attr.transDriverId]="post.id" (click)="deleteWarning(this.deleteElement,this.driverListDeleteModal)"></i>
+          </td>          
         </tr>
       </tbody>
     </table>
   </div>
 </form>
 
+<div #driverListDeleteModal class="modal fade" id="driverListDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete the driver list?  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="deleteDriverDetails(transDriverDelId)">
+          <i class="glyphicon glyphicon-ok"></i>
+          Yes
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <i class="glyphicon glyphicon-remove"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+
 <section class="content-header">
   <!--<div class="headline">-->
   <!-- Div for Page Headings -->
   <div class="panel panel-primary">
-    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Driver</h4>
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ subtitle }} </h4>
   </div>
   <!--</div>-->
   <!-- Page Headings Div Ends Here  -->
 </section>
 <div class="container-fluid">
 
-  <form class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+  <form [formGroup]="driverList" class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
       <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
         <label for="">Driver Name:
@@ -73,7 +92,12 @@
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <input type="text" name="driverName" id="driverName" class="form-control" />
+        <input type="text" formControlName="driverName" name="driverName" id="driverName" class="form-control" />
+        <div *ngIf="driverName.touched && driverName.invalid" class="error_message">
+          <div *ngIf="driverList.controls.driverName.errors.required">
+            This field is required.
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
@@ -83,7 +107,12 @@
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <textarea type="text" name="driverAddress" id="driverAddress" class="form-control"></textarea>
+        <textarea type="text" formControlName="driverAddress" name="driverAddress" id="driverAddress" class="form-control"></textarea>
+        <div *ngIf="driverAddress.touched && driverAddress.invalid" class="error_message">
+          <div *ngIf="driverList.controls.driverAddress.errors.required">
+            This field is required.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -94,7 +123,15 @@
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <input type="text" name="mobileNo" id="mobileNo" class="form-control" />
+        <input type="text" formControlName="driverMobileNumber" name="mobileNo" id="mobileNo" class="form-control" />
+        <div *ngIf="driverMobileNumber.touched && driverMobileNumber.invalid" class="error_message">
+          <div *ngIf="driverList.controls.driverMobileNumber.errors.required">
+            This field is required.
+          </div>
+          <div *ngIf="driverList.controls.driverMobileNumber.errors.DigitsOnlyMobileNumber">
+            Invalid Mobile Number.
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
@@ -104,7 +141,12 @@
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <input type="text" name="dl" id="dl" class="form-control" />
+        <input type="text" formControlName="drivingLicense" name="dl" id="dl" class="form-control" />
+        <div *ngIf="drivingLicense.touched && drivingLicense.invalid" class="error_message">
+          <div *ngIf="driverList.controls.drivingLicense.errors.required">
+            This field is required.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -115,7 +157,12 @@
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <input type="text" name="issuingAuth" id="issuingAuth" class="form-control" />
+        <input type="text" name="issuingAuth" formControlName="IssueAuthority" id="issuingAuth" class="form-control" />
+        <div *ngIf="IssueAuthority.touched && IssueAuthority.invalid" class="error_message">
+          <div *ngIf="driverList.controls.IssueAuthority.errors.required">
+            This field is required.
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-sm-12 col-xs-12 col-lg-12 col-md-12">
@@ -125,9 +172,14 @@
         </label>
       </div>
       <div class='right-inner-addon dateview col-md-5' data-date-format="yyyy-mm-dd">
-        <my-date-picker class="" placeholder=" dd-mm-yyyy" name="insuranceDate" id="insuranceDate" [options]="myDatePickerOptions"
-          [(ngModel)]="model">
+        <my-date-picker [(ngModel)]="model" class="" formControlName="DLValidUpto" placeholder=" dd-mm-yyyy" name="insuranceDate" id="insuranceDate"
+          [options]="myDatePickerOptions">
         </my-date-picker>
+        <div *ngIf="DLValidUpto.touched && DLValidUpto.invalid" class="error_message">
+          <div *ngIf="driverList.controls.DLValidUpto.errors.required">
+            This field is required.
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
@@ -137,23 +189,35 @@
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <input placeholder="Upload File" name="addDocFiles" id="addDocFiles" type="text" class="form-control" readonly="readonly"
-        />
+        <input placeholder="Upload File" formControlName="LicenseDoc" name="addDocFiles" id="addDocFiles" type="text" class="form-control"
+          readonly="readonly" />
+        <div *ngIf="LicenseDoc.touched && LicenseDoc.invalid" class="error_message">
+          <div *ngIf="driverList.controls.LicenseDoc.errors.required">
+            This field is required.
+          </div>
+        </div>
       </div>
       <!-- <button id="saveAssignment" type="file" class="btn btn-primary">
         Browse
       </button> -->
       <div class="col-md-2">
         <!-- <input id="a" name="a" type="file" hidden> -->
-        <label for="a" class="btn btn-primary">Browse</label>
+        <!-- <label for="a" class="btn btn-primary">Browse</label> -->
+        <label class="btn-bs-file btn btn-primary lab1 top">
+          Browse
+          <input #fileInput type="file" class="siz" id="userdoc" name="userdoc" placeholder="Upload file" (change)="getFileName(this.replaceElement,this.splitElement)"
+            accept=".pdf,.doc,.docx">
+        </label>
       </div>
     </div>
     <div class="can">
-      <div class="btn_cancel  col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right">
-        <button id="saveAssignment" type="submit" class="btn btn-primary">
+      <div class="btn_align col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right">
+        <button type="submit" [style.display]="isSaveHide?'none':'block'" (click)="saveDriverDetails(driverList)" [disabled]="(!driverList.valid && !LicenseDoc.valid)" class="btn btn-primary btn_save">
           <i class="glyphicon glyphicon-file"></i>&nbsp;Save</button>
-        <button type="reset" class="btn btn-danger">
-          <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>
+        <button [style.display]="isUpdateHide?'none':'block'" (click)="updateDriverDetails(driverList)" [disabled]="(!driverList.valid && !LicenseDoc.valid)" type="submit" class="btn btn-primary btn_update" [disabled]="!driverList.valid">
+          <i class="glyphicon glyphicon-file"></i>&nbsp;Update</button>
+        <button type="reset" class="btn btn-danger btn_cancel" (click)="cancelUpdate()">
+        <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>
       </div>
       <!-- <div  class="btn_cancel col-lg-3 col-md-3 col-xs-12 col-sm-6 btn_update">
         <button  id="UpdateAssignment" type="button" class="btn btn-primary" >
