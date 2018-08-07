@@ -73,6 +73,7 @@
       </div>
       <div class="col-md-6 col-sm-12 col-xs-12 category" style="margin-left:-60px;">
         <input type="text" formControlName="grpName" id="grpName" placeholder="Name of Group" class="form-control">
+        <br>
         <div class="error_message" style="margin-top:-14px;" *ngIf="accountGrpForm.submitted && grpName.untouched">
           This field is required
         </div>
@@ -101,6 +102,7 @@
           <option>COMPUTER SCIENCE</option>
           <option>ELECTRONICS SCIENCE</option>-->
         </select>
+        <br>
         <div class="error_message" style="margin-top:-14px;" *ngIf="accountGrpForm.submitted && underGrp.untouched">
           This field is required
         </div>

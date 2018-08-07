@@ -72,9 +72,9 @@ class Transaction_model extends CI_Model {
             }
             $vouchermode = $value;
         }
-        $vouchermode = str_replace(')','',$vouchermode);
-        $receiptno = 'rec_'.$vouchernum;
+        $vouchermode = str_replace(')','',$vouchermode);       
         $vouchernum = $formData->voucher->vouchernum;
+         $receiptno = 'rec_'.$vouchernum;
         $voucherdate = $formData->voucher->admissiondate1->formatted;
         $voucherdate = date("Y-m-d", strtotime($voucherdate));
         $voucherpay = $formData->voucher->Payment;
@@ -113,7 +113,7 @@ class Transaction_model extends CI_Model {
             );
         } else {
             $insertData = array(
-                'es_vouchertype' => $vouchertype,
+                'es_vouchertype' => $voucher,
                 'es_voucherentryid' => $vouchernum,
                 'es_receiptdate' => $voucherdate,
                 'es_paymentmode' => $voucherpay,
