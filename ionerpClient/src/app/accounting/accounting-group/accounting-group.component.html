@@ -32,16 +32,14 @@
 
           <td>
             <i #editElement class="glyphicon glyphicon-pencil" [attr.accountId]="posts.es_fa_groupsid" [attr.accountgrp]="posts.fa_groupname"
-             [attr.accountundergrp]="posts.fa_undergroup" (click)="editaccount(this.editElement)"></i>
+              [attr.accountundergrp]="posts.fa_undergroup" (click)="editaccount(this.editElement)"></i>
           </td>
           <td>
-            
+
             <!--<i #deleteElement class="glyphicon glyphicon-remove" [attr.accountId]="posts.es_fa_groupsid" 
              (click)="deleteWarning(this.deleteElement,this.accontDeleteModal)" ></i>-->
 
-             <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer deleteAccount" 
-          [attr.accId]="posts.es_fa_groupsid"
-          (click)="deleteWarning(this.deleteElement,this.accountDeleteModal)"></i>
+            <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer deleteAccount" [attr.accId]="posts.es_fa_groupsid" (click)="deleteWarning(this.deleteElement,this.accountDeleteModal)"></i>
           </td>
         </tr>
       </tbody>
@@ -66,18 +64,17 @@
 <div class="container-fluid" id="home">
   <form [formGroup]="accountGrpForm" (ngSubmit)="createPost(accountGrpForm)" class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
-      <div class="col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+      <div class="col-md-2 col-sm-12 col-xs-12 labelfield">
         <label for="category">Group Name:
           <span class="mandatory" style="color:red;">*</span>
         </label>
       </div>
-      <div class="col-md-6 col-sm-12 col-xs-12 category" style="margin-left:-60px;">
+      <div class="col-md-6 col-sm-12 col-xs-12 category">
         <input type="text" formControlName="grpName" id="grpName" placeholder="Name of Group" class="form-control">
-        <br>
-        <div class="error_message" style="margin-top:-14px;" *ngIf="accountGrpForm.submitted && grpName.untouched">
+        <div class="error_message" *ngIf="accountGrpForm.submitted && grpName.untouched">
           This field is required
         </div>
-        <div *ngIf="grpName.touched && grpName.invalid" class="error_message" style="margin-top:-14px;">
+        <div *ngIf="grpName.touched && grpName.invalid" class="error_message">
           <div *ngIf="grpName.errors.required">
             This field is required
           </div>
@@ -85,28 +82,22 @@
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
-      <div class="col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+      <div class="col-md-2 col-sm-12 col-xs-12 labelfield">
         <label for="category">Under Group:
           <span class="mandatory" style="color:red;">*</span>
         </label>
       </div>
-      <div class="col-md-6 col-sm-12 col-xs-12 category" style="margin-left:-60px;">
+      <div class="col-md-6 col-sm-12 col-xs-12 category">
         <select formControlName="underGrp" class="form-control" id="underGrp">
           <option [ngValue]="0" selected>Select Under Group</option>
-      
-      <option *ngFor="let undergrp of groups" [ngValue]="undergrp.es_groupname">
-        {{ undergrp.es_groupname }}
-      </option>
-          <!--<option>Select Group</option>
-          <option>BIOLOGY SCIENCE</option>
-          <option>COMPUTER SCIENCE</option>
-          <option>ELECTRONICS SCIENCE</option>-->
+          <option *ngFor="let undergrp of groups" [ngValue]="undergrp.es_groupname">
+            {{ undergrp.es_groupname }}
+          </option>
         </select>
-        <br>
-        <div class="error_message" style="margin-top:-14px;" *ngIf="accountGrpForm.submitted && underGrp.untouched">
+        <div class="error_message" *ngIf="accountGrpForm.submitted && underGrp.untouched">
           This field is required
         </div>
-        <div *ngIf="underGrp.touched && underGrp.invalid" class="error_message" style="margin-top:-14px;">
+        <div *ngIf="underGrp.touched && underGrp.invalid" class="error_message">
           <div *ngIf="underGrp.errors.required">
             This field is required
           </div>
@@ -120,7 +111,7 @@
         <button type="reset" class="btn btn-danger">
           <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>
       </div>
-       <div [style.display]="isUpdateHide?'none':'block'" class="btn_cancel col-lg-3 col-md-3 col-xs-12 col-sm-6 btn_update">
+      <div [style.display]="isUpdateHide?'none':'block'" class="btn_cancel col-lg-3 col-md-3 col-xs-12 col-sm-6 btn_update">
         <button [disabled]="!accountGrpForm.valid" id="UpdateAccount" type="button" class="btn btn-primary" (click)="updateAccount(accountGrpForm)">
           <i class="glyphicon glyphicon-ok"></i> Update
         </button>
@@ -138,11 +129,13 @@
 
 
 
-<div #accountDeleteModal  class="modal fade" id="accountDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div #accountDeleteModal class="modal fade" id="accountDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header warning-msg" >
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
         <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
       </div>
       <div class="modal-body">
@@ -150,10 +143,10 @@
         <input #deleteAccntId type="hidden" name="deleteAccntId" id="deleteAccntId" [value]="delAccntId">
       </div>
       <div class="modal-footer">
-          <button type="button" class="btn btn-primary" (click)="deleteAccntData(deleteAccntId)" >
-            <i class="glyphicon glyphicon-ok"></i>
-            Yes
-          </button>
+        <button type="button" class="btn btn-primary" (click)="deleteAccntData(deleteAccntId)">
+          <i class="glyphicon glyphicon-ok"></i>
+          Yes
+        </button>
         <button type="button" class="btn btn-danger" data-dismiss="modal">
           <i class="glyphicon glyphicon-remove"></i>
           Cancel

@@ -9,7 +9,7 @@
     <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
       <thead style="background-color:#DDE1E6;">
         <tr>
-         
+
           <th class="text-center ">Sl&nbsp;No.</th>
           <th class="text-center">Ledger Name</th>
           <th class="text-center">Group Name</th>
@@ -31,11 +31,11 @@
           </td>
           <td>
             <i #editElement class="glyphicon glyphicon-pencil" [attr.ledgerId]="posts.es_ledgerid" [attr.ledgername]="posts.lg_name"
-             [attr.grpname]="posts.lg_groupname" [attr.ledgerbal]="posts.lg_openingbalance" [attr.ledgertype] ="posts.lg_amounttype" (click)="editledger(this.editElement)"></i>
+              [attr.grpname]="posts.lg_groupname" [attr.ledgerbal]="posts.lg_openingbalance" [attr.ledgertype]="posts.lg_amounttype"
+              (click)="editledger(this.editElement)"></i>
           </td>
           <td>
-            <i #deleteElement class="glyphicon glyphicon-remove" [attr.ledgerId]="posts.es_ledgerid" 
-            (click)="deleteWarning(this.deleteElement,this.ledgerDeleteModal)"></i>
+            <i #deleteElement class="glyphicon glyphicon-remove" [attr.ledgerId]="posts.es_ledgerid" (click)="deleteWarning(this.deleteElement,this.ledgerDeleteModal)"></i>
           </td>
         </tr>
       </tbody>
@@ -60,17 +60,18 @@
 <div class="container-fluid" id="home">
   <form [formGroup]="ledgerForm" (ngSubmit)="createpost(ledgerForm)" class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
     <div class="row form-group col-md-12 col-sm-12 col-xs-12">
-      <div class="col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
+      <div class="col-md-2 col-sm-12 col-xs-12 labelfield">
         <label for="category">Name of the Ledger:
           <span class="mandatory" style="color:red;">*</span>
         </label>
       </div>
-      <div class="col-md-4 col-sm-12 col-xs-12 category" style="margin-left:-15px;">
+      <div class="col-md-4 col-sm-12 col-xs-12 category">
         <input type="text" formControlName="ledger" id="ledger" placeholder="Name of Ledger" class="form-control">
-              <div class="error_message" style="margin-top:-14px;" *ngIf="ledgerForm.submitted && ledger.untouched">
+
+        <div class="error_message" *ngIf="ledgerForm.submitted && ledger.untouched">
           This field is required
         </div>
-        <div *ngIf="ledger.touched && ledger.invalid" class="error_message" style="margin-top:-14px;">
+        <div *ngIf="ledger.touched && ledger.invalid" class="error_message">
           <div *ngIf="ledger.errors.required">
             This field is required
           </div>
@@ -78,63 +79,42 @@
       </div>
     </div>
     <div class="row form-group col-md-12 col-sm-12 col-xs-12">
-      <div class="col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
+      <div class="col-md-2 col-sm-12 col-xs-12 labelfield">
         <label for="category">Group Name:
         </label>
       </div>
-      <div class="col-md-4 col-sm-12 col-xs-12 category" style="margin-left:-15px;">
-        <!--<select formControlName="grpName" class="form-control">
-          <option>Select Group</option>
-          <option>BVB</option>
-          <option>PESIT</option>
-          <option>RVCE</option>
-        </select>-->
-            <select formControlName="grpName" class="form-control" id="grp">
+      <div class="col-md-4 col-sm-12 col-xs-12 category">
+        <select formControlName="grpName" class="form-control" id="grp">
           <option [ngValue]="0" selected>Select Group</option>
-      
-      <option *ngFor="let undergrp of groups" [ngValue]="undergrp.es_groupname">
-        {{ undergrp.es_groupname }}
-      </option>
-          <!--<option>Select Group</option>
-          <option>BIOLOGY SCIENCE</option>
-          <option>COMPUTER SCIENCE</option>
-          <option>ELECTRONICS SCIENCE</option>-->
+          <option *ngFor="let undergrp of groups" [ngValue]="undergrp.es_groupname">
+            {{ undergrp.es_groupname }}
+          </option>
         </select>
       </div>
     </div>
     <div class="row form-group col-md-12 col-sm-12 col-xs-12">
-      <div class="col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
+      <div class="col-md-2 col-sm-12 col-xs-12 labelfield">
         <label for="category">Opening Balance:
         </label>
       </div>
-      <div class="col-md-4 col-sm-12 col-xs-12 category" style="margin-left:-15px;">
+      <div class="col-md-4 col-sm-12 col-xs-12 category">
         <input type="text" formControlName="openingBal" id="openingBal" class="form-control top" />
       </div>
     </div>
     <div class="row form-group col-md-12 col-sm-12 col-xs-12">
-      <div class="col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
+      <div class="col-md-2 col-sm-12 col-xs-12 labelfield">
         <label for="category">Type:
         </label>
       </div>
-      <div class="col-md-4 col-sm-12 col-xs-12 category" style="margin-left:-15px;">
-        <!--<select formControlName="type" class="form-control">
-          <option>Select Type</option>
-          <option>Credit</option>
-          <option>Debit</option>
-          <option>Cash</option>
-        </select>-->
-        <select formControlName="type"  class="form-control" id="grp">
+      <div class="col-md-4 col-sm-12 col-xs-12 category">
+        <select formControlName="type" class="form-control" id="grp">
           <option [ngValue]="0" selected>Select Group</option>
-      
-      <option ngValue="credit">
-        Credit
-      </option>
-         <option ngValue="debit">
-        Debit
-      </option>
-      <!--<option ngValue="Cash">
-        Cash
-      </option>-->
+          <option ngValue="credit">
+            Credit
+          </option>
+          <option ngValue="debit">
+            Debit
+          </option>
         </select>
       </div>
     </div>
@@ -144,7 +124,7 @@
           <i class="glyphicon glyphicon-file"></i>&nbsp;Save</button>
         <button type="reset" class="btn btn-danger">
           <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>
-      </div>  
+      </div>
       <div [style.display]="isUpdateHide?'none':'block'" class="btn_cancel col-lg-3 col-md-3 col-xs-12 col-sm-6 btn_update">
         <button [disabled]="!ledgerForm.valid" id="UpdateLedger" type="button" class="btn btn-primary" (click)="updateLedger(ledgerForm)">
           <i class="glyphicon glyphicon-ok"></i> Update
@@ -152,7 +132,7 @@
         <button id="cancelEdit" type="button" class="btn btn-danger" (click)="cancelUpdate()">
           <i class="glyphicon glyphicon-remove"></i> Cancel
         </button>
-      </div>  
+      </div>
     </div>
   </form>
 </div>
@@ -160,11 +140,13 @@
 <toaster-container [toasterconfig]="tosterconfig"></toaster-container>
 <!-- Toast Tag Ends Here -->
 
-<div #ledgerDeleteModal  class="modal fade" id="ledgerDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div #ledgerDeleteModal class="modal fade" id="ledgerDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header warning-msg" >
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
         <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
       </div>
       <div class="modal-body">
@@ -172,10 +154,10 @@
         <input #deleteLedgerId type="hidden" name="deleteLedgerId" id="deleteLedgerId" [value]="delLegtId">
       </div>
       <div class="modal-footer">
-          <button type="button" class="btn btn-primary" (click)="deleteAccntData(deleteLedgerId)" >
-            <i class="glyphicon glyphicon-ok"></i>
-            Yes
-          </button>
+        <button type="button" class="btn btn-primary" (click)="deleteAccntData(deleteLedgerId)">
+          <i class="glyphicon glyphicon-ok"></i>
+          Yes
+        </button>
         <button type="button" class="btn btn-danger" data-dismiss="modal">
           <i class="glyphicon glyphicon-remove"></i>
           Cancel

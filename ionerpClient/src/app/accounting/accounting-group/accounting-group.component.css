@@ -49,6 +49,13 @@ th, td {
    margin-right: -110px;
    
  } 
+ .category{  
+  margin-left:-60px;    
+}
+  /*Label field*/
+  .labelfield{
+    margin-left:-60px;
+  } 
 
 /*For Portait Mode view*/
  @media screen and (max-width: 480px) {
