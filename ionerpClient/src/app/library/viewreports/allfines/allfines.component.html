@@ -8,24 +8,30 @@
     <div class="row form-group">
       <div class="col col-sm-12 col-xs-12 col-lg-4 col-md-4">
         <div class="col-lg-3 col-md-3 labelfield" style="margin-left:-45px;">
-          <label for="category">Search:</label>
+            <label for="category">Class:</label>
         </div>
         <div class="col-lg-8 col-md-8 category">
-          <select name="" id="" class="form-control">
-            <option [ngValue]="0" selected>select</option>
-            <option [ngValue]="20">20</option>
-          </select>
+            <select name="" id="" class="form-control classname" >
+                <option value = "all" >All</option>
+                <option value="student" >Student</option>
+                <option value="staff" >Staff</option>
+                
+                <!-- <option  *ngFor="let class of classList" value="{{class.es_classname}}">{{class.es_classname}}</option> -->
+              </select>
         </div>
-      </div>
-    </div>
-    <div class="row form-group ">
-      <div class="pull-right btn_alignment">
-        <button id="" type="submit" class="btn btn-primary">
-          <!--<i class="glyphicon glyphicon-file"></i>-->
-          <span class="glyphicon glyphicon-search"></span>
-          &nbsp;Search</button>
-      </div>
-    </div>
+      </div>          
+      <!-- <div class="col col-sm-12 col-xs-12 col-lg-2 col-md-2">
+          <button id="" type="submit" class="btn btn-primary">&nbsp;Search</button>
+      </div> -->         
+    <!-- </div> 
+    <div class="row form-group "> -->
+        <div class=" btn_alignment">
+          <button id="" type="submit" class="btn btn-primary" (click)="searchFines()">
+            <!--<i class="glyphicon glyphicon-file"></i>-->
+            <span class="glyphicon glyphicon-search"></span>
+            &nbsp;Search</button>
+        </div>
+      </div>  
   </form>
 </div>
 <br>
@@ -44,17 +50,24 @@
         </tr>
       </thead>
       <tbody>
-        <!--<tr>
-        <td></td>
-        <td></td>
+        <tr *ngFor="let fine of bookFines let i=index">
+        <td>{{i+1}}</td>
+        <td>{{fine.libbooksid}}</td>
+        <td>{{fine.type}}</td>
+        <td>{{fine.totalfine}}</td>
+        <td>{{fine.paid}}</td>
         <td class="text-center">
-          <i #editElement class="glyphicon glyphicon-pencil cursor-pointer"></i>
+          {{fine.waived}}
         </td>
-        <td class="text-center">
-          <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer" 
-         ></i>
+        <td class="text-center" *ngIf="fine.type == 'Student'">
+          <a href="" [routerLink]="['/content',{outlets:{appCommon:['studentreport']}}]" [queryParams]="{id:fine.libbooksid}">Fine List</a>
+          
         </td>
-      </tr>-->
+        <td class="text-center" *ngIf="fine.type == 'Staff'">
+          <a href="" [routerLink]="['/content',{outlets:{appCommon:['staffreport']}}]" [queryParams]="{id:fine.libbooksid}">Fine List</a>
+          
+        </td>
+      </tr>
       </tbody>
     </table>
   </div>

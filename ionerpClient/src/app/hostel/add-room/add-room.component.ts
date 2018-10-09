@@ -48,14 +48,14 @@ export class AddRoomComponent implements OnInit, AfterViewInit {
     this.heading = 'Create Room';
 
 
-    this.service.subUrl = 'hostel/hostel/index';
+    this.service.subUrl = 'hostel/AddRoom/index';
     this.service.getData().subscribe(response => {
       this.posts = response.json();
       this.tableRerender();
       this.dtTrigger.next(); // Calling the DT trigger to manually render the table     
     });
 
-    this.service.subUrl = 'hostel/hostel/building';
+    this.service.subUrl = 'hostel/AddRoom/getBuilding';
     this.service.getData().subscribe(response => {
       this.building = response.json();
     });
@@ -104,30 +104,40 @@ export class AddRoomComponent implements OnInit, AfterViewInit {
 
   //hostel room add function
 
-  createPost(Form) {
-    this.service.subUrl = 'hostel/hostel/createHostelRoom';
-    let hostelRoom = Form.value;
+  CreateRoom(RoomForm) {
+    this.service.subUrl = 'hostel/AddRoom/checkroomnum';
+    let hostelRoom = RoomForm.value;
 
     this.service.createPost(hostelRoom).subscribe(response => {
-
       if (response.json().status == 'ok') {
-        this.service.subUrl = 'hostel/hostel/index';
-        this.service.getData().subscribe(response => {
-          this.posts = response.json();
-          this.tableRerender();
-          this.dtTrigger.next(); // Calling the DT trigger to manually render the table     
+        this.service.subUrl = 'hostel/AddRoom/createRoom';
+        this.service.createPost(hostelRoom).subscribe(response => {
+          if (response.json().status == 'ok') {
+            this.service.subUrl = 'hostel/AddRoom/index';
+            this.service.getData().subscribe(response => {
+              this.posts = response.json();
+              this.tableRerender();
+              this.dtTrigger.next(); // Calling the DT trigger to manually render the table     
+            });
+            let type = 'success';
+            let title = 'Add Success';
+            let body = 'New hostel room added successfully'
+            this.toasterMsg(type, title, body);
+            this.addRoomForm.reset();
+          } else {
+            let type = 'error';
+            let title = 'Add Fail';
+            let body = 'New hostel room add failed please try again'
+            this.toasterMsg(type, title, body);
+            this.addRoomForm.reset();
+          }
         });
-        let type = 'success';
-        let title = 'Add Success';
-        let body = 'New hostel room added successfully'
-        this.toasterMsg(type, title, body);
-        this.addRoomForm.reset();
-      } else {
+      }
+      else {
         let type = 'error';
         let title = 'Add Fail';
-        let body = 'New hostel room add failed please try again'
+        let body = 'Room number already exist';
         this.toasterMsg(type, title, body);
-        this.addRoomForm.reset();
       }
 
     });
@@ -136,20 +146,19 @@ export class AddRoomComponent implements OnInit, AfterViewInit {
   //hostel room edit function
 
   editHostelRoom(editElement: HTMLElement) {
+    this.heading = 'Update Room';
 
-    this.heading = 'Edit Room';
-
-    let buildingId = editElement.getAttribute('eshostelbuldid');
+    let buildingname = editElement.getAttribute('buildname');
     let roomNo = editElement.getAttribute('roomno');
     let roomType = editElement.getAttribute('roomtype');
     let roomCapacity = editElement.getAttribute('roomcapacity');
     let roomRate = editElement.getAttribute('roomrate');
 
-    let roomId = editElement.getAttribute('eshostelroomid');
+    let roomId = editElement.getAttribute('hostelroomid');
 
     this.setRoomId = roomId;
 
-    this.addBuilding.setValue(buildingId);
+    this.addBuilding.setValue(buildingname);
     this.addRoomNo.setValue(roomNo);
     this.addRoomType.setValue(roomType);
     this.addRoomCapacity.setValue(roomCapacity);
@@ -164,7 +173,7 @@ export class AddRoomComponent implements OnInit, AfterViewInit {
 
   updatePost(updatePost) {
 
-    this.service.subUrl = 'hostel/hostel/updateHostelRoom';
+    this.service.subUrl = 'hostel/AddRoom/updateRoom';
     updatePost.stringify
 
     let postData = {
@@ -179,7 +188,7 @@ export class AddRoomComponent implements OnInit, AfterViewInit {
     this.service.updatePost(postData).subscribe(response => {
 
       if (response.json().status == 'ok') {
-        this.service.subUrl = 'hostel/hostel/index';
+        this.service.subUrl = 'hostel/AddRoom/index';
         this.service.getData().subscribe(response => {
           this.posts = response.json();
           this.tableRerender();
@@ -190,6 +199,7 @@ export class AddRoomComponent implements OnInit, AfterViewInit {
         let body = 'Hostel room updated successfully'
         this.toasterMsg(type, title, body);
         this.addRoomForm.reset();
+        this.cancelUpdate
       } else {
         let type = 'error';
         let title = 'Update Fail';
@@ -214,7 +224,7 @@ export class AddRoomComponent implements OnInit, AfterViewInit {
   //hostel room delete warning function
 
   deleteWarning(deleteElement: HTMLElement, modalEle: HTMLDivElement) {
-    let roomId = deleteElement.getAttribute('eshostelroomid');
+    let roomId = deleteElement.getAttribute('hostelroomid');
     this.delRoomId = roomId;
     (<any>jQuery('#hostelRoomDeleteModal')).modal('show');
   }
@@ -223,39 +233,51 @@ export class AddRoomComponent implements OnInit, AfterViewInit {
 
   deleteHostelRoomData(roomIdInput: HTMLInputElement) {
 
-    this.service.subUrl = 'hostel/hostel/deleteHostelRoom';
+    this.service.subUrl = 'hostel/AddRoom/checkallot';
 
-    let roomId = roomIdInput.value
+    let Postdata = {
+      'roomId': roomIdInput.value,
+    }
 
-    this.service.deletePost(roomId).subscribe(response => {
+    this.service.deletePost(Postdata).subscribe(response => {
 
       if (response.json().status == 'ok') {
+        this.service.subUrl = 'hostel/AddRoom/deleteHostelRoom';
+        this.service.deletePost(Postdata).subscribe(response => {
 
-        this.service.subUrl = 'hostel/hostel/index';
-        this.service.getData().subscribe(response => {
-          this.posts = response.json();
-          this.tableRerender();
-          this.dtTrigger.next(); // Calling the DT trigger to manually render the table     
+          if (response.json().status == 'ok') {
+
+            this.service.subUrl = 'hostel/AddRoom/index';
+            this.service.getData().subscribe(response => {
+              this.posts = response.json();
+              this.tableRerender();
+              this.dtTrigger.next(); // Calling the DT trigger to manually render the table     
+            });
+
+            let type = 'success';
+            let title = 'Delete Success';
+            let body = 'Hostel room deleted successfully'
+            this.toasterMsg(type, title, body);
+            (<any>jQuery('#hostelRoomDeleteModal')).modal('hide');
+            this.addRoomForm.reset();
+          } else {
+            let type = 'error';
+            let title = 'Delete Fail';
+            let body = 'Hostel room delete failed please try again'
+            this.toasterMsg(type, title, body);
+            this.addRoomForm.reset();
+          }
         });
-
-        let type = 'success';
-        let title = 'Delete Success';
-        let body = 'Hostel room deleted successfully'
+      }
+      else {
+        let type = 'error';
+        let title = 'Delete Fail';
+        let body = 'Before Deleting The Room,Deallocate Room'
         this.toasterMsg(type, title, body);
         (<any>jQuery('#hostelRoomDeleteModal')).modal('hide');
         this.addRoomForm.reset();
-      } else {
-        let type = 'error';
-        let title = 'Delete Fail';
-        let body = 'Hostel room delete failed please try again'
-        this.toasterMsg(type, title, body);
-        this.addRoomForm.reset();
       }
-
-
     });
-
-
   }
 
   tableRerender(): void {

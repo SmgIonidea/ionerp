@@ -20,27 +20,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="text-right">
-            <p class="pull-right">1</p>
-          </td>
-          <td>1</td>
-          <td>12x12 Sqr Ft</td>
-          <td>4</td>
-          <td>4</td>
-          <td>Rs:1000</td>   
-        </tr>
-         <tr>
-          <td class="text-right">
-            <p class="pull-right">2</p>
-          </td>
-          <td>2</td>
-          <td>singelbed</td>
-          <td>3</td>
-          <td>3</td>
-          <td>Rs:1500</td>   
-        </tr>
-        <!--<tr *ngFor="let roomList of room let i = index">
+        <tr *ngFor="let roomList of room let i = index">
           <td class="text-right">
             <p class="pull-right">{{i+1}}</p>
           </td>
@@ -49,7 +29,7 @@
           <td>{{roomList.room_capacity}}</td>
           <td>{{roomList.room_vacancy}}</td>
           <td>{{roomList.room_rate}}</td>   
-        </tr>-->
+        </tr>
       </tbody>
     </table>
   </div>
@@ -69,10 +49,10 @@
   <!--</div>-->
   <!-- Page Headings Div Ends Here  -->
 </section>
-
+<!--<pre>{{availability | json}}</pre>-->
 <div class="container-fluid cont">
 
-  <form novalidate [formGroup]="roomForm"> 
+  <form novalidate [formGroup]="roomForm" (ngSubmit)="searchroom(roomForm)">
     <div class="col-md-12">
       <div class="col-md-2">
         <label style="margin-left:-30px;">Select Building:
@@ -80,21 +60,29 @@
         </label>
       </div>
       <div class="col-md-5">
-        <select  formControlName="roomavailability" class="form-control">
+        <select formControlName="roomavailability" class="form-control">
           <option [ngValue]="0" selected>Select</option>
-          <!--<option *ngFor = "let avail of availability" [ngValue]="avail.es_hostelbuldid">
-            {{ avail.buld_name}}
-          </option>-->
-          <option>Girls</option>
+          <option *ngFor = "let avail of availability" [ngValue]="avail.buld_name">
+            {{avail.buld_name}}
+          </option>
+          <!--<option>Girls</option>
           <option>madrid</option>
-          <option>Male Building</option>
+          <option>Male Building</option>-->
         </select>
         <br>
+        <div class="error_message" style="margin-top:-14px;" *ngIf="roomForm.submitted && roomavailability.untouched">
+          This field is required
+        </div>
+        <div *ngIf="roomavailability.touched && roomavailability.invalid" class="error_message" style="margin-top:-14px;">
+          <div *ngIf="roomavailability.errors.required">
+            This field is required
+          </div>
+        </div>
       </div>
     </div>
     <br>
-    <div  class="pull-right btn_alignment">
-      <button  type="submit" class="btn btn-primary" (click)="searchroom(roomForm)">
+    <div class="pull-right btn_alignment">
+      <button type="submit" class="btn btn-primary" [disabled]="!roomForm.valid">
         <i class="glyphicon glyphicon-file"  ></i>&nbsp;Search</button>
 
       <button type="reset" class="btn btn-danger">

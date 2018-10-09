@@ -4,16 +4,16 @@
   </div>
 </section>
 <div class="container-fluid">
-  <form class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+  <form class="col-lg-12 col-md-12 col-xs-12 col-sm-12" [formGroup]='searchBooks'>
     <div class="row form-group ">
       <div class="col col-sm-12 col-xs-12 col-lg-5 col-md-5">
         <div class="col-lg-6 col-md-6 labelfield" align="left" valign="top" style="margin-left:-45px;">
           <label>Category:</label>
         </div>
         <div class="category col-lg-6 col-md-6" align="left" valign="top">
-          <select name="" id="" class="form-control">
-            <option [ngValue]="0" selected>Select Category</option>
-            <option [ngValue]="Kannada">Kannada</option>
+          <select name="categoryName" id="" class="form-control"  (change)="loadSubCategory($event.target.value)"  formControlName="categoryName">
+            <option [value] = "0" [selected]="selected" >Select Category</option>
+            <option *ngFor="let cat of category " [value]="cat.es_categorylibraryid">{{cat.lb_categoryname}}</option>
           </select>
         </div>
       </div>
@@ -23,7 +23,7 @@
         </div>
         <div class='right-inner-addon dateview col-md-6' data-date-format="yyyy-mm-dd">
           <my-date-picker class="" placeholder=" dd-mm-yyyy" name="admission_date1" id="admission_date1" [options]="myDatePickerOptions"
-            [(ngModel)]="model">
+            [(ngModel)]="model" formControlName="fromDate">
           </my-date-picker>
         </div>
       </div>
@@ -34,9 +34,9 @@
           <label for="subcategory">Sub Category:</label>
         </div>
         <div class="category col-lg-6 col-md-6" align="left" valign="top">
-          <select name="" id="" class="form-control">
-            <option [ngValue]="0" selected>Select sub Category</option>
-            <option [ngValue]="halekannada">haleKannada </option>
+          <select name="subcategoryName" id="" class="form-control" formControlName="subCategoryName">
+            <option [value]="0" selected="selected" >Select sub Category</option>
+            <option *ngFor="let subCat of subCategory" [value]="subCat.es_subcategoryid">{{subCat.subcat_scatname}} </option>
           </select>
         </div>
       </div>
@@ -45,15 +45,15 @@
           <label for="todate">To Date:</label>
         </div>
         <div class='right-inner-addon dateview col-md-6' data-date-format="yyyy-mm-dd">
-          <my-date-picker class="" placeholder=" dd-mm-yyyy" name="admission_date1" id="admission_date1" [options]="myDatePickerOptions"
-            [(ngModel)]="model">
+          <my-date-picker class="" placeholder=" dd-mm-yyyy" name="admission_date1" id="admission_date1" [options]="myDatePickerOptionsto"
+            [(ngModel)]="modelto" formControlName="toDate">
           </my-date-picker>
         </div>
       </div>
     </div>
     <div class="row form-group ">
       <div class="pull-right btn_alignment">
-        <button id="" type="submit" class="btn btn-primary">
+        <button id="" type="submit" class="btn btn-primary" (click)="filterBooks(searchBooks)">
           <!--<i class="glyphicon glyphicon-file"></i>-->
           <span class="glyphicon glyphicon-search"></span>
           &nbsp;Search</button>
@@ -62,7 +62,7 @@
   </form>
 </div>
 
-<form class="form-horizontal" style="border-top:0px;">
+<!-- <form class="form-horizontal" style="border-top:0px;"> -->
   <div class="table table-responsive" style="overflow-x:initial;">
     <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
       <thead style="background-color:#DDE1E6;">
@@ -71,24 +71,185 @@
           <th class="text-center">Accession Number</th>
           <th class="text-center">Title</th>
           <th class="text-center">Author</th>
-          <th class="text-center">Edit</th>
+          <th class="text-center">View</th>
           <th class="text-center">Delete</th>
         </tr>
       </thead>
       <tbody>
-        <!--<tr>
-        <td></td>
-        <td></td>
-        <td class="text-center">
-          <i #editElement class="glyphicon glyphicon-pencil cursor-pointer"></i>
-        </td>
-        <td class="text-center">
-          <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer">
-         </i>
-        </td>
-      </tr>-->
+        <tr *ngFor="let book of books let i=index">
+          <td class="text-center">{{i+1}}</td>
+          <td class="text-center">{{book.lbook_aceesnofrom}}</td>
+          <td class="text-center">{{book.lbook_title}}</td>
+          <td class="text-center">{{book.lbook_author}}</td>
+          <td class="text-center">
+            <i #editElement class="glyphicon glyphicon-pencil cursor-pointer" data-toggle="modal" data-target="#bookDetails" (click)="getBookDetails(book.es_libbookid)"></i>
+          </td>
+          <td class="text-center">
+            <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer">
+            </i>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
   <br>
-</form>
+<!-- </form> -->
+
+<div  class="modal fade" id="bookDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+  <div class="modal-dialog" role="document" >
+    <div class="modal-content">
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Book Details</h4>
+      </div>
+      <div class="modal-body">
+        <div class="table table-responsive" style="overflow-y:scroll; max-height: 300px;">
+          <table  class="table-striped table-bordered  table-hover">
+            <thead>
+                <tr>
+                  <th width='30%'>Book Details</th>
+                  
+                
+                  <th width='30%'>Book Image</th>
+                    
+                  </tr>
+              </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">Purchased On </td>
+
+                <td class="text-center">
+
+                  {{bookDetails.lbook_dateofpurchase}}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">Bill Number </td>
+
+                <td class="text-center">
+
+                  {{bookDetails.lbook_bilnumber}}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">Category</td>
+
+                <td class="text-center">
+
+                  {{bookDetails.lbook_category}}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">Sub Category </td>
+
+                <td class="text-center">
+
+                  {{bookDetails.lbook_booksubcategory}}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center"> Accession No </td>
+
+                <td class="text-center">
+
+                  {{bookDetails.lbook_bookfromno}}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">Author </td>
+
+                <td class="text-center">
+
+                  {{bookDetails.lbook_author}}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">Title </td>
+
+                <td class="text-center">
+
+                  {{bookDetails.lbook_title}}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">Publishers Name </td>
+
+                <td class="text-center">
+
+                  {{bookDetails.lbook_publishername}}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">Supplier Name </td>
+
+                <td class="text-center">
+
+                  avi
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">Edition </td>
+
+                <td class="text-center">
+
+                  {{bookDetails.lbook_bookedition}}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">Year </td>
+
+                <td class="text-center">
+
+                  {{bookDetails.lbook_year}}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">Pages </td>
+
+                <td class="text-center">
+
+                  {{bookDetails.lbook_pages}}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">Cost </td>
+
+                <td class="text-center">
+
+                  {{bookDetails.lbook_cost}}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">Volume </td>
+
+                <td class="text-center">
+
+                  {{bookDetails.lbook_volume}}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">Book Source </td>
+
+                <td class="text-center">
+
+                  {{bookDetails.lbook_sourse}}
+                </td>
+              </tr>
+
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-primary">
+            <i class="glyphicon glyphicon-ok"></i>
+            Submit
+          </button> -->
+
+      </div>
+    </div>
+  </div>
+</div>

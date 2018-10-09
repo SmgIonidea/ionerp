@@ -12,124 +12,101 @@
 
 <div class="container-fluid cont">
 
-  <form> 
-    <div class="col-md-12">
-      <div class="col-md-2">
-        <label style="margin-left:-30px;">Building Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-          <!--<span class="mandatory" style="color:red;">*</span>-->
+  <form [formGroup]="deallocateForm" (ngSubmit)="searchroom(deallocateForm)">
+    <div class="row">
+      <div class="col col-md-2">
+        <label>Building Name
         </label>
       </div>
-      <!--<div class="col-md-5">
-        <select  formControlName="roomavailability" class="form-control">
-          <option [ngValue]="0" selected>Select</option>
-          <option *ngFor = "let avail of availability" [ngValue]="avail.es_hostelbuldid">
-            {{ avail.buld_name}}
-          </option>
-        </select>
-        <br>
-      </div>-->
-    </div>
-    <br><br>
-    <div class="col-md-12">
-      <div class="col-md-2">
-        <label style="margin-left:-30px;">Room No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-          <!--<span class="mandatory" style="color:red;">*</span>-->
+      <div class="col col-md-5">
+        <label class="issueitem" style="text-align:left;">:&nbsp;{{buildname}} 
         </label>
       </div>
-      <!--<div class="col-md-5">
-        <select  formControlName="roomavailability" class="form-control">
-          <option [ngValue]="0" selected>Select</option>
-          <option *ngFor = "let avail of availability" [ngValue]="avail.es_hostelbuldid">
-            {{ avail.buld_name}}
-          </option>
-        </select>
-        <br>
-      </div>-->
-    </div>
-    <br><br>
-    <div class="col-md-12">
-      <div class="col-md-2">
-        <label style="margin-left:-30px;">Person Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-          <!--<span class="mandatory" style="color:red;">*</span>-->
+    </div><br>
+    <div class="row">
+      <div class="col col-md-2">
+        <label>Room No
         </label>
       </div>
-      <!--<div class="col-md-5">
-        <select  formControlName="roomavailability" class="form-control">
-          <option [ngValue]="0" selected>Select</option>
-          <option *ngFor = "let avail of availability" [ngValue]="avail.es_hostelbuldid">
-            {{ avail.buld_name}}
-          </option>
-        </select>
-        <br>
-      </div>-->
-    </div>
-    <br><br>
-    <div class="col-md-12">
-      <div class="col-md-2">
-        <label style="margin-left:-30px;">Registration No&nbsp;&nbsp;&nbsp;&nbsp;:
-          <!--<span class="mandatory" style="color:red;">*</span>-->
+      <div class="col col-md-5">
+        <label class="issueitem" style="text-align:left;">:&nbsp;{{roomno}} 
         </label>
       </div>
-      <!--<div class="col-md-5">
-        <select  formControlName="roomavailability" class="form-control">
-          <option [ngValue]="0" selected>Select</option>
-          <option *ngFor = "let avail of availability" [ngValue]="avail.es_hostelbuldid">
-            {{ avail.buld_name}}
-          </option>
-        </select>
-        <br>
-      </div>-->
-    </div>
-    <br><br>
-    <div class="col-md-12">
-      <div class="col-md-2">
-        <label style="margin-left:-30px;">Person Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-          <!--<span class="mandatory" style="color:red;">*</span>-->
+    </div><br>
+    <div class="row">
+      <div class="col col-md-2">
+        <label>Person Type
         </label>
       </div>
-      <!--<div class="col-md-5">
-        <select  formControlName="roomavailability" class="form-control">
-          <option [ngValue]="0" selected>Select</option>
-          <option *ngFor = "let avail of availability" [ngValue]="avail.es_hostelbuldid">
-            {{ avail.buld_name}}
-          </option>
-        </select>
-        <br>
-      </div>-->
-    </div>
-    <br><br>
-    <div class="col-md-12">
-      <div class="col-md-2">
-        <label style="margin-left:-30px;">Allocate On&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-          <!--<span class="mandatory" style="color:red;">*</span>-->
+      <div class="col col-md-5">
+        <label class="issueitem" style="text-align:left;">:&nbsp;{{persontype}} 
         </label>
       </div>
-      <!--<div class="col-md-5">
-        <select  formControlName="roomavailability" class="form-control">
-          <option [ngValue]="0" selected>Select</option>
-          <option *ngFor = "let avail of availability" [ngValue]="avail.es_hostelbuldid">
-            {{ avail.buld_name}}
-          </option>
-        </select>
-        <br>
-      </div>-->
+    </div><br>
+    <div class="row">
+      <div class="col col-md-2">
+        <label>Registration No
+        </label>
+      </div>
+      <div class="col col-md-5">
+        <label class="issueitem" style="text-align:left;">:&nbsp;{{personid}} 
+        </label>
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col col-md-2">
+        <label>Person Name
+        </label>
+      </div>
+      <div class="col col-md-5">
+        <label class="issueitem" style="text-align:left;">:&nbsp;{{personname}} 
+        </label>
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col col-md-2">
+        <label>Allocate On
+        </label>
+      </div>
+      <div class="col col-md-5">
+        <label class="issueitem" style="text-align:left;">:&nbsp;{{allot}}
+        </label>
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col col-md-2">
+        <label>De-allocate Date:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class='right-inner-addon date datepicker siz col-md-3' style="margin-left: -60px;" data-date-format="yyyy-mm-dd">
+        <my-date-picker class="toplesson" placeholder=" dd-mm-yyyy" formControlName="deallocationdate"
+         name="deallocationdate" id="deallocationdate"  [options]="myDatePickerOptions"
+          [(ngModel)]="model"  required  (dateChanged)="onDateChanged($event)">
+        </my-date-picker>
+        <br><br>
+         <div *ngIf="deallocationdate.touched && deallocationdate.invalid" class="error_message" >
+          <div *ngIf="deallocateForm.controls.deallocationdate.errors.required">
+            This field is required
+          </div>
+        </div>
+      </div>
     </div>
-    <br><br>
-    <div class="col-md-12">
+    <!--<div class="col-md-12">
       <div class="col-md-2">
         <label style="margin-left:-30px;">De-allocate Date&nbsp;&nbsp;&nbsp;:
-          <!--<span class="mandatory" style="color:red;">*</span>-->
+          <span class="mandatory" style="color:red;">*</span>
         </label>
       </div>
       <div class='right-inner-addon date datepicker siz col-md-4' style="margin-left: -60px;" data-date-format="yyyy-mm-dd">
             <my-date-picker class="toplesson" placeholder=" dd-mm-yyyy" name="admission_date1" id="admission_date1" [options]="myDatePickerOptions"
-              [(ngModel)]="model">
+              [(ngModel)]="model" (dateChanged)="onDateChanged($event)" >
             </my-date-picker>
           </div>
     </div>
-    <br><br>
-    <div  class="pull-right btn_alignment">
-      <button  type="submit" class="btn btn-primary" (click)="searchroom(roomForm)">
+    <br><br>-->
+    <div class="pull-right btn_alignment">
+      <button type="submit" class="btn btn-primary" [disabled]="!deallocateForm.valid">
         <i class="glyphicon glyphicon-file"  ></i>&nbsp;De-Allocate</button>
 
       <button type="reset" class="btn btn-danger">
@@ -137,3 +114,7 @@
     </div>
   </form>
 </div>
+
+<!-- Tag for showing Toast Message -->
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+<!-- Toast Tag Ends Here -->

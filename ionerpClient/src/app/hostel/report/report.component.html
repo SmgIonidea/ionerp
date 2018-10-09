@@ -17,7 +17,7 @@
         </label>
       </div>
       <div class="col-md-4">
-       <input type="text" class="form-control">
+       <input type="text" [(ngModel)]="roomno" name="roomno" class="form-control">
       </div>
 
        <div class="col-md-2">
@@ -26,7 +26,7 @@
         </label>
       </div>
       <div class="col-md-4">
-       <input type="text" class="form-control">
+       <input type="text" [(ngModel)]="roomtype" name="roomtype" class="form-control">
       </div>
       
     </div>
@@ -39,7 +39,7 @@
         </label>
       </div>
       <div class="col-md-4">
-       <input type="text" class="form-control">
+       <input type="text" [(ngModel)]="personid" name="personid" class="form-control">
       </div>
 
        <div class="col-md-2">
@@ -48,7 +48,7 @@
         </label>
       </div>
       <div class="col-md-4">
-       <input type="text" class="form-control">
+       <input type="text" [(ngModel)]="prename" name="prename"  class="form-control">
       </div>
    
     </div>
@@ -61,7 +61,7 @@
         </label>
       </div>
       <div class="col-md-4">
-       <input type="text" class="form-control">
+       <input type="text" [(ngModel)]="persontype" name="persontype" class="form-control">
       </div>
 
        <div class="col-md-2">
@@ -70,7 +70,7 @@
         </label>
       </div>
       <div class="col-md-4">
-       <input type="text" class="form-control">
+       <input type="text" [(ngModel)]="preclass" name="preclass" class="form-control">
       </div>
 
     </div>
@@ -92,7 +92,7 @@
 <div class="container-fluid">
 
 <div class="table table-responsive" style="overflow-x:initial;">
-    <table class="table-striped table-bordered  table-hover">
+    <table  class="table-striped table-bordered  table-hover">
       <thead>
         <tr>
           <th class="text-center">Sl No.</th>
@@ -103,12 +103,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let i = index">
+        <tr *ngFor="let posts of hostelitemreports let i = index">
           <td class="text-right">{{i+1}}</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td> 
+          <td>{{posts.hostelperson_itemcode}}</td>
+          <td>{{posts.hostelperson_itemname}}</td>
+          <td>{{posts.hostelperson_itemqty}}</td>
+          <td>{{posts.hostelperson_itemissued}}</td> 
         </tr>
       </tbody>
     </table>
@@ -118,6 +118,10 @@
 </div>
 
 <br>
+<!-- Tag for showing Toast Message -->
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+<!-- Toast Tag Ends Here -->
+
 <div>
 
 <section class="content-header">
@@ -130,7 +134,7 @@
 <div class="container-fluid">
 
 <div class="table table-responsive" style="overflow-x:initial;">
-    <table class="table-striped table-bordered  table-hover">
+    <table   class="table-striped table-bordered  table-hover">
       <thead>
         <tr>
           <th class="text-center">Sl No.</th>
@@ -141,12 +145,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let i = index">
+        <tr *ngFor="let post of healthreports  let i = index">
           <td class="text-right">{{i+1}}</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td> 
+          <td>{{post.health_problem}}</td>
+          <td>{{post.health_doctorname}}</td>
+          <td>{{post.health_prescription}}</td>
+          <td>{{post.es_createdon}}</td> 
         </tr>
       </tbody>
     </table>

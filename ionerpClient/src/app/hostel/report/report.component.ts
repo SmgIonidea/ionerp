@@ -9,6 +9,8 @@ import { ToastService } from './../../common/toast.service';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
+import { ActivatedRoute, Params, Router } from "@angular/router";
+// import { DataTableDirective } from 'angular-datatables';
 
 @Component({
   selector: 'app-report',
@@ -19,17 +21,83 @@ export class ReportComponent implements OnInit {
 
   constructor(private service: PostService,
     private http: Http,
-    private toast: ToastService) { }
+    private toast: ToastService, private route: ActivatedRoute) { }
 
-    heading: string;
-    title: string;
-    head: string;
+  heading: string;
+  title: string;
+  head: string;
+  private sub: any;
+  id;
+  persontype;
+  personid;
+  class;
+  reportdetails;
+  roomtype;
+  roomno;
+  prename;
+  preclass;
+  healthreports = [];
+  hostelitemreports = [];
+
+  dtOptions: DataTables.Settings = {};
+  dtTrigger = new Subject();
+  @ViewChild(DataTableDirective)
+  dtElement: DataTableDirective;
+  dtInstance: DataTables.Api;
+  tosterconfig;
+
+
 
   ngOnInit() {
 
     this.heading = 'View Record';
     this.title = 'Item Issued';
     this.head = 'Health Record';
+    this.sub = this.route
+      .queryParams
+      .subscribe(params => {
+        // Defaults to 0 if no query param provided.
+        this.id = +params['id'] || 0;
+        this.persontype = params['pername'] || 0;
+        this.personid = +params['perid'] || 0;
+        let postData = {
+          'roomallotid': this.id,
+          'persontype': this.persontype,
+          'personid': this.personid,
+        }
+        this.service.subUrl = 'hostel/RoomAllocation/issueitems';
+        this.service.createPost(postData).subscribe(response => {
+          this.reportdetails = response.json();
+          this.reportdetails.forEach(element => {
+            this.roomtype = element.room_type
+            this.roomno = element.room_no
+            this.preclass = element.class
+            this.prename = element.name
+          })
+        });
+
+        this.service.subUrl = 'hostel/RoomAllocation/getreportitems';
+        this.service.createPost(this.personid).subscribe(response => {
+          this.hostelitemreports = response.json();
+          // console.log(this.hostelitemreports);
+          // this.tableRerender();
+          // this.dtTrigger.next();
+        });
+        this.service.subUrl = 'hostel/RoomAllocation/getreporthealth';
+        this.service.createPost(this.personid).subscribe(response => {
+          this.healthreports = response.json();
+          // console.log(this.healthreports);
+        });
+
+
+      });
+    // if(this.hostelitemreports.length == 0 && this.healthreports.length == 0) {
+    //   // alert("No Records Found");
+    //   // let type = 'error';
+    //   // let title = 'Search Fail';
+    //   // let body = 'No Records Found'
+    //   // this.toasterMsg(type, title, body);
+    // }
 
   }
 
@@ -51,5 +119,28 @@ export class ReportComponent implements OnInit {
     );
     popupWin.document.close();
 }
+
+  tableRerender(): void {
+    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+      // Destroy the table first
+      dtInstance.destroy();
+    });
+  }
+
+  ngAfterViewInit(): void {
+    this.dtTrigger.next();
+  }
+  toasterMsg(type, title, body) {
+    this.toast.toastType = type;
+    this.toast.toastTitle = title;
+    this.toast.toastBody = body;
+    this.tosterconfig = new ToasterConfig({
+      positionClass: 'toast-bottom-right',
+      tapToDismiss: false,
+      showCloseButton: true,
+      animation: 'slideDown'
+    });
+    this.toast.toastMsg;
+  }
 
 }

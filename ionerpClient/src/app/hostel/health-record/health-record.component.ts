@@ -9,6 +9,9 @@ import { ToastService } from './../../common/toast.service';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
+import { ActivatedRoute, Params, Router } from "@angular/router";
+import { CharctersOnlyValidation } from '../../custom.validators';
+
 
 @Component({
   selector: 'app-health-record',
@@ -19,40 +22,72 @@ export class HealthRecordComponent implements OnInit {
 
   constructor(private service: PostService,
     private http: Http,
-    private toast: ToastService) { }
+    private toast: ToastService, private route: ActivatedRoute,private router: Router) { }
 
   heading: string;
+  roomallotid
+  personid;
+  persontype;
+  personclass;
+  personname;
+  private sub: any;
+  healthdetails;
+  tosterconfig
 
   ngOnInit() {
 
     this.heading = 'Health Record';
+    this.sub = this.route
+      .queryParams
+      .subscribe(params => {
+        // Defaults to 0 if no query param provided.
+        this.roomallotid = +params['id'] || 0;
+        this.persontype = params['pername'] || 0;
+        this.personid = +params['perid'] || 0;
+        let postData = {
+          'persontype': this.persontype,
+          'personid': this.personid,
+        }
+        this.service.subUrl = 'hostel/RoomAllocation/gethostelhealthrecord';
+        this.service.createPost(postData).subscribe(response => {
+          this.healthdetails = response.json();
+          this.healthdetails.forEach(element => {
+            this.personclass = element.class
+            this.personname = element.name
+            //   this.preadmissionid = element.preid
+            //   this.prename = element.name
+          })
+        });
+      });
 
   }
 
-   private healthRecordForm = new FormGroup({
+  private healthRecordForm = new FormGroup({
 
     regEmpNo: new FormControl('', [
-    Validators.required]),
+    ]),
 
     personType: new FormControl('', [
-    Validators.required]),
+    ]),
 
     name: new FormControl('', [
-    Validators.required]),
+    ]),
 
     class: new FormControl('', [
-    Validators.required]),
+    ]),
 
     problemDef: new FormControl('', [
-    Validators.required]),
+      Validators.required]),
 
     doctorName: new FormControl('', [
-    Validators.required]),
+      Validators.required]),
 
     address: new FormControl('', [
     ]),
 
     contactNo: new FormControl('', [
+      Validators.required,
+      CharctersOnlyValidation.DigitsOnly
     ]),
 
     DoctorPresc: new FormControl('', [
@@ -95,6 +130,45 @@ export class HealthRecordComponent implements OnInit {
 
   get DoctorPresc() {
     return this.healthRecordForm.get('DoctorPresc');
+  }
+
+  inserthealth(healthRecordForm) {
+    let postdata = {
+      'healthdata': healthRecordForm.value,
+      'class': this.personclass,
+      'name': this.personname,
+      'type': this.persontype,
+      'id': this.personid,
+    }
+
+    this.service.subUrl = 'hostel/RoomAllocation/inserthealthrecord';
+    this.service.createPost(postdata).subscribe(response => {
+      if (response.json().status == 'ok') {
+        let type = 'success';
+        let title = 'Add Success';
+        let body = 'Health Record Added Successfully'
+        this.toasterMsg(type, title, body);
+      }
+      else {
+        let type = 'error';
+        let title = 'Add Fail';
+        let body = 'Health Record Add Successfully'
+        this.toasterMsg(type, title, body);
+      }
+    });
+    this.router.navigate(['/content',{outlets: { appCommon: ['issuetoroom']}}]);
+  }
+  toasterMsg(type, title, body) {
+    this.toast.toastType = type;
+    this.toast.toastTitle = title;
+    this.toast.toastBody = body;
+    this.tosterconfig = new ToasterConfig({
+      positionClass: 'toast-bottom-right',
+      tapToDismiss: false,
+      showCloseButton: true,
+      animation: 'slideDown'
+    });
+    this.toast.toastMsg;
   }
 
 }

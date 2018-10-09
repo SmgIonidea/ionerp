@@ -16,7 +16,9 @@ import { Http, Response } from '@angular/http';
 export class PrepareBillComponent implements OnInit {
 
   title: any;
-  title1: any;
+  titlehead: any;
+  buildingList;
+  preapreBillList;
 
   constructor(public titleService: Title,
     private service: PostService,
@@ -27,7 +29,62 @@ export class PrepareBillComponent implements OnInit {
 
     this.title = 'Bills';
     this.titleService.setTitle('PrepareBill | IONCUDOS');
-    this.title1 = "Prepare Hostel Bills";
+    this.titlehead = "Prepare Hostel Bills";
+
+      /* Get the list of  Building Names */
+      this.service.subUrl = "hostel/PrepareBill/getBuildingList";
+      this.service.getData().subscribe(response => {
+        this.buildingList = response.json();
+      });
   }
+
+
+  
+  /* Hostel Charge Details Validation */
+  private prepareBillForm = new FormGroup({
+
+    buildName: new FormControl('', [
+      Validators.required
+    ]),
+
+    selectYear: new FormControl('', [
+      Validators.required
+    ]),
+
+    selectMonth: new FormControl('', [
+      Validators.required
+    ]),
+
+  });
+
+
+  /* property to access the 
+   formGroup Controles. which is used to validate the form */
+
+  get buildName() {
+    return this.prepareBillForm.get('buildName');
+  }
+  get selectYear() {
+    return this.prepareBillForm.get('selectYear');
+  }
+  get selectMonth() {
+    return this.prepareBillForm.get('selectMonth');
+  }
+ 
+
+
+preparebill(prepareBillForm){
+  let preapreBill = {
+  'buildId':prepareBillForm.value.buildName,
+  'yearId':prepareBillForm.value.selectYear,
+  'monthId':prepareBillForm.value.selectMonth,
+  };
+  alert(JSON.stringify(preapreBill));
+
+  this.service.subUrl = "hostel/PrepareBill/prepareBillDetails";
+    this.service.createPost(preapreBill).subscribe(response => {
+      this.preapreBillList = response.json();
+    });
+}
 
 }

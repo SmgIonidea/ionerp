@@ -1,6 +1,6 @@
 <section class="content-header gap" style="margin-top:-10px;">
   <div class="panel panel-primary">
-    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sub Category</h4>
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{maintitle}}</h4>
   </div>
 </section>
 <form class="form-horizontal" style="border-top:0px;">
@@ -16,62 +16,124 @@
         </tr>
       </thead>
       <tbody>
-        <!--<tr>
-        <td></td>
-        <td></td>
-        <td class="text-center">
-          <i #editElement class="glyphicon glyphicon-pencil cursor-pointer"></i>
-        </td>
-        <td class="text-center">
-          <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer">
-         </i>
-        </td>
-      </tr>-->
+
+        <tr *ngFor="let subCategory of subCategoryData let i = index">
+          <td class="text-center">{{i+1}}</td>
+          <td class="text-center">{{subCategory.lb_categoryname}}</td>
+          <td class="text-center">{{subCategory.subcat_scatname}}</td>
+          <td class="text-center">
+           
+            <i #editElement class="glyphicon glyphicon-pencil cursor-pointer" [attr.category]="subCategory.lb_categoryname" [attr.subCatId]="subCategory.es_subcategoryid" [attr.subcatname]="subCategory.subcat_scatname" [attr.subcatdesc]="subCategory.subcat_scatdesc" (click)="editSubcategory(this.editElement)"></i>
+          </td>
+          <td class="text-center">
+            <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer" [attr.subCatId]="subCategory.es_subcategoryid" (click)="deleteWarning(this.deleteElement,this.subcategoryListDeleteModal)"></i>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
   <br>
 </form>
 
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+
+<div #subcategoryListDeleteModal class="modal fade" id="subcategoryListDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete the sub category ?
+        <!-- <input #deleteRouteId type="hidden" name="deleteRouteId" id="deleteRouteId" [value]="delRouteId"> -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="deleteSubCategory(subCategoryDelId)" data-dismiss="modal">
+          <i class="glyphicon glyphicon-ok"></i>
+          Yes
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <i class="glyphicon glyphicon-remove"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <section class="content-header">
   <div class="panel panel-primary ">
-    <h4 class="middle middle1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Add / Edit Sub Category</h4>
+    <h4 class="middle middle1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{subtitle}}</h4>
   </div>
 </section>
 
 <div class="container-fluid">
-  <form class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+  <form [formGroup]="SubcategoryForm" class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
       <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
-        <label for="category">Category Name:</label>
+        <label for="category">Category Name:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
       </div>
-      <div class="col col-md-5 col-sm-12 col-xs-12 category" style="margin-left:-40px;">
-        <select name="" id="" class="form-control  col-lg-8 dropbox width">
-          <option [ngValue]="0" selected>Select Category name</option>
-          <option [ngValue]="Kannada">Kannada</option>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category" style="margin-left:-36px;">
+        <select formControlName="catname" name="" id="" class="form-control  col-lg-8 dropbox width">
+          <option value="" disabled selected>Select your option</option>
+          <option *ngFor="let category of categoryData">{{category.lb_categoryname}}</option>
         </select>
+        <div *ngIf="catname.touched && catname.invalid" class="error_message error-align1">
+          <div *ngIf="SubcategoryForm.controls.catname.errors.required">
+            This field is required.
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
       <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
-        <label for="category"> Sub Category Name:</label>
+        <label for="category"> Sub Category Name:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
       </div>
-      <div class="col col-md-5 col-sm-12 col-xs-12 category" style="margin-left:-40px;">
-        <input type="text" name="department" placeholder="Enter category Name" id="category" value="" class="form-control" />
+      <div class="col col-md-5 col-sm-12 col-xs-12 category" style="margin-left:-36px;">
+        <input formControlName="SubcategoryName" type="text" name="department" placeholder="Enter category Name" id="category" value=""
+          class="form-control" />
+        <div *ngIf="SubcategoryName.touched && SubcategoryName.invalid" class="error_message error-align1">
+          <div *ngIf="SubcategoryForm.controls.SubcategoryName.errors.required">
+            This field is required.
+          </div>
+        </div>
       </div>
-    </div>  
+    </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
       <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
-        <label for="description">Description:</label>
+        <label for="description">Description:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
       </div>
-      <div class="col col-md-5 col-sm-12 col-xs-12 category" style="margin-left:-40px;">
-        <textarea type="text" placeholder="Enter Description" name="description" id="description" value="" rows="5" class="form-control">
+      <div class="col col-md-5 col-sm-12 col-xs-12 category" style="margin-left:-36px;">
+        <textarea formControlName="SubcategoryDesc" type="text" placeholder="Enter Description" name="description" id="description"
+          value="" rows="5" class="form-control">
       </textarea>
+        <div *ngIf="SubcategoryDesc.touched && SubcategoryDesc.invalid" class="error_message error-align1">
+          <div *ngIf="SubcategoryForm.controls.SubcategoryDesc.errors.required">
+            This field is required.
+          </div>
+        </div>
       </div>
     </div>
-    <div class="pull-right btn_alignment">
-      <button id="" type="submit" class="btn btn-primary">
-        <i class="glyphicon glyphicon-file"></i>&nbsp;Save</button>
+    <div class="btn_align col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right">
+      <button [style.display]="isSaveHide?'none':'block'" id="" type="submit" [disabled]="!SubcategoryForm.valid" class="btn btn-primary btn_save"
+        (click)="saveSubCategory(SubcategoryForm)">
+        <i class="glyphicon glyphicon-file"></i>&nbsp;Save
+      </button>
+      <button [style.display]="isUpdateHide?'none':'block'" id="" type="submit" [disabled]="!SubcategoryForm.valid" class="btn btn-primary btn_update" (click)="updateSubCategoryList(SubcategoryForm)">
+        <i class="glyphicon glyphicon-file"></i>&nbsp;Update
+      </button>
+      <button id="" type="reset" class="btn btn-danger btn_cancel" (click)="cancelUpdate()">
+        <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel
+      </button>
     </div>
   </form>
 </div>

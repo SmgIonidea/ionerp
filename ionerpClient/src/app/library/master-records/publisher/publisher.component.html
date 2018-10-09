@@ -1,11 +1,11 @@
 <section class="content-header gap" style="margin-top:-10px;">
   <div class="panel panel-primary">
-    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Publisher / Supplier</h4>
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{maintitle}} </h4>
   </div>
 </section>
 <form class="form-horizontal" style="border-top:0px;">
   <div class="table table-responsive" style="overflow-x:initial;">
-    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" id="pubTable" class="table table-bordered table-striped table-hover">
       <thead style="background-color:#DDE1E6;">
         <tr>
           <th class="text-center">Sl No.</th>
@@ -20,41 +20,107 @@
         </tr>
       </thead>
       <tbody>
-        <!--<tr>
-        <td></td>
-        <td></td>
-        <td class="text-center">
-          <i #editElement class="glyphicon glyphicon-pencil cursor-pointer"></i>
-        </td>
-        <td class="text-center">
-          <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer">
-         </i>
-        </td>
-      </tr>-->
+        <tr *ngFor="let publisher of publisherList let i = index">
+          <!-- <pre>{{publisher | json}}</pre> -->
+          <td class="text-right">{{i+1}}</td>
+
+          <td *ngIf="publisher.es_libaraypublisherid"  id="pub" class="text-center ">Publisher</td>
+          <td *ngIf="publisher.es_in_supplier_masterid" id="sup" class="text-center ">Supplier</td>
+
+          <td *ngIf="publisher.library_publishername" class="text-center">{{publisher.library_publishername}}</td>
+          <td *ngIf="publisher.in_name" class="text-center">{{publisher.in_name}}</td>
+
+          <td *ngIf="publisher.library_city" class="text-center">{{publisher.library_city}}</td>
+          <td *ngIf="publisher.in_city" class="text-center">{{publisher.in_city}}</td>
+
+          <td *ngIf="publisher.libaray_state" class="text-center">{{publisher.libaray_state}}</td>
+          <td *ngIf="publisher.in_state" class="text-center">{{publisher.in_state}}</td>
+
+          <td *ngIf="publisher.librray_mobileno" class="text-center">{{publisher.librray_mobileno}}</td>
+          <td *ngIf="publisher.in_mobile_no" class="text-center" >{{publisher.in_mobile_no}}</td>
+
+          <td *ngIf="publisher.libarary_email" class="text-center">{{publisher.libarary_email}}</td>
+          <td *ngIf="publisher.in_email" class="text-center">{{publisher.in_email}}</td>
+
+          <td class="text-center">
+            <i #editElement class="glyphicon glyphicon-pencil cursor-pointer"
+
+            [attr.pubId]="publisher.es_libaraypublisherid"    
+            [attr.supId]="publisher.es_in_supplier_masterid"         
+            [attr.pubSupName]="publisher.library_publishername || publisher.in_name"
+            [attr.pubSupAddress]="publisher.library_pulisheradress || publisher.in_address"            
+            [attr.pubSupCity]="publisher.library_city || publisher.in_city"
+            [attr.pubSupState]="publisher.libaray_state || publisher.in_state"
+            [attr.pubSupCountry]="publisher.libarary_country || publisher.in_country"
+            [attr.pubSupMobile]="publisher.librray_mobileno || publisher.in_mobile_no"
+            [attr.pubSupFax]="publisher.library_fax || publisher.in_fax"
+            [attr.pubSupEmail]="publisher.libarary_email || publisher.in_email"
+            [attr.pubSupAdditionalInfo]="publisher.libarary_aditinalinformation || publisher.in_description"
+            (click)="editPublisherOrSupplier(this.editElement)"></i>            
+          </td>
+          <td class="text-center">
+            <i #deleteElement [attr.pubId]="publisher.es_libaraypublisherid" [attr.supId]="publisher.es_in_supplier_masterid"
+             (click)="deleteWarning(this.deleteElement,this.publisherSupplierListDeleteModal)" class="glyphicon glyphicon-remove cursor-pointer"></i>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
   <br>
 </form>
 
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+
+<div #publisherSupplierListDeleteModal class="modal fade" id="publisherSupplierListDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete the Publisher / Supplier ?
+        <!-- <input #deleteRouteId type="hidden" name="deleteRouteId" id="deleteRouteId" [value]="delRouteId"> -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="deletePublisherSupplier()" data-dismiss="modal">
+          <i class="glyphicon glyphicon-ok"></i>
+          Yes
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <i class="glyphicon glyphicon-remove"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <section class="content-header">
   <div class="panel panel-primary ">
-    <h4 class="middle middle1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Add / Edit Publisher/Supplier</h4>
+    <h4 class="middle middle1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{subtitle}}</h4>
   </div>
 </section>
 
 <div class="container-fluid">
-  <form class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+  <form [formGroup]="publisherSupplierForm" class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
       <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
-        <label for="publisher">Publlisher/Supplier:</label>
+        <label for="publisher">Publlisher/Supplier: <span class="mandatory" style="color:red;">*</span></label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category" style="margin-left:-20px;">
-        <select name="" id="" class="form-control  col-lg-8 dropbox width">
-          <option [ngValue]="0" selected>Select Publisher</option>
-          <option [ngValue]="publisher">Publisher</option>
-          <option [ngValue]="supplier">Supplier</option>
+        <select formControlName="publisherSelect"  [(ngModel)]="selValue"  class="form-control  col-lg-8 dropbox width">
+          <option value="" disabled selected>Select your option</option>
+          <option value="Publisher">Publisher</option>
+          <option value="Supplier">Supplier</option>
         </select>
+        <div *ngIf="publisherSelect.touched && publisherSelect.invalid" class="error_message">
+          <div *ngIf="publisherSupplierForm.controls.publisherSelect.errors.required">
+            This field is required.
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
@@ -64,7 +130,12 @@
         </label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category" style="margin-left:-20px;">
-        <input type="text" name="" placeholder="Enter Name" id="" value="" class="form-control" />
+        <input formControlName="publisherName" type="text" name="" placeholder="Enter Name" id="" value="" class="form-control" />
+        <div *ngIf="publisherName.touched && publisherName.invalid" class="error_message">
+          <div *ngIf="publisherSupplierForm.controls.publisherName.errors.required">
+            This field is required.
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
@@ -72,24 +143,36 @@
         <label for="address">Address:</label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category" style="margin-left:-20px;">
-        <textarea type="text" placeholder="Enter Address" name="" id="" value="" rows="5" class="form-control">
+        <textarea formControlName="address" type="text" placeholder="Enter Address" name="" id="" value="" rows="5" class="form-control">
       </textarea>
+      
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
       <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
-        <label for="city">City:</label>
+        <label for="city">City: <span class="mandatory" style="color:red;">*</span></label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category" style="margin-left:-20px;">
-        <input type="text" name="" placeholder="Enter city" id="" value="" class="form-control" />
+        <input formControlName="city" type="text" name="" placeholder="Enter city" id="" value="" class="form-control" />
+        <div *ngIf="city.touched && city.invalid" class="error_message">
+          <div *ngIf="publisherSupplierForm.controls.city.errors.required">
+            This field is required.
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
       <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
-        <label for="state">State:</label>
+        <label for="state">State: <span class="mandatory" style="color:red;">*</span></label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category" style="margin-left:-20px;">
-        <input type="text" name="" placeholder="Enter state" id="" value="" class="form-control" />
+        <input formControlName="publisherstate" type="text" name="" placeholder="Enter state" id="" value="" class="form-control"
+        />
+        <div *ngIf="publisherstate.touched && publisherstate.invalid" class="error_message">
+          <div *ngIf="publisherSupplierForm.controls.publisherstate.errors.required">
+            This field is required.
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
@@ -97,45 +180,69 @@
         <label for="country">Country:</label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category" style="margin-left:-20px;">
-        <input type="text" name="" placeholder="Enter country" id="" value="" class="form-control" />
+        <input formControlName="country" type="text" name="" placeholder="Enter country" id="" value="" class="form-control" />
+      
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
       <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
-        <label for="phone" >Phone No:</label>
+        <label for="phone">Phone No: <span class="mandatory" style="color:red;">*</span></label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category" style="margin-left:-20px;">
-        <input type="text" name="" placeholder="Enter phone number" id="" value="" class="form-control" />
+        <input formControlName="phoneNumber" type="text" name="" placeholder="Enter phone number" id="" value="" class="form-control"
+        />
+        <div *ngIf="phoneNumber.touched && phoneNumber.invalid" class="error_message">
+          <div *ngIf="publisherSupplierForm.controls.phoneNumber.errors.required">
+            This field is required.
+          </div>
+          <div *ngIf="publisherSupplierForm.controls.phoneNumber.errors.DigitsOnlyMobileNumber">
+            Invalid Mobile Number.
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
       <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
-        <label for="fax" >Fax:</label>
+        <label for="fax">Fax:</label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category" style="margin-left:-20px;">
-        <input type="text" name="" placeholder="Enter fax" id="" value="" class="form-control" />
+        <input formControlName="fax" type="text" name="" placeholder="Enter fax" id="" value="" class="form-control" />
+       
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
       <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
-        <label for="email" >Email:</label>
+        <label for="email">Email: <span class="mandatory" style="color:red;">*</span></label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category" style="margin-left:-20px;">
-        <input type="text" name="" placeholder="Enter email" id="" value="" class="form-control" />
+        <input formControlName="email" type="text" name="" placeholder="Enter email" id="" value="" class="form-control" />
+        <div *ngIf="email.touched && email.invalid" class="error_message">
+          <div *ngIf="publisherSupplierForm.controls.email.errors.required">
+            This field is required.
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
       <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
-        <label  for="additional info">Additional Information:</label>
+        <label for="additional info">Additional Information:</label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category" style="margin-left:-20px;">
-        <textarea type="text" placeholder="Enter Additional Information" name="" id="" value="" rows="5" class="form-control">
+        <textarea formControlName="additionalInfo" type="text" placeholder="Enter Additional Information" rows="5" class="form-control">
       </textarea>
+        
       </div>
     </div>
-    <div class="pull-right btn_alignment">
-      <button id="" type="submit" class="btn btn-primary">
-        <i class="glyphicon glyphicon-file"></i>&nbsp;Save</button>
+    <div class="btn_align col-lg-3 col-md-3 col-xs-12 col-sm-6 pull-right">
+      <button [style.display]="isSaveHide?'none':'block'" id="" type="submit" [disabled]="!publisherSupplierForm.valid" (click)="savePublisherSupplierData(publisherSupplierForm)" class="btn btn-primary btn_save">
+        <i class="glyphicon glyphicon-file"></i>&nbsp;Save
+      </button>
+      <button [style.display]="isUpdateHide?'none':'block'" id="" type="submit" [disabled]="!publisherSupplierForm.valid" (click)="updatePublisherSupplierData(publisherSupplierForm)"  class="btn btn-primary btn_update">
+        <i class="glyphicon glyphicon-file"></i>&nbsp;Update
+      </button>
+      <button id="" type="reset" class="btn btn-danger btn_cancel" (click)="cancelUpdate()">
+        <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel
+      </button>
     </div>
   </form>
 </div>

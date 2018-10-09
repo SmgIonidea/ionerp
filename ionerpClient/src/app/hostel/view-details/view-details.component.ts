@@ -9,6 +9,7 @@ import { ToastService } from './../../common/toast.service';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
+import { decode } from 'punycode';
 
 @Component({
   selector: 'app-view-details',
@@ -21,10 +22,14 @@ export class ViewDetailsComponent implements OnInit, AfterViewInit {
     private http: Http,
     private toast: ToastService) { }
 
-  title: string; //load title
-  heading: string;
 
   /* Global Variable Declarations */
+  title: string; //load title
+  heading: string;
+  hostelList;
+  reglist;
+  duelist;
+  buildingList;
   tosterconfig;
   dtOptions: DataTables.Settings = {};
   dtTrigger = new Subject();
@@ -37,33 +42,52 @@ export class ViewDetailsComponent implements OnInit, AfterViewInit {
     this.title = 'Hostel';
     this.heading = 'Hostel Charges Details';
 
+
+    /* Get the list of  Building Names */
+    this.service.subUrl = "hostel/ViewDetails/getBuildingList";
+    this.service.getData().subscribe(response => {
+      this.buildingList = response.json();
+    });
+    // this.tableRerender();
+    // this.dtTrigger.next();
+
   }
 
+
+  /* Hostel Charge Details Validation */
   private hostelChargeForm = new FormGroup({
 
     selectBuilding: new FormControl('', [
+      Validators.required
     ]),
 
     selectYear: new FormControl('', [
+      Validators.required
     ]),
 
     selectMonth: new FormControl('', [
+      Validators.required
     ]),
 
     selectType: new FormControl('', [
+      Validators.required
     ]),
 
     selectStatus: new FormControl('', [
+      Validators.required
     ]),
 
     registrationNo: new FormControl('', [
+      Validators.required
     ]),
 
   });
 
+
+  /* property to access the 
+   formGroup Controles. which is used to validate the form */
+
   get selectBuilding() {
-    /* property to access the 
-    formGroup Controles. which is used to validate the form */
     return this.hostelChargeForm.get('selectBuilding');
   }
   get selectYear() {
@@ -104,6 +128,41 @@ export class ViewDetailsComponent implements OnInit, AfterViewInit {
       animation: 'slideDown'
     });
     this.toast.toastMsg;
+  }
+
+  serachView(hostelChargeForm) {
+    let searchData = {
+      'select_building': hostelChargeForm.value.selectBuilding,
+      'select_year': hostelChargeForm.value.selectYear,
+      'select_month': hostelChargeForm.value.selectMonth,
+      'select_type': hostelChargeForm.value.selectType,
+      'payment_status': hostelChargeForm.value.selectStatus,
+      'registration_num': hostelChargeForm.value.registrationNo,
+    };
+
+    this.service.subUrl = "hostel/ViewDetails/searchViewDetails";
+    this.service.createPost(searchData).subscribe(response => {
+      this.hostelList = response.json();
+      this.tableRerender();
+      this.dtTrigger.next();
+    });
+
+
+    // let month = this.hostelList.due_month.split("-");
+    // alert(JSON.stringify(month));
+    this.service.subUrl = "hostel/ViewDetails/totalDueDetails";
+    this.service.createPost(searchData).subscribe(response => {
+      this.duelist = response.json();
+    });
+
+
+
+    // this.service.subUrl = "hostel/ViewDetails/regNum";
+    // this.service.createPost(searchData['registration_num']).subscribe(response => {
+    //   this.reglist = response.json();
+    //   });  
+
+
   }
 
 }

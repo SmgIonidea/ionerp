@@ -8,7 +8,7 @@
 
 <div class="container-fluid">
 
-  <form [formGroup]="healthRecordForm">
+  <form [formGroup]="healthRecordForm" (ngSubmit)="inserthealth(healthRecordForm)">
 
      <div class="col-md-12">
       <div class="col-md-2">
@@ -17,7 +17,7 @@
         </label>
       </div>
       <div class="col-md-5">
-        <input formControlName="regEmpNo" type="text" placeholder="Enter Reg/Emp No" class="form-control">
+        <input formControlName="regEmpNo" type="text" placeholder="Enter Reg/Emp No" value={{personid}} class="form-control">
         
         <div *ngIf="regEmpNo.touched && regEmpNo.invalid" class="error_message">
             <div *ngIf="healthRecordForm.controls.regEmpNo.errors.required">
@@ -37,7 +37,7 @@
         </label>
       </div>
       <div class="col-md-5">
-        <input formControlName="personType" type="text" placeholder="Enter Person Type" class="form-control">
+        <input formControlName="personType" type="text" placeholder="Enter Person Type" value={{persontype}} class="form-control">
         
         <div *ngIf="personType.touched && personType.invalid" class="error_message">
             <div *ngIf="healthRecordForm.controls.personType.errors.required">
@@ -57,7 +57,7 @@
         </label>
       </div>
       <div class="col-md-5">
-        <input formControlName="name" type="text" placeholder="Enter Name" class="form-control">
+        <input formControlName="name" type="text" placeholder="Enter Name" value={{personname}} class="form-control">
         
         <div *ngIf="name.touched && name.invalid" class="error_message">
             <div *ngIf="healthRecordForm.controls.name.errors.required">
@@ -77,7 +77,7 @@
         </label>
       </div>
       <div class="col-md-5">
-        <input formControlName="class" type="text" placeholder="Enter Class" class="form-control">
+        <input formControlName="class" type="text" placeholder="Enter Class" value={{personclass}} class="form-control">
         
         <div *ngIf="class.touched && class.invalid" class="error_message">
             <div *ngIf="healthRecordForm.controls.class.errors.required">
@@ -158,14 +158,21 @@
       </div>
       <div class="col-md-5">
         <input formControlName="contactNo" type="text" placeholder="Enter Contact No" class="form-control">
-        
-        <!--<div *ngIf="contactNo.touched && contactNo.invalid" class="error_message">
-            <div *ngIf="healthRecordForm.controls.contactNo.errors.required">
-              This field is required.
-            </div>
-          </div>-->
-
         <br>
+        <div class="error_message" style="margin-top:-14px;" *ngIf="healthRecordForm.submitted && contactNo.untouched">
+          This field is required
+        </div>
+          <div *ngIf="contactNo.touched && contactNo.invalid" class="error_message">
+          <div style="margin-top:-14px;" *ngIf="contactNo.errors.required">
+            This field is required
+          </div>
+          <div *ngIf="contactNo.errors.DigitsOnly">
+            contact Number Should Accept only Digits.
+          </div>
+        </div>
+        <!--<div class="error_message" *ngIf="contactNo.errors.DigitsOnly">
+            contactNo Should Accept only Digits.
+          </div>-->
       </div>
     </div>
     <br>
@@ -201,3 +208,6 @@
 
   </form>
 </div>
+<!-- Tag for showing Toast Message -->
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
+<!-- Toast Tag Ends Here -->

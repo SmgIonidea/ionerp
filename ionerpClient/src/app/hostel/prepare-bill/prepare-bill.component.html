@@ -1,91 +1,95 @@
 <!-- View Persons  -->
-<section class="content-header">
-  <!--<div class="headline">-->
-  <!-- Div for Page Headings -->
-
+<section class="content-header"> 
   <div class="panel panel-primary">
-    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{title1}}</h4>
-  </div>
-  <!--</div>-->
-  <!-- Page Headings Div Ends Here  -->
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{titlehead}}</h4>
+  </div>  
 </section>
 
-<div class="container-fluid cont">
+<div class="container-fluid">
+  <form [formGroup]="prepareBillForm"> 
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
+        <label for="">Select Building:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select formControlName="buildName" class="form-control">
+          <option *ngFor='let building of buildingList' [value]="building.es_hostelbuldid">{{building.buld_name}} </option>
+          
+        </select>
+        <div *ngIf="buildName.touched && buildName.invalid" class="error_message">
+          <div *ngIf="prepareBillForm.controls.buildName.errors.required">
+            This field is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
+        <label for="">Select Year:
+          <span class="mandatory" style="color:red;">*</span>
+        </label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select formControlName="selectYear" class="form-control">
+          <option>Select</option>
+          <option value="2006">2006</option>
+          <option value="2007">2007</option>
+          <option value="2008">2008</option>
+          <option value="2009">2009</option>
+          <option value="2010">2010</option>
+          <option value="2011">2011</option>
+          <option value="2012">2012</option>
+          <option value="2013">2013</option>
+          <option value="2014">2014</option>
+          <option value="2015">2015</option>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+        </select>
+        <div *ngIf="selectYear.touched && selectYear.invalid" class="error_message">
+          <div *ngIf="prepareBillForm.controls.selectYear.errors.required">
+            This field is required
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <form> 
-    <div class="col-md-12">
-      <div class="col-md-2">
-        <label style="margin-left:-30px;">Select Building:
+
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-45px;">
+        <label for="">Select Month:
           <span class="mandatory" style="color:red;">*</span>
         </label>
       </div>
-      <div class="col-md-5">
-        <select   class="form-control">
-          <!--<option [ngValue]="0" selected>Select</option>-->
-          <option *ngFor = "let avail of availability" [ngValue]="avail.es_hostelbuldid">
-            <!--{{ avail.buld_name}}-->
-          </option>
-          <option>Girls</option>
-          <option>madrid</option>
-          <option>Male Building</option>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <select [(ngModel)]="monthId" formControlName="selectMonth" class="form-control">
+          <option>Select</option>
+          <option value="01">January</option>
+          <option value="02">Febrauary</option>
+          <option value="03">March</option>
+          <option value="04">April</option>
+          <option value="05">May</option>
+          <option value="06">June</option>
+          <option value="07">July</option>
+          <option value="08">August</option>
+          <option value="09">September</option>
+          <option value="10">October</option>
+          <option value="11" >November</option>
+          <option value="12">December</option>
         </select>
-        <br>
+        <div *ngIf="selectMonth.touched && selectMonth.invalid" class="error_message">
+          <div *ngIf="prepareBillForm.controls.selectMonth.errors.required">
+            This field is required
+          </div>
+        </div>
       </div>
     </div>
-    <br>
-    <div class="col-md-12">
-      <div class="col-md-2">
-        <label style="margin-left:-30px;">Select Year:
-          <span class="mandatory" style="color:red;">*</span>
-        </label>
-      </div>
-      <div class="col-md-5">
-        <select   class="form-control">
-          <!--<option [ngValue]="0" selected>Select</option>-->
-          <option *ngFor = "let avail of availability" [ngValue]="avail.es_hostelbuldid">
-            <!--{{ avail.buld_name}}-->
-          </option>
-          <option>2015</option>
-          <option>2016</option>
-          <option>2017</option>
-          <option>2018</option>
-        </select>
-        <br>
-      </div>
-    </div>
-    <br>
-    <div class="col-md-12">
-      <div class="col-md-2">
-        <label style="margin-left:-30px;">Select Month:
-          <span class="mandatory" style="color:red;">*</span>
-        </label>
-      </div>
-      <div class="col-md-5">
-        <select   class="form-control">
-          <!--<option [ngValue]="0" selected>Select</option>-->
-          <option *ngFor = "let avail of availability" [ngValue]="avail.es_hostelbuldid">
-            <!--{{ avail.buld_name}}-->
-          </option>
-          <option>January</option>
-          <option>Febrauary</option>
-          <option>March</option>
-          <option>April</option>
-          <option>May</option>
-          <option>June</option>
-          <option>July</option>
-          <option>August</option>
-          <option>September</option>
-          <option>October</option>
-          <option>November</option>
-          <option>December</option>
-        </select>
-        <br>
-      </div>
-    </div>
-    <br>
     <div  class="pull-right btn_alignment">
-      <button  type="submit" class="btn btn-primary" >
-        <i class="glyphicon glyphicon-file"  ></i>&nbsp;Submit</button>
+      <button  type="submit" class="btn btn-primary" (click)="preparebill(prepareBillForm)" [disabled]="!prepareBillForm.valid">
+        <i class="glyphicon glyphicon-search"  ></i>&nbsp;Submit</button>
 
       <button type="reset" class="btn btn-danger">
         <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>

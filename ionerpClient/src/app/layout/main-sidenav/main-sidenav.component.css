@@ -183,7 +183,9 @@
     margin-left: 60%;
     margin-top: -15%;
 }
-
+.sideMenu_hostel{
+    margin-top: -15%;
+}
 .sideMenu_hrd {
     margin-left: 60%;
     margin-top: -45%;
@@ -193,7 +195,9 @@
     margin-left: 60%;
     margin-top: -60%; 
 }
-
+.submenu_master{
+    margin-top:-15%;
+}
 .dropdown-content a {
     color: black;
     padding: 12px 16px;

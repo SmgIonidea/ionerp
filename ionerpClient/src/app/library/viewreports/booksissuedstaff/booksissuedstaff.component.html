@@ -16,17 +16,19 @@
       </tr>
     </thead>
     <tbody>
-      <!--<tr>
-        <td></td>
-        <td></td>
+      <tr *ngFor="let staff of issuedStaffList let i=index">
+        <td class="text-center">{{i+1}}</td>
+        <td class="text-center">{{staff.st_firstname}}</td>
+        <td class="text-center">{{staff.es_deptname}}</td>
         <td class="text-center">
-          <i #editElement class="glyphicon glyphicon-pencil cursor-pointer"></i>
+         {{staff.es_postname}}
         </td>
         <td class="text-center">
-          <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer" 
-         ></i>
+            <a href="" [routerLink]="['/content',{outlets:{appCommon:['staffreport']}}]" [queryParams]="{id:staff.bki_id}">Books List</a>
+          
         </td>
-      </tr>-->
+       
+      </tr>
     </tbody>
   </table>
 </div>

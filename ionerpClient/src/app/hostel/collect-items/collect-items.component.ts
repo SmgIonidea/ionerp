@@ -34,37 +34,36 @@ export class CollectItemsComponent implements OnInit, AfterViewInit {
   @ViewChild(DataTableDirective)
   dtElement: DataTableDirective;
   dtInstance: DataTables.Api;
-
+  postdata:Array<any> =[];
   ngOnInit() {
 
     this.title = 'Building Name';
     this.heading = 'Collect Returnable Items';
 
-    this.service.subUrl = 'hostel/hostel/selectBuildingItems';
+    this.service.subUrl = 'hostel/CollectItems/getBuildingList';
     this.service.getData().subscribe(response => {
       this.buildingLists = response.json();
-    });
+    });    
 
   }
 
   private itemsForm = new FormGroup({
 
-    selectBuilding: new FormControl('', [
+    buildName: new FormControl('', [
       Validators.required])
 
   });
 
-  get selectBuilding() {
+  get buildName() {
     /* property to access the 
     formGroup Controles. which is used to validate the form */
-    return this.itemsForm.get('selectBuilding');
+    return this.itemsForm.get('buildName');
   }
 
-  getReturnableItems(Form){
-
-    this.service.subUrl = 'hostel/hostel/returnableItemsLists';
-    let hostelRoom = Form.value;
-    this.service.createPost(hostelRoom).subscribe(response => {
+  getReturnableItem(itemsForm){
+    let buildId = itemsForm.value.buildName;  
+    this.service.subUrl = 'hostel/CollectItems/getReturnableItems';   
+    this.service.createPost(buildId).subscribe(response => {
        this.posts = response.json();
           this.tableRerender();
           this.dtTrigger.next(); 
@@ -72,6 +71,13 @@ export class CollectItemsComponent implements OnInit, AfterViewInit {
 
   }
 
+ 
+  printDetails(modalData)
+{  
+  this.postdata.length = 0;
+  this.postdata.push(modalData)
+  
+}
   print(): void {
     let printContents, popupWin;
     printContents = document.getElementById('print-section').innerHTML;
@@ -88,7 +94,7 @@ export class CollectItemsComponent implements OnInit, AfterViewInit {
     <body onload="window.print();window.close()">${printContents}</body>
       </html>`
     );
-    popupWin.document.close();
+   popupWin.document.close();
 }
 
   tableRerender(): void {

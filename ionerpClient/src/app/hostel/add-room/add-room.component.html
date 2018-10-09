@@ -6,6 +6,7 @@
     </div>
 
   </section>
+  <!--<pre>{{posts | json}}</pre>-->
   <div class="table table-responsive" style="overflow-x:initial;">
     <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table-striped table-bordered  table-hover">
       <thead>
@@ -22,22 +23,26 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="text-right">1</td>
-          <td>1</td>
-          <td>delux</td>
-          <td>2</td>
-          <td>2</td>
-          <td>Rs:500</td>
-          <td>Girls</td>
+        <tr *ngFor="let post of posts.roomList let i=index">
+          <td class="text-right">{{i+1}}</td>
+          <td>{{post.room_no}}</td>
+          <td>{{post.room_type}}</td>
+          <td>{{post.room_capacity}}</td>
+          <td>{{post.room_vacancy}}</td>
+          <td>{{post.room_rate}}</td>
+          <td>{{post.buld_name}}</td>
           <td class="text-center" style="width:4%;">
-            <i #editElement class="glyphicon glyphicon-pencil cursor-pointer"></i>
+            <!--<i #editElement class="glyphicon glyphicon-pencil cursor-pointer"></i>-->
+            <i #editElement class="glyphicon glyphicon-pencil cursor-pointer" [attr.hostelroomid]="post.es_hostelroomid" [attr.buildname]="post.buld_name"
+              [attr.roomno]="post.room_no" [attr.roomtype]="post.room_type" [attr.roomcapacity]="post.room_capacity" [attr.roomrate]="post.room_rate"
+                (click)="editHostelRoom(this.editElement)"></i>
           </td>
           <td class="text-center">
-            <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer"></i>
+            <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer"  [attr.hostelroomid]="post.es_hostelroomid"
+            (click)="deleteWarning(this.deleteElement,this.hostelRoomDeleteModal)"></i>
           </td>
         </tr>
-         <tr>
+         <!--<tr>
           <td class="text-right">2</td>
           <td>3</td>
           <td>singelbed</td>
@@ -51,7 +56,7 @@
           <td class="text-center">
             <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer"></i>
           </td>
-        </tr>
+        </tr>-->
         <!--<tr *ngFor="let post of posts.HostelRoomList let i = index">
           <td class="text-right">{{i+1}}</td>
           <td>{{post.room_no}}</td>
@@ -83,7 +88,7 @@
 </section>
 <div class="container-fluid">
 
-  <form [formGroup]="addRoomForm">
+  <form [formGroup]="addRoomForm" (ngSubmit)="CreateRoom(addRoomForm)">
     <div class="col-md-12">
       <div class="col-md-2">
         <label style="margin-left:-30px;">Select Building:
@@ -91,23 +96,30 @@
         </label>
       </div>
       <div class="col-md-5">
-        <select [(ngModel)]="buildId" formControlName="addBuilding" class="form-control">
+        <!--<select [(ngModel)]="buildId" formControlName="addBuilding" class="form-control">-->
+           <select  formControlName="addBuilding" class="form-control" id="addBuilding">
           <option [ngValue]="0" selected>Select</option>
-          <!--<option *ngFor = "let build of building" [ngValue]="build.es_hostelbuldid">
-            {{ build.buld_name}}
-          </option>-->
-          <option>Girls</option>
+          <option *ngFor = "let build of building" [ngValue]="build.buld_name">
+            {{build.buld_name}}
+          </option>
+          <!--<option>Girls</option>
           <option>madrid</option>
-          <option>Male Building</option>
-
-          <div *ngIf="addBuilding.touched && addBuilding.invalid" class="error_message">
+          <option>Male Building</option>-->     
+        </select>
+        <br>     
+     <!--<div *ngIf="addBuilding.touched && addBuilding.invalid" class="error_message">
             <div *ngIf="addRoomForm.controls.addBuilding.errors.required">
               This field is required.
             </div>
+          </div>-->
+             <div class="error_message" style="margin-top:-14px;" *ngIf="addRoomForm.submitted && addBuilding.untouched">
+          This field is required
+        </div>
+        <div *ngIf="addBuilding.touched && addBuilding.invalid" class="error_message" style="margin-top:-14px;">
+          <div *ngIf="addBuilding.errors.required">
+            This field is required
           </div>
-
-        </select>
-        <br>
+        </div>
       </div>
     </div>
     <br>
@@ -193,7 +205,7 @@
     <br>
 
     <div [style.display]="isSaveHide?'none':'block'" class="pull-right btn_alignment">
-      <button type="submit" class="btn btn-primary" [disabled]="!addRoomForm.valid" (click)="createPost(addRoomForm)">
+      <button type="submit" class="btn btn-primary" [disabled]="!addRoomForm.valid" >
         <i class="glyphicon glyphicon-file"></i>&nbsp;Submit</button>
 
       <button type="reset" class="btn btn-danger">
@@ -201,10 +213,10 @@
     </div>
 
      <div [style.display]="isUpdateHide?'none':'block'" class="pull-right btn_alignment">
-      <button type="submit" class="btn btn-primary" [disabled]="!addRoomForm.valid" (click)="updatePost(addRoomForm)">
+      <button type="button" class="btn btn-primary" [disabled]="!addRoomForm.valid" (click)="updatePost(addRoomForm)">
         <i class="glyphicon glyphicon-ok"></i>&nbsp;Update</button>
 
-      <button type="reset" class="btn btn-danger" (click)= "cancelUpdate()">
+      <button type="button" class="btn btn-danger" (click)= "cancelUpdate()">
         <i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</button>
     </div>
 

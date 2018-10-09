@@ -27,7 +27,8 @@ export class AddBuildingComponent implements OnInit, AfterViewInit {
   tosterconfig;
   dtInstance: DataTables.Api;
 
-  build: Array<any>;
+
+  build: Array<any> = [];
   buildingnameEditData: Array<any>;
   isSaveHide: boolean;
   isUpdateHide: boolean;
@@ -63,7 +64,7 @@ export class AddBuildingComponent implements OnInit, AfterViewInit {
     this.title1 = "Create Building / Hall";
 
     //To list building name
-    this.service.subUrl = 'hostel/hostel/getBuild';
+    this.service.subUrl = 'hostel/addBuilding/index';
     this.service.getData().subscribe(response => {
       this.build = response.json();
       this.tableRerender();
@@ -77,25 +78,39 @@ export class AddBuildingComponent implements OnInit, AfterViewInit {
   //Building insert function
   
   createPost(buildForm) {
-    this.service.subUrl = 'hostel/hostel/insertBuild';
+    this.service.subUrl = 'hostel/addBuilding/checkBuliding';
     let postData = buildForm.value; // Text Field/Form Data in Json Format
     this.service.createPost(postData).subscribe(response => {
       if (response.json().status == 'ok') {
-        this.service.subUrl = 'hostel/hostel/getBuild';
-        this.service.getData().subscribe(response => {
-          this.build = response.json();
-          this.tableRerender();
-          this.dtTrigger.next(); // Calling the DT trigger to manually render the table 
+
+        this.service.subUrl = 'hostel/addBuilding/createBuilding';
+        let postData = buildForm.value; // Text Field/Form Data in Json Format
+        this.service.createPost(postData).subscribe(response => {
+          if (response.json().status == 'ok') {
+            this.service.subUrl = 'hostel/addBuilding/index';
+            this.service.getData().subscribe(response => {
+              this.build = response.json();
+              this.tableRerender();
+              this.dtTrigger.next(); // Calling the DT trigger to manually render the table 
+            });
+            let type = 'success';
+            let title = 'Add Success';
+            let body = 'New building name added successfully'
+            this.toasterMsg(type, title, body);
+            this.buildForm.reset();
+          } else {
+            let type = 'error';
+            let title = 'Add Fail';
+            let body = 'New building name add failed please try again'
+            this.toasterMsg(type, title, body);
+            this.buildForm.reset();
+          }
         });
-        let type = 'success';
-        let title = 'Delivered';
-        let body = 'New building name added successfully'
-        this.toasterMsg(type, title, body);
-        this.buildForm.reset();
-      } else {
+      }
+      else {
         let type = 'error';
-        let title = 'Delivery Fail';
-        let body = 'New building name add failed please try again'
+        let title = 'Add Fail';
+        let body = 'Building name already exist please try someother name'
         this.toasterMsg(type, title, body);
         this.buildForm.reset();
       }
@@ -107,14 +122,13 @@ export class AddBuildingComponent implements OnInit, AfterViewInit {
   editbuilding(editElement: HTMLElement) {
     this.title1 = "Edit Building Name";
     let buildingId = editElement.getAttribute('buildId');
-    this.service.subUrl = 'hostel/hostel/geteditbuildingName';
-    this.service.createPost(buildingId).subscribe(response => {
-      this.buildingnameEditData = response.json();
-      let buildingName = editElement.getAttribute('buildName');
-      this.buildname.setValue(buildingName);
-      this.setBuildingtId = buildingId;
-    });
-
+    let buildname = editElement.getAttribute('buildname');
+    // this.service.subUrl = 'hostel/hostel/geteditbuildingName';
+    // this.service.createPost(buildingId).subscribe(response => {
+    // this.buildingnameEditData = response.json();
+    // let buildingName = editElement.getAttribute('buildName');
+    this.buildname.setValue(buildname);
+    this.setBuildingtId = buildingId;
     this.isSaveHide = true;
     this.isUpdateHide = false;
   }
@@ -122,45 +136,58 @@ export class AddBuildingComponent implements OnInit, AfterViewInit {
 
   // update building name
 
-  updatePost(updatePost) {
-    this.service.subUrl = 'hostel/hostel/updateBuildingName';
-    updatePost.stringify
+  updatebuild(buildPost) {
+    this.service.subUrl = 'hostel/addBuilding/checkBuliding';
+    buildPost.stringify
 
     let postData = {
-      'buildname': updatePost.value.buildname,
-      'buildingId': this.setBuildingtId
+      'buildname': buildPost.value.buildname,
+      'buildid': this.setBuildingtId
     };
 
     this.service.updatePost(postData).subscribe(response => {
-
       if (response.json().status == 'ok') {
-        this.service.subUrl = 'hostel/hostel/getBuild';
-        this.service.getData().subscribe(response => {
-          this.build = response.json();
-          this.tableRerender();
-          this.dtTrigger.next(); // Calling the DT trigger to manually render the table 
+        // let postData = updatePost.value; // Text Field/Form Data in Json Format
+        this.service.subUrl = 'hostel/addBuilding/updateBuilding';
+        this.service.updatePost(postData).subscribe(response => {
+          if (response.json().status == 'ok') {
+            this.service.subUrl = 'hostel/addBuilding/index';
+            this.service.getData().subscribe(response => {
+              this.build = response.json();
+              this.tableRerender();
+              this.dtTrigger.next();
+            });
+            let type = 'success';
+            let title = 'Update Success';
+            let body = 'Building Name Updated Successfully.'
+            this.toasterMsg(type, title, body);
+            // this.accountGrpForm.reset();
+            this.cancelUpdate();
+          } else {
+            let type = 'error';
+            let title = 'Update Fail';
+            let body = 'Building Name Failed Please Try Again.'
+            this.toasterMsg(type, title, body);
+            this.buildForm.reset();
+          }
         });
-        let type = 'success';
-        let title = 'Update Success';
-        let body = 'Building name updated successfully'
-        this.toasterMsg(type, title, body);
-        this.cancelUpdate();
-      } else {
+      }
+      else {
         let type = 'error';
         let title = 'Update Fail';
-        let body = 'Building name update failed please try again'
+        let body = 'Building name already exist please try someother name'
         this.toasterMsg(type, title, body);
         this.buildForm.reset();
-
       }
     });
+    // $('html,body').animate({ scrollTop: 0 }, 'slow');
   }
 
   //Building name delete warning function
 
   deleteWarning(deleteElement: HTMLElement, modalEle: HTMLDivElement) {
-    let buildingId = deleteElement.getAttribute('buildId');
-    let delBuildId;
+    let buildingId = deleteElement.getAttribute('buildingid');
+    // let delBuildId;
     this.delBuildId = buildingId;
     (<any>jQuery('#BuildingNameDeleteModal')).modal('show');
   }
@@ -169,36 +196,48 @@ export class AddBuildingComponent implements OnInit, AfterViewInit {
   // delete building
 
   deleteBuildingData(buildingIdInput: HTMLInputElement) {
-    this.service.subUrl = 'hostel/hostel/deleteBuildingName';
+
+    this.service.subUrl = 'hostel/addBuilding/checkroomDel';
     let postData = {
       'buildingId': buildingIdInput.value,
     };
     this.service.deletePost(postData).subscribe(response => {
       if (response.json().status == 'ok') {
-        this.service.subUrl = 'hostel/hostel/getBuild';
-        this.service.getData().subscribe(response => {
-          this.build = response.json();
-          this.tableRerender();
-          this.dtTrigger.next(); // Calling the DT trigger to manually render the table 
+        this.service.subUrl = 'hostel/addBuilding/deleteBuildingName';
+        this.service.deletePost(postData).subscribe(response => {
+          if (response.json().status == 'ok') {
+            this.service.subUrl = 'hostel/addBuilding/index';
+            this.service.getData().subscribe(response => {
+              this.build = response.json();
+              this.tableRerender();
+              this.dtTrigger.next(); // Calling the DT trigger to manually render the table 
+            });
+            let type = 'success';
+            let title = 'Delete Success';
+            let body = 'Building name deleted successfully'
+            this.toasterMsg(type, title, body);
+            (<any>jQuery('#BuildingNameDeleteModal')).modal('hide');
+            this.cancelUpdate();
+          } else {
+            let type = 'error';
+            let title = 'Delete Fail';
+            let body = 'Building name delete failed please try again'
+            this.toasterMsg(type, title, body);
+            this.cancelUpdate();
+          }
+
         });
-        let type = 'success';
-        let title = 'Delete Success';
-        let body = 'Building name deleted successfully'
-        this.toasterMsg(type, title, body);
-        (<any>jQuery('#BuildingNameDeleteModal')).modal('hide');
-        this.cancelUpdate();
-      } else {
+      }
+      else {
         let type = 'error';
         let title = 'Delete Fail';
-        let body = 'Building name delete failed please try again'
+        let body = 'Delete Room Before Deleting Building'
         this.toasterMsg(type, title, body);
+         (<any>jQuery('#BuildingNameDeleteModal')).modal('hide');
         this.cancelUpdate();
       }
-
     });
-
   }
-
   // to reset form
 
   cancelUpdate() {

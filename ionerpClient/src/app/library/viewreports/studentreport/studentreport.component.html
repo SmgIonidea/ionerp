@@ -12,9 +12,11 @@
         </label>
       </div>
       <div class="col-md-4 col-sm-12 col-xs-12 category">
-        <select name="" id="" class="form-control  col-lg-8 dropbox width">
+        <select name="" id="" class="form-control  col-lg-8 dropbox width" (change)="getClassData($event.target.value)"
+          (change)="getBookData($event.target.value)">
           <option [ngValue]="0" selected>Select</option>
-          <option [ngValue]="20">20</option>
+        
+          <option *ngFor="let usn of usnList" [ngValue]="usn.es_preadmissionid" [selected]="usn.es_preadmissionid ==id"> {{usn.es_preadmissionid}}</option>
         </select>
       </div>
     </div>
@@ -25,7 +27,7 @@
         </label>
       </div>
       <div class="col-md-4 col-sm-12 col-xs-12 category">
-        <input type="text" name="" placeholder="" id="" value="" class="form-control" />
+        <input type="text" name="" placeholder="" id="" value="{{studentname}}" class="form-control" />
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
@@ -34,8 +36,266 @@
         </label>
       </div>
       <div class="col-md-4 col-sm-12 col-xs-12 category">
-        <input type="text" name="" placeholder="" id="" value="" class="form-control" />
+        <input type="text" name="" placeholder="" id="" value="{{className}}" class="form-control" />
       </div>
     </div>
   </form>
+</div>
+
+<div class="table table-responsive" style="overflow-x:initial;">
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+    <thead style="background-color:#DDE1E6;">
+      <tr>
+        <th class="text-center">Sl No.</th>
+        <th class="text-center">Accession NO</th>
+        <th class="text-center">Title<br>[Category]<br>[Subcategory]</th>
+        <th class="text-center">Issued On</th>
+        <th class="text-center">Returned On</th>
+        <th class="text-center">Fine Amount</th>
+        <th class="text-center">Fine Paid</th>
+        <th class="text-center">Fine Waived</th>
+        <th class="text-center">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let data of bookData let i=index'>
+        <td class="text-center">{{i+1}}</td>
+        <td class="text-center">{{data.lbook_aceesnofrom}}</td>
+        <td class="text-center">{{data.lbook_title}}<br>[{{data.lbook_category}}]<br>[{{data.lbook_booksubcategory}}]</td>
+        <td class="text-center">{{data.issuedate | date:'dd-MM-yyyy'}}</td>
+        <td class="text-center">{{data.returnedon | date:'dd-MM-yyyy'}}</td>
+        <td class="text-center">{{data.libbookfine}}</td>
+        <td class="text-center">{{data.fine_paid}}</td>
+        <td class="text-center">{{data.fine_deducted}}</td>
+        <td class="text-center">
+          <i class="glyphicon cursor-pointer" *ngIf="data.libbookfine != ''" (click)="viewDetails(data)" data-toggle="modal" data-target="#bookDetail">View
+          </i>
+          <i class="glyphicon cursor-pointer" *ngIf="data.fine_paid !=''"  data-toggle="modal" data-target="#printDetail">Print
+          </i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div style="height:600px;" class="modal fade" id="bookDetail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header warning-msg">
+        <button type="button" class="close" (click)="finePaymentForm.reset();" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Book Details</h4>
+      </div>
+
+      <div class="modal-body col-md-12" *ngFor = 'let details of bookDetails'>
+        <div class="row col-md-12">
+          <div class="col col-md-6">
+            <label class="col-md-12"> REG NO </label>
+          </div>
+          <div class="col col-md-6">
+            <label class="col-md-12"> :&nbsp;{{regNo}} </label>
+          </div>
+        </div>
+        <div class="row col-md-12">
+          <div class="col col-md-6">
+            <label class="col-md-12">Student Name </label>
+          </div>
+          <div class="col col-md-6">
+            <label class="col-md-12"> :&nbsp;{{studentname}} </label>
+          </div>
+        </div>
+        <div class="row col-md-12">
+          <div class="col col-md-6">
+            <label class="col-md-12">Type </label>
+          </div>
+          <div class="col col-md-6">
+            <label class="col-md-12">:&nbsp;{{details.issuetype}}</label>
+          </div>
+        </div>
+        <div class="row col-md-12">
+          <div class="col col-md-6">
+            <label class="col-md-12">Class Name </label>
+          </div>
+          <div class="col col-md-6">
+            <label class="col-md-12">:&nbsp;{{className}} </label>
+          </div>
+        </div>
+        <div class="row col-md-12">
+          <div class="col col-md-6">
+            <label class="col-md-12">Accession No. </label>
+          </div>
+          <div class="col col-md-6">
+            <label class="col-md-12">:&nbsp;{{details.lbook_aceesnofrom}} </label>
+          </div>
+        </div>
+        <div class="row col-md-12">
+          <div class="col col-md-6">
+            <label class="col-md-12">Title </label>
+          </div>
+          <div class="col col-md-6">
+            <label class="col-md-12">:&nbsp;{{details.lbook_title}}</label>
+          </div>
+        </div>
+        <div class="row col-md-12">
+          <div class="col col-md-6">
+            <label class="col-md-12">Issued On </label>
+          </div>
+          <div class="col col-md-6">
+            <label class="col-md-12">:&nbsp;{{details.issuedate}}</label>
+          </div>
+        </div>
+        <form [formGroup]="finePaymentForm">
+          <div class="row col-md-12">
+
+            <table style="border: 0px !important; ">
+              <thead>
+                <tr>
+                  <td class="text-center" style="font-weight:bold;"> &nbsp;&nbsp;&nbsp;Fine amount</td>
+                  <td class="text-center" style="font-weight:bold; ">Amount</td>
+                  <td class="text-center" style="font-weight:bold;">Waived</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center" style="color:red; font-weight:bold"> &#8377; {{details.libbookfine}} </td>
+
+                  <td class="text-center"> <input class="form-control" type="text" formControlName="fineAmt"
+                      [(ngModel)]="fineAmount" name="amountPaid" value="">
+                    <div class="error_message" *ngIf="finePaymentForm.submitted && fineAmt.untouched">
+                      This field is required
+                    </div>
+                    <div *ngIf="fineAmt.touched && fineAmt.invalid" class="error_message">
+                      <div *ngIf="fineAmt.errors.DigitsOnly">
+                        Accepts digits only
+                      </div>
+                    </div>
+                    <div class="error_message" *ngIf="error==true">
+                      should be equal to library fine
+                    </div>
+                  </td>
+
+
+                  <td class="text-center"> <input class="form-control" type="text" formControlName="waivedAmt"
+                      [(ngModel)]="waivedFine" name="waivedAmount" value="">
+
+                    <div class="error_message" *ngIf="finePaymentForm.submitted && waivedAmt.untouched">
+                      This field is required
+                    </div>
+                    <div *ngIf="waivedAmt.touched && waivedAmt.invalid" class="error_message">
+                      <div *ngIf="waivedAmt.errors.DigitsOnly">
+                        Accepts digits only
+                      </div>
+                    </div>
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+          </div>
+
+          <div class="row col-md-12">
+            <div class="col col-md-6">
+              <label class="col-md-12">Amount in Words </label>
+            </div>
+            <div class="col col-md-6 form-group">
+              <textarea class="form-control" formControlName="amtinwords"></textarea>
+              <div class="error_message" *ngIf="finePaymentForm.submitted && amtinwords.untouched">
+                This field is required
+              </div>
+              <div *ngIf="amtinwords.touched && amtinwords.invalid" class="error_message">
+                <div *ngIf="amtinwords.errors.CharctersOnly">
+                  Accepts digits only
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row col-md-12 ">
+            <div class="col col-md-6">
+              <label class="col-md-12">Amount in Words </label>
+            </div>
+            <div class="col col-md-6 form-group">
+              <select name="" id="" class="form-control col-lg-8 dropbox width" formControlName="payMode">
+                <option value="" selected>Select</option>
+                <option value="cash"> Cash</option>
+                <option value="cheque"> Cheque</option>
+                <!-- <option *ngFor="let usn of usnList" [ngValue]="usn.es_preadmissionid"> {{usn.es_preadmissionid}}</option> -->
+              </select>
+
+              <div class="error_message" *ngIf="finePaymentForm.submitted && payMode.untouched">
+                This field is required
+              </div>
+              <div *ngIf="payMode.touched && payMode.invalid" class="error_message">
+                <div *ngIf="payMode.errors.required">
+                  This field is required
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row col-md-12 form-group">
+            <div class="col col-md-6">
+              <label class="col-md-12">Voucher Type </label>
+            </div>
+            <div class="col col-md-6">
+
+              <select class="form-control" name="voucherType" formControlName="voucherType">
+                <option value=''>Select Voucher</option>
+                <option *ngFor='let voucher of VoucherList' [value]="voucher.es_voucherid">{{voucher.voucher_type}}({{voucher.voucher_mode}})</option>
+
+              </select>
+              <div class="error_message" *ngIf="finePaymentForm.submitted && voucherType.untouched">
+                This field is required
+              </div>
+              <div *ngIf="voucherType.touched && voucherType.invalid" class="error_message">
+                <div *ngIf="voucherType.errors.required">
+                  This field is required
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row col-md-12 form-group">
+            <div class="col col-md-6">
+              <label class="col-md-12">Ledger Type </label>
+            </div>
+            <div class="col col-md-6">
+              <select class="form-control" name="ledgerType" formControlName="ledgerType">
+                <option value=''>Select Ledger</option>
+                <option *ngFor='let ledger of ledgerList' [value]='ledger.es_ledgerid'>{{ledger.lg_name}}</option>
+
+              </select>
+              <div class="error_message" *ngIf="finePaymentForm.submitted && ledgerType.untouched">
+                This field is required
+              </div>
+              <div *ngIf="ledgerType.touched && ledgerType.invalid" class="error_message">
+                <div *ngIf="ledgerType.errors.required">
+                  This field is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+
+          <div class="row col-md-12 text-center" style="padding:10px;">
+            <button [disabled]="!finePaymentForm.valid" class="btn btn-primary" data-dismiss="modal" type="submit" (click)=createpost(finePaymentForm)> Pay Amount</button>
+          </div>
+
+
+
+
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-primary">
+            <i class="glyphicon glyphicon-ok"></i>
+            Submit
+          </button> -->
+
+      </div>
+    </div>
+  </div>
 </div>

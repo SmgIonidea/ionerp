@@ -19,8 +19,8 @@ export class ViewHostelPersonsComponent implements OnInit {
   title1: any;
   hostel: Array<any>;
   rooms: Array<any>;
-  person:Array<any>;
-  viewperson:Array<any>;
+  person: Array<any>;
+  viewperson: Array<any>;
   dtOptions: DataTables.Settings = {};
   dtTrigger = new Subject();
   @Input('buildId') delBuildId; // Input binding used to place building  id in hidden text box to delete the building name. this is one more way of input binding.
@@ -34,7 +34,7 @@ export class ViewHostelPersonsComponent implements OnInit {
     private toast: ToastService,
     private http: Http) { }
 
-    private viewHostelPersonForm = new FormGroup({
+  private viewHostelPersonForm = new FormGroup({
 
     selectBuilding: new FormControl('', [
     ]),
@@ -44,7 +44,10 @@ export class ViewHostelPersonsComponent implements OnInit {
 
     selectPersonType: new FormControl('', [
     ]),
-
+    Registration: new FormControl('', [
+    ]),
+    Employee: new FormControl('', [
+    ]),
   });
 
   get selectBuilding() {
@@ -59,37 +62,38 @@ export class ViewHostelPersonsComponent implements OnInit {
   get selectPersonType() {
     return this.viewHostelPersonForm.get('selectPersonType');
   }
+  get Registration() {
+    return this.viewHostelPersonForm.get('Registration');
+  }
+  get Employee() {
+    return this.viewHostelPersonForm.get('Employee');
+  }
 
   ngOnInit() {
-
     this.title = 'Hostel Persons';
     this.titleService.setTitle('ViewHostelPersons | IONCUDOS');
     this.title1 = "View Hostel Persons";
 
-    this.service.subUrl = 'hostel/hostel/gethostel';
+    this.service.subUrl = 'hostel/Viewhostelperson/index';
     this.service.getData().subscribe(response => {
       this.hostel = response.json();
-
     });
-
-    this.service.subUrl = 'hostel/hostel/getPerson';
-    this.service.getData().subscribe(response => {
-      this.person = response.json();
-
-    });
+    // this.service.subUrl = 'hostel/hostel/getPerson';
+    // this.service.getData().subscribe(response => {
+    //   this.person = response.json();
+    // });
 
   }
 
   selectRoom(event) {
-    this.service.subUrl = 'hostel/hostel/selectRoom';
+    this.service.subUrl = 'hostel/Viewhostelperson/getroom';
     this.service.createPost(event).subscribe(response => {
       this.rooms = response.json();
     });
-
   }
 
-  searchperson(viewHostelPersonForm){
-    this.service.subUrl = 'hostel/hostel/getViewPerosn';
+  searchperson(viewHostelPersonForm) {
+    this.service.subUrl = 'hostel/Viewhostelperson/getViewPerosn';
     let postData = viewHostelPersonForm.value; // Text Field/Form Data in Json Format
     this.service.createPost(postData).subscribe(response => {
       this.viewperson = response.json();
@@ -116,10 +120,10 @@ export class ViewHostelPersonsComponent implements OnInit {
       </html>`
     );
     popupWin.document.close();
-}
+  }
 
-printtable():void{
-  let printContents, popupWin;
+  printtable(): void {
+    let printContents, popupWin;
     printContents = document.getElementById('print1').innerHTML;
     popupWin = window.open('', '_blank', 'top=0,left=0,height=100%,width=auto');
     popupWin.document.open();
@@ -135,21 +139,21 @@ printtable():void{
       </html>`
     );
     popupWin.document.close();
-}
+  }
 
-student() {
-  $(function () {
-    $("#ddlPassport").change(function () {
-      if ($(this).val() == "Y") {
-        $("#dvPassport").show();
-        $("#student").hide();
-      } else {
-        $("#dvPassport").hide();
-        $("#student").show();
-      }
+  student() {
+    $(function () {
+      $("#ddlPassport").change(function () {
+        if ($(this).val() == "staff") {
+          $("#dvPassport").show();
+          $("#student").hide();
+        } else {
+          $("#dvPassport").hide();
+          $("#student").show();
+        }
+      });
     });
-  });
-}
+  }
 
 
 

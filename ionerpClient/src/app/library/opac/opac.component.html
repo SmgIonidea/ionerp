@@ -1,37 +1,37 @@
 <section class="content-header gap" style="margin-top:-10px;">
   <div class="panel panel-primary">
-    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Online Public Access Catlog[OPAC] <span style="float:right;padding-right:100px;">Date:</span></h4>
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Online Public Access Catlog[OPAC] <span style="float:right;padding-right:100px;">Date : {{today | date:'dd-MM-yyyy'}}</span></h4>
   </div>
 </section>
-<form>
+<form [formGroup]="opacForm">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 row">
      <div class="form-group col-lg-3 col-xs-12 col-md-3 col-sm-12">
      <label class="col-xs-8 col-sm-8 col-md-8 col-lg-8 labelfield">Category Name:</label>
-     <select class="form-control col-lg-8 category" style="font-size:12px;cursor:pointer;" required>
-     <option [ngValue]="0" selected>Select Category name</option>
-     <option [ngValue]="Kannada">Kannada</option>
+     <select class="form-control col-lg-8 category" formControlName="category" style="font-size:12px;cursor:pointer;"   (change)="loadSubCategory($event.target.value)">
+     <option  [ngValue]="0" selected >Select Category name</option>
+     <option *ngFor="let cat of categoryList " [ngValue]="cat.es_categorylibraryid">{{cat.lb_categoryname}}</option>
      </select> 
      </div>
     
      <div class="form-group col-lg-3 col-xs-12 col-md-3 col-sm-12">
-     <label class="col-xs-8 col-sm-8 col-md-8 col-lg-8 labelfield">Subject Category:</label>
-     <select style="font-size:12px;cursor:pointer;" class="form-control col-lg-8 category" required>
-     <option [ngValue]="0" selected>Select Subject Category</option>
-     <option [ngValue]="Kannada">Kannada</option>
+     <label class="col-xs-8 col-sm-8 col-md-8 col-lg-8 labelfield">Sub Category:</label>
+     <select style="font-size:12px;cursor:pointer;" formControlName="subcategory" class="form-control col-lg-8 category"  required>
+     <option selected disabled  >Select Sub Category</option>
+     <option *ngFor="let subCat of subCategoryList" [ngValue]="subCat.es_subcategoryid">{{subCat.subcat_scatname}}</option>
      </select>
      </div>
     
      <div class="form-group col-lg-2 col-xs-12 col-md-2 col-sm-12">
      <label class="col-xs-8 col-sm-8 col-md-8 col-lg-8 labelfield">Title:</label>
-     <input class="form-control category" type="text" name="" id="" value="" placeholder="" />
+     <input class="form-control category" formControlName="title" type="text" name="" id="" value="" placeholder="" />
      </div>
      <div class="form-group col-lg-2 col-xs-12 col-md-2 col-sm-12">
      <label class="col-xs-8 col-sm-8 col-md-8 col-lg-8 labelfield">Author:</label>
-     <input class="form-control category" type="text" name="" id="" value="" placeholder="" />
+     <input class="form-control category" formControlName="author" type="text" name="" id="" value="" placeholder="" />
      </div>
      <div class="row form-group" style="padding-top:22px;">
         <div class="pull-right btn_alignment">
-          <button id="" type="submit" class="btn btn-primary">
+          <button id="" type="submit" class="btn btn-primary" (click)="searchBooks(opacForm)">
             <!--<i class="glyphicon glyphicon-file"></i>-->
             <span class="glyphicon glyphicon-search"></span>
             &nbsp;Search</button>
@@ -46,25 +46,30 @@
       <thead style="background-color:#DDE1E6;">
         <tr>
           <th class="text-center">S NO</th>
-          <th class="text-center">accession Number</th>
+          <th class="text-center">Accession Number</th>
           <th class="text-center">Title</th>
-          <th class="text-center">category/subcategory</th>
+          <th class="text-center">Category/subcategory</th>
           <th class="text-center">Author</th>
           <th class="text-center">Status</th>
         </tr>
       </thead>
       <tbody>
-        <!--<tr>
-        <td></td>
-        <td></td>
-        <td class="text-center">
+        <tr *ngFor="let book of booksList let i=index">
+          <td>{{i+1}}</td>
+        <td>{{book.lbook_aceesnofrom}}</td>
+        <td>{{book.lbook_title}}</td>
+        <td>{{book.lbook_category}}/{{book.lbook_booksubcategory}}</td>
+        <td>{{book.lbook_author}}</td>
+        <td *ngIf="book.issuestatus == 'notissued'"><p style="color:green">Available</p></td>
+        <td *ngIf="book.issuestatus == 'issued'"><p style="color:red">Issued</p></td>
+        <!-- <td class="text-center">
           <i #editElement class="glyphicon glyphicon-pencil cursor-pointer"></i>
         </td>
         <td class="text-center">
           <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer">
          </i>
-        </td>
-      </tr>-->
+        </td> -->
+      </tr>
       </tbody>
     </table>
   </div>

@@ -25,7 +25,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <!--<tr>
           <td class="text-right">
             <p class="pull-right">1</p>
           </td>
@@ -41,8 +41,8 @@
           <td class="text-center center" style="width:4%;">
             <i class="glyphicon glyphicon-print cursor-pointer" data-toggle="modal" data-target="#ViewDetails"></i>
           </td>
-        </tr>
-          <tr>
+        </tr>-->
+          <!--<tr>
           <td class="text-right">
             <p class="pull-right">2</p>
           </td>
@@ -58,24 +58,24 @@
           <td class="text-center center" style="width:4%;">
             <i class="glyphicon glyphicon-print cursor-pointer" data-toggle="modal" data-target="#ViewDetails"></i>
           </td>
-        </tr>
-        <!--<tr *ngFor="let viewpersons of viewperson let i = index">
+        </tr>-->
+        <tr *ngFor="let viewpersons of viewperson let i = index">
           <td class="text-right">
             <p class="pull-right">{{i+1}}</p>
           </td>
           <td>{{viewpersons.buld_name}}</td>
           <td>{{viewpersons.room_type}}</td>
           <td>{{viewpersons.room_no}}</td>
-          <td>{{viewpersons.es_personid}}</td>
-          <td></td>
-          <td>{{viewpersons.es_persontype}}</td>
-          <td></td>
+          <td>{{viewpersons.personid}}</td>
+          <td>{{viewpersons.name}}</td>
+          <td>{{viewpersons.persontype}}</td>
+          <td>{{viewpersons.class}}</td>
           <td>{{viewpersons.alloted_date}}</td>
           <td>{{viewpersons.dealloted_date}}</td>
           <td class="text-center center" style="width:4%;">
             <i class="glyphicon glyphicon-print cursor-pointer" data-toggle="modal" data-target="#ViewDetails"></i>
           </td>
-        </tr>-->
+        </tr>
       </tbody>
     </table>
   </div>
@@ -110,14 +110,14 @@
         </label>
       </div>
       <div class="col-md-5">
-        <select class="form-control" formControlName="selectBuilding" (ngModelChange)="selectRoom($event)">
-          <option [ngValue]="0" selected>Select</option>
-          <!--<option *ngFor = "let person of hostel" [ngValue]="person.es_hostelbuldid">
+        <select class="form-control" [(ngModel)]="building" formControlName="selectBuilding" (ngModelChange)="selectRoom($event)">
+          <option  selected>Select</option>
+          <option *ngFor="let person of hostel"  [ngValue]="person.es_hostelbuldid">
             {{ person.buld_name}}
-          </option>-->
-          <option>Girls</option>
+          </option>
+          <!--<option>Girls</option>
           <option>madrid</option>
-          <option>Male Building</option>
+          <option>Male Building</option>-->
         </select>
         <br>
       </div>
@@ -131,13 +131,13 @@
       </div>
       <div class="col-md-5">
         <select class="form-control" formControlName="selectRoomType">
-          <option [ngValue]="0" selected>Select</option>
-          <!--<option *ngFor = "let room of rooms" [ngValue]="room.es_hostelroomid">
-            {{ room.room_type}}
-          </option>-->
-          <option>1</option>
+          <option  selected>Select</option>
+          <option *ngFor = "let room of rooms" [ngValue]="room.es_hostelroomid">
+            {{room.room_no}}
+          </option>
+          <!--<option>1</option>
           <option>2</option>
-          <option>3</option>
+          <option>3</option>-->
         </select>
         <br>
       </div>
@@ -159,9 +159,9 @@
           <option>Staff</option>
           
         </select> -->
-        <select class="form-control" id="ddlPassport" (click)="student()">
-          <option value="N">Student</option>
-          <option value="Y">Staff</option>
+        <select class="form-control" formControlName="selectPersonType" id="ddlPassport" (click)="student()">
+          <option value="student">Student</option>
+          <option value="staff">Staff</option>
       </select>
         <br>
       </div>
@@ -175,7 +175,7 @@
       </div>
       <div class="col-md-5">
 
-        <input type="text" placeholder="Enter Registration No" class="form-control disable top form-control1">
+        <input type="text" formControlName="Registration" placeholder="Enter Registration No" class="form-control disable top form-control1">
         <br>
         <!--<div class="error_message" style="margin-top:-14px;" *ngIf="buildForm.submitted && buildname.untouched">
           This field is required
@@ -196,7 +196,7 @@
       </div>
       <div class="col-md-5">
 
-        <input type="text" placeholder="Enter Employee Id" class="form-control disable top form-control1">
+        <input type="text" formControlName="Employee" placeholder="Enter Employee Id" class="form-control disable top form-control1">
         <br>
         <!--<div class="error_message" style="margin-top:-14px;" *ngIf="buildForm.submitted && buildname.untouched">
           This field is required

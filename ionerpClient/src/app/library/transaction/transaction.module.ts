@@ -6,13 +6,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StudentreturnbooksComponent } from './studentreturnbooks/studentreturnbooks.component';
 import { StaffreturnbooksComponent } from './staffreturnbooks/staffreturnbooks.component';
 import { RouterModule } from '@angular/router';
+import { ToasterModule, ToasterService, ToasterConfig } from 'angular2-toaster';
 @NgModule({
   imports: [
     CommonModule,
     DataTablesModule,
     MyDatePickerModule,
     FormsModule, ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    ToasterModule
   ],
   declarations: [
     StudentreturnbooksComponent,

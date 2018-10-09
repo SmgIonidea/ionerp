@@ -1,103 +1,81 @@
 <section class="content-header gap" style="margin-top:-10px;">
   <div class="panel panel-primary">
-    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Issue / Return Books[Staff]</h4>
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{maintitle}}</h4>
   </div>
 </section>
-<form class="form-horizontal" style="border-top:0px;">
-  <div class="table table-responsive" style="overflow-x:initial;">
-    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
-      <thead style="background-color:#DDE1E6;">
-        <tr>
-          <th class="text-center">Sl No.</th>
-          <th class="text-center">Accession No</th>
-          <th class="text-center">Title</th>
-          <th class="text-center">Category</th>
-          <th class="text-center">Author</th>
-          <th class="text-center">Edit</th>
-          <th class="text-center">Delete</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!--<tr>
-        <td></td>
-        <td></td>
-        <td class="text-center">
-          <i #editElement class="glyphicon glyphicon-pencil cursor-pointer"></i>
-        </td>
-        <td class="text-center">
-          <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer">
-         </i>
-        </td>
-      </tr>-->
-      </tbody>
-    </table>
-  </div>
-  <br>
-</form>
-
-<section class="content-header">
-  <div class="panel panel-primary ">
-    <h4 class="middle middle1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Add/Edit Issue/Return Books[Staff]</h4>
-  </div>
-</section>
-
 <div class="container-fluid">
-  <form class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+  <form class="col-lg-12 col-md-12 col-xs-12 col-sm-12" [formGroup]="staffForm">
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
       <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
-        <label for="employeeId">Employee ID:</label>
+        <label for="category">Employee Id:</label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <input type="text" name="" placeholder="" id="" value="" class="form-control" />
+        <input type="text" name="" formControlName = "empno" placeholder="" id="" value="" class="form-control" [(ngModel)]="textValue" (input)="onSearchChange($event.target.value)"/>
       </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+          <p>(Enter the first numerics of Registration No to get the list in sorted order below)</p>
+        </div>
     </div>
-
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
       <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
-        <label for="employeeId">Employee ID:</label>
+        <label for="category">Employee Id:  <span class="mandatory" style="color:red;">*</span></label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <select name="" id="" class="form-control  col-lg-8 dropbox width">
-          <option [ngValue]="0" selected>select</option>
-          <option [ngValue]="20">20</option>
+        <select  name="regno" class="form-control  col-lg-8 dropbox width" formControlName = "empno_select" [(ngModel)]="regnoValue" (ngModelChange)="getStaffData($event)" >
+          <option [ngValue]="0" selected>Select</option>
+          <option *ngFor="let number of empId" [ngValue]="number.es_staffid">{{number.es_staffid}}</option>
         </select>
+        <div class="error_message" style="margin-top:-14px;" *ngIf="staffForm.submitted && empno_select.untouched">
+          This field is required
+        </div>
+        <div *ngIf="empno_select.touched && empno_select.invalid" class="error_message" style="margin-top:-14px;">
+          <div *ngIf="empno_select.errors.required">
+            This field is required
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
       <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
-        <label for="employee">Employee Name:</label>
+        <label for="category">Employee Name:</label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <input type="text" name="" placeholder="enter Employee name" id="" value="" class="form-control" />
-      </div>
-    </div>
-
-    <div class="form-group col-md-12 col-sm-12 col-xs-12">
-      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
-        <label for="designation">Designation:</label>
-      </div>
-      <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <input type="text" name="" placeholder=" enter Designation" id="" value="" class="form-control" />
+        <input type="text" name="" placeholder="enter student name" formControlName = "staffame"  value={{staffName}} id="studname"  class="form-control" style="background-color:white;" readonly />
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
       <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
-        <label for="department">Department:</label>
+        <label for="category">Designation:</label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <input type="text" name="" placeholder=" enter Department" id="" value="" class="form-control" />
+        <input type="text" name="" placeholder=" enter class" formControlName = "staffdesignation" value={{staffPost}} id = "studclass" class="form-control" style="background-color:white;" readonly />
       </div>
     </div>
-
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
+        <label for="category">Department:</label>
+      </div>
+      <div class="col col-md-5 col-sm-12 col-xs-12 category">
+        <input type="text" name="" placeholder=" enter class" formControlName = "staffdept" value={{staffDept}} id = "studclass" class="form-control" style="background-color:white;" readonly/>
+      </div>
+    </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
       <div class="col col-md-2 col-sm-12 col-xs-12 labelfield" style="margin-left:-60px;">
         <label for="category">Category:</label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <select name="" id="" class="form-control  col-lg-8 dropbox width">
-          <option [ngValue]="0" selected>select</option>
-          <option [ngValue]="kannada">kannada</option>
+        <!-- <select name="category" id="" class="form-control  col-lg-8 dropbox width" [(ngModel)]= "categoryValue" (ngModelChange)="getCategoryId($event)">
+          
+          <option *ngFor = "let cat of category" [ngValue]="cat.es_categorylibraryid">{{cat.catergory_name}}</option>
+        </select> -->
+        <select  id="" class="form-control" formControlName = "bookcategory" [(ngModel)] = "catValue" (ngModelChange)="loadSubCategory($event)">
+          <option value="0" selected>Select Category</option>
+          <option *ngFor="let cat of category " [ngValue]="cat.es_categorylibraryid">{{cat.lb_categoryname}}</option>
         </select>
+          <!--<option>Girls</option>
+          <option>madrid</option>
+          <option>Male Building</option>-->
+       
       </div>
     </div>
     <div class="form-group col-md-12 col-sm-12 col-xs-12">
@@ -105,15 +83,126 @@
         <label for="sub category">Sub Category:</label>
       </div>
       <div class="col col-md-5 col-sm-12 col-xs-12 category">
-        <select name="" id="" class="form-control  col-lg-8 dropbox width">
-          <option [ngValue]="0" selected>select</option>
-          <option [ngValue]="halekannada">halekannada</option>
+        <!-- <select name="" id="" class="form-control  col-lg-8 dropbox width">
+         
+          <option *ngFor="let subcat of subCategory" [ngValue]="subcat.es_subcategoryid">{{subcat.subcat_scatname}}</option>
+        </select> -->
+        <select  id="" class="form-control" formControlName = "subcategory" >
+          <option value="0" selected>Select sub Category</option>
+          <option *ngFor="let subCat of subCategory" [ngValue]="subCat.es_subcategoryid">{{subCat.subcat_scatname}} </option>
         </select>
+          <!--<option>1</option>
+          <option>2</option>
+          <option>3</option>-->
+        <!-- </select> -->
       </div>
     </div>
+
     <div class="pull-right btn_alignment">
-      <button id="" type="submit" class="btn btn-primary">
-        <i class="glyphicon glyphicon-file"></i>&nbsp;Save</button>
+      <button id="" type="submit" class="btn btn-primary" (click)="searchBooks(staffForm)" [disabled]="!staffForm.valid">
+        <i class="glyphicon glyphicon-file"></i>&nbsp;Submit</button>
     </div>
   </form>
 </div>
+<br>
+<section class="content-header">
+  <div class="panel panel-primary ">
+    <h4 class="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{title}}</h4>
+  </div>
+</section>
+
+<div class="table table-responsive" style="overflow-x:initial;" *ngIf="showTables == true">
+  <table  class="table table-bordered table-striped table-hover">
+    <thead style="background-color:#DDE1E6;">
+      <tr>
+        <th class="text-center">Sl No.</th>
+        <th class="text-center">Book No</th>
+        <th class="text-center">Title</th>
+        <th class="text-center">Author</th>
+        <th class="text-center">Issue Date</th>
+        <th class="text-center">Return Date</th>
+        <th class="text-center">Fine Amount</th>
+        <th class="text-center">Action</th>
+        <!-- <th class="text-center">Delete</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let issuebook of issueBookData let i=index">
+        <!-- <pre>{{returnDate}}</pre> -->
+      <td>{{i+1}}</td>
+      <td>
+        {{issuebook.lbook_aceesnofrom}}
+      </td>
+      <td>
+        {{issuebook.lbook_title}}
+      </td>
+      <td>
+        {{issuebook.lbook_author}}
+      </td>
+      <td>
+        {{issuebook.issuedate | date:'dd-MM-yyyy'}}
+      </td>
+      <td>
+        {{issuebook.returndate[0] | date:'dd-MM-yyyy'}}
+      </td>
+      
+      <td >
+          {{issuebook.fineamt[0]}}
+      </td>
+     
+      <td class="text-center" >
+        <a #returnBookElement [attr.bookId] = "issuebook.es_libbookid" [attr.issuedate]="issuebook.issuedate" [attr.returndate]="issuebook.returndate[0]" [attr.libfine]="issuebook.es_libfineamount"
+         (click)="returnBook(this.returnBookElement)" style="cursor:pointer;">Return</a>
+      </td>
+      
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+  <div class="table table-responsive" style="overflow-x:initial;">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+      <thead style="background-color:#DDE1E6;">
+        <tr>
+          <th class="text-center">Sl No.</th>
+          <th class="text-center">Accession No</th>
+          <th class="text-center">Title</th>
+          <th class="text-center">Category[Sub Category]</th>
+          <th class="text-center">Author</th>
+          <th class="text-center">Action</th>
+          <!-- <th class="text-center">Delete</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let book of booksList let i=index">
+        <td>{{i+1}}</td>
+        <td>
+          {{book.lbook_aceesnofrom}}
+        </td>
+        <td>
+          {{book.lbook_title}}
+        </td>
+        <td>
+          {{book.lbook_category}}[{{book.lbook_booksubcategory}}]
+        </td>
+        <td>
+          {{book.lbook_author}}
+        </td>
+        <td class="text-center"  >
+          <a #issueBookElement [attr.bookId] = "book.es_libbookid" [attr.category]="book.lbook_category" [attr.subcategory]="book.lbook_booksubcategory" 
+          (click)="issueBook(this.issueBookElement)"  style="cursor:pointer;" *ngIf="showColValue == true">Issue</a>
+        </td>
+        
+       
+        
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+
+
+
+
+
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>

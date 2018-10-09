@@ -11,19 +11,19 @@
                 <label for="category">Class:</label>
             </div>
             <div class="col-lg-8 col-md-8 category">
-                <select name="" id="" class="form-control">
+                <select name="" id="" class="form-control classname" >
                     <option [ngValue]="0" selected>select</option>
-                    <option  [ngValue]="20">20</option>
+                    <option  *ngFor="let class of classList" value="{{class.es_classname}}">{{class.es_classname}}</option>
                   </select>
             </div>
           </div>          
           <!-- <div class="col col-sm-12 col-xs-12 col-lg-2 col-md-2">
               <button id="" type="submit" class="btn btn-primary">&nbsp;Search</button>
           </div> -->         
-        </div> 
-        <div class="row form-group ">
-            <div class="pull-right btn_alignment">
-              <button id="" type="submit" class="btn btn-primary">
+        <!-- </div> 
+        <div class="row form-group "> -->
+            <div class=" btn_alignment">
+              <button id="" type="submit" class="btn btn-primary" (click)="searchClass()">
                 <!--<i class="glyphicon glyphicon-file"></i>-->
                 <span class="glyphicon glyphicon-search"></span>
                 &nbsp;Search</button>
@@ -43,17 +43,16 @@
       </tr>
     </thead>
     <tbody>
-      <!--<tr>
-        <td></td>
-        <td></td>
+      <tr *ngFor="let student of issuedStudentList let i=index">
+        <td class="text-center">{{i+1}}</td>
+        <td class="text-center">{{student.pre_name}} ({{student.bki_id}})</td>
+        <td class="text-center">{{student.es_classname}}</td>
+        
         <td class="text-center">
-          <i #editElement class="glyphicon glyphicon-pencil cursor-pointer"></i>
+            <a href="" [routerLink]="['/content',{outlets:{appCommon:['studentreport']}}]" [queryParams]="{id:student.bki_id}">Books List</a>
+          
         </td>
-        <td class="text-center">
-          <i #deleteElement class="glyphicon glyphicon-remove cursor-pointer" 
-         ></i>
-        </td>
-      </tr>-->
+      </tr>
     </tbody>
   </table>
 </div>

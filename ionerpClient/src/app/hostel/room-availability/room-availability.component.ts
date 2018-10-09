@@ -7,6 +7,7 @@ import { ToasterConfig } from 'angular2-toaster';
 import { ToastService } from './../../common/toast.service';
 import { Subject } from 'rxjs/Rx';
 import { Http, Response } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-room-availability',
@@ -51,7 +52,7 @@ export class RoomAvailabilityComponent implements OnInit {
     this.titleService.setTitle('RoomAvailability | IONCUDOS');
     this.title1 = "Building Name";
 
-    this.service.subUrl = 'hostel/hostel/getAvailability';
+    this.service.subUrl = 'hostel/RoomAvailability/getBuilding';
     this.service.getData().subscribe(response => {
       this.availability = response.json();
     });
@@ -60,7 +61,7 @@ export class RoomAvailabilityComponent implements OnInit {
 
   searchroom(roomForm) {
 
-    this.service.subUrl = 'hostel/hostel/getRoomAvailability';
+    this.service.subUrl = 'hostel/RoomAvailability/getRoomAvailability';
     let postData = roomForm.value; // Text Field/Form Data in Json Format
     this.service.createPost(postData).subscribe(response => {
       this.room = response.json();

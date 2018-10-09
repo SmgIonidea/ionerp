@@ -72,7 +72,7 @@
         </li> -->
 
 
-        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class="dropdown treeview" routerLinkActive="active">
+        <!-- <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner' class="dropdown treeview" routerLinkActive="active">
             <a class="dropbtn key-data" data-key="lg_accounting"> <i class="fa fa-file-text fa-fw" aria-hidden="true"></i>&nbsp; Accounting
                 <span class="pull-right-container">
                     <i class="glyphicon glyphicon-chevron-right pull-right "></i>
@@ -119,9 +119,9 @@
                     </li>
                
             </div>
-        </li>
+        </li> -->
 
-        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="dropdown treeview" routerLinkActive="active">
+        <!-- <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="dropdown treeview" routerLinkActive="active">
             <a class="dropbtn key-data" data-key="lg_transport"> <i class="fa fa-bus fa-fw" aria-hidden="true"></i>&nbsp; Transport
                 <span class="pull-right-container">
                     <i class="glyphicon glyphicon-chevron-right pull-right "></i>
@@ -149,11 +149,11 @@
                 </a>
                 <a href="" [routerLink]="['/content',{outlets:{appCommon:['DriverVehicleComponent']}}]" class="key-data" data-key="lg_actvty">Allot Driver to Vehicle
                     
-                </a>
+                </a> -->
                 <!-- <a href="" [routerLink]="['/content',{outlets:{appCommon:['manageVocher']}}]" class="key-data" data-key="lg_actvty">Prepare Transport Fee
                    
                 </a> -->
-                <a href="" [routerLink]="['/content',{outlets:{appCommon:['transportBills']}}]" class="key-data" data-key="lg_actvty">View Transport Bills
+                <!-- <a href="" [routerLink]="['/content',{outlets:{appCommon:['transportBills']}}]" class="key-data" data-key="lg_actvty">View Transport Bills
                     
                 </a>
                 <a href="" [routerLink]="['/content',{outlets:{appCommon:['maintenanceDetails']}}]" class="key-data" data-key="lg_actvty">Maintenance Details
@@ -173,7 +173,7 @@
                             <a href="" [routerLink]="['/content',{outlets:{appCommon:['studentReport']}}]"> Student Wise Report </a>
                             <a href="" [routerLink]="['/content',{outlets:{appCommon:['staffReport']}}]"> Staff Wise Report </a>
                         </div>
-                    </li>
+                    </li> -->
                 <!-- <a href="" [routerLink]="['/content',{outlets:{appCommon:['driverReport']}}]" class="key-data" data-key="lg_actvty">Driver Report
                     <span class="pull-right-container">
                         <i class="glyphicon glyphicon-chevron-right pull-right"></i>
@@ -194,9 +194,9 @@
                         <i class="glyphicon glyphicon-chevron-right pull-right"></i>
                     </span>
                 </a> -->
-            </div>
-        </li>
-        <li *ngIf='is_student' class="dropdown treeview" routerLinkActive="active">
+            <!-- </div>
+        </li> -->
+        <!-- <li *ngIf='is_student' class="dropdown treeview" routerLinkActive="active">
             <a class="dropbtn key-data"  data-key="lg_transport"> <i class="fa fa-bus fa-fw" aria-hidden="true"></i>&nbsp; Transport
                 <span class="pull-right-container">
                     <i class="glyphicon glyphicon-chevron-right pull-right "></i>
@@ -210,15 +210,15 @@
                
                 </a>
             </div>
-        </li>
-        <!-- <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="dropdown treeview" routerLinkActive="active">
+        </li> -->
+        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="dropdown treeview" routerLinkActive="active">
             <a class="dropbtn key-data " data-key="lg_hostel"> <i class="fa fa-building fa-fw" aria-hidden="true"></i>&nbsp; Hostel
                
                 <span class="pull-right-container" >
                     <i class="glyphicon glyphicon-chevron-right pull-right " ></i>
                 </span>
             </a>
-            <div class="dropdown-content">
+            <div class="dropdown-content sideMenu_hostel">
                 <a href="" [routerLink]="['/content',{outlets:{appCommon:['addbuilding']}}]" class="key-data" data-key="lg_actvty">Add Building
 
                 </a>
@@ -237,14 +237,14 @@
                 <a href="" [routerLink]="['/content',{outlets:{appCommon:['collectitems']}}]" class="key-data" data-key="lg_actvty"> Collect Items
 
                 </a>
-                <a href="" [routerLink]="['/content',{outlets:{appCommon:['preparebill']}}]" class="key-data" data-key="lg_actvty">Prepare Bill
+                <!-- <a href="" [routerLink]="['/content',{outlets:{appCommon:['preparebill']}}]" class="key-data" data-key="lg_actvty">Prepare Bill
 
-                </a>
+                </a> -->
                 <a href="" [routerLink]="['/content',{outlets:{appCommon:['viewdetails']}}]" class="key-data" data-key="lg_actvty">View Details
 
                 </a>
             </div>
-        </li> -->
+        </li>
 
         <!-- <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner || is_student' class="dropdown treeview" routerLinkActive="active">
             <a class="dropbtn key-data" data-key="lg_msg"> <i class="fa fa-envelope fa-fw" aria-hidden="true"></i>&nbsp; Message
@@ -285,7 +285,7 @@
             </div>
         </li> -->
 
-        <!-- <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="dropdown treeview" routerLinkActive="active">
+        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="dropdown treeview" routerLinkActive="active">
             <a class="dropbtn key-data" data-key="lg_lib"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp; Library
                 <span class="pull-right-container">
                     <i class="glyphicon glyphicon-chevron-right pull-right "></i>
@@ -299,7 +299,7 @@
                             <i class="glyphicon glyphicon-chevron-right pull-right"></i>
                         </span>
                     </a>
-                    <div class="dropdown-content1 dropdown1">
+                    <div class="dropdown-content1 dropdown1 submenu_master">
                         <a href="" [routerLink]="['/content',{outlets:{appCommon:['category']}}]"> Category
                         </a>
                         <a href="" [routerLink]="['/content',{outlets:{appCommon:['subcategory']}}]"> Sub Category </a>
@@ -340,7 +340,7 @@
                             Books Issued To Students</a>
                         <a href="" [routerLink]="['/content',{outlets:{appCommon:['bookissuedstaff']}}]"> Books Issued To Staff</a>
                         <a href="" [routerLink]="['/content',{outlets:{appCommon:['allfines']}}]">All Fines</a>
-                        <a href="" [routerLink]="['/content',{outlets:{appCommon:['bookanalysis']}}]">Book Analysis</a>
+                        <!-- <a href="" [routerLink]="['/content',{outlets:{appCommon:['bookanalysis']}}]">Book Analysis</a> -->
 
                     </div>
                 </li>
@@ -348,12 +348,12 @@
 
                 </a>
             </div>
-        </li> -->
+        </li>
 
 
-        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="dropdown treeview" routerLinkActive="active">
+        <!-- <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="dropdown treeview" routerLinkActive="active">
             <a class="dropbtn key-data " data-key="lg_hostel"> <i class="fa fa-users fa-fw" aria-hidden="true"></i>&nbsp; HRD
-                <!-- <img src="/assets/js_css/images/arrow_right.png" height="15px" width="20px"/> -->
+               
                 <span class="pull-right-container" >
                     <i class="glyphicon glyphicon-chevron-right pull-right " ></i>
                 </span>
@@ -395,11 +395,11 @@
                 <a href="" [routerLink]="['/content',{outlets:{appCommon:['printLetter']}}]" class="key-data" data-key="lg_actvty">Print Letter
                 </a>
             </div>
-        </li>
+        </li> -->
 
-        <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="dropdown treeview" routerLinkActive="active">
+        <!-- <li *ngIf='is_admin || is_chairman || is_program_owner || is_course_owner ' class="dropdown treeview" routerLinkActive="active">
             <a class="dropbtn key-data " data-key="lg_hostel"> <i class="fa fa-briefcase fa-fw" aria-hidden="true"></i>&nbsp; Payroll
-                <!-- <img src="/assets/js_css/images/arrow_right.png" height="15px" width="20px"/> -->
+                
                 <span class="pull-right-container" >
                     <i class="glyphicon glyphicon-chevron-right pull-right " ></i>
                 </span>
@@ -455,7 +455,7 @@
                     </div>
                 </li>
             </div>
-        </li>
+        </li> -->
 
     </ul>
     <br>
