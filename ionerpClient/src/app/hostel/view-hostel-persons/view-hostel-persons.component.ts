@@ -37,17 +37,22 @@ export class ViewHostelPersonsComponent implements OnInit {
   private viewHostelPersonForm = new FormGroup({
 
     selectBuilding: new FormControl('', [
+      Validators.required
     ]),
 
     selectRoomType: new FormControl('', [
+      Validators.required
     ]),
 
     selectPersonType: new FormControl('', [
+      Validators.required
     ]),
     Registration: new FormControl('', [
+      Validators.required
     ]),
-    Employee: new FormControl('', [
-    ]),
+    // Employee: new FormControl('', [
+    //   // Validators.required
+    // ]),
   });
 
   get selectBuilding() {
@@ -55,8 +60,8 @@ export class ViewHostelPersonsComponent implements OnInit {
     formGroup Controles. which is used to validate the form */
     return this.viewHostelPersonForm.get('selectBuilding');
   }
-  get selectRoomNo() {
-    return this.viewHostelPersonForm.get('selectRoomNo');
+  get selectRoomType() {
+    return this.viewHostelPersonForm.get('selectRoomType');
   }
 
   get selectPersonType() {
@@ -65,13 +70,13 @@ export class ViewHostelPersonsComponent implements OnInit {
   get Registration() {
     return this.viewHostelPersonForm.get('Registration');
   }
-  get Employee() {
-    return this.viewHostelPersonForm.get('Employee');
-  }
+  // get Employee() {
+  //   return this.viewHostelPersonForm.get('Employee');
+  // }
 
   ngOnInit() {
     this.title = 'Hostel Persons';
-    this.titleService.setTitle('ViewHostelPersons | IONCUDOS');
+    this.titleService.setTitle('ViewHostelPersons | IONERP');
     this.title1 = "View Hostel Persons";
 
     this.service.subUrl = 'hostel/Viewhostelperson/index';
@@ -97,10 +102,19 @@ export class ViewHostelPersonsComponent implements OnInit {
     let postData = viewHostelPersonForm.value; // Text Field/Form Data in Json Format
     this.service.createPost(postData).subscribe(response => {
       this.viewperson = response.json();
+      if(this.viewperson.length != 0){
       this.tableRerender();
       this.dtTrigger.next(); // Calling the DT trigger to manually render the table 
       this.viewHostelPersonForm.reset();
+      $('#regDiv').hide();
+    } else {
+      let type = 'error';
+      let title = 'Search Fail';
+      let body = 'Invalid Regitration No / Employee Id'
+      this.toasterMsg(type, title, body);
+    }
     });
+   
   }
 
   print(): void {
@@ -144,6 +158,7 @@ export class ViewHostelPersonsComponent implements OnInit {
   student() {
     $(function () {
       $("#ddlPassport").change(function () {
+        $('#regDiv').show();
         if ($(this).val() == "staff") {
           $("#dvPassport").show();
           $("#student").hide();

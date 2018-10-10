@@ -34,7 +34,7 @@ export class BooksComponent implements OnInit {
   categoryId;
   bookEditId;
   bookdelId;
-  public model: any;
+  public model_date: any;
 
   @ViewChild(DataTableDirective)
   dtElement: DataTableDirective;
@@ -232,6 +232,8 @@ export class BooksComponent implements OnInit {
     // let path = filePath.split('/').pop();
     // path = path.replace('"', '');
 
+    
+
     this.service.subUrl = 'library/master_records/books/saveBookData';
     let postdata = {
 
@@ -253,7 +255,7 @@ export class BooksComponent implements OnInit {
       'volume': bookForm.value.volume,
       // 'image': path
     }
-
+    
     this.service.createPost(postdata).subscribe(response => {
       if (response.json().status == 'ok') {
         let type = 'success';
@@ -294,13 +296,14 @@ export class BooksComponent implements OnInit {
     this.isUpdateHide = false;
 
     this.bookEditId = editElement.getAttribute('bookId');
+
     let purchasedate = editElement.getAttribute('purchasedate');
     let year1 = purchasedate.substring(0, 4);
     let month = purchasedate.substring(5, 7);
     let day = purchasedate.substring(8, 10);
     let initial_day = day.replace(/^0+/, '');
     let initial_month = month.replace(/^0+/, '');
-    this.model = { date: { year: year1, month: initial_month, day: initial_day } };
+    this.model_date = { date: { year: year1, month: initial_month, day: initial_day } };
 
     let billnumber = editElement.getAttribute('billnumber');
     let accession = editElement.getAttribute('accession');
@@ -308,33 +311,99 @@ export class BooksComponent implements OnInit {
     let author = editElement.getAttribute('author');
     let title = editElement.getAttribute('title');
     let publisher = editElement.getAttribute('publisherName');
+    let supplier = editElement.getAttribute('suppliername');
     let year = editElement.getAttribute('year');
     let additionalinfo = editElement.getAttribute('additionalInfo');
     let cat = editElement.getAttribute('category');
     let subcat = editElement.getAttribute('subcategory');
-    let image = editElement.getAttribute('image');
+    // let image = editElement.getAttribute('image');
     let bookedition = editElement.getAttribute('edition');
     let cost = editElement.getAttribute('cost');
     let pages = editElement.getAttribute('pages');
     let volume = editElement.getAttribute('volume');
 
-    this.purchasedOn.setValue(this.model);
+    this.purchasedOn.setValue(this.model_date);
     this.billNumber.setValue(billnumber);
     this.accessionNumber.setValue(accession);
     this.numOfBooks.setValue(booknumber);
     this.author.setValue(author);
     this.bookTitle.setValue(title);
     this.publisherName.setValue(publisher);
+    this.supplierName.setValue(supplier);
     this.year.setValue(year);
     this.additionalInfo.setValue(additionalinfo);
     this.bookCategory.setValue(cat);
     this.loadSubCategory(cat);
     this.bookSubCategory.setValue(subcat);
-    this.image.setValue(image);
+    // this.image.setValue(image);
     this.edition.setValue(bookedition);
     this.cost.setValue(cost);
     this.pages.setValue(pages);
     this.volume.setValue(volume);
+
+  }
+
+  updateBookList(bookForm){
+
+    this.service.subUrl = 'library/master_records/books/updateBookList';
+
+
+    // let filename = bookForm.value.image;
+    // let filePath = filename.replace(/\\/g, "/");
+    // let path = filePath.split('/').pop();
+    // path = path.replace('"', '');
+
+    let postdata = {
+
+      'bookid': this.bookEditId,
+      'purchasedDate': bookForm.value.purchasedOn,
+      'category': bookForm.value.bookCategory,
+      'billnum': bookForm.value.billNumber,
+      'subcategory': bookForm.value.bookSubCategory,
+      'accessionNum': this.accessionList,
+      'numberOfBooks': bookForm.value.numOfBooks,
+      'author': bookForm.value.author,
+      'bookTitle': bookForm.value.bookTitle,
+      'publisher': bookForm.value.publisherName,
+      'supplier': bookForm.value.supplierName,
+      'bookedition': bookForm.value.edition,
+      'year': bookForm.value.year,
+      'cost': bookForm.value.cost,
+      'additionalInfo': bookForm.value.additionalInfo,
+      'pages': bookForm.value.pages,
+      'volume': bookForm.value.volume,
+      // 'image': path
+    }
+    
+    this.service.updatePost(postdata).subscribe(response => {
+      if (response.json().status == 'ok') {
+        let type = 'success';
+        let title = 'Update Success';
+        let body = 'Book updated successfully'
+        this.toasterMsg(type, title, body);
+        this.booksForm.reset();   
+        this.service.subUrl = 'library/master_records/books/accessionNumberData';
+        this.service.getData().subscribe(response => {
+          this.accessionList = response.json();
+          this.accessionNumber.setValue(this.accessionList);
+        })
+        this.cancelUpdate();   
+      } else {
+        let type = 'error';
+        let title = 'Update Fail';
+        let body = 'Book update failed please try again'
+        this.toasterMsg(type, title, body);
+        this.booksForm.reset();
+        this.service.subUrl = 'library/master_records/books/accessionNumberData';
+        this.service.getData().subscribe(response => {
+          this.accessionList = response.json();
+          this.accessionNumber.setValue(this.accessionList);
+        })
+        this.cancelUpdate();
+      }
+      this.getBookDetails();
+      
+    })
 
   }
 

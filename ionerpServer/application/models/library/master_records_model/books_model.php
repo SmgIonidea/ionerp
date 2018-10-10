@@ -68,6 +68,7 @@ class books_model extends CI_Model {
                  $booksListResult[$key]['subcategory'] = $res['subcat_scatname'];
             }
         }
+//        var_dump($booksListResult);exit;
         return $booksListResult;
     }
 
@@ -92,6 +93,7 @@ class books_model extends CI_Model {
         $author = $formdata->author;
         $title = $formdata->bookTitle;
         $publisher = $formdata->publisher;
+        $supplier = $formdata->supplier;
         $edition = $formdata->bookedition;
         $year = $formdata->year;
         $cost = $formdata->cost;
@@ -117,7 +119,7 @@ class books_model extends CI_Model {
 
             $frombookno1 = $frombookNum + $i;
 
-            $booksInsertQuery = "INSERT INTO `dlvry_libbook` (lbook_dateofpurchase,lbook_aceesnofrom,lbook_accessnoto,lbook_booktono,lbook_author,lbook_title,lbook_publishername,lbook_bookedition,lbook_year,lbook_cost,lbook_aditinalbookinfo,lbook_category,lbook_booksubcategory,lbook_pages,lbook_volume,lbook_bilnumber,lbook_image,status,issuestatus) VALUES ('$purchasedOn','$fromacno',$fromacno-1,'$numOfBooksto','$author','$title','$publisher','$edition','$year','$cost','$info','$category','$subCat','$pages','$volume','$billNumber','','active','notissued')";
+            $booksInsertQuery = "INSERT INTO `dlvry_libbook` (lbook_dateofpurchase,lbook_aceesnofrom,lbook_accessnoto,lbook_booktono,lbook_author,lbook_title,lbook_publishername,lbook_suppliername,lbook_bookedition,lbook_year,lbook_cost,lbook_aditinalbookinfo,lbook_category,lbook_booksubcategory,lbook_pages,lbook_volume,lbook_bilnumber,lbook_image,status,issuestatus) VALUES ('$purchasedOn','$fromacno',$fromacno-1,'$numOfBooksto','$author','$title','$publisher','$supplier','$edition','$year','$cost','$info','$category','$subCat','$pages','$volume','$billNumber','','active','notissued')";
             $booksListData = $this->db->query($booksInsertQuery);
 
             $fromacno = $fromacno + 1;
@@ -133,6 +135,38 @@ class books_model extends CI_Model {
         }
     }
     
+    public function updateBookData($formdata){
+
+        $bookId = $formdata->bookid;
+        $date = $formdata->purchasedDate->date->year;
+        $month = $formdata->purchasedDate->date->month;
+        $day = $formdata->purchasedDate->date->day;
+        $purchasedOn = $date . '-' . $month . '-' . $day;
+        $category = $formdata->category;
+        $billNumber = $formdata->billnum;
+        $subCat = $formdata->subcategory;
+        $numOfBooksto = $formdata->numberOfBooks;
+        $fromacno = $formdata->accessionNum;
+        $author = $formdata->author;
+        $title = $formdata->bookTitle;
+        $publisher = $formdata->publisher;
+        $edition = $formdata->bookedition;
+        $year = $formdata->year;
+        $cost = $formdata->cost;
+        $info = $formdata->additionalInfo;
+        $pages = $formdata->pages;
+        $volume = $formdata->volume;
+//        $image = $formdata->image;
+        
+        $updateQuery = "UPDATE dlvry_libbook SET lbook_dateofpurchase='$purchasedOn',lbook_aceesnofrom='$fromacno',lbook_booktono='$numOfBooksto',lbook_author='$author',lbook_title='$title',lbook_publishername='$publisher',lbook_bookedition='$edition',lbook_year='$year',lbook_cost='$cost',lbook_aditinalbookinfo='$info',lbook_category='$category',lbook_booksubcategory='$subCat',lbook_pages='$pages',lbook_volume='$volume',lbook_bilnumber='$billNumber',lbook_image='' WHERE es_libbookid='$bookId'";       
+        $this->db->trans_start(); // to lock the db tables
+        $updateData = $this->db->query($updateQuery);
+        $this->db->trans_complete();
+        return true; 
+        
+    }
+
+
     public function deleteBookData($bookId){
                
         $deleteQuery = "DELETE FROM dlvry_libbook WHERE es_libbookid='$bookId'";

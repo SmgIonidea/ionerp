@@ -16,7 +16,7 @@
         <th>Bill Amount</th>
         <th>Waived</th>
         <th>Paid Amount</th>
-        <th>Action</th>
+        <!-- <th>Action</th> -->
       </tr>
     </thead>
     <tbody>
@@ -28,7 +28,7 @@
         <td>{{ hostel.room_rate }}</td>
         <td>{{ hostel.deduction }}</td>
         <td>{{ hostel.amount_paid }}</td>
-        <td></td>
+        <!-- <td></td> -->
       </tr>
     </tbody>
   </table>
@@ -185,8 +185,8 @@
     <div class="pull-right">
       <button type="submit" class="btn btn-primary" (click)="serachView(hostelChargeForm)" [disabled]="!hostelChargeForm.valid">
         <i class="glyphicon glyphicon-search"></i>&nbsp;Search</button>
-      <button type="reset" class="btn btn-danger">
-        <i class="glyphicon glyphicon-refresh"></i>&nbsp;Export to Excel Sheet</button>
+      <!-- <button type="reset" class="btn btn-danger">
+        <i class="glyphicon glyphicon-refresh"></i>&nbsp;Export to Excel Sheet</button> -->
       <br>
     </div>
     <div class="col-md-12" *ngFor="let dueamount of duelist" style="text-align: right;padding-right: 150px;">

@@ -28,13 +28,14 @@
           <i #editElement [attr.bookId]="book.es_libbookid" [attr.purchasedate]="book.lbook_dateofpurchase"
             [attr.billnumber]="book.lbook_bilnumber" [attr.accession]="book.lbook_aceesnofrom" [attr.booknumber]="book.lbook_booktono"
             [attr.author]="book.lbook_author" [attr.title]="book.lbook_title" [attr.publisherName]="book.lbook_publishername"
-            [attr.year]="book.lbook_year" [attr.additionalInfo]="book.lbook_aditinalbookinfo" [attr.category]="book.lbook_category"
-            [attr.subcategory]="book.lbook_booksubcategory" [attr.image]="book.lbook_image" [attr.edition]="book.lbook_bookedition"
-            [attr.cost]="book.lbook_cost" [attr.pages]="book.lbook_pages" [attr.volume]="book.lbook_volume" class="glyphicon glyphicon-pencil cursor-pointer"
-            (click)="editbooklist(this.editElement)"></i>
+            [attr.suppliername]="book.lbook_suppliername" [attr.year]="book.lbook_year" [attr.additionalInfo]="book.lbook_aditinalbookinfo"
+            [attr.category]="book.lbook_category" [attr.subcategory]="book.lbook_booksubcategory" [attr.image]="book.lbook_image"
+            [attr.edition]="book.lbook_bookedition" [attr.cost]="book.lbook_cost" [attr.pages]="book.lbook_pages"
+            [attr.volume]="book.lbook_volume" class="glyphicon glyphicon-pencil cursor-pointer" (click)="editbooklist(this.editElement)"></i>
         </td>
         <td class="text-center">
-          <i #deleteElement [attr.bookId]="book.es_libbookid" (click)="deleteWarning(this.deleteElement,this.bookListDeleteModal)" class="glyphicon glyphicon-remove cursor-pointer">
+          <i #deleteElement [attr.bookId]="book.es_libbookid" (click)="deleteWarning(this.deleteElement,this.bookListDeleteModal)"
+            class="glyphicon glyphicon-remove cursor-pointer">
           </i>
         </td>
       </tr>
@@ -87,7 +88,7 @@
           </label>
         </div>
         <div class="col-lg-6 col-md-6 category">
-          <my-date-picker formControlName="purchasedOn" [(ngModel)]="model" placeholder=" dd-mm-yyyy" name="purchasedOn"
+          <my-date-picker formControlName="purchasedOn" [(ngModel)]="model_date" placeholder=" dd-mm-yyyy" name="purchasedOn"
             id="purchasedOn" [options]="myDatePickerOptions">
           </my-date-picker>
           <!-- <input formControlName="purchasedOn" type="text" placeholder="dd-mm-yyyy" id="" value="" class="form-control" /> -->
@@ -141,7 +142,7 @@
         </div>
         <div class="col-lg-6 col-md-6 category" style="margin-left:-60px;">
           <select formControlName="bookSubCategory" id="" class="form-control">
-            <option value="" disabled selected>Select your option</option>
+            <option value="" selected>Select your option</option>
             <option [value]="subcategory.es_subcategoryid" *ngFor="let subcategory of subCategoryData">{{subcategory.subcat_scatname}}</option>
           </select>
           <div *ngIf="bookSubCategory.touched && bookSubCategory.invalid" class="error_message">
@@ -227,8 +228,8 @@
           </div>
         </div>
       </div>
-      <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
-        <div class="row form-group ">
+      <!-- <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6"> -->
+      <!-- <div class="row form-group ">
           <div class="image-upload col-lg-6 col-md-6 image">
             <label>
               <img src="./assets/js_css/images/nophoto.jpg" style="width:120px;height:150px;pointer-events: none" />
@@ -238,8 +239,37 @@
               <input formControlName="image" type="file" class="" id="userdoc" (change)="getFileName(this.replaceElement,this.splitElement)">
             </label>
           </div>
+        </div> -->
+
+      <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+        <div class="col-lg-6 col-md-6 labelfield" style="margin-left: -43px;">
+          <label for="edition">Edition:</label>
+        </div>
+        <div class="col-lg-6 col-md-6 category">
+          <input formControlName="edition" type="text" placeholder="Enter Edition" id="" value="" class="form-control textboxalign" />
         </div>
       </div>
+
+      <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6" style="margin-top: 15px;">
+        <div class="col-lg-6 col-md-6 labelfield" style="margin-left: -43px;">
+          <label for="year">Cost:</label>
+        </div>
+        <div class="col-lg-6 col-md-6 category">
+          <input formControlName="cost" type="text" placeholder="Enter Cost" id="" value="" class="form-control textboxalign" />
+        </div>
+      </div>
+
+      <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6" style="margin-top: 15px;">
+        <div class="col-lg-6 col-md-6 labelfield" style="margin-left: -43px;">
+          <label for="pages">Pages:</label>
+        </div>
+        <div class="col-lg-6 col-md-6 category">
+          <input formControlName="pages" type="text" placeholder="Enter Pages" id="" value="" class="form-control textboxalign" />
+        </div>
+      </div>
+
+      <!-- </div> -->
+
     </div>
     <div class="row form-group">
       <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
@@ -253,14 +283,14 @@
           </select>
         </div>
       </div>
-      <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <!-- <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
         <div class="col-lg-6 col-md-6 labelfield" style="margin-left:-45px;">
           <label for="edition">Edition:</label>
         </div>
         <div class="col-lg-6 col-md-6 category">
           <input formControlName="edition" type="text" placeholder="Enter Edition" id="" value="" class="form-control textboxalign" />
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="row form-group">
       <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
@@ -271,14 +301,14 @@
           <input formControlName="year" type="text" placeholder="Enter Year" id="" value="" class="form-control" />
         </div>
       </div>
-      <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <!-- <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
         <div class="col-lg-6 col-md-6 labelfield" style="margin-left:-45px;">
           <label for="year">Cost:</label>
         </div>
         <div class="col-lg-6 col-md-6 category">
           <input formControlName="cost" type="text" placeholder="Enter Cost" id="" value="" class="form-control textboxalign" />
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="row form-group">
       <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
@@ -288,17 +318,18 @@
         <div class="col-lg-6 col-md-6 category">
           <textarea formControlName="additionalInfo" type="text" placeholder="Enter Description" id="description" value=""
             rows="7" class="form-control">
+
         </textarea>
         </div>
       </div>
-      <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
+      <!-- <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
         <div class="col-lg-6 col-md-6 labelfield" style="margin-left:-45px;">
           <label for="pages">Pages:</label>
         </div>
         <div class="col-lg-6 col-md-6 category">
           <input formControlName="pages" type="text" placeholder="Enter Pages" id="" value="" class="form-control textboxalign" />
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="row form-group">
       <div class="col col-sm-12 col-xs-12 col-lg-6 col-md-6">
@@ -316,7 +347,8 @@
           id="" type="submit" class="btn btn-primary btn_save">
           <i class="glyphicon glyphicon-file"></i>&nbsp;Save
         </button>
-        <button [style.display]="isUpdateHide?'none':'block'" [disabled]="!booksForm.valid" id="" type="submit" class="btn btn-primary btn_update ">
+        <button [style.display]="isUpdateHide?'none':'block'" [disabled]="!booksForm.valid" (click)="updateBookList(booksForm)"
+          id="" type="submit" class="btn btn-primary btn_update ">
           <i class="glyphicon glyphicon-file"></i>&nbsp;Update
         </button>
         <button id="" type="reset" class="btn btn-danger btn_cancel" (click)="cancelUpdate()">

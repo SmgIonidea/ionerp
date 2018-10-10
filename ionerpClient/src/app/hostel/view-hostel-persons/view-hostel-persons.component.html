@@ -21,7 +21,7 @@
           <th>Class / Department</th>
           <th>Allotted On</th>
           <th>Deallocated On</th>
-          <th>Action</th>
+          <!-- <th>Action</th> -->
         </tr>
       </thead>
       <tbody>
@@ -70,11 +70,11 @@
           <td>{{viewpersons.name}}</td>
           <td>{{viewpersons.persontype}}</td>
           <td>{{viewpersons.class}}</td>
-          <td>{{viewpersons.alloted_date}}</td>
+          <td>{{viewpersons.alloted_date | date:'dd-MM-yyyy'}}</td>
           <td>{{viewpersons.dealloted_date}}</td>
-          <td class="text-center center" style="width:4%;">
+          <!-- <td class="text-center center" style="width:4%;">
             <i class="glyphicon glyphicon-print cursor-pointer" data-toggle="modal" data-target="#ViewDetails"></i>
-          </td>
+          </td> -->
         </tr>
       </tbody>
     </table>
@@ -82,10 +82,11 @@
 
 </form>
 
-<div class="pull-right">
+<!-- <div class="pull-right">
   <button class="btn btn-primary" data-toggle="modal" data-target="#ViewDetails_person">
             <span class="glyphicon glyphicon-ok"></span>&nbsp;Print</button>
-</div><br><br>
+<!-- </div> -->
+<br><br> 
 
 
 <!-- View Persons  -->
@@ -102,7 +103,7 @@
 
 <div class="container-fluid cont">
 
-  <form [formGroup]="viewHostelPersonForm">
+  <form [formGroup]="viewHostelPersonForm" (ngSubmit)="searchperson(viewHostelPersonForm)">
     <div class="col-md-12">
       <div class="col-md-2">
         <label style="margin-left:-30px;">Select Building:
@@ -119,8 +120,18 @@
           <option>madrid</option>
           <option>Male Building</option>-->
         </select>
+       
         <br>
+        <div class="error_message" style="margin-top:-14px;" *ngIf="viewHostelPersonForm.submitted && selectBuilding.untouched">
+          This field is required
+        </div>
+        <div *ngIf="selectBuilding.touched && selectBuilding.invalid" class="error_message">
+          <div style="margin-top:-14px;" *ngIf="selectBuilding.errors.required">
+            This field is required
+          </div>
+        </div>
       </div>
+      
     </div>
     <br>
     <div class="col-md-12">
@@ -140,6 +151,15 @@
           <option>3</option>-->
         </select>
         <br>
+        <div class="error_message" style="margin-top:-14px;" *ngIf="viewHostelPersonForm.submitted && selectRoomType.untouched">
+          This field is required
+        </div>
+        <div *ngIf="selectRoomType.touched && selectRoomType.invalid" class="error_message">
+          <div style="margin-top:-14px;" *ngIf="selectRoomType.errors.required">
+            This field is required
+          </div>
+        </div>
+       
       </div>
     </div>
     <br>
@@ -163,54 +183,66 @@
           <option value="student">Student</option>
           <option value="staff">Staff</option>
       </select>
-        <br>
+      <br>
+      <div class="error_message" style="margin-top:-14px;" *ngIf="viewHostelPersonForm.submitted && selectPersonType.untouched">
+        This field is required
+      </div>
+      <div *ngIf="selectPersonType.touched && selectPersonType.invalid" class="error_message">
+        <div style="margin-top:-14px;" *ngIf="selectPersonType.errors.required">
+          This field is required
+        </div>
+      </div>
+        
       </div>
     </div>
     <br>
-    <div class="col-md-12" id="student">
+    <div class="col-md-12" id="regDiv" style="display:none;">
       <div class="col-md-2">
-        <label style="margin-left:-30px;">Registration No:
-          <span class="mandatory" style="color:red;">*</span>
+        <label style="margin-left:-30px;" id="student">Registration No:
+
+          <!--  -->
         </label>
+        <label style="margin-left:-30px;" id="dvPassport">Employee Id:</label>
+        <span class="mandatory" style="color:red;">*</span>
       </div>
       <div class="col-md-5">
 
-        <input type="text" formControlName="Registration" placeholder="Enter Registration No" class="form-control disable top form-control1">
+        <input type="text" formControlName="Registration" placeholder="" class="form-control disable top form-control1">
         <br>
-        <!--<div class="error_message" style="margin-top:-14px;" *ngIf="buildForm.submitted && buildname.untouched">
+        <div class="error_message" style="margin-top:-14px;" *ngIf="viewHostelPersonForm.submitted && Registration.untouched">
           This field is required
         </div>
-        <div *ngIf="buildname.touched && buildname.invalid" class="error_message">
-          <div style="margin-top:-14px;" *ngIf="buildname.errors.required">
+        <div *ngIf="Registration.touched && Registration.invalid" class="error_message">
+          <div style="margin-top:-14px;" *ngIf="Registration.errors.required">
             This field is required
           </div>
-        </div>-->
+        </div>
       </div>
     </div>
     <br>
-    <div class="col-md-12" id="dvPassport" style="display: none">
+    <!-- <div class="col-md-12" id="dvPassport" style="display: none">
       <div class="col-md-2">
         <label style="margin-left:-30px;">Employee Id:
-          <span class="mandatory" style="color:red;">*</span>
+         
         </label>
       </div>
       <div class="col-md-5">
 
         <input type="text" formControlName="Employee" placeholder="Enter Employee Id" class="form-control disable top form-control1">
         <br>
-        <!--<div class="error_message" style="margin-top:-14px;" *ngIf="buildForm.submitted && buildname.untouched">
+        <div class="error_message" style="margin-top:-14px;" *ngIf="viewHostelPersonForm.submitted && Employee.untouched">
           This field is required
         </div>
-        <div *ngIf="buildname.touched && buildname.invalid" class="error_message">
-          <div style="margin-top:-14px;" *ngIf="buildname.errors.required">
+        <div *ngIf="Employee.touched && Employee.invalid" class="error_message">
+          <div style="margin-top:-14px;" *ngIf="Employee.errors.required">
             This field is required
           </div>
-        </div>-->
+        </div>
       </div>
-    </div>
+    </div> -->
     <br>
     <div class="pull-right btn_alignment">
-      <button type="submit" class="btn btn-primary" (click)="searchperson(viewHostelPersonForm)" [disabled]="!viewHostelPersonForm.valid">
+      <button type="submit" class="btn btn-primary"  [disabled]="!viewHostelPersonForm.valid">
         <i class="glyphicon glyphicon-file"  ></i>&nbsp;Search</button>
 
       <button type="reset" class="btn btn-danger">
@@ -218,7 +250,7 @@
     </div>
   </form>
 </div>
-
+<toaster-container [toasterconfig]="tosterconfig"></toaster-container>
 <div class="modal fade " id="ViewDetails" role="dialog">
 
   <div class="modal-dialog modal-lg">
@@ -313,12 +345,12 @@
 
       </div>
 
-      <div class="modal-footer">
+      <!-- <div class="modal-footer">
         <div class="pull-right">
           <button class="btn btn-primary" data-dismiss="modal" (click)="print()">
             <span class="glyphicon glyphicon-ok"></span>&nbsp;Print</button>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

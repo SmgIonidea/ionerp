@@ -91,15 +91,15 @@ class RoomAllocation_model extends CI_Model {
 
             if ($value['persontype'] == 'student') {
                 $id = $value['personid'];
-//                $getnameQuery = 'select pre_class,pre_sec,pre_name from dlvry_preadmission where es_preadmissionid="'.$id.'" and pre_status="active"';
-                $getnameQuery = 'select pre_class,pre_sec,pre_name from dlvry_preadmission where es_preadmissionid="' . $id . '"';
+//                $getnameQuery = 'select s.es_staffid as preid,concat(s.st_firstname,s.st_lastname) as name,d.es_deptname as class from dlvry_staff s, dlvry_departments d where s.st_department = d.es_departmentsid AND s.es_staffid="' . $personid . '"';
+                $getnameQuery = 'select c.es_classname as class,a.pre_sec,a.pre_name from dlvry_preadmission a, dlvry_classes c where a.pre_class = c.es_classesid AND a.es_preadmissionid="' . $id . '"';
                 $getnameData = $this->db->query($getnameQuery);
                 $getnameResult = $getnameData->result_array();
                 array_push($a, $getnameResult);
             }
             if ($value['persontype'] == 'staff') {
                 $staffid = $value['personid'];
-                $getStaffNameQuery = 'select concat(st_firstname,st_lastname) as name,st_department from dlvry_staff where es_staffid="' . $staffid . '"';
+                $getStaffNameQuery = 'select concat(s.st_firstname,s.st_lastname) as name,d.es_deptname as dept from dlvry_staff s,dlvry_departments d where s.st_department = d.es_departmentsid AND s.es_staffid="' . $staffid . '"';
                 $getStaffNameData = $this->db->query($getStaffNameQuery);
                 $getStaffNameResult = $getStaffNameData->result_array();
                 array_push($a, $getStaffNameResult);

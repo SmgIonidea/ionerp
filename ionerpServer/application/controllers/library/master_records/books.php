@@ -80,6 +80,21 @@ class books extends CI_Controller {
         
     }
     
+    public function updateBookList(){
+        
+       $incomingFormData = $this->readHttpRequest();
+        $formData = json_decode($incomingFormData);
+        $updateResult = $this->books_model->updateBookData($formData);       
+        if ($updateResult == true) {
+            $data['status'] = 'ok';
+        } else {
+            $data['status'] = 'fail';
+        }        
+        echo json_encode($data);
+        
+    }
+
+
     public function deleteBookList() {
         
         $incomingFormData = $this->readHttpRequest();

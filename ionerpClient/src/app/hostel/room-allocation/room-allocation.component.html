@@ -28,8 +28,8 @@
           <td *ngIf="room.persontype =='student'">{{room.pre_name}}</td>
           <td *ngIf="room.persontype =='staff'">{{room.name}}</td>
           <td>{{room.alloted_date | date:'dd-MM-yyyy'}}</td>
-          <td *ngIf="room.persontype =='student'">{{room.pre_class}}</td>
-           <td *ngIf="room.persontype =='staff'">{{room.st_department}}</td>
+          <td *ngIf="room.persontype =='student'">{{room.class}}</td>
+           <td *ngIf="room.persontype =='staff'">{{room.dept}}</td>
           <td><a style="cursor: pointer;" [routerLink]="['/content',{outlets:{appCommon:['issueitems']}}]" [queryParams]="{id:room.roomallotmentid,pername:room.persontype,perid:room.personid}">Issue Items</a><br>
             <a style="cursor: pointer;" [routerLink]="['/content',{outlets:{appCommon:['healthrecord']}}]" [queryParams]="{id:room.roomallotmentid,pername:room.persontype,perid:room.personid}">Health Record</a><br>
             <a style="cursor: pointer;" [routerLink]="['/content',{outlets:{appCommon:['deallocate']}}]" [queryParams]="{id:room.roomallotmentid,pername:room.persontype,perid:room.personid}">De-allocate</a><br>
