@@ -4014,7 +4014,7 @@ var AppRouter = (function () {
 AppRouter = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__angular_core__["NgModule"])({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_6__angular_router__["b" /* RouterModule */].forRoot(route, { useHash: true })
+            __WEBPACK_IMPORTED_MODULE_6__angular_router__["b" /* RouterModule */].forRoot(route)
         ],
         exports: [__WEBPACK_IMPORTED_MODULE_6__angular_router__["b" /* RouterModule */]],
     })
@@ -22433,8 +22433,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var PostService = (function () {
     function PostService(http) {
         this.http = http;
-        this.baseUrlFile = 'http://localhost/ionerp/ionerpServer/uploads/';
-        this.baseUrl = 'http://localhost/ionerp/ionerpServer/index.php/';
+        this.baseUrlFile = 'https://10.91.5.13/ionerp/ionerpServer/uploads/';
+        this.baseUrl = 'https://10.91.5.13/ionerp/ionerpServer/index.php/';
     }
     //Http Request to get the data
     PostService.prototype.getData = function () {
