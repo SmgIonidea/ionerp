@@ -64,7 +64,7 @@ import {HrdModule} from './hrd/hrd.module'; //HRD Component
 import {PayrollModule} from './payroll/payroll.module'; //Payroll Component
 
 import { LibraryModule } from './library/library.module';
-import {PlatformLocation,Location,LocationStrategy,HashLocationStrategy,PathLocationStrategy,APP_BASE_HREF}  from '@angular/common'; 
+// import {PlatformLocation,Location,LocationStrategy,HashLocationStrategy,PathLocationStrategy,APP_BASE_HREF}  from '@angular/common'; 
 
 @NgModule({
   declarations: [
@@ -152,7 +152,7 @@ import {PlatformLocation,Location,LocationStrategy,HashLocationStrategy,PathLoca
     AuthGuard,
     RoleGuard,
     TakeActivityComponent,
-    { provide: LocationStrategy, useClass: HashLocationStrategy}
+    // { provide: LocationStrategy, useClass: HashLocationStrategy}
     // TinymceComponent
 
   ],

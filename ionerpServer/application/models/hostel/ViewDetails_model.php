@@ -37,27 +37,25 @@ class ViewDetails_model extends CI_Model {
         $typedetails = $formData->select_type;
         $paystatus = $formData->payment_status;
         $regnum = $formData->registration_num;
-        $serachDetailQuery = "SELECT es_personid,es_persontype,due_month,room_rate,deduction,amount_paid FROM `dlvry_hostel_charges` where es_hostelbuldid = '$buildid' ";
+        $totalQuery = "SELECT SUM(room_rate) AS totaldues ,SUM(amount_paid) AS totalamountreceived ,"
+                . "SUM(deduction) AS totaldeduction ,SUM(balance) AS totalbalance "
+                . "FROM  dlvry_hostel_charges where es_hostelbuldid = '$buildid'";
+        $totalData = $this->db->query($totalQuery);
+        $totalDataResult = $totalData->result_array(); 
+
+        $serachDetailQuery ="SELECT * , B.buld_name as buidingname FROM dlvry_hostel_charges HC , dlvry_hostelbuld B , dlvry_hostelroom R , dlvry_roomallotment RA 
+   WHERE HC.es_hostelbuldid = '$buildid' AND B.es_hostelbuldid = R.es_hostelbuldid  AND HC.es_roomallotmentid = RA.roomallotmentid AND
+     RA.hostelroomid = R.es_hostelroomid";
         $searchDetailData = $this->db->query($serachDetailQuery);
         $searchDetailResult = $searchDetailData->result_array();
-        return $searchDetailResult;
+        foreach ($totalDataResult as $key => &$val) {
+// Loop though one array            
+            $val2 = $searchDetailResult[$key]; // Get the values from the other array           
+            $val += $val2; // combine 'em       
+        }
+        return $totalDataResult;
     }
 
-    public function totalDues($formData) {
-        $buildid = $formData->select_building;
-        $totalDuesQuery = "SELECT SUM(room_rate) AS totaldues ,SUM(amount_paid) AS totalamountreceived ,SUM(deduction) AS totaldeduction ,SUM(balance) AS totalbalance FROM  dlvry_hostel_charges where es_hostelbuldid = '$buildid'";
-        $totalDuesData = $this->db->query($totalDuesQuery);
-        $totalDuesResult = $totalDuesData->result_array();
-        return $totalDuesResult;
-    }
-
-//    public function regNumDetails($formData){
-//        $regId = $formData->registration_num;
-//        $regNumDetailQuery = "SELECT es_personid FROM `dlvry_hostelperson_item`";
-//        $regNumDetailData = $this->db->query($regNumDetailQuery);
-//        $regNumDetailResult = $regNumDetailData->result_array();
-//        return $regNumDetailResult;
-//    }
 }
 
 ?>

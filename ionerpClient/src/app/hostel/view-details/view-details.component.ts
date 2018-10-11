@@ -146,23 +146,6 @@ export class ViewDetailsComponent implements OnInit, AfterViewInit {
       this.tableRerender();
       this.dtTrigger.next();
     });
-
-
-    // let month = this.hostelList.due_month.split("-");
-    // alert(JSON.stringify(month));
-    this.service.subUrl = "hostel/ViewDetails/totalDueDetails";
-    this.service.createPost(searchData).subscribe(response => {
-      this.duelist = response.json();
-    });
-
-
-
-    // this.service.subUrl = "hostel/ViewDetails/regNum";
-    // this.service.createPost(searchData['registration_num']).subscribe(response => {
-    //   this.reglist = response.json();
-    //   });  
-
-
   }
 
 }

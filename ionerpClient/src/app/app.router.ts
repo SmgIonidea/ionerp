@@ -898,7 +898,7 @@ const route: Routes = [
 ];
 @NgModule({
   imports: [
-    RouterModule.forRoot(route,{ useHash: true })
+    RouterModule.forRoot(route)
   ],
   exports: [RouterModule],
 })

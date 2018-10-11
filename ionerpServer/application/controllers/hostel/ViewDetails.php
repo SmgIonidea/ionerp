@@ -57,31 +57,6 @@ class ViewDetails extends CI_Controller {
       echo json_encode($createResult);
     }  
     
-    
-    
-    public function totalDueDetails() {       
-        $accountingFormData = $this->readHttpRequest();
-        $formData = json_decode($accountingFormData);
-        $createResult = $this->ViewDetails_model->totalDues($formData);        
-        if ($createResult == true) {
-            $data['status'] = 'ok';
-        } else {
-            $data['status'] = 'fail';
-        }
-      echo json_encode($createResult);
-    }  
-
-//   public function regNum(){
-//       $accountingFormData = $this->readHttpRequest();
-//        $formData = json_decode($accountingFormData);
-//        $createResult = $this->ViewDetails_model->regNumDetails($formData);        
-//        if ($createResult == true) {
-//            $data['status'] = 'ok';
-//        } else {
-//            $data['status'] = 'fail';
-//        }
-//      echo json_encode($createResult);
-//   }
 
 
       public function readHttpRequest() {
