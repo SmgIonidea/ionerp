@@ -2828,6 +2828,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__hrd_hrd_module__ = __webpack_require__("../../../../../src/app/hrd/hrd.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__payroll_payroll_module__ = __webpack_require__("../../../../../src/app/payroll/payroll.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__library_library_module__ = __webpack_require__("../../../../../src/app/library/library.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2889,6 +2890,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
  //HRD Component
  //Payroll Component
+
 
 var AppModule = (function () {
     function AppModule() {
@@ -2964,6 +2966,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_37__guards_auth_guard__["a" /* AuthGuard */],
             __WEBPACK_IMPORTED_MODULE_39__guards_role_guard__["a" /* RoleGuard */],
             __WEBPACK_IMPORTED_MODULE_36__student_take_activity_take_activity_component__["a" /* TakeActivityComponent */],
+            { provide: __WEBPACK_IMPORTED_MODULE_53__angular_common__["LocationStrategy"], useClass: __WEBPACK_IMPORTED_MODULE_53__angular_common__["HashLocationStrategy"] }
+            // TinymceComponent
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]]
     })
@@ -4014,7 +4018,7 @@ var AppRouter = (function () {
 AppRouter = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__angular_core__["NgModule"])({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_6__angular_router__["b" /* RouterModule */].forRoot(route)
+            __WEBPACK_IMPORTED_MODULE_6__angular_router__["b" /* RouterModule */].forRoot(route, { useHash: true })
         ],
         exports: [__WEBPACK_IMPORTED_MODULE_6__angular_router__["b" /* RouterModule */]],
     })
@@ -22433,8 +22437,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var PostService = (function () {
     function PostService(http) {
         this.http = http;
-        this.baseUrlFile = 'https://10.91.5.13/ionerp/ionerpServer/uploads/';
-        this.baseUrl = 'https://10.91.5.13/ionerp/ionerpServer/index.php/';
+        this.baseUrlFile = 'http://localhost/ionerp/ionerpServer/uploads/';
+        this.baseUrl = 'http://localhost/ionerp/ionerpServer/index.php/';
     }
     //Http Request to get the data
     PostService.prototype.getData = function () {
